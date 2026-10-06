@@ -160,7 +160,7 @@ export default async function Dashboard() {
               <div style={{ marginTop: 18 }}>
                 <Link
                   className="btn secondary"
-                  href={`/courses/codezero/${level.slug}`}
+                  href={`/learn/${level.level_number}`}
                 >
                   Entrar al nivel
                 </Link>
