@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createServerSupabase } from "../../../../lib/supabase-server";
+import { isLevelIncludedInPlan } from "../../../../lib/learning";
 
 type PageProps = {
   params: Promise<{
@@ -34,6 +35,16 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
   } = await supabase.auth.getUser();
 
   if (!user) redirect("/login");
+
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("role, plan_name")
+    .eq("id", user.id)
+    .single();
+
+  if (!isLevelIncludedInPlan(levelNumber, profile?.plan_name ?? "free", profile?.role)) {
+    redirect("/pricing");
+  }
 
   const { data: currentLevel } = await supabase
     .from("levels")
