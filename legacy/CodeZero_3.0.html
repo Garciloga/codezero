@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CodeZero 2.0 — Academia personal de programación e integraciones</title>
+<style>
+:root{--bg:#f4f6fa;--card:#fff;--text:#182230;--muted:#667085;--line:#e4e7ec;--primary:#5b55d9;--primary2:#4338ca;--good:#15803d;--bad:#b42318;--warn:#b54708}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:10px 14px;font-weight:700;background:var(--primary);color:white}button.secondary{background:#eef0f7;color:#344054}button.good{background:#15803d}.wrap{max-width:1180px;margin:auto;padding:0 18px}
+header{background:linear-gradient(135deg,#111827,#3730a3);color:white;padding:25px 0 22px}.top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.top h1{margin:0;font-size:29px}.top p{margin:5px 0;color:#d9ddf5}.progress{height:12px;background:#ffffff22;border-radius:99px;overflow:hidden;margin-top:20px}.bar{height:100%;background:white;width:0;transition:.3s}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px}.stat{background:#ffffff12;padding:11px;border-radius:11px}.stat b{font-size:18px;display:block}.stat span{font-size:11px;color:#d9ddf5}
+nav{position:sticky;top:0;z-index:5;background:white;border-bottom:1px solid var(--line)}.tabs{display:flex;gap:6px;overflow:auto;padding:9px 0}.tabs button{white-space:nowrap;background:transparent;color:#475467}.tabs button.active{background:#eeedff;color:var(--primary2)}
+main{padding:20px 0 45px}.layout{display:grid;grid-template-columns:285px 1fr;gap:17px}.card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:18px;box-shadow:0 2px 10px #1018280a}.card h2,.card h3{margin-top:0}.levels{display:grid;gap:7px}.level{padding:11px;border:1px solid var(--line);border-radius:10px;cursor:pointer}.level:hover,.level.sel{border-color:#918cff;background:#fafaff}.level .small{font-size:11px;color:var(--muted);margin-top:3px}.tag{display:inline-block;font-size:11px;background:#f2f4f7;padding:4px 7px;border-radius:99px;margin:2px}.tag.good{background:#dcfce7;color:#166534}.tag.lock{background:#f2f4f7;color:#667085}.hero{display:flex;justify-content:space-between;gap:15px}.notice{padding:11px 13px;background:#f8fafc;border:1px solid var(--line);border-radius:10px;color:#475467;line-height:1.5}.section{margin-top:18px}.topic{padding:11px 0;border-bottom:1px solid var(--line)}.topic:last-child{border-bottom:0}.topic small{color:var(--muted)}.exercise{background:#fbfaff;border:1px solid #e1dfff;padding:15px;border-radius:12px;margin-top:10px}.question{margin:13px 0}.question label{display:block;border:1px solid var(--line);padding:8px;border-radius:8px;margin:5px 0;cursor:pointer;background:white}.result{margin-top:10px;font-weight:700}.goodtext{color:var(--good)}.badtext{color:var(--bad)}textarea{width:100%;min-height:140px;border:1px solid var(--line);border-radius:9px;padding:10px;resize:vertical}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.metric{border:1px solid var(--line);border-radius:12px;padding:14px}.metric b{font-size:24px}.bar2{height:8px;background:#edf0f5;border-radius:99px;overflow:hidden;margin-top:7px}.bar2 i{display:block;height:100%;background:var(--primary);width:0}.hidden{display:none}.muted{color:var(--muted)}.center{text-align:center}.cert{border:2px dashed #a5b4fc;border-radius:14px;padding:20px;background:#fafaff}.danger{color:var(--bad)}footer{color:var(--muted);font-size:12px;padding-bottom:35px}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.top{flex-direction:column}.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="top"><div><h1>CodeZero 2.0 🚀</h1><p>Academia personal: programación → software → integraciones → proyecto profesional.</p></div>
+<button class="secondary" onclick="resetAll()">Reiniciar</button></div>
+<div class="progress"><div class="bar" id="globalBar"></div></div>
+<div class="stats">
+<div class="stat"><b id="globalPct">0%</b><span>Dominio global</span></div>
+<div class="stat"><b id="xp">0</b><span>XP</span></div>
+<div class="stat"><b id="hours">0 h</b><span>Horas estimadas restantes</span></div>
+<div class="stat"><b id="streak">0 días</b><span>Racha de estudio</span></div>
+<div class="stat"><b id="rank">Principiante</b><span>Rango</span></div>
+</div></div></header>
+
+<nav><div class="wrap"><div class="tabs">
+<button id="tab-dashboard" onclick="view('dashboard')">📊 Dashboard</button>
+<button id="tab-course" onclick="view('course')">🗺️ Ruta</button>
+<button id="tab-review" onclick="view('review')">🔄 Repaso</button>
+<button id="tab-exams" onclick="view('exams')">📝 Exámenes</button>
+<button id="tab-projects" onclick="view('projects')">🏗️ Proyectos</button>
+<button id="tab-skills" onclick="view('skills')">🧠 Competencias</button>
+<button id="tab-interview" onclick="view('interview')">🎤 Entrevista</button>
+<button id="tab-career" onclick="view('career')">💼 SaaS</button>
+<button id="tab-profile" onclick="view('profile')">👤 Perfil</button>
+</div></div></nav>
+
+<main class="wrap">
+<div id="app"></div>
+</main>
+<footer class="wrap">CodeZero 2.0 · El objetivo no es consumir contenido: es demostrar que puedes explicar, implementar, depurar, integrar y resolver problemas nuevos.</footer>
+
+<script>
+const levels=[
+["Fundamentos","Pensamiento computacional, algoritmos, variables, lógica y resolución de problemas.",12,["Algoritmos","Pseudocódigo","Variables","Tipos","Booleanos","Descomposición","Errores"],"Diseña un sistema de registro en pseudocódigo y explica cada decisión."],
+["Python desde cero","Sintaxis y pensamiento programable.",22,["print/input","Variables","Tipos","Operadores","Condicionales","Bucles","Funciones","Listas","Diccionarios","Excepciones"],"Construye una calculadora y un gestor de contactos."],
+["Python profesional","Código mantenible y comprobable.",22,["Módulos","Archivos","JSON/CSV","Clases","Type hints","Testing","Regex","Refactorización"],"Construye un gestor de gastos con persistencia y tests."],
+["Algoritmos y datos","Aprende a elegir estructuras y algoritmos.",22,["Big O","Búsqueda","Ordenamiento","Recursión","Stacks","Queues","Hash tables","Trees"],"Compara algoritmos de búsqueda y justifica el trade-off."],
+["Git y flujo profesional","Versionado y colaboración.",12,["Terminal","Git","Commits","Branches","Merge","GitHub","PRs","README"],"Publica un proyecto con historial limpio y documentación."],
+["SQL y bases de datos","Modelado y consulta de información.",18,["Relacional","SELECT","CRUD","JOIN","GROUP BY","Índices","Transacciones","Seguridad"],"Diseña una BD de clientes, empresas y tickets."],
+["Web: HTML/CSS/JS","Construcción de interfaces y consumo de APIs.",25,["HTML","CSS","Responsive","JavaScript","DOM","Eventos","Fetch","Accesibilidad"],"Construye una app web responsive conectada a una API."],
+["Backend y APIs","Servicios, REST y persistencia.",22,["HTTP","REST","JSON","Endpoints","Validación","Auth","CRUD","Logging","Errores"],"Construye una API CRUD con persistencia."],
+["Ingeniería de software","Calidad, arquitectura y operación.",20,["Arquitectura","Testing","Debugging","Documentación","Dependencias","CI/CD","Seguridad","Code review"],"Refactoriza un proyecto, agrega tests y documenta decisiones."],
+["Capstone de programación","Integra todo lo anterior.",25,["Requisitos","Arquitectura","Datos","Implementación","Tests","Git","Deploy","Observabilidad"],"Entrega una aplicación completa y defiéndela técnicamente."],
+["Integraciones I: APIs y webhooks","Conecta sistemas de forma robusta.",18,["REST","HTTP","JSON","API keys","Bearer","Webhooks","Idempotencia","Retries","Rate limits","OpenAPI"],"Integra una API externa y recibe eventos mediante webhook."],
+["Integraciones II: OAuth y SaaS","Autorización, terceros y automatización.",22,["OAuth 2.0","Tokens","Scopes","APIs SaaS","Transformación","Triggers","Actions","Automatización","Secretos"],"Conecta tres servicios y transforma datos entre ellos."],
+["Integraciones III: Enterprise","Sincronización entre sistemas empresariales.",24,["CRM","ERP","HRIS","Ticketing","Source of truth","IDs","Deduplicación","Upsert","Paginación","Queues","Reconciliación"],"Diseña sincronización bidireccional con manejo de conflictos."],
+["Integraciones IV: Arquitectura y seguridad","Resiliencia, eventos y seguridad.",24,["API Gateway","Queues","Pub/Sub","Polling vs webhook","Circuit breaker","Backoff","Rate limiting","Secret management","Firmas","PII","Threat modeling"],"Diseña una plataforma de integraciones multiempresa."],
+["Capstone de integraciones","Construcción de una integración profesional.",28,["Caso de negocio","Contrato","OAuth","Webhooks","Transformación","Persistencia","Retries","Observabilidad","Seguridad","Testing","Runbook"],"Construye y documenta una integración multi-sistema lista para explicar en entrevista."]
+];
+const questionBank=[
+["¿Qué es un algoritmo?",["Una secuencia finita de pasos","Un lenguaje","Una base de datos"],0],
+["¿Qué devuelve return?",["Un valor desde una función","Siempre un string","Un error"],0],
+["¿Qué hace un JOIN?",["Combina datos relacionados","Borra datos","Compila código"],0],
+["¿Qué registra un commit?",["Un estado de cambios versionado","Una contraseña","Una API"],0],
+["¿Qué protege OAuth?",["Delegación controlada de acceso","La RAM","El HTML"],0],
+["¿Para qué sirve idempotencia?",["Evitar efectos duplicados al repetir una operación","Acelerar cualquier API","Eliminar auth"],0],
+["¿Qué es un webhook?",["Un evento enviado a una URL","Una tabla SQL","Un commit"],0],
+["¿Qué hace un rate limit?",["Limita la cantidad/frecuencia de solicitudes","Encripta la API","Crea usuarios"],0],
+["¿Qué es source of truth?",["La fuente de autoridad para un dato","El servidor más rápido","Un token"],0],
+["¿Para qué sirve una cola?",["Desacoplar/absorber picos de procesamiento","Eliminar persistencia","Sustituir HTTPS"],0]
+];
+
+let S=JSON.parse(localStorage.getItem("codezero3")||'{"xp":0,"mastery":{},"attempts":{},"missed":[],"lastStudy":null,"streak":0,"diagnostic":false,"examScores":{},"projects":{},"skills":{},"exerciseScores":{},"weeklyHours":5,"interview":{},"saas":{}}');
+const skillsByLevel=levels.map((l,i)=>l[3].map(x=>({name:x,score:0,attempts:0})));
+const skillKey=(i,j)=>i+"-"+j;
+function skillScore(i,j){let k=skillKey(i,j);return S.skills[k]??Math.max(0,Math.min(100,mastery(i)-j*2))}
+function setSkill(i,j,score){S.skills[skillKey(i,j)]=Math.max(0,Math.min(100,score))}
+function weakSkills(){let a=[];levels.forEach((l,i)=>l[3].forEach((x,j)=>{let s=skillScore(i,j);if(s<70)a.push({i,j,name:x,score:s})}));return a.sort((a,b)=>a.score-b.score)}
+function prediction(){let r=remaining(),h=Math.max(1,Number(S.weeklyHours)||5);let weeks=Math.ceil(r/h),d=new Date();d.setDate(d.getDate()+weeks*7);return {weeks,date:d.toLocaleDateString("es-MX",{month:"long",year:"numeric"})}}
+const totalHours=316;
+function save(){localStorage.setItem("codezero3",JSON.stringify(S));renderHeader()}
+function mastery(i){return S.mastery[i]||0}
+function global(){return Math.round(levels.reduce((a,_,i)=>a+mastery(i),0)/levels.length)}
+function remaining(){return Math.round(levels.reduce((a,l,i)=>a+l[2]*(1-mastery(i)/100),0))}
+function rank(){let p=global();return p<20?"Principiante":p<40?"Explorador":p<60?"Constructor":p<80?"Desarrollador":p<95?"Integrador":"Maestro"}
+function study(){let d=new Date().toISOString().slice(0,10);if(S.lastStudy!==d){let prev=S.lastStudy; if(prev){let x=new Date(prev),y=new Date(d);let diff=Math.round((y-x)/86400000);S.streak=diff===1?S.streak+1:1}else S.streak=1;S.lastStudy=d;save()}}
+function renderHeader(){let p=global();document.getElementById("globalPct").textContent=p+"%";document.getElementById("globalBar").style.width=p+"%";document.getElementById("xp").textContent=S.xp;document.getElementById("hours").textContent=remaining()+" h";document.getElementById("streak").textContent=(S.streak||0)+" días";document.getElementById("rank").textContent=rank()}
+function view(v){study();document.querySelectorAll(".tabs button").forEach(x=>x.classList.remove("active"));document.getElementById("tab-"+v).classList.add("active");
+if(v==="dashboard")dashboard();if(v==="course")course(0);if(v==="review")review();if(v==="exams")exams();if(v==="projects")projects();if(v==="skills")skills();if(v==="interview")interview();if(v==="career")career();if(v==="profile")profile()}
+function dashboard(){
+let mastered=levels.filter((_,i)=>mastery(i)>=80).length, avg=global(), w=weakSkills().slice(0,5), pr=prediction();
+document.getElementById("app").innerHTML=`<div class="grid2">
+<div class="card"><h2>🎯 Panel inteligente</h2><p class="notice">CodeZero adapta la práctica según tus resultados. Tu progreso depende de demostrar competencia, no de marcar lecciones.</p>
+<div class="metric"><span>Dominio global</span><b>${avg}%</b><div class="bar2"><i style="width:${avg}%"></i></div></div>
+<div class="metric" style="margin-top:10px"><span>Niveles con ≥80%</span><b>${mastered}/15</b></div></div>
+<div class="card"><h2>🔮 Predicción</h2><p>Con <b>${S.weeklyHours} h/semana</b>, quedan aproximadamente <b>${remaining()} h</b>.</p><p>Fecha estimada al 100%: <b>${pr.date}</b> (≈ ${pr.weeks} semanas).</p><button onclick="profile()">Ajustar horas</button></div>
+</div>
+<div class="card section"><h2>⚠️ Lo que debes reforzar</h2>${w.length?w.map(x=>`<div class="level"><b>${x.name}</b><div class="small">${levels[x.i][0]} · ${x.score}%</div></div>`).join(""):'<p>🎉 No hay debilidades críticas.</p>'}</div>
+<div class="card section"><h2>🧭 Próximo paso</h2><p>${nextAction()}</p><button onclick="view('course')">Continuar ruta</button></div>`;
+}
+function nextAction(){let i=levels.findIndex((_,x)=>mastery(x)<80);return i<0?"🏆 Ruta completa. Puedes repetir exámenes y mejorar proyectos.":`Nivel ${i+1}: <b>${levels[i][0]}</b>. Tu dominio actual es ${mastery(i)}%. Objetivo: ≥80% para considerarlo dominado.`}
+function course(i){
+let first=Math.max(0,Math.min(i,levels.length-1)),l=levels[first],unlocked=first===0||mastery(first-1)>=70;
+let topics=l[3].map((t,j)=>`<div class="topic"><b>${j+1}. ${t}</b><br><small>Debes poder explicarlo, implementarlo y detectar un error relacionado.</small></div>`).join("");
+document.getElementById("app").innerHTML=`<div class="layout"><aside class="card"><h3>Ruta</h3><div class="levels">${levels.map((x,k)=>`<div class="level ${k===first?'sel':''}" onclick="course(${k})"><b>${k+1}. ${x[0]}</b><div class="small">${k<10?'💻 Programación':'🔌 Integraciones'} · ${mastery(k)}%</div></div>`).join("")}</div></aside>
+<section><div class="card"><div class="hero"><div><h2>Nivel ${first+1} · ${l[0]}</h2><p class="muted">${l[1]}</p></div><span class="tag ${mastery(first)>=80?'good':''}">${mastery(first)>=80?'DOMINADO':mastery(first)+'% dominio'}</span></div>
+<div class="section"><h3>📖 Enseñanza y ejemplos</h3><div class="notice"><b>Regla CodeZero:</b> primero entiende el concepto, después observa un ejemplo, luego intenta modificarlo y finalmente resuelve un problema sin copiar.<br><br><b>Ejemplo conceptual:</b> si una API recibe un evento “ticket.created”, una integración puede validar el evento, transformar sus campos y crear el registro correspondiente en otro sistema. El objetivo es que puedas explicar qué ocurre si el evento llega dos veces, falla la API destino o expira el token.</div></div>
+<div class="section"><h3>🧠 Competencias del nivel</h3><div class="grid2">${l[3].map((t,j)=>`<div class="metric"><b style="font-size:15px">${t}</b><div class="small">${skillScore(first,j)}% dominio</div><div class="bar2"><i style="width:${skillScore(first,j)}%"></i></div></div>`).join("")}</div></div>
+<div class="section"><h3>📚 Temas</h3>${topics}</div>
+<div class="section"><h3>🧩 Ejercicio práctico</h3><div class="exercise"><b>Reto:</b> ${l[4]}<p class="muted">Antes de buscar una solución, escribe tu enfoque. Para avanzar, intenta identificar entradas, salidas, errores y casos límite.</p><textarea id="answer" placeholder="Escribe aquí tu solución, pseudocódigo, diseño o explicación..."></textarea><br><button onclick="submitExercise(${first})">Enviar ejercicio</button><div id="exResult"></div></div></div>
+<div class="section"><h3>🧪 Prueba de dominio</h3>${quizHTML(first)}</div>
+<div class="section"><h3>🏗️ Proyecto del nivel</h3><div class="notice"><b>Entrega:</b> ${l[4]}<br><br><b>Rúbrica:</b> funcionalidad 30% · comprensión 20% · manejo de errores 20% · calidad 15% · documentación 15%.</div></div>
+<div class="section"><button onclick="completeLevel(${first})" ${!unlocked?'disabled':''}>${mastery(first)>=80?'Repetir / mejorar dominio':'Registrar sesión de dominio'}</button> ${!unlocked?'<span class="muted"> Necesitas ≥70% en el nivel anterior.</span>':''}</div>
+</div></section></div>`;
+}
+function quizHTML(i){let qs=[questionBank[i%questionBank.length],questionBank[(i+3)%questionBank.length],questionBank[(i+6)%questionBank.length]];return `<div class="exercise">${qs.map((q,n)=>`<div class="question"><b>${n+1}. ${q[0]}</b>${q[1].map((o,k)=>`<label><input type="radio" name="cq${n}" value="${k}"> ${o}</label>`).join("")}</div>`).join("")}<button onclick='gradeCourse(${i},${JSON.stringify(qs)})'>Evaluar</button><div id="quizResult"></div></div>`}
+function gradeCourse(i,qs){let score=0;qs.forEach((q,n)=>{let x=document.querySelector(`input[name=cq${n}]:checked`);if(x&&+x.value===q[2])score++});let pct=Math.round(score/qs.length*100);document.getElementById("quizResult").innerHTML=`<div class="result ${pct>=67?'goodtext':'badtext'}">${pct}% · ${pct>=67?'Prueba superada.':'Repasa y vuelve a intentarlo.'}</div>`;S.attempts[i]=(S.attempts[i]||0)+1;if(pct>=67){S.mastery[i]=Math.min(100,Math.max(mastery(i),Math.round(mastery(i)+10)));l3(i,pct);S.xp+=30}else{S.missed.push({i,date:new Date().toISOString()});l3(i,Math.max(20,pct));}save()}
+function l3(i,pct){levels[i][3].forEach((_,j)=>setSkill(i,j,Math.min(100,skillScore(i,j)+(pct>=80?7:pct>=67?4:-2))));}
+function submitExercise(i){let a=document.getElementById("answer").value.trim();if(a.length<30){document.getElementById("exResult").innerHTML='<p class="danger">Escribe una solución más desarrollada (mínimo 30 caracteres).</p>';return}S.mastery[i]=Math.min(100,mastery(i)+8);l3(i,80);S.exerciseScores[i]=(S.exerciseScores[i]||0)+1;S.xp+=20;save();document.getElementById("exResult").innerHTML='<p class="goodtext">✓ Ejercicio registrado. En una versión con evaluador de código, aquí también se ejecutarían tests automáticos.</p>'}
+function completeLevel(i){if(i>0&&mastery(i-1)<70)return;S.mastery[i]=Math.min(100,Math.max(mastery(i),70));S.xp+=50;save();course(i)}
+function exams(){
+let available=levels.map((l,i)=>`<div class="level"><b>Examen ${i+1} · ${l[0]}</b><div class="small">${mastery(i)}% dominio · ${S.examScores[i]??'Sin presentar'}</div><br><button onclick="startExam(${i})">Presentar examen</button></div>`).join("");
+document.getElementById("app").innerHTML=`<div class="card"><h2>📝 Centro de exámenes</h2><p class="notice">Los exámenes mezclan memoria, comprensión, aplicación y casos nuevos. Aprobar requiere al menos 70%. Los exámenes finales de etapa requieren 80%.</p><div class="levels">${available}</div></div><div id="examArea" class="card section hidden"></div>`;
+}
+function startExam(i){let qs=[...questionBank].sort(()=>Math.random()-.5).slice(0,6);let a=document.getElementById("examArea");a.classList.remove("hidden");a.innerHTML=`<h2>Examen · ${levels[i][0]}</h2>${qs.map((q,n)=>`<div class="question"><b>${n+1}. ${q[0]}</b>${q[1].map((o,k)=>`<label><input type="radio" name="eq${n}" value="${k}"> ${o}</label>`).join("")}</div>`).join("")}<button onclick='gradeExam(${i},${JSON.stringify(qs)})'>Finalizar examen</button><div id="examResult"></div>`;window.scrollTo({top:a.offsetTop-80,behavior:"smooth"})}
+function gradeExam(i,qs){let s=0;qs.forEach((q,n)=>{let x=document.querySelector(`input[name=eq${n}]:checked`);if(x&&+x.value===q[2])s++});let p=Math.round(s/qs.length*100);S.examScores[i]=p+"%";if(p>=70){S.mastery[i]=Math.min(100,Math.max(mastery(i),80));S.xp+=100}save();document.getElementById("examResult").innerHTML=`<div class="result ${p>=70?'goodtext':'badtext'}">Resultado: ${p}% · ${p>=70?'APROBADO':'NO APROBADO'}</div>`}
+function review(){let missed=S.missed.slice(-12).reverse();document.getElementById("app").innerHTML=`<div class="card"><h2>🔄 Repaso inteligente</h2><p class="notice">Aquí aparecen niveles donde has fallado pruebas. El objetivo es recuperar el concepto y volver a demostrarlo.</p>${missed.length?missed.map(x=>`<div class="level"><b>${levels[x.i][0]}</b><div class="small">Repasar: ${levels[x.i][3].slice(0,4).join(", ")}</div><br><button onclick="course(${x.i})">Repasar nivel</button></div>`).join(""):'<p>🎉 No tienes fallos registrados todavía.</p>'}</div>`}
+function projects(){document.getElementById("app").innerHTML=`<div class="card"><h2>🏗️ Portafolio de proyectos</h2><p class="notice">Los proyectos son la prueba de que puedes aplicar conocimientos. Guarda enlaces, README, decisiones técnicas y aprendizajes.</p>${levels.map((l,i)=>`<div class="level"><b>${i+1}. ${l[0]}</b><p class="muted">${l[4]}</p><span class="tag">${mastery(i)}% dominio</span></div>`).join("")}</div>`}
+function profile(){document.getElementById("app").innerHTML=`<div class="card"><h2>👤 Perfil de aprendizaje</h2><div class="grid2"><div class="metric">Rango<b>${rank()}</b></div><div class="metric">XP<b>${S.xp}</b></div></div>
+<div class="section"><h3>⏱️ Ritmo</h3><p>Horas de estudio semanales estimadas</p><input type="number" min="1" max="60" value="${S.weeklyHours}" onchange="S.weeklyHours=Math.max(1,Number(this.value)||5);save();dashboard()"><p class="muted">Se usa para estimar cuándo podrías alcanzar el 100%.</p></div>
+<div class="section"><h3>🏆 Certificación CodeZero</h3><div class="cert center">${global()>=80?'<h2>🏆 Ruta completa dominada</h2><p>Has alcanzado ≥80% de dominio global.</p>':'<h2>En progreso</h2><p>Necesitas ≥80% de dominio global.</p>'}</div></div></div>`}
+
+function diagnostic(){
+let qs=[...questionBank].slice(0,10),score=0;qs.forEach((q,n)=>{let x=document.querySelector(`input[name=dq${n}]:checked`);if(x&&+x.value===q[2])score++});
+let pct=score*10;S.diagnostic=true;S.xp+=score*10;
+levels.forEach((_,i)=>{if(i<3)setSkill(i,i%levels[i][3].length,Math.min(100,Math.max(skillScore(i,i%levels[i][3].length),pct)))});
+save();document.getElementById("app").innerHTML=`<div class="card"><h2>🎯 Diagnóstico completado</h2><p>Resultado inicial: <b>${pct}%</b>.</p><p>${pct<50?"Comenzaremos reforzando fundamentos.":pct<80?"Tienes una base; CodeZero priorizará las lagunas.":"Tienes una base sólida; avanzaremos más rápido donde demuestres dominio."}</p><button onclick="view('dashboard')">Ir al dashboard</button></div>`;
+}
+function startDiagnostic(){
+document.getElementById("app").innerHTML=`<div class="card"><h2>🎯 Diagnóstico inicial</h2><p class="notice">No afecta negativamente tu progreso. Sirve para estimar por dónde empezar.</p>${questionBank.map((q,n)=>`<div class="question"><b>${n+1}. ${q[0]}</b>${q[1].map((o,k)=>`<label><input type="radio" name="dq${n}" value="${k}"> ${o}</label>`).join("")}</div>`).join("")}<button onclick="diagnostic()">Terminar diagnóstico</button></div>`;
+}
+function resetAll(){if(confirm("¿Borrar todo el progreso de CodeZero 2.0?")){localStorage.removeItem("codezero3");location.reload()}}
+renderHeader();view("dashboard");
+</script>
+</body>
+</html>
