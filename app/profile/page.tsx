@@ -9,7 +9,7 @@ export default async function ProfilePage() {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("email,full_name,role,plan_name,status,created_at")
+    .select("email,full_name,role,plan_name,status,billing_status,stripe_cancel_at_period_end,created_at")
     .eq("id", user.id)
     .single();
 
@@ -42,7 +42,13 @@ export default async function ProfilePage() {
         <section className="card">
           <h2>Suscripción</h2>
           <p><b>Plan:</b> {profile?.plan_name}</p>
-          <p><b>Estado:</b> {profile?.status}</p>
+          <p><b>Estado de cuenta:</b> {profile?.status}</p>
+          {profile?.plan_name !== "free" && (
+            <p><b>Estado de facturación:</b> {profile?.billing_status ?? "pendiente"}</p>
+          )}
+          {profile?.stripe_cancel_at_period_end && (
+            <p className="muted">Cancelación programada al finalizar el periodo vigente.</p>
+          )}
 
           {profile?.plan_name && profile.plan_name !== "free" ? (
             <form action="/api/stripe/portal" method="post" style={{ marginTop: 20 }}>
