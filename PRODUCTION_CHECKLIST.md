@@ -23,9 +23,9 @@ Estado: pre-lanzamiento técnico.
 
 ## Bloqueadores manuales antes de apertura pública
 
-1. Activar **Leaked Password Protection** en Supabase Auth.
+1. **Leaked Password Protection** queda diferido porque requiere un plan superior de Supabase.
 2. Configurar **SMTP propio** para confirmaciones y recuperación de contraseña.
-3. Añadir la identidad legal del responsable, domicilio/contacto aplicable y medios para ejercer derechos de privacidad.
+3. Identidad pública y contacto legal básico ya añadidos; queda revisión legal/fiscal profesional antes del lanzamiento.
 4. Obtener revisión legal/fiscal de Términos, Privacidad, Reembolsos e impuestos.
 5. Definir dominio propio y correo transaccional del dominio.
 6. Hacer una compra real de bajo riesgo cuando sea posible para verificar el ciclo completo de pago, renovación/cancelación y cambio de plan. No es necesario para seguir desarrollando.
