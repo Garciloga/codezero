@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createServerSupabase } from "../../../lib/supabase-server";
+import { getPassedLevelNumbers, isLevelUnlocked } from "../../../lib/learning";
 
 type PageProps = {
   params: Promise<{
@@ -22,7 +23,9 @@ export default async function LevelPage({ params }: PageProps) {
   const { level } = await params;
   const levelNumber = Number(level);
 
-  if (!Number.isInteger(levelNumber) || levelNumber < 1) notFound();
+  if (!Number.isInteger(levelNumber) || levelNumber < 1 || levelNumber > 15) {
+    notFound();
+  }
 
   const supabase = await createServerSupabase();
 
@@ -31,6 +34,12 @@ export default async function LevelPage({ params }: PageProps) {
   } = await supabase.auth.getUser();
 
   if (!user) redirect("/login");
+
+  const passedLevels = await getPassedLevelNumbers(user.id);
+
+  if (!isLevelUnlocked(levelNumber, passedLevels)) {
+    redirect("/dashboard");
+  }
 
   const { data: currentLevel, error: levelError } = await supabase
     .from("levels")
@@ -75,11 +84,18 @@ export default async function LevelPage({ params }: PageProps) {
       ? 0
       : Math.round((completedCount / lessonList.length) * 100);
 
+  const allLessonsCompleted =
+    lessonList.length > 0 && completedCount === lessonList.length;
+
+  const levelPassed = passedLevels.has(levelNumber);
+
   return (
     <main className="wrap">
       <div className="nav">
         <div>
-          <span className="pill">NIVEL {currentLevel.level_number}</span>
+          <span className="pill">
+            NIVEL {currentLevel.level_number} · {levelPassed ? "APROBADO" : "EN CURSO"}
+          </span>
           <h1 style={{ marginBottom: 8 }}>{currentLevel.title}</h1>
           <p className="muted" style={{ maxWidth: 760 }}>
             {currentLevel.description}
@@ -131,44 +147,68 @@ export default async function LevelPage({ params }: PageProps) {
           </div>
         )}
 
-        {lessonList.length === 0 ? (
-          <div className="card">
-            <h3>Estamos preparando este nivel</h3>
-            <p className="muted">El nivel ya existe, pero todavía no tiene lecciones publicadas.</p>
-          </div>
-        ) : (
-          <div style={{ display: "grid", gap: 14 }}>
-            {lessonList.map((lesson, index) => {
-              const completed = completedLessonIds.has(lesson.id);
+        <div style={{ display: "grid", gap: 14 }}>
+          {lessonList.map((lesson, index) => {
+            const completed = completedLessonIds.has(lesson.id);
 
-              return (
-                <div className="card" key={lesson.id}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
-                    <div style={{ flex: "1 1 520px" }}>
-                      <div className="muted" style={{ marginBottom: 6 }}>
-                        LECCIÓN {index + 1} · {lesson.estimated_minutes} min
-                      </div>
-                      <h3 style={{ marginTop: 0, marginBottom: 8 }}>{lesson.title}</h3>
-                      {lesson.description && (
-                        <p className="muted" style={{ marginBottom: 0 }}>{lesson.description}</p>
-                      )}
+            return (
+              <div className="card" key={lesson.id}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
+                  <div style={{ flex: "1 1 520px" }}>
+                    <div className="muted" style={{ marginBottom: 6 }}>
+                      LECCIÓN {index + 1} · {lesson.estimated_minutes} min
                     </div>
+                    <h3 style={{ marginTop: 0, marginBottom: 8 }}>{lesson.title}</h3>
+                    {lesson.description && (
+                      <p className="muted" style={{ marginBottom: 0 }}>{lesson.description}</p>
+                    )}
+                  </div>
 
-                    <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-                      <span className="pill">{completed ? "COMPLETADA" : "PENDIENTE"}</span>
-                      <Link
-                        className="btn secondary"
-                        href={`/learn/${currentLevel.level_number}/${lesson.slug}`}
-                      >
-                        {completed ? "Repasar" : "Abrir lección"}
-                      </Link>
-                    </div>
+                  <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+                    <span className="pill">{completed ? "COMPLETADA" : "PENDIENTE"}</span>
+                    <Link
+                      className="btn secondary"
+                      href={`/learn/${currentLevel.level_number}/${lesson.slug}`}
+                    >
+                      {completed ? "Repasar" : "Abrir lección"}
+                    </Link>
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        )}
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <section style={{ marginTop: 32 }}>
+        <div className="card">
+          <span className="pill">EVALUACIÓN FINAL</span>
+          <h2>Demuestra dominio del Nivel {currentLevel.level_number}</h2>
+
+          {levelPassed ? (
+            <>
+              <p className="muted">
+                Ya aprobaste este nivel. Puedes repetir la evaluación o continuar con el siguiente nivel.
+              </p>
+              <Link className="btn secondary" href={`/learn/${currentLevel.level_number}/exam`}>
+                Repasar evaluación
+              </Link>
+            </>
+          ) : allLessonsCompleted ? (
+            <>
+              <p className="muted">
+                Completaste todas las lecciones. La evaluación final ya está disponible.
+              </p>
+              <Link className="btn" href={`/learn/${currentLevel.level_number}/exam`}>
+                Presentar evaluación
+              </Link>
+            </>
+          ) : (
+            <p className="muted" style={{ marginBottom: 0 }}>
+              Completa todas las lecciones para desbloquear la evaluación final.
+            </p>
+          )}
+        </div>
       </section>
     </main>
   );
