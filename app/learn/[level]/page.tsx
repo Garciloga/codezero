@@ -89,6 +89,29 @@ export default async function LevelPage({ params }: PageProps) {
 
   const levelPassed = passedLevels.has(levelNumber);
 
+  const { data: project } = await supabase
+    .from("level_projects")
+    .select("id, title, brief")
+    .eq("level_id", currentLevel.id)
+    .eq("status", "published")
+    .maybeSingle();
+
+  let projectSubmitted = false;
+
+  if (project) {
+    const { data: submissions } = await supabase
+      .from("project_submissions")
+      .select("id")
+      .eq("user_id", user.id)
+      .eq("project_id", project.id)
+      .limit(1);
+
+    projectSubmitted = (submissions?.length ?? 0) > 0;
+  }
+
+  const requirementsComplete =
+    allLessonsCompleted && (!project || projectSubmitted);
+
   return (
     <main className="wrap">
       <div className="nav">
@@ -180,6 +203,19 @@ export default async function LevelPage({ params }: PageProps) {
         </div>
       </section>
 
+      {project && (
+        <section style={{ marginTop: 32 }}>
+          <div className="card">
+            <span className="pill">PROYECTO CAPSTONE</span>
+            <h2>{project.title}</h2>
+            <p className="muted">{project.brief}</p>
+            <Link className="btn secondary" href={`/learn/${currentLevel.level_number}/project`}>
+              {projectSubmitted ? "Ver entrega" : "Abrir proyecto"}
+            </Link>
+          </div>
+        </section>
+      )}
+
       <section style={{ marginTop: 32 }}>
         <div className="card">
           <span className="pill">EVALUACIÓN FINAL</span>
@@ -194,10 +230,10 @@ export default async function LevelPage({ params }: PageProps) {
                 Repasar evaluación
               </Link>
             </>
-          ) : allLessonsCompleted ? (
+          ) : requirementsComplete ? (
             <>
               <p className="muted">
-                Completaste todas las lecciones. La evaluación final ya está disponible.
+                Cumpliste los requisitos del nivel. La evaluación final ya está disponible.
               </p>
               <Link className="btn" href={`/learn/${currentLevel.level_number}/exam`}>
                 Presentar evaluación
@@ -205,7 +241,7 @@ export default async function LevelPage({ params }: PageProps) {
             </>
           ) : (
             <p className="muted" style={{ marginBottom: 0 }}>
-              Completa todas las lecciones para desbloquear la evaluación final.
+              Completa todas las lecciones{project ? " y entrega el proyecto" : ""} para desbloquear la evaluación final.
             </p>
           )}
         </div>
