@@ -113,6 +113,9 @@ export default async function Dashboard({ searchParams }: PageProps) {
         </div>
 
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "flex-end" }}>
+          {(profile?.role === "owner" || profile?.role === "admin") && (
+            <Link className="btn secondary" href="/admin">Admin</Link>
+          )}
           <Link className="btn secondary" href="/profile">Perfil</Link>
           <Link className="btn secondary" href="/tutor">Tutor IA</Link>
           <form action="/api/auth/signout" method="post">
