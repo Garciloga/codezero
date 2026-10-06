@@ -7,7 +7,10 @@ const plans = [
   { name: "Enterprise", price: "Desde $1,299 MXN", note: "Para equipos y empresas", features: ["Usuarios y equipos", "Límites personalizados", "Administración central", "Preparado para SSO", "Soporte empresarial"], href: "/checkout?plan=enterprise" },
 ];
 
-export default function Pricing() {
+type PageProps = { searchParams: Promise<{ checkout?: string }> };
+
+export default async function Pricing({ searchParams }: PageProps) {
+  const { checkout } = await searchParams;
   return (
     <main className="wrap">
       <div className="nav">
@@ -18,6 +21,15 @@ export default function Pricing() {
         </div>
         <Link className="btn secondary" href="/">Inicio</Link>
       </div>
+
+      {checkout === "cancelled" && (
+        <div className="card" style={{ marginBottom: 18 }}>
+          <b>Pago cancelado.</b>
+          <p className="muted" style={{ marginBottom: 0 }}>
+            No se realizó ningún cargo. Puedes elegir un plan cuando quieras.
+          </p>
+        </div>
+      )}
 
       <div className="grid grid4">
         {plans.map((plan) => (
