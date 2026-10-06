@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createServerSupabase } from "../../../../lib/supabase-server";
 import { consumeQuota } from "../../../../lib/entitlements";
 import { canAccessLevel, getProjectLevel } from "../../../../lib/access";
+import { createAdminSupabase } from "../../../../lib/admin";
 
 export async function POST(req: Request) {
   const supabase = await createServerSupabase();
@@ -48,7 +49,8 @@ export async function POST(req: Request) {
     );
   }
 
-  const { error } = await supabase.from("project_submissions").insert({
+  const admin = createAdminSupabase();
+  const { error } = await admin.from("project_submissions").insert({
     user_id: user.id,
     project_id: projectId,
     submission_text: submissionText,
