@@ -9,12 +9,20 @@ type PageProps = {
   }>;
   searchParams: Promise<{
     completed?: string;
+    exercise?: string;
   }>;
+};
+
+type Exercise = {
+  id: number;
+  prompt: string;
+  options: string[];
+  explanation: string | null;
 };
 
 export default async function LessonPage({ params, searchParams }: PageProps) {
   const { level, lesson: lessonSlug } = await params;
-  const { completed } = await searchParams;
+  const { completed, exercise: exerciseResult } = await searchParams;
   const levelNumber = Number(level);
 
   if (!Number.isInteger(levelNumber) || levelNumber < 1) notFound();
@@ -67,6 +75,38 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
     .eq("lesson_id", currentLesson.id)
     .maybeSingle();
 
+  const { data: exerciseRows } = await supabase
+    .from("exercises")
+    .select("id, prompt, options, explanation")
+    .eq("lesson_id", currentLesson.id)
+    .eq("status", "published")
+    .order("sort_order", { ascending: true });
+
+  const exercises = (exerciseRows ?? []) as Exercise[];
+  const exerciseIds = exercises.map((item) => item.id);
+
+  let attempts: any[] = [];
+
+  if (exerciseIds.length > 0) {
+    const { data } = await supabase
+      .from("exercise_attempts")
+      .select("exercise_id, answer, is_correct, created_at")
+      .eq("user_id", user.id)
+      .in("exercise_id", exerciseIds)
+      .order("created_at", { ascending: false });
+
+    attempts = data ?? [];
+  }
+
+  const latestAttemptByExercise = new Map<number, any>();
+
+  for (const attempt of attempts) {
+    const exerciseId = Number(attempt.exercise_id);
+    if (!latestAttemptByExercise.has(exerciseId)) {
+      latestAttemptByExercise.set(exerciseId, attempt);
+    }
+  }
+
   const isCompleted = progress?.status === "completed";
 
   return (
@@ -92,6 +132,33 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
           <b>Lección completada.</b>
           <p className="muted" style={{ marginBottom: 0 }}>
             Tu progreso se guardó correctamente.
+          </p>
+        </div>
+      )}
+
+      {exerciseResult === "correct" && (
+        <div className="card" style={{ marginBottom: 20 }}>
+          <b>Respuesta correcta.</b>
+          <p className="muted" style={{ marginBottom: 0 }}>
+            El intento se guardó en tu progreso.
+          </p>
+        </div>
+      )}
+
+      {exerciseResult === "incorrect" && (
+        <div className="card" style={{ marginBottom: 20 }}>
+          <b>Respuesta incorrecta.</b>
+          <p className="muted" style={{ marginBottom: 0 }}>
+            Revisa la explicación y vuelve a intentarlo cuando quieras.
+          </p>
+        </div>
+      )}
+
+      {exerciseResult === "limit" && (
+        <div className="card" style={{ marginBottom: 20 }}>
+          <b>Alcanzaste el límite mensual de ejercicios de tu plan.</b>
+          <p className="muted" style={{ marginBottom: 0 }}>
+            Puedes continuar estudiando el contenido y revisar tus intentos anteriores.
           </p>
         </div>
       )}
@@ -159,6 +226,78 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
           </div>
         </aside>
       </div>
+
+      {exercises.length > 0 && (
+        <section style={{ marginTop: 32 }}>
+          <span className="pill">PRÁCTICA</span>
+          <h2>Comprueba lo aprendido</h2>
+
+          <div style={{ display: "grid", gap: 18 }}>
+            {exercises.map((exercise) => {
+              const latestAttempt = latestAttemptByExercise.get(exercise.id);
+              const labels = ["A", "B", "C", "D"];
+
+              return (
+                <div className="card" key={exercise.id}>
+                  <h3 style={{ marginTop: 0 }}>{exercise.prompt}</h3>
+
+                  {latestAttempt && (
+                    <p className="muted">
+                      Último intento: {latestAttempt.is_correct ? "Correcto" : "Incorrecto"}
+                    </p>
+                  )}
+
+                  <form action="/api/exercises/submit" method="post">
+                    <input type="hidden" name="exercise_id" value={exercise.id} />
+                    <input type="hidden" name="level_number" value={currentLevel.level_number} />
+                    <input type="hidden" name="lesson_slug" value={currentLesson.slug} />
+
+                    <div style={{ display: "grid", gap: 10, margin: "18px 0" }}>
+                      {exercise.options.map((option, index) => (
+                        <label
+                          key={`${exercise.id}-${index}`}
+                          style={{
+                            display: "flex",
+                            gap: 10,
+                            alignItems: "flex-start",
+                            padding: 12,
+                            border: "1px solid #e5e9f0",
+                            borderRadius: 12,
+                            cursor: "pointer",
+                          }}
+                        >
+                          <input
+                            type="radio"
+                            name="answer"
+                            value={labels[index]}
+                            required
+                          />
+                          <span>
+                            <b>{labels[index]}.</b> {option}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
+
+                    <button className="btn" type="submit">
+                      Enviar respuesta
+                    </button>
+                  </form>
+
+                  {latestAttempt && exercise.explanation && (
+                    <div style={{ marginTop: 18 }}>
+                      <b>Explicación</b>
+                      <p className="muted" style={{ marginBottom: 0 }}>
+                        {exercise.explanation}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )}
     </main>
   );
 }
