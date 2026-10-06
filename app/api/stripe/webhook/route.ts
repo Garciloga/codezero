@@ -67,6 +67,8 @@ export async function POST(req: Request) {
             typeof session.subscription === "string"
               ? session.subscription
               : null,
+          billing_status: "active",
+          stripe_cancel_at_period_end: false,
           updated_at: new Date().toISOString(),
         })
         .eq("id", userId);
@@ -96,6 +98,14 @@ export async function POST(req: Request) {
         .update({
           plan_name: usable && plan ? plan : "free",
           status: "active",
+          billing_status:
+            event.type === "customer.subscription.deleted"
+              ? "canceled"
+              : subscription.status,
+          stripe_cancel_at_period_end:
+            event.type === "customer.subscription.deleted"
+              ? false
+              : Boolean(subscription.cancel_at_period_end),
           stripe_customer_id:
             typeof subscription.customer === "string"
               ? subscription.customer
@@ -121,6 +131,7 @@ export async function POST(req: Request) {
         .from("profiles")
         .update({
           status: "active",
+          billing_status: "active",
           updated_at: new Date().toISOString(),
         })
         .eq("stripe_customer_id", customerId);
@@ -136,6 +147,7 @@ export async function POST(req: Request) {
       await admin
         .from("profiles")
         .update({
+          billing_status: "past_due",
           updated_at: new Date().toISOString(),
         })
         .eq("stripe_customer_id", customerId);
