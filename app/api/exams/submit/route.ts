@@ -67,6 +67,18 @@ export async function POST(req: Request) {
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 
+  if (passed && levelNumber === 15) {
+    await admin.from("certificates").upsert(
+      {
+        user_id: user.id,
+        certificate_type: "codezero-complete",
+        title: "CodeZero · Programa completo",
+        metadata: { completed_levels: 15, final_exam_score: score },
+      },
+      { onConflict: "user_id,certificate_type" }
+    );
+  }
+
   return NextResponse.redirect(
     new URL(`/learn/${levelNumber}/exam?result=${passed ? "passed" : "failed"}&score=${score}`, req.url),
     303
