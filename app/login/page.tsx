@@ -13,6 +13,7 @@ export default function Login() {
   const [mode,setMode]=useState<"login"|"signup">("login");
   const [msg,setMsg]=useState("");
   const [busy,setBusy]=useState(false);
+  const [minorConsent,setMinorConsent]=useState(false);
 
   async function submit(e:FormEvent) {
     e.preventDefault();
@@ -25,6 +26,11 @@ export default function Login() {
         if (result.error) return setMsg("No pudimos iniciar sesión. Revisa tus datos o restablece tu contraseña.");
         router.push("/dashboard");
         router.refresh();
+        return;
+      }
+
+      if (!minorConsent) {
+        setMsg("Confirma que eres mayor de 18 años o que cuentas con autorización de tu madre, padre o tutor.");
         return;
       }
 
@@ -79,6 +85,20 @@ export default function Login() {
         <form onSubmit={submit} className="grid">
           <input placeholder="Email" type="email" value={email} onChange={e=>setEmail(e.target.value)} required />
           <input placeholder="Contraseña" type="password" value={password} onChange={e=>setPassword(e.target.value)} minLength={8} required />
+          {mode === "signup" && (
+            <label style={{display:"flex",gap:10,alignItems:"flex-start",fontSize:14}}>
+              <input
+                type="checkbox"
+                checked={minorConsent}
+                onChange={e=>setMinorConsent(e.target.checked)}
+                required
+                style={{marginTop:3}}
+              />
+              <span>
+                Soy mayor de 18 años o cuento con autorización de mi madre, padre o tutor legal para usar CodeZero.
+              </span>
+            </label>
+          )}
           <button className="btn" disabled={busy}>
             {busy ? "Procesando..." : mode==="login"?"Entrar":"Crear cuenta"}
           </button>
