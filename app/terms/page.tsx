@@ -28,6 +28,14 @@ export default function TermsPage() {
           funciones depende del plan contratado.
         </p>
 
+        <h2>Usuarios menores de edad</h2>
+        <p>
+          CodeZero puede ser utilizado por personas menores y mayores de 18 años. Cuando la persona
+          usuaria sea menor de edad, deberá contar con la autorización y supervisión de su madre,
+          padre o tutor legal cuando corresponda. La contratación de planes de pago por una persona
+          menor deberá realizarse con autorización del adulto responsable.
+        </p>
+
         <h2>Cuenta y acceso</h2>
         <p>
           Debes proporcionar información veraz, proteger tus credenciales y usar tu cuenta de
