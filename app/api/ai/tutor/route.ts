@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { createServerSupabase } from "../../../lib/supabase-server";
-import { consumeQuota } from "../../../lib/entitlements";
+import { createServerSupabase } from "../../../../lib/supabase-server";
+import { consumeQuota } from "../../../../lib/entitlements";
 
 export async function POST(req: Request) {
   const supabase = await createServerSupabase();
