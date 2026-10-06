@@ -21,6 +21,19 @@ export default function PrivacyPage() {
           Teléfono: <a href="tel:+525533881002">+52 55 3388 1002</a>
         </p>
 
+        <h2>Personas menores de edad</h2>
+        <p>
+          CodeZero está diseñado también para estudiantes menores de 18 años. Cuando una persona
+          menor utilice la plataforma, se espera la autorización y supervisión de su madre, padre o
+          tutor legal cuando corresponda. Procuramos limitar el tratamiento a los datos necesarios
+          para prestar el servicio educativo y operar la cuenta.
+        </p>
+        <p>
+          Si un adulto responsable considera que una persona menor proporcionó información sin la
+          autorización correspondiente, puede solicitar su revisión o eliminación mediante el correo
+          de privacidad publicado en esta página.
+        </p>
+
         <h2>Datos que podemos tratar</h2>
         <p>
           Información de cuenta como nombre y correo, progreso académico, respuestas e intentos,
