@@ -1,32 +1,35 @@
-﻿import Stripe from "stripe";
+import Stripe from "stripe";
 import { createServerSupabase } from "../../../../lib/supabase-server";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL;
 
   if (!stripeSecretKey) {
-    return NextResponse.json(
-      { error: "STRIPE_NOT_CONFIGURED" },
-      { status: 503 }
-    );
+    return NextResponse.json({ error: "STRIPE_NOT_CONFIGURED" }, { status: 503 });
+  }
+
+  if (!appUrl) {
+    return NextResponse.json({ error: "APP_URL_NOT_CONFIGURED" }, { status: 503 });
   }
 
   const stripe = new Stripe(stripeSecretKey);
-
   const supabase = await createServerSupabase();
+
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
   if (!user) {
-    return NextResponse.json(
-      { error: "UNAUTHENTICATED" },
-      { status: 401 }
-    );
+    return NextResponse.json({ error: "UNAUTHENTICATED" }, { status: 401 });
   }
 
   const { plan } = await req.json();
+
+  if (!["starter", "pro", "enterprise"].includes(plan)) {
+    return NextResponse.json({ error: "INVALID_PLAN" }, { status: 400 });
+  }
 
   const prices: Record<string, string | undefined> = {
     starter: process.env.STRIPE_STARTER_PRICE_ID,
@@ -37,25 +40,36 @@ export async function POST(req: Request) {
   const price = prices[plan];
 
   if (!price) {
-    return NextResponse.json(
-      { error: "PRICE_NOT_CONFIGURED" },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "PRICE_NOT_CONFIGURED" }, { status: 400 });
   }
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL;
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("plan_name, stripe_customer_id, stripe_subscription_id")
+    .eq("id", user.id)
+    .single();
 
-  if (!appUrl) {
-    return NextResponse.json(
-      { error: "APP_URL_NOT_CONFIGURED" },
-      { status: 503 }
-    );
+  if (
+    profile?.stripe_customer_id &&
+    profile?.stripe_subscription_id &&
+    profile?.plan_name &&
+    profile.plan_name !== "free"
+  ) {
+    const portal = await stripe.billingPortal.sessions.create({
+      customer: profile.stripe_customer_id,
+      return_url: `${appUrl}/profile`,
+    });
+
+    return NextResponse.json({ url: portal.url, existingSubscription: true });
   }
 
   const session = await stripe.checkout.sessions.create({
     mode: "subscription",
     line_items: [{ price, quantity: 1 }],
-    customer_email: user.email,
+    ...(profile?.stripe_customer_id
+      ? { customer: profile.stripe_customer_id }
+      : { customer_email: user.email }),
+    client_reference_id: user.id,
     metadata: {
       user_id: user.id,
       plan_name: plan,
