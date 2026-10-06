@@ -1,10 +1,10 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../lib/supabase-server";
 import { getEntitlements } from "../../lib/entitlements";
 
 type Level = {
-  id: string;
+  id: number;
   level_number: number;
   slug: string;
   title: string;
@@ -26,12 +26,54 @@ export default async function Dashboard() {
 
   const { data: levels, error: levelsError } = await supabase
     .from("levels")
-    .select(
-      "id, level_number, slug, title, description, estimated_hours"
-    )
+    .select("id, level_number, slug, title, description, estimated_hours")
     .order("level_number", { ascending: true });
 
   const learningLevels = (levels ?? []) as Level[];
+
+  const { data: lessons } = await supabase
+    .from("lessons")
+    .select("id, level_id")
+    .eq("status", "published");
+
+  const lessonRows = lessons ?? [];
+  const lessonIds = lessonRows.map((lesson: any) => lesson.id);
+
+  let completedLessonIds = new Set<number>();
+
+  if (lessonIds.length > 0) {
+    const { data: progressRows } = await supabase
+      .from("lesson_progress")
+      .select("lesson_id, status")
+      .eq("user_id", user.id)
+      .eq("status", "completed")
+      .in("lesson_id", lessonIds);
+
+    completedLessonIds = new Set(
+      (progressRows ?? []).map((row: any) => Number(row.lesson_id))
+    );
+  }
+
+  const progressByLevel = new Map<number, { total: number; completed: number }>();
+
+  for (const level of learningLevels) {
+    progressByLevel.set(level.id, { total: 0, completed: 0 });
+  }
+
+  for (const lesson of lessonRows as any[]) {
+    const entry = progressByLevel.get(Number(lesson.level_id));
+    if (!entry) continue;
+    entry.total += 1;
+    if (completedLessonIds.has(Number(lesson.id))) entry.completed += 1;
+  }
+
+  const totalLessons = lessonRows.length;
+  const totalCompleted = lessonRows.filter((lesson: any) =>
+    completedLessonIds.has(Number(lesson.id))
+  ).length;
+
+  const overallProgress =
+    totalLessons === 0 ? 0 : Math.round((totalCompleted / totalLessons) * 100);
 
   const totalHours = learningLevels.reduce(
     (sum, level) => sum + (level.estimated_hours ?? 0),
@@ -41,10 +83,7 @@ export default async function Dashboard() {
   const pct = (used: number, limit: number) =>
     limit < 0
       ? 0
-      : Math.min(
-          100,
-          Math.round((used / Math.max(1, limit)) * 100)
-        );
+      : Math.min(100, Math.round((used / Math.max(1, limit)) * 100));
 
   return (
     <main className="wrap">
@@ -52,9 +91,7 @@ export default async function Dashboard() {
         <div>
           <span className="pill">{ent.plan_name}</span>
           <h1>Mi CodeZero</h1>
-          <p className="muted">
-            De cero a construir soluciones técnicas para SaaS.
-          </p>
+          <p className="muted">De cero a construir soluciones técnicas para SaaS.</p>
         </div>
 
         <form action="/api/auth/signout" method="post">
@@ -80,7 +117,7 @@ export default async function Dashboard() {
 
         <div className="card">
           <div className="muted">Progreso</div>
-          <div className="stat">0%</div>
+          <div className="stat">{overallProgress}%</div>
         </div>
       </div>
 
@@ -105,8 +142,7 @@ export default async function Dashboard() {
             <span className="pill">RUTA DE APRENDIZAJE</span>
             <h2 style={{ marginBottom: 6 }}>Tu camino en CodeZero</h2>
             <p className="muted" style={{ margin: 0 }}>
-              Completa los 15 niveles desde fundamentos hasta integraciones
-              empresariales.
+              Completa los 15 niveles desde fundamentos hasta integraciones empresariales.
             </p>
           </div>
 
@@ -116,57 +152,63 @@ export default async function Dashboard() {
         </div>
 
         <div className="grid grid2">
-          {learningLevels.map((level) => (
-            <div className="card" key={level.id}>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  gap: 16,
-                  alignItems: "start",
-                }}
-              >
-                <div>
-                  <span className="pill">NIVEL {level.level_number}</span>
+          {learningLevels.map((level) => {
+            const progress = progressByLevel.get(level.id) ?? { total: 0, completed: 0 };
+            const levelProgress =
+              progress.total === 0
+                ? 0
+                : Math.round((progress.completed / progress.total) * 100);
 
-                  <h3 style={{ marginBottom: 8 }}>{level.title}</h3>
-
-                  <p className="muted">
-                    {level.description ??
-                      "Continúa desarrollando tus habilidades técnicas."}
-                  </p>
-                </div>
-
-                <b>{level.estimated_hours ?? 0}h</b>
-              </div>
-
-              <div style={{ marginTop: 18 }}>
+            return (
+              <div className="card" key={level.id}>
                 <div
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
-                    marginBottom: 8,
+                    gap: 16,
+                    alignItems: "start",
                   }}
                 >
-                  <span className="muted">Progreso</span>
-                  <span className="muted">0%</span>
+                  <div>
+                    <span className="pill">NIVEL {level.level_number}</span>
+                    <h3 style={{ marginBottom: 8 }}>{level.title}</h3>
+                    <p className="muted">
+                      {level.description ??
+                        "Continúa desarrollando tus habilidades técnicas."}
+                    </p>
+                  </div>
+
+                  <b>{level.estimated_hours ?? 0}h</b>
                 </div>
 
-                <div className="bar">
-                  <i style={{ width: "0%" }} />
+                <div style={{ marginTop: 18 }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      marginBottom: 8,
+                    }}
+                  >
+                    <span className="muted">Progreso</span>
+                    <span className="muted">{levelProgress}%</span>
+                  </div>
+
+                  <div className="bar">
+                    <i style={{ width: `${levelProgress}%` }} />
+                  </div>
+                </div>
+
+                <div style={{ marginTop: 18 }}>
+                  <Link
+                    className="btn secondary"
+                    href={`/learn/${level.level_number}`}
+                  >
+                    Entrar al nivel
+                  </Link>
                 </div>
               </div>
-
-              <div style={{ marginTop: 18 }}>
-                <Link
-                  className="btn secondary"
-                  href={`/learn/${level.level_number}`}
-                >
-                  Entrar al nivel
-                </Link>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -175,45 +217,16 @@ export default async function Dashboard() {
 
         <div className="grid grid2">
           {[
-            [
-              "Ejercicios",
-              usage.exercises ?? 0,
-              ent.exercise_limit,
-            ],
-            [
-              "Exámenes",
-              usage.exams ?? 0,
-              ent.exam_limit,
-            ],
-            [
-              "IA Tutor",
-              usage.ai_queries ?? 0,
-              ent.ai_query_limit,
-            ],
-            [
-              "Proyectos",
-              usage.projects ?? 0,
-              ent.project_limit,
-            ],
+            ["Ejercicios", usage.exercises ?? 0, ent.exercise_limit],
+            ["Exámenes", usage.exams ?? 0, ent.exam_limit],
+            ["IA Tutor", usage.ai_queries ?? 0, ent.ai_query_limit],
+            ["Proyectos", usage.projects ?? 0, ent.project_limit],
           ].map(([name, used, limit]) => (
             <div className="card" key={name as string}>
-              <p>
-                <b>{name}</b>
-              </p>
-
-              <p className="muted">
-                {used} usados de {limit}
-              </p>
-
+              <p><b>{name}</b></p>
+              <p className="muted">{used} usados de {limit}</p>
               <div className="bar">
-                <i
-                  style={{
-                    width: `${pct(
-                      used as number,
-                      limit as number
-                    )}%`,
-                  }}
-                />
+                <i style={{ width: `${pct(used as number, limit as number)}%` }} />
               </div>
             </div>
           ))}
@@ -222,4 +235,3 @@ export default async function Dashboard() {
     </main>
   );
 }
-
