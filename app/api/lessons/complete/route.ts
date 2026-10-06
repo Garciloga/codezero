@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createServerSupabase } from "../../../../lib/supabase-server";
 import { canAccessLevel, getLessonLevel } from "../../../../lib/access";
+import { createAdminSupabase } from "../../../../lib/admin";
 
 export async function POST(req: Request) {
   const supabase = await createServerSupabase();
@@ -26,7 +27,8 @@ export async function POST(req: Request) {
   }
 
   const now = new Date().toISOString();
-  const { error } = await supabase.from("lesson_progress").upsert(
+  const admin = createAdminSupabase();
+  const { error } = await admin.from("lesson_progress").upsert(
     {
       user_id: user.id,
       lesson_id: lessonId,
