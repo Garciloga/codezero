@@ -1,4 +1,5 @@
 ﻿import { createServerSupabase } from "./supabase-server";
+import { createAdminSupabase } from "./admin";
 
 export async function getEntitlements(userId: string) {
   const supabase = await createServerSupabase();
@@ -21,7 +22,7 @@ export async function consumeQuota(
   metric: "exercises" | "exams" | "ai_queries" | "projects",
   amount = 1
 ) {
-  const supabase = await createServerSupabase();
+  const supabase = createAdminSupabase();
   const { data, error } = await supabase.rpc("consume_quota", {
     p_user_id: userId,
     p_metric: metric,
