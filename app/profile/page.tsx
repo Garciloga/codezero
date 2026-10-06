@@ -44,6 +44,20 @@ export default async function ProfilePage() {
           <p><b>Plan:</b> {profile?.plan_name}</p>
           <p><b>Estado:</b> {profile?.status}</p>
 
+          {profile?.plan_name && profile.plan_name !== "free" ? (
+            <form action="/api/stripe/portal" method="post" style={{ marginTop: 20 }}>
+              <button className="btn secondary" type="submit">
+                Administrar suscripción
+              </button>
+            </form>
+          ) : (
+            <div style={{ marginTop: 20 }}>
+              <Link className="btn secondary" href="/pricing">
+                Ver planes
+              </Link>
+            </div>
+          )}
+
           {certificate && (
             <div style={{ marginTop: 20 }}>
               <span className="pill">CERTIFICACIÓN</span>
