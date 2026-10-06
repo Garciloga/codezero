@@ -13,7 +13,10 @@ type Level = {
   estimated_hours: number | null;
 };
 
-export default async function Dashboard() {
+type PageProps = { searchParams: Promise<{ checkout?: string }> };
+
+export default async function Dashboard({ searchParams }: PageProps) {
+  const { checkout } = await searchParams;
   const supabase = await createServerSupabase();
 
   const {
@@ -28,7 +31,7 @@ export default async function Dashboard() {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("role, plan_name")
+    .select("role, plan_name, billing_status, stripe_cancel_at_period_end")
     .eq("id", user.id)
     .single();
 
@@ -118,6 +121,33 @@ export default async function Dashboard() {
         </div>
       </div>
 
+      {checkout === "success" && (
+        <div className="card" style={{ marginBottom: 18 }}>
+          <b>Pago recibido.</b>
+          <p className="muted" style={{ marginBottom: 0 }}>
+            Stripe está confirmando tu suscripción. Tu plan se actualizará automáticamente.
+          </p>
+        </div>
+      )}
+
+      {profile?.billing_status === "past_due" && (
+        <div className="card" style={{ marginBottom: 18 }}>
+          <b>Hay un problema con tu último pago.</b>
+          <p className="muted" style={{ marginBottom: 0 }}>
+            Puedes actualizar tu método de pago desde Perfil → Administrar suscripción.
+          </p>
+        </div>
+      )}
+
+      {profile?.stripe_cancel_at_period_end && (
+        <div className="card" style={{ marginBottom: 18 }}>
+          <b>Tu suscripción está programada para cancelarse.</b>
+          <p className="muted" style={{ marginBottom: 0 }}>
+            Mantendrás el acceso mientras Stripe conserve la suscripción activa.
+          </p>
+        </div>
+      )}
+
       <div className="grid grid4">
         <div className="card">
           <div className="muted">Plan</div>
@@ -163,7 +193,13 @@ export default async function Dashboard() {
             const progress = progressByLevel.get(level.id) ?? { total: 0, completed: 0 };
             const levelProgress =
               progress.total === 0 ? 0 : Math.round((progress.completed / progress.total) * 100);
-            const unlocked = isLevelUnlocked(level.level_number, passedLevels);
+            const unlockedByProgress = isLevelUnlocked(level.level_number, passedLevels);
+            const includedInPlan = isLevelIncludedInPlan(
+              level.level_number,
+              profile?.plan_name ?? ent.plan_name,
+              profile?.role
+            );
+            const unlocked = unlockedByProgress && includedInPlan;
             const passed = passedLevels.has(level.level_number);
 
             return (
@@ -171,7 +207,7 @@ export default async function Dashboard() {
                 <div style={{ display: "flex", justifyContent: "space-between", gap: 16, alignItems: "start" }}>
                   <div>
                     <span className="pill">
-                      NIVEL {level.level_number} · {passed ? "APROBADO" : unlocked ? "DISPONIBLE" : "BLOQUEADO"}
+                      NIVEL {level.level_number} · {passed ? "APROBADO" : unlocked ? "DISPONIBLE" : !includedInPlan ? "REQUIERE PLAN" : "BLOQUEADO"}
                     </span>
                     <h3 style={{ marginBottom: 8 }}>{level.title}</h3>
                     <p className="muted">
@@ -195,6 +231,10 @@ export default async function Dashboard() {
                   {unlocked ? (
                     <Link className="btn secondary" href={`/learn/${level.level_number}`}>
                       {passed ? "Repasar nivel" : "Entrar al nivel"}
+                    </Link>
+                  ) : !includedInPlan ? (
+                    <Link className="btn secondary" href="/pricing">
+                      Ver planes
                     </Link>
                   ) : (
                     <span className="btn secondary" style={{ cursor: "not-allowed" }}>
