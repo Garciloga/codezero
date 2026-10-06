@@ -31,7 +31,7 @@ export default async function Admin({ searchParams }: PageProps) {
   ] = await Promise.all([
     admin
       .from("profiles")
-      .select("id,email,full_name,role,plan_name,status,created_at")
+      .select("id,email,full_name,role,plan_name,status,billing_status,stripe_cancel_at_period_end,created_at")
       .order("created_at", { ascending: false })
       .limit(100),
     admin.from("plans").select("*").order("sort_order"),
@@ -40,6 +40,7 @@ export default async function Admin({ searchParams }: PageProps) {
     admin
       .from("project_submissions")
       .select("id,user_id,project_id,submission_text,status,score,feedback,created_at")
+      .in("status", ["submitted", "needs_revision"])
       .order("created_at", { ascending: false })
       .limit(25),
   ]);
@@ -96,7 +97,7 @@ export default async function Admin({ searchParams }: PageProps) {
                 <th align="left">Email</th>
                 <th align="left">Rol</th>
                 <th align="left">Plan</th>
-                <th align="left">Estado</th>
+                <th align="left">Facturación</th>
                 <th align="left">Acción</th>
               </tr>
             </thead>
@@ -105,7 +106,13 @@ export default async function Admin({ searchParams }: PageProps) {
                 <tr key={u.id} style={{ borderTop: "1px solid #e5e9f0" }}>
                   <td style={{ padding: "14px 8px" }}>{u.email}</td>
                   <td style={{ padding: "14px 8px" }}>{u.role}</td>
-                  <td style={{ padding: "14px 8px" }} colSpan={3}>
+                  <td style={{ padding: "14px 8px" }}>
+                    <span>{u.billing_status ?? "—"}</span>
+                    {u.stripe_cancel_at_period_end && (
+                      <div className="muted" style={{ fontSize: 12 }}>Cancela al final del periodo</div>
+                    )}
+                  </td>
+                  <td style={{ padding: "14px 8px" }}>
                     <form
                       action="/api/admin/users/update"
                       method="post"
@@ -156,7 +163,7 @@ export default async function Admin({ searchParams }: PageProps) {
         <h2>Revisión de proyectos</h2>
 
         {(pendingProjects ?? []).length === 0 ? (
-          <p className="muted">Todavía no hay entregas de proyecto.</p>
+          <p className="muted">No hay proyectos pendientes de revisión.</p>
         ) : (
           <div style={{ display: "grid", gap: 16 }}>
             {(pendingProjects ?? []).map((submission) => (
