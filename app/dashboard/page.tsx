@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
-import { createServerSupabase } from "../../lib/supabase";
+﻿import { redirect } from "next/navigation";
+import { createServerSupabase } from "../../lib/supabase-server";
 import { getEntitlements } from "../../lib/entitlements";
 
 export default async function Dashboard() {
@@ -16,16 +16,17 @@ export default async function Dashboard() {
     <div className="grid grid4">
       <div className="card"><div className="muted">Plan</div><div className="stat">{ent.plan_name}</div></div>
       <div className="card"><div className="muted">Ejercicios</div><div className="stat">{usage.exercises ?? 0}/{ent.exercise_limit}</div></div>
-      <div className="card"><div className="muted">Exámenes</div><div className="stat">{usage.exams ?? 0}/{ent.exam_limit}</div></div>
+      <div className="card"><div className="muted">ExÃ¡menes</div><div className="stat">{usage.exams ?? 0}/{ent.exam_limit}</div></div>
       <div className="card"><div className="muted">Consultas IA</div><div className="stat">{usage.ai_queries ?? 0}/{ent.ai_query_limit}</div></div>
     </div>
     <div className="grid grid2" style={{marginTop:18}}>
       {[
         ["Ejercicios",usage.exercises??0,ent.exercise_limit],
-        ["Exámenes",usage.exams??0,ent.exam_limit],
+        ["ExÃ¡menes",usage.exams??0,ent.exam_limit],
         ["IA Tutor",usage.ai_queries??0,ent.ai_query_limit],
         ["Proyectos",usage.projects??0,ent.project_limit]
       ].map(([name,used,limit])=><div className="card" key={name as string}><b>{name}</b><p className="muted">{used} usados de {limit}</p><div className="bar"><i style={{width:`${pct(used as number,limit as number)}%`}}/></div></div>)}
     </div>
   </main>;
 }
+

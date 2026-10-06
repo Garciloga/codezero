@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
-import { createServerSupabase } from "../../lib/supabase";
+﻿import { redirect } from "next/navigation";
+import { createServerSupabase } from "../../lib/supabase-server";
 import { createAdminSupabase, requireAdmin } from "../../lib/admin";
 
 export default async function Admin() {
@@ -31,3 +31,4 @@ export default async function Admin() {
     </div>
   </main>;
 }
+

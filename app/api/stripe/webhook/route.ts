@@ -1,19 +1,34 @@
-import Stripe from "stripe";
+﻿import Stripe from "stripe";
 import { headers } from "next/headers";
 import { createAdminSupabase } from "../../../../lib/admin";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
-
 export async function POST(req: Request) {
+  const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+
+  if (!stripeSecretKey || !webhookSecret) {
+    return new Response("Stripe not configured", { status: 503 });
+  }
+
+  const stripe = new Stripe(stripeSecretKey);
+
   const body = await req.text();
   const signature = (await headers()).get("stripe-signature");
-  if (!signature) return new Response("Missing signature", {status:400});
+
+  if (!signature) {
+    return new Response("Missing signature", { status: 400 });
+  }
 
   let event: Stripe.Event;
+
   try {
-    event = stripe.webhooks.constructEvent(body, signature, process.env.STRIPE_WEBHOOK_SECRET!);
+    event = stripe.webhooks.constructEvent(
+      body,
+      signature,
+      webhookSecret
+    );
   } catch {
-    return new Response("Invalid signature", {status:400});
+    return new Response("Invalid signature", { status: 400 });
   }
 
   const admin = createAdminSupabase();
@@ -22,24 +37,46 @@ export async function POST(req: Request) {
     const session = event.data.object as Stripe.Checkout.Session;
     const userId = session.metadata?.user_id;
     const plan = session.metadata?.plan_name;
+
     if (userId && plan) {
-      await admin.from("profiles").update({
-        plan_name: plan,
-        status: "active",
-        stripe_customer_id: typeof session.customer === "string" ? session.customer : null,
-        stripe_subscription_id: typeof session.subscription === "string" ? session.subscription : null
-      }).eq("id", userId);
+      await admin
+        .from("profiles")
+        .update({
+          plan_name: plan,
+          status: "active",
+          stripe_customer_id:
+            typeof session.customer === "string"
+              ? session.customer
+              : null,
+          stripe_subscription_id:
+            typeof session.subscription === "string"
+              ? session.subscription
+              : null,
+        })
+        .eq("id", userId);
     }
   }
 
-  if (event.type === "customer.subscription.deleted" || event.type === "customer.subscription.updated") {
+  if (
+    event.type === "customer.subscription.deleted" ||
+    event.type === "customer.subscription.updated"
+  ) {
     const subscription = event.data.object as Stripe.Subscription;
     const userId = subscription.metadata?.user_id;
+
     if (userId) {
-      const active = ["active","trialing","past_due"].includes(subscription.status);
-      await admin.from("profiles").update({status: active ? "active" : "suspended"}).eq("id", userId);
+      const active = ["active", "trialing", "past_due"].includes(
+        subscription.status
+      );
+
+      await admin
+        .from("profiles")
+        .update({
+          status: active ? "active" : "suspended",
+        })
+        .eq("id", userId);
     }
   }
 
-  return Response.json({received:true});
+  return Response.json({ received: true });
 }

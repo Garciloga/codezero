@@ -1,4 +1,4 @@
-import { createServerSupabase } from "./supabase";
+﻿import { createServerSupabase } from "./supabase-server";
 
 export async function getEntitlements(userId: string) {
   const supabase = await createServerSupabase();
@@ -30,3 +30,4 @@ export async function consumeQuota(
   if (error) throw error;
   return data as { allowed: boolean; used: number; limit: number; remaining: number };
 }
+
