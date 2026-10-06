@@ -1,0 +1,29 @@
+import Link from "next/link";
+
+export default function TermsPage() {
+  return (
+    <main className="wrap">
+      <div className="nav">
+        <div><span className="pill">LEGAL</span><h1>Términos de uso</h1></div>
+        <Link className="btn secondary" href="/">Inicio</Link>
+      </div>
+      <article className="card" style={{lineHeight:1.75}}>
+        <p>Última actualización: 6 de octubre de 2026.</p>
+        <p>CodeZero ofrece contenido educativo, ejercicios, evaluaciones, proyectos y funciones digitales para aprender programación, SaaS e integraciones. El acceso a determinadas funciones depende del plan contratado.</p>
+        <h2>Cuenta y acceso</h2>
+        <p>Debes proporcionar información veraz, proteger tus credenciales y usar tu cuenta de forma personal salvo que un plan empresarial permita lo contrario. Podemos restringir cuentas ante uso abusivo, fraude, intentos de vulneración o incumplimiento de estos términos.</p>
+        <h2>Suscripciones</h2>
+        <p>Los planes de pago se cobran de forma recurrente a través de Stripe. El precio, periodicidad y moneda se muestran antes de confirmar la compra. Puedes administrar o cancelar una suscripción desde el portal de facturación disponible en tu perfil.</p>
+        <h2>Contenido educativo</h2>
+        <p>CodeZero busca ofrecer material útil y actualizado, pero no garantiza resultados profesionales, laborales, académicos ni comerciales específicos. El contenido no sustituye asesoría profesional especializada.</p>
+        <h2>Uso permitido</h2>
+        <p>No puedes intentar acceder a datos de otros usuarios, eludir límites de plan, extraer soluciones privadas, interferir con la infraestructura o usar el servicio para actividades ilegales.</p>
+        <h2>Disponibilidad</h2>
+        <p>Podemos modificar, mantener o interrumpir temporalmente partes del servicio para mejorar seguridad, rendimiento o funcionalidad. Procuraremos minimizar interrupciones.</p>
+        <h2>Cambios</h2>
+        <p>Podemos actualizar estos términos. Los cambios materiales se reflejarán en esta página con una nueva fecha de actualización.</p>
+        <p className="muted">Antes de un lanzamiento comercial amplio, estos términos deben revisarse con asesoría legal aplicable a la entidad operadora de CodeZero.</p>
+      </article>
+    </main>
+  );
+}
