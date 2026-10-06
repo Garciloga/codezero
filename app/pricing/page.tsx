@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const plans = [
-  { name: "Free", price: "$0", note: "Para empezar", features: ["Nivel 1 y ruta guiada", "20 ejercicios / mes", "1 examen / mes", "1 proyecto"], href: "/login" },
+  { name: "Free", price: "$0", note: "Para empezar", features: ["Nivel 1 y ruta guiada", "20 ejercicios / mes", "1 examen / mes", "Sin proyectos Capstone en Free"], href: "/login" },
   { name: "Starter", price: "$249 MXN", note: "Para avanzar con estructura", features: ["Ruta completa", "200 ejercicios / mes", "10 evaluaciones / mes", "20 consultas IA / mes", "5 proyectos"], href: "/checkout?plan=starter" },
   { name: "Pro", price: "$699 MXN", note: "Para formación intensiva", features: ["Ruta completa", "1,000 ejercicios / mes", "50 evaluaciones / mes", "100 consultas IA / mes", "20 proyectos", "Ruta SaaS e Integraciones"], href: "/checkout?plan=pro" },
   { name: "Enterprise", price: "Desde $1,299 MXN", note: "Para equipos y empresas", features: ["Usuarios y equipos", "Límites personalizados", "Administración central", "Preparado para SSO", "Soporte empresarial"], href: "/checkout?plan=enterprise" },
