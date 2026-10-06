@@ -8,13 +8,21 @@ type PageProps = {
   }>;
 };
 
+type Lesson = {
+  id: number;
+  slug: string;
+  title: string;
+  description: string | null;
+  content: string | null;
+  estimated_minutes: number;
+  sort_order: number;
+};
+
 export default async function LevelPage({ params }: PageProps) {
   const { level } = await params;
   const levelNumber = Number(level);
 
-  if (!Number.isInteger(levelNumber) || levelNumber < 1) {
-    notFound();
-  }
+  if (!Number.isInteger(levelNumber) || levelNumber < 1) notFound();
 
   const supabase = await createServerSupabase();
 
@@ -22,9 +30,7 @@ export default async function LevelPage({ params }: PageProps) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user) {
-    redirect("/login");
-  }
+  if (!user) redirect("/login");
 
   const { data: currentLevel, error: levelError } = await supabase
     .from("levels")
@@ -32,43 +38,35 @@ export default async function LevelPage({ params }: PageProps) {
     .eq("level_number", levelNumber)
     .single();
 
-  if (levelError || !currentLevel) {
-    notFound();
-  }
+  if (levelError || !currentLevel) notFound();
 
-  const { data: lessons } = await supabase
+  const { data: lessons, error: lessonsError } = await supabase
     .from("lessons")
-    .select("*")
+    .select("id, slug, title, description, content, estimated_minutes, sort_order")
     .eq("level_id", currentLevel.id)
+    .eq("status", "published")
     .order("sort_order", { ascending: true });
 
-  const lessonList = lessons ?? [];
+  const lessonList = (lessons ?? []) as Lesson[];
+  const lessonIds = lessonList.map((lesson) => lesson.id);
 
-  const lessonIds = lessonList.map((lesson: any) => lesson.id);
-
-  let progressRows: any[] = [];
+  let completedLessonIds = new Set<number>();
 
   if (lessonIds.length > 0) {
-    const { data } = await supabase
+    const { data: progressRows } = await supabase
       .from("lesson_progress")
-      .select("*")
+      .select("lesson_id, status")
       .eq("user_id", user.id)
       .in("lesson_id", lessonIds);
 
-    progressRows = data ?? [];
+    completedLessonIds = new Set(
+      (progressRows ?? [])
+        .filter((row: any) => row.status === "completed")
+        .map((row: any) => Number(row.lesson_id))
+    );
   }
 
-  const completedLessonIds = new Set(
-    progressRows
-      .filter(
-        (progress: any) =>
-          progress.completed === true ||
-          progress.status === "completed"
-      )
-      .map((progress: any) => progress.lesson_id)
-  );
-
-  const completedCount = lessonList.filter((lesson: any) =>
+  const completedCount = lessonList.filter((lesson) =>
     completedLessonIds.has(lesson.id)
   ).length;
 
@@ -98,17 +96,14 @@ export default async function LevelPage({ params }: PageProps) {
           <div className="muted">Nivel</div>
           <div className="stat">{currentLevel.level_number} / 15</div>
         </div>
-
         <div className="card">
           <div className="muted">Duración estimada</div>
           <div className="stat">{currentLevel.estimated_hours}h</div>
         </div>
-
         <div className="card">
           <div className="muted">Lecciones</div>
           <div className="stat">{lessonList.length}</div>
         </div>
-
         <div className="card">
           <div className="muted">Progreso</div>
           <div className="stat">{progressPercent}%</div>
@@ -116,23 +111,12 @@ export default async function LevelPage({ params }: PageProps) {
       </div>
 
       <section style={{ marginTop: 32 }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "end",
-            gap: 20,
-            marginBottom: 16,
-          }}
-        >
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", gap: 20, marginBottom: 16 }}>
           <div>
             <span className="pill">CONTENIDO DEL NIVEL</span>
             <h2 style={{ marginBottom: 4 }}>Lecciones</h2>
-            <p className="muted">
-              {completedCount} de {lessonList.length} completadas
-            </p>
+            <p className="muted">{completedCount} de {lessonList.length} completadas</p>
           </div>
-
           <strong>{progressPercent}%</strong>
         </div>
 
@@ -140,48 +124,45 @@ export default async function LevelPage({ params }: PageProps) {
           <i style={{ width: `${progressPercent}%` }} />
         </div>
 
+        {lessonsError && (
+          <div className="card" style={{ marginBottom: 16 }}>
+            <b>No se pudieron cargar las lecciones.</b>
+            <p className="muted">{lessonsError.message}</p>
+          </div>
+        )}
+
         {lessonList.length === 0 ? (
           <div className="card">
             <h3>Estamos preparando este nivel</h3>
-            <p className="muted">
-              El nivel ya existe en CodeZero, pero todavía no tiene lecciones
-              publicadas.
-            </p>
+            <p className="muted">El nivel ya existe, pero todavía no tiene lecciones publicadas.</p>
           </div>
         ) : (
           <div style={{ display: "grid", gap: 14 }}>
-            {lessonList.map((lesson: any, index: number) => {
+            {lessonList.map((lesson, index) => {
               const completed = completedLessonIds.has(lesson.id);
 
               return (
                 <div className="card" key={lesson.id}>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      gap: 20,
-                    }}
-                  >
-                    <div>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
+                    <div style={{ flex: "1 1 520px" }}>
                       <div className="muted" style={{ marginBottom: 6 }}>
-                        LECCIÓN {index + 1}
+                        LECCIÓN {index + 1} · {lesson.estimated_minutes} min
                       </div>
-
-                      <h3 style={{ marginTop: 0, marginBottom: 8 }}>
-                        {lesson.title}
-                      </h3>
-
+                      <h3 style={{ marginTop: 0, marginBottom: 8 }}>{lesson.title}</h3>
                       {lesson.description && (
-                        <p className="muted" style={{ marginBottom: 0 }}>
-                          {lesson.description}
-                        </p>
+                        <p className="muted" style={{ marginBottom: 0 }}>{lesson.description}</p>
                       )}
                     </div>
 
-                    <span className="pill">
-                      {completed ? "COMPLETADA" : "PENDIENTE"}
-                    </span>
+                    <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+                      <span className="pill">{completed ? "COMPLETADA" : "PENDIENTE"}</span>
+                      <Link
+                        className="btn secondary"
+                        href={`/learn/${currentLevel.level_number}/${lesson.slug}`}
+                      >
+                        {completed ? "Repasar" : "Abrir lección"}
+                      </Link>
+                    </div>
                   </div>
                 </div>
               );
