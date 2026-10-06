@@ -2,7 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../lib/supabase-server";
 import { getEntitlements } from "../../lib/entitlements";
-import { getPassedLevelNumbers, isLevelUnlocked } from "../../lib/learning";
+import { getPassedLevelNumbers, isLevelUnlocked, isLevelIncludedInPlan } from "../../lib/learning";
 
 type Level = {
   id: number;
@@ -25,6 +25,12 @@ export default async function Dashboard() {
   const ent = await getEntitlements(user.id);
   const usage = (ent as any).usage ?? {};
   const passedLevels = await getPassedLevelNumbers(user.id);
+
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("role, plan_name")
+    .eq("id", user.id)
+    .single();
 
   const { data: certificate } = await supabase
     .from("certificates")
