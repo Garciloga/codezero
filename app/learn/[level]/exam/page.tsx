@@ -49,6 +49,26 @@ export default async function ExamPage({ params, searchParams }: PageProps) {
     redirect(`/learn/${levelNumber}`);
   }
 
+  const { data: project } = await supabase
+    .from("level_projects")
+    .select("id")
+    .eq("level_id", currentLevel.id)
+    .eq("status", "published")
+    .maybeSingle();
+
+  if (project) {
+    const { data: submissions } = await supabase
+      .from("project_submissions")
+      .select("id")
+      .eq("user_id", user.id)
+      .eq("project_id", project.id)
+      .limit(1);
+
+    if ((submissions?.length ?? 0) === 0) {
+      redirect(`/learn/${levelNumber}/project`);
+    }
+  }
+
   const { data: exam } = await supabase
     .from("level_exams")
     .select("id, title, description, passing_score")
