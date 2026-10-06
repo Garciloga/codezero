@@ -60,6 +60,12 @@ export async function POST(req: Request) {
       user_id: user.id,
       plan_name: plan,
     },
+    subscription_data: {
+      metadata: {
+        user_id: user.id,
+        plan_name: plan,
+      },
+    },
     success_url: `${appUrl}/dashboard?checkout=success`,
     cancel_url: `${appUrl}/pricing?checkout=cancelled`,
   });
