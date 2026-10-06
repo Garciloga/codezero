@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createServerSupabase } from "../../../../lib/supabase-server";
-import { isLevelIncludedInPlan } from "../../../../lib/learning";
+import { getPassedLevelNumbers, isLevelIncludedInPlan, isLevelUnlocked } from "../../../../lib/learning";
 
 type PageProps = {
   params: Promise<{ level: string }>;
@@ -27,6 +27,11 @@ export default async function ProjectPage({ params, searchParams }: PageProps) {
 
   if (!isLevelIncludedInPlan(levelNumber, profile?.plan_name ?? "free", profile?.role)) {
     redirect("/pricing");
+  }
+
+  const passedLevels = await getPassedLevelNumbers(user.id);
+  if (!isLevelUnlocked(levelNumber, passedLevels)) {
+    redirect("/dashboard");
   }
 
   const { data: currentLevel } = await supabase
@@ -86,7 +91,7 @@ export default async function ProjectPage({ params, searchParams }: PageProps) {
 
         <section className="card">
           <h2>Tu entrega</h2>
-          {latest ? (
+          {latest && latest.status !== "needs_revision" ? (
             <>
               <p className="muted">Estado: {latest.status}</p>
               <p style={{ whiteSpace: "pre-wrap" }}>{latest.submission_text}</p>
@@ -94,7 +99,14 @@ export default async function ProjectPage({ params, searchParams }: PageProps) {
               {latest.feedback && <p><b>Feedback:</b> {latest.feedback}</p>}
             </>
           ) : (
-            <form action="/api/projects/submit" method="post">
+            <>
+              {latest?.status === "needs_revision" && (
+                <div style={{ marginBottom: 14 }}>
+                  <p><b>Se requieren cambios antes de aprobar el proyecto.</b></p>
+                  {latest.feedback && <p className="muted">{latest.feedback}</p>}
+                </div>
+              )}
+              <form action="/api/projects/submit" method="post">
               <input type="hidden" name="project_id" value={project.id} />
               <input type="hidden" name="level_number" value={levelNumber} />
               <textarea
@@ -105,8 +117,11 @@ export default async function ProjectPage({ params, searchParams }: PageProps) {
                 placeholder="Describe tu solución, decisiones técnicas, enlaces relevantes y cómo verificaste que funciona."
                 style={{ width: "100%", padding: 14, border: "1px solid #d8dee8", borderRadius: 12, font: "inherit" }}
               />
-              <button className="btn" type="submit" style={{ marginTop: 14 }}>Enviar proyecto</button>
+              <button className="btn" type="submit" style={{ marginTop: 14 }}>
+                {latest?.status === "needs_revision" ? "Reenviar proyecto" : "Enviar proyecto"}
+              </button>
             </form>
+            </>
           )}
         </section>
       </div>
