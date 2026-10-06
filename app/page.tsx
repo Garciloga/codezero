@@ -11,5 +11,10 @@ export default function Home() {
     <div className="grid grid4" style={{marginTop:18}}>
       {["Aprendizaje progresivo","Proyectos reales","SaaS e integraciones","Progreso medible"].map((x,i)=><div className="card" key={x}><h3>{x}</h3><p className="muted">{["Desde fundamentos hasta arquitectura.","Practica con retos y evaluaciones.","APIs, OAuth, webhooks y sistemas empresariales.","Competencias, exámenes y avance por niveles."][i]}</p></div>)}
     </div>
+    <footer className="muted" style={{marginTop:28,padding:"18px 0",display:"flex",gap:18,flexWrap:"wrap"}}>
+      <Link href="/terms">Términos</Link>
+      <Link href="/privacy">Privacidad</Link>
+      <Link href="/refunds">Cancelaciones y reembolsos</Link>
+    </footer>
   </main>;
 }
