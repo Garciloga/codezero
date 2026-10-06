@@ -69,10 +69,12 @@ export default function TermsPage() {
           seguridad, rendimiento o funcionalidad. Procuraremos minimizar interrupciones.
         </p>
 
-        <h2>Legislación aplicable</h2>
+        <h2>Legislación y jurisdicción aplicable</h2>
         <p>
-          Estos términos se interpretarán conforme a la legislación aplicable en México, sin
-          perjuicio de derechos irrenunciables que correspondan al usuario por ley.
+          Estos términos se interpretarán conforme a la legislación aplicable en México. Para
+          controversias que legalmente puedan someterse a elección de foro, las partes procurarán
+          resolverlas en Ciudad de México, México, sin perjuicio de los derechos irrenunciables y
+          mecanismos de protección al consumidor que correspondan por ley.
         </p>
 
         <h2>Cambios</h2>
