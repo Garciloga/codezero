@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createServerSupabase } from "../../../../lib/supabase-server";
 import { createAdminSupabase } from "../../../../lib/admin";
 import { consumeQuota } from "../../../../lib/entitlements";
+import { canAccessLevel, getExamLevel } from "../../../../lib/access";
 
 export async function POST(req: Request) {
   const supabase = await createServerSupabase();
@@ -11,38 +12,99 @@ export async function POST(req: Request) {
 
   const formData = await req.formData();
   const examId = Number(formData.get("exam_id"));
-  const levelNumber = Number(formData.get("level_number"));
 
-  if (!Number.isInteger(examId) || !Number.isInteger(levelNumber)) {
+  if (!Number.isInteger(examId)) {
     return NextResponse.json({ error: "INVALID_EXAM" }, { status: 400 });
   }
 
-  const quota = await consumeQuota(user.id, "exams", 1);
-  if (!quota.allowed) {
-    return NextResponse.redirect(new URL(`/learn/${levelNumber}/exam?result=limit`, req.url), 303);
+  const resolved = await getExamLevel(examId);
+  if (!resolved) {
+    return NextResponse.json({ error: "EXAM_NOT_FOUND" }, { status: 404 });
+  }
+
+  const { exam, levelNumber } = resolved;
+  if (!(await canAccessLevel(user.id, levelNumber))) {
+    return NextResponse.json({ error: "FORBIDDEN" }, { status: 403 });
   }
 
   const admin = createAdminSupabase();
 
-  const { data: exam } = await admin
-    .from("level_exams")
-    .select("id, passing_score")
-    .eq("id", examId)
+  const { data: currentLevel } = await admin
+    .from("levels")
+    .select("id")
+    .eq("level_number", levelNumber)
     .single();
 
-  if (!exam) return NextResponse.json({ error: "EXAM_NOT_FOUND" }, { status: 404 });
+  const { data: lessons } = await admin
+    .from("lessons")
+    .select("id")
+    .eq("level_id", currentLevel?.id)
+    .eq("status", "published");
+
+  const lessonIds = (lessons ?? []).map((x: any) => Number(x.id));
+  if (lessonIds.length === 0) {
+    return NextResponse.json({ error: "NO_LESSONS" }, { status: 409 });
+  }
+
+  const { data: completedRows } = await supabase
+    .from("lesson_progress")
+    .select("lesson_id")
+    .eq("user_id", user.id)
+    .eq("status", "completed")
+    .in("lesson_id", lessonIds);
+
+  if ((completedRows?.length ?? 0) < lessonIds.length) {
+    return NextResponse.json({ error: "LESSONS_INCOMPLETE" }, { status: 409 });
+  }
+
+  const { data: project } = await admin
+    .from("level_projects")
+    .select("id")
+    .eq("level_id", currentLevel?.id)
+    .eq("status", "published")
+    .maybeSingle();
+
+  if (project) {
+    const { data: approved } = await supabase
+      .from("project_submissions")
+      .select("id")
+      .eq("user_id", user.id)
+      .eq("project_id", project.id)
+      .eq("status", "approved")
+      .limit(1)
+      .maybeSingle();
+
+    if (!approved) {
+      return NextResponse.json({ error: "PROJECT_NOT_APPROVED" }, { status: 409 });
+    }
+  }
+
+  const quota = await consumeQuota(user.id, "exams", 1);
+  if (!quota.allowed) {
+    return NextResponse.redirect(
+      new URL(`/learn/${levelNumber}/exam?result=limit`, req.url),
+      303
+    );
+  }
 
   const { data: questions } = await admin
     .from("exam_questions")
     .select("id")
     .eq("exam_id", examId);
 
-  const questionIds = (questions ?? []).map((q: any) => q.id);
+  const questionIds = (questions ?? []).map((q: any) => Number(q.id));
+  if (questionIds.length === 0) {
+    return NextResponse.json({ error: "NO_QUESTIONS" }, { status: 409 });
+  }
 
   const { data: solutions } = await admin
     .from("exam_solutions")
     .select("question_id, correct_answer")
     .in("question_id", questionIds);
+
+  const solutionMap = new Map<number, string>(
+    (solutions ?? []).map((s: any) => [Number(s.question_id), String(s.correct_answer)])
+  );
 
   const answerMap: Record<string, string> = {};
   let correct = 0;
@@ -50,12 +112,11 @@ export async function POST(req: Request) {
   for (const questionId of questionIds) {
     const answer = String(formData.get(`q_${questionId}`) ?? "");
     answerMap[String(questionId)] = answer;
-    const solution = (solutions ?? []).find((s: any) => Number(s.question_id) === Number(questionId));
-    if (solution && answer === solution.correct_answer) correct += 1;
+    if (answer === solutionMap.get(questionId)) correct += 1;
   }
 
-  const score = questionIds.length === 0 ? 0 : Math.round((correct / questionIds.length) * 100);
-  const passed = score >= exam.passing_score;
+  const score = Math.round((correct / questionIds.length) * 100);
+  const passed = score >= Number(exam.passing_score);
 
   const { error } = await supabase.from("exam_attempts").insert({
     user_id: user.id,
@@ -80,7 +141,10 @@ export async function POST(req: Request) {
   }
 
   return NextResponse.redirect(
-    new URL(`/learn/${levelNumber}/exam?result=${passed ? "passed" : "failed"}&score=${score}`, req.url),
+    new URL(
+      `/learn/${levelNumber}/exam?result=${passed ? "passed" : "failed"}&score=${score}`,
+      req.url
+    ),
     303
   );
 }
