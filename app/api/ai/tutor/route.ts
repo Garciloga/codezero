@@ -21,7 +21,12 @@ export async function POST(req: Request) {
 
   const { question, context } = await req.json();
 
-  if (!question || typeof question !== "string") {
+  if (
+    !question ||
+    typeof question !== "string" ||
+    question.trim().length < 5 ||
+    question.length > 4000
+  ) {
     return NextResponse.json({ error: "INVALID_QUESTION" }, { status: 400 });
   }
 
@@ -41,7 +46,7 @@ export async function POST(req: Request) {
       Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: "gpt-6-astra",
+      model: process.env.OPENAI_MODEL ?? "gpt-6-luna",
       instructions:
         "Eres el tutor técnico de CodeZero. Enseña paso a paso, no resuelvas ejercicios evaluados directamente y prioriza comprensión, ejemplos pequeños y preguntas guiadas. Responde en español salvo que el alumno pida otro idioma.",
       input: [
@@ -50,7 +55,7 @@ export async function POST(req: Request) {
           content: [
             {
               type: "input_text",
-              text: `Contexto del curso: ${context ?? "CodeZero"}\n\nPregunta del alumno: ${question}`,
+              text: `Contexto del curso: ${String(context ?? "CodeZero").slice(0, 1500)}\n\nPregunta del alumno: ${question.trim()}`,
             },
           ],
         },
