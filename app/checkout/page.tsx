@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const labels: Record<string, string> = {
   starter: "Starter · $249 MXN/mes",
@@ -11,8 +10,12 @@ const labels: Record<string, string> = {
 };
 
 export default function CheckoutPage() {
-  const searchParams = useSearchParams();
-  const plan = searchParams.get("plan") ?? "starter";
+  const [plan, setPlan] = useState("starter");
+
+  useEffect(() => {
+    const selected = new URLSearchParams(window.location.search).get("plan");
+    if (selected && labels[selected]) setPlan(selected);
+  }, []);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
