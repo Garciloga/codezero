@@ -28,6 +28,8 @@ export default async function Admin({ searchParams }: PageProps) {
     { count: examAttempts },
     { count: projectSubmissions },
     { data: pendingProjects },
+    { count: failedWebhookEvents },
+    { data: webhookFailures },
   ] = await Promise.all([
     admin
       .from("profiles")
@@ -43,6 +45,16 @@ export default async function Admin({ searchParams }: PageProps) {
       .in("status", ["submitted", "needs_revision"])
       .order("created_at", { ascending: false })
       .limit(25),
+    admin
+      .from("stripe_webhook_events")
+      .select("*", { count: "exact", head: true })
+      .eq("status", "failed"),
+    admin
+      .from("stripe_webhook_events")
+      .select("event_id,event_type,status,attempts,last_error,updated_at")
+      .eq("status", "failed")
+      .order("updated_at", { ascending: false })
+      .limit(10),
   ]);
 
   return (
@@ -86,6 +98,24 @@ export default async function Admin({ searchParams }: PageProps) {
           <div className="stat">{projectSubmissions ?? 0}</div>
         </div>
       </div>
+
+      {(failedWebhookEvents ?? 0) > 0 && (
+        <div className="card" style={{ marginTop: 18 }}>
+          <span className="pill">ATENCIÓN</span>
+          <h2>Webhooks de Stripe con error: {failedWebhookEvents}</h2>
+          <div style={{ display: "grid", gap: 10 }}>
+            {(webhookFailures ?? []).map((event) => (
+              <div key={event.event_id} style={{ borderTop: "1px solid #e5e9f0", paddingTop: 10 }}>
+                <b>{event.event_type}</b>
+                <div className="muted">
+                  {event.event_id} · intentos {event.attempts} · {event.updated_at}
+                </div>
+                {event.last_error && <div className="muted">{event.last_error}</div>}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="card" style={{ marginTop: 18 }}>
         <h2>Usuarios</h2>
