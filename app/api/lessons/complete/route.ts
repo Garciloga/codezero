@@ -1,28 +1,31 @@
 import { NextResponse } from "next/server";
 import { createServerSupabase } from "../../../../lib/supabase-server";
+import { canAccessLevel, getLessonLevel } from "../../../../lib/access";
 
 export async function POST(req: Request) {
   const supabase = await createServerSupabase();
+  const { data: { user } } = await supabase.auth.getUser();
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user) {
-    return NextResponse.redirect(new URL("/login", req.url), 303);
-  }
+  if (!user) return NextResponse.redirect(new URL("/login", req.url), 303);
 
   const formData = await req.formData();
   const lessonId = Number(formData.get("lesson_id"));
-  const levelNumber = Number(formData.get("level_number"));
-  const lessonSlug = String(formData.get("lesson_slug") ?? "");
 
-  if (!Number.isInteger(lessonId) || !Number.isInteger(levelNumber) || !lessonSlug) {
+  if (!Number.isInteger(lessonId)) {
     return NextResponse.json({ error: "INVALID_LESSON" }, { status: 400 });
   }
 
-  const now = new Date().toISOString();
+  const resolved = await getLessonLevel(lessonId);
+  if (!resolved) {
+    return NextResponse.json({ error: "LESSON_NOT_FOUND" }, { status: 404 });
+  }
 
+  const { lesson, levelNumber } = resolved;
+  if (!(await canAccessLevel(user.id, levelNumber))) {
+    return NextResponse.json({ error: "FORBIDDEN" }, { status: 403 });
+  }
+
+  const now = new Date().toISOString();
   const { error } = await supabase.from("lesson_progress").upsert(
     {
       user_id: user.id,
@@ -33,17 +36,13 @@ export async function POST(req: Request) {
       completed_at: now,
       updated_at: now,
     },
-    {
-      onConflict: "user_id,lesson_id",
-    }
+    { onConflict: "user_id,lesson_id" }
   );
 
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
-  }
+  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 
   return NextResponse.redirect(
-    new URL(`/learn/${levelNumber}/${lessonSlug}?completed=1`, req.url),
+    new URL(`/learn/${levelNumber}/${lesson.slug}?completed=1`, req.url),
     303
   );
 }
