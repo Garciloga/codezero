@@ -26,6 +26,13 @@ export default async function Dashboard() {
   const usage = (ent as any).usage ?? {};
   const passedLevels = await getPassedLevelNumbers(user.id);
 
+  const { data: certificate } = await supabase
+    .from("certificates")
+    .select("id")
+    .eq("user_id", user.id)
+    .eq("certificate_type", "codezero-complete")
+    .maybeSingle();
+
   const { data: levels, error: levelsError } = await supabase
     .from("levels")
     .select("id, level_number, slug, title, description, estimated_hours")
@@ -190,6 +197,17 @@ export default async function Dashboard() {
           })}
         </div>
       </section>
+
+      {certificate && (
+        <section style={{ marginTop: 32 }}>
+          <div className="card">
+            <span className="pill">PROGRAMA COMPLETADO</span>
+            <h2>Tu certificación CodeZero está disponible</h2>
+            <p className="muted">Completaste los 15 niveles y aprobaste la evaluación final.</p>
+            <Link className="btn" href="/certificate">Ver certificado</Link>
+          </div>
+        </section>
+      )}
 
       <section style={{ marginTop: 32 }}>
         <h2>Uso mensual</h2>
