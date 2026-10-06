@@ -103,9 +103,13 @@ export default async function Dashboard() {
           <p className="muted">De cero a construir soluciones técnicas para SaaS.</p>
         </div>
 
-        <form action="/api/auth/signout" method="post">
-          <button className="btn secondary">Salir</button>
-        </form>
+        <div style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "flex-end" }}>
+          <Link className="btn secondary" href="/profile">Perfil</Link>
+          <Link className="btn secondary" href="/tutor">Tutor IA</Link>
+          <form action="/api/auth/signout" method="post">
+            <button className="btn secondary">Salir</button>
+          </form>
+        </div>
       </div>
 
       <div className="grid grid4">
