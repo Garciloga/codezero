@@ -1,9 +1,78 @@
+"use client";
+
 import Link from "next/link";
-export default function Checkout(){
- return <main className="wrap"><div className="card" style={{maxWidth:650,margin:"60px auto"}}>
-  <span className="pill">PAGO SEGURO</span><h1>Suscripción CodeZero</h1>
-  <p className="muted">El checkout real se conecta a Stripe mediante una sesión creada en servidor. No introduzcas aquí claves secretas.</p>
-  <p>Selecciona el plan desde la página de precios después de configurar los Price IDs de Stripe.</p>
-  <Link className="btn secondary" href="/pricing">Volver a planes</Link>
- </div></main>
+import { useSearchParams } from "next/navigation";
+import { useState } from "react";
+
+const labels: Record<string, string> = {
+  starter: "Starter · $249 MXN/mes",
+  pro: "Pro · $699 MXN/mes",
+  enterprise: "Enterprise · desde $1,299 MXN/mes",
+};
+
+export default function CheckoutPage() {
+  const searchParams = useSearchParams();
+  const plan = searchParams.get("plan") ?? "starter";
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  async function startCheckout() {
+    setLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/stripe/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ plan }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.url) {
+        if (data.error === "STRIPE_NOT_CONFIGURED") {
+          setError("Los pagos todavía no están activados.");
+        } else if (data.error === "UNAUTHENTICATED") {
+          setError("Inicia sesión antes de contratar un plan.");
+        } else {
+          setError("No fue posible iniciar el pago.");
+        }
+        return;
+      }
+
+      window.location.href = data.url;
+    } catch {
+      setError("No fue posible conectar con el sistema de pagos.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return (
+    <main className="wrap">
+      <div className="nav">
+        <div>
+          <span className="pill">CHECKOUT</span>
+          <h1>Contratar CodeZero</h1>
+          <p className="muted">Revisa tu selección antes de continuar al pago seguro.</p>
+        </div>
+        <Link className="btn secondary" href="/pricing">Volver a planes</Link>
+      </div>
+
+      <div className="card" style={{ maxWidth: 620 }}>
+        <div className="muted">Plan seleccionado</div>
+        <div className="stat">{labels[plan] ?? labels.starter}</div>
+
+        <p className="muted">
+          La suscripción se gestionará mediante Stripe.
+        </p>
+
+        {error && <p>{error}</p>}
+
+        <button className="btn" onClick={startCheckout} disabled={loading}>
+          {loading ? "Preparando pago..." : "Continuar al pago"}
+        </button>
+      </div>
+    </main>
+  );
 }
