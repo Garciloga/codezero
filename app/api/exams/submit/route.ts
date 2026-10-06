@@ -118,7 +118,7 @@ export async function POST(req: Request) {
   const score = Math.round((correct / questionIds.length) * 100);
   const passed = score >= Number(exam.passing_score);
 
-  const { error } = await supabase.from("exam_attempts").insert({
+  const { error } = await admin.from("exam_attempts").insert({
     user_id: user.id,
     exam_id: examId,
     score,
