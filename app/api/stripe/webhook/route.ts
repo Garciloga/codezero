@@ -2,7 +2,7 @@ import Stripe from "stripe";
 import { headers } from "next/headers";
 import { createAdminSupabase } from "../../../../lib/admin";
 
-const priceToPlan: Record<string, string | undefined> = {
+const priceToPlan: Record<string, "starter" | "pro" | "enterprise" | undefined> = {
   [process.env.STRIPE_STARTER_PRICE_ID ?? ""]: "starter",
   [process.env.STRIPE_PRO_PRICE_ID ?? ""]: "pro",
   [process.env.STRIPE_ENTERPRISE_PRICE_ID ?? ""]: "enterprise",
@@ -10,8 +10,11 @@ const priceToPlan: Record<string, string | undefined> = {
 
 function getPlanFromSubscription(subscription: Stripe.Subscription) {
   const priceId = subscription.items.data[0]?.price?.id;
-  if (priceId && priceToPlan[priceId]) return priceToPlan[priceId];
-  return subscription.metadata?.plan_name;
+  return priceId ? priceToPlan[priceId] : undefined;
+}
+
+function customerIdOf(value: Stripe.Subscription["customer"] | Stripe.Invoice["customer"] | Stripe.Checkout.Session["customer"]) {
+  return typeof value === "string" ? value : value?.id ?? null;
 }
 
 export async function POST(req: Request) {
@@ -26,9 +29,7 @@ export async function POST(req: Request) {
   const body = await req.text();
   const signature = (await headers()).get("stripe-signature");
 
-  if (!signature) {
-    return new Response("Missing signature", { status: 400 });
-  }
+  if (!signature) return new Response("Missing signature", { status: 400 });
 
   let event: Stripe.Event;
 
@@ -39,131 +40,171 @@ export async function POST(req: Request) {
   }
 
   const admin = createAdminSupabase();
+  const now = new Date();
+  const nowIso = now.toISOString();
 
   const { data: existing } = await admin
     .from("stripe_webhook_events")
-    .select("event_id")
+    .select("event_id,status,attempts,updated_at")
     .eq("event_id", event.id)
     .maybeSingle();
 
-  if (existing) {
+  if (existing?.status === "processed") {
     return Response.json({ received: true, duplicate: true });
   }
 
-  if (event.type === "checkout.session.completed") {
-    const session = event.data.object as Stripe.Checkout.Session;
-    const userId = session.metadata?.user_id;
-    const plan = session.metadata?.plan_name;
-
-    if (userId && plan) {
-      const { error } = await admin
-        .from("profiles")
-        .update({
-          plan_name: plan,
-          status: "active",
-          stripe_customer_id:
-            typeof session.customer === "string" ? session.customer : null,
-          stripe_subscription_id:
-            typeof session.subscription === "string"
-              ? session.subscription
-              : null,
-          billing_status: "active",
-          stripe_cancel_at_period_end: false,
-          updated_at: new Date().toISOString(),
-        })
-        .eq("id", userId);
-
-      if (error) {
-        return new Response("Profile update failed", { status: 500 });
-      }
-    }
-  }
-
   if (
-    event.type === "customer.subscription.created" ||
-    event.type === "customer.subscription.updated" ||
-    event.type === "customer.subscription.deleted"
+    existing?.status === "processing" &&
+    existing.updated_at &&
+    now.getTime() - new Date(existing.updated_at).getTime() < 5 * 60 * 1000
   ) {
-    const subscription = event.data.object as Stripe.Subscription;
-    const userId = subscription.metadata?.user_id;
-    const plan = getPlanFromSubscription(subscription);
+    return Response.json({ received: true, processing: true });
+  }
 
-    if (userId) {
-      const usable = ["active", "trialing", "past_due"].includes(
-        subscription.status
-      );
+  if (existing) {
+    const { error } = await admin
+      .from("stripe_webhook_events")
+      .update({
+        status: "processing",
+        attempts: Number(existing.attempts ?? 0) + 1,
+        last_error: null,
+        updated_at: nowIso,
+      })
+      .eq("event_id", event.id);
 
-      const { error } = await admin
-        .from("profiles")
-        .update({
-          plan_name: usable && plan ? plan : "free",
-          status: "active",
-          billing_status:
-            event.type === "customer.subscription.deleted"
-              ? "canceled"
-              : subscription.status,
-          stripe_cancel_at_period_end:
-            event.type === "customer.subscription.deleted"
-              ? false
-              : Boolean(subscription.cancel_at_period_end),
-          stripe_customer_id:
-            typeof subscription.customer === "string"
-              ? subscription.customer
-              : null,
-          stripe_subscription_id: usable ? subscription.id : null,
-          updated_at: new Date().toISOString(),
-        })
-        .eq("id", userId);
+    if (error) return new Response("Webhook claim failed", { status: 500 });
+  } else {
+    const { error } = await admin
+      .from("stripe_webhook_events")
+      .insert({
+        event_id: event.id,
+        event_type: event.type,
+        status: "processing",
+        attempts: 1,
+        processed_at: null,
+        updated_at: nowIso,
+      });
 
-      if (error) {
-        return new Response("Subscription sync failed", { status: 500 });
+    if (error) {
+      if ((error as any).code === "23505") {
+        return Response.json({ received: true, duplicate: true });
+      }
+      return new Response("Webhook claim failed", { status: 500 });
+    }
+  }
+
+  try {
+    if (event.type === "checkout.session.completed") {
+      const session = event.data.object as Stripe.Checkout.Session;
+      const userId = session.metadata?.user_id;
+      const plan = session.metadata?.plan_name;
+      const validPlan = plan === "starter" || plan === "pro" || plan === "enterprise";
+
+      if (userId && validPlan) {
+        const { error } = await admin
+          .from("profiles")
+          .update({
+            plan_name: plan,
+            stripe_customer_id: customerIdOf(session.customer),
+            stripe_subscription_id:
+              typeof session.subscription === "string"
+                ? session.subscription
+                : session.subscription?.id ?? null,
+            billing_status: "active",
+            stripe_cancel_at_period_end: false,
+            updated_at: nowIso,
+          })
+          .eq("id", userId);
+
+        if (error) throw error;
       }
     }
-  }
 
-  if (event.type === "invoice.paid") {
-    const invoice = event.data.object as Stripe.Invoice;
-    const customerId =
-      typeof invoice.customer === "string" ? invoice.customer : null;
+    if (
+      event.type === "customer.subscription.created" ||
+      event.type === "customer.subscription.updated" ||
+      event.type === "customer.subscription.deleted"
+    ) {
+      const subscription = event.data.object as Stripe.Subscription;
+      const customerId = customerIdOf(subscription.customer);
+      const metadataUserId = subscription.metadata?.user_id;
+      const plan = getPlanFromSubscription(subscription);
+      const usable = ["active", "trialing", "past_due"].includes(subscription.status);
 
-    if (customerId) {
-      await admin
-        .from("profiles")
-        .update({
-          status: "active",
-          billing_status: "active",
-          updated_at: new Date().toISOString(),
-        })
-        .eq("stripe_customer_id", customerId);
+      let query = admin.from("profiles").update({
+        plan_name:
+          event.type === "customer.subscription.deleted"
+            ? "free"
+            : usable && plan
+              ? plan
+              : "free",
+        billing_status:
+          event.type === "customer.subscription.deleted"
+            ? "canceled"
+            : subscription.status,
+        stripe_cancel_at_period_end:
+          event.type === "customer.subscription.deleted"
+            ? false
+            : Boolean(subscription.cancel_at_period_end),
+        stripe_customer_id: customerId,
+        stripe_subscription_id: usable ? subscription.id : null,
+        updated_at: nowIso,
+      });
+
+      if (metadataUserId) {
+        query = query.eq("id", metadataUserId);
+      } else if (customerId) {
+        query = query.eq("stripe_customer_id", customerId);
+      } else {
+        query = query.eq("id", "__no_matching_profile__");
+      }
+
+      const { error } = await query;
+      if (error) throw error;
     }
-  }
 
-  if (event.type === "invoice.payment_failed") {
-    const invoice = event.data.object as Stripe.Invoice;
-    const customerId =
-      typeof invoice.customer === "string" ? invoice.customer : null;
+    if (event.type === "invoice.paid" || event.type === "invoice.payment_failed") {
+      const invoice = event.data.object as Stripe.Invoice;
+      const customerId = customerIdOf(invoice.customer);
 
-    if (customerId) {
-      await admin
-        .from("profiles")
-        .update({
-          billing_status: "past_due",
-          updated_at: new Date().toISOString(),
-        })
-        .eq("stripe_customer_id", customerId);
+      if (customerId) {
+        const { error } = await admin
+          .from("profiles")
+          .update({
+            billing_status: event.type === "invoice.paid" ? "active" : "past_due",
+            updated_at: nowIso,
+          })
+          .eq("stripe_customer_id", customerId);
+
+        if (error) throw error;
+      }
     }
+
+    const { error: completeError } = await admin
+      .from("stripe_webhook_events")
+      .update({
+        status: "processed",
+        processed_at: nowIso,
+        last_error: null,
+        updated_at: nowIso,
+      })
+      .eq("event_id", event.id);
+
+    if (completeError) throw completeError;
+
+    return Response.json({ received: true });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Webhook processing failed";
+
+    await admin
+      .from("stripe_webhook_events")
+      .update({
+        status: "failed",
+        last_error: message.slice(0, 1000),
+        updated_at: new Date().toISOString(),
+      })
+      .eq("event_id", event.id);
+
+    return new Response("Webhook processing failed", { status: 500 });
   }
-
-  const { error: eventError } = await admin
-    .from("stripe_webhook_events")
-    .insert({
-      event_id: event.id,
-      event_type: event.type,
-    });
-
-  if (eventError) {
-    return new Response("Webhook event log failed", { status: 500 });
-  }
-
-  return Response.json({ received: true });
 }
