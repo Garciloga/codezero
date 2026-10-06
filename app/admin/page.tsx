@@ -3,11 +3,11 @@ import { createServerSupabase } from "../../lib/supabase-server";
 import { createAdminSupabase, requireAdmin } from "../../lib/admin";
 
 type PageProps = {
-  searchParams: Promise<{ updated?: string }>;
+  searchParams: Promise<{ updated?: string; reviewed?: string }>;
 };
 
 export default async function Admin({ searchParams }: PageProps) {
-  const { updated } = await searchParams;
+  const { updated, reviewed } = await searchParams;
 
   const supabase = await createServerSupabase();
   const { data: { user } } = await supabase.auth.getUser();
@@ -27,6 +27,7 @@ export default async function Admin({ searchParams }: PageProps) {
     { data: plans },
     { count: examAttempts },
     { count: projectSubmissions },
+    { data: pendingProjects },
   ] = await Promise.all([
     admin
       .from("profiles")
@@ -36,6 +37,11 @@ export default async function Admin({ searchParams }: PageProps) {
     admin.from("plans").select("*").order("sort_order"),
     admin.from("exam_attempts").select("*", { count: "exact", head: true }),
     admin.from("project_submissions").select("*", { count: "exact", head: true }),
+    admin
+      .from("project_submissions")
+      .select("id,user_id,project_id,submission_text,status,score,feedback,created_at")
+      .order("created_at", { ascending: false })
+      .limit(25),
   ]);
 
   return (
@@ -52,6 +58,12 @@ export default async function Admin({ searchParams }: PageProps) {
       {updated === "1" && (
         <div className="card" style={{ marginBottom: 18 }}>
           <b>Usuario actualizado.</b>
+        </div>
+      )}
+
+      {reviewed === "1" && (
+        <div className="card" style={{ marginBottom: 18 }}>
+          <b>Proyecto revisado.</b>
         </div>
       )}
 
@@ -138,6 +150,50 @@ export default async function Admin({ searchParams }: PageProps) {
             </tbody>
           </table>
         </div>
+      </div>
+
+      <div className="card" style={{ marginTop: 18 }}>
+        <h2>Revisión de proyectos</h2>
+
+        {(pendingProjects ?? []).length === 0 ? (
+          <p className="muted">Todavía no hay entregas de proyecto.</p>
+        ) : (
+          <div style={{ display: "grid", gap: 16 }}>
+            {(pendingProjects ?? []).map((submission) => (
+              <div key={submission.id} style={{ borderTop: "1px solid #e5e9f0", paddingTop: 16 }}>
+                <p className="muted">
+                  Usuario {submission.user_id} · Proyecto {submission.project_id} · Estado {submission.status}
+                </p>
+                <p style={{ whiteSpace: "pre-wrap" }}>{submission.submission_text}</p>
+
+                <form
+                  action="/api/admin/projects/review"
+                  method="post"
+                  style={{ display: "grid", gap: 10, maxWidth: 700 }}
+                >
+                  <input type="hidden" name="submission_id" value={submission.id} />
+                  <input
+                    type="number"
+                    name="score"
+                    min="0"
+                    max="100"
+                    defaultValue={submission.score ?? 70}
+                    required
+                    style={{ padding: 10, borderRadius: 10, border: "1px solid #d8dee8" }}
+                  />
+                  <textarea
+                    name="feedback"
+                    defaultValue={submission.feedback ?? ""}
+                    rows={4}
+                    placeholder="Feedback para el alumno"
+                    style={{ padding: 10, borderRadius: 10, border: "1px solid #d8dee8", font: "inherit" }}
+                  />
+                  <button className="btn secondary" type="submit">Guardar revisión</button>
+                </form>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="card" style={{ marginTop: 18 }}>
