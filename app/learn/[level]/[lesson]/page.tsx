@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createServerSupabase } from "../../../../lib/supabase-server";
-import { isLevelIncludedInPlan } from "../../../../lib/learning";
+import { getPassedLevelNumbers, isLevelIncludedInPlan, isLevelUnlocked } from "../../../../lib/learning";
 
 type PageProps = {
   params: Promise<{
@@ -44,6 +44,11 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
 
   if (!isLevelIncludedInPlan(levelNumber, profile?.plan_name ?? "free", profile?.role)) {
     redirect("/pricing");
+  }
+
+  const passedLevels = await getPassedLevelNumbers(user.id);
+  if (!isLevelUnlocked(levelNumber, passedLevels)) {
+    redirect("/dashboard");
   }
 
   const { data: currentLevel } = await supabase
