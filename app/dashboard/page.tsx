@@ -2,6 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../lib/supabase-server";
 import { getEntitlements } from "../../lib/entitlements";
+import { getPassedLevelNumbers, isLevelUnlocked } from "../../lib/learning";
 
 type Level = {
   id: number;
@@ -23,6 +24,7 @@ export default async function Dashboard() {
 
   const ent = await getEntitlements(user.id);
   const usage = (ent as any).usage ?? {};
+  const passedLevels = await getPassedLevelNumbers(user.id);
 
   const { data: levels, error: levelsError } = await supabase
     .from("levels")
@@ -104,17 +106,14 @@ export default async function Dashboard() {
           <div className="muted">Plan</div>
           <div className="stat">{ent.plan_name}</div>
         </div>
-
         <div className="card">
           <div className="muted">Niveles</div>
           <div className="stat">{learningLevels.length}</div>
         </div>
-
         <div className="card">
           <div className="muted">Ruta completa</div>
           <div className="stat">{totalHours}h</div>
         </div>
-
         <div className="card">
           <div className="muted">Progreso</div>
           <div className="stat">{overallProgress}%</div>
@@ -129,23 +128,14 @@ export default async function Dashboard() {
       )}
 
       <section style={{ marginTop: 32 }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "end",
-            gap: 16,
-            marginBottom: 16,
-          }}
-        >
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", gap: 16, marginBottom: 16 }}>
           <div>
             <span className="pill">RUTA DE APRENDIZAJE</span>
             <h2 style={{ marginBottom: 6 }}>Tu camino en CodeZero</h2>
             <p className="muted" style={{ margin: 0 }}>
-              Completa los 15 niveles desde fundamentos hasta integraciones empresariales.
+              Completa cada nivel y aprueba su evaluación para desbloquear el siguiente.
             </p>
           </div>
-
           <div className="muted">
             {learningLevels.length} niveles · {totalHours} horas
           </div>
@@ -155,56 +145,45 @@ export default async function Dashboard() {
           {learningLevels.map((level) => {
             const progress = progressByLevel.get(level.id) ?? { total: 0, completed: 0 };
             const levelProgress =
-              progress.total === 0
-                ? 0
-                : Math.round((progress.completed / progress.total) * 100);
+              progress.total === 0 ? 0 : Math.round((progress.completed / progress.total) * 100);
+            const unlocked = isLevelUnlocked(level.level_number, passedLevels);
+            const passed = passedLevels.has(level.level_number);
 
             return (
-              <div className="card" key={level.id}>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    gap: 16,
-                    alignItems: "start",
-                  }}
-                >
+              <div className="card" key={level.id} style={{ opacity: unlocked ? 1 : 0.65 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", gap: 16, alignItems: "start" }}>
                   <div>
-                    <span className="pill">NIVEL {level.level_number}</span>
+                    <span className="pill">
+                      NIVEL {level.level_number} · {passed ? "APROBADO" : unlocked ? "DISPONIBLE" : "BLOQUEADO"}
+                    </span>
                     <h3 style={{ marginBottom: 8 }}>{level.title}</h3>
                     <p className="muted">
-                      {level.description ??
-                        "Continúa desarrollando tus habilidades técnicas."}
+                      {level.description ?? "Continúa desarrollando tus habilidades técnicas."}
                     </p>
                   </div>
-
                   <b>{level.estimated_hours ?? 0}h</b>
                 </div>
 
                 <div style={{ marginTop: 18 }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      marginBottom: 8,
-                    }}
-                  >
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
                     <span className="muted">Progreso</span>
                     <span className="muted">{levelProgress}%</span>
                   </div>
-
                   <div className="bar">
                     <i style={{ width: `${levelProgress}%` }} />
                   </div>
                 </div>
 
                 <div style={{ marginTop: 18 }}>
-                  <Link
-                    className="btn secondary"
-                    href={`/learn/${level.level_number}`}
-                  >
-                    Entrar al nivel
-                  </Link>
+                  {unlocked ? (
+                    <Link className="btn secondary" href={`/learn/${level.level_number}`}>
+                      {passed ? "Repasar nivel" : "Entrar al nivel"}
+                    </Link>
+                  ) : (
+                    <span className="btn secondary" style={{ cursor: "not-allowed" }}>
+                      Completa el nivel anterior
+                    </span>
+                  )}
                 </div>
               </div>
             );
@@ -214,7 +193,6 @@ export default async function Dashboard() {
 
       <section style={{ marginTop: 32 }}>
         <h2>Uso mensual</h2>
-
         <div className="grid grid2">
           {[
             ["Ejercicios", usage.exercises ?? 0, ent.exercise_limit],
