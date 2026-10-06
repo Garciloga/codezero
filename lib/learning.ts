@@ -48,3 +48,14 @@ export function isLevelUnlocked(levelNumber: number, passedLevels: Set<number>) 
 
   return true;
 }
+
+
+export function isLevelIncludedInPlan(
+  levelNumber: number,
+  planName: string,
+  role?: string | null
+) {
+  if (role === "owner" || role === "admin") return true;
+  if (planName === "starter" || planName === "pro" || planName === "enterprise") return true;
+  return levelNumber === 1;
+}
