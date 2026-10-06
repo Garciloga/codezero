@@ -48,7 +48,7 @@ export async function POST(req: Request) {
   }
 
   const isCorrect = answer === solution.correct_answer;
-  const { error: attemptError } = await supabase.from("exercise_attempts").insert({
+  const { error: attemptError } = await admin.from("exercise_attempts").insert({
     user_id: user.id,
     exercise_id: exerciseId,
     answer,
