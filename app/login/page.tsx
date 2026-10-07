@@ -88,7 +88,7 @@ export default function Login() {
   }
 
   return (
-    <main id="main-content" className="wrap">
+    <main className="wrap">
       <div className="card" style={{maxWidth:480,margin:"70px auto"}}>
         <span className="pill">CODEZERO</span>
         <h1>{mode==="login"?"Iniciar sesión":"Crear cuenta"}</h1>
