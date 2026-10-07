@@ -49,10 +49,20 @@ export default function PrivacyPage() {
 
         <h2>Proveedores</h2>
         <p>
-          CodeZero utiliza proveedores tecnológicos para hosting, base de datos, autenticación,
-          procesamiento de pagos y otros servicios necesarios para operar la plataforma.
-          Estos proveedores pueden procesar información únicamente para prestar sus servicios
-          conforme a sus propias obligaciones y medidas de seguridad.
+          CodeZero utiliza proveedores tecnológicos para operar la plataforma. Entre ellos se
+          encuentran Vercel para hosting y despliegue, Supabase para base de datos y autenticación,
+          y Stripe para procesamiento y administración de pagos. Resend podrá utilizarse para correo
+          transaccional cuando el servicio de dominio y SMTP quede habilitado. El proveedor de IA
+          solo tratará consultas cuando el Tutor IA sea habilitado. Estos proveedores procesan
+          información conforme a la función técnica que prestan y a sus propias obligaciones de
+          seguridad y privacidad.
+        </p>
+
+        <h2>Transferencias y procesamiento técnico</h2>
+        <p>
+          Algunos proveedores pueden procesar información en infraestructura ubicada fuera de
+          México. CodeZero procura limitar los datos compartidos a lo necesario para prestar cada
+          servicio y mantener controles de acceso adecuados.
         </p>
 
         <h2>Conservación y seguridad</h2>
