@@ -1,8 +1,12 @@
 import { NextResponse } from "next/server";
 import { createServerSupabase } from "../../../../../lib/supabase-server";
 import { createAdminSupabase, requireAdmin } from "../../../../../lib/admin";
+import { isTrustedBrowserRequest } from "../../../../../lib/security";
 
 export async function POST(req: Request) {
+  if (!isTrustedBrowserRequest(req)) {
+    return new Response("Invalid request origin", { status: 403 });
+  }
   const supabase = await createServerSupabase();
   const { data: { user } } = await supabase.auth.getUser();
 
