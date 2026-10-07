@@ -1,6 +1,6 @@
 import Link from "next/link";
 export default function Home() {
-  return <main className="wrap">
+  return <main id="main-content" className="wrap">
     <div className="nav"><strong>CODEZERO</strong><div><Link href="/about">Qué es</Link> &nbsp; <Link href="/pricing">Precios</Link> &nbsp; <Link href="/login">Entrar</Link></div></div>
     <section className="card" style={{marginTop:35,padding:"54px 34px"}}>
       <span className="pill">PROGRAMACIÓN · SAAS · INTEGRACIONES</span>
