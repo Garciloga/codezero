@@ -13,9 +13,7 @@ input,textarea,select{font:inherit}
 .skip-link:focus{transform:translateY(0)}
 main{scroll-margin-top:16px}
 
-.skip-link{position:fixed;left:16px;top:12px;z-index:9999;padding:10px 14px;border-radius:10px;background:#111827;color:#fff;transform:translateY(-160%)}
-.skip-link:focus{transform:translateY(0)}
-main{scroll-margin-top:16px}
+
 
 
 .language-selector { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: .65rem; max-width: 1200px; margin: 0 auto; padding: .65rem 1rem; color: var(--text, #182230); }
@@ -26,3 +24,13 @@ main{scroll-margin-top:16px}
 .language-selector select:focus-visible { outline: 3px solid var(--user-accent, #2346d8); outline-offset: 3px; }
 [data-appearance=dark] .language-selector { color: #f2f4f7; }
 [data-appearance=dark] .language-selector select { background: #182230; }
+
+/* Reflow at narrow widths and zoom; preserve readable code and tables. */
+.wrap,.card,fieldset { min-width: 0; }
+.card p,.card li,.nav h1 { overflow-wrap: anywhere; }
+.nav { flex-wrap: wrap; gap: 12px; }
+pre { max-width: 100%; overflow-x: auto; }
+button,input,select,textarea { max-width: 100%; }
+button,.btn,summary { min-height: 44px; }
+.public-login-tabs > * { flex: 1; min-width: 0; }
+.support-message { background: var(--user-tint, #eef2ff); color: var(--user-text, #152033); }

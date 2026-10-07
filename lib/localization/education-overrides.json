@@ -1,0 +1,202 @@
+{
+  "Descomponer antes de programar": [
+    "Break the problem down before coding",
+    "Decomponha o problema antes de programar",
+    "Décomposez le problème avant de programmer"
+  ],
+  "Para tres precios de 10, 20 y 30, primero suma 60; después divide entre 3. El promedio es 20. Separa entrada, operación y resultado antes de escribir código.": [
+    "For three prices of 10, 20 and 30, add them to get 60, then divide by 3. The average is 20. Identify the input, operation and result before writing code.",
+    "Para três preços de 10, 20 e 30, some os valores para obter 60 e divida por 3. A média é 20. Identifique a entrada, a operação e o resultado antes de escrever código.",
+    "Pour trois prix de 10, 20 et 30, additionnez les valeurs pour obtenir 60, puis divisez par 3. La moyenne est 20. Identifiez l’entrée, l’opération et le résultat avant d’écrire du code."
+  ],
+  "Una lista vacía no tiene promedio. Comprueba la cantidad antes de dividir y explica qué respuesta ofrecerías.": [
+    "An empty list has no average. Check the number of items before dividing and explain what response you would give.",
+    "Uma lista vazia não tem média. Verifique a quantidade de elementos antes de dividir e explique qual resposta você daria.",
+    "Une liste vide n’a pas de moyenne. Vérifiez le nombre d’éléments avant de diviser et expliquez quelle réponse vous fourniriez."
+  ],
+  "Cambia un precio por 0 y predice el nuevo promedio antes de calcularlo.": [
+    "Replace one price with 0 and predict the new average before calculating it.",
+    "Substitua um preço por 0 e preveja a nova média antes de calculá-la.",
+    "Remplacez un prix par 0 et prévoyez la nouvelle moyenne avant de la calculer."
+  ],
+  "Validar, filtrar y probar límites": [
+    "Validate, filter and test edge cases",
+    "Valide, filtre e teste casos limite",
+    "Validez, filtrez et testez les cas limites"
+  ],
+  "De 4, -2 y 7, conserva los números positivos y suma 11. La condición se aplica a cada elemento; la suma se realiza sobre el resultado filtrado.": [
+    "From 4, -2 and 7, keep the positive numbers and add them to get 11. Apply the condition to each item, then sum the filtered result.",
+    "Entre 4, -2 e 7, mantenha os números positivos e some-os para obter 11. Aplique a condição a cada elemento e depois some o resultado filtrado.",
+    "Parmi 4, -2 et 7, conservez les nombres positifs et additionnez-les pour obtenir 11. Appliquez la condition à chaque élément, puis additionnez les valeurs filtrées."
+  ],
+  "El texto 'x' no es un entero válido. Recházalo o registra el error de conversión; no lo conviertas silenciosamente en 0.": [
+    "The text 'x' is not a valid integer. Reject it or record the conversion error; do not silently convert it to 0.",
+    "O texto 'x' não é um inteiro válido. Rejeite-o ou registre o erro de conversão; não o converta silenciosamente em 0.",
+    "Le texte 'x' n’est pas un entier valide. Rejetez-le ou consignez l’erreur de conversion ; ne le convertissez pas silencieusement en 0."
+  ],
+  "Prueba una lista vacía, solo negativos y un valor 0. Explica por qué la suma de una lista vacía es 0.": [
+    "Test an empty list, a list containing only negative numbers and a value of 0. Explain why the sum of an empty list is 0.",
+    "Teste uma lista vazia, uma lista só com números negativos e um valor 0. Explique por que a soma de uma lista vazia é 0.",
+    "Testez une liste vide, une liste contenant uniquement des nombres négatifs et une valeur 0. Expliquez pourquoi la somme d’une liste vide est 0."
+  ],
+  "Revisar un cambio antes de registrarlo": [
+    "Review a change before committing it",
+    "Revise uma alteração antes de registrá-la",
+    "Vérifiez une modification avant de créer un commit"
+  ],
+  "Consulta el estado, revisa las diferencias y prepara solo el archivo esperado. El commit debe explicar un cambio que otra persona pueda revisar.": [
+    "Check the status, review the differences and stage only the expected file. The commit should describe a change that someone else can review.",
+    "Consulte o status, revise as diferenças e prepare apenas o arquivo esperado. O commit deve descrever uma alteração que outra pessoa possa revisar.",
+    "Consultez l’état, vérifiez les différences et préparez uniquement le fichier prévu. Le commit doit décrire une modification qu’une autre personne peut examiner."
+  ],
+  "Un archivo de configuración puede contener credenciales. Revisa las diferencias antes de agregarlo y conserva los secretos fuera del repositorio.": [
+    "A configuration file may contain credentials. Review the differences before staging it and keep secrets out of the repository.",
+    "Um arquivo de configuração pode conter credenciais. Revise as diferenças antes de adicioná-lo e mantenha os segredos fora do repositório.",
+    "Un fichier de configuration peut contenir des identifiants secrets. Vérifiez les différences avant de l’ajouter et conservez les secrets hors du dépôt."
+  ],
+  "Explica qué harías si aparece un archivo ajeno al cambio. Prepara una copia ficticia para practicar.": [
+    "Explain what you would do if a file unrelated to the change appeared. Use a fictional copy to practice.",
+    "Explique o que faria se aparecesse um arquivo sem relação com a alteração. Use uma cópia fictícia para praticar.",
+    "Expliquez ce que vous feriez si un fichier sans rapport avec la modification apparaissait. Utilisez une copie fictive pour vous entraîner."
+  ],
+  "Relacionar filas sin duplicar conclusiones": [
+    "Join rows without drawing duplicate conclusions",
+    "Relacione linhas sem duplicar conclusões",
+    "Reliez les lignes sans compter deux fois les mêmes éléments"
+  ],
+  "Una cuenta tiene dos tickets. Un JOIN devuelve una fila por ticket, no una fila por cuenta. Usa COUNT para responder cuántos tickets tiene cada cuenta.": [
+    "An account has two tickets. A JOIN returns one row per ticket, not one row per account. Use COUNT to find how many tickets each account has.",
+    "Uma conta tem dois tickets. Um JOIN retorna uma linha por ticket, não uma linha por conta. Use COUNT para descobrir quantos tickets cada conta possui.",
+    "Un compte possède deux tickets. Un JOIN renvoie une ligne par ticket, et non une ligne par compte. Utilisez COUNT pour déterminer le nombre de tickets de chaque compte."
+  ],
+  "Un INNER JOIN omite cuentas sin tickets. Si necesitas incluirlas, usa LEFT JOIN y cuenta el ID del ticket, no todas las filas.": [
+    "An INNER JOIN omits accounts with no tickets. To include them, use LEFT JOIN and count the ticket ID rather than every row.",
+    "Um INNER JOIN omite contas sem tickets. Para incluí-las, use LEFT JOIN e conte o ID do ticket, não todas as linhas.",
+    "Un INNER JOIN omet les comptes sans ticket. Pour les inclure, utilisez LEFT JOIN et comptez l’ID du ticket plutôt que toutes les lignes."
+  ],
+  "Agrega una cuenta sin tickets y predice cómo cambian los resultados de ambos tipos de JOIN.": [
+    "Add an account with no tickets and predict how the results of both JOIN types will change.",
+    "Adicione uma conta sem tickets e preveja como os resultados dos dois tipos de JOIN mudarão.",
+    "Ajoutez un compte sans ticket et prévoyez comment les résultats des deux types de JOIN changeront."
+  ],
+  "Un formulario comprensible sin depender del color": [
+    "Make a form understandable without relying on color",
+    "Crie um formulário compreensível sem depender da cor",
+    "Créez un formulaire compréhensible sans dépendre de la couleur"
+  ],
+  "Relaciona la etiqueta con el campo mediante for e id. La persona debe conocer qué dato se pide antes de escribirlo; el placeholder no reemplaza la etiqueta.": [
+    "Associate the label with the field using for and id. People should know what information is required before typing; a placeholder does not replace a label.",
+    "Associe o rótulo ao campo usando for e id. A pessoa deve saber qual informação é solicitada antes de digitar; o placeholder não substitui o rótulo.",
+    "Associez le libellé au champ avec for et id. La personne doit savoir quelle information est demandée avant de saisir du texte ; le placeholder ne remplace pas le libellé."
+  ],
+  "Un borde rojo por sí solo no explica el error. Añade un mensaje visible y enlázalo con aria-describedby; prueba el formulario usando Tab.": [
+    "A red border alone does not explain an error. Add a visible message linked through aria-describedby and test the form with Tab.",
+    "Uma borda vermelha, sozinha, não explica o erro. Adicione uma mensagem visível vinculada por aria-describedby e teste o formulário usando Tab.",
+    "Une bordure rouge ne suffit pas à expliquer une erreur. Ajoutez un message visible lié par aria-describedby et testez le formulaire avec Tab."
+  ],
+  "Oculta el placeholder y comprueba si todavía entiendes el campo. Revisa el orden de foco con teclado.": [
+    "Hide the placeholder and check whether the field is still understandable. Review the focus order using the keyboard.",
+    "Oculte o placeholder e verifique se o campo continua compreensível. Revise a ordem de foco com o teclado.",
+    "Masquez le placeholder et vérifiez si le champ reste compréhensible. Examinez l’ordre de focus au clavier."
+  ],
+  "Separar el resultado HTTP del resultado de negocio": [
+    "Distinguish the HTTP result from the business result",
+    "Separe o resultado HTTP do resultado de negócio",
+    "Distinguez le résultat HTTP du résultat métier"
+  ],
+  "Una respuesta 200 permite leer el cuerpo, pero debes validar sus campos antes de usarlo. Una respuesta 400 requiere corregir la solicitud; repetirla sin cambios no resuelve el problema.": [
+    "A 200 response lets you read the body, but you must validate its fields before using it. A 400 response means the request needs correction; repeating it unchanged does not solve the problem.",
+    "Uma resposta 200 permite ler o corpo, mas você deve validar seus campos antes de usá-lo. Uma resposta 400 exige corrigir a solicitação; repeti-la sem alterações não resolve o problema.",
+    "Une réponse 200 permet de lire le corps, mais vous devez valider ses champs avant de l’utiliser. Une réponse 400 exige de corriger la requête ; la répéter sans modification ne résout pas le problème."
+  ],
+  "Un timeout no demuestra que el servidor no procesó la operación. Evita repetir escrituras sin una clave de idempotencia o consulta del estado.": [
+    "A timeout does not prove that the server failed to process the operation. Avoid repeating writes without an idempotency key or a status check.",
+    "Um timeout não prova que o servidor deixou de processar a operação. Evite repetir gravações sem uma chave de idempotência ou uma consulta de status.",
+    "Un timeout ne prouve pas que le serveur n’a pas traité l’opération. Évitez de répéter des écritures sans clé d’idempotence ou vérification de l’état."
+  ],
+  "Diseña pruebas para éxito, validación fallida y respuesta tardía. Escribe el resultado esperado para cada una.": [
+    "Design tests for success, failed validation and a late response. Write the expected result for each one.",
+    "Crie testes para sucesso, falha de validação e resposta tardia. Escreva o resultado esperado para cada um.",
+    "Concevez des tests pour un succès, un échec de validation et une réponse tardive. Écrivez le résultat attendu pour chaque cas."
+  ],
+  "Procesar un evento una sola vez": [
+    "Process an event only once",
+    "Processe um evento uma única vez",
+    "Traitez un événement une seule fois"
+  ],
+  "Dos entregas del mismo evento deben producir un solo cambio de negocio. Guarda el ID del evento y realiza la comprobación y el cambio dentro de una transacción.": [
+    "Two deliveries of the same event must produce only one business change. Store the event ID and perform the check and the change in a single transaction.",
+    "Duas entregas do mesmo evento devem produzir apenas uma alteração de negócio. Armazene o ID do evento e faça a verificação e a alteração em uma única transação.",
+    "Deux livraisons du même événement doivent produire une seule modification métier. Enregistrez l’ID de l’événement et effectuez la vérification et la modification dans une seule transaction."
+  ],
+  "Registrar el evento antes del cambio, en operaciones separadas, puede dejarlo marcado como procesado aunque el cambio falle. Una restricción única evita dos inserciones concurrentes.": [
+    "Recording the event before the change in separate operations may mark it as processed even if the change fails. A unique constraint prevents two concurrent inserts.",
+    "Registrar o evento antes da alteração, em operações separadas, pode marcá-lo como processado mesmo se a alteração falhar. Uma restrição única impede duas inserções simultâneas.",
+    "Enregistrer l’événement avant la modification, dans des opérations séparées, peut le marquer comme traité même si la modification échoue. Une contrainte d’unicité empêche deux insertions simultanées."
+  ],
+  "Simula un evento duplicado y un fallo a mitad de la transacción. Comprueba que exista un único resultado o un rollback completo.": [
+    "Simulate a duplicate event and a failure halfway through the transaction. Verify that there is a single result or a complete rollback.",
+    "Simule um evento duplicado e uma falha no meio da transação. Verifique se há um único resultado ou um rollback completo.",
+    "Simulez un événement en double et un échec au milieu de la transaction. Vérifiez qu’il existe un seul résultat ou un rollback complet."
+  ],
+  "Dar solo el acceso necesario": [
+    "Grant only the access that is needed",
+    "Conceda apenas o acesso necessário",
+    "Accordez uniquement les accès nécessaires"
+  ],
+  "Si una integración solo necesita consultar contactos, solicita permiso de lectura. Valida la identidad, los permisos y la cuenta de destino en el servidor antes de cada operación sensible.": [
+    "If an integration only needs to read contacts, request read permission. Validate identity, permissions and the target account on the server before every sensitive operation.",
+    "Se uma integração precisa apenas consultar contatos, solicite permissão de leitura. Valide a identidade, as permissões e a conta de destino no servidor antes de cada operação sensível.",
+    "Si une intégration doit seulement consulter des contacts, demandez une autorisation de lecture. Validez l’identité, les autorisations et le compte cible sur le serveur avant chaque opération sensible."
+  ],
+  "Un token válido no autoriza leer cualquier cuenta. Comprueba la pertenencia y evita guardar tokens en logs o en código enviado al navegador.": [
+    "A valid token does not authorize access to every account. Check ownership and never put tokens in logs or code sent to the browser.",
+    "Um token válido não autoriza acessar qualquer conta. Verifique a titularidade e nunca inclua tokens em logs ou em código enviado ao navegador.",
+    "Un token valide n’autorise pas l’accès à n’importe quel compte. Vérifiez l’appartenance et n’incluez jamais de tokens dans les logs ou le code envoyé au navigateur."
+  ],
+  "Prepara una prueba con otra cuenta y otra con un token expirado. Ambas deben rechazar el acceso sin exponer datos.": [
+    "Prepare one test with a different account and another with an expired token. Both must reject access without exposing data.",
+    "Prepare um teste com outra conta e outro com um token expirado. Ambos devem rejeitar o acesso sem expor dados.",
+    "Préparez un test avec un autre compte et un autre avec un token expiré. Les deux doivent refuser l’accès sans exposer de données."
+  ],
+  "Conservar unidades y moneda al integrar": [
+    "Preserve units and currency across an integration",
+    "Preserve unidades e moeda na integração",
+    "Conservez les unités et la devise dans une intégration"
+  ],
+  "Representa 10.50 MXN como 1050 centavos y conserva MXN como campo separado. Al mapear entre sistemas, documenta unidades, zona horaria e identificadores.": [
+    "Represent 10.50 MXN as 1050 cents and keep MXN in a separate field. When mapping between systems, document units, time zone and identifiers.",
+    "Represente 10.50 MXN como 1050 centavos e mantenha MXN em um campo separado. Ao mapear entre sistemas, documente unidades, fuso horário e identificadores.",
+    "Représentez 10.50 MXN par 1050 centimes et conservez MXN dans un champ distinct. Lors du mapping entre systèmes, documentez les unités, le fuseau horaire et les identifiants."
+  ],
+  "1050 centavos no son 1050 pesos. Rechaza una moneda inesperada y evita redondear importes repetidamente durante cada transformación.": [
+    "1050 cents is not 1050 pesos. Reject an unexpected currency and avoid rounding amounts repeatedly during each transformation.",
+    "1050 centavos não são 1050 pesos. Rejeite uma moeda inesperada e evite arredondar os valores repetidamente em cada transformação.",
+    "1050 centimes ne représentent pas 1050 pesos. Rejetez une devise inattendue et évitez d’arrondir les montants à chaque transformation."
+  ],
+  "Prueba importe 0, moneda distinta y un ID repetido. Explica cuáles son válidos y cuáles requieren rechazo o conciliación.": [
+    "Test an amount of 0, a different currency and a duplicate ID. Explain which cases are valid and which require rejection or reconciliation.",
+    "Teste um valor 0, uma moeda diferente e um ID repetido. Explique quais casos são válidos e quais exigem rejeição ou conciliação.",
+    "Testez un montant de 0, une autre devise et un ID en double. Expliquez quels cas sont valides et lesquels nécessitent un rejet ou un rapprochement."
+  ],
+  "Demostrar el proyecto con evidencia verificable": [
+    "Demonstrate a project with verifiable evidence",
+    "Demonstre o projeto com evidências verificáveis",
+    "Démontrez le projet à l’aide de preuves vérifiables"
+  ],
+  "Escribe un criterio de aceptación observable, prepara datos ficticios y compara el resultado esperado con el observado. Adjunta una prueba de éxito y una de fallo con su corrección.": [
+    "Write an observable acceptance criterion, prepare fictional data and compare the expected result with the observed result. Include a successful test and a failing test with its correction.",
+    "Escreva um critério de aceitação observável, prepare dados fictícios e compare o resultado esperado com o observado. Inclua um teste de sucesso e um teste de falha com sua correção.",
+    "Écrivez un critère d’acceptation observable, préparez des données fictives et comparez le résultat attendu au résultat observé. Joignez un test réussi et un test en échec avec sa correction."
+  ],
+  "Una captura de la pantalla final no demuestra autorización, persistencia ni recuperación. Conserva evidencia de cada límite y documenta lo que no comprobaste.": [
+    "A screenshot of the final screen does not demonstrate authorization, persistence or recovery. Keep evidence for each boundary and document what you did not verify.",
+    "Uma captura da tela final não demonstra autorização, persistência nem recuperação. Guarde evidências de cada limite e documente o que não verificou.",
+    "Une capture de l’écran final ne démontre ni l’autorisation, ni la persistance, ni la récupération. Conservez des preuves pour chaque étape et documentez ce que vous n’avez pas vérifié."
+  ],
+  "Pide a otra persona que reproduzca tu caso usando únicamente el README. Registra los pasos ambiguos y corrígelos.": [
+    "Ask someone else to reproduce your case using only the README. Record unclear steps and correct them.",
+    "Peça a outra pessoa para reproduzir seu caso usando apenas o README. Registre os passos ambíguos e corrija-os.",
+    "Demandez à une autre personne de reproduire votre cas avec le seul README. Relevez les étapes ambiguës et corrigez-les."
+  ]
+}

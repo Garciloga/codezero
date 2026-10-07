@@ -1,8 +1,10 @@
-﻿import "server-only";
+import "server-only";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
-export async function createServerSupabase() {
+import { cache } from "react";
+
+export const createServerSupabase = cache(async function createServerSupabase() {
   const cookieStore = await cookies();
 
   return createServerClient(
@@ -25,4 +27,8 @@ export async function createServerSupabase() {
       },
     }
   );
-}
+});
+
+
+// React cache is scoped to a render request, never shared between users.
+export const getServerUser = cache(async () => (await createServerSupabase()).auth.getUser());

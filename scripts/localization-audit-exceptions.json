@@ -1,0 +1,24 @@
+{
+  "app/(public)/contact/page.tsx": [
+    "codescerooficial@gmail.com"
+  ],
+  "app/(public)/privacy/page.tsx": [
+    "codescerooficial@gmail.com"
+  ],
+  "app/(public)/refunds/page.tsx": [
+    "codescerooficial@gmail.com"
+  ],
+  "app/(public)/terms/page.tsx": [
+    "codescerooficial@gmail.com"
+  ],
+  "app/dashboard/page.tsx": [
+    "h"
+  ],
+  "app/learn/[level]/page.tsx": [
+    "h*",
+    "min"
+  ],
+  "app/profile/page.tsx": [
+    "codescerooficial@gmail.com"
+  ]
+}

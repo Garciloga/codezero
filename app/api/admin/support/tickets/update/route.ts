@@ -40,47 +40,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "INVALID_UPDATE" }, { status: 400 });
   }
 
-  const admin = createAdminSupabase();
-  const { data: before } = await admin
-    .from("support_tickets")
-    .select("id,status,priority,user_id")
-    .eq("id", ticketId)
-    .maybeSingle();
-
-  if (!before) return NextResponse.json({ error: "TICKET_NOT_FOUND" }, { status: 404 });
-
-  const now = new Date().toISOString();
-  const update: Record<string, unknown> = {
-    status: statusRaw,
-    priority: priorityRaw,
-    assigned_to: user.id,
-    updated_at: now,
-    resolved_at: statusRaw === "resolved" ? now : null,
-    closed_at: statusRaw === "closed" ? now : null,
-  };
-
-  const { error } = await admin.from("support_tickets").update(update).eq("id", ticketId);
-  if (error) return NextResponse.json({ error: "UPDATE_FAILED" }, { status: 500 });
-
-  if (reply) {
-    await admin.from("support_ticket_messages").insert({
-      ticket_id: ticketId,
-      sender_user_id: user.id,
-      sender_role: "admin",
-      body: reply,
-    });
-  }
-
-  await admin.from("admin_audit_log").insert({
-    actor_user_id: user.id,
-    action: "support_ticket_updated",
-    target_type: "support_ticket",
-    target_id: String(ticketId),
-    metadata: {
-      before: { status: before.status, priority: before.priority },
-      after: { status: statusRaw, priority: priorityRaw, replied: Boolean(reply) },
-    },
+  const { error } = await createAdminSupabase().rpc("mutate_support_ticket", {
+    p_actor: user.id, p_action: "update", p_ticket: ticketId,
+    p_payload: { status: statusRaw, priority: priorityRaw, body: reply },
   });
-
+  if (error) return NextResponse.json({ error: "UPDATE_FAILED" }, { status: 500 });
   return NextResponse.redirect(new URL("/admin?ticket=updated", req.url), 303);
 }

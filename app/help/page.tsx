@@ -1,7 +1,7 @@
 import { serverTranslator } from "../../lib/localization/server";
 import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
-import { createServerSupabase } from "../../lib/supabase-server";
+import { createServerSupabase, getServerUser } from "../../lib/supabase-server";
 
 type PageProps = { searchParams: Promise<{ q?: string; feedback?: string }> };
 
@@ -20,7 +20,7 @@ export default async function HelpPage({ searchParams }: PageProps) {
   const { q = "", feedback } = await searchParams;
   const query = q.trim();
   const supabase = await createServerSupabase();
-  const { data: { user } } = await supabase.auth.getUser();
+  const { data: { user } } = await getServerUser();
 
   const t = await serverTranslator();
   const request = supabase

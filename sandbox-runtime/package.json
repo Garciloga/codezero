@@ -13,5 +13,8 @@
     "@sqlite.org/sqlite-wasm": "3.53.4-build2",
     "pyodide": "314.0.7"
   },
-  "devDependencies": { "playwright": "1.62.1" }
+  "devDependencies": {
+    "axe-core": "4.11.1",
+    "playwright": "1.62.1"
+  }
 }

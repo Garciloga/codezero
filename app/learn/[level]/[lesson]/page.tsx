@@ -1,8 +1,9 @@
+import LearningCompanion from "../../../components/learning-companion";
 import StudyGuide from "../../../components/study-guide";
 import LocalizedContent from "../../../components/localization/server";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { createServerSupabase } from "../../../../lib/supabase-server";
+import { createServerSupabase, getServerUser } from "../../../../lib/supabase-server";
 import { getPassedLevelNumbers, isLevelIncludedInPlan, isLevelUnlocked } from "../../../../lib/learning";
 
 import { workspaceSandboxEnabled } from "../../../../lib/workspace-sandbox";
@@ -36,7 +37,7 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
 
   const {
     data: { user },
-  } = await supabase.auth.getUser();
+  } = await getServerUser();
 
   if (!user) redirect("/login");
 
@@ -192,7 +193,7 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
           </div>
 
           <h2>Contenido</h2>
-          <StudyGuide />
+          <StudyGuide /><LearningCompanion level={levelNumber} />
 
           <p style={{ lineHeight: 1.75, whiteSpace: "pre-wrap" }}>
             {currentLesson.content}

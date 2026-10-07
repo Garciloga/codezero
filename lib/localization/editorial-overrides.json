@@ -1,0 +1,947 @@
+{
+  "Responsable:": [
+    "Operator:",
+    "Responsável:",
+    "Responsable :"
+  ],
+  "Email:": [
+    "Email:",
+    "E-mail:",
+    "E-mail :"
+  ],
+  "Correcto.": [
+    "Correct.",
+    "Correto.",
+    "Correct."
+  ],
+  "cancelled": [
+    "Cancelled",
+    "Cancelado",
+    "Annulé"
+  ],
+  "low": [
+    "Low",
+    "Baixa",
+    "Faible"
+  ],
+  "normal": [
+    "Normal",
+    "Normal",
+    "Normale"
+  ],
+  "high": [
+    "High",
+    "Alta",
+    "Élevée"
+  ],
+  "urgent": [
+    "Urgent",
+    "Urgente",
+    "Urgente"
+  ],
+  "Fecha:": [
+    "Date:",
+    "Data:",
+    "Date :"
+  ],
+  "Emitido:": [
+    "Issued:",
+    "Emitido:",
+    "Délivré le :"
+  ],
+  "Reto:": [
+    "Challenge:",
+    "Desafio:",
+    "Défi :"
+  ],
+  "/mes": [
+    "/month",
+    "/mês",
+    "/mois"
+  ],
+  "$149/mes": [
+    "$149/month",
+    "$149/mês",
+    "$149/mois"
+  ],
+  "Contrato:": [
+    "Contract:",
+    "Contrato:",
+    "Contrat :"
+  ],
+  "Variante:": [
+    "Variation:",
+    "Variante:",
+    "Variante :"
+  ],
+  "Objetivo:": [
+    "Goal:",
+    "Objetivo:",
+    "Objectif :"
+  ],
+  "respuesta(s)": [
+    "answer(s)",
+    "resposta(s)",
+    "réponse(s)"
+  ],
+  "Base:": [
+    "Foundation:",
+    "Base:",
+    "Base :"
+  ],
+  "Contexto:": [
+    "Context:",
+    "Contexto:",
+    "Contexte :"
+  ],
+  "Consecuencia:": [
+    "Consequence:",
+    "Consequência:",
+    "Conséquence :"
+  ],
+  "Ejemplo:": [
+    "Example:",
+    "Exemplo:",
+    "Exemple :"
+  ],
+  "Proceso:": [
+    "Process:",
+    "Processo:",
+    "Processus :"
+  ],
+  "Entrega:": [
+    "Submission:",
+    "Entrega:",
+    "Livrable :"
+  ],
+  "Estado:": [
+    "Status:",
+    "Status:",
+    "Statut :"
+  ],
+  "completadas": [
+    "completed",
+    "concluídas",
+    "terminées"
+  ],
+  "Feedback:": [
+    "Feedback:",
+    "Feedback:",
+    "Retour :"
+  ],
+  "Nombre:": [
+    "Name:",
+    "Nome:",
+    "Nom :"
+  ],
+  "Rol:": [
+    "Role:",
+    "Função:",
+    "Rôle :"
+  ],
+  "Plan:": [
+    "Plan:",
+    "Plano:",
+    "Forfait :"
+  ],
+  "Nivel 1 gratis.": [
+    "Level 1 is free.",
+    "Nível 1 gratuito.",
+    "Le niveau 1 est gratuit."
+  ],
+  "Programación · SaaS · Integraciones": [
+    "Programming · SaaS · Integrations",
+    "Programação · SaaS · Integrações",
+    "Programmation · SaaS · Intégrations"
+  ],
+  "Iniciar sesión": [
+    "Sign in",
+    "Entrar",
+    "Se connecter"
+  ],
+  "No fue posible guardar.": [
+    "We couldn’t save your changes.",
+    "Não foi possível salvar suas alterações.",
+    "Impossible d’enregistrer vos modifications."
+  ],
+  "Ejemplo resuelto y caso de error": [
+    "Worked example and failure case",
+    "Exemplo resolvido e caso de erro",
+    "Exemple résolu et cas d’erreur"
+  ],
+  "Qué puede fallar": [
+    "What can go wrong",
+    "O que pode dar errado",
+    "Ce qui peut échouer"
+  ],
+  "Prueba una variante": [
+    "Try a variation",
+    "Teste uma variante",
+    "Essayez une variante"
+  ],
+  "Ampliar con documentación oficial": [
+    "Explore the official documentation",
+    "Explore a documentação oficial",
+    "Consultez la documentation officielle"
+  ],
+  "Ejemplo complementario con datos ficticios. No es una solución de tu evaluación.": [
+    "Supplementary example with fictional data. This is not an answer to your assessment.",
+    "Exemplo complementar com dados fictícios. Não é uma resposta à sua avaliação.",
+    "Exemple complémentaire avec des données fictives. Il ne s’agit pas d’une réponse à votre évaluation."
+  ],
+  "El nivel 1 es gratis.": [
+    "Level 1 is free.",
+    "O nível 1 é gratuito.",
+    "Le niveau 1 est gratuit."
+  ],
+  "tecnico": [
+    "Technical",
+    "Técnico",
+    "Technique"
+  ],
+  "cuenta": [
+    "Account",
+    "Conta",
+    "Compte"
+  ],
+  "aprendizaje": [
+    "Learning",
+    "Aprendizagem",
+    "Apprentissage"
+  ],
+  "facturacion": [
+    "Billing",
+    "Faturamento",
+    "Facturation"
+  ],
+  "certificado": [
+    "certificate",
+    "certificado",
+    "attestation"
+  ],
+  "privacidad": [
+    "privacy",
+    "privacidade",
+    "confidentialité"
+  ],
+  "otro": [
+    "Other",
+    "Outro",
+    "Autre"
+  ],
+  "Agregaciones": [
+    "Aggregations",
+    "Agregações",
+    "Agrégations"
+  ],
+  "Algoritmos paso a paso": [
+    "Step-by-step algorithms",
+    "Algoritmos passo a passo",
+    "Algorithmes pas à pas"
+  ],
+  "Algoritmos y estructuras de datos": [
+    "Algorithms and data structures",
+    "Algoritmos e estruturas de dados",
+    "Algorithmes et structures de données"
+  ],
+  "Anchos fijos enormes": [
+    "Very large fixed widths",
+    "Larguras fixas muito grandes",
+    "Largeurs fixes excessives"
+  ],
+  "Aumenta acoplamiento": [
+    "Increases coupling",
+    "Aumenta o acoplamento",
+    "Augmente le couplage"
+  ],
+  "Aumentar logs sin objetivo": [
+    "Add logs without a clear purpose",
+    "Adicionar logs sem um objetivo claro",
+    "Ajouter des journaux sans objectif précis"
+  ],
+  "Autentica al usuario final": [
+    "Authenticates the end user",
+    "Autentica o usuário final",
+    "Authentifie l’utilisateur final"
+  ],
+  "Autorización sobre el recurso": [
+    "Authorization to access the resource",
+    "Autorização para acessar o recurso",
+    "Autorisation d’accès à la ressource"
+  ],
+  "Borra el historial": [
+    "Deletes the history",
+    "Apaga o histórico",
+    "Supprime l’historique"
+  ],
+  "Borrar las pruebas": [
+    "Delete the tests",
+    "Apagar os testes",
+    "Supprimer les tests"
+  ],
+  "Borrar todos los logs": [
+    "Delete all logs",
+    "Apagar todos os logs",
+    "Supprimer tous les journaux"
+  ],
+  "Búsqueda y ordenamiento": [
+    "Searching and sorting",
+    "Busca e ordenação",
+    "Recherche et tri"
+  ],
+  "Cadena": [
+    "String",
+    "String",
+    "Chaîne de caractères"
+  ],
+  "Cadena concatenada": [
+    "Concatenated string",
+    "String concatenada",
+    "Chaîne concaténée"
+  ],
+  "Cambiando aleatoriamente el valor": [
+    "By changing the value randomly",
+    "Alterando o valor aleatoriamente",
+    "En modifiant la valeur au hasard"
+  ],
+  "Cambiar de lenguaje": [
+    "Change programming language",
+    "Mudar de linguagem de programação",
+    "Changer de langage de programmation"
+  ],
+  "Capstone · Integración enterprise": [
+    "Capstone · Enterprise integration",
+    "Capstone · Integração empresarial",
+    "Capstone · Intégration en entreprise"
+  ],
+  "Capstone · Producto SaaS": [
+    "Capstone · SaaS product",
+    "Capstone · Produto SaaS",
+    "Capstone · Produit SaaS"
+  ],
+  "Casos normales, límite e inválidos": [
+    "Normal, edge and invalid cases",
+    "Casos normais, de limite e inválidos",
+    "Cas normaux, limites et invalides"
+  ],
+  "Cifra los datos": [
+    "Encrypts the data",
+    "Criptografa os dados",
+    "Chiffre les données"
+  ],
+  "Cifra toda la base de datos": [
+    "Encrypts the entire database",
+    "Criptografa todo o banco de dados",
+    "Chiffre toute la base de données"
+  ],
+  "Cifrar archivos locales": [
+    "Encrypt local files",
+    "Criptografar arquivos locais",
+    "Chiffrer les fichiers locaux"
+  ],
+  "Cola": [
+    "Queue",
+    "Fila",
+    "File d’attente"
+  ],
+  "Cola FIFO": [
+    "FIFO queue",
+    "Fila FIFO",
+    "File FIFO"
+  ],
+  "Commits vacíos": [
+    "Empty commits",
+    "Commits vazios",
+    "Commits vides"
+  ],
+  "Complejidad y eficiencia": [
+    "Complexity and efficiency",
+    "Complexidade e eficiência",
+    "Complexité et efficacité"
+  ],
+  "Consumo de APIs": [
+    "Using APIs",
+    "Consumo de APIs",
+    "Utilisation des API"
+  ],
+  "Convierte todo en global": [
+    "Makes everything global",
+    "Torna tudo global",
+    "Rend tout global"
+  ],
+  "Copiarla una tercera vez": [
+    "Copy it a third time",
+    "Copiar pela terceira vez",
+    "La copier une troisième fois"
+  ],
+  "Crear reintentos infinitos": [
+    "Retry indefinitely",
+    "Repetir tentativas indefinidamente",
+    "Réessayer indéfiniment"
+  ],
+  "Cuando renombras una columna": [
+    "When you rename a column",
+    "Quando você renomeia uma coluna",
+    "Lorsque vous renommez une colonne"
+  ],
+  "Decir que nunca fallará": [
+    "Say that it will never fail",
+    "Dizer que nunca falhará",
+    "Dire que cela ne peut jamais échouer"
+  ],
+  "Define el color de una tabla": [
+    "Defines the color of a table",
+    "Define a cor de uma tabela",
+    "Définit la couleur d’un tableau"
+  ],
+  "Definición del producto": [
+    "Product definition",
+    "Definição do produto",
+    "Définition du produit"
+  ],
+  "Depuracion y casos limite": [
+    "Debugging and edge cases",
+    "Depuração e casos de limite",
+    "Débogage et cas limites"
+  ],
+  "Desactivar errores": [
+    "Disable errors",
+    "Desativar erros",
+    "Désactiver les erreurs"
+  ],
+  "Desactivar validaciones": [
+    "Disable validation",
+    "Desativar validações",
+    "Désactiver les validations"
+  ],
+  "Descartar el evento": [
+    "Discard the event",
+    "Descartar o evento",
+    "Ignorer l’événement"
+  ],
+  "Descartar el evento sin rastro": [
+    "Discard the event without a trace",
+    "Descartar o evento sem deixar registro",
+    "Ignorer l’événement sans laisser de trace"
+  ],
+  "Descartar toda solicitud": [
+    "Discard every request",
+    "Descartar todas as requisições",
+    "Ignorer toutes les requêtes"
+  ],
+  "Descomposicion de problemas": [
+    "Breaking down problems",
+    "Decomposição de problemas",
+    "Décomposition des problèmes"
+  ],
+  "Desplegar igualmente siempre": [
+    "Always deploy anyway",
+    "Sempre fazer o deploy mesmo assim",
+    "Déployer systématiquement malgré tout"
+  ],
+  "Desplegar sin comprobar nada": [
+    "Deploy without checking anything",
+    "Fazer o deploy sem verificar nada",
+    "Déployer sans rien vérifier"
+  ],
+  "Diseño de APIs": [
+    "API design",
+    "Projeto de APIs",
+    "Conception d’API"
+  ],
+  "Diseño de solución": [
+    "Solution design",
+    "Projeto da solução",
+    "Conception de la solution"
+  ],
+  "Diseño de webhooks": [
+    "Webhook design",
+    "Projeto de webhooks",
+    "Conception de webhooks"
+  ],
+  "Diseño y normalización": [
+    "Design and normalization",
+    "Projeto e normalização",
+    "Conception et normalisation"
+  ],
+  "Duplicar dependencias": [
+    "Duplicate dependencies",
+    "Duplicar dependências",
+    "Dupliquer les dépendances"
+  ],
+  "Duplicar la función": [
+    "Duplicate the function",
+    "Duplicar a função",
+    "Dupliquer la fonction"
+  ],
+  "Elimina la necesidad de pruebas": [
+    "Eliminates the need for tests",
+    "Elimina a necessidade de testes",
+    "Élimine le besoin de tests"
+  ],
+  "Elimina tipos automáticamente": [
+    "Removes types automatically",
+    "Remove tipos automaticamente",
+    "Supprime automatiquement les types"
+  ],
+  "Eliminar errores de lectura": [
+    "Eliminate read errors",
+    "Eliminar erros de leitura",
+    "Éliminer les erreurs de lecture"
+  ],
+  "Eliminar logs": [
+    "Delete logs",
+    "Apagar logs",
+    "Supprimer les journaux"
+  ],
+  "Entrega capstone": [
+    "Capstone submission",
+    "Entrega do Capstone",
+    "Remise du Capstone"
+  ],
+  "Evita cualquier reintento": [
+    "Prevents all retries",
+    "Impede qualquer nova tentativa",
+    "Empêche toute nouvelle tentative"
+  ],
+  "Evitar commits": [
+    "Avoid commits",
+    "Evitar commits",
+    "Éviter les commits"
+  ],
+  "Excepciones": [
+    "Exceptions",
+    "Exceções",
+    "Exceptions"
+  ],
+  "Fetch y estado": [
+    "Fetch and state",
+    "Fetch e estado",
+    "Fetch et état"
+  ],
+  "Firmas y reintentos": [
+    "Signatures and retries",
+    "Assinaturas e novas tentativas",
+    "Signatures et nouvelles tentatives"
+  ],
+  "Forzar pushes por defecto": [
+    "Force-push by default",
+    "Fazer force push por padrão",
+    "Faire un force push par défaut"
+  ],
+  "Funciones": [
+    "Functions",
+    "Funções",
+    "Fonctions"
+  ],
+  "Guardar solo el último error": [
+    "Keep only the most recent error",
+    "Guardar apenas o erro mais recente",
+    "Conserver uniquement la dernière erreur"
+  ],
+  "Ignorar errores": [
+    "Ignore errors",
+    "Ignorar erros",
+    "Ignorer les erreurs"
+  ],
+  "Ignorar errores poco frecuentes": [
+    "Ignore rare errors",
+    "Ignorar erros pouco frequentes",
+    "Ignorer les erreurs rares"
+  ],
+  "Ignorar timestamps y versiones": [
+    "Ignore timestamps and versions",
+    "Ignorar timestamps e versões",
+    "Ignorer les horodatages et les versions"
+  ],
+  "Impide reutilización": [
+    "Prevents reuse",
+    "Impede a reutilização",
+    "Empêche la réutilisation"
+  ],
+  "Integraciones I · APIs y webhooks": [
+    "Integrations I · APIs and webhooks",
+    "Integrações I · APIs e webhooks",
+    "Intégrations I · API et webhooks"
+  ],
+  "Jobs y colas": [
+    "Jobs and queues",
+    "Jobs e filas",
+    "Tâches et files d’attente"
+  ],
+  "Listas, pilas y colas": [
+    "Lists, stacks and queues",
+    "Listas, pilhas e filas",
+    "Listes, piles et files d’attente"
+  ],
+  "Logica y decisiones": [
+    "Logic and decisions",
+    "Lógica e decisões",
+    "Logique et décisions"
+  ],
+  "Logs estructurados con contexto": [
+    "Structured logs with context",
+    "Logs estruturados com contexto",
+    "Journaux structurés avec contexte"
+  ],
+  "Manejo de errores": [
+    "Error handling",
+    "Tratamento de erros",
+    "Gestion des erreurs"
+  ],
+  "Marcar éxito manualmente": [
+    "Mark as successful manually",
+    "Marcar como bem-sucedido manualmente",
+    "Marquer manuellement comme réussi"
+  ],
+  "Nada, fetch nunca falla": [
+    "Nothing; fetch never fails",
+    "Nada; fetch nunca falha",
+    "Rien ; fetch n’échoue jamais"
+  ],
+  "No guardar historial": [
+    "Do not keep a history",
+    "Não guardar o histórico",
+    "Ne pas conserver d’historique"
+  ],
+  "No probar errores de permisos": [
+    "Do not test permission errors",
+    "Não testar erros de permissão",
+    "Ne pas tester les erreurs d’autorisation"
+  ],
+  "No probar porque compila": [
+    "Skip tests because it compiles",
+    "Não testar porque compila",
+    "Ne pas tester parce que le code compile"
+  ],
+  "Ocultar fallos": [
+    "Hide failures",
+    "Ocultar falhas",
+    "Masquer les échecs"
+  ],
+  "Ocultar logs": [
+    "Hide logs",
+    "Ocultar logs",
+    "Masquer les journaux"
+  ],
+  "Ocultarlo en móvil": [
+    "Hide it on mobile",
+    "Ocultar em dispositivos móveis",
+    "Masquer sur mobile"
+  ],
+  "Ordena todas las consultas": [
+    "Sorts all queries",
+    "Ordena todas as consultas",
+    "Trie toutes les requêtes"
+  ],
+  "Para eliminar logs": [
+    "To delete logs",
+    "Para apagar logs",
+    "Pour supprimer les journaux"
+  ],
+  "Para evitar guardar logs": [
+    "To avoid storing logs",
+    "Para evitar armazenar logs",
+    "Pour éviter de conserver des journaux"
+  ],
+  "Ramas y merges": [
+    "Branches and merges",
+    "Branches e merges",
+    "Branches et fusions"
+  ],
+  "Recursión y árboles": [
+    "Recursion and trees",
+    "Recursão e árvores",
+    "Récursivité et arbres"
+  ],
+  "Reemplaza pruebas": [
+    "Replaces tests",
+    "Substitui os testes",
+    "Remplace les tests"
+  ],
+  "Reintentos ilimitados inmediatos": [
+    "Immediate unlimited retries",
+    "Novas tentativas imediatas e ilimitadas",
+    "Nouvelles tentatives immédiates et illimitées"
+  ],
+  "Repeticion y eficiencia": [
+    "Repetition and efficiency",
+    "Repetição e eficiência",
+    "Répétition et efficacité"
+  ],
+  "Repetir manualmente 500 veces": [
+    "Repeat manually 500 times",
+    "Repetir manualmente 500 vezes",
+    "Répéter manuellement 500 fois"
+  ],
+  "SELECT y filtros": [
+    "SELECT and filters",
+    "SELECT e filtros",
+    "SELECT et filtres"
+  ],
+  "Si/entonces": [
+    "If/then",
+    "Se/então",
+    "Si/alors"
+  ],
+  "Solo UI": [
+    "Only the UI",
+    "Apenas a interface",
+    "Uniquement l’interface"
+  ],
+  "Solo pruebas unitarias": [
+    "Only unit tests",
+    "Apenas testes unitários",
+    "Uniquement des tests unitaires"
+  ],
+  "Solo que exista sesión": [
+    "Only check that a session exists",
+    "Verificar apenas se existe uma sessão",
+    "Vérifier uniquement l’existence d’une session"
+  ],
+  "Solo una captura de la UI": [
+    "Only a screenshot of the UI",
+    "Apenas uma captura da interface",
+    "Uniquement une capture de l’interface"
+  ],
+  "Timeouts y límites de concurrencia": [
+    "Timeouts and concurrency limits",
+    "Timeouts e limites de concorrência",
+    "Délais d’expiration et limites de concurrence"
+  ],
+  "Tupla vacía": [
+    "Empty tuple",
+    "Tupla vazia",
+    "Tuple vide"
+  ],
+  "UPDATE sin filtro": [
+    "UPDATE without a filter",
+    "UPDATE sem filtro",
+    "UPDATE sans filtre"
+  ],
+  "Un linter": [
+    "A linter",
+    "Um linter",
+    "Un linter"
+  ],
+  "Una pila solo por costumbre": [
+    "A stack only out of habit",
+    "Uma pilha apenas por hábito",
+    "Une pile uniquement par habitude"
+  ],
+  "Una prueba end-to-end": [
+    "An end-to-end test",
+    "Um teste de ponta a ponta",
+    "Un test de bout en bout"
+  ],
+  "Usar siempre recursión": [
+    "Always use recursion",
+    "Sempre usar recursão",
+    "Toujours utiliser la récursivité"
+  ],
+  "Valida un componente aislado": [
+    "Validates an isolated component",
+    "Valida um componente isolado",
+    "Valide un composant isolé"
+  ],
+  "cobro": [
+    "charge",
+    "cobrança",
+    "facturation"
+  ],
+  "customer": [
+    "customer",
+    "cliente",
+    "client"
+  ],
+  "desbloqueo": [
+    "unlocking",
+    "desbloqueio",
+    "déverrouillage"
+  ],
+  "duplicado": [
+    "duplicate",
+    "duplicado",
+    "doublon"
+  ],
+  "ejercicios": [
+    "exercises",
+    "exercícios",
+    "exercices"
+  ],
+  "examen": [
+    "exam",
+    "exame",
+    "examen"
+  ],
+  "h1": [
+    "h1",
+    "h1",
+    "h1"
+  ],
+  "incluido": [
+    "included",
+    "incluído",
+    "inclus"
+  ],
+  "principiante": [
+    "beginner",
+    "iniciante",
+    "débutant"
+  ],
+  "pro": [
+    "Pro",
+    "Pro",
+    "Pro"
+  ],
+  "cuota": [
+    "quota",
+    "cota",
+    "quota"
+  ],
+  "reembolso": [
+    "refund",
+    "reembolso",
+    "remboursement"
+  ],
+  "soporte": [
+    "support",
+    "suporte",
+    "assistance"
+  ],
+  "suscripción": [
+    "subscription",
+    "assinatura",
+    "abonnement"
+  ],
+  "15 niveles": [
+    "15 levels",
+    "15 níveis",
+    "15 niveaux"
+  ],
+  "¿Las 316 horas son horas de video?": [
+    "Are the 316 hours all video time?",
+    "As 316 horas são todas de vídeo?",
+    "Les 316 heures correspondent-elles uniquement à des vidéos ?"
+  ],
+  "¿Qué objetivo cumple CI?": [
+    "What is the purpose of CI?",
+    "Qual é o objetivo da CI?",
+    "Quel est l’objectif de la CI ?"
+  ],
+  "¿Qué protege una firma de webhook?": [
+    "What does a webhook signature protect?",
+    "O que a assinatura de um webhook protege?",
+    "Que protège la signature d’un webhook ?"
+  ],
+  "¿Qué hace una pull request útil?": [
+    "What does a useful pull request do?",
+    "O que uma pull request útil faz?",
+    "À quoi sert une pull request utile ?"
+  ],
+  "¿Qué incluye el plan Free?": [
+    "What does the Free plan include?",
+    "O que o plano Free inclui?",
+    "Que comprend le forfait Free ?"
+  ],
+  "¿Hay reembolsos?": [
+    "Are refunds available?",
+    "Há reembolsos?",
+    "Des remboursements sont-ils possibles ?"
+  ],
+  "¿Cuánto cuesta Tutor IA?": [
+    "How much does the AI tutor cost?",
+    "Quanto custa o Tutor de IA?",
+    "Combien coûte le Tuteur IA ?"
+  ],
+  "¿Qué es un caso límite?": [
+    "What is an edge case?",
+    "O que é um caso de limite?",
+    "Qu’est-ce qu’un cas limite ?"
+  ],
+  "activa AND plan_de_pago": [
+    "activa AND plan_de_pago",
+    "activa AND plan_de_pago",
+    "activa AND plan_de_pago"
+  ],
+  "activa OR plan_de_pago": [
+    "activa OR plan_de_pago",
+    "activa OR plan_de_pago",
+    "activa OR plan_de_pago"
+  ],
+  "NOT activa": [
+    "NOT activa",
+    "NOT activa",
+    "NOT activa"
+  ],
+  "git clone": [
+    "git clone",
+    "git clone",
+    "git clone"
+  ],
+  "git commit": [
+    "git commit",
+    "git commit",
+    "git commit"
+  ],
+  "git pull": [
+    "git pull",
+    "git pull",
+    "git pull"
+  ],
+  "git status": [
+    "git status",
+    "git status",
+    "git status"
+  ],
+  "CI/CD": [
+    "CI/CD",
+    "CI/CD",
+    "CI/CD"
+  ],
+  "INNER JOIN": [
+    "INNER JOIN",
+    "INNER JOIN",
+    "INNER JOIN"
+  ],
+  "LEFT JOIN": [
+    "LEFT JOIN",
+    "LEFT JOIN",
+    "LEFT JOIN"
+  ],
+  "CROSS JOIN": [
+    "CROSS JOIN",
+    "CROSS JOIN",
+    "CROSS JOIN"
+  ],
+  "CREATE TABLE": [
+    "CREATE TABLE",
+    "CREATE TABLE",
+    "CREATE TABLE"
+  ],
+  "WHERE": [
+    "WHERE",
+    "WHERE",
+    "WHERE"
+  ],
+  "ORDER BY": [
+    "ORDER BY",
+    "ORDER BY",
+    "ORDER BY"
+  ],
+  "JSON": [
+    "JSON",
+    "JSON",
+    "JSON"
+  ],
+  "DOM": [
+    "DOM",
+    "DOM",
+    "DOM"
+  ],
+  "OAuth 2.0": [
+    "OAuth 2.0",
+    "OAuth 2.0",
+    "OAuth 2.0"
+  ]
+}

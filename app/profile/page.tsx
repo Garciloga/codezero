@@ -1,7 +1,7 @@
 import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { createServerSupabase } from "../../lib/supabase-server";
+import { createServerSupabase, getServerUser } from "../../lib/supabase-server";
 import AppearanceSettings from "../components/appearance-settings";
 import { workspaceEnabled } from "../../lib/workspace-sandbox";
 
@@ -10,7 +10,7 @@ type PageProps = { searchParams: Promise<{ updated?: string }> };
 export default async function ProfilePage({ searchParams }: PageProps) {
   const { updated } = await searchParams;
   const supabase = await createServerSupabase();
-  const { data: { user } } = await supabase.auth.getUser();
+  const { data: { user } } = await getServerUser();
   if (!user) redirect("/login");
 
   const { data: profile } = await supabase

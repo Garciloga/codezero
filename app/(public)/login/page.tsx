@@ -145,14 +145,14 @@ function LoginForm() {
                 <span>Soy mayor de 18 años o cuento con autorización de mi madre, padre o tutor legal para usar CodeZero.</span></label>{fieldError("eligibility")}
               </div>
               <div><label className="public-checkbox" htmlFor="legal"><input id="legal" type="checkbox" checked={legalAccepted} onChange={e => { setLegalAccepted(e.target.checked); clearError("legal"); }} required disabled={busy} aria-invalid={!!errors.legal} aria-describedby={errors.legal ? "legal-error" : undefined} />
-                <span>Acepto los <Link href="/terms">Términos</Link> y confirmo que leí el <Link href="/privacy">Aviso de privacidad</Link>.</span></label>{fieldError("legal")}
+                <span>Acepto los <Link prefetch={false} href="/terms">Términos</Link> y confirmo que leí el <Link prefetch={false} href="/privacy">Aviso de privacidad</Link>.</span></label>{fieldError("legal")}
               </div>
             </>}
             <button className="btn" type="submit" disabled={busy}>{busy ? "Procesando..." : mode === "login" ? "Entrar" : "Crear cuenta"}</button>
           </form>
           {msg && <p className="public-form-message" role="status" aria-live="polite">{msg}</p>}
           {mode === "login" && <button className="btn secondary public-forgot" type="button" disabled={busy} onClick={resetPassword}>Olvidé mi contraseña</button>}
-          <p className="public-field-help">Al crear una cuenta aceptas los <Link href="/terms">Términos</Link> y el <Link href="/privacy">Aviso de privacidad</Link>.</p>
+          <p className="public-field-help">Al crear una cuenta aceptas los <Link prefetch={false} href="/terms">Términos</Link> y el <Link prefetch={false} href="/privacy">Aviso de privacidad</Link>.</p>
         </div>
       </>}
     </div>

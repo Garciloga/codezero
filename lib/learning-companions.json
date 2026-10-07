@@ -1,0 +1,117 @@
+[
+  {
+    "levels": [
+      1
+    ],
+    "title": "Descomponer antes de programar",
+    "steps": "Para tres precios de 10, 20 y 30, primero suma 60; después divide entre 3. El promedio es 20. Separa entrada, operación y resultado antes de escribir código.",
+    "failure": "Una lista vacía no tiene promedio. Comprueba la cantidad antes de dividir y explica qué respuesta ofrecerías.",
+    "challenge": "Cambia un precio por 0 y predice el nuevo promedio antes de calcularlo.",
+    "code": "prices = [10, 20, 30]\nprint(sum(prices) / len(prices))  # 20.0",
+    "resource": "https://docs.python.org/3/tutorial/introduction.html"
+  },
+  {
+    "levels": [
+      2,
+      3,
+      4
+    ],
+    "title": "Validar, filtrar y probar límites",
+    "steps": "De 4, -2 y 7, conserva los números positivos y suma 11. La condición se aplica a cada elemento; la suma se realiza sobre el resultado filtrado.",
+    "failure": "El texto 'x' no es un entero válido. Recházalo o registra el error de conversión; no lo conviertas silenciosamente en 0.",
+    "challenge": "Prueba una lista vacía, solo negativos y un valor 0. Explica por qué la suma de una lista vacía es 0.",
+    "code": "numbers = [4, -2, 7]\npositive = [n for n in numbers if n > 0]\nprint(sum(positive))  # 11",
+    "resource": "https://docs.python.org/3/tutorial/controlflow.html"
+  },
+  {
+    "levels": [
+      5
+    ],
+    "title": "Revisar un cambio antes de registrarlo",
+    "steps": "Consulta el estado, revisa las diferencias y prepara solo el archivo esperado. El commit debe explicar un cambio que otra persona pueda revisar.",
+    "failure": "Un archivo de configuración puede contener credenciales. Revisa las diferencias antes de agregarlo y conserva los secretos fuera del repositorio.",
+    "challenge": "Explica qué harías si aparece un archivo ajeno al cambio. Prepara una copia ficticia para practicar.",
+    "code": "git status --short\ngit diff -- lesson.py\ngit add -- lesson.py\ngit diff --cached\ngit commit -m \"Validate positive numbers\"",
+    "resource": "https://git-scm.com/docs/git-diff"
+  },
+  {
+    "levels": [
+      6
+    ],
+    "title": "Relacionar filas sin duplicar conclusiones",
+    "steps": "Una cuenta tiene dos tickets. Un JOIN devuelve una fila por ticket, no una fila por cuenta. Usa COUNT para responder cuántos tickets tiene cada cuenta.",
+    "failure": "Un INNER JOIN omite cuentas sin tickets. Si necesitas incluirlas, usa LEFT JOIN y cuenta el ID del ticket, no todas las filas.",
+    "challenge": "Agrega una cuenta sin tickets y predice cómo cambian los resultados de ambos tipos de JOIN.",
+    "code": "SELECT a.id, COUNT(t.id) AS tickets\nFROM accounts a\nLEFT JOIN tickets t ON t.account_id = a.id\nGROUP BY a.id;",
+    "resource": "https://www.postgresql.org/docs/current/tutorial-join.html"
+  },
+  {
+    "levels": [
+      7
+    ],
+    "title": "Un formulario comprensible sin depender del color",
+    "steps": "Relaciona la etiqueta con el campo mediante for e id. La persona debe conocer qué dato se pide antes de escribirlo; el placeholder no reemplaza la etiqueta.",
+    "failure": "Un borde rojo por sí solo no explica el error. Añade un mensaje visible y enlázalo con aria-describedby; prueba el formulario usando Tab.",
+    "challenge": "Oculta el placeholder y comprueba si todavía entiendes el campo. Revisa el orden de foco con teclado.",
+    "code": "<label for=\"email\">Email</label>\n<input id=\"email\" type=\"email\" aria-describedby=\"email-help\">\n<p id=\"email-help\">name@example.test</p>",
+    "resource": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms"
+  },
+  {
+    "levels": [
+      8,
+      9
+    ],
+    "title": "Separar el resultado HTTP del resultado de negocio",
+    "steps": "Una respuesta 200 permite leer el cuerpo, pero debes validar sus campos antes de usarlo. Una respuesta 400 requiere corregir la solicitud; repetirla sin cambios no resuelve el problema.",
+    "failure": "Un timeout no demuestra que el servidor no procesó la operación. Evita repetir escrituras sin una clave de idempotencia o consulta del estado.",
+    "challenge": "Diseña pruebas para éxito, validación fallida y respuesta tardía. Escribe el resultado esperado para cada una.",
+    "code": "if (!response.ok) throw new Error('REQUEST_FAILED');\nconst data = await response.json();\nif (typeof data.id !== 'string') throw new Error('INVALID_RESPONSE');",
+    "resource": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+  },
+  {
+    "levels": [
+      11
+    ],
+    "title": "Procesar un evento una sola vez",
+    "steps": "Dos entregas del mismo evento deben producir un solo cambio de negocio. Guarda el ID del evento y realiza la comprobación y el cambio dentro de una transacción.",
+    "failure": "Registrar el evento antes del cambio, en operaciones separadas, puede dejarlo marcado como procesado aunque el cambio falle. Una restricción única evita dos inserciones concurrentes.",
+    "challenge": "Simula un evento duplicado y un fallo a mitad de la transacción. Comprueba que exista un único resultado o un rollback completo.",
+    "code": "BEGIN;\nWITH accepted AS (\n INSERT INTO processed_events(event_id) VALUES ('evt_demo')\n ON CONFLICT DO NOTHING RETURNING event_id\n)\nUPDATE event_totals SET applied = applied + 1\nWHERE id = 1 AND EXISTS (SELECT 1 FROM accepted);\nCOMMIT;",
+    "resource": "https://www.postgresql.org/docs/current/sql-insert.html"
+  },
+  {
+    "levels": [
+      12,
+      14
+    ],
+    "title": "Dar solo el acceso necesario",
+    "steps": "Si una integración solo necesita consultar contactos, solicita permiso de lectura. Valida la identidad, los permisos y la cuenta de destino en el servidor antes de cada operación sensible.",
+    "failure": "Un token válido no autoriza leer cualquier cuenta. Comprueba la pertenencia y evita guardar tokens en logs o en código enviado al navegador.",
+    "challenge": "Prepara una prueba con otra cuenta y otra con un token expirado. Ambas deben rechazar el acceso sin exponer datos.",
+    "code": "if (token.expired) reject();\nif (record.account_id !== session.account_id) reject();\nif (!permissions.includes('contacts:read')) reject();",
+    "resource": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Authentication"
+  },
+  {
+    "levels": [
+      13
+    ],
+    "title": "Conservar unidades y moneda al integrar",
+    "steps": "Representa 10.50 MXN como 1050 centavos y conserva MXN como campo separado. Al mapear entre sistemas, documenta unidades, zona horaria e identificadores.",
+    "failure": "1050 centavos no son 1050 pesos. Rechaza una moneda inesperada y evita redondear importes repetidamente durante cada transformación.",
+    "challenge": "Prueba importe 0, moneda distinta y un ID repetido. Explica cuáles son válidos y cuáles requieren rechazo o conciliación.",
+    "code": "const payment = { amountMinor: 1050, currency: 'MXN' };\nconst pesos = payment.amountMinor / 100; // 10.5",
+    "resource": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number"
+  },
+  {
+    "levels": [
+      10,
+      15
+    ],
+    "title": "Demostrar el proyecto con evidencia verificable",
+    "steps": "Escribe un criterio de aceptación observable, prepara datos ficticios y compara el resultado esperado con el observado. Adjunta una prueba de éxito y una de fallo con su corrección.",
+    "failure": "Una captura de la pantalla final no demuestra autorización, persistencia ni recuperación. Conserva evidencia de cada límite y documenta lo que no comprobaste.",
+    "challenge": "Pide a otra persona que reproduzca tu caso usando únicamente el README. Registra los pasos ambiguos y corrígelos.",
+    "code": "Input → Validation → Operation → Saved result\nFailure → Safe response → Recovery check",
+    "resource": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing"
+  }
+]

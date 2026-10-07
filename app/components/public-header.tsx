@@ -23,14 +23,14 @@ export default function PublicHeader({ authenticated }: { authenticated: boolean
     document.addEventListener("pointerdown", closeOutside);
     return () => document.removeEventListener("pointerdown", closeOutside);
   }, []);
-  const navigation = <LocalizedContent><>{links.map(link => <Link href={link.href} key={link.href}
+  const navigation = <LocalizedContent><>{links.map(link => <Link prefetch={false} href={link.href} key={link.href}
     aria-current={pathname === link.href ? "page" : undefined}>{link.label}</Link>)}</></LocalizedContent>;
   return <LocalizedContent><header className="public-header">
     <div className="public-header-inner">
-      <Link className="public-brand" href="/" aria-label="CodeZero · Inicio">CodeZero</Link>
+      <Link prefetch={false} className="public-brand" href="/" aria-label="CodeZero · Inicio">CodeZero</Link>
       <nav className="public-nav public-desktop-nav" aria-label="Navegación pública">{navigation}</nav>
-      <div className="public-auth">{authenticated ? <Link className="btn" href="/dashboard">Ir a mi panel</Link> : <>
-        <Link href="/login">Entrar</Link><Link className="btn" href="/login?modo=registro">Empezar gratis</Link>
+      <div className="public-auth">{authenticated ? <Link prefetch={false} className="btn" href="/dashboard">Ir a mi panel</Link> : <>
+        <Link prefetch={false} href="/login">Entrar</Link><Link prefetch={false} className="btn" href="/login?modo=registro">Empezar gratis</Link>
       </>}</div>
       <details ref={mobileMenu} className="public-mobile-menu" onKeyDown={event => {
         if (event.key === "Escape" && mobileMenu.current?.open) {

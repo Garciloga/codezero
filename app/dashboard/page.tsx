@@ -1,7 +1,7 @@
 import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { createServerSupabase } from "../../lib/supabase-server";
+import { createServerSupabase, getServerUser } from "../../lib/supabase-server";
 import { getEntitlements } from "../../lib/entitlements";
 import { getPassedLevelNumbers, isLevelUnlocked, isLevelIncludedInPlan } from "../../lib/learning";
 import LearningNavigation from '../components/learning-navigation';
@@ -25,7 +25,7 @@ export default async function Dashboard({ searchParams }: PageProps) {
 
   const {
     data: { user },
-  } = await supabase.auth.getUser();
+  } = await getServerUser();
 
   if (!user) redirect("/login");
 

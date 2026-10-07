@@ -36,9 +36,9 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body>
         <LanguageProvider locale={locale} messages={messages}>
         <AppearanceProvider userId={user?.id ?? null} serverPreference={preference} />
-        <LanguageSelector />
         <LocalizedServer><a className="skip-link" href="#main-content">Saltar al contenido</a></LocalizedServer>
-        <div id="main-content">{children}</div>
+        <LanguageSelector />
+        <div id="main-content" tabIndex={-1}>{children}</div>
       </LanguageProvider>
       </body>
     </html>

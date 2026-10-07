@@ -47,13 +47,14 @@ export default async function TicketPage({ params, searchParams }: PageProps) {
 
       {created === "1" && <div className="card"><b>Ticket creado correctamente.</b></div>}
       {reply === "1" && <div className="card"><b>Respuesta enviada.</b></div>}
+      {reply === "error" && <div role="alert" className="card">No fue posible guardar.</div>}
       {reply === "closed" && <div className="card"><b>Este ticket está cerrado.</b></div>}
 
       <section className="card" style={{marginTop:18}}>
         <h2>Conversación</h2>
         <div style={{display:"grid",gap:12}}>
           {(messages ?? []).map((message) => (
-            <div key={message.id} style={{padding:14,borderRadius:12,background:message.sender_role==="admin"?"#eef2ff":"#f7f8fa"}}>
+            <div key={message.id} className="support-message" style={{padding:14,borderRadius:12}}>
               <b>{message.sender_role === "admin" ? "CodeZero Support" : "Tú"}</b>
               <p style={{whiteSpace:"pre-wrap",lineHeight:1.6}}><span translate="no">{message.body}</span></p>
               <div className="muted" style={{fontSize:12}}><LocalizedDate value={message.created_at} includeTime /></div>

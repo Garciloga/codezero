@@ -37,29 +37,9 @@ export async function POST(req: Request) {
   }
 
   const admin = createAdminSupabase();
-  const { data: ticket, error } = await admin
-    .from("support_tickets")
-    .insert({
-      user_id: user.id,
-      subject,
-      description,
-      category,
-      priority: "normal",
-      original_query: originalQuery || null,
-    })
-    .select("id")
-    .single();
-
-  if (error || !ticket) {
-    return NextResponse.redirect(new URL("/help/tickets?created=error", req.url), 303);
-  }
-
-  await admin.from("support_ticket_messages").insert({
-    ticket_id: ticket.id,
-    sender_user_id: user.id,
-    sender_role: "user",
-    body: description,
+  const { data: ticketId, error } = await admin.rpc("mutate_support_ticket", {
+    p_actor: user.id, p_action: "create", p_payload: { subject, description, category, original_query: originalQuery },
   });
-
-  return NextResponse.redirect(new URL(`/help/tickets/${ticket.id}?created=1`, req.url), 303);
+  if (error || !ticketId) return NextResponse.redirect(new URL("/help/tickets?created=error", req.url), 303);
+  return NextResponse.redirect(new URL(`/help/tickets/${ticketId}?created=1`, req.url), 303);
 }

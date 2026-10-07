@@ -35,37 +35,11 @@ export async function POST(req: Request, { params }: Context) {
     return NextResponse.redirect(new URL(`/help/tickets/${ticketId}?reply=invalid`, req.url), 303);
   }
 
-  const admin = createAdminSupabase();
-  const { data: ticket } = await admin
-    .from("support_tickets")
-    .select("id,user_id,status")
-    .eq("id", ticketId)
-    .eq("user_id", user.id)
-    .maybeSingle();
-
-  if (!ticket) return NextResponse.json({ error: "TICKET_NOT_FOUND" }, { status: 404 });
-  if (ticket.status === "closed") {
-    return NextResponse.redirect(new URL(`/help/tickets/${ticketId}?reply=closed`, req.url), 303);
-  }
-
-  const { error } = await admin.from("support_ticket_messages").insert({
-    ticket_id: ticketId,
-    sender_user_id: user.id,
-    sender_role: "user",
-    body,
+  const { error } = await createAdminSupabase().rpc("mutate_support_ticket", {
+    p_actor: user.id, p_action: "reply", p_ticket: ticketId, p_payload: { body },
   });
-
-  if (error) {
-    return NextResponse.redirect(new URL(`/help/tickets/${ticketId}?reply=error`, req.url), 303);
-  }
-
-  if (ticket.status === "waiting_user" || ticket.status === "resolved") {
-    await admin.from("support_tickets").update({
-      status: "open",
-      resolved_at: null,
-      updated_at: new Date().toISOString(),
-    }).eq("id", ticketId);
-  }
-
-  return NextResponse.redirect(new URL(`/help/tickets/${ticketId}?reply=1`, req.url), 303);
+  if (error?.message.includes("TICKET_NOT_FOUND")) return NextResponse.json({ error: "TICKET_NOT_FOUND" }, { status: 404 });
+  if (error?.message.includes("FORBIDDEN")) return NextResponse.json({ error: "FORBIDDEN" }, { status: 403 });
+  const result = error?.message.includes("TICKET_CLOSED") ? "closed" : error ? "error" : "1";
+  return NextResponse.redirect(new URL(`/help/tickets/${ticketId}?reply=${result}`, req.url), 303);
 }

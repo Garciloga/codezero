@@ -21,5 +21,17 @@
   "payment": "Pago",
   "access": "Acceso",
   "bug": "Error",
-  "suggestion": "Sugerencia"
+  "suggestion": "Sugerencia",
+  "low": "Baja",
+  "normal": "Normal",
+  "high": "Alta",
+  "urgent": "Urgente",
+  "cancelled": "Cancelado",
+  "tecnico": "Técnico",
+  "cuenta": "Cuenta",
+  "aprendizaje": "Aprendizaje",
+  "facturacion": "Facturación",
+  "certificado": "Certificado",
+  "privacidad": "Privacidad",
+  "otro": "Otro"
 }

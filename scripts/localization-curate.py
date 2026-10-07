@@ -67,8 +67,12 @@ copy={
  'Reúne evidencia':['Gather evidence','Reúna evidências','Rassemblez des preuves'],
  'Registra qué esperabas, qué observaste y cómo corregiste la diferencia. Usa datos ficticios; nunca incluyas contraseñas ni datos de clientes.':['Record what you expected, what you observed and how you corrected the difference. Use fictional data; never include passwords or customer data.','Registre o que esperava, o que observou e como corrigiu a diferença. Use dados fictícios; nunca inclua senhas nem dados de clientes.','Consignez ce que vous attendiez, ce que vous avez observé et comment vous avez corrigé l’écart. Utilisez des données fictives ; n’incluez jamais de mots de passe ni de données clients.'],
 }
+copy.update(json.loads((R/'editorial-overrides.json').read_text()))
 es={'active':'Activo','suspended':'Suspendido','inactive':'Inactivo','past_due':'Pago vencido','unpaid':'Sin pagar','open':'Abierto','in_progress':'En proceso','waiting_user':'Esperando tu respuesta','resolved':'Resuelto','closed':'Cerrado','owner':'Propietario','admin':'Administrador','student':'Estudiante','manager':'Gerente','supervisor':'Supervisor','learner':'Estudiante','billing':'Facturación','technical':'Técnico','other':'Otro','payment':'Pago','access':'Acceso','bug':'Error','suggestion':'Sugerencia'}
+es.update({'low':'Baja','normal':'Normal','high':'Alta','urgent':'Urgente','cancelled':'Cancelado','tecnico':'Técnico','cuenta':'Cuenta','aprendizaje':'Aprendizaje','facturacion':'Facturación','certificado':'Certificado','privacidad':'Privacidad','otro':'Otro'})
 (R/'es-ui.json').write_text(json.dumps(es,ensure_ascii=False,indent=2)+'\n')
 for i,lang in enumerate(['en','pt','fr']):
  for kind in ['ui','server','curriculum']:
-  p=R/f'{lang}-{kind}.json';d=json.loads(p.read_text());d.update({s:v[i] for s,v in copy.items() if kind!='curriculum' or s in d});p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+  p=R/f'{lang}-{kind}.json';d=json.loads(p.read_text());
+  if kind=='server': d.update({key:values[i] for key,values in json.loads((R/'education-overrides.json').read_text()).items()})
+  d.update({s:v[i] for s,v in copy.items() if kind!='curriculum' or s in d});p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')

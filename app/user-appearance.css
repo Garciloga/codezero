@@ -16,3 +16,10 @@ html[data-appearance="dark"] .public-close {background:#344054;color:var(--user-
 html[data-appearance="dark"] .public-dark p,html[data-appearance="dark"] .public-dark li {color:var(--user-muted)}
 html[data-appearance="dark"] .public-site .btn.secondary {background:var(--user-tint);color:var(--user-text)}
 @media print {html[data-appearance] {color-scheme:light;--user-bg:#fff;--user-surface:#fff;--user-text:#111;--user-muted:#444;--user-border:#ccc}}
+
+/* Dark form errors and navigation hover retain readable contrast. */
+html[data-appearance="dark"] {--error:#fda29b;--exito:#6ce9a6}
+html[data-appearance="dark"] .public-nav a:hover {background:var(--user-tint);color:var(--user-accent)}
+
+html[data-appearance="dark"] .public-nav a {color:var(--user-text)}
+html[data-appearance="dark"] .public-nav a[aria-current=page],html[data-appearance="dark"] .public-nav a:hover {color:var(--user-accent)}
