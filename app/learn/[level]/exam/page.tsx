@@ -145,9 +145,9 @@ export default async function ExamPage({ params, searchParams }: PageProps) {
 
         <div style={{ display: "grid", gap: 18 }}>
           {(questions ?? []).map((question: any, qIndex: number) => (
-            <div className="card" key={question.id}>
-              <h3>{qIndex + 1}. {question.prompt}</h3>
-              <div style={{ display: "grid", gap: 10 }}>
+            <fieldset className="card" key={question.id} style={{ border: "1px solid #e5e9f0" }}>
+              <legend style={{ fontWeight: 700, padding: "0 6px" }}>{qIndex + 1}. {question.prompt}</legend>
+              <div style={{ display: "grid", gap: 10, marginTop: 12 }}>
                 {(question.options ?? []).map((option: string, index: number) => {
                   const labels = ["A", "B", "C", "D"];
                   return (
@@ -158,7 +158,7 @@ export default async function ExamPage({ params, searchParams }: PageProps) {
                   );
                 })}
               </div>
-            </div>
+            </fieldset>
           ))}
         </div>
 
