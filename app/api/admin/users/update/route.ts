@@ -27,6 +27,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "INVALID_UPDATE" }, { status: 400 });
   }
 
+  if (targetUserId === user.id && status !== "active") {
+    return NextResponse.json({ error: "CANNOT_DISABLE_SELF" }, { status: 409 });
+  }
+
   const admin = createAdminSupabase();
 
   const { data: before } = await admin
