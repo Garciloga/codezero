@@ -35,7 +35,7 @@ Estado: pre-lanzamiento técnico.
 3. Identidad pública y contacto legal básico ya añadidos; queda revisión legal/fiscal profesional antes del lanzamiento.
 4. Obtener revisión legal/fiscal de Términos, Privacidad, Reembolsos e impuestos.
 5. Obtener un dominio propio cuando haya presupuesto y entonces completar Resend + SMTP de Supabase.
-6. Hacer una compra real de bajo riesgo cuando sea posible para verificar el ciclo completo de pago, renovación/cancelación y cambio de plan. No es necesario para seguir desarrollando.
+6. La prueba real de pago queda omitida por decisión actual del producto. El flujo técnico de Stripe se mantiene configurado y podrá validarse más adelante si se decide retomarlo.
 7. Si se habilita Tutor IA, añadir `OPENAI_API_KEY` directamente en Vercel y establecer un presupuesto/límite de gasto.
 
 ## Recomendado antes de una campaña pública
@@ -48,6 +48,8 @@ Estado: pre-lanzamiento técnico.
 - El smoke test diario ya cubre disponibilidad pública; queda añadir alertas externas para errores de runtime y webhooks fallidos.
 - Revisar métricas después de los primeros usuarios antes de eliminar índices marcados como “unused”.
 - Mantener secretos fuera del repositorio y rotarlos si existe sospecha de exposición.
+- Cuotas reforzadas como RPC server-only y rollback automático ante fallos internos/proveedor para no descontar uso injustamente.
+- Estados de error/404 y mejoras de foco por teclado añadidos.
 
 ## Nota sobre contenido
 
