@@ -1,17 +1,21 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { buildCareerProfileResult, CAREER_MODEL_VERSION } from "../lib/career-guidance-results.ts";
+import { CAREER_DIMENSIONS } from "../lib/career-guidance.ts";
 
 test("career result exposes model version and top recommendations", () => {
+  const dimensionScores = Object.fromEntries(CAREER_DIMENSIONS.map((dimension) => [dimension, 0]));
+  Object.assign(dimensionScores, {
+    technical_problem_solving: .92,
+    analysis_precision: .9,
+    autonomy: .88,
+    software_building: .95,
+    ambiguity_tolerance: .72,
+    customer_orientation: .25,
+  });
+
   const result = buildCareerProfileResult({
-    dimensionScores: {
-      technical_problem_solving: .92,
-      analysis_precision: .9,
-      autonomy: .88,
-      software_building: .95,
-      ambiguity_tolerance: .72,
-      customer_orientation: .25,
-    },
+    dimensionScores,
     evidence: Array.from({ length: 12 }, (_, index) => ({
       dimension: index % 2 === 0 ? "technical_problem_solving" : "analysis_precision",
       value: .9,
