@@ -50,7 +50,7 @@ export default function ResetPasswordPage() {
           <input type="password" placeholder="Confirmar contraseña" minLength={8} value={confirm} onChange={e=>setConfirm(e.target.value)} required />
           <button className="btn" disabled={busy}>{busy ? "Guardando..." : "Guardar contraseña"}</button>
         </form>
-        {msg && <p className="muted">{msg}</p>}
+        {msg && <p className="muted" role="status" aria-live="polite">{msg}</p>}
         <Link className="btn secondary" href="/login">Volver a iniciar sesión</Link>
       </div>
     </main>
