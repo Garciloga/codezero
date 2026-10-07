@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="es">
       <body>
         <a className="skip-link" href="#main-content">Saltar al contenido</a>
-        {children}
+        <div id="main-content">{children}</div>
       </body>
     </html>
   );
