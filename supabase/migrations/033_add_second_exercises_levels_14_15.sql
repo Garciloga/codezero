@@ -1,0 +1,29 @@
+with bank(lesson_slug, exercise_slug, prompt, options, explanation, correct_answer) as (
+  values
+  ('n14-threat-modeling','n14-threat-practica-2','¿Cuál es un buen primer paso de threat modeling?','["Identificar activos, actores, fronteras de confianza y posibles abusos","Comprar más servidores","Ocultar todos los endpoints","Eliminar logs"]'::jsonb,'A','El modelado de amenazas comienza entendiendo qué se protege, quién interactúa y dónde cambian los niveles de confianza.'),
+  ('n14-gestion-de-secretos','n14-secretos-practica-2','Una API key aparece en un commit público. ¿Qué acción es prioritaria?','["Rotar o revocar la credencial y después limpiar la exposición","Solo borrar el archivo local","Cambiar el nombre de la variable","Esperar a que nadie la vea"]'::jsonb,'A','Una credencial expuesta debe considerarse comprometida aunque se elimine posteriormente del repositorio.'),
+  ('n14-seguridad-de-apis','n14-api-security-practica-2','¿Qué combinación protege mejor una operación sensible de API?','["Autenticación, autorización, validación y rate limiting según riesgo","Solo una URL difícil de adivinar","Solo TLS sin permisos","Ocultar el botón en frontend"]'::jsonb,'A','La seguridad de API requiere varias capas porque cada control cubre riesgos distintos.'),
+  ('n14-escalabilidad','n14-escalabilidad-practica-2','Una dependencia externa empieza a responder lentamente. ¿Qué evita consumir todos tus recursos esperando?','["Timeouts y límites de concurrencia","Esperar indefinidamente","Crear reintentos infinitos","Duplicar cada petición"]'::jsonb,'A','Los límites de tiempo y concurrencia contienen fallos y protegen la capacidad del sistema.'),
+  ('n14-resiliencia','n14-resiliencia-practica-2','Un proveedor cae durante diez minutos. ¿Qué diseño mejora resiliencia?','["Reintentos con backoff, cola cuando aplica y circuit breaker según contexto","Reintentar sin pausa para siempre","Descartar toda solicitud","Compartir secretos para recuperar"]'::jsonb,'A','La resiliencia combina control de reintentos, desacoplamiento y contención de fallos.'),
+  ('n14-arquitectura-final','n14-arquitectura-practica-2','¿Qué hace defendible una arquitectura final?','["Relacionar requisitos, riesgos y trade-offs con decisiones concretas","Usar la mayor cantidad de servicios posible","Evitar documentar límites","Elegir siempre la solución más cara"]'::jsonb,'A','Una arquitectura madura explica por qué existe cada decisión y qué riesgo o requisito atiende.'),
+
+  ('n15-descubrimiento-del-caso','n15-descubrimiento-practica-2','Antes de implementar una integración final, ¿qué debes validar con negocio y sistemas involucrados?','["Objetivo, actores, datos, frecuencia, restricciones y criterio de éxito","Solo el nombre del proyecto","Solo el lenguaje de programación","Únicamente la interfaz"]'::jsonb,'A','El descubrimiento alinea necesidad, datos y restricciones antes de comprometer una solución.'),
+  ('n15-diseno-de-solucion','n15-diseno-practica-2','¿Qué documento ayuda a revisar una solución de integración antes de construirla?','["Diagrama de flujo/componentes con contratos, errores y decisiones","Una lista de colores","Solo un backlog sin arquitectura","Una captura de otra aplicación"]'::jsonb,'A','El diseño debe permitir revisar flujo, interfaces y fallos antes de la implementación.'),
+  ('n15-implementacion-integral','n15-implementacion-practica-2','¿Qué práctica reduce el riesgo de integrar varios componentes a la vez?','["Construir incrementos verticales verificables y mantener contratos claros","Esperar al final para integrar todo","Desactivar validaciones","Cambiar interfaces sin coordinación"]'::jsonb,'A','Los incrementos verificables detectan problemas de integración temprano.'),
+  ('n15-pruebas-end-to-end','n15-e2e-practica-2','¿Qué escenario no debe faltar en una prueba end-to-end profesional?','["Un fallo recuperable de una dependencia además del happy path","Solo la pantalla inicial","Solo datos perfectos","Solo pruebas unitarias"]'::jsonb,'A','E2E debe demostrar comportamiento real ante éxito y fallos relevantes.'),
+  ('n15-observabilidad-y-runbook','n15-runbook-practica-2','¿Qué hace útil un runbook durante un incidente?','["Pasos concretos de diagnóstico, contención, recuperación y escalamiento","Una descripción comercial","Solo nombres del equipo","Información sin orden ni acciones"]'::jsonb,'A','Un runbook debe ayudar a actuar bajo presión con procedimientos claros.'),
+  ('n15-capstone-de-integraciones','n15-capstone-practica-2','¿Qué demuestra mayor preparación profesional en el capstone final?','["Poder explicar arquitectura, pruebas, operación, riesgos y límites con evidencia","Decir que la solución nunca fallará","Mostrar solo el código","Evitar documentar decisiones"]'::jsonb,'A','La madurez técnica incluye construir, operar y defender las decisiones del sistema.')
+)
+insert into public.exercises (lesson_id,slug,prompt,kind,options,explanation,sort_order,status)
+select l.id,b.exercise_slug,b.prompt,'multiple_choice',b.options,b.explanation,2,'published'
+from bank b join public.lessons l on l.slug=b.lesson_slug
+where not exists(select 1 from public.exercises e where e.slug=b.exercise_slug);
+
+with answers(exercise_slug,correct_answer) as (
+  values
+  ('n14-threat-practica-2','A'),('n14-secretos-practica-2','A'),('n14-api-security-practica-2','A'),('n14-escalabilidad-practica-2','A'),('n14-resiliencia-practica-2','A'),('n14-arquitectura-practica-2','A'),
+  ('n15-descubrimiento-practica-2','A'),('n15-diseno-practica-2','A'),('n15-implementacion-practica-2','A'),('n15-e2e-practica-2','A'),('n15-runbook-practica-2','A'),('n15-capstone-practica-2','A')
+)
+insert into public.exercise_solutions(exercise_id,correct_answer)
+select e.id,a.correct_answer from answers a join public.exercises e on e.slug=a.exercise_slug
+where not exists(select 1 from public.exercise_solutions s where s.exercise_id=e.id);
