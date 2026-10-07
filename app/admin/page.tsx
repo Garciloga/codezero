@@ -30,6 +30,7 @@ export default async function Admin({ searchParams }: PageProps) {
     { data: pendingProjects },
     { count: failedWebhookEvents },
     { data: webhookFailures },
+    { data: auditLog },
   ] = await Promise.all([
     admin
       .from("profiles")
@@ -55,6 +56,11 @@ export default async function Admin({ searchParams }: PageProps) {
       .eq("status", "failed")
       .order("updated_at", { ascending: false })
       .limit(10),
+    admin
+      .from("admin_audit_log")
+      .select("id,actor_user_id,action,target_type,target_id,metadata,created_at")
+      .order("created_at", { ascending: false })
+      .limit(20),
   ]);
 
   return (
@@ -228,6 +234,24 @@ export default async function Admin({ searchParams }: PageProps) {
                   />
                   <button className="btn secondary" type="submit">Guardar revisión</button>
                 </form>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div className="card" style={{ marginTop: 18 }}>
+        <h2>Auditoría administrativa</h2>
+        {(auditLog ?? []).length === 0 ? (
+          <p className="muted">Todavía no hay acciones administrativas registradas.</p>
+        ) : (
+          <div style={{ display: "grid", gap: 10 }}>
+            {(auditLog ?? []).map((entry) => (
+              <div key={entry.id} style={{ borderTop: "1px solid #e5e9f0", paddingTop: 10 }}>
+                <b>{entry.action}</b>
+                <div className="muted">
+                  {entry.target_type} {entry.target_id ?? "—"} · {entry.created_at}
+                </div>
               </div>
             ))}
           </div>
