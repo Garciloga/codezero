@@ -28,17 +28,37 @@ export async function POST(req: Request) {
   }
 
   const admin = createAdminSupabase();
+
+  const { data: before } = await admin
+    .from("project_submissions")
+    .select("status,score,feedback")
+    .eq("id", submissionId)
+    .single();
+
+  const newStatus = score >= 70 ? "approved" : "needs_revision";
+
   const { error } = await admin
     .from("project_submissions")
     .update({
       score,
       feedback,
-      status: score >= 70 ? "approved" : "needs_revision",
+      status: newStatus,
       updated_at: new Date().toISOString(),
     })
     .eq("id", submissionId);
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+
+  await admin.from("admin_audit_log").insert({
+    actor_user_id: user.id,
+    action: "project_reviewed",
+    target_type: "project_submission",
+    target_id: String(submissionId),
+    metadata: {
+      before: before ?? null,
+      after: { status: newStatus, score, feedback },
+    },
+  });
 
   return NextResponse.redirect(new URL("/admin?reviewed=1", req.url), 303);
 }
