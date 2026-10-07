@@ -43,7 +43,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "PAYMENT_AUTHORIZATION_REQUIRED" }, { status: 400 });
   }
 
-  if (!["starter", "pro", "enterprise"].includes(plan)) {
+  if (typeof plan !== "string" || !["starter", "pro", "enterprise"].includes(plan)) {
     return NextResponse.json({ error: "INVALID_PLAN" }, { status: 400 });
   }
 
