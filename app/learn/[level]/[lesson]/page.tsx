@@ -1,3 +1,5 @@
+import StudyGuide from "../../../components/study-guide";
+import LocalizedContent from "../../../components/localization/server";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createServerSupabase } from "../../../../lib/supabase-server";
@@ -128,7 +130,7 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
   const isCompleted = progress?.status === "completed";
 
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div>
           <span className="pill">
@@ -190,6 +192,7 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
           </div>
 
           <h2>Contenido</h2>
+          <StudyGuide />
 
           <p style={{ lineHeight: 1.75, whiteSpace: "pre-wrap" }}>
             {currentLesson.content}
@@ -323,6 +326,7 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
         <p>Muestras opcionales en revisión; su resultado no modifica tu calificación ni tu avance.</p>
         <Link className="btn secondary" href={`/practice-preview?level=${currentLevel.level_number}`}>Abrir muestras de práctica</Link>
       </section>}
-    </main>
+    </main></LocalizedContent>
   );
 }
+

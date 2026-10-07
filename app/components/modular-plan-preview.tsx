@@ -1,4 +1,6 @@
 "use client";
+import LocalizedContent from "./localization/client";
+
 import { useState } from "react";
 import { ADDON_OFFERS, BASE_PRICES, FUTURE_ROUTES, quoteModularPlan, type BasePlan } from "../../lib/modular-offers";
 import { planPrice } from "../../lib/public-plans";
@@ -13,7 +15,7 @@ export default function ModularPlanPreview({waitlist = [], waitlistEnabled = fal
   const [route, setRoute] = useState(false);
   const keys = [tutor && plan !== "free" ? "ai_tutor" : "", route && plan !== "free" ? "route_customer_success" : ""].filter(Boolean);
   const quote = quoteModularPlan(plan, keys, simulatedReady);
-  return <>
+  return <LocalizedContent><>
     <section className="card modular-preview" aria-labelledby="modular-choice-title">
       <h2 id="modular-choice-title">Un plan sencillo. Tu propio camino.</h2>
       <fieldset><legend>1. Elige tu base</legend><div className="modular-plan-options">
@@ -56,6 +58,7 @@ export default function ModularPlanPreview({waitlist = [], waitlistEnabled = fal
       </article>)}</div>
       <p className="muted">La lista de espera registra interés privado en pruebas. Estas opciones no tienen checkout.</p>
     </section>
-  </>;
+  </></LocalizedContent>;
 }
+
 

@@ -1,3 +1,4 @@
+import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../lib/supabase-server";
@@ -29,7 +30,7 @@ export default async function ProfilePage({ searchParams }: PageProps) {
   const appearance = cloudAppearance
     ? (await supabase.from("user_preferences").select("mode,accent").eq("user_id",user.id).maybeSingle()).data : null;
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div>
           <span className="pill">PERFIL</span>
@@ -58,8 +59,8 @@ export default async function ProfilePage({ searchParams }: PageProps) {
       <div className="grid grid2">
         <section className="card">
           <h2>Datos</h2>
-          <p><b>Nombre:</b> {profile?.full_name || "Sin configurar"}</p>
-          <p><b>Email:</b> {profile?.email || user.email}</p>
+          <p><b>Nombre:</b> {profile?.full_name ? <span translate="no">{profile.full_name}</span> : "Sin configurar"}</p>
+          <p><b>Email:</b> <span translate="no">{profile?.email || user.email}</span></p>
           <p><b>Rol:</b> {profile?.role}</p>
 
           <form action="/api/profile/update" method="post" style={{display:"grid",gap:10,marginTop:20}}>
@@ -132,6 +133,7 @@ export default async function ProfilePage({ searchParams }: PageProps) {
           <a className="btn secondary" href="/api/profile/export">Descargar mis datos</a>
         </div>
       </div>
-    </main>
+    </main></LocalizedContent>
   );
 }
+

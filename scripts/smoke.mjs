@@ -84,6 +84,7 @@ for (const path of protectedChecks) {
 }
 
 const csrfChecks = [
+  ["/api/locale", { locale: "en" }],
   ["/api/stripe/checkout", { plan: "starter", paymentAuthorization: true }],
   ["/api/exercises/submit", null],
   ["/api/internal/career-lab", null],
@@ -137,10 +138,35 @@ for (const [path, options, expected] of [
   }
 }
 
+for (const [locale, lang, signIn] of [
+  ["es", "es-MX", "Iniciar sesión"], ["en", "en", "Sign in"],
+  ["pt", "pt-BR", "Entrar"], ["fr", "fr", "Se connecter"],
+]) {
+  try {
+    const saved = await fetch(base + "/api/locale", {
+      method: "POST", headers: { origin: new URL(base).origin, "content-type": "application/json" },
+      body: JSON.stringify({ locale }), signal: AbortSignal.timeout(15000),
+    });
+    const cookie = saved.headers.get("set-cookie") ?? "";
+    const persisted = saved.ok && cookie.includes(`codezero_locale=${locale}`) && /HttpOnly/i.test(cookie) && /SameSite=Lax/i.test(cookie);
+    const response = await fetch(base + "/login", {
+      headers: { cookie: `codezero_locale=${locale}` }, signal: AbortSignal.timeout(15000),
+    });
+    const html = await response.text();
+    const ok = persisted && response.ok && html.includes(`<html lang="${lang}"`) && html.includes(signIn);
+    console.log(`${ok ? "PASS" : "FAIL"} locale ${locale}: cookie and translated login`);
+    if (!ok) failures += 1;
+  } catch (error) {
+    failures += 1;
+    console.error(`FAIL locale ${locale}: ${error instanceof Error ? error.message : String(error)}`);
+  }
+}
+
 if (failures > 0) {
   console.error(`Production smoke test failed with ${failures} issue(s).`);
   process.exit(1);
 }
 
 console.log("Production smoke test passed.");
+
 

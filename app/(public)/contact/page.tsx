@@ -1,11 +1,13 @@
+import { translatedMetadata } from '../../../lib/localization/metadata';
+import LocalizedContent from "../../components/localization/server";
 import Link from "next/link";
 import { publicMetadata } from "../../../lib/public-metadata";
 
-export const metadata = publicMetadata("Contacto", "Opciones de contacto de soporte, facturación y privacidad de CodeZero.", "/contact");
+export async function generateMetadata() { return translatedMetadata(publicMetadata("Contacto", "Opciones de contacto de soporte, facturación y privacidad de CodeZero.", "/contact")); }
 
 export default function ContactPage() {
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div><span className="pill">CONTACTO</span><h1>Contacto CodeZero</h1></div>
         <Link className="btn secondary" href="/">Inicio</Link>
@@ -18,6 +20,7 @@ export default function ContactPage() {
         <p><b>Email:</b> <a href="mailto:codescerooficial@gmail.com">codescerooficial@gmail.com</a></p>
         <p><b>Teléfono:</b> <a href="tel:+525533881002">+52 55 3388 1002</a></p>
       </div>
-    </main>
+    </main></LocalizedContent>
   );
 }
+

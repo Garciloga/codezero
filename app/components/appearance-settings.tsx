@@ -1,4 +1,6 @@
 "use client";
+import LocalizedContent from "./localization/client";
+
 import { useEffect, useState } from "react";
 import { ACCENTS, DEFAULT_APPEARANCE, appearanceStorageKey, parseAppearance, type Appearance } from "../../lib/user-appearance";
 import { APPEARANCE_EVENT } from "./appearance-provider";
@@ -33,7 +35,7 @@ export default function AppearanceSettings({ userId, initialPreference, syncEnab
     }
     setSaving(false);
   }
-  return <section className="card appearance-settings" style={{ marginTop: 18 }} aria-labelledby="appearance-heading" aria-busy={saving}>
+  return <LocalizedContent><section className="card appearance-settings" style={{ marginTop: 18 }} aria-labelledby="appearance-heading" aria-busy={saving}>
     <span className="pill">A TU MANERA</span><h2 id="appearance-heading">Personaliza CodeZero</h2>
     <p className="muted">Elige una pantalla cómoda para tu próxima sesión de aprendizaje.</p>
     <fieldset disabled={saving}><legend>Modo de pantalla</legend><div className="appearance-options">
@@ -50,5 +52,6 @@ export default function AppearanceSettings({ userId, initialPreference, syncEnab
     <button type="button" disabled={saving} className="btn secondary" onClick={() => save({ ...DEFAULT_APPEARANCE })}>Restablecer apariencia</button>
     <p className="muted">{syncEnabled ? "Tus preferencias se guardan en tu cuenta y se aplican al iniciar sesión en otro dispositivo." : userId ? "Preferencias separadas por cuenta en este navegador. Sincronización entre dispositivos pendiente de activación." : "Esta demostración guarda únicamente la apariencia de este navegador."}</p>
     <p role="status" aria-live="polite">{message}</p>
-  </section>;
+  </section></LocalizedContent>;
 }
+

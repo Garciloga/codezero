@@ -1,3 +1,4 @@
+import LocalizedContent from "../../../components/localization/server";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createServerSupabase } from "../../../../lib/supabase-server";
@@ -62,7 +63,7 @@ export default async function ProjectPage({ params, searchParams }: PageProps) {
   const latest = submissions?.[0];
 
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div>
           <span className="pill">PROYECTO · NIVEL {levelNumber}</span>
@@ -94,16 +95,16 @@ export default async function ProjectPage({ params, searchParams }: PageProps) {
           {latest && latest.status !== "needs_revision" ? (
             <>
               <p className="muted">Estado: {latest.status}</p>
-              <p style={{ whiteSpace: "pre-wrap" }}>{latest.submission_text}</p>
+              <p style={{ whiteSpace: "pre-wrap" }}><span translate="no">{latest.submission_text}</span></p>
               {latest.score != null && <p><b>Puntuación:</b> {latest.score}</p>}
-              {latest.feedback && <p><b>Feedback:</b> {latest.feedback}</p>}
+              {latest.feedback && <p><b>Feedback:</b> <span translate="no">{latest.feedback}</span></p>}
             </>
           ) : (
             <>
               {latest?.status === "needs_revision" && (
                 <div style={{ marginBottom: 14 }}>
                   <p><b>Se requieren cambios antes de aprobar el proyecto.</b></p>
-                  {latest.feedback && <p className="muted">{latest.feedback}</p>}
+                  {latest.feedback && <p className="muted"><span translate="no">{latest.feedback}</span></p>}
                 </div>
               )}
               <form action="/api/projects/submit" method="post">
@@ -127,6 +128,7 @@ export default async function ProjectPage({ params, searchParams }: PageProps) {
           )}
         </section>
       </div>
-    </main>
+    </main></LocalizedContent>
   );
 }
+

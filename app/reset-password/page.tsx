@@ -1,4 +1,6 @@
 "use client";
+import LocalizedContent from "../components/localization/client";
+
 
 import Link from "next/link";
 import { FormEvent, useState } from "react";
@@ -41,7 +43,7 @@ export default function ResetPasswordPage() {
   }
 
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="card" style={{maxWidth:480,margin:"70px auto"}}>
         <span className="pill">SEGURIDAD</span>
         <h1>Nueva contraseña</h1>
@@ -53,6 +55,7 @@ export default function ResetPasswordPage() {
         {msg && <p className="muted" role="status" aria-live="polite">{msg}</p>}
         <Link className="btn secondary" href="/login">Volver a iniciar sesión</Link>
       </div>
-    </main>
+    </main></LocalizedContent>
   );
 }
+

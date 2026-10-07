@@ -1,8 +1,10 @@
+import { translatedMetadata } from '../../../lib/localization/metadata';
+import LocalizedContent from "../../components/localization/server";
 import { notFound } from "next/navigation";
 import ModularPlanPreview from "../../components/modular-plan-preview";
 import { workspaceUser } from "../../../lib/workspace-server";
 import { workspaceSandboxEnabled } from "../../../lib/workspace-sandbox";
-export const metadata = { title: "Vista previa de planes modulares", robots: { index: false, follow: false } };
+export async function generateMetadata() { return translatedMetadata({ title: "Vista previa de planes modulares", robots: { index: false, follow: false } }); }
 export const dynamic = "force-dynamic";
 export default async function ModularPreviewPage() {
   if (process.env.CODEZERO_MODULAR_PREVIEW !== "1") notFound();
@@ -15,8 +17,9 @@ export default async function ModularPreviewPage() {
       enabled=!error; if(data && !error)waitlist=data.map(row=>row.addon_key);
     }
   }
-  return <main className="wrap"><header className="public-pricing-intro">
+  return <LocalizedContent><main className="wrap"><header className="public-pricing-intro">
     <p className="pill">Vista previa · sin compras</p><h1>Aprende a tu manera</h1>
     <p>Explora la propuesta aprobada de planes y módulos. Su disponibilidad real se validará antes del lanzamiento.</p>
-  </header><ModularPlanPreview key={viewerIdentity} waitlist={waitlist} waitlistEnabled={enabled} /></main>;
+  </header><ModularPlanPreview key={viewerIdentity} waitlist={waitlist} waitlistEnabled={enabled} /></main></LocalizedContent>;
 }
+

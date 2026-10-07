@@ -1,5 +1,7 @@
 # CodeZero · trabajo independiente y preparación de lanzamiento
 
+Registro histórico de preparación local. El estado vigente se documenta en LOCALIZATION_RELEASE_20261007.md; las notas de publicación pendiente de este registro no describen producción actual.
+
 Fecha: 7 de octubre de 2026. Rama local: `codex/modular-v2-approved`.
 
 Se completó el trabajo de interfaz, contenido y práctica disponible sin nuevos accesos. Las piezas de IA, evaluaciones y facturación que requieren servicios privilegiados quedan como candidatos aislados y probados; no se presentan como integraciones activas ni como lanzamiento terminado.
@@ -109,3 +111,4 @@ La vista necesita `CODEZERO_EXPERIENCE_PREVIEW=1`, `CODEZERO_WORKSPACE_SANDBOX=1
 Comprobaciones: `npm test`, `npm run test:database`, `tsc --noEmit`, `npm run build`; `scripts/experience-browser-check.mjs`, `scripts/experience-guard-check.mjs` y `scripts/browser-practice-check.mjs`. Los scripts de navegador aceptan `CODEZERO_BROWSER_EXECUTABLE`; la revisión usa `CODEZERO_REVIEW_BUILT=1` para una compilación existente. Sus servidores y datos son de prueba.
 
 El paquete `CodeZero_independent_completion.patch` es incremental: se aplica **después de `CodeZero_tutor_read_optimization.patch`**, respetando la cadena anterior. Contiene este documento, cambios de aplicación y comprobaciones; no incluye credenciales, node_modules ni cambios heredados ajenos a esta entrega. No crea commits ni envía cambios a un remoto.
+

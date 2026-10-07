@@ -1,3 +1,5 @@
+import LocalizedDate from '../../components/localization/date';
+import LocalizedContent from "../../components/localization/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../../lib/supabase-server";
@@ -18,7 +20,7 @@ export default async function SuggestionsPage({ searchParams }: PageProps) {
     .limit(20);
 
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div>
           <span className="pill">SUGERENCIAS</span>
@@ -57,12 +59,13 @@ export default async function SuggestionsPage({ searchParams }: PageProps) {
             {(suggestions ?? []).map((item) => (
               <div key={item.id} style={{borderTop:"1px solid #e5e9f0",paddingTop:10}}>
                 <b>{item.title}</b>
-                <div className="muted">{item.category} · {item.status} · {new Date(item.created_at).toLocaleDateString("es-MX")}</div>
+                <div className="muted">{item.category} · {item.status} · <LocalizedDate value={item.created_at} /></div>
               </div>
             ))}
           </div>
         )}
       </section>
-    </main>
+    </main></LocalizedContent>
   );
 }
+

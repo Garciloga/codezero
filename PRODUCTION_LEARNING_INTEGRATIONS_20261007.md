@@ -1,5 +1,7 @@
 # Production learning integrations — 7 October 2026
 
+Historical release record. Superseded scope and current status: LOCALIZATION_RELEASE_20261007.md. Customer Success and included exam/certificate benefits have since been integrated; the abandoned 149 MXN certificate offer is not sold.
+
 ## Scope and authorization
 Isaac explicitly authorized production, then requested deployment of all remaining prepared work. This release follows the earlier published f309532 release. It fixes a production session helper that erroneously still admitted sandbox sessions only; anonymous smoke checks could not detect this authenticated-path defect.
 
@@ -25,3 +27,4 @@ The paid Customer Success route, 149 MXN certificate purchase/fulfillment, numer
 
 ## Applied external changes
 Migration `production_learning_integrations` was applied to production after an index-name collision rolled back the first attempt completely; the existing equivalent subscription index was reused. Four new tables have RLS and deny anonymous reads/client writes. Supabase reports two informational no-policy findings for service-only tables and the pre-existing leaked-password warning. The existing Stripe webhook now also subscribes to checkout.session.async_payment_succeeded; endpoint URL, signing secret, six original events and prices were retained.
+

@@ -1,3 +1,5 @@
+import { serverTranslator } from "../../lib/localization/server";
+import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
 import { createServerSupabase } from "../../lib/supabase-server";
 
@@ -20,27 +22,27 @@ export default async function HelpPage({ searchParams }: PageProps) {
   const supabase = await createServerSupabase();
   const { data: { user } } = await supabase.auth.getUser();
 
-  let request = supabase
+  const t = await serverTranslator();
+  const request = supabase
     .from("support_faqs")
     .select("id,slug,question,answer,category,keywords,sort_order")
     .eq("status","published")
     .order("sort_order");
 
-  if (query) {
-    request = request.textSearch("search_vector", query, {
-      type: "websearch",
-      config: "spanish",
-    });
-  }
-
-  const { data: faqs } = await request;
+  const { data: sourceFaqs } = await request;
+  const normalizeSearch = (value: string) => value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  const terms = normalizeSearch(query).split(/\s+/).filter(Boolean);
+  const faqs = (sourceFaqs ?? []).filter(faq => {
+    const text = normalizeSearch([faq.question, faq.answer, faq.category, t(faq.question), t(faq.answer), t(faq.category), ...(faq.keywords ?? [])].join(" "));
+    return terms.every(term => text.includes(term));
+  });
   const byCategory = new Map<string, typeof faqs>();
   for (const category of categories) {
     byCategory.set(category, (faqs ?? []).filter((faq) => faq.category === category));
   }
 
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div>
           <span className="pill">CODEZERO SUPPORT</span>
@@ -69,7 +71,7 @@ export default async function HelpPage({ searchParams }: PageProps) {
         </form>
         {query && (
           <p className="muted" style={{marginBottom:0}}>
-            {(faqs ?? []).length} resultado(s) para “{query}”.
+            {(faqs ?? []).length} resultado(s) para “<span translate="no">{query}</span>”.
           </p>
         )}
         {feedback === "1" && <p role="status"><b>Gracias. Tu respuesta nos ayuda a mejorar el Centro de ayuda.</b></p>}
@@ -135,6 +137,7 @@ export default async function HelpPage({ searchParams }: PageProps) {
           )}
         </div>
       </section>
-    </main>
+    </main></LocalizedContent>
   );
 }
+

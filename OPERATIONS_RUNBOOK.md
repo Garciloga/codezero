@@ -1,6 +1,6 @@
 # CodeZero · Operations Runbook
 
-Última actualización: 6 de octubre de 2026.
+Última actualización: 7 de octubre de 2026.
 
 Este documento describe respuestas operativas básicas para incidentes de producción. No contiene secretos ni credenciales.
 
@@ -70,3 +70,8 @@ Actualmente SMTP propio está diferido hasta contar con un dominio controlado. S
 Contacto operativo: codescerooficial@gmail.com
 
 Para un incidente que afecte datos personales, pagos o acceso generalizado, priorizar contención y preservación de evidencia antes de cambios no esenciales.
+
+
+## 10. Idiomas y contenido
+
+El selector global admite es/en/pt/fr. La preferencia de la cuenta verificada prevalece sobre la cookie del visitante. Para volver al español, usar el selector; no editar permisos ni planes. Los catálogos y la guía de mantenimiento están descritos en LOCALIZATION_RELEASE_20261007.md. Cambiar contenido curricular exige actualizar sus traducciones y ejecutar `tests/localization.test.mjs`. Los nombres, entregas, código y mensajes escritos por usuarios se conservan literalmente.

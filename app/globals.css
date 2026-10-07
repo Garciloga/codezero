@@ -16,3 +16,13 @@ main{scroll-margin-top:16px}
 .skip-link{position:fixed;left:16px;top:12px;z-index:9999;padding:10px 14px;border-radius:10px;background:#111827;color:#fff;transform:translateY(-160%)}
 .skip-link:focus{transform:translateY(0)}
 main{scroll-margin-top:16px}
+
+
+.language-selector { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: .65rem; max-width: 1200px; margin: 0 auto; padding: .65rem 1rem; color: var(--text, #182230); }
+.language-selector label { font-size: .9rem; font-weight: 650; }
+.language-selector select { min-height: 44px; min-width: 130px; border: 1px solid currentColor; border-radius: 8px; padding: .4rem .65rem; color: inherit; background: var(--surface, #fff); font: inherit; }
+.language-selector [role=status] { font-size: .85rem; flex-basis: 100%; text-align: right; }
+.language-selector [role=status]:empty { display: none; }
+.language-selector select:focus-visible { outline: 3px solid var(--user-accent, #2346d8); outline-offset: 3px; }
+[data-appearance=dark] .language-selector { color: #f2f4f7; }
+[data-appearance=dark] .language-selector select { background: #182230; }

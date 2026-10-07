@@ -1,4 +1,6 @@
 "use client";
+import LocalizedContent from "./localization/client";
+
 import { useState } from "react";
 export default function AddonWaitlistButton({ addonKey, enabled, initial = false }: { addonKey: string; enabled: boolean; initial?: boolean }) {
  const [interested,setInterested]=useState(initial);const [busy,setBusy]=useState(false);const [message,setMessage]=useState("");
@@ -10,5 +12,6 @@ export default function AddonWaitlistButton({ addonKey, enabled, initial = false
    setInterested(body.interested);setMessage(body.interested?"Interés privado guardado. No genera cobros ni garantiza fecha de lanzamiento.":"Interés retirado.");
   }catch(error){setMessage(error instanceof Error?error.message:"No se pudo guardar");}finally{setBusy(false);}
  }
- return <><button type="button" className="btn secondary" disabled={!enabled||busy} aria-pressed={interested} onClick={toggle}>{busy?"Guardando…":interested?"Retirar mi interés":"Me interesa · lista de espera"}</button>{!enabled&&<p className="muted">Requiere una cuenta activa.</p>}<p role="status">{message}</p></>;
+ return <LocalizedContent><><button type="button" className="btn secondary" disabled={!enabled||busy} aria-pressed={interested} onClick={toggle}>{busy?"Guardando…":interested?"Retirar mi interés":"Me interesa · lista de espera"}</button>{!enabled&&<p className="muted">Requiere una cuenta activa.</p>}<p role="status">{message}</p></></LocalizedContent>;
 }
+

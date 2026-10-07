@@ -1,6 +1,6 @@
 # CodeZero · Production checklist
 
-Estado: pre-lanzamiento técnico.
+Estado: producción técnica; apertura comercial condicionada. Estado vigente y límites de verificación: LOCALIZATION_RELEASE_20261007.md.
 
 ## Completado
 
@@ -29,7 +29,7 @@ Estado: pre-lanzamiento técnico.
 - CI de GitHub y builds de Vercel.
 - Pruebas unitarias para reglas de acceso y protección same-origin.
 - Dependabot configurado para dependencias npm y GitHub Actions.
-- CodeQL configurado para pull requests, ejecución manual y revisión semanal.
+- CodeQL configurado; su ejecución en el repositorio privado depende de la habilitación de GitHub Code Security. No cuenta como análisis aprobado.
 - Smoke test automatizado de producción para home, pricing, login, páginas legales, robots, sitemap y encabezados de seguridad; ejecución diaria y manual desde GitHub Actions.
 - QA de integridad de base de datos: 15 niveles, 92 lecciones, 184 ejercicios, 15 exámenes, 75 preguntas y sin soluciones faltantes en ejercicios o evaluaciones.
 - Revisión de producción sin errores de runtime recientes y sin webhooks de Stripe fallidos.
@@ -55,7 +55,7 @@ Estado: pre-lanzamiento técnico.
 - Revisar rate limits de Auth.
 - Revisar backups y estrategia de recuperación.
 - Probar manualmente registro, confirmación de email y recuperación de contraseña con cuentas de prueba separadas cuando SMTP propio esté disponible; probar también Free, Starter/Pro/Enterprise, cancelación y proyectos.
-- Revisar accesibilidad móvil y navegación por teclado.
+- Idiomas español, inglés, portugués y francés implementados; navegación móvil, Escape y foco probados en Chromium con datos sintéticos. La auditoría completa de accesibilidad sigue pendiente.
 - El smoke test diario cubre disponibilidad pública y existe vigilancia horaria para errores nuevos de runtime y fallos de CI.
 - Revisar métricas después de los primeros usuarios antes de eliminar índices marcados como “unused”.
 - Mantener secretos fuera del repositorio y rotarlos si existe sospecha de exposición.
@@ -73,4 +73,5 @@ La estructura completa de 15 niveles está implementada y el contenido fue ampli
 
 ## Estado de despliegue
 
-GitHub CI está validando correctamente los cambios recientes. Vercel Hobby alcanzó temporalmente su límite diario de creación de deployments; los cambios más recientes permanecen versionados en `main` y deberán desplegarse cuando el límite se restablezca. No requiere cambios de código ni compra obligatoria para continuar desarrollando.
+Vercel vuelve a publicar `main`; el bloqueo diario documentado anteriormente no describe el deployment READY verificado el 7 de octubre. Cada publicación debe comprobar SHA, estado READY, CI y smoke test; el historial de preparación local no sustituye esa comprobación.
+

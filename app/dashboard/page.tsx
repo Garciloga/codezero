@@ -1,3 +1,4 @@
+import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../lib/supabase-server";
@@ -107,7 +108,7 @@ export default async function Dashboard({ searchParams }: PageProps) {
       : Math.min(100, Math.round((used / Math.max(1, limit)) * 100));
 
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div>
           <span className="pill">{ent.plan_name}</span>
@@ -296,6 +297,7 @@ export default async function Dashboard({ searchParams }: PageProps) {
           ))}
         </div>
       </section>
-    </main>
+    </main></LocalizedContent>
   );
 }
+

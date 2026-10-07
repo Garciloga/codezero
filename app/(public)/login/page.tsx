@@ -1,13 +1,17 @@
 "use client";
+import LocalizedContent from "../../components/localization/client";
+
 
 import Link from "next/link";
 import { FormEvent, Suspense, useEffect, useState } from "react";
 import { createBrowserSupabase } from "../../../lib/supabase";
 import { registrationDetails, validRegistrationAge } from "../../../lib/registration-details";
+import { useLanguage } from "../../components/localization/provider";
 import { useRouter, useSearchParams } from "next/navigation";
 
 type Field = "full_name" | "age" | "email" | "password" | "eligibility" | "legal";
 function LoginForm() {
+  const { locale } = useLanguage();
   const searchParams = useSearchParams();
   const supabase = createBrowserSupabase();
   const router = useRouter();
@@ -35,7 +39,7 @@ function LoginForm() {
 
   function clearError(field: Field) { setErrors(previous => ({ ...previous, [field]: undefined })); }
   function fieldError(field: Field) {
-    return errors[field] ? <p className="public-field-error" id={field + "-error"}>{errors[field]}</p> : null;
+    return errors[field] ? <LocalizedContent><p className="public-field-error" id={field + "-error"}>{errors[field]}</p></LocalizedContent> : null;
   }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
@@ -66,6 +70,7 @@ function LoginForm() {
         email, password,
         options: { data: {
           ...registrationDetails(fullName, age),
+          locale,
           signup_terms_version: "2026-10-06",
           signup_terms_accepted_at: new Date().toISOString(),
           age_or_guardian_authorization_confirmed: true,
@@ -91,7 +96,7 @@ function LoginForm() {
     finally { setBusy(false); }
   }
 
-  return <main className="wrap">
+  return <LocalizedContent><main className="wrap">
     <div className="card public-login">
       {confirmationEmail ? <section aria-labelledby="confirmation-title">
         <h1 id="confirmation-title">Revisa tu correo</h1>
@@ -143,7 +148,7 @@ function LoginForm() {
                 <span>Acepto los <Link href="/terms">Términos</Link> y confirmo que leí el <Link href="/privacy">Aviso de privacidad</Link>.</span></label>{fieldError("legal")}
               </div>
             </>}
-            <button className="btn" disabled={busy}>{busy ? "Procesando..." : mode === "login" ? "Entrar" : "Crear cuenta"}</button>
+            <button className="btn" type="submit" disabled={busy}>{busy ? "Procesando..." : mode === "login" ? "Entrar" : "Crear cuenta"}</button>
           </form>
           {msg && <p className="public-form-message" role="status" aria-live="polite">{msg}</p>}
           {mode === "login" && <button className="btn secondary public-forgot" type="button" disabled={busy} onClick={resetPassword}>Olvidé mi contraseña</button>}
@@ -151,9 +156,10 @@ function LoginForm() {
         </div>
       </>}
     </div>
-  </main>;
+  </main></LocalizedContent>;
 }
 
 export default function Login() {
-  return <Suspense fallback={<main className="wrap"><p role="status">Preparando acceso…</p></main>}><LoginForm /></Suspense>;
+  return <LocalizedContent><Suspense fallback={<main className="wrap"><p role="status">Preparando acceso…</p></main>}><LoginForm /></Suspense></LocalizedContent>;
 }
+

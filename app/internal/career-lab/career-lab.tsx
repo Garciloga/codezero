@@ -1,4 +1,6 @@
 "use client";
+import LocalizedContent from "../../components/localization/client";
+
 import { useState } from "react";
 import type { LabAnswer, LabRequest, LabResponse } from "../../../lib/career-lab";
 import type { CareerPositionKey } from "../../../lib/career-guidance";
@@ -37,7 +39,7 @@ export default function CareerLab({fixtures,version}:{fixtures:{key:string;label
    return current?{...previous,[selectedPath]:transitionLearningPath(current,action)}:previous;
   });
  }
- return <main className="wrap career-lab">
+ return <LocalizedContent><main className="wrap career-lab">
  <div className="nav"><div><span className="pill">FASE 0 · SOLO PROPIETARIO</span><h1>Laboratorio Career Guidance</h1></div><a className="btn secondary" href="/admin">Panel de control</a></div>
  <div className="card"><h2>Prueba un personaje ficticio</h2><p>Diagnóstico, explicaciones y aprendizaje por decisiones. Las selecciones representan a un personaje de prueba. No ingreses información personal.</p>
  <p className="muted">Las respuestas y el recorrido se mantienen solo durante esta sesión de pantalla. Recargar o reiniciar los elimina. Las rúbricas son provisionales y no están validadas con resultados laborales.</p>
@@ -67,6 +69,7 @@ export default function CareerLab({fixtures,version}:{fixtures:{key:string;label
  <section className="card lab-section"><h2>Las 16 posiciones</h2><div className="lab-table"><table><caption>Afinidad y cobertura de evidencia del escenario</caption><thead><tr><th>Posición</th><th>Afinidad</th><th>Dimensiones observadas</th><th>Experiencia</th></tr></thead><tbody>{data.catalog.map(r=><tr key={r.position}><td>{r.label}{r.progression?" · Progresión futura":""}</td><td>{r.coverage?r.affinityPercent+"%":"Sin evidencia"}</td><td>{r.coverage}</td><td>{gate[r.experienceGate]}</td></tr>)}</tbody></table></div></section>
  <details className="card lab-section"><summary>Cómo funciona esta prueba</summary><p>Modelo {version}. Las actividades usan selecciones cerradas y una rúbrica provisional de desempeño. Las comparaciones extra y la elección libre aportan preferencia. Las variables no observadas permanecen ausentes; no se rellenan con ceros.</p><p>Los perfiles canónicos y de frontera se construyen desde la matriz del propio modelo: sirven para comprobar coherencia matemática, no para validar utilidad real. Management se muestra como progresión, fuera del top 3 inicial.</p><ul>{data.dimensions.map(d=><li key={d.dimension}>{d.dimension}: {Math.round(d.score*100)}/100 · {d.maturity==="stable"?"evidencia repetida":"preliminar"}{d.tension.status==="mixed"?" · diferencia entre capacidad y preferencia":""}</li>)}</ul></details>
  </>}
- </div></main>;
+ </div></main></LocalizedContent>;
 }
+
 

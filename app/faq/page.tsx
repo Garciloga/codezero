@@ -1,3 +1,4 @@
+import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
 
 const faqs = [
@@ -19,7 +20,7 @@ const faqs = [
   },
   {
     q: "¿Obtengo un certificado?",
-    a: "Al completar satisfactoriamente los 15 niveles se genera un certificado dentro de tu cuenta. No equivale a un título oficial ni garantiza resultados laborales.",
+    a: "Los certificados y exámenes están incluidos en los planes, dentro de sus límites y requisitos académicos. No cobramos un cargo separado por emitir el certificado.",
   },
   {
     q: "¿Pueden usar CodeZero personas menores de edad?",
@@ -35,7 +36,7 @@ const faqs = [
   },
   {
     q: "¿El Tutor IA está incluido?",
-    a: "La plataforma está preparada para un Tutor IA, pero su disponibilidad depende de que el servicio esté habilitado y del límite del plan correspondiente.",
+    a: "El Tutor IA no está disponible actualmente.",
   },
   {
     q: "¿Dónde puedo pedir soporte o ejercer derechos de privacidad?",
@@ -45,7 +46,7 @@ const faqs = [
 
 export default function FAQPage() {
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div>
           <span className="pill">FAQ</span>
@@ -71,6 +72,7 @@ export default function FAQPage() {
         <Link className="btn secondary" href="/pricing">Ver planes</Link>
         <Link className="btn secondary" href="/contact">Contacto</Link>
       </div>
-    </main>
+    </main></LocalizedContent>
   );
 }
+

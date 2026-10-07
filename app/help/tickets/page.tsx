@@ -1,3 +1,4 @@
+import LocalizedContent from "../../components/localization/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../../lib/supabase-server";
@@ -18,7 +19,7 @@ export default async function TicketsPage({ searchParams }: PageProps) {
     .limit(50);
 
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div>
           <span className="pill">TICKETS</span>
@@ -61,13 +62,14 @@ export default async function TicketsPage({ searchParams }: PageProps) {
           <div style={{display:"grid",gap:10}}>
             {(tickets ?? []).map((ticket) => (
               <Link key={ticket.id} href={"/help/tickets/"+ticket.id} style={{borderTop:"1px solid #e5e9f0",paddingTop:12}}>
-                <b>#{ticket.id} · {ticket.subject}</b>
+                <b>#{ticket.id} · <span translate="no">{ticket.subject}</span></b>
                 <div className="muted">{ticket.category} · {ticket.priority} · {ticket.status}</div>
               </Link>
             ))}
           </div>
         )}
       </section>
-    </main>
+    </main></LocalizedContent>
   );
 }
+

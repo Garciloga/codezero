@@ -1,8 +1,9 @@
+import LocalizedContent from "./components/localization/server";
 import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="card" style={{maxWidth:720,margin:"70px auto",textAlign:"center"}}>
         <span className="pill">404</span>
         <h1>No encontramos esta página</h1>
@@ -14,6 +15,7 @@ export default function NotFound() {
           <Link className="btn secondary" href="/dashboard">Mi CodeZero</Link>
         </div>
       </div>
-    </main>
+    </main></LocalizedContent>
   );
 }
+

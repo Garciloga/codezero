@@ -1,11 +1,13 @@
+import { translatedMetadata } from '../../lib/localization/metadata';
+import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
 import { publicMetadata } from "../../lib/public-metadata";
-export const metadata = publicMetadata("Aprende a programar desde cero", "Una ruta guiada de programación, SaaS e integraciones. El Nivel 1 completo es gratis.", "/");
+export async function generateMetadata() { return translatedMetadata(publicMetadata("Aprende a programar desde cero", "Una ruta guiada de programación, SaaS e integraciones. El Nivel 1 completo es gratis.", "/")); }
 const foundation = ["Pensamiento computacional", "Python desde cero", "Python intermedio y código limpio", "Algoritmos y estructuras de datos", "Git, terminal y flujo profesional", "Bases de datos y SQL", "Web: HTML + CSS + JavaScript", "Backend y APIs", "Ingeniería de software", "Capstone · Proyecto profesional"];
 const integrations = ["APIs y webhooks", "SaaS, OAuth y automatización", "Sistemas empresariales", "Arquitectura y seguridad", "Proyecto final de integración"];
 // Approved manual snapshot, verified against published catalog on 2026-10-06.
 export default function Home() {
-  return <main className="wrap public-home">
+  return <LocalizedContent><main className="wrap public-home">
     <section className="public-hero">
       <div>
         <p className="public-eyebrow">Programación · SaaS · Integraciones</p>
@@ -54,5 +56,6 @@ export default function Home() {
       <details><summary>¿Dónde puedo pedir ayuda?</summary><p>Visita el <Link href="/help">Centro de ayuda</Link> o consulta nuestras opciones de <Link href="/contact">Contacto</Link>.</p></details>
     </section>
     <section className="public-close"><h2>Empieza hoy con el Nivel 1, sin costo.</h2><Link className="btn accent" href="/login?modo=registro">Empezar gratis</Link></section>
-  </main>;
+  </main></LocalizedContent>;
 }
+

@@ -1,4 +1,6 @@
 "use client";
+import LocalizedContent from "./localization/client";
+
 
 import { useState } from "react";
 import { API_LABS, ONBOARDING_TASKS, PRACTICE_ACTIVITIES, SKILL_LABELS, TARGET_ROLES, gradePractice, simulateApi, skillPracticeCoverage, weeklyPracticePlan } from "../../lib/practice-learning";
@@ -16,7 +18,7 @@ function Activity({ activity, onSuccess }: { activity: PracticeActivity; onSucce
     const next = [...order]; [next[index], next[index + direction]] = [next[index + direction], next[index]];
     setOrder(next); setResult(null);
   }
-  return <article className="card" id={`sample-${activity.id}`}>
+  return <LocalizedContent><article className="card" id={`sample-${activity.id}`}>
     <p className="muted">Nivel {activity.level} · {SKILL_LABELS[activity.skill]}</p>
     <h3>{activity.title}</h3><pre style={{ whiteSpace: "pre-wrap" }}>{activity.prompt}</pre>
     <form onSubmit={event => { event.preventDefault(); const correct = gradePractice(activity, activity.kind === "order_steps" ? order : answer); setResult(correct); if (correct) onSuccess(activity.id); }}>
@@ -29,7 +31,7 @@ function Activity({ activity, onSuccess }: { activity: PracticeActivity; onSucce
       <button className="btn" type="submit">Comprobar práctica</button>
     </form>
     {result !== null && <div role="status"><p><b>{result ? "Práctica resuelta." : "Revisa y vuelve a intentarlo."}</b> {activity.explanation}</p><p><b>Entrega sugerida:</b> {activity.evidence}</p></div>}
-  </article>;
+  </article></LocalizedContent>;
 }
 
 function ApiActivity({ lab, onSuccess }: { lab: ApiLab; onSuccess: (id: string) => void }) {
@@ -37,7 +39,7 @@ function ApiActivity({ lab, onSuccess }: { lab: ApiLab; onSuccess: (id: string) 
   const [token, setToken] = useState(""); const [body, setBody] = useState("{}");
   const [resolution, setResolution] = useState("");
   const [response, setResponse] = useState<ReturnType<typeof simulateApi> | null>(null);
-  return <article className="card" id={`sample-${lab.id}`}><p className="muted">Nivel {lab.level} · APIs e integraciones</p><h3>{lab.title}</h3><p>{lab.task}</p>
+  return <LocalizedContent><article className="card" id={`sample-${lab.id}`}><p className="muted">Nivel {lab.level} · APIs e integraciones</p><h3>{lab.title}</h3><p>{lab.task}</p>
     <p>Contrato: <code>{lab.method} {lab.path}</code>. Token de prueba: <code>demo_reader</code>. Sin datos reales.</p>
     <form onSubmit={event => { event.preventDefault(); const result = simulateApi(lab, { method, path, token, body, resolution }); setResponse(result); if (result.diagnosed) onSuccess(lab.id); }} onChange={() => setResponse(null)}>
       <label style={{ display: "block", marginBottom: 12 }}>Método <select value={method} onChange={event => setMethod(event.target.value)}>{["GET", "POST", "PUT", "DELETE"].map(value => <option key={value}>{value}</option>)}</select></label>
@@ -50,7 +52,7 @@ function ApiActivity({ lab, onSuccess }: { lab: ApiLab; onSuccess: (id: string) 
     {response && <div role="status"><p><b>Respuesta del simulador: {response.status}</b></p><pre style={{ whiteSpace: "pre-wrap" }}>{response.output}</pre>
       {response.status === 200 && <><p><b>{response.diagnosed ? "Diagnóstico correcto." : "Revisa tu hipótesis de corrección."}</b> {lab.explanation}</p><p>Este reporte no ejecuta la reparación. Entrega sugerida: {lab.evidence}</p></>}
     </div>}
-  </article>;
+  </article></LocalizedContent>;
 }
 
 export default function PracticeLearningPreview({ initialLevel, persistence = false, saved = null }: { initialLevel: number | null; persistence?: boolean; saved?: { progress: PracticeProgress; revision: number } | null }) {
@@ -82,7 +84,7 @@ export default function PracticeLearningPreview({ initialLevel, persistence = fa
   const labs = API_LABS.filter(item => level === null || item.level === level);
   const coverage = skillPracticeCoverage(passed, role); const plan = weeklyPracticePlan(passed, role, startDay);
   function record(id: string) { setPassed(current => current.includes(id) ? current : [...current, id]); }
-  return <>
+  return <LocalizedContent><>
     <section className="card"><h2>Elige tu objetivo y tu práctica</h2>
       <label>Puesto objetivo <select value={role} onChange={event => setRole(event.target.value)}>{TARGET_ROLES.map(item => <option key={item.id} value={item.id}>{item.label}</option>)}</select></label>{" "}
       <label>Nivel <select value={level ?? "all"} onChange={event => setLevel(event.target.value === "all" ? null : Number(event.target.value))}><option value="all">Todas las muestras</option>{Array.from({ length: 15 }, (_, i) => <option key={i + 1} value={i + 1}>{i + 1}</option>)}</select></label>
@@ -114,5 +116,6 @@ export default function PracticeLearningPreview({ initialLevel, persistence = fa
       <button className="btn secondary" type="submit">Comprobar respuesta en esta sesión</button>
       {pulseSaved && <p role="status">Respuesta preparada. Usa «Guardar mi progreso» si el guardado de pruebas está disponible. No se publica como testimonio.</p>}
     </form></section>
-  </>;
+  </></LocalizedContent>;
 }
+

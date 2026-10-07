@@ -1,3 +1,5 @@
+import LocalizedDate from '../../../components/localization/date';
+import LocalizedContent from "../../../components/localization/server";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createServerSupabase } from "../../../../lib/supabase-server";
@@ -33,11 +35,11 @@ export default async function TicketPage({ params, searchParams }: PageProps) {
     .order("created_at",{ascending:true});
 
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div>
           <span className="pill">TICKET #{ticket.id}</span>
-          <h1>{ticket.subject}</h1>
+          <h1><span translate="no">{ticket.subject}</span></h1>
           <p className="muted">{ticket.category} · prioridad {ticket.priority} · estado {ticket.status}</p>
         </div>
         <Link className="btn secondary" href="/help/tickets">Mis tickets</Link>
@@ -53,8 +55,8 @@ export default async function TicketPage({ params, searchParams }: PageProps) {
           {(messages ?? []).map((message) => (
             <div key={message.id} style={{padding:14,borderRadius:12,background:message.sender_role==="admin"?"#eef2ff":"#f7f8fa"}}>
               <b>{message.sender_role === "admin" ? "CodeZero Support" : "Tú"}</b>
-              <p style={{whiteSpace:"pre-wrap",lineHeight:1.6}}>{message.body}</p>
-              <div className="muted" style={{fontSize:12}}>{new Date(message.created_at).toLocaleString("es-MX")}</div>
+              <p style={{whiteSpace:"pre-wrap",lineHeight:1.6}}><span translate="no">{message.body}</span></p>
+              <div className="muted" style={{fontSize:12}}><LocalizedDate value={message.created_at} includeTime /></div>
             </div>
           ))}
         </div>
@@ -70,6 +72,7 @@ export default async function TicketPage({ params, searchParams }: PageProps) {
           </form>
         </section>
       )}
-    </main>
+    </main></LocalizedContent>
   );
 }
+

@@ -1,3 +1,5 @@
+import { translatedMetadata } from '../../../lib/localization/metadata';
+import LocalizedContent from "../../components/localization/server";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PracticeLearningPreview from "../../components/practice-learning-preview";
@@ -8,7 +10,7 @@ import { workspaceSandboxEnabled } from "../../../lib/workspace-sandbox";
 import { workspaceUser } from "../../../lib/workspace-server";
 import { validPracticeProgress } from "../../../lib/practice-progress";
 
-export const metadata = { title: "Práctica guiada · revisión CodeZero", robots: { index: false, follow: false } };
+export async function generateMetadata() { return translatedMetadata({ title: "Práctica guiada · revisión CodeZero", robots: { index: false, follow: false } }); }
 export const dynamic = "force-dynamic";
 export default async function PracticePreview({ searchParams }: { searchParams: Promise<{ level?: string }> }) {
   if (process.env.CODEZERO_PRACTICE_PREVIEW !== "1") notFound();
@@ -28,10 +30,11 @@ export default async function PracticePreview({ searchParams }: { searchParams: 
       if (persistence && data) saved = { progress: data.progress, revision: data.revision };
     }
   }
-  return <main className="wrap"><span className="pill">VISTA DE REVISIÓN · DATOS FICTICIOS</span>
+  return <LocalizedContent><main className="wrap"><span className="pill">VISTA DE REVISIÓN · DATOS FICTICIOS</span>
     <h1>Practica lo que harías en un equipo SaaS</h1><p>Ordena pasos, completa código, detecta errores y diagnostica integraciones.</p>
     {runtime ? <BrowserCodePractice {...runtime} /> : <p>La ejecución de Python y SQL requiere el motor de revisión local; aquí puedes explorar las muestras guiadas.</p>}
     <PracticeLearningPreview key={viewerIdentity} initialLevel={initialLevel} persistence={persistence} saved={saved} />
     <p><Link className="btn secondary" href="/dashboard">Volver a Mi CodeZero</Link></p>
-  </main>;
+  </main></LocalizedContent>;
 }
+

@@ -1,4 +1,6 @@
 "use client";
+import LocalizedContent from "./localization/client";
+
 
 import { useEffect, useRef, useState } from "react";
 import { boundedRuntimeResult } from "../../lib/code-runtime-policy";
@@ -52,7 +54,7 @@ export default function BrowserCodePractice({ runtimeOrigin, appOrigin }: { runt
   function choose(id:string) {const next=RUNTIME_CHALLENGES.find(item=>item.id===id);if(!next)return;stop();setChallengeId(next.id);setLanguage(next.language);setCode(next.starter);setResult(null);}
   function reset(next = language) { choose(next===language ? challengeId : RUNTIME_CHALLENGES.find(item=>item.language===next)!.id); }
 
-  return <section className="card browser-code-practice" style={{ marginTop: 24 }}>
+  return <LocalizedContent><section className="card browser-code-practice" style={{ marginTop: 24 }}>
     <span className="pill">PRÁCTICA DE PYTHON Y SQL</span><h2>Escribe, ejecuta y explica</h2>
     <p>Prueba con cuentas ficticias. Cada ejecución empieza de cero y su resultado no cuenta como examen, avance o diploma.</p>
     <label htmlFor="practice-language">Lenguaje</label>{" "}<select id="practice-language" value={language} disabled={!!session} onChange={event => reset(event.target.value as Language)}><option value="python">Python</option><option value="sql">SQL · SQLite</option></select>
@@ -82,5 +84,6 @@ export default function BrowserCodePractice({ runtimeOrigin, appOrigin }: { runt
       <details><summary>Comparar con la salida esperada</summary><pre style={{whiteSpace:'pre-wrap',overflowWrap:'anywhere'}}>{challenge.expected}</pre><p>Comparación formativa. Explica el proceso y los casos límite; la coincidencia de salida no acredita una competencia.</p></details></>}
     {session && <iframe ref={frame} key={session.channel} title="Motor aislado de práctica" hidden tabIndex={-1} aria-hidden="true" sandbox="allow-scripts allow-same-origin" referrerPolicy="no-referrer"
       src={`${runtimeOrigin}/frame#channel=${session.channel}`} />}
-  </section>;
+  </section></LocalizedContent>;
 }
+

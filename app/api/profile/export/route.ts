@@ -91,6 +91,8 @@ export async function GET() {
     account: {
       id: user.id,
       email: user.email ?? null,
+      preferences: { locale: user.user_metadata?.locale ?? "es" },
+      registration: { full_name: user.user_metadata?.full_name ?? null, signup_age: user.user_metadata?.signup_age ?? null },
       profile: profile.data,
     },
     learning: {
@@ -113,5 +115,6 @@ export async function GET() {
     },
   });
 }
+
 
 

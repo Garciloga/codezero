@@ -1,11 +1,13 @@
+import { translatedMetadata } from '../../../lib/localization/metadata';
+import LocalizedContent from "../../components/localization/server";
 import Link from "next/link";
 import { publicMetadata } from "../../../lib/public-metadata";
 
-export const metadata = publicMetadata("Cancelaciones y reembolsos", "Consulta las condiciones de cancelación, reembolsos y contacto de facturación de CodeZero.", "/refunds");
+export async function generateMetadata() { return translatedMetadata(publicMetadata("Cancelaciones y reembolsos", "Consulta las condiciones de cancelación, reembolsos y contacto de facturación de CodeZero.", "/refunds")); }
 
 export default function RefundsPage() {
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div><span className="pill">FACTURACIÓN</span><h1>Cancelaciones y reembolsos</h1></div>
         <Link className="btn secondary" href="/pricing">Planes</Link>
@@ -53,7 +55,8 @@ export default function RefundsPage() {
           lanzamiento comercial general.
         </p>
       </article>
-    </main>
+    </main></LocalizedContent>
   );
 }
+
 

@@ -1,3 +1,4 @@
+import LocalizedContent from "../components/localization/server";
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../lib/supabase-server";
 import { createAdminSupabase, requireAdmin } from "../../lib/admin";
@@ -84,7 +85,7 @@ export default async function Admin({ searchParams }: PageProps) {
   ]);
 
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div>
           <span className="pill">OWNER / ADMIN</span>
@@ -166,7 +167,7 @@ export default async function Admin({ searchParams }: PageProps) {
             <tbody>
               {users?.map((u) => (
                 <tr key={u.id} style={{ borderTop: "1px solid #e5e9f0" }}>
-                  <td style={{ padding: "14px 8px" }}>{u.email}</td>
+                  <td style={{ padding: "14px 8px" }}><span translate="no">{u.email}</span></td>
                   <td style={{ padding: "14px 8px" }}>{u.role}</td>
                   <td style={{ padding: "14px 8px" }}>{u.plan_name}</td>
                   <td style={{ padding: "14px 8px" }}>
@@ -195,7 +196,7 @@ export default async function Admin({ searchParams }: PageProps) {
                       >
                         {(plans ?? []).map((plan) => (
                           <option key={plan.id} value={plan.name}>
-                            {plan.name}
+                            <span translate="no">{plan.name}</span>
                           </option>
                         ))}
                       </select>
@@ -233,7 +234,7 @@ export default async function Admin({ searchParams }: PageProps) {
           <div style={{ display: "grid", gap: 16 }}>
             {(supportTickets ?? []).map((supportTicket) => (
               <div key={supportTicket.id} style={{ borderTop: "1px solid #e5e9f0", paddingTop: 16 }}>
-                <b>#{supportTicket.id} · {supportTicket.subject}</b>
+                <b>#{supportTicket.id} · <span translate="no">{supportTicket.subject}</span></b>
                 <p className="muted">
                   Usuario {supportTicket.user_id} · {supportTicket.category} · {supportTicket.priority} · {supportTicket.status}
                 </p>
@@ -298,7 +299,7 @@ export default async function Admin({ searchParams }: PageProps) {
                 <p className="muted">
                   Usuario {submission.user_id} · Proyecto {submission.project_id} · Estado {submission.status}
                 </p>
-                <p style={{ whiteSpace: "pre-wrap" }}>{submission.submission_text}</p>
+                <p style={{ whiteSpace: "pre-wrap" }}><span translate="no">{submission.submission_text}</span></p>
 
                 <form
                   action="/api/admin/projects/review"
@@ -353,7 +354,7 @@ export default async function Admin({ searchParams }: PageProps) {
         <div className="grid grid2">
           {(plans ?? []).map((plan) => (
             <div key={plan.id}>
-              <b>{plan.name}</b>
+              <b><span translate="no">{plan.name}</span></b>
               <p className="muted">
                 {"$" + (plan.price_monthly_cents / 100).toFixed(0)} MXN/mes ·
                 ejercicios {plan.exercise_limit < 0 ? "sin límite" : plan.exercise_limit} ·
@@ -365,7 +366,8 @@ export default async function Admin({ searchParams }: PageProps) {
           ))}
         </div>
       </div>
-    </main>
+    </main></LocalizedContent>
   );
 }
+
 

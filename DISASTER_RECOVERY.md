@@ -1,6 +1,6 @@
 # CodeZero · Disaster Recovery
 
-Última actualización: 6 de octubre de 2026.
+Última actualización: 7 de octubre de 2026.
 
 Este documento define cómo recuperar CodeZero ante fallos graves sin incluir credenciales ni secretos.
 
@@ -31,7 +31,7 @@ Este documento define cómo recuperar CodeZero ante fallos graves sin incluir cr
 
 1. No ejecutar migraciones adicionales durante un incidente hasta conocer la causa.
 2. Si la base sigue disponible, preservar evidencia y verificar consistencia.
-3. Si se requiere reconstrucción, crear una base limpia y aplicar las migraciones en orden.
+3. Antes de reconstruir, comparar el esquema real, las versiones remotas y los archivos versionados. Hay migraciones históricas cuya numeración remota difiere: no ejecutar `db push` ni repetir todas indiscriminadamente. Preparar una línea base reconciliada en un entorno aislado.
 4. Restaurar datos desde el mecanismo de backup disponible en Supabase cuando exista.
 5. Validar conteos, relaciones y RLS antes de reconectar tráfico.
 
@@ -48,6 +48,11 @@ Este documento define cómo recuperar CodeZero ante fallos graves sin incluir cr
 
 El proyecto usa un plan de Supabase con capacidades limitadas. Si no existe backup automático suficiente, la prioridad es mantener todas las migraciones versionadas y establecer un procedimiento de exportación periódica antes de una apertura comercial amplia. No se deben crear copias con datos personales en repositorios o almacenamiento público.
 
+## Simulacro local comprobado
+
+`scripts/recovery-local-check.mjs` restaura un backup comprimido de PostgreSQL PGlite con datos ficticios y comprueba datos, roles, RLS y denegación anónima. CI ejecuta esta comprobación. No verifica disponibilidad, retención ni restauración de un backup de Supabase cloud; esa recuperación sigue sin confirmarse.
+
 ## Simulacro recomendado
 
 Antes de escalar a más usuarios, realizar un simulacro de recuperación en un entorno separado: aplicar migraciones desde cero, crear una cuenta de prueba, completar una lección, un ejercicio y una evaluación, y verificar que RLS y cuotas funcionen.
+

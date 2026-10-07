@@ -1,3 +1,5 @@
+import LocalizedDate from '../components/localization/date';
+import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../lib/supabase-server";
@@ -28,7 +30,7 @@ export default async function CertificatePage() {
   const publication = workspaceEnabled() ? (await supabase.from("certificate_publications").select("public_id,status").eq("user_id",user.id).eq("certificate_id",certificate.id).maybeSingle()).data : null;
 
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div>
           <span className="pill">CERTIFICACIÓN</span>
@@ -41,7 +43,7 @@ export default async function CertificatePage() {
       <div className="card" style={{ textAlign: "center", padding: 48 }}>
         <p className="muted">Se certifica que</p>
         <h2 style={{ fontSize: 36, marginBottom: 8 }}>
-          {profile?.full_name || profile?.email || "Estudiante CodeZero"}
+          <span translate="no">{profile?.full_name || profile?.email || "Estudiante CodeZero"}</span>
         </h2>
         <p style={{ fontSize: 18, lineHeight: 1.6 }}>
           completó satisfactoriamente los 15 niveles de CodeZero,
@@ -49,14 +51,15 @@ export default async function CertificatePage() {
           integraciones empresariales, arquitectura y seguridad.
         </p>
         <p className="muted">
-          Fecha de emisión: {new Date(certificate.issued_at).toLocaleDateString("es-MX")}
+          Fecha de emisión: <LocalizedDate value={certificate.issued_at} />
         </p>
         <p className="muted" style={{ fontSize: 12 }}>
           ID de certificado: {certificate.id}
         </p>
       </div>
       {workspaceEnabled() && <CertificateSharing certificateId={certificate.id} initialPath={publication?.status === "verified" ? `/verify/${publication.public_id}` : null} displayName={profile?.full_name || "Estudiante CodeZero"}/>}
-    </main>
+    </main></LocalizedContent>
   );
 }
+
 

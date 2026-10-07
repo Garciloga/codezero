@@ -1,11 +1,13 @@
+import { translatedMetadata } from '../../../lib/localization/metadata';
+import LocalizedContent from "../../components/localization/server";
 import Link from "next/link";
 import { publicMetadata } from "../../../lib/public-metadata";
 
-export const metadata = publicMetadata("Términos", "Consulta los Términos de uso de CodeZero.", "/terms");
+export async function generateMetadata() { return translatedMetadata(publicMetadata("Términos", "Consulta los Términos de uso de CodeZero.", "/terms")); }
 
 export default function TermsPage() {
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div><span className="pill">LEGAL</span><h1>Términos de uso</h1></div>
         <Link className="btn secondary" href="/">Inicio</Link>
@@ -96,7 +98,8 @@ export default function TermsPage() {
           revisión legal y fiscal profesional.
         </p>
       </article>
-    </main>
+    </main></LocalizedContent>
   );
 }
+
 

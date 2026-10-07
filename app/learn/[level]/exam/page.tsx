@@ -1,3 +1,4 @@
+import LocalizedContent from "../../../components/localization/server";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createServerSupabase } from "../../../../lib/supabase-server";
@@ -127,7 +128,7 @@ export default async function ExamPage({ params, searchParams }: PageProps) {
   const levelAlreadyPassed = passedLevels.has(levelNumber);
 
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div>
           <span className="pill">EVALUACIÓN · NIVEL {levelNumber}</span>
@@ -184,8 +185,9 @@ export default async function ExamPage({ params, searchParams }: PageProps) {
           <button className="btn" type="submit">Enviar evaluación</button>
         </div>
       </form>
-    </main>
+    </main></LocalizedContent>
   );
 }
+
 
 

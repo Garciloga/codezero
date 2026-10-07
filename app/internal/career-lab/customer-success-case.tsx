@@ -1,4 +1,6 @@
 "use client";
+import LocalizedContent from "../../components/localization/client";
+
 import { useState } from "react";
 import { CS_CASE_METRICS, CS_CASE_STAGES, getCsDecisionFeedback } from "../../../lib/customer-success-practical-case";
 
@@ -8,7 +10,7 @@ export default function CustomerSuccessCase() {
   const [drafts, setDrafts] = useState<Record<string, string>>({});
   const stage = CS_CASE_STAGES[stageIndex];
   const feedback = getCsDecisionFeedback(stage.key, decisions[stage.key] ?? "");
-  return <details className="lab-section">
+  return <LocalizedContent><details className="lab-section">
     <summary>Practica Customer Success: una cuenta de principio a fin</summary>
     <p>Cuenta Faro es ficticia. Tiene 30 usuarios habilitados y busca reducir la preparación de un reporte de cinco a dos días laborables. Puedes explorar las etapas en cualquier orden.</p>
     <p className="muted">Solo práctica local: tus borradores no se envían ni se guardan. Recargar o cambiar de posición los elimina. Usa únicamente datos inventados; no otorga puntos ni certificados.</p>
@@ -46,5 +48,6 @@ export default function CustomerSuccessCase() {
       <h4>Revisa tu entrega</h4><ul>{stage.review.map(item => <li key={item}>{item}</li>)}</ul>
       <p>Identifica qué evidencia falta y prueba otra decisión. Esta revisión es orientativa y no califica automáticamente el borrador.</p>
     </section>
-  </details>;
+  </details></LocalizedContent>;
 }
+

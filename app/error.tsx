@@ -1,4 +1,6 @@
 "use client";
+import LocalizedContent from "./components/localization/client";
+
 
 import { useEffect } from "react";
 import Link from "next/link";
@@ -15,7 +17,7 @@ export default function ErrorPage({
   }, [error]);
 
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="card" style={{maxWidth:720,margin:"70px auto",textAlign:"center"}}>
         <span className="pill">ERROR</span>
         <h1>Algo no salió como esperábamos</h1>
@@ -27,6 +29,7 @@ export default function ErrorPage({
           <Link className="btn secondary" href="/dashboard">Mi CodeZero</Link>
         </div>
       </div>
-    </main>
+    </main></LocalizedContent>
   );
 }
+

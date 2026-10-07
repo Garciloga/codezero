@@ -1,4 +1,6 @@
 "use client";
+import LocalizedContent from "../components/localization/client";
+
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -58,7 +60,7 @@ export default function CheckoutPage() {
   }
 
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div>
           <span className="pill">CHECKOUT</span>
@@ -100,6 +102,7 @@ export default function CheckoutPage() {
           {loading ? "Preparando pago..." : "Continuar al pago"}
         </button>
       </div>
-    </main>
+    </main></LocalizedContent>
   );
 }
+

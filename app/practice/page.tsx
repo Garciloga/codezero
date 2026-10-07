@@ -1,3 +1,5 @@
+import { translatedMetadata } from '../../lib/localization/metadata';
+import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import PracticeLearningPreview from "../components/practice-learning-preview";
@@ -8,7 +10,7 @@ import { codeRuntimeConfiguration } from "../../lib/code-runtime-policy";
 import { workspaceEnabled } from "../../lib/workspace-sandbox";
 import { workspaceUser } from "../../lib/workspace-server";
 import { validPracticeProgress } from "../../lib/practice-progress";
-export const metadata = { title: "Práctica y decisiones", robots: { index: false, follow: false } };
+export async function generateMetadata() { return translatedMetadata({ title: "Práctica y decisiones", robots: { index: false, follow: false } }); }
 export default async function PracticePage() {
  if (!workspaceEnabled()) notFound();
  const session = await workspaceUser(); if (!session) redirect("/login");
@@ -16,9 +18,10 @@ export default async function PracticePage() {
  const persistence=!error && (!data || validPracticeProgress(data.progress));
  const saved=persistence && data ? {progress:data.progress,revision:data.revision}:null;
  const runtime=codeRuntimeConfiguration(process.env);
- return <main className="wrap"><span className="pill">PRÁCTICA GUIADA</span><h1>Elige tu camino y practica decisiones</h1>
+ return <LocalizedContent><main className="wrap"><span className="pill">PRÁCTICA GUIADA</span><h1>Elige tu camino y practica decisiones</h1>
  <p>Trabaja con casos ficticios de Customer Success, soporte e integraciones. Este progreso es privado y no sustituye las evaluaciones del curso.</p>
  <PracticeLearningPreview key={session.user.id} initialLevel={null} persistence={persistence} saved={saved}/><RoleCasePractice/><PracticeEvidenceReview/>
  {runtime && <BrowserCodePractice {...runtime}/>}
- <p><Link href="/dashboard" className="btn secondary">Volver a Mi CodeZero</Link></p></main>;
+ <p><Link href="/dashboard" className="btn secondary">Volver a Mi CodeZero</Link></p></main></LocalizedContent>;
 }
+

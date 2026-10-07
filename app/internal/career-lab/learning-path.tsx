@@ -1,4 +1,6 @@
 "use client";
+import LocalizedContent from "../../components/localization/client";
+
 
 import { useState } from "react";
 import { LEARNING_GUIDES } from "../../../lib/career-learning-content";
@@ -26,7 +28,7 @@ export default function LearningPathView({
     "Identifiqué una limitación o algo que necesito practicar.",
   ];
 
-  return <div className="lab-section">
+  return <LocalizedContent><div className="lab-section">
     <label>¿Qué quiere aprender el personaje?
       <select value={path.goal} onChange={e => onDecision({ type: "choose", goal: e.target.value as LearningPath["goal"] })}>
         {LEARNING_GOALS.map(goal => <option value={goal} key={goal}>{GOAL_LABELS[goal]}</option>)}
@@ -105,5 +107,6 @@ export default function LearningPathView({
         {GOAL_LABELS[entry.goal]} · {entry.reason === "choice" ? "elección propia" : entry.reason === "reinforce" ? "reforzar criterio" : "misión revisada"}
       </li>)}</ol>
     </details>}
-  </div>;
+  </div></LocalizedContent>;
 }
+

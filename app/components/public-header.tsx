@@ -1,4 +1,6 @@
 "use client";
+import LocalizedContent from "./localization/client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
@@ -21,9 +23,9 @@ export default function PublicHeader({ authenticated }: { authenticated: boolean
     document.addEventListener("pointerdown", closeOutside);
     return () => document.removeEventListener("pointerdown", closeOutside);
   }, []);
-  const navigation = <>{links.map(link => <Link href={link.href} key={link.href}
-    aria-current={pathname === link.href ? "page" : undefined}>{link.label}</Link>)}</>;
-  return <header className="public-header">
+  const navigation = <LocalizedContent><>{links.map(link => <Link href={link.href} key={link.href}
+    aria-current={pathname === link.href ? "page" : undefined}>{link.label}</Link>)}</></LocalizedContent>;
+  return <LocalizedContent><header className="public-header">
     <div className="public-header-inner">
       <Link className="public-brand" href="/" aria-label="CodeZero · Inicio">CodeZero</Link>
       <nav className="public-nav public-desktop-nav" aria-label="Navegación pública">{navigation}</nav>
@@ -41,5 +43,6 @@ export default function PublicHeader({ authenticated }: { authenticated: boolean
         }}>{navigation}</nav>
       </details>
     </div>
-  </header>;
+  </header></LocalizedContent>;
 }
+

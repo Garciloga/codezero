@@ -1,11 +1,13 @@
+import { translatedMetadata } from '../../../lib/localization/metadata';
+import LocalizedContent from "../../components/localization/server";
 import Link from "next/link";
 import { publicMetadata } from "../../../lib/public-metadata";
 
-export const metadata = publicMetadata("Aviso de privacidad", "Consulta cómo CodeZero trata los datos de cuenta y aprendizaje.", "/privacy");
+export async function generateMetadata() { return translatedMetadata(publicMetadata("Aviso de privacidad", "Consulta cómo CodeZero trata los datos de cuenta y aprendizaje.", "/privacy")); }
 
 export default function PrivacyPage() {
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div><span className="pill">PRIVACIDAD</span><h1>Aviso de privacidad</h1></div>
         <Link className="btn secondary" href="/">Inicio</Link>
@@ -44,6 +46,7 @@ export default function PrivacyPage() {
           tarjeta son procesados por Stripe y no se almacenan directamente en CodeZero.
         </p>
 
+        <p>Idioma preferido y edad opcional de registro. La elección de idioma solo personaliza la presentación; no cambia permisos, calificaciones ni precios.</p>
         <h2>Finalidades</h2>
         <p>
           Autenticación, prestación del servicio, seguimiento del progreso, soporte, prevención
@@ -102,7 +105,8 @@ export default function PrivacyPage() {
           comercialización amplia.
         </p>
       </article>
-    </main>
+    </main></LocalizedContent>
   );
 }
+
 

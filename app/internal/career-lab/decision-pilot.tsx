@@ -1,4 +1,6 @@
 "use client";
+import LocalizedContent from "../../components/localization/client";
+
 
 import { useEffect, useRef } from "react";
 import { DECISION_PILOT, PILOT_CHECK_LABELS } from "../../../lib/career-decision-pilot";
@@ -15,7 +17,7 @@ export default function DecisionPilot({ state, onDecision }: {
     previousNode.current = state.node;
   }, [state.node]);
 
-  return <section className="lab-section" aria-label="Misión piloto por decisiones">
+  return <LocalizedContent><section className="lab-section" aria-label="Misión piloto por decisiones">
     <h3>Misión piloto: corrige un formulario</h3>
     <p>Decide, lee la consecuencia y elige por dónde continuar. Caso ficticio, sin ejecutar código ni recibir entregas.</p>
     <p><b>{state.checks.length} de 3 comprobaciones de comprensión revisadas</b> · progreso independiente de las misiones introductorias</p>
@@ -40,7 +42,7 @@ export default function DecisionPilot({ state, onDecision }: {
         <b>{DECISION_PILOT[entry.node].title}:</b> {entry.choice}<p>{entry.consequence}</p>
       </li>)}</ol>
     </details>}
-  </section>;
+  </section></LocalizedContent>;
 }
 
 function PilotDecision({ node, feedback, onDecision }: {
@@ -48,7 +50,7 @@ function PilotDecision({ node, feedback, onDecision }: {
   feedback: PilotState["feedback"];
   onDecision: (action: PilotAction) => void;
 }) {
-  return <>
+  return <LocalizedContent><>
     <fieldset disabled={feedback !== null}>
       <legend>{node.question}</legend>
       <p className="muted">Elige una opción para ver su consecuencia antes de avanzar.</p>
@@ -60,5 +62,6 @@ function PilotDecision({ node, feedback, onDecision }: {
       <p><b>Próximo paso:</b> {DECISION_PILOT[feedback.next].title}</p>
       <button type="button" className="btn" onClick={() => onDecision({ type: "continue" })}>Continuar por este camino</button>
     </div>}
-  </>;
+  </></LocalizedContent>;
 }
+

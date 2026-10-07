@@ -1,6 +1,8 @@
+import LocalizedContent from "./localization/server";
 import Link from 'next/link';
 export default function LearningNavigation({teamsEnabled=false,practiceEnabled=false}:{teamsEnabled?:boolean;practiceEnabled?:boolean}){
  const items=[{href:'#my-learning-path',title:'Continuar mi camino',detail:'Niveles, práctica y diplomas',symbol:'↗'},{href:'/profile',title:'Mi espacio',detail:'Apariencia y preferencias de cuenta',symbol:'◐'},...(practiceEnabled?[{href:'/practice',title:'Explorar decisiones',detail:'Casos, decisiones y próximos pasos',symbol:'⌘'}]:[]),...(practiceEnabled?[{href:'/certificates',title:'Mis certificados',detail:'Documentos incluidos al aprobar',symbol:'◇'}]:[]),...(practiceEnabled?[{href:'/customer-success',title:'Customer Success',detail:'Curso práctico incluido en Pro y Enterprise',symbol:'↗'}]:[]),...(practiceEnabled?[{href:'/modules',title:'Módulos',detail:'Catálogo y listas de espera',symbol:'+'}]:[]),...(teamsEnabled?[{href:'/teams',title:'Mis equipos',detail:'Organizaciones y avance autorizado',symbol:'◎'}]:[])];
- return <nav className="learning-navigation" aria-label="Accesos a mi aprendizaje">{items.map(x=><Link href={x.href} key={x.href}><span aria-hidden="true">{x.symbol}</span><div><strong>{x.title}</strong><small>{x.detail}</small></div><span aria-hidden="true">→</span></Link>)}</nav>;
+ return <LocalizedContent><nav className="learning-navigation" aria-label="Accesos a mi aprendizaje">{items.map(x=><Link href={x.href} key={x.href}><span aria-hidden="true">{x.symbol}</span><div><strong>{x.title}</strong><small>{x.detail}</small></div><span aria-hidden="true">→</span></Link>)}</nav></LocalizedContent>;
 }
+
 

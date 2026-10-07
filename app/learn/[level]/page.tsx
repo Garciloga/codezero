@@ -1,3 +1,4 @@
+import LocalizedContent from "../../components/localization/server";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createServerSupabase } from "../../../lib/supabase-server";
@@ -133,7 +134,7 @@ export default async function LevelPage({ params }: PageProps) {
     allLessonsCompleted && (!project || projectApproved);
 
   return (
-    <main className="wrap">
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div>
           <span className="pill">
@@ -270,6 +271,7 @@ export default async function LevelPage({ params }: PageProps) {
           )}
         </div>
       </section>
-    </main>
+    </main></LocalizedContent>
   );
 }
+

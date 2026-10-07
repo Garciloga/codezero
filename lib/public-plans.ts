@@ -18,7 +18,8 @@ export function parsePublicPlans(rows: unknown): PublicPlan[] | null {
   }
   return result;
 }
-export const planPrice = (cents: number) => new Intl.NumberFormat("es-MX", {
+export const planPrice = (cents: number, locale: string = "es-MX") => new Intl.NumberFormat(locale, {
   style: "currency", currency: "MXN", minimumFractionDigits: 0, maximumFractionDigits: 2,
 }).format(cents / 100);
-export const planLimit = (limit: number) => limit === -1 ? "Sin límite mensual" : new Intl.NumberFormat("es-MX").format(limit);
+export const planLimit = (limit: number, locale: string = "es-MX") => limit === -1 ? "Sin límite mensual" : new Intl.NumberFormat(locale).format(limit);
+
