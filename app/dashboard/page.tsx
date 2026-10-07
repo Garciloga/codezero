@@ -278,7 +278,9 @@ export default async function Dashboard({ searchParams }: PageProps) {
           ].map(([name, used, limit]) => (
             <div className="card" key={name as string}>
               <p><b>{name}</b></p>
-              <p className="muted">{used} usados de {limit}</p>
+              <p className="muted">
+                {limit as number < 0 ? `${used} usados · sin límite` : `${used} usados de ${limit}`}
+              </p>
               <div className="bar">
                 <i style={{ width: `${pct(used as number, limit as number)}%` }} />
               </div>
