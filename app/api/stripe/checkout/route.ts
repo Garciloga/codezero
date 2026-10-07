@@ -29,7 +29,15 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "UNAUTHENTICATED" }, { status: 401 });
   }
 
-  const { plan, paymentAuthorization } = await req.json();
+  let payload: { plan?: string; paymentAuthorization?: boolean };
+
+  try {
+    payload = await req.json();
+  } catch {
+    return NextResponse.json({ error: "INVALID_REQUEST" }, { status: 400 });
+  }
+
+  const { plan, paymentAuthorization } = payload;
 
   if (paymentAuthorization !== true) {
     return NextResponse.json({ error: "PAYMENT_AUTHORIZATION_REQUIRED" }, { status: 400 });
