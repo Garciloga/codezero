@@ -12,7 +12,7 @@ export default async function ProfilePage({ searchParams }: PageProps) {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("email,full_name,role,plan_name,status,billing_status,stripe_cancel_at_period_end,created_at")
+    .select("email,full_name,role,plan_name,status,billing_status,stripe_customer_id,stripe_cancel_at_period_end,created_at")
     .eq("id", user.id)
     .single();
 
@@ -84,12 +84,16 @@ export default async function ProfilePage({ searchParams }: PageProps) {
             <p className="muted">Cancelación programada al finalizar el periodo vigente.</p>
           )}
 
-          {profile?.plan_name && profile.plan_name !== "free" ? (
+          {profile?.plan_name && profile.plan_name !== "free" && profile.stripe_customer_id ? (
             <form action="/api/stripe/portal" method="post" style={{ marginTop: 20 }}>
               <button className="btn secondary" type="submit">
                 Administrar suscripción
               </button>
             </form>
+          ) : profile?.plan_name && profile.plan_name !== "free" ? (
+            <p className="muted" style={{ marginTop: 20 }}>
+              Este acceso fue asignado sin una suscripción de Stripe. Para cambios de plan, contacta soporte.
+            </p>
           ) : (
             <div style={{ marginTop: 20 }}>
               <Link className="btn secondary" href="/pricing">
