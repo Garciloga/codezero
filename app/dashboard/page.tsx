@@ -192,7 +192,7 @@ export default async function Dashboard({ searchParams }: PageProps) {
             </p>
           </div>
           <div className="muted">
-            {learningLevels.length} niveles · {totalHours} horas
+            {learningLevels.length} niveles · {totalHours} horas estimadas*
           </div>
         </div>
 
@@ -255,6 +255,10 @@ export default async function Dashboard({ searchParams }: PageProps) {
           })}
         </div>
       </section>
+
+      <p className="muted" style={{ marginTop: 18, fontSize: 13 }}>
+        *La duración estimada incluye estudio, práctica guiada, ejercicios, evaluaciones, proyectos y trabajo independiente.
+      </p>
 
       {certificate && (
         <section style={{ marginTop: 32 }}>
