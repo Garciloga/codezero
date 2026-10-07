@@ -8,6 +8,7 @@ import type {
 import {
   calculateProfileConfidence,
   experienceGate,
+  POSITION_WEIGHTS,
   rankPositions,
 } from "./career-guidance";
 
@@ -87,7 +88,6 @@ function topEvidenceDimensions(
   scores: Partial<Record<CareerDimension, number>>,
   limit = 4,
 ) {
-  const { POSITION_WEIGHTS } = requireCareerModule();
   const weights = POSITION_WEIGHTS[position];
 
   return (Object.entries(weights) as [CareerDimension, number][])
@@ -99,12 +99,6 @@ function topEvidenceDimensions(
     }))
     .sort((a, b) => b.contribution - a.contribution)
     .slice(0, limit);
-}
-
-function requireCareerModule() {
-  // Kept in a function so this helper is easy to replace with generated model data later.
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  return require("./career-guidance") as typeof import("./career-guidance");
 }
 
 export type CareerRecommendation = {
