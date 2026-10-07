@@ -17,17 +17,19 @@ Estado: pre-lanzamiento técnico.
 - Política Free alineada con el acceso real.
 - Encabezados de seguridad, robots.txt, sitemap y metadatos.
 - Recuperación de contraseña.
-- Páginas base de Términos, Privacidad y Reembolsos.
+- Páginas base de Términos, Privacidad y Reembolsos, con responsable, contacto, jurisdicción CDMX y política de no reembolso automático salvo error/cobro duplicado.
+- Política para usuarios menores: autorización/supervisión de madre, padre o tutor y confirmación en registro.
+- Página pública de contacto.
 - CI de GitHub y builds de Vercel.
 - Currículo, ejercicios y banco de examen mejorados respecto al seed inicial.
 
 ## Bloqueadores manuales antes de apertura pública
 
 1. **Leaked Password Protection** queda diferido porque requiere un plan superior de Supabase.
-2. Configurar **SMTP propio** para confirmaciones y recuperación de contraseña.
+2. **SMTP propio** queda diferido hasta contar con un dominio controlado. Se probó Resend con un subdominio gratuito compartido, pero el proveedor DNS bloquea los registros DKIM `_domainkey` necesarios para verificación.
 3. Identidad pública y contacto legal básico ya añadidos; queda revisión legal/fiscal profesional antes del lanzamiento.
 4. Obtener revisión legal/fiscal de Términos, Privacidad, Reembolsos e impuestos.
-5. Definir dominio propio y correo transaccional del dominio.
+5. Obtener un dominio propio cuando haya presupuesto y entonces completar Resend + SMTP de Supabase.
 6. Hacer una compra real de bajo riesgo cuando sea posible para verificar el ciclo completo de pago, renovación/cancelación y cambio de plan. No es necesario para seguir desarrollando.
 7. Si se habilita Tutor IA, añadir `OPENAI_API_KEY` directamente en Vercel y establecer un presupuesto/límite de gasto.
 
