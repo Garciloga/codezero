@@ -24,7 +24,9 @@ Estado: pre-lanzamiento técnico.
 - Smoke test automatizado de producción para home, pricing, login, páginas legales, robots, sitemap y encabezados de seguridad; ejecución diaria y manual desde GitHub Actions.
 - QA de integridad de base de datos: 15 niveles, 92 lecciones, 92 ejercicios, 15 exámenes, 45 preguntas y sin registros huérfanos en relaciones críticas.
 - Revisión de producción sin errores de runtime recientes y sin webhooks de Stripe fallidos.
-- Currículo, ejercicios y banco de examen mejorados respecto al seed inicial.
+- Currículo ampliado con práctica guiada y evidencia de dominio en las 92 lecciones.
+- Banco de evaluación ampliado a 75 preguntas (5 por nivel) con claves completas y escenarios prácticos.
+- Restricciones de integridad en base de datos para planes, estados, puntuaciones, cuotas y webhooks.
 
 ## Bloqueadores manuales antes de apertura pública
 
