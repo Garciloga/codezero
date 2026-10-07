@@ -29,11 +29,19 @@ export async function POST(req: Request) {
 
   const admin = createAdminSupabase();
 
-  const { data: before } = await admin
+  const { data: before, error: beforeError } = await admin
     .from("project_submissions")
     .select("status,score,feedback")
     .eq("id", submissionId)
     .single();
+
+  if (beforeError || !before) {
+    return NextResponse.json({ error: "SUBMISSION_NOT_FOUND" }, { status: 404 });
+  }
+
+  if (!["submitted", "needs_revision"].includes(before.status)) {
+    return NextResponse.json({ error: "SUBMISSION_ALREADY_FINAL" }, { status: 409 });
+  }
 
   const newStatus = score >= 70 ? "approved" : "needs_revision";
 
