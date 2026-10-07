@@ -33,7 +33,7 @@ export default function CheckoutPage() {
       const response = await fetch("/api/stripe/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plan }),
+        body: JSON.stringify({ plan, paymentAuthorization: true }),
       });
 
       const data = await response.json();
