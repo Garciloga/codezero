@@ -34,7 +34,17 @@ export default function Login() {
         return;
       }
 
-      const result = await supabase.auth.signUp({email,password});
+      const result = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: {
+            signup_terms_version: "2026-10-06",
+            signup_terms_accepted_at: new Date().toISOString(),
+            guardian_authorization_confirmed: true,
+          },
+        },
+      });
       if (result.error) return setMsg(result.error.message);
 
       if (!result.data.session) {
@@ -83,8 +93,8 @@ export default function Login() {
         </p>
 
         <form onSubmit={submit} className="grid">
-          <input placeholder="Email" type="email" value={email} onChange={e=>setEmail(e.target.value)} required />
-          <input placeholder="Contraseña" type="password" value={password} onChange={e=>setPassword(e.target.value)} minLength={8} required />
+          <input placeholder="Email" type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)} required />
+          <input placeholder="Contraseña" type="password" autoComplete={mode === "login" ? "current-password" : "new-password"} value={password} onChange={e=>setPassword(e.target.value)} minLength={8} required />
           {mode === "signup" && (
             <label style={{display:"flex",gap:10,alignItems:"flex-start",fontSize:14}}>
               <input
