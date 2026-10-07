@@ -13,7 +13,8 @@ export default function Login() {
   const [mode,setMode]=useState<"login"|"signup">("login");
   const [msg,setMsg]=useState("");
   const [busy,setBusy]=useState(false);
-  const [minorConsent,setMinorConsent]=useState(false);
+  const [eligibilityConfirmed,setEligibilityConfirmed]=useState(false);
+  const [legalAccepted,setLegalAccepted]=useState(false);
 
   async function submit(e:FormEvent) {
     e.preventDefault();
@@ -29,8 +30,13 @@ export default function Login() {
         return;
       }
 
-      if (!minorConsent) {
+      if (!eligibilityConfirmed) {
         setMsg("Confirma que eres mayor de 18 años o que cuentas con autorización de tu madre, padre o tutor.");
+        return;
+      }
+
+      if (!legalAccepted) {
+        setMsg("Acepta los Términos y el Aviso de privacidad para crear tu cuenta.");
         return;
       }
 
@@ -41,7 +47,7 @@ export default function Login() {
           data: {
             signup_terms_version: "2026-10-06",
             signup_terms_accepted_at: new Date().toISOString(),
-            guardian_authorization_confirmed: true,
+            age_or_guardian_authorization_confirmed: true,
           },
         },
       });
@@ -96,18 +102,32 @@ export default function Login() {
           <input placeholder="Email" type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)} required />
           <input placeholder="Contraseña" type="password" autoComplete={mode === "login" ? "current-password" : "new-password"} value={password} onChange={e=>setPassword(e.target.value)} minLength={8} required />
           {mode === "signup" && (
-            <label style={{display:"flex",gap:10,alignItems:"flex-start",fontSize:14}}>
-              <input
-                type="checkbox"
-                checked={minorConsent}
-                onChange={e=>setMinorConsent(e.target.checked)}
-                required
-                style={{marginTop:3}}
-              />
-              <span>
-                Soy mayor de 18 años o cuento con autorización de mi madre, padre o tutor legal para usar CodeZero.
-              </span>
-            </label>
+            <>
+              <label style={{display:"flex",gap:10,alignItems:"flex-start",fontSize:14}}>
+                <input
+                  type="checkbox"
+                  checked={eligibilityConfirmed}
+                  onChange={e=>setEligibilityConfirmed(e.target.checked)}
+                  required
+                  style={{marginTop:3}}
+                />
+                <span>
+                  Soy mayor de 18 años o cuento con autorización de mi madre, padre o tutor legal para usar CodeZero.
+                </span>
+              </label>
+              <label style={{display:"flex",gap:10,alignItems:"flex-start",fontSize:14}}>
+                <input
+                  type="checkbox"
+                  checked={legalAccepted}
+                  onChange={e=>setLegalAccepted(e.target.checked)}
+                  required
+                  style={{marginTop:3}}
+                />
+                <span>
+                  Acepto los <Link href="/terms">Términos</Link> y confirmo que leí el <Link href="/privacy">Aviso de privacidad</Link>.
+                </span>
+              </label>
+            </>
           )}
           <button className="btn" disabled={busy}>
             {busy ? "Procesando..." : mode==="login"?"Entrar":"Crear cuenta"}
