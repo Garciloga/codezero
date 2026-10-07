@@ -218,48 +218,34 @@ export async function POST(req: Request) {
                   : "incomplete";
 
         const currentPriceId = subscription.items.data[0]?.price?.id ?? null;
-        let query = admin.from("account_addons").upsert({
-          user_id: metadataUserId ?? "__missing_user__",
-          addon_key: "ai_tutor",
-          status,
-          stripe_customer_id: customerId,
-          stripe_subscription_id: subscription.id,
-          current_price_id: currentPriceId,
-          cancel_at_period_end:
-            event.type === "customer.subscription.deleted"
-              ? false
-              : Boolean(subscription.cancel_at_period_end),
-          updated_at: nowIso,
-        }, { onConflict: "user_id,addon_key" });
+        let addonUserId = metadataUserId ?? null;
 
-        if (!metadataUserId) {
+        if (!addonUserId) {
           const { data: existingAddon } = await admin
             .from("account_addons")
             .select("user_id")
             .eq("stripe_subscription_id", subscription.id)
             .maybeSingle();
-
-          if (existingAddon?.user_id) {
-            query = admin.from("account_addons").upsert({
-              user_id: existingAddon.user_id,
-              addon_key: "ai_tutor",
-              status,
-              stripe_customer_id: customerId,
-              stripe_subscription_id: subscription.id,
-              current_price_id: currentPriceId,
-              cancel_at_period_end:
-                event.type === "customer.subscription.deleted"
-                  ? false
-                  : Boolean(subscription.cancel_at_period_end),
-              updated_at: nowIso,
-            }, { onConflict: "user_id,addon_key" });
-          } else {
-            query = admin.from("account_addons").select("user_id").eq("user_id", "__no_match__");
-          }
+          addonUserId = existingAddon?.user_id ?? null;
         }
 
-        const { error } = await query;
-        if (error) throw error;
+        if (addonUserId) {
+          const { error } = await admin.from("account_addons").upsert({
+            user_id: addonUserId,
+            addon_key: "ai_tutor",
+            status,
+            stripe_customer_id: customerId,
+            stripe_subscription_id: subscription.id,
+            current_price_id: currentPriceId,
+            cancel_at_period_end:
+              event.type === "customer.subscription.deleted"
+                ? false
+                : Boolean(subscription.cancel_at_period_end),
+            updated_at: nowIso,
+          }, { onConflict: "user_id,addon_key" });
+
+          if (error) throw error;
+        }
       } else {
         const plan = getPlanFromSubscription(subscription);
         const usable = ["active", "trialing", "past_due"].includes(subscription.status);
