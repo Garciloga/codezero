@@ -2,6 +2,7 @@ import Stripe from "stripe";
 import { NextResponse } from "next/server";
 import { createServerSupabase } from "../../../../lib/supabase-server";
 import { isTrustedBrowserRequest } from "../../../../lib/security";
+import { consumeRateLimit } from "../../../../lib/rate-limit";
 
 export async function POST(req: Request) {
   if (!isTrustedBrowserRequest(req)) {
@@ -19,6 +20,14 @@ export async function POST(req: Request) {
 
   if (!user) {
     return NextResponse.redirect(new URL("/login", req.url), 303);
+  }
+
+  const rate = await consumeRateLimit(`portal:${user.id}`, 10, 600);
+  if (!rate.allowed) {
+    return NextResponse.json(
+      { error: "RATE_LIMITED" },
+      { status: 429, headers: { "Retry-After": String(rate.retry_after_seconds) } }
+    );
   }
 
   const { data: profile } = await supabase
