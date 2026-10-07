@@ -28,14 +28,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "FORBIDDEN" }, { status: 403 });
   }
 
-  const quota = await consumeQuota(user.id, "exercises", 1);
-  if (!quota.allowed) {
-    return NextResponse.redirect(
-      new URL(`/learn/${levelNumber}/${lesson.slug}?exercise=limit`, req.url),
-      303
-    );
-  }
-
   const admin = createAdminSupabase();
   const { data: solution, error: solutionError } = await admin
     .from("exercise_solutions")
@@ -45,6 +37,14 @@ export async function POST(req: Request) {
 
   if (solutionError || !solution) {
     return NextResponse.json({ error: "SOLUTION_NOT_FOUND" }, { status: 500 });
+  }
+
+  const quota = await consumeQuota(user.id, "exercises", 1);
+  if (!quota.allowed) {
+    return NextResponse.redirect(
+      new URL(`/learn/${levelNumber}/${lesson.slug}?exercise=limit`, req.url),
+      303
+    );
   }
 
   const isCorrect = answer === solution.correct_answer;
