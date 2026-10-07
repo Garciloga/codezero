@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createServerSupabase } from "../../../../lib/supabase-server";
-import { consumeQuota } from "../../../../lib/entitlements";
+import { consumeQuota, releaseQuota } from "../../../../lib/entitlements";
 
 export async function POST(req: Request) {
   const supabase = await createServerSupabase();
@@ -39,41 +39,50 @@ export async function POST(req: Request) {
     );
   }
 
-  const response = await fetch("https://api.openai.com/v1/responses", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model: process.env.OPENAI_MODEL ?? "gpt-6-luna",
-      instructions:
-        "Eres el tutor técnico de CodeZero. Enseña paso a paso, no resuelvas ejercicios evaluados directamente y prioriza comprensión, ejemplos pequeños y preguntas guiadas. Responde en español salvo que el alumno pida otro idioma.",
-      input: [
-        {
-          role: "user",
-          content: [
-            {
-              type: "input_text",
-              text: `Contexto del curso: ${String(context ?? "CodeZero").slice(0, 1500)}\n\nPregunta del alumno: ${question.trim()}`,
-            },
-          ],
-        },
-      ],
-    }),
-  });
+  try {
+    const response = await fetch("https://api.openai.com/v1/responses", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: process.env.OPENAI_MODEL ?? "gpt-6-luna",
+        instructions:
+          "Eres el tutor técnico de CodeZero. Enseña paso a paso, no resuelvas ejercicios evaluados directamente y prioriza comprensión, ejemplos pequeños y preguntas guiadas. Responde en español salvo que el alumno pida otro idioma.",
+        input: [
+          {
+            role: "user",
+            content: [
+              {
+                type: "input_text",
+                text: `Contexto del curso: ${String(context ?? "CodeZero").slice(0, 1500)}\n\nPregunta del alumno: ${question.trim()}`,
+              },
+            ],
+          },
+        ],
+      }),
+    });
 
-  if (!response.ok) {
+    if (!response.ok) {
+      await releaseQuota(user.id, "ai_queries", 1);
+      return NextResponse.json(
+        { error: "AI_PROVIDER_ERROR" },
+        { status: 502 }
+      );
+    }
+
+    const data = await response.json();
+
+    return NextResponse.json({
+      answer: data.output_text ?? "No fue posible generar una respuesta.",
+      quota,
+    });
+  } catch {
+    await releaseQuota(user.id, "ai_queries", 1);
     return NextResponse.json(
       { error: "AI_PROVIDER_ERROR" },
       { status: 502 }
     );
   }
-
-  const data = await response.json();
-
-  return NextResponse.json({
-    answer: data.output_text ?? "No fue posible generar una respuesta.",
-    quota,
-  });
 }
