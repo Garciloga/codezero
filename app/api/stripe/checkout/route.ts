@@ -70,14 +70,18 @@ export async function POST(req: Request) {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("plan_name, stripe_customer_id, stripe_subscription_id")
+    .select("status, plan_name, stripe_customer_id, stripe_subscription_id")
     .eq("id", user.id)
     .single();
 
+  if (!profile || profile.status !== "active") {
+    return NextResponse.json({ error: "ACCOUNT_INACTIVE" }, { status: 403 });
+  }
+
   if (
-    profile?.stripe_customer_id &&
-    profile?.stripe_subscription_id &&
-    profile?.plan_name &&
+    profile.stripe_customer_id &&
+    profile.stripe_subscription_id &&
+    profile.plan_name &&
     profile.plan_name !== "free"
   ) {
     const portal = await stripe.billingPortal.sessions.create({
@@ -91,7 +95,7 @@ export async function POST(req: Request) {
   const session = await stripe.checkout.sessions.create({
     mode: "subscription",
     line_items: [{ price, quantity: 1 }],
-    ...(profile?.stripe_customer_id
+    ...(profile.stripe_customer_id
       ? { customer: profile.stripe_customer_id }
       : { customer_email: user.email }),
     client_reference_id: user.id,
