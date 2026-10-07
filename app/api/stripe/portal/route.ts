@@ -1,8 +1,12 @@
 import Stripe from "stripe";
 import { NextResponse } from "next/server";
 import { createServerSupabase } from "../../../../lib/supabase-server";
+import { isTrustedBrowserRequest } from "../../../../lib/security";
 
 export async function POST(req: Request) {
+  if (!isTrustedBrowserRequest(req)) {
+    return new Response("Invalid request origin", { status: 403 });
+  }
   const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
   const appUrl = process.env.NEXT_PUBLIC_APP_URL;
 
