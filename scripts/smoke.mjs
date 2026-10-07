@@ -59,3 +59,56 @@ if (failures > 0) {
 }
 
 console.log("Production smoke test passed.");
+
+
+const protectedChecks = [
+  "/dashboard",
+  "/profile",
+  "/admin",
+];
+
+for (const path of protectedChecks) {
+  try {
+    const response = await fetch(base + path, {
+      redirect: "manual",
+      headers: { "user-agent": "CodeZero-Production-Smoke/1.0" },
+    });
+    const protectedRoute = [302, 303, 307, 308].includes(response.status);
+    console.log(`${protectedRoute ? "PASS" : "FAIL"} protected ${path} -> ${response.status}`);
+    if (!protectedRoute) failures += 1;
+  } catch (error) {
+    failures += 1;
+    console.error(`FAIL protected ${path}: ${error instanceof Error ? error.message : String(error)}`);
+  }
+}
+
+const csrfChecks = [
+  ["/api/stripe/checkout", { plan: "starter", paymentAuthorization: true }],
+  ["/api/exercises/submit", null],
+];
+
+for (const [path, body] of csrfChecks) {
+  try {
+    const response = await fetch(base + path, {
+      method: "POST",
+      redirect: "manual",
+      headers: {
+        "user-agent": "CodeZero-Production-Smoke/1.0",
+        "origin": "https://example.invalid",
+        ...(body ? { "content-type": "application/json" } : {}),
+      },
+      body: body ? JSON.stringify(body) : undefined,
+    });
+    const blocked = response.status === 403;
+    console.log(`${blocked ? "PASS" : "FAIL"} cross-origin POST ${path} -> ${response.status}`);
+    if (!blocked) failures += 1;
+  } catch (error) {
+    failures += 1;
+    console.error(`FAIL csrf ${path}: ${error instanceof Error ? error.message : String(error)}`);
+  }
+}
+
+if (failures > 0) {
+  console.error(`Extended production smoke checks failed with ${failures} issue(s).`);
+  process.exit(1);
+}
