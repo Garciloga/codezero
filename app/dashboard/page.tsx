@@ -18,6 +18,7 @@ type PageProps = { searchParams: Promise<{ checkout?: string }> };
 export default async function Dashboard({ searchParams }: PageProps) {
   const { checkout } = await searchParams;
   const supabase = await createServerSupabase();
+  const tutorEnabled = Boolean(process.env.OPENAI_API_KEY);
 
   const {
     data: { user },
@@ -117,7 +118,11 @@ export default async function Dashboard({ searchParams }: PageProps) {
             <Link className="btn secondary" href="/admin">Admin</Link>
           )}
           <Link className="btn secondary" href="/profile">Perfil</Link>
-          <Link className="btn secondary" href="/tutor">Tutor IA</Link>
+          {tutorEnabled ? (
+            <Link className="btn secondary" href="/tutor">Tutor IA</Link>
+          ) : (
+            <span className="btn secondary" style={{ cursor: "not-allowed" }}>Tutor IA · próximamente</span>
+          )}
           <form action="/api/auth/signout" method="post">
             <button className="btn secondary">Salir</button>
           </form>
@@ -268,7 +273,7 @@ export default async function Dashboard({ searchParams }: PageProps) {
           {[
             ["Ejercicios", usage.exercises ?? 0, ent.exercise_limit],
             ["Exámenes", usage.exams ?? 0, ent.exam_limit],
-            ["IA Tutor", usage.ai_queries ?? 0, ent.ai_query_limit],
+            [tutorEnabled ? "IA Tutor" : "IA Tutor · no habilitado", usage.ai_queries ?? 0, ent.ai_query_limit],
             ["Proyectos", usage.projects ?? 0, ent.project_limit],
           ].map(([name, used, limit]) => (
             <div className="card" key={name as string}>
