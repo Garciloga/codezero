@@ -81,11 +81,16 @@ export async function POST(req: Request) {
     metadata: {
       user_id: user.id,
       plan_name: plan,
+      terms_version: "2026-10-06",
+      payment_authorization_confirmed: "true",
+      payment_authorization_confirmed_at: new Date().toISOString(),
     },
     subscription_data: {
       metadata: {
         user_id: user.id,
         plan_name: plan,
+        terms_version: "2026-10-06",
+        payment_authorization_confirmed: "true",
       },
     },
     success_url: `${appUrl}/dashboard?checkout=success`,
