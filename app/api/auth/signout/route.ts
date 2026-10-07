@@ -1,3 +1,4 @@
+import { isTrustedBrowserRequest } from "../../../../lib/security";
 ﻿import { createServerSupabase } from "../../../../lib/supabase-server";
 import { NextResponse } from "next/server";
 export async function POST() {
