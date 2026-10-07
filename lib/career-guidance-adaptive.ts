@@ -1,5 +1,9 @@
-import type { CareerPositionKey } from "./career-guidance.ts";
-import { practicalTie } from "./career-guidance.ts";
+import type { CareerPositionKey } from "./career-guidance";
+
+
+function practicalTie(a: number, b: number, threshold = .05) {
+  return Math.abs(a - b) < threshold;
+}
 
 export type CareerDiscriminatorKey =
   | "csm_vs_am"
