@@ -2,7 +2,10 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../lib/supabase-server";
 
-export default async function ProfilePage() {
+type PageProps = { searchParams: Promise<{ updated?: string }> };
+
+export default async function ProfilePage({ searchParams }: PageProps) {
+  const { updated } = await searchParams;
   const supabase = await createServerSupabase();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect("/login");
@@ -31,12 +34,43 @@ export default async function ProfilePage() {
         <Link className="btn secondary" href="/dashboard">Volver a Mi CodeZero</Link>
       </div>
 
+      {updated === "1" && (
+        <div className="card" style={{marginBottom:18}}>
+          <b>Perfil actualizado.</b>
+        </div>
+      )}
+      {updated === "invalid" && (
+        <div className="card" style={{marginBottom:18}}>
+          <b>Escribe un nombre de entre 2 y 100 caracteres.</b>
+        </div>
+      )}
+      {updated === "error" && (
+        <div className="card" style={{marginBottom:18}}>
+          <b>No pudimos actualizar tu perfil en este momento.</b>
+        </div>
+      )}
+
       <div className="grid grid2">
         <section className="card">
           <h2>Datos</h2>
           <p><b>Nombre:</b> {profile?.full_name || "Sin configurar"}</p>
           <p><b>Email:</b> {profile?.email || user.email}</p>
           <p><b>Rol:</b> {profile?.role}</p>
+
+          <form action="/api/profile/update" method="post" style={{display:"grid",gap:10,marginTop:20}}>
+            <label htmlFor="full_name"><b>Nombre para tu perfil y certificado</b></label>
+            <input
+              id="full_name"
+              name="full_name"
+              defaultValue={profile?.full_name ?? ""}
+              minLength={2}
+              maxLength={100}
+              required
+              placeholder="Tu nombre"
+              style={{padding:10,borderRadius:10,border:"1px solid #d8dee8"}}
+            />
+            <button className="btn secondary" type="submit">Guardar nombre</button>
+          </form>
         </section>
 
         <section className="card">
@@ -72,6 +106,14 @@ export default async function ProfilePage() {
             </div>
           )}
         </section>
+      </div>
+
+      <div className="card" style={{marginTop:18}}>
+        <h2>Privacidad y soporte</h2>
+        <p className="muted">
+          Para solicitudes relacionadas con tus datos o con tu cuenta, escribe a
+          {" "}<a href="mailto:codescerooficial@gmail.com">codescerooficial@gmail.com</a>.
+        </p>
       </div>
     </main>
   );
