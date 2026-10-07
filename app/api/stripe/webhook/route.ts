@@ -174,7 +174,8 @@ export async function POST(req: Request) {
             billing_status: event.type === "invoice.paid" ? "active" : "past_due",
             updated_at: nowIso,
           })
-          .eq("stripe_customer_id", customerId);
+          .eq("stripe_customer_id", customerId)
+          .not("stripe_subscription_id", "is", null);
 
         if (error) throw error;
       }
