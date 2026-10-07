@@ -7,6 +7,7 @@ import {
   practicalTie,
   calculateProfileConfidence,
   experienceGate,
+  analyzeDimensionTension,
 } from "../lib/career-guidance.ts";
 
 for (const [position, weights] of Object.entries(POSITION_WEIGHTS)) {
@@ -73,4 +74,25 @@ test("tech support L3 requires more than affinity", () => {
     }),
     "ready_now",
   );
+});
+
+
+test("detects strong capability preference tension", () => {
+  const tension = analyzeDimensionTension([
+    { dimension: "technical_problem_solving", value: .92, source: "behavior", activityKey: "a1" },
+    { dimension: "technical_problem_solving", value: .88, source: "performance", activityKey: "a2" },
+    { dimension: "technical_problem_solving", value: .25, source: "preference", activityKey: "a3" },
+  ], "technical_problem_solving");
+
+  assert.equal(tension.status, "mixed");
+  assert.ok(tension.gap > .35);
+});
+
+test("does not infer tension with insufficient evidence", () => {
+  const tension = analyzeDimensionTension([
+    { dimension: "customer_orientation", value: .9, source: "behavior", activityKey: "a1" },
+    { dimension: "customer_orientation", value: .3, source: "preference", activityKey: "a2" },
+  ], "customer_orientation");
+
+  assert.equal(tension.status, "insufficient");
 });
