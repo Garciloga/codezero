@@ -3,11 +3,11 @@ import { createServerSupabase } from "../../lib/supabase-server";
 import { createAdminSupabase, requireAdmin } from "../../lib/admin";
 
 type PageProps = {
-  searchParams: Promise<{ updated?: string; reviewed?: string }>;
+  searchParams: Promise<{ updated?: string; reviewed?: string; ticket?: string }>;
 };
 
 export default async function Admin({ searchParams }: PageProps) {
-  const { updated, reviewed } = await searchParams;
+  const { updated, reviewed, ticket } = await searchParams;
 
   const supabase = await createServerSupabase();
   const { data: { user } } = await supabase.auth.getUser();
@@ -32,6 +32,9 @@ export default async function Admin({ searchParams }: PageProps) {
     { count: failedWebhookEvents },
     { data: webhookFailures },
     { data: auditLog },
+    { count: openSupportTickets },
+    { data: supportTickets },
+    { data: supportSuggestions },
   ] = await Promise.all([
     admin
       .from("profiles")
@@ -63,6 +66,21 @@ export default async function Admin({ searchParams }: PageProps) {
       .select("id,actor_user_id,action,target_type,target_id,metadata,created_at")
       .order("created_at", { ascending: false })
       .limit(20),
+    admin
+      .from("support_tickets")
+      .select("*", { count: "exact", head: true })
+      .in("status", ["open", "in_progress", "waiting_user"]),
+    admin
+      .from("support_tickets")
+      .select("id,user_id,subject,category,priority,status,description,created_at,updated_at")
+      .in("status", ["open", "in_progress", "waiting_user"])
+      .order("created_at", { ascending: true })
+      .limit(30),
+    admin
+      .from("support_suggestions")
+      .select("id,user_id,title,category,status,detail,created_at")
+      .order("created_at", { ascending: false })
+      .limit(20),
   ]);
 
   return (
@@ -88,6 +106,12 @@ export default async function Admin({ searchParams }: PageProps) {
         </div>
       )}
 
+      {ticket === "updated" && (
+        <div className="card" style={{ marginBottom: 18 }}>
+          <b>Ticket de soporte actualizado.</b>
+        </div>
+      )}
+
       <div className="grid grid4">
         <div className="card">
           <div className="muted">Usuarios</div>
@@ -102,8 +126,8 @@ export default async function Admin({ searchParams }: PageProps) {
           <div className="stat">{examAttempts ?? 0}</div>
         </div>
         <div className="card">
-          <div className="muted">Proyectos enviados</div>
-          <div className="stat">{projectSubmissions ?? 0}</div>
+          <div className="muted">Tickets de soporte abiertos</div>
+          <div className="stat">{openSupportTickets ?? 0}</div>
         </div>
       </div>
 
@@ -196,6 +220,65 @@ export default async function Admin({ searchParams }: PageProps) {
             </tbody>
           </table>
         </div>
+      </div>
+
+      <div className="card" style={{ marginTop: 18 }}>
+        <span className="pill">CODEZERO SUPPORT</span>
+        <h2>Bandeja de soporte</h2>
+        <p className="muted">Responde tickets, cambia prioridad y controla el estado desde el mismo panel.</p>
+
+        {(supportTickets ?? []).length === 0 ? (
+          <p className="muted">No hay tickets abiertos.</p>
+        ) : (
+          <div style={{ display: "grid", gap: 16 }}>
+            {(supportTickets ?? []).map((supportTicket) => (
+              <div key={supportTicket.id} style={{ borderTop: "1px solid #e5e9f0", paddingTop: 16 }}>
+                <b>#{supportTicket.id} · {supportTicket.subject}</b>
+                <p className="muted">
+                  Usuario {supportTicket.user_id} · {supportTicket.category} · {supportTicket.priority} · {supportTicket.status}
+                </p>
+                <p style={{ whiteSpace: "pre-wrap" }}>{supportTicket.description}</p>
+                <form action="/api/admin/support/tickets/update" method="post" style={{ display:"grid", gap:10, maxWidth:760 }}>
+                  <input type="hidden" name="ticket_id" value={supportTicket.id} />
+                  <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10 }}>
+                    <select name="status" defaultValue={supportTicket.status} style={{padding:10,borderRadius:10,border:"1px solid #d8dee8"}}>
+                      <option value="open">open</option>
+                      <option value="in_progress">in_progress</option>
+                      <option value="waiting_user">waiting_user</option>
+                      <option value="resolved">resolved</option>
+                      <option value="closed">closed</option>
+                    </select>
+                    <select name="priority" defaultValue={supportTicket.priority} style={{padding:10,borderRadius:10,border:"1px solid #d8dee8"}}>
+                      <option value="low">low</option>
+                      <option value="normal">normal</option>
+                      <option value="high">high</option>
+                      <option value="urgent">urgent</option>
+                    </select>
+                  </div>
+                  <textarea name="reply" rows={4} maxLength={8000} placeholder="Respuesta opcional para el usuario" style={{padding:10,borderRadius:10,border:"1px solid #d8dee8"}} />
+                  <button className="btn secondary" type="submit">Guardar / responder</button>
+                </form>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div className="card" style={{ marginTop: 18 }}>
+        <h2>Sugerencias recientes</h2>
+        {(supportSuggestions ?? []).length === 0 ? (
+          <p className="muted">Todavía no hay sugerencias.</p>
+        ) : (
+          <div style={{display:"grid",gap:12}}>
+            {(supportSuggestions ?? []).map((suggestion) => (
+              <div key={suggestion.id} style={{borderTop:"1px solid #e5e9f0",paddingTop:12}}>
+                <b>{suggestion.title}</b>
+                <div className="muted">{suggestion.category} · {suggestion.status} · usuario {suggestion.user_id}</div>
+                <p style={{whiteSpace:"pre-wrap"}}>{suggestion.detail}</p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="card" style={{ marginTop: 18 }}>
