@@ -5,12 +5,12 @@ import { getPassedLevelNumbers, isLevelIncludedInPlan, isLevelUnlocked } from ".
 
 type PageProps = {
   params: Promise<{ level: string }>;
-  searchParams: Promise<{ result?: string; score?: string }>;
+  searchParams: Promise<{ result?: string }>;
 };
 
 export default async function ExamPage({ params, searchParams }: PageProps) {
   const { level } = await params;
-  const { result, score } = await searchParams;
+  const { result } = await searchParams;
   const levelNumber = Number(level);
 
   if (!Number.isInteger(levelNumber) || levelNumber < 1 || levelNumber > 15) notFound();
@@ -110,6 +110,7 @@ export default async function ExamPage({ params, searchParams }: PageProps) {
     .limit(1);
 
   const latest = attempts?.[0];
+  const levelAlreadyPassed = passedLevels.has(levelNumber);
 
   return (
     <main className="wrap">
@@ -125,11 +126,11 @@ export default async function ExamPage({ params, searchParams }: PageProps) {
       {result && (
         <div className="card" style={{ marginBottom: 20 }}>
           <b>{result === "passed" ? "Evaluación aprobada" : result === "failed" ? "Evaluación no aprobada" : "No fue posible enviar la evaluación"}</b>
-          {score && <p className="muted" style={{ marginBottom: 0 }}>Puntuación: {score}%</p>}
+          {latest?.score != null && <p className="muted" style={{ marginBottom: 0 }}>Puntuación registrada: {latest.score}%</p>}
         </div>
       )}
 
-      {latest?.passed && (
+      {levelAlreadyPassed && (
         <div className="card" style={{ marginBottom: 20 }}>
           <b>Nivel aprobado.</b>
           <p className="muted" style={{ marginBottom: 0 }}>
