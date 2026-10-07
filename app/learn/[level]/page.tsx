@@ -113,20 +113,24 @@ export default async function LevelPage({ params }: PageProps) {
     .maybeSingle();
 
   let projectSubmitted = false;
+  let projectApproved = false;
 
   if (project) {
     const { data: submissions } = await supabase
       .from("project_submissions")
-      .select("id")
+      .select("id,status")
       .eq("user_id", user.id)
       .eq("project_id", project.id)
+      .order("created_at", { ascending: false })
       .limit(1);
 
-    projectSubmitted = (submissions?.length ?? 0) > 0;
+    const latestSubmission = submissions?.[0];
+    projectSubmitted = Boolean(latestSubmission);
+    projectApproved = latestSubmission?.status === "approved";
   }
 
   const requirementsComplete =
-    allLessonsCompleted && (!project || projectSubmitted);
+    allLessonsCompleted && (!project || projectApproved);
 
   return (
     <main className="wrap">
@@ -226,7 +230,7 @@ export default async function LevelPage({ params }: PageProps) {
             <h2>{project.title}</h2>
             <p className="muted">{project.brief}</p>
             <Link className="btn secondary" href={`/learn/${currentLevel.level_number}/project`}>
-              {projectSubmitted ? "Ver entrega" : "Abrir proyecto"}
+              {projectSubmitted ? (projectApproved ? "Ver proyecto aprobado" : "Ver estado del proyecto") : "Abrir proyecto"}
             </Link>
           </div>
         </section>
@@ -257,7 +261,7 @@ export default async function LevelPage({ params }: PageProps) {
             </>
           ) : (
             <p className="muted" style={{ marginBottom: 0 }}>
-              Completa todas las lecciones{project ? " y entrega el proyecto" : ""} para desbloquear la evaluación final.
+              Completa todas las lecciones{project ? " y obtén la aprobación del proyecto" : ""} para desbloquear la evaluación final.
             </p>
           )}
         </div>
