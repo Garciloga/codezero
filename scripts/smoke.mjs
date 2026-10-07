@@ -10,6 +10,7 @@ const checks = [
   ["/contact", 200],
   ["/robots.txt", 200],
   ["/sitemap.xml", 200],
+  ["/api/health", 200],
 ];
 
 let failures = 0;
@@ -24,6 +25,13 @@ for (const [path, expected] of checks) {
     const ok = response.status === expected;
     console.log(`${ok ? "PASS" : "FAIL"} ${path} -> ${response.status}`);
     if (!ok) failures += 1;
+
+    if (path === "/api/health" && response.ok) {
+      const health = await response.json();
+      const healthy = health?.ok === true && health?.database === true;
+      console.log(`${healthy ? "PASS" : "FAIL"} health database`);
+      if (!healthy) failures += 1;
+    }
 
     if (path === "/") {
       const requiredHeaders = [
