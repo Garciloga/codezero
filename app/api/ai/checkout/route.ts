@@ -85,5 +85,5 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "CHECKOUT_URL_NOT_CREATED" }, { status: 500 });
   }
 
-  return NextResponse.json({ url: session.url });
+  return NextResponse.redirect(session.url, 303);
 }
