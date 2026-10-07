@@ -99,8 +99,10 @@ export default function Login() {
         </p>
 
         <form onSubmit={submit} className="grid">
-          <input placeholder="Email" type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)} required />
-          <input placeholder="Contraseña" type="password" autoComplete={mode === "login" ? "current-password" : "new-password"} value={password} onChange={e=>setPassword(e.target.value)} minLength={8} required />
+          <label htmlFor="email"><b>Email</b></label>
+          <input id="email" placeholder="tu@email.com" type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)} required />
+          <label htmlFor="password"><b>Contraseña</b></label>
+          <input id="password" placeholder="Mínimo 8 caracteres" type="password" autoComplete={mode === "login" ? "current-password" : "new-password"} value={password} onChange={e=>setPassword(e.target.value)} minLength={8} required />
           {mode === "signup" && (
             <>
               <label style={{display:"flex",gap:10,alignItems:"flex-start",fontSize:14}}>
@@ -134,7 +136,7 @@ export default function Login() {
           </button>
         </form>
 
-        {msg && <p className="muted" style={{marginTop:14}}>{msg}</p>}
+        {msg && <p className="muted" role="status" aria-live="polite" style={{marginTop:14}}>{msg}</p>}
 
         <div style={{display:"flex",gap:10,flexWrap:"wrap",marginTop:14}}>
           <button className="btn secondary" type="button" onClick={()=>{setMode(mode==="login"?"signup":"login");setMsg("");}}>
