@@ -28,6 +28,13 @@ export async function POST(req: Request) {
   }
 
   const admin = createAdminSupabase();
+
+  const { data: before } = await admin
+    .from("profiles")
+    .select("plan_name,status")
+    .eq("id", targetUserId)
+    .single();
+
   const { error } = await admin
     .from("profiles")
     .update({
@@ -38,6 +45,17 @@ export async function POST(req: Request) {
     .eq("id", targetUserId);
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+
+  await admin.from("admin_audit_log").insert({
+    actor_user_id: user.id,
+    action: "user_access_updated",
+    target_type: "profile",
+    target_id: targetUserId,
+    metadata: {
+      before: before ?? null,
+      after: { plan_name: planName, status },
+    },
+  });
 
   return NextResponse.redirect(new URL("/admin?updated=1", req.url), 303);
 }
