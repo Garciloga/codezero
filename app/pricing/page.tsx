@@ -12,7 +12,7 @@ type PageProps = { searchParams: Promise<{ checkout?: string }> };
 export default async function Pricing({ searchParams }: PageProps) {
   const { checkout } = await searchParams;
   return (
-    <main className="wrap">
+    <main id="main-content" className="wrap">
       <div className="nav">
         <div>
           <span className="pill">CODEZERO</span>
