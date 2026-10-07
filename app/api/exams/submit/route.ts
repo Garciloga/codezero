@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { createServerSupabase } from "../../../../lib/supabase-server";
 import { createAdminSupabase } from "../../../../lib/admin";
-import { consumeQuota } from "../../../../lib/entitlements";
+import { consumeQuota, releaseQuota } from "../../../../lib/entitlements";
 import { canAccessLevel, getExamLevel } from "../../../../lib/access";
 
 export async function POST(req: Request) {
@@ -130,7 +130,10 @@ export async function POST(req: Request) {
     answers: answerMap,
   });
 
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  if (error) {
+    await releaseQuota(user.id, "exams", 1);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
 
   if (passed && levelNumber === 15) {
     await admin.from("certificates").upsert(
