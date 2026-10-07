@@ -2,6 +2,7 @@ import Stripe from "stripe";
 import { createServerSupabase } from "../../../../lib/supabase-server";
 import { NextResponse } from "next/server";
 import { isTrustedBrowserRequest } from "../../../../lib/security";
+import { consumeRateLimit } from "../../../../lib/rate-limit";
 
 export async function POST(req: Request) {
   if (!isTrustedBrowserRequest(req)) {
@@ -27,6 +28,14 @@ export async function POST(req: Request) {
 
   if (!user) {
     return NextResponse.json({ error: "UNAUTHENTICATED" }, { status: 401 });
+  }
+
+  const rate = await consumeRateLimit(`checkout:${user.id}`, 5, 600);
+  if (!rate.allowed) {
+    return NextResponse.json(
+      { error: "RATE_LIMITED" },
+      { status: 429, headers: { "Retry-After": String(rate.retry_after_seconds) } }
+    );
   }
 
   let payload: { plan?: string; paymentAuthorization?: boolean };
