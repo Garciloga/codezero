@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const labels: Record<string, string> = {
   starter: "Starter · $249 MXN/mes",
   pro: "Pro · $699 MXN/mes",
-  enterprise: "Enterprise · desde $1,299 MXN/mes",
+  enterprise: "Enterprise · $1,299 MXN/mes",
 };
 
 export default function CheckoutPage() {
