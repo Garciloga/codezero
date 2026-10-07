@@ -29,7 +29,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "UNAUTHENTICATED" }, { status: 401 });
   }
 
-  const { plan } = await req.json();
+  const { plan, paymentAuthorization } = await req.json();
+
+  if (paymentAuthorization !== true) {
+    return NextResponse.json({ error: "PAYMENT_AUTHORIZATION_REQUIRED" }, { status: 400 });
+  }
 
   if (!["starter", "pro", "enterprise"].includes(plan)) {
     return NextResponse.json({ error: "INVALID_PLAN" }, { status: 400 });
