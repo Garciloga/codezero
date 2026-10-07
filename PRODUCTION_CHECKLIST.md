@@ -26,6 +26,7 @@ Estado: pre-lanzamiento técnico.
 - Revisión de producción sin errores de runtime recientes y sin webhooks de Stripe fallidos.
 - Currículo ampliado con práctica guiada y evidencia de dominio en las 92 lecciones.
 - Banco de evaluación ampliado a 75 preguntas (5 por nivel) con claves completas y escenarios prácticos.
+- Nivel 1 reforzado con ejemplos resueltos y 2 ejercicios formativos por lección (16 ejercicios en el nivel gratuito; 100 ejercicios totales).
 - Restricciones de integridad en base de datos para planes, estados, puntuaciones, cuotas y webhooks.
 
 ## Bloqueadores manuales antes de apertura pública
@@ -58,3 +59,8 @@ Estado: pre-lanzamiento técnico.
 ## Nota sobre contenido
 
 La estructura completa de 15 niveles está implementada y el contenido fue ampliado, pero las 316 horas representan la ruta curricular estimada; antes de presentarlo como un programa editorial completamente terminado conviene continuar enriqueciendo cada lección con más ejemplos, prácticas, material visual y proyectos guiados.
+
+
+## Estado de despliegue
+
+GitHub CI está validando correctamente los cambios recientes. Vercel Hobby alcanzó temporalmente su límite diario de creación de deployments; los cambios más recientes permanecen versionados en `main` y deberán desplegarse cuando el límite se restablezca. No requiere cambios de código ni compra obligatoria para continuar desarrollando.
