@@ -5,6 +5,7 @@ import { LEARNING_GUIDES } from "../../../lib/career-learning-content";
 import { GOAL_LABELS, LEARNING_GOALS } from "../../../lib/career-learning-path";
 import type { LearningAction, LearningPath } from "../../../lib/career-learning-path";
 import { ROLE_PRACTICES } from "../../../lib/career-lab-catalog";
+import DecisionPilot from "./decision-pilot";
 
 export default function LearningPathView({
   path, onDecision,
@@ -78,6 +79,7 @@ export default function LearningPathView({
         onClick={() => onDecision({ type: "choose", goal })}>{GOAL_LABELS[goal]}</button>)}
     </div>
     {path.reviewed.length === 3 && <p>Revisaste las tres misiones de este módulo. Puedes profundizar repitiendo el reto o explorar otra posición.</p>}
+    {path.pilot && <DecisionPilot state={path.pilot} onDecision={action => onDecision({ type: "pilot", action })} />}
     {path.history.length > 0 && <details className="lab-section">
       <summary>Ver decisiones recientes del camino</summary>
       <ol>{path.history.slice(-10).map((entry, index) => <li key={index}>

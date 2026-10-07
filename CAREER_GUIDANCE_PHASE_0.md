@@ -36,14 +36,24 @@ Estas misiones son una primera capa educativa, no cursos completos ni módulos c
 
 Feedback, respuestas y decisiones viven temporalmente en el estado de pantalla. Reiniciar, deshabilitar la simulación o recargar elimina ese estado; no se usa almacenamiento del navegador.
 
+## Piloto con decisiones ramificadas · Developer
+
+La misión «Corrige un formulario» añade ocho nodos: regla, refuerzo de regla, servidor, refuerzo de servidor, pruebas, refuerzo de pruebas, reflexión y cierre. Cada opción muestra una consecuencia específica antes de continuar. Una alternativa abre refuerzo; el usuario puede reintentar o explorar otro aspecto sin bloqueo por afinidad.
+
+Las tres comprobaciones de comprensión (regla, servidor y casos de prueba) se cuentan una vez cada una, separadas del progreso de las 48 misiones introductorias y del diagnóstico. Cerrar el recorrido no completa criterios omitidos: la pantalla muestra qué sigue pendiente. No ejecuta código, recibe entregas, certifica habilidades ni modifica la afinidad.
+
+Se puede volver al paso anterior y reiniciar solo el piloto. El estado se conserva al cambiar de modalidad o posición durante la misma sesión del laboratorio; reiniciar el laboratorio lo elimina. Historial acotado a 30 decisiones y 20 pasos de retorno. El cambio de nodo mueve el foco a su encabezado; las consecuencias usan role=status.
+
+Este piloto existe solo en Developer. Antes de ampliar a las otras 15 posiciones, validar caminos de refuerzo y cierre parcial en navegador, accesibilidad y utilidad educativa con revisores.
+
 ## Verificación y siguiente fase
 
 Pruebas: gates de acceso, validación maliciosa, replay y límites adaptativos, cobertura de escenarios, datos faltantes, experiencia independiente de afinidad y privacidad del código.
 
 La ampliación de aprendizaje cuenta con pruebas de elecciones libres, feedback correctivo, revisión completa de las 16 rutas, autoevaluaciones incompletas, progreso sin duplicados, aislamiento entre módulos e historial acotado. También se comprobó el render de las 48 misiones y sus controles. Esto no sustituye la prueba visual/interactiva con navegador y sesión real del propietario.
 
-Bloqueo observado en CodeQL del primer commit: el análisis genera SARIF pero GitHub rechaza publicarlo porque Code Scanning no está habilitado en el repositorio. No se ha desactivado el check ni se considera la revisión de seguridad completada. Resolver la configuración/disponibilidad de Code Scanning antes del release.
+Bloqueo observado en CodeQL del primer commit: GitHub rechazó publicar SARIF porque Code Scanning no está disponible en el repositorio privado. Por autorización de Isaac, se sustituyó el CodeQL automático por CodeZero Security (Semgrep CE con reglas locales y fixtures, detect-secrets y npm audit). CodeQL queda manual pendiente de licencia; no se presenta como aprobado ni equivalente al sustituto. Antes de integrar, exigir Security checks y build exitosos del commit vigente; si una regla de rama aún requiere CodeQL, debe ajustarla el administrador sin eludirla. Véase SECURITY.md.
 
 Antes de beta: validar rúbricas con revisores, ampliar actividades discriminadoras a desempeño real, crear contenidos completos por módulo, revisar consentimiento/retención/exportación y probar migraciones aisladas. Añadir rate limiting distribuido y observabilidad mínima antes de habilitar escrituras. Fase 0 no usa el limitador existente porque escribe en la base; sus entradas, tamaño y cálculo están acotados y el acceso es owner-only.
 
-No se ha aplicado el schema borrador ni habilitado datos reales. El despliegue productivo y una prueba autenticada con el propietario son verificaciones separadas del build y de las pruebas locales.
+No se ha aplicado el schema borrador ni habilitado datos reales. El laboratorio anterior al piloto (commit a746e7c) se validó con sesión real de propietario en escritorio: página/API, ocho actividades, elección libre, revisión sin duplicados y borrado al reiniciar/recargar. Eso no verifica las nuevas ramas del piloto. Móvil, lector de pantalla y recorrido completo por teclado siguen pendientes; producción se verifica por separado.

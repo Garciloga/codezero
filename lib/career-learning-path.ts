@@ -1,5 +1,7 @@
 import type { CareerPositionKey } from "./career-guidance.ts";
 import { LEARNING_GUIDES } from "./career-learning-content.ts";
+import { startDecisionPilot, transitionDecisionPilot } from "./career-decision-pilot.ts";
+import type { PilotAction, PilotState } from "./career-decision-pilot.ts";
 
 export const LEARNING_GOALS = ["foundation", "guided", "challenge"] as const;
 export type LearningGoal = typeof LEARNING_GOALS[number];
@@ -14,17 +16,24 @@ export type LearningPath = {
   reviewed: LearningGoal[];
   history: { goal: LearningGoal; reason: "choice" | "reinforce" | "reviewed" }[];
   feedback: { correct: boolean; explanation: string } | null;
+  pilot: PilotState | null;
 };
 export type LearningAction =
   | { type: "choose"; goal: LearningGoal }
   | { type: "answer"; option: number }
+  | { type: "pilot"; action: PilotAction }
   | { type: "review"; checks: boolean[] };
 
 export function startLearningPath(position: CareerPositionKey): LearningPath {
-  return { position, goal: "foundation", reviewed: [], history: [], feedback: null };
+  return { position, goal: "foundation", reviewed: [], history: [], feedback: null, pilot: position === "developer" ? startDecisionPilot() : null };
 }
 
 export function transitionLearningPath(state: LearningPath, action: LearningAction): LearningPath {
+  if (action.type === "pilot") {
+    if (state.position !== "developer" || !state.pilot) return state;
+    const pilot = transitionDecisionPilot(state.pilot, action.action);
+    return pilot === state.pilot ? state : { ...state, pilot };
+  }
   if (action.type === "choose") {
     if (!LEARNING_GOALS.includes(action.goal)) return state;
     return {
