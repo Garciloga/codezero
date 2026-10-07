@@ -11,6 +11,7 @@ const checks = [
   ["/robots.txt", 200],
   ["/sitemap.xml", 200],
   ["/api/health", 200],
+  ["/.well-known/security.txt", 200],
 ];
 
 let failures = 0;
