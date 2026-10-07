@@ -109,7 +109,9 @@ export default async function ProjectPage({ params, searchParams }: PageProps) {
               <form action="/api/projects/submit" method="post">
               <input type="hidden" name="project_id" value={project.id} />
               <input type="hidden" name="level_number" value={levelNumber} />
+              <label htmlFor="submission_text"><b>Descripción de tu solución</b></label>
               <textarea
+                id="submission_text"
                 name="submission_text"
                 required
                 minLength={50}
