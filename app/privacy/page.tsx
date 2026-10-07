@@ -75,9 +75,11 @@ export default function PrivacyPage() {
 
         <h2>Derechos de las personas usuarias</h2>
         <p>
-          Puedes solicitar acceso, rectificación, corrección, eliminación u oposición al tratamiento
-          de tus datos cuando corresponda conforme a la legislación aplicable. Para ejercer estos
-          derechos puedes escribir a <a href="mailto:codescerooficial@gmail.com">codescerooficial@gmail.com</a>.
+          Puedes descargar desde tu perfil una copia de los datos de cuenta y aprendizaje asociados
+          a tu usuario. También puedes solicitar acceso, rectificación, corrección, eliminación u
+          oposición al tratamiento de tus datos cuando corresponda conforme a la legislación
+          aplicable. Para estas solicitudes puedes escribir a
+          {" "}<a href="mailto:codescerooficial@gmail.com">codescerooficial@gmail.com</a>.
         </p>
 
         <h2>Cambios al aviso</h2>
