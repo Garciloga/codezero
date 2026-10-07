@@ -24,6 +24,7 @@ export default async function Admin({ searchParams }: PageProps) {
 
   const [
     { data: users },
+    { count: userCount },
     { data: plans },
     { count: examAttempts },
     { count: projectSubmissions },
@@ -37,6 +38,7 @@ export default async function Admin({ searchParams }: PageProps) {
       .select("id,email,full_name,role,plan_name,status,billing_status,stripe_cancel_at_period_end,created_at")
       .order("created_at", { ascending: false })
       .limit(100),
+    admin.from("profiles").select("*", { count: "exact", head: true }),
     admin.from("plans").select("*").order("sort_order"),
     admin.from("exam_attempts").select("*", { count: "exact", head: true }),
     admin.from("project_submissions").select("*", { count: "exact", head: true }),
@@ -89,7 +91,7 @@ export default async function Admin({ searchParams }: PageProps) {
       <div className="grid grid4">
         <div className="card">
           <div className="muted">Usuarios</div>
-          <div className="stat">{users?.length ?? 0}</div>
+          <div className="stat">{userCount ?? 0}</div>
         </div>
         <div className="card">
           <div className="muted">Activos</div>
