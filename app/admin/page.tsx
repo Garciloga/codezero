@@ -136,6 +136,7 @@ export default async function Admin({ searchParams }: PageProps) {
                 <tr key={u.id} style={{ borderTop: "1px solid #e5e9f0" }}>
                   <td style={{ padding: "14px 8px" }}>{u.email}</td>
                   <td style={{ padding: "14px 8px" }}>{u.role}</td>
+                  <td style={{ padding: "14px 8px" }}>{u.plan_name}</td>
                   <td style={{ padding: "14px 8px" }}>
                     <span>{u.billing_status ?? "—"}</span>
                     {u.stripe_cancel_at_period_end && (
