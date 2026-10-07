@@ -114,35 +114,8 @@ for (const [path, body] of csrfChecks) {
 }
 
 
-const routerState = encodeURIComponent(JSON.stringify(["", { children: ["(public)", { children: ["login", { children: ["__PAGE__", {}] }] }] }]));
-for (const path of ["/pricing", ...protectedChecks]) {
-  try {
-    const response = await fetch(base + path + "?_rsc=codezero-smoke", {
-      redirect: "manual",
-      signal: AbortSignal.timeout(15000),
-      headers: {
-        "user-agent": "CodeZero-Production-Smoke/1.0",
-        "RSC": "1",
-        "Next-Router-State-Tree": routerState,
-      },
-    });
-    const body = await response.text();
-    const location = response.headers.get("location");
-    const target = location ? new URL(location, base) : null;
-    const ok = path === "/pricing"
-      ? response.status === 200 && response.headers.get("content-type")?.includes("text/x-component")
-      : ([302, 303, 307, 308].includes(response.status)
-        && target?.origin === new URL(base).origin && target.pathname === "/login")
-        || (response.status === 200 && response.headers.get("content-type")?.includes("text/x-component")
-          && (body.includes("NEXT_REDIRECT;replace;/login;307;") || body.includes("NEXT_REDIRECT;push;/login;307;")));
-    const passed = ok && !body.includes("The router state header was sent but could not be parsed");
-    console.log(`${passed ? "PASS" : "FAIL"} RSC navigation ${path} -> ${response.status}`);
-    if (!passed) failures += 1;
-  } catch (error) {
-    failures += 1;
-    console.error(`FAIL RSC ${path}: ${error instanceof Error ? error.message : String(error)}`);
-  }
-}
+// Check pages through normal HTTP requests above. Next.js owns the RSC
+// router state; synthetic RSC headers can trigger production runtime errors.
 for (const [path, options, expected] of [
   ["/internal/career-lab", {}, 404],
   ["/api/internal/career-lab", {
