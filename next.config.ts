@@ -24,7 +24,18 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   async headers() {
+    const privateHeaders = [
+      { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
+    ];
+
     return [
+      { source: "/admin/:path*", headers: privateHeaders },
+      { source: "/dashboard/:path*", headers: privateHeaders },
+      { source: "/learn/:path*", headers: privateHeaders },
+      { source: "/profile/:path*", headers: privateHeaders },
+      { source: "/checkout/:path*", headers: privateHeaders },
+      { source: "/tutor/:path*", headers: privateHeaders },
+      { source: "/certificate/:path*", headers: privateHeaders },
       {
         source: "/:path*",
         headers: securityHeaders,
