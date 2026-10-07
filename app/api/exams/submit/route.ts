@@ -4,6 +4,7 @@ import { createAdminSupabase } from "../../../../lib/admin";
 import { consumeQuota, releaseQuota } from "../../../../lib/entitlements";
 import { canAccessLevel, getExamLevel } from "../../../../lib/access";
 import { isTrustedBrowserRequest } from "../../../../lib/security";
+import { consumeRateLimit } from "../../../../lib/rate-limit";
 
 export async function POST(req: Request) {
   if (!isTrustedBrowserRequest(req)) {
@@ -13,6 +14,14 @@ export async function POST(req: Request) {
   const { data: { user } } = await supabase.auth.getUser();
 
   if (!user) return NextResponse.redirect(new URL("/login", req.url), 303);
+
+  const rate = await consumeRateLimit(`exam:${user.id}`, 6, 600);
+  if (!rate.allowed) {
+    return NextResponse.json(
+      { error: "RATE_LIMITED" },
+      { status: 429, headers: { "Retry-After": String(rate.retry_after_seconds) } }
+    );
+  }
 
   const formData = await req.formData();
   const examId = Number(formData.get("exam_id"));
