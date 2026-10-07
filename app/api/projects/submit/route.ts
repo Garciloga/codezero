@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createServerSupabase } from "../../../../lib/supabase-server";
-import { consumeQuota } from "../../../../lib/entitlements";
+import { consumeQuota, releaseQuota } from "../../../../lib/entitlements";
 import { canAccessLevel, getProjectLevel } from "../../../../lib/access";
 import { createAdminSupabase } from "../../../../lib/admin";
 
@@ -57,7 +57,10 @@ export async function POST(req: Request) {
     status: "submitted",
   });
 
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  if (error) {
+    await releaseQuota(user.id, "projects", 1);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
 
   return NextResponse.redirect(
     new URL(`/learn/${levelNumber}/project?submitted=1`, req.url),
