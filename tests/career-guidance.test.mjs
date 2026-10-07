@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
+  CAREER_DIMENSIONS,
   POSITION_WEIGHTS,
   rankPositions,
   practicalTie,
@@ -10,9 +11,10 @@ import {
 
 for (const [position, weights] of Object.entries(POSITION_WEIGHTS)) {
   test(`canonical profile ranks ${position} first`, () => {
-    const profile = Object.fromEntries(
-      Object.entries(weights).map(([dimension, weight]) => [dimension, Math.min(1, 0.45 + weight * 0.55)])
-    );
+    const profile = Object.fromEntries(CAREER_DIMENSIONS.map((dimension) => [dimension, 0]));
+    for (const [dimension, weight] of Object.entries(weights)) {
+      profile[dimension] = Math.min(1, 0.45 + weight * 0.55);
+    }
     const ranked = rankPositions(profile);
     assert.equal(ranked[0].position, position);
   });
