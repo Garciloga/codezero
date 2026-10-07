@@ -22,15 +22,27 @@ Se muestran confianza, afinidad, explicaciones, cobertura por posición, gates d
 
 ## Aprendizaje por decisiones
 
-Las 16 posiciones incluyen tarea, entrega, criterio de revisión y ejemplo. El usuario puede explorar cualquiera independientemente del diagnóstico y elegir fundamentos, práctica guiada o reto autónomo. Las decisiones cambian el siguiente objetivo y el nivel de apoyo. Puede volver a fundamentos, cambiar de módulo o elegir otra práctica. Afinidad no bloquea navegación.
+Las 16 posiciones incluyen tres misiones introductorias cada una (48 en total):
 
-Estas fichas son una primera capa educativa, no cursos completos ni módulos comercializados. No se cobran, habilitan suscripciones, reciben entregas ni certifican competencias en Fase 0.
+- Fundamentos: explicación, ejemplo y una decisión con feedback específico por opción.
+- Práctica guiada: tarea, tres pasos concretos, ejemplo consultable y criterios de revisión.
+- Reto autónomo: una condición nueva del caso, entrega y autoevaluación sin mostrar el ejemplo.
+
+El usuario puede explorar cualquiera independientemente de las recomendaciones y elegir fundamentos, práctica guiada o reto autónomo. Las decisiones cambian el siguiente objetivo y el nivel de apoyo. Una respuesta incorrecta ofrece refuerzo; una correcta comprueba comprensión pero deja al usuario elegir el siguiente paso. Afinidad no bloquea navegación.
+
+El progreso temporal se conserva por posición al cambiar de módulo, sin transferir avances entre posiciones. Se registran misiones revisadas, no dominio profesional: fundamentos se revisa con una comprobación de comprensión; práctica/reto requieren tres confirmaciones de autoevaluación. Repetir una misión no incrementa el contador. Se conservan hasta 50 decisiones recientes por módulo y se muestran las últimas diez.
+
+Estas misiones son una primera capa educativa, no cursos completos ni módulos comercializados. No se cobran, habilitan suscripciones, reciben entregas ni certifican competencias en Fase 0.
 
 Feedback, respuestas y decisiones viven temporalmente en el estado de pantalla. Reiniciar, deshabilitar la simulación o recargar elimina ese estado; no se usa almacenamiento del navegador.
 
 ## Verificación y siguiente fase
 
 Pruebas: gates de acceso, validación maliciosa, replay y límites adaptativos, cobertura de escenarios, datos faltantes, experiencia independiente de afinidad y privacidad del código.
+
+La ampliación de aprendizaje cuenta con pruebas de elecciones libres, feedback correctivo, revisión completa de las 16 rutas, autoevaluaciones incompletas, progreso sin duplicados, aislamiento entre módulos e historial acotado. También se comprobó el render de las 48 misiones y sus controles. Esto no sustituye la prueba visual/interactiva con navegador y sesión real del propietario.
+
+Bloqueo observado en CodeQL del primer commit: el análisis genera SARIF pero GitHub rechaza publicarlo porque Code Scanning no está habilitado en el repositorio. No se ha desactivado el check ni se considera la revisión de seguridad completada. Resolver la configuración/disponibilidad de Code Scanning antes del release.
 
 Antes de beta: validar rúbricas con revisores, ampliar actividades discriminadoras a desempeño real, crear contenidos completos por módulo, revisar consentimiento/retención/exportación y probar migraciones aisladas. Añadir rate limiting distribuido y observabilidad mínima antes de habilitar escrituras. Fase 0 no usa el limitador existente porque escribe en la base; sus entradas, tamaño y cálculo están acotados y el acceso es owner-only.
 
