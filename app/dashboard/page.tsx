@@ -3,6 +3,8 @@ import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../lib/supabase-server";
 import { getEntitlements } from "../../lib/entitlements";
 import { getPassedLevelNumbers, isLevelUnlocked, isLevelIncludedInPlan } from "../../lib/learning";
+import LearningNavigation from '../components/learning-navigation';
+import {workspaceEnabled} from '../../lib/workspace-sandbox';
 
 type Level = {
   id: number;
@@ -131,9 +133,9 @@ export default async function Dashboard({ searchParams }: PageProps) {
 
       {checkout === "success" && (
         <div className="card" style={{ marginBottom: 18 }}>
-          <b>Pago recibido.</b>
+          <b>Checkout finalizado; estamos verificando el pago.</b>
           <p className="muted" style={{ marginBottom: 0 }}>
-            Stripe está confirmando tu suscripción. Tu plan se actualizará automáticamente.
+            El acceso se actualiza cuando Stripe confirma el pago. Volver desde checkout no acredita por sí solo un cobro.
           </p>
         </div>
       )}
@@ -156,6 +158,7 @@ export default async function Dashboard({ searchParams }: PageProps) {
         </div>
       )}
 
+      <LearningNavigation teamsEnabled={workspaceEnabled()} practiceEnabled={workspaceEnabled()}/>
       <div className="grid grid4">
         <div className="card">
           <div className="muted">Plan</div>
@@ -182,7 +185,7 @@ export default async function Dashboard({ searchParams }: PageProps) {
         </div>
       )}
 
-      <section style={{ marginTop: 32 }}>
+      <section id="my-learning-path" style={{ marginTop: 32,scrollMarginTop:100 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", gap: 16, marginBottom: 16 }}>
           <div>
             <span className="pill">RUTA DE APRENDIZAJE</span>
@@ -236,6 +239,7 @@ export default async function Dashboard({ searchParams }: PageProps) {
                 </div>
 
                 <div style={{ marginTop: 18 }}>
+                  {passed && <Link className="btn secondary" style={{ marginRight: 8, marginBottom: 8 }} href={`/diplomas/${level.level_number}`}>Diploma del bloque</Link>}
                   {unlocked ? (
                     <Link className="btn secondary" href={`/learn/${level.level_number}`}>
                       {passed ? "Repasar nivel" : "Entrar al nivel"}

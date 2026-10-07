@@ -1,0 +1,5 @@
+.diploma-controls {display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.block-diploma {text-align:center;padding:clamp(24px,6vw,64px);border:3px solid var(--user-accent);min-height:60vh}
+.block-diploma h2 {font-size:clamp(24px,5vw,40px);overflow-wrap:anywhere}
+.block-diploma h3 {font-size:clamp(20px,4vw,30px)}
+@media print {.diploma-controls,.skip-link {display:none!important}.diploma-page {max-width:none;padding:0}.block-diploma {box-shadow:none;break-inside:avoid;color:#111;background:#fff;border-color:#2346d8}.block-diploma .muted {color:#444}}

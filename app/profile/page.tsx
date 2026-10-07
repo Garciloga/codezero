@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../lib/supabase-server";
+import AppearanceSettings from "../components/appearance-settings";
+import { workspaceEnabled } from "../../lib/workspace-sandbox";
 
 type PageProps = { searchParams: Promise<{ updated?: string }> };
 
@@ -23,6 +25,9 @@ export default async function ProfilePage({ searchParams }: PageProps) {
     .eq("certificate_type", "codezero-complete")
     .maybeSingle();
 
+  const cloudAppearance = workspaceEnabled();
+  const appearance = cloudAppearance
+    ? (await supabase.from("user_preferences").select("mode,accent").eq("user_id",user.id).maybeSingle()).data : null;
   return (
     <main className="wrap">
       <div className="nav">
@@ -112,6 +117,8 @@ export default async function ProfilePage({ searchParams }: PageProps) {
         </section>
       </div>
 
+      <AppearanceSettings userId={user.id} initialPreference={appearance} syncEnabled={cloudAppearance} />
+      {cloudAppearance && <p><Link className="btn secondary" href="/teams">Mis equipos y organigrama</Link></p>}
       <div className="card" style={{marginTop:18}}>
         <h2>Privacidad y soporte</h2>
         <p className="muted">

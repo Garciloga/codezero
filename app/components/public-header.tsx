@@ -1,0 +1,45 @@
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
+
+const links = [
+  { label: "Cómo funciona", href: "/#como-funciona" },
+  { label: "La ruta", href: "/#ruta" },
+  { label: "Precios", href: "/pricing" },
+  { label: "Preguntas", href: "/#preguntas" },
+];
+export default function PublicHeader({ authenticated }: { authenticated: boolean }) {
+  const pathname = usePathname();
+  const mobileMenu = useRef<HTMLDetailsElement>(null);
+  const closeMenu = () => { if (mobileMenu.current) mobileMenu.current.open = false; };
+  useEffect(() => { if (mobileMenu.current) mobileMenu.current.open = false; }, [pathname]);
+  useEffect(() => {
+    const closeOutside = (event: PointerEvent) => {
+      if (mobileMenu.current?.open && !mobileMenu.current.contains(event.target as Node)) closeMenu();
+    };
+    document.addEventListener("pointerdown", closeOutside);
+    return () => document.removeEventListener("pointerdown", closeOutside);
+  }, []);
+  const navigation = <>{links.map(link => <Link href={link.href} key={link.href}
+    aria-current={pathname === link.href ? "page" : undefined}>{link.label}</Link>)}</>;
+  return <header className="public-header">
+    <div className="public-header-inner">
+      <Link className="public-brand" href="/" aria-label="CodeZero · Inicio">CodeZero</Link>
+      <nav className="public-nav public-desktop-nav" aria-label="Navegación pública">{navigation}</nav>
+      <div className="public-auth">{authenticated ? <Link className="btn" href="/dashboard">Ir a mi panel</Link> : <>
+        <Link href="/login">Entrar</Link><Link className="btn" href="/login?modo=registro">Empezar gratis</Link>
+      </>}</div>
+      <details ref={mobileMenu} className="public-mobile-menu" onKeyDown={event => {
+        if (event.key === "Escape" && mobileMenu.current?.open) {
+          closeMenu();
+          mobileMenu.current.querySelector("summary")?.focus();
+        }
+      }}><summary>Explorar CodeZero <span className="menu-chevron" aria-hidden="true">⌄</span></summary>
+        <nav className="public-nav" aria-label="Navegación pública móvil" onClick={event => {
+          if ((event.target as HTMLElement).closest("a")) closeMenu();
+        }}>{navigation}</nav>
+      </details>
+    </div>
+  </header>;
+}

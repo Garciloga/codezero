@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createServerSupabase } from "../../../../lib/supabase-server";
+import { workspaceEnabled } from "../../../../lib/workspace-sandbox";
 import { consumeRateLimit } from "../../../../lib/rate-limit";
 
 export async function GET() {
@@ -72,6 +73,14 @@ export async function GET() {
     return NextResponse.json({ error: "EXPORT_FAILED" }, { status: 500 });
   }
 
+  const workspace = workspaceEnabled() ? await Promise.all([
+    supabase.from("user_preferences").select("mode,accent,updated_at").eq("user_id",user.id),
+    supabase.from("private_practice_progress").select("progress,revision,updated_at").eq("user_id",user.id),
+    supabase.from("addon_waitlist").select("addon_key,created_at").eq("user_id",user.id),
+    supabase.from("issued_block_diplomas").select("id,level_number,learner_name,block_title,issued_at").eq("user_id",user.id),
+    supabase.from("organization_memberships").select("organization_id,display_name,role,reports_to,active").eq("user_id",user.id),
+  ]) : [];
+  if(workspace.some(query=>query.error)) return NextResponse.json({error:"EXPORT_FAILED"},{status:500});
   const body = JSON.stringify({
     exported_at: new Date().toISOString(),
     account: {
@@ -88,6 +97,7 @@ export async function GET() {
       certificates: certificates.data ?? [],
     },
     usage: usage.data ?? [],
+    workspace: workspace.length ? {appearance:workspace[0].data,practice:workspace[1].data,interests:workspace[2].data,diplomas:workspace[3].data,memberships:workspace[4].data} : null,
   }, null, 2);
 
   return new Response(body, {
@@ -98,3 +108,4 @@ export async function GET() {
     },
   });
 }
+

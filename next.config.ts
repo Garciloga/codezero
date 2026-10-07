@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { codeRuntimeConfiguration } from "./lib/code-runtime-policy";
 
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
@@ -27,6 +28,7 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   async headers() {
+    const codeRuntime = codeRuntimeConfiguration(process.env);
     const privateHeaders = [
       { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
       { key: "Cache-Control", value: "private, no-store, max-age=0" },
@@ -42,6 +44,7 @@ const nextConfig: NextConfig = {
       { source: "/dashboard/:path*", headers: privateHeaders },
       { source: "/learn/:path*", headers: privateHeaders },
       { source: "/profile/:path*", headers: privateHeaders },
+      ...["practice", "modules", "teams", "diplomas"].map(path => ({ source: `/${path}/:path*`, headers: privateHeaders })),
       { source: "/checkout/:path*", headers: privateHeaders },
       { source: "/tutor/:path*", headers: privateHeaders },
       { source: "/certificate/:path*", headers: privateHeaders },
@@ -52,6 +55,8 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
+      ...(codeRuntime ? [{ source: "/practice-preview", headers: [{ key: "Content-Security-Policy",
+        value: securityHeaders.find(header => header.key === "Content-Security-Policy")!.value + `; frame-src 'self' ${codeRuntime.runtimeOrigin}` }] }] : []),
     ];
   },
 };

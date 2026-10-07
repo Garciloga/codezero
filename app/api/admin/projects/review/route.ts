@@ -3,6 +3,9 @@ import { createServerSupabase } from "../../../../../lib/supabase-server";
 import { createAdminSupabase, requireAdmin } from "../../../../../lib/admin";
 import { isTrustedBrowserRequest } from "../../../../../lib/security";
 import { consumeRateLimit } from "../../../../../lib/rate-limit";
+import { getProjectLevel } from "../../../../../lib/access";
+import { maybeIssueWorkspaceDiploma } from "../../../../../lib/workspace-diploma-server";
+import { workspaceEnabled } from "../../../../../lib/workspace-sandbox";
 
 export async function POST(req: Request) {
   if (!isTrustedBrowserRequest(req)) {
@@ -40,7 +43,7 @@ export async function POST(req: Request) {
 
   const { data: before, error: beforeError } = await admin
     .from("project_submissions")
-    .select("status,score,feedback")
+    .select("status,score,feedback,user_id,project_id")
     .eq("id", submissionId)
     .single();
 
@@ -65,6 +68,12 @@ export async function POST(req: Request) {
     .eq("id", submissionId);
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  if (newStatus === "approved" && workspaceEnabled()) {
+    try {
+      const block = await getProjectLevel(Number(before.project_id));
+      if (block) await maybeIssueWorkspaceDiploma(before.user_id,block.levelNumber);
+    } catch { /* The diploma can be retried without changing the saved review. */ }
+  }
 
   await admin.from("admin_audit_log").insert({
     actor_user_id: user.id,

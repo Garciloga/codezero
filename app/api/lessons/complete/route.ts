@@ -4,6 +4,7 @@ import { canAccessLevel, getLessonLevel } from "../../../../lib/access";
 import { createAdminSupabase } from "../../../../lib/admin";
 import { isTrustedBrowserRequest } from "../../../../lib/security";
 import { consumeRateLimit } from "../../../../lib/rate-limit";
+import { maybeIssueWorkspaceDiploma } from "../../../../lib/workspace-diploma-server";
 
 export async function POST(req: Request) {
   if (!isTrustedBrowserRequest(req)) {
@@ -55,6 +56,7 @@ export async function POST(req: Request) {
   );
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  await maybeIssueWorkspaceDiploma(user.id,levelNumber);
 
   return NextResponse.redirect(
     new URL(`/learn/${levelNumber}/${lesson.slug}?completed=1`, req.url),

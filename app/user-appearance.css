@@ -1,0 +1,18 @@
+:root {--user-accent:#2346d8;--user-accent-foreground:#fff;--user-bg:#f5f7fb;--user-surface:#fff;--user-text:#152033;--user-muted:#4a5472;--user-border:#d9deec;--user-tint:#e8edff}
+html[data-appearance="dark"] {color-scheme:dark;--user-bg:#101828;--user-surface:#1d2939;--user-text:#f2f4f7;--user-muted:#d0d5dd;--user-border:#475467;--user-tint:#344054;--fondo:var(--user-bg);--superficie:var(--user-surface);--tinta:var(--user-text);--texto-2:var(--user-muted);--borde:var(--user-border);--borde-fuerte:#667085;--primario-tinte:var(--user-tint)}
+html[data-appearance] {--primario:var(--user-accent);--primario-hover:var(--user-accent);--exito-tinte:var(--user-tint);--error-tinte:var(--user-tint)}
+html[data-appearance] body,html[data-appearance] .public-site {background:var(--user-bg);color:var(--user-text)}
+html[data-appearance] .card {background:var(--user-surface);border-color:var(--user-border)}
+html[data-appearance] .muted {color:var(--user-muted)}
+html[data-appearance] .btn,html[data-appearance] .public-site .btn {background:var(--user-accent);color:var(--user-accent-foreground)}
+html[data-appearance] .btn.secondary {background:var(--user-tint);color:var(--user-text);border:1px solid var(--user-border)}
+html[data-appearance] .pill {background:var(--user-tint);color:var(--user-accent)}
+html[data-appearance] .bar {background:var(--user-border)}
+html[data-appearance] .bar>i {background:var(--user-accent)}
+html[data-appearance] input,html[data-appearance] textarea,html[data-appearance] select {background:var(--user-surface);color:var(--user-text);border-color:var(--user-border);accent-color:var(--user-accent)}
+html[data-appearance] :focus-visible {outline-color:var(--user-accent)}
+html[data-appearance="dark"] .public-dark {background:#0b1220;color:var(--user-text)}
+html[data-appearance="dark"] .public-close {background:#344054;color:var(--user-text)}
+html[data-appearance="dark"] .public-dark p,html[data-appearance="dark"] .public-dark li {color:var(--user-muted)}
+html[data-appearance="dark"] .public-site .btn.secondary {background:var(--user-tint);color:var(--user-text)}
+@media print {html[data-appearance] {color-scheme:light;--user-bg:#fff;--user-surface:#fff;--user-text:#111;--user-muted:#444;--user-border:#ccc}}

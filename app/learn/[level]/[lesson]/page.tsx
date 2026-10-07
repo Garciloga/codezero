@@ -3,6 +3,8 @@ import { notFound, redirect } from "next/navigation";
 import { createServerSupabase } from "../../../../lib/supabase-server";
 import { getPassedLevelNumbers, isLevelIncludedInPlan, isLevelUnlocked } from "../../../../lib/learning";
 
+import { workspaceSandboxEnabled } from "../../../../lib/workspace-sandbox";
+
 type PageProps = {
   params: Promise<{
     level: string;
@@ -142,6 +144,8 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
           Volver al nivel
         </Link>
       </div>
+
+      {workspaceSandboxEnabled() && process.env.CODEZERO_TUTOR_PREVIEW === "1" && <p><Link className="btn secondary" href={`/tutor-preview?lesson=${currentLesson.id}`}>Revisar contexto del Tutor</Link></p>}
 
       {completed === "1" && (
         <div className="card" style={{ marginBottom: 20 }}>
@@ -314,6 +318,11 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
           </div>
         </section>
       )}
+      {process.env.CODEZERO_PRACTICE_PREVIEW === "1" && <section className="card" style={{ marginTop: 24 }}>
+        <h2>Explora la práctica guiada</h2>
+        <p>Muestras opcionales en revisión; su resultado no modifica tu calificación ni tu avance.</p>
+        <Link className="btn secondary" href={`/practice-preview?level=${currentLevel.level_number}`}>Abrir muestras de práctica</Link>
+      </section>}
     </main>
   );
 }

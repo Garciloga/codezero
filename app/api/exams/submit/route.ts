@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { maybeIssueWorkspaceDiploma } from "../../../../lib/workspace-diploma-server";
 import { createServerSupabase } from "../../../../lib/supabase-server";
 import { createAdminSupabase } from "../../../../lib/admin";
 import { consumeQuota, releaseQuota } from "../../../../lib/entitlements";
@@ -148,6 +149,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
+  if (passed) await maybeIssueWorkspaceDiploma(user.id,levelNumber);
   if (passed && levelNumber === 15) {
     await admin.from("certificates").upsert(
       {
