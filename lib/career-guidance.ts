@@ -286,3 +286,53 @@ export function experienceGate(
 
   return "ready_now";
 }
+
+
+export type DimensionTension = {
+  dimension: CareerDimension;
+  capabilityScore: number | null;
+  preferenceScore: number | null;
+  gap: number | null;
+  status: "insufficient" | "aligned" | "mixed";
+};
+
+export function analyzeDimensionTension(
+  evidence: CareerEvidence[],
+  dimension: CareerDimension,
+  threshold = .35,
+): DimensionTension {
+  const relevant = evidence.filter((item) => item.dimension === dimension);
+  const capability = relevant.filter(
+    (item) => item.source === "behavior" || item.source === "performance",
+  );
+  const preference = relevant.filter(
+    (item) => item.source === "preference" || item.source === "self_report",
+  );
+
+  const average = (items: CareerEvidence[]) => {
+    if (items.length === 0) return null;
+    return items.reduce((sum, item) => sum + clamp(item.value), 0) / items.length;
+  };
+
+  const capabilityScore = average(capability);
+  const preferenceScore = average(preference);
+
+  if (capability.length < 2 || preference.length < 1) {
+    return {
+      dimension,
+      capabilityScore,
+      preferenceScore,
+      gap: null,
+      status: "insufficient",
+    };
+  }
+
+  const gap = Math.abs((capabilityScore ?? 0) - (preferenceScore ?? 0));
+  return {
+    dimension,
+    capabilityScore,
+    preferenceScore,
+    gap,
+    status: gap > threshold ? "mixed" : "aligned",
+  };
+}
