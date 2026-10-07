@@ -119,9 +119,11 @@ export default async function ProfilePage({ searchParams }: PageProps) {
           eliminación u otras solicitudes relacionadas con tus datos, escribe a
           {" "}<a href="mailto:codescerooficial@gmail.com">codescerooficial@gmail.com</a>.
         </p>
-        <a className="btn secondary" href="/api/profile/export">
-          Descargar mis datos
-        </a>
+        <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
+          <Link className="btn secondary" href="/help">Centro de ayuda</Link>
+          <Link className="btn secondary" href="/help/tickets">Mis tickets</Link>
+          <a className="btn secondary" href="/api/profile/export">Descargar mis datos</a>
+        </div>
       </div>
     </main>
   );
