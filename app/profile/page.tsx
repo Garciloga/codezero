@@ -115,9 +115,13 @@ export default async function ProfilePage({ searchParams }: PageProps) {
       <div className="card" style={{marginTop:18}}>
         <h2>Privacidad y soporte</h2>
         <p className="muted">
-          Para solicitudes relacionadas con tus datos o con tu cuenta, escribe a
+          Puedes descargar una copia de tus datos de cuenta y aprendizaje. Para correcciones,
+          eliminación u otras solicitudes relacionadas con tus datos, escribe a
           {" "}<a href="mailto:codescerooficial@gmail.com">codescerooficial@gmail.com</a>.
         </p>
+        <a className="btn secondary" href="/api/profile/export">
+          Descargar mis datos
+        </a>
       </div>
     </main>
   );
