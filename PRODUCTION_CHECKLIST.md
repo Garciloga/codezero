@@ -21,6 +21,9 @@ Estado: pre-lanzamiento técnico.
 - Política para usuarios menores: autorización/supervisión de madre, padre o tutor y confirmación en registro.
 - Página pública de contacto.
 - CI de GitHub y builds de Vercel.
+- Smoke test automatizado de producción para home, pricing, login, páginas legales, robots, sitemap y encabezados de seguridad; ejecución diaria y manual desde GitHub Actions.
+- QA de integridad de base de datos: 15 niveles, 92 lecciones, 92 ejercicios, 15 exámenes, 45 preguntas y sin registros huérfanos en relaciones críticas.
+- Revisión de producción sin errores de runtime recientes y sin webhooks de Stripe fallidos.
 - Currículo, ejercicios y banco de examen mejorados respecto al seed inicial.
 
 ## Bloqueadores manuales antes de apertura pública
@@ -38,9 +41,9 @@ Estado: pre-lanzamiento técnico.
 - Configurar CAPTCHA o protección anti-abuso en Auth.
 - Revisar rate limits de Auth.
 - Revisar backups y estrategia de recuperación.
-- Probar registro, confirmación de email, recuperación de contraseña, Free, Starter/Pro/Enterprise, cancelación y proyectos con cuentas de prueba separadas.
+- Probar manualmente registro, confirmación de email y recuperación de contraseña con cuentas de prueba separadas cuando SMTP propio esté disponible; probar también Free, Starter/Pro/Enterprise, cancelación y proyectos.
 - Revisar accesibilidad móvil y navegación por teclado.
-- Añadir monitoreo/alertas de errores y de webhooks fallidos.
+- El smoke test diario ya cubre disponibilidad pública; queda añadir alertas externas para errores de runtime y webhooks fallidos.
 - Revisar métricas después de los primeros usuarios antes de eliminar índices marcados como “unused”.
 - Mantener secretos fuera del repositorio y rotarlos si existe sospecha de exposición.
 
