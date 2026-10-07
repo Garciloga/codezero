@@ -45,6 +45,8 @@ const nextConfig: NextConfig = {
       { source: "/checkout/:path*", headers: privateHeaders },
       { source: "/tutor/:path*", headers: privateHeaders },
       { source: "/certificate/:path*", headers: privateHeaders },
+      { source: "/login", headers: privateHeaders },
+      { source: "/reset-password", headers: privateHeaders },
       { source: "/api/:path*", headers: privateApiHeaders },
       {
         source: "/:path*",
