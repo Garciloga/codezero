@@ -32,3 +32,18 @@ export async function consumeQuota(
   return data as { allowed: boolean; used: number; limit: number; remaining: number };
 }
 
+
+
+export async function releaseQuota(
+  userId: string,
+  metric: "exercises" | "exams" | "ai_queries" | "projects",
+  amount = 1
+) {
+  const supabase = createAdminSupabase();
+  const { error } = await supabase.rpc("release_quota", {
+    p_user_id: userId,
+    p_metric: metric,
+    p_amount: amount
+  });
+  if (error) throw error;
+}
