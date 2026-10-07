@@ -266,8 +266,10 @@ export default async function Admin({ searchParams }: PageProps) {
               <b>{plan.name}</b>
               <p className="muted">
                 {"$" + (plan.price_monthly_cents / 100).toFixed(0)} MXN/mes ·
-                ejercicios {plan.exercise_limit} · exámenes {plan.exam_limit} ·
-                IA {plan.ai_query_limit} · proyectos {plan.project_limit}
+                ejercicios {plan.exercise_limit < 0 ? "sin límite" : plan.exercise_limit} ·
+                exámenes {plan.exam_limit < 0 ? "sin límite" : plan.exam_limit} ·
+                IA {plan.ai_query_limit < 0 ? "sin límite" : plan.ai_query_limit} ·
+                proyectos {plan.project_limit < 0 ? "sin límite" : plan.project_limit}
               </p>
             </div>
           ))}
