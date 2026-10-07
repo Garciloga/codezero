@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createServerSupabase } from "../../../../lib/supabase-server";
 import { consumeQuota, releaseQuota } from "../../../../lib/entitlements";
 import { isTrustedBrowserRequest } from "../../../../lib/security";
+import { consumeRateLimit } from "../../../../lib/rate-limit";
 
 export async function POST(req: Request) {
   if (!isTrustedBrowserRequest(req)) {
@@ -24,6 +25,14 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "ACCOUNT_INACTIVE" }, { status: 403 });
   }
 
+  const rate = await consumeRateLimit(`ai:${user.id}`, 10, 60);
+  if (!rate.allowed) {
+    return NextResponse.json(
+      { error: "RATE_LIMITED" },
+      { status: 429, headers: { "Retry-After": String(rate.retry_after_seconds) } }
+    );
+  }
+
   const apiKey = process.env.OPENAI_API_KEY;
 
   if (!apiKey) {
@@ -33,7 +42,15 @@ export async function POST(req: Request) {
     );
   }
 
-  const { question, context } = await req.json();
+  let payload: { question?: unknown; context?: unknown };
+
+  try {
+    payload = await req.json();
+  } catch {
+    return NextResponse.json({ error: "INVALID_REQUEST" }, { status: 400 });
+  }
+
+  const { question, context } = payload;
 
   if (
     !question ||
