@@ -4,13 +4,13 @@ import type {
   CareerPositionKey,
   ExperienceEvidence,
   ExperienceGateStatus,
-} from "./career-guidance";
+} from "./career-guidance.ts";
 import {
   calculateProfileConfidence,
   experienceGate,
   POSITION_WEIGHTS,
   rankPositions,
-} from "./career-guidance";
+} from "./career-guidance.ts";
 
 export const CAREER_MODEL_VERSION = "career-guidance-v0.7";
 
