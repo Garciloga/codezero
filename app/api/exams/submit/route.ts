@@ -79,14 +79,6 @@ export async function POST(req: Request) {
     }
   }
 
-  const quota = await consumeQuota(user.id, "exams", 1);
-  if (!quota.allowed) {
-    return NextResponse.redirect(
-      new URL(`/learn/${levelNumber}/exam?result=limit`, req.url),
-      303
-    );
-  }
-
   const { data: questions } = await admin
     .from("exam_questions")
     .select("id")
@@ -105,6 +97,18 @@ export async function POST(req: Request) {
   const solutionMap = new Map<number, string>(
     (solutions ?? []).map((s: any) => [Number(s.question_id), String(s.correct_answer)])
   );
+
+  if (solutionMap.size !== questionIds.length) {
+    return NextResponse.json({ error: "SOLUTIONS_INCOMPLETE" }, { status: 500 });
+  }
+
+  const quota = await consumeQuota(user.id, "exams", 1);
+  if (!quota.allowed) {
+    return NextResponse.redirect(
+      new URL(`/learn/${levelNumber}/exam?result=limit`, req.url),
+      303
+    );
+  }
 
   const answerMap: Record<string, string> = {};
   let correct = 0;
