@@ -53,14 +53,6 @@ for (const [path, expected] of checks) {
   }
 }
 
-if (failures > 0) {
-  console.error(`Production smoke test failed with ${failures} issue(s).`);
-  process.exit(1);
-}
-
-console.log("Production smoke test passed.");
-
-
 const protectedChecks = [
   "/dashboard",
   "/profile",
@@ -109,6 +101,8 @@ for (const [path, body] of csrfChecks) {
 }
 
 if (failures > 0) {
-  console.error(`Extended production smoke checks failed with ${failures} issue(s).`);
+  console.error(`Production smoke test failed with ${failures} issue(s).`);
   process.exit(1);
 }
+
+console.log("Production smoke test passed.");
