@@ -49,7 +49,11 @@ Estado: pre-lanzamiento técnico.
 - Revisar métricas después de los primeros usuarios antes de eliminar índices marcados como “unused”.
 - Mantener secretos fuera del repositorio y rotarlos si existe sospecha de exposición.
 - Cuotas reforzadas como RPC server-only y rollback automático ante fallos internos/proveedor para no descontar uso injustamente.
-- Estados de error/404 y mejoras de foco por teclado añadidos.
+- Estados de error/404, navegación por teclado y enlace de salto al contenido añadidos.
+- Protección same-origin en POST iniciados desde navegador para reducir riesgo CSRF.
+- Rutas privadas marcadas con X-Robots-Tag para evitar indexación.
+- security.txt, SECURITY.md y runbook operativo añadidos.
+- Checkout exige confirmación de autorización de pago y conserva metadatos de aceptación.
 
 ## Nota sobre contenido
 
