@@ -23,14 +23,6 @@ export async function GET() {
       {
         ok: true,
         database: true,
-        billingConfigured: Boolean(
-          process.env.STRIPE_SECRET_KEY &&
-          process.env.STRIPE_WEBHOOK_SECRET &&
-          process.env.STRIPE_STARTER_PRICE_ID &&
-          process.env.STRIPE_PRO_PRICE_ID &&
-          process.env.STRIPE_ENTERPRISE_PRICE_ID
-        ),
-        aiTutorConfigured: Boolean(process.env.OPENAI_API_KEY),
         latencyMs: Date.now() - startedAt,
       },
       { headers: { "Cache-Control": "no-store" } }
