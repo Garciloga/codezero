@@ -16,6 +16,7 @@ export default function Home() {
       <Link href="/privacy">Privacidad</Link>
       <Link href="/refunds">Cancelaciones y reembolsos</Link>
       <Link href="/faq">Preguntas frecuentes</Link>
+      <Link href="/help">Centro de ayuda</Link>
       <Link href="/contact">Contacto</Link>
     </footer>
   </main>;
