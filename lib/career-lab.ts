@@ -66,7 +66,7 @@ export function runCareerLab(request:LabRequest) {
    const selected=expected.discriminator.positions[answer.option], other=expected.discriminator.positions[1-answer.option];
    for(const dimension of CAREER_DIMENSIONS) {
     const a=POSITION_WEIGHTS[selected][dimension]??0,b=POSITION_WEIGHTS[other][dimension]??0;
-    if(Math.abs(a-b)>.2) evidence.push({dimension,value:a>b?.85:.35,source:"preference",activityKey:key});
+    if(Math.abs(a-b)>.2) evidence.push({dimension,value:a > b ? 0.85 : 0.35,source:"preference",activityKey:key});
    }
    completed.push(key);
   }

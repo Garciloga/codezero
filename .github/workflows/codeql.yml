@@ -2,10 +2,10 @@ name: CodeQL
 
 on:
   workflow_dispatch:
-  pull_request:
-    branches: [main]
-  schedule:
-    - cron: "31 13 * * 1"
+
+# Optional manual workflow: this private repository currently has no Code Security
+# license. Mandatory PR/push checks are provided by security.yml instead.
+# Do not interpret a skipped/manual CodeQL run as a successful CodeQL review.
 
 permissions:
   contents: read
