@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { createServerSupabase } from "../../../../lib/supabase-server";
 import { createAdminSupabase } from "../../../../lib/admin";
-import { consumeQuota } from "../../../../lib/entitlements";
+import { consumeQuota, releaseQuota } from "../../../../lib/entitlements";
 import { canAccessLevel, getExerciseLevel } from "../../../../lib/access";
 
 export async function POST(req: Request) {
@@ -56,6 +56,7 @@ export async function POST(req: Request) {
   });
 
   if (attemptError) {
+    await releaseQuota(user.id, "exercises", 1);
     return NextResponse.json({ error: attemptError.message }, { status: 500 });
   }
 
