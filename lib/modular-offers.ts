@@ -25,10 +25,8 @@ export const ADDON_OFFERS = [
   { key: "routes_all", label: "Todas las rutas", kind: "monthly", cents: 49900, includedInPro: false, detail: "Acceso al catálogo de rutas" },
   { key: "ai_simulator", label: "Simulador de situaciones", kind: "monthly", cents: 12900, includedInPro: true, detail: "20 sesiones al mes" },
   { key: "tool_labs", label: "Laboratorios de herramientas", kind: "monthly", cents: 9900, includedInPro: false, detail: "Práctica de herramientas" },
-  { key: "extra_quota", label: "Cuota extra", kind: "one_time", cents: 9900, includedInPro: false, detail: "+150 ejercicios y +10 exámenes hasta consumirse" },
-  { key: "verified_certificate", label: "Certificado verificable", kind: "one_time", cents: 14900, readiness: "certificate", includedInPro: true, detail: "Requiere completar y aprobar la ruta" },
+  { key: "verified_certificate", label: "Certificado verificable", kind: "one_time", cents: 0, readiness: "certificate", includedInPro: true, detail: "Incluido sin cargo adicional al completar y aprobar el contenido disponible en tu plan" },
   { key: "deep_diagnostic", label: "Diagnóstico profundo", kind: "one_time", cents: 19900, includedInPro: false, detail: "Diagnóstico de afinidad" },
-  { key: "employment_kit", label: "Kit de empleabilidad", kind: "one_time", cents: 24900, includedInPro: false, detail: "Herramientas para tu búsqueda laboral" },
   { key: "mentoring", label: "Mentoría 1:1", kind: "one_time", cents: 39900, includedInPro: false, detail: "Sesión de 45 minutos" },
 ] as const;
 export type AddonKey = typeof ADDON_OFFERS[number]["key"];
@@ -38,6 +36,7 @@ export function getOfferState(key: string, plan: BasePlan, ready: Readiness) {
   const offer = ADDON_OFFERS.find(item => item.key === key);
   if (!offer) return "unknown";
   if (!("readiness" in offer) || !ready[offer.readiness]) return "coming_soon";
+  if (key === "verified_certificate") return "included";
   if (plan === "pro" && offer.includedInPro) return "included";
   if (plan === "free" && offer.kind === "monthly") return "paid_base_required";
   return "available";
@@ -70,3 +69,4 @@ export function quoteModularPlan(plan: BasePlan, keys: readonly string[], ready:
   }
   return { firstMonthCents, renewalCents, oneTimeCents, included, startsAt: "next_renewal" as const };
 }
+

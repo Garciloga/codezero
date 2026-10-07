@@ -11,10 +11,10 @@ export default function RefundsPage() {
         <Link className="btn secondary" href="/pricing">Planes</Link>
       </div>
       <article className="card" style={{lineHeight:1.75}}>
-        <p>Última actualización: 6 de octubre de 2026.</p>
+        <p>Última actualización: 7 de octubre de 2026.</p>
 
         <p>
-          Esta política aplica a CodeZero, operado por <b>Isaac López Garcia</b>
+          Esta política aplica a CodeZero, operado por <b>Isaac López García</b>
           (<b>Isaac Garciloga</b>), persona física con operación en Ciudad de México, México.
         </p>
 
@@ -39,6 +39,8 @@ export default function RefundsPage() {
           el estado de facturación correspondiente y solicitar la actualización del método de pago.
         </p>
 
+        <h2>Exámenes y certificados</h2>
+        <p>No existe una compra separada de exámenes ni certificados. Sus condiciones dependen del contenido y cuotas del plan. La cancelación de la suscripción no elimina certificados ya emitidos. Un resultado no aprobado no genera por sí solo un cargo adicional.</p>
         <h2>Contacto de facturación</h2>
         <p>
           Para dudas sobre cobros o cancelaciones escribe a
@@ -54,3 +56,4 @@ export default function RefundsPage() {
     </main>
   );
 }
+

@@ -7,3 +7,11 @@ export function createAssessmentVariant(secret:string,attemptId:string){
  return {version:'accounts-v1',attemptId,prompt:`Faro y Puente están activos con ${activeA} y ${activeB} asientos. Nube está inactivo con ${inactive}. Calcula el total activo y explica cómo comprobarlo.`,answer:activeA+activeB,rows:[{name:'Faro',active:true,seats:activeA},{name:'Nube',active:false,seats:inactive},{name:'Puente',active:true,seats:activeB}]};
 }
 export function publicAssessmentVariant(variant:ReturnType<typeof createAssessmentVariant>){return {version:variant.version,attemptId:variant.attemptId,prompt:variant.prompt};}
+
+
+/** Grade only the private per-sitting snapshot, never an answer sent by the client. */
+export function gradeNumericVariant(variant:ReturnType<typeof createAssessmentVariant>,input:unknown){
+ if(!variant||variant.version!=='accounts-v1'||!Number.isSafeInteger(variant.answer)||variant.answer<4||variant.answer>18)throw Error('INVALID_VARIANT');
+ if(typeof input!=='string'||!/^\d{1,2}$/.test(input))throw Error('INVALID_NUMERIC_ANSWER');
+ return Number(input)===variant.answer;
+}

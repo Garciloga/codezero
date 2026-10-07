@@ -59,6 +59,9 @@ const protectedChecks = [
   "/profile",
   "/admin",
   "/learn/1",
+  "/customer-success",
+  "/certificates",
+  "/employment-kit",
 ];
 
 for (const path of protectedChecks) {
@@ -84,6 +87,8 @@ const csrfChecks = [
   ["/api/stripe/checkout", { plan: "starter", paymentAuthorization: true }],
   ["/api/exercises/submit", null],
   ["/api/internal/career-lab", null],
+  ["/api/customer-success", null],
+  ["/api/customer-success/review", null],
 ];
 
 for (const [path, body] of csrfChecks) {
@@ -165,3 +170,4 @@ if (failures > 0) {
 }
 
 console.log("Production smoke test passed.");
+

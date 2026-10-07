@@ -30,10 +30,10 @@ test("inactive products remain blocked even when Pro lists an inclusion", () => 
     }
   }
 });
-test("Free cannot generate a standalone 50-peso tutor charge but can quote a certificate", () => {
+test("Free cannot generate a standalone 50-peso tutor charge and certificates have no separate charge", () => {
   assert.throws(() => quoteModularPlan("free", ["ai_tutor"], ready));
   assert.deepEqual(quoteModularPlan("free", ["verified_certificate"], ready), {
-    firstMonthCents: 0, renewalCents: 0, oneTimeCents: 14900, included: [], startsAt: "next_renewal",
+    firstMonthCents: 0, renewalCents: 0, oneTimeCents: 0, included: ["verified_certificate"], startsAt: "next_renewal",
   });
 });
 test("unknown modules fail closed and monthly and one-time prices remain separate", () => {
@@ -42,5 +42,11 @@ test("unknown modules fail closed and monthly and one-time prices remain separat
   const quote = quoteModularPlan("starter", ["ai_tutor", "verified_certificate"], ready);
   assert.equal(quote.firstMonthCents, 29900);
   assert.equal(quote.renewalCents, 34900);
-  assert.equal(quote.oneTimeCents, 14900);
+  assert.equal(quote.oneTimeCents, 0);
+});
+
+
+test("certificate fees never appear on any base plan and exam packs are not sold",()=>{
+ assert.ok(!ADDON_OFFERS.some(x=>x.key==="extra_quota"));
+ for(const plan of ["free","starter","pro"]){const q=quoteModularPlan(plan,["verified_certificate","verified_certificate"],ready);assert.equal(q.oneTimeCents,0);assert.deepEqual(q.included,["verified_certificate"]);}
 });

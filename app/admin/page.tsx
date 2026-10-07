@@ -88,7 +88,7 @@ export default async function Admin({ searchParams }: PageProps) {
       <div className="nav">
         <div>
           <span className="pill">OWNER / ADMIN</span>
-          <h1>CodeZero Control Center</h1>
+          <h1>CodeZero Control Center</h1><p><a className="btn secondary" href="/customer-success/review">Revisar proyectos Customer Success</a></p>
           <p className="muted">Usuarios, planes, acceso y actividad académica.</p>
         </div>
         <a className="btn secondary" href="/dashboard">Mi cuenta</a>
@@ -368,3 +368,4 @@ export default async function Admin({ searchParams }: PageProps) {
     </main>
   );
 }
+

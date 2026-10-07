@@ -5,7 +5,8 @@ import { getPassedLevelNumbers, isLevelIncludedInPlan, isLevelUnlocked } from ".
 
 import { createAdminSupabase } from "../../../../lib/admin";
 import { createExamSitting } from "../../../../lib/exam-sitting";
-import { randomUUID } from "node:crypto";
+import {createAssessmentVariant,publicAssessmentVariant} from "../../../../lib/assessment-variants";
+import { randomBytes, randomUUID } from "node:crypto";
 
 type PageProps = {
   params: Promise<{ level: string }>;
@@ -106,8 +107,10 @@ export default async function ExamPage({ params, searchParams }: PageProps) {
     .order("sort_order", { ascending: true });
 
   if (questionsError || !questionBank?.length) throw new Error("EXAM_UNAVAILABLE");
-  const variant = createExamSitting(questionBank);
   const sittingId = randomUUID();
+  const numeric = [2,6].includes(levelNumber) ? createAssessmentVariant(randomBytes(32).toString("hex"),sittingId) : null;
+  const variant = {...createExamSitting(questionBank),...(numeric?{numeric}:{} )};
+  const numericPublic = numeric ? publicAssessmentVariant(numeric) : null;
   const {error:sittingError}=await createAdminSupabase().from("exam_sittings").insert({id:sittingId,user_id:user.id,exam_id:exam.id,variant});
   if(sittingError)throw new Error("EXAM_UNAVAILABLE");
   const questions=variant.questions;
@@ -175,6 +178,8 @@ export default async function ExamPage({ params, searchParams }: PageProps) {
           ))}
         </div>
 
+        {numericPublic && <fieldset className="card" style={{marginTop:18}}><legend>Aplicación con datos variables</legend><p>{numericPublic.prompt}</p><label htmlFor="q-numeric">Total de asientos activos</label><input id="q-numeric" name="q_numeric" type="number" min={0} max={99} step={1} required/><p className="muted">Comprueba tu cálculo con un filtro y una suma. Los datos cambian en cada intento.</p></fieldset>}
+
         <div style={{ marginTop: 20 }}>
           <button className="btn" type="submit">Enviar evaluación</button>
         </div>
@@ -182,4 +187,5 @@ export default async function ExamPage({ params, searchParams }: PageProps) {
     </main>
   );
 }
+
 

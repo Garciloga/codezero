@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { maybeIssueWorkspaceDiploma } from "../../../../lib/workspace-diploma-server";
 import { createServerSupabase } from "../../../../lib/supabase-server";
 import { createAdminSupabase } from "../../../../lib/admin";
+import {gradeNumericVariant} from "../../../../lib/assessment-variants";
 import { resolveSittingAnswers } from "../../../../lib/exam-sitting";
 import { isUuid } from "../../../../lib/workspace-sandbox";
 import { canAccessLevel, getExamLevel } from "../../../../lib/access";
@@ -134,7 +135,13 @@ export async function POST(req: Request) {
     if (answer === solutionMap.get(questionId)) correct += 1;
   }
 
-  const score = Math.round((correct / questionIds.length) * 100);
+  let totalQuestions=questionIds.length;
+  if(sitting.variant.numeric){
+    const raw=formData.get("q_numeric");
+    try{if(gradeNumericVariant(sitting.variant.numeric,raw))correct+=1;}catch{return NextResponse.json({error:"INVALID_NUMERIC_ANSWER"},{status:400});}
+    answerMap._numeric=String(raw);totalQuestions+=1;
+  }
+  const score = Math.round((correct / totalQuestions) * 100);
   const passed = score >= Number(exam.passing_score);
 
   const {data:finished,error}=await admin.rpc("finish_exam_sitting",{p_user:user.id,p_sitting:sittingId,p_score:score,p_passed:passed,p_answers:answerMap});
@@ -163,3 +170,4 @@ export async function POST(req: Request) {
     303
   );
 }
+

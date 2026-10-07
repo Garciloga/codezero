@@ -11,8 +11,7 @@ export default function ModularPlanPreview({waitlist = [], waitlistEnabled = fal
   const [plan, setPlan] = useState<BasePlan>("starter");
   const [tutor, setTutor] = useState(false);
   const [route, setRoute] = useState(false);
-  const [certificate, setCertificate] = useState(false);
-  const keys = [tutor && plan !== "free" ? "ai_tutor" : "", route && plan !== "free" ? "route_customer_success" : "", certificate ? "verified_certificate" : ""].filter(Boolean);
+  const keys = [tutor && plan !== "free" ? "ai_tutor" : "", route && plan !== "free" ? "route_customer_success" : ""].filter(Boolean);
   const quote = quoteModularPlan(plan, keys, simulatedReady);
   return <>
     <section className="card modular-preview" aria-labelledby="modular-choice-title">
@@ -29,7 +28,7 @@ export default function ModularPlanPreview({waitlist = [], waitlistEnabled = fal
         <div className="modular-checks">
           <label><input type="checkbox" checked={plan === "pro" || (plan !== "free" && tutor)} disabled={plan !== "starter"} onChange={event => setTutor(event.target.checked)} /> Tutor IA · {plan === "pro" ? "Incluido" : "$50 el primer mes; después $100/mes"}</label>
           <label><input type="checkbox" checked={plan === "pro" || (plan !== "free" && route)} disabled={plan !== "starter"} onChange={event => setRoute(event.target.checked)} /> Ruta Customer Success · {plan === "pro" ? "Una ruta incluida" : "$149/mes"}</label>
-          <label><input type="checkbox" checked={plan === "pro" || certificate} disabled={plan === "pro"} onChange={event => setCertificate(event.target.checked)} /> Certificado verificable · {plan === "pro" ? "Incluido" : "$149, pago único"}</label>
+          <p>Exámenes incluidos dentro de la cuota del plan. Diplomas y certificados sin cargo adicional al aprobar el contenido al que tengas acceso.</p>
         </div>
         <p className="muted">El certificado requiere completar y aprobar la ruta. Esta simulación no habilita módulos ni realiza compras.</p>
       </fieldset>
@@ -59,3 +58,4 @@ export default function ModularPlanPreview({waitlist = [], waitlistEnabled = fal
     </section>
   </>;
 }
+

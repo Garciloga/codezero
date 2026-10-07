@@ -11,11 +11,11 @@ export default function PrivacyPage() {
         <Link className="btn secondary" href="/">Inicio</Link>
       </div>
       <article className="card" style={{lineHeight:1.75}}>
-        <p>Última actualización: 6 de octubre de 2026.</p>
+        <p>Última actualización: 7 de octubre de 2026.</p>
 
         <h2>Responsable</h2>
         <p>
-          El responsable del tratamiento de datos de CodeZero es <b>Isaac López Garcia</b>,
+          El responsable del tratamiento de datos de CodeZero es <b>Isaac López García</b>,
           también identificado públicamente como <b>Isaac Garciloga</b>, persona física con
           operación en Ciudad de México, México.
         </p>
@@ -85,6 +85,12 @@ export default function PrivacyPage() {
           {" "}<a href="mailto:codescerooficial@gmail.com">codescerooficial@gmail.com</a>.
         </p>
 
+        <h2>Solicitudes ARCO y revocación del consentimiento</h2>
+        <p>Escribe al correo de privacidad con tu nombre, un medio de respuesta, el derecho que deseas ejercer y una descripción de los datos o cuenta. Verificaremos tu identidad o representación por un medio adecuado; no envíes contraseñas ni datos de tarjeta. Para rectificación indica el cambio solicitado y su respaldo.</p>
+        <p>Comunicaremos la determinación dentro de veinte días hábiles desde la recepción de la solicitud y, cuando proceda, la haremos efectiva dentro de los quince días hábiles siguientes, conforme a la ley y sus excepciones o ampliaciones aplicables. La solicitud de acceso es gratuita, salvo costos legalmente permitidos de reproducción o envío.</p>
+        <h2>Certificados públicos y organizaciones</h2>
+        <p>El enlace público de un certificado muestra nombre, título y fecha de emisión solo después de tu consentimiento. Retirarlo deshabilita el enlace; no elimina el documento privado. Las actividades de Customer Success y proyectos se guardan de forma privada y los revisores autorizados pueden consultar lo necesario para evaluar la entrega. En equipos, los responsables autorizados consultan el avance correspondiente a su organización y jerarquía.</p>
+        <p>Las listas de espera registran interés, no consentimiento para campañas comerciales. Puedes retirar tu interés. Los ejercicios solicitan datos ficticios; no introduzcas datos sensibles ni información confidencial de tu empresa.</p>
         <h2>Cambios al aviso</h2>
         <p>
           Cualquier cambio material a este aviso se publicará en esta misma página con la fecha
@@ -99,3 +105,4 @@ export default function PrivacyPage() {
     </main>
   );
 }
+

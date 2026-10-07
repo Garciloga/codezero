@@ -11,11 +11,11 @@ export default function TermsPage() {
         <Link className="btn secondary" href="/">Inicio</Link>
       </div>
       <article className="card" style={{lineHeight:1.75}}>
-        <p>Última actualización: 6 de octubre de 2026.</p>
+        <p>Última actualización: 7 de octubre de 2026.</p>
 
         <h2>Responsable del servicio</h2>
         <p>
-          CodeZero es operado por <b>Isaac López Garcia</b>, también identificado públicamente
+          CodeZero es operado por <b>Isaac López García</b>, también identificado públicamente
           como <b>Isaac Garciloga</b>, en calidad de persona física con operación en
           Ciudad de México, México.
         </p>
@@ -53,6 +53,11 @@ export default function TermsPage() {
           cancelar una suscripción desde el portal de facturación disponible en tu perfil.
         </p>
 
+        <h2>Exámenes, diplomas y certificados incluidos</h2>
+        <p>Los exámenes se incluyen dentro de la cuota y el contenido disponible de tu plan. No se cobran intentos por separado. Al agotar la cuota puedes esperar al siguiente periodo o cambiar de plan. Los diplomas y certificados se emiten sin cargo adicional al completar las lecciones, aprobar los exámenes y obtener la aprobación de los proyectos requeridos. No se pueden comprar para omitir requisitos.</p>
+        <p>Los certificados ya emitidos se conservan al cancelar o bajar de plan. Publicar un enlace de verificación requiere consentimiento y puedes retirarlo desde Mis certificados.</p>
+        <h2>Alcance de los certificados</h2>
+        <p>Los documentos acreditan formación en CodeZero. No se presentan como títulos con reconocimiento oficial, licencias profesionales ni garantía de empleo. Los módulos identificados como Próximamente no forman parte de la entrega disponible ni generan derechos por apuntarse a una lista de espera.</p>
         <h2>Contenido educativo</h2>
         <p>
           CodeZero busca ofrecer material útil y actualizado, pero no garantiza resultados
@@ -94,3 +99,4 @@ export default function TermsPage() {
     </main>
   );
 }
+

@@ -80,6 +80,9 @@ export async function GET() {
     supabase.from("issued_block_diplomas").select("id,level_number,learner_name,block_title,issued_at").eq("user_id",user.id),
     supabase.from("organization_memberships").select("organization_id,display_name,role,reports_to,active").eq("user_id",user.id),
     supabase.from("certificate_publications").select("certificate_id,public_id,display_name,title,issued_on,status,consented_at,updated_at").eq("user_id",user.id),
+    supabase.from("cs_course_units").select("unit_index,choice,draft,version,updated_at").eq("user_id",user.id),
+    supabase.from("cs_course_attempts").select("id,score,passed,version,created_at").eq("user_id",user.id),
+    supabase.from("cs_course_projects").select("id,draft,status,score,feedback,rubric,created_at,reviewed_at").eq("user_id",user.id),
     supabase.from("addon_billing_operations").select("addon_key,action,status,created_at,updated_at").eq("user_id",user.id),
   ]) : [];
   if(workspace.some(query=>query.error)) return NextResponse.json({error:"EXPORT_FAILED"},{status:500});
@@ -99,7 +102,7 @@ export async function GET() {
       certificates: certificates.data ?? [],
     },
     usage: usage.data ?? [],
-    workspace: workspace.length ? {appearance:workspace[0].data,practice:workspace[1].data,interests:workspace[2].data,diplomas:workspace[3].data,memberships:workspace[4].data,certificate_publications:workspace[5].data,billing_operations:workspace[6].data} : null,
+    workspace: workspace.length ? {appearance:workspace[0].data,practice:workspace[1].data,interests:workspace[2].data,diplomas:workspace[3].data,memberships:workspace[4].data,certificate_publications:workspace[5].data,customer_success:{units:workspace[6].data,attempts:workspace[7].data,projects:workspace[8].data},billing_operations:workspace[9].data} : null,
   }, null, 2);
 
   return new Response(body, {
@@ -110,4 +113,5 @@ export async function GET() {
     },
   });
 }
+
 
