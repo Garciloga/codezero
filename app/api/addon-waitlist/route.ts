@@ -1,9 +1,9 @@
 import { workspaceUser } from "../../../lib/workspace-server";
-import { workspaceEnabled, trustedWorkspaceMutation } from "../../../lib/workspace-sandbox";
+import { workspaceWaitlistEnabled, trustedWorkspaceMutation } from "../../../lib/workspace-sandbox";
 import { ADDON_OFFERS } from "../../../lib/modular-offers";
 export async function POST(req: Request) {
  const reply = (body: object,status: number) => Response.json(body,{status,headers:{"Cache-Control":"no-store"}});
- if (!workspaceEnabled() || process.env.CODEZERO_MODULAR_PREVIEW !== "1") return reply({error:"No disponible"},404);
+ if (!workspaceWaitlistEnabled()) return reply({error:"No disponible"},404);
  if (!trustedWorkspaceMutation(req,process.env.NEXT_PUBLIC_APP_URL)) return reply({error:"Origen no permitido"},403);
  const session=await workspaceUser(); if(!session)return reply({error:"Inicia sesión con una cuenta activa"},401);
  const raw=await req.text(); if(raw.length>500)return reply({error:"Solicitud demasiado grande"},413);

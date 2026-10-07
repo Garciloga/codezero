@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import {workspaceEnabled,workspaceProductionEnabled,workspaceSandboxEnabled,trustedWorkspaceMutation,isTestInvitationEmail} from "../lib/workspace-sandbox.ts";
+import {workspaceWaitlistEnabled,workspaceEnabled,workspaceProductionEnabled,workspaceSandboxEnabled,trustedWorkspaceMutation,isTestInvitationEmail} from "../lib/workspace-sandbox.ts";
 import {validAppearance} from "../lib/user-appearance.ts";
 import {readWorkspacePages} from "../lib/workspace-pages.ts";
 const local = {CODEZERO_WORKSPACE_SANDBOX:"1",CODEZERO_ENVIRONMENT:"sandbox",CODEZERO_SANDBOX_PROJECT_REF:"local",NEXT_PUBLIC_SUPABASE_URL:"http://127.0.0.1:54321"};
@@ -41,4 +41,12 @@ test("production workspace needs explicit activation and the exact production da
  assert.equal(workspaceEnabled(prod),true);
  assert.equal(workspaceSandboxEnabled(prod),false);
  for(const override of [{CODEZERO_WORKSPACE_PRODUCTION:"0"},{VERCEL_ENV:"preview"},{CODEZERO_ENVIRONMENT:"sandbox"},{NEXT_PUBLIC_SUPABASE_URL:"https://sdvwkrosdnlacyhnuxwo.supabase.co"},{NEXT_PUBLIC_SUPABASE_URL:"https://kwfzhpapvpdatdfwhouf.supabase.co.attacker.test"}])assert.equal(workspaceProductionEnabled({...prod,...override}),false);
+});
+
+test("production waitlists are independent from commercial review flags",()=>{
+ const prod={CODEZERO_WORKSPACE_PRODUCTION:"1",CODEZERO_ENVIRONMENT:"production",VERCEL_ENV:"production",NEXT_PUBLIC_SUPABASE_URL:"https://kwfzhpapvpdatdfwhouf.supabase.co"};
+ assert.equal(workspaceWaitlistEnabled(prod),true);
+ assert.equal(workspaceWaitlistEnabled({...prod,CODEZERO_WORKSPACE_PRODUCTION:"0",CODEZERO_MODULAR_PREVIEW:"1"}),false);
+ assert.equal(workspaceWaitlistEnabled(local),false);
+ assert.equal(workspaceWaitlistEnabled({...local,CODEZERO_MODULAR_PREVIEW:"1"}),true);
 });

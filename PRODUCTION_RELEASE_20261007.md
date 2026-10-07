@@ -17,7 +17,7 @@ Apply only `production_workspace_activation` to the verified production project 
 
 Enable `CODEZERO_WORKSPACE_PRODUCTION=1` and `CODEZERO_ENVIRONMENT=production` only for production. The guard additionally requires VERCEL_ENV=production and the exact production database URL. Review flags do not activate production. Runtime review keeps its isolated local host guard.
 
-Validation: 143 unit tests, 20 checks against the exact production migration, 33 existing PostgreSQL checks, TypeScript and Next.js production build. Production Auth browser journeys remain to be checked with real signed-in users; policy fixtures are not an Auth integration test.
+Validation: 144 unit tests, 20 checks against the exact production migration, 33 existing PostgreSQL checks, TypeScript and Next.js production build. Production Auth browser journeys remain to be checked with real signed-in users; policy fixtures are not an Auth integration test.
 
 ## Remaining integrations
 

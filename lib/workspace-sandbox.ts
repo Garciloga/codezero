@@ -32,6 +32,9 @@ export function workspaceProductionEnabled(env: SandboxEnvironment = process.env
 export function workspaceEnabled(env: SandboxEnvironment = process.env): boolean {
   return workspaceSandboxEnabled(env) || workspaceProductionEnabled(env);
 }
+export function workspaceWaitlistEnabled(env: SandboxEnvironment = process.env): boolean {
+  return workspaceProductionEnabled(env) || (workspaceSandboxEnabled(env) && env.CODEZERO_MODULAR_PREVIEW === "1");
+}
 export function validInvitationEmail(email: string): boolean {
   return email.length <= 200 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
