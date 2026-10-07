@@ -5,6 +5,9 @@ const securityHeaders = [
   { key: "X-Frame-Options", value: "DENY" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+  { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+  { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
+  { key: "X-Permitted-Cross-Domain-Policies", value: "none" },
   {
     key: "Content-Security-Policy",
     value: [
@@ -26,6 +29,12 @@ const nextConfig: NextConfig = {
   async headers() {
     const privateHeaders = [
       { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
+      { key: "Cache-Control", value: "private, no-store, max-age=0" },
+    ];
+
+    const privateApiHeaders = [
+      { key: "Cache-Control", value: "private, no-store, max-age=0" },
+      { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
     ];
 
     return [
@@ -36,6 +45,7 @@ const nextConfig: NextConfig = {
       { source: "/checkout/:path*", headers: privateHeaders },
       { source: "/tutor/:path*", headers: privateHeaders },
       { source: "/certificate/:path*", headers: privateHeaders },
+      { source: "/api/:path*", headers: privateApiHeaders },
       {
         source: "/:path*",
         headers: securityHeaders,
