@@ -200,6 +200,11 @@ export default async function Admin({ searchParams }: PageProps) {
 
       <div className="card" style={{ marginTop: 18 }}>
         <h2>Revisión de proyectos</h2>
+        <p className="muted" style={{lineHeight:1.6}}>
+          Guía sugerida de puntuación: problema y alcance 15 pts · arquitectura 20 ·
+          implementación 25 · seguridad/resiliencia 15 · pruebas/observabilidad 15 ·
+          documentación/demo 10. A partir de 70 puntos el proyecto queda aprobado.
+        </p>
 
         {(pendingProjects ?? []).length === 0 ? (
           <p className="muted">No hay proyectos pendientes de revisión.</p>
