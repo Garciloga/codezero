@@ -12,11 +12,11 @@ export async function requireAdmin(userId: string) {
   const admin = createAdminSupabase();
   const { data } = await admin
     .from("profiles")
-    .select("role")
+    .select("role,status")
     .eq("id", userId)
     .single();
 
-  if (!data || !["owner", "admin"].includes(data.role)) {
+  if (!data || data.status !== "active" || !["owner", "admin"].includes(data.role)) {
     throw new Error("FORBIDDEN");
   }
   return data;
