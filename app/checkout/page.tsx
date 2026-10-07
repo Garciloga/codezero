@@ -18,8 +18,14 @@ export default function CheckoutPage() {
   }, []);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [paymentAuthorization, setPaymentAuthorization] = useState(false);
 
   async function startCheckout() {
+    if (!paymentAuthorization) {
+      setError("Confirma que eres mayor de 18 años o que cuentas con autorización del adulto responsable y del titular del método de pago.");
+      return;
+    }
+
     setLoading(true);
     setError("");
 
@@ -70,7 +76,25 @@ export default function CheckoutPage() {
           La suscripción se gestionará mediante Stripe.
         </p>
 
-        {error && <p>{error}</p>}
+        <label style={{display:"flex",gap:10,alignItems:"flex-start",margin:"18px 0",fontSize:14}}>
+          <input
+            type="checkbox"
+            checked={paymentAuthorization}
+            onChange={(e) => setPaymentAuthorization(e.target.checked)}
+            style={{marginTop:3}}
+          />
+          <span>
+            Confirmo que soy mayor de 18 años o que cuento con autorización del adulto responsable,
+            y que tengo autorización para usar el método de pago.
+          </span>
+        </label>
+
+        <p className="muted" style={{fontSize:13}}>
+          Al continuar aceptas los <Link href="/terms">Términos</Link> y la política de
+          {" "}<Link href="/refunds">cancelaciones y reembolsos</Link>.
+        </p>
+
+        {error && <p role="alert">{error}</p>}
 
         <button className="btn" onClick={startCheckout} disabled={loading}>
           {loading ? "Preparando pago..." : "Continuar al pago"}
