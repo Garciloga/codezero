@@ -20,6 +20,7 @@ for (const [path, expected] of checks) {
   try {
     const response = await fetch(base + path, {
       redirect: "manual",
+      signal: AbortSignal.timeout(15000),
       headers: { "user-agent": "CodeZero-Production-Smoke/1.0" },
     });
 
@@ -57,15 +58,20 @@ const protectedChecks = [
   "/dashboard",
   "/profile",
   "/admin",
+  "/learn/1",
 ];
 
 for (const path of protectedChecks) {
   try {
     const response = await fetch(base + path, {
       redirect: "manual",
+      signal: AbortSignal.timeout(15000),
       headers: { "user-agent": "CodeZero-Production-Smoke/1.0" },
     });
-    const protectedRoute = [302, 303, 307, 308].includes(response.status);
+    const location = response.headers.get("location");
+    const target = location ? new URL(location, base) : null;
+    const protectedRoute = [302, 303, 307, 308].includes(response.status)
+      && target?.origin === new URL(base).origin && target.pathname === "/login";
     console.log(`${protectedRoute ? "PASS" : "FAIL"} protected ${path} -> ${response.status}`);
     if (!protectedRoute) failures += 1;
   } catch (error) {
@@ -77,6 +83,7 @@ for (const path of protectedChecks) {
 const csrfChecks = [
   ["/api/stripe/checkout", { plan: "starter", paymentAuthorization: true }],
   ["/api/exercises/submit", null],
+  ["/api/internal/career-lab", null],
 ];
 
 for (const [path, body] of csrfChecks) {
@@ -84,6 +91,7 @@ for (const [path, body] of csrfChecks) {
     const response = await fetch(base + path, {
       method: "POST",
       redirect: "manual",
+      signal: AbortSignal.timeout(15000),
       headers: {
         "user-agent": "CodeZero-Production-Smoke/1.0",
         "origin": "https://example.invalid",
@@ -97,6 +105,57 @@ for (const [path, body] of csrfChecks) {
   } catch (error) {
     failures += 1;
     console.error(`FAIL csrf ${path}: ${error instanceof Error ? error.message : String(error)}`);
+  }
+}
+
+
+const routerState = encodeURIComponent(JSON.stringify(["", { children: ["(public)", { children: ["login", { children: ["__PAGE__", {}] }] }] }]));
+for (const path of ["/pricing", ...protectedChecks]) {
+  try {
+    const response = await fetch(base + path + "?_rsc=codezero-smoke", {
+      redirect: "manual",
+      signal: AbortSignal.timeout(15000),
+      headers: {
+        "user-agent": "CodeZero-Production-Smoke/1.0",
+        "RSC": "1",
+        "Next-Router-State-Tree": routerState,
+      },
+    });
+    const body = await response.text();
+    const location = response.headers.get("location");
+    const target = location ? new URL(location, base) : null;
+    const ok = path === "/pricing"
+      ? response.status === 200 && response.headers.get("content-type")?.includes("text/x-component")
+      : ([302, 303, 307, 308].includes(response.status)
+        && target?.origin === new URL(base).origin && target.pathname === "/login")
+        || (response.status === 200 && response.headers.get("content-type")?.includes("text/x-component")
+          && (body.includes("NEXT_REDIRECT;replace;/login;307;") || body.includes("NEXT_REDIRECT;push;/login;307;")));
+    const passed = ok && !body.includes("The router state header was sent but could not be parsed");
+    console.log(`${passed ? "PASS" : "FAIL"} RSC navigation ${path} -> ${response.status}`);
+    if (!passed) failures += 1;
+  } catch (error) {
+    failures += 1;
+    console.error(`FAIL RSC ${path}: ${error instanceof Error ? error.message : String(error)}`);
+  }
+}
+for (const [path, options, expected] of [
+  ["/internal/career-lab", {}, 404],
+  ["/api/internal/career-lab", {
+    method: "POST",
+    headers: { origin: new URL(base).origin, "content-type": "application/json" },
+    body: "{}",
+  }, 404],
+]) {
+  try {
+    const response = await fetch(base + path, {
+      ...options, redirect: "manual", signal: AbortSignal.timeout(15000),
+    });
+    const ok = response.status === expected;
+    console.log(`${ok ? "PASS" : "FAIL"} owner-only ${path} -> ${response.status}`);
+    if (!ok) failures += 1;
+  } catch (error) {
+    failures += 1;
+    console.error(`FAIL owner-only ${path}: ${error instanceof Error ? error.message : String(error)}`);
   }
 }
 
