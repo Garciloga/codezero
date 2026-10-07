@@ -3,8 +3,12 @@ import { createServerSupabase } from "../../../../lib/supabase-server";
 import { createAdminSupabase } from "../../../../lib/admin";
 import { consumeQuota, releaseQuota } from "../../../../lib/entitlements";
 import { canAccessLevel, getExamLevel } from "../../../../lib/access";
+import { isTrustedBrowserRequest } from "../../../../lib/security";
 
 export async function POST(req: Request) {
+  if (!isTrustedBrowserRequest(req)) {
+    return new Response("Invalid request origin", { status: 403 });
+  }
   const supabase = await createServerSupabase();
   const { data: { user } } = await supabase.auth.getUser();
 
