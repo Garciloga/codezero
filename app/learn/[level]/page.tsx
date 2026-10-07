@@ -157,7 +157,7 @@ export default async function LevelPage({ params }: PageProps) {
         </div>
         <div className="card">
           <div className="muted">Duración estimada</div>
-          <div className="stat">{currentLevel.estimated_hours}h</div>
+          <div className="stat">{currentLevel.estimated_hours}h*</div>
         </div>
         <div className="card">
           <div className="muted">Lecciones</div>
@@ -168,6 +168,10 @@ export default async function LevelPage({ params }: PageProps) {
           <div className="stat">{progressPercent}%</div>
         </div>
       </div>
+
+      <p className="muted" style={{ marginTop: 14, fontSize: 13 }}>
+        *Incluye estudio, práctica, ejercicios, evaluación y trabajo independiente del nivel.
+      </p>
 
       <section style={{ marginTop: 32 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", gap: 20, marginBottom: 16 }}>
