@@ -1,6 +1,6 @@
 import Link from "next/link";
 export default function About(){
- return <main className="wrap"><div className="card" style={{marginTop:40,maxWidth:850,marginInline:"auto"}}>
+ return <main id="main-content" className="wrap"><div className="card" style={{marginTop:40,maxWidth:850,marginInline:"auto"}}>
   <span className="pill">CODEZERO</span>
   <h1>Aprende habilidades técnicas para el mundo SaaS.</h1>
   <p>CodeZero es una plataforma de aprendizaje progresivo que lleva al alumno desde fundamentos de programación hasta APIs, automatización, arquitectura e integraciones empresariales.</p>
