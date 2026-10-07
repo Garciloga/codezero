@@ -1,5 +1,5 @@
-import type { CareerPositionKey } from "./career-guidance";
-import { practicalTie } from "./career-guidance";
+import type { CareerPositionKey } from "./career-guidance.ts";
+import { practicalTie } from "./career-guidance.ts";
 
 export type CareerDiscriminatorKey =
   | "csm_vs_am"
