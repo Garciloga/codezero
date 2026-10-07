@@ -33,11 +33,15 @@ export async function POST(req: Request) {
 
   const admin = createAdminSupabase();
 
-  const { data: before } = await admin
+  const { data: before, error: beforeError } = await admin
     .from("profiles")
     .select("plan_name,status")
     .eq("id", targetUserId)
     .single();
+
+  if (beforeError || !before) {
+    return NextResponse.json({ error: "USER_NOT_FOUND" }, { status: 404 });
+  }
 
   const { error } = await admin
     .from("profiles")
