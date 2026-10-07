@@ -1,5 +1,12 @@
 /** Local review only. Never infer a trusted origin from request/forwarded headers. */
 export function codeRuntimeConfiguration(env: Record<string, string | undefined>) {
+  if (env.CODEZERO_CODE_RUNTIME === "1" && env.CODEZERO_WORKSPACE_PRODUCTION === "1"
+    && env.CODEZERO_ENVIRONMENT === "production" && env.VERCEL_ENV === "production"
+    && env.NEXT_PUBLIC_SUPABASE_URL === "https://kwfzhpapvpdatdfwhouf.supabase.co"
+    && env.NEXT_PUBLIC_APP_URL === "https://codezero-nine.vercel.app"
+    && env.CODEZERO_CODE_RUNTIME_ORIGIN === "https://codezero-practice-engine.vercel.app") {
+    return {appOrigin:env.NEXT_PUBLIC_APP_URL,runtimeOrigin:env.CODEZERO_CODE_RUNTIME_ORIGIN};
+  }
   if (env.CODEZERO_PRACTICE_PREVIEW !== "1" || env.CODEZERO_CODE_RUNTIME !== "1"
     || env.CODEZERO_ENVIRONMENT !== "sandbox" || env.VERCEL_ENV === "production") return null;
   try {

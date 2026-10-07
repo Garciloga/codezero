@@ -3,6 +3,10 @@ import { notFound, redirect } from "next/navigation";
 import { createServerSupabase } from "../../../../lib/supabase-server";
 import { getPassedLevelNumbers, isLevelIncludedInPlan, isLevelUnlocked } from "../../../../lib/learning";
 
+import { createAdminSupabase } from "../../../../lib/admin";
+import { createExamSitting } from "../../../../lib/exam-sitting";
+import { randomUUID } from "node:crypto";
+
 type PageProps = {
   params: Promise<{ level: string }>;
   searchParams: Promise<{ result?: string }>;
@@ -95,11 +99,18 @@ export default async function ExamPage({ params, searchParams }: PageProps) {
 
   if (!exam) notFound();
 
-  const { data: questions } = await supabase
+  const { data: questionBank, error: questionsError } = await supabase
     .from("exam_questions")
     .select("id, prompt, options, sort_order")
     .eq("exam_id", exam.id)
     .order("sort_order", { ascending: true });
+
+  if (questionsError || !questionBank?.length) throw new Error("EXAM_UNAVAILABLE");
+  const variant = createExamSitting(questionBank);
+  const sittingId = randomUUID();
+  const {error:sittingError}=await createAdminSupabase().from("exam_sittings").insert({id:sittingId,user_id:user.id,exam_id:exam.id,variant});
+  if(sittingError)throw new Error("EXAM_UNAVAILABLE");
+  const questions=variant.questions;
 
   const { data: attempts } = await supabase
     .from("exam_attempts")
@@ -141,6 +152,8 @@ export default async function ExamPage({ params, searchParams }: PageProps) {
 
       <form action="/api/exams/submit" method="post">
         <input type="hidden" name="exam_id" value={exam.id} />
+        <input type="hidden" name="sitting_id" value={sittingId} />
+        <p>Las preguntas y opciones cambian de orden en cada intento. Este formulario es válido por dos horas. Resuelve la evaluación por tu cuenta.</p>
         <input type="hidden" name="level_number" value={levelNumber} />
 
         <div style={{ display: "grid", gap: 18 }}>
@@ -169,3 +182,4 @@ export default async function ExamPage({ params, searchParams }: PageProps) {
     </main>
   );
 }
+

@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {classifySubscription} from '../lib/subscription-classification.ts';
+const base={starter:'starter',pro:'pro'},tutor=new Set(['intro','renewal']);const items=(...prices)=>prices.map(id=>({price:{id}}));
+test('combined subscriptions remain a base plan regardless of item order',()=>{for(const order of [items('intro','starter'),items('starter','intro')]){const r=classifySubscription(order,base,tutor);assert.equal(r.basePlan,'starter');assert.equal(r.legacyTutor,false);assert.equal(r.tutorItem.price.id,'intro');}});
+test('legacy Tutor, unrelated and ambiguous subscriptions cannot become a guessed base plan',()=>{assert.equal(classifySubscription(items('renewal'),base,tutor).legacyTutor,true);assert.equal(classifySubscription(items('other'),base,tutor).basePlan,null);assert.equal(classifySubscription(items('starter','pro'),base,tutor).ambiguousBase,true);});

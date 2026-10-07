@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../lib/supabase-server";
+import CertificateSharing from "../components/certificate-sharing";
+import { workspaceEnabled } from "../../lib/workspace-sandbox";
 
 export default async function CertificatePage() {
   const supabase = await createServerSupabase();
@@ -22,6 +24,8 @@ export default async function CertificatePage() {
     .select("full_name, email")
     .eq("id", user.id)
     .single();
+
+  const publication = workspaceEnabled() ? (await supabase.from("certificate_publications").select("public_id,status").eq("user_id",user.id).eq("certificate_id",certificate.id).maybeSingle()).data : null;
 
   return (
     <main className="wrap">
@@ -51,6 +55,8 @@ export default async function CertificatePage() {
           ID de certificado: {certificate.id}
         </p>
       </div>
+      {workspaceEnabled() && <CertificateSharing certificateId={certificate.id} initialPath={publication?.status === "verified" ? `/verify/${publication.public_id}` : null} displayName={profile?.full_name || "Estudiante CodeZero"}/>}
     </main>
   );
 }
+

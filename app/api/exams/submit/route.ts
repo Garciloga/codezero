@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import { maybeIssueWorkspaceDiploma } from "../../../../lib/workspace-diploma-server";
 import { createServerSupabase } from "../../../../lib/supabase-server";
 import { createAdminSupabase } from "../../../../lib/admin";
-import { consumeQuota, releaseQuota } from "../../../../lib/entitlements";
+import { resolveSittingAnswers } from "../../../../lib/exam-sitting";
+import { isUuid } from "../../../../lib/workspace-sandbox";
 import { canAccessLevel, getExamLevel } from "../../../../lib/access";
 import { isTrustedBrowserRequest } from "../../../../lib/security";
 import { consumeRateLimit } from "../../../../lib/rate-limit";
@@ -42,6 +43,12 @@ export async function POST(req: Request) {
   }
 
   const admin = createAdminSupabase();
+  const sittingId = formData.get("sitting_id");
+  if (!isUuid(sittingId)) return NextResponse.json({error:"RELOAD_EXAM"},{status:400});
+  const {data:sitting,error:sittingError}=await admin.from("exam_sittings").select("id,exam_id,variant,expires_at,attempt_id").eq("id",sittingId).eq("user_id",user.id).eq("exam_id",examId).maybeSingle();
+  if(sittingError||!sitting)return NextResponse.json({error:"SITTING_UNAVAILABLE"},{status:409});
+  if(sitting.attempt_id){const {data:previous}=await supabase.from("exam_attempts").select("passed").eq("id",sitting.attempt_id).eq("user_id",user.id).maybeSingle();return NextResponse.redirect(new URL(`/learn/${levelNumber}/exam?result=${previous?.passed?'passed':'failed'}`,req.url),303);}
+  if(Date.parse(sitting.expires_at)<Date.now())return NextResponse.json({error:"RELOAD_EXAM"},{status:409});
 
   const { data: currentLevel } = await admin
     .from("levels")
@@ -116,38 +123,24 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "SOLUTIONS_INCOMPLETE" }, { status: 500 });
   }
 
-  const quota = await consumeQuota(user.id, "exams", 1);
-  if (!quota.allowed) {
-    return NextResponse.redirect(
-      new URL(`/learn/${levelNumber}/exam?result=limit`, req.url),
-      303
-    );
-  }
-
-  const answerMap: Record<string, string> = {};
+  const displayed=Object.fromEntries(questionIds.map(id=>[String(id),String(formData.get(`q_${id}`)??'')]));
+  let answerMap:Record<string,string>;
+  try {answerMap=resolveSittingAnswers(sitting.variant.mapping,displayed);}catch{return NextResponse.json({error:"INVALID_ANSWERS"},{status:400});}
+  if(Object.keys(answerMap).length!==questionIds.length||questionIds.some(id=>!answerMap[String(id)]))return NextResponse.json({error:"RELOAD_EXAM"},{status:409});
   let correct = 0;
 
   for (const questionId of questionIds) {
-    const answer = String(formData.get(`q_${questionId}`) ?? "");
-    answerMap[String(questionId)] = answer;
+    const answer = answerMap[String(questionId)];
     if (answer === solutionMap.get(questionId)) correct += 1;
   }
 
   const score = Math.round((correct / questionIds.length) * 100);
   const passed = score >= Number(exam.passing_score);
 
-  const { error } = await admin.from("exam_attempts").insert({
-    user_id: user.id,
-    exam_id: examId,
-    score,
-    passed,
-    answers: answerMap,
-  });
-
-  if (error) {
-    await releaseQuota(user.id, "exams", 1);
-    return NextResponse.json({ error: error.message }, { status: 500 });
-  }
+  const {data:finished,error}=await admin.rpc("finish_exam_sitting",{p_user:user.id,p_sitting:sittingId,p_score:score,p_passed:passed,p_answers:answerMap});
+  if(finished?.status==='limit')return NextResponse.redirect(new URL(`/learn/${levelNumber}/exam?result=limit`,req.url),303);
+  if(error||!finished)return NextResponse.json({error:"EXAM_NOT_SAVED"},{status:500});
+  if(finished.status==='replay'){const {data:previous}=await supabase.from('exam_attempts').select('passed').eq('id',finished.attempt_id).eq('user_id',user.id).maybeSingle();return NextResponse.redirect(new URL(`/learn/${levelNumber}/exam?result=${previous?.passed?'passed':'failed'}`,req.url),303);}
 
   if (passed) await maybeIssueWorkspaceDiploma(user.id,levelNumber);
   if (passed && levelNumber === 15) {

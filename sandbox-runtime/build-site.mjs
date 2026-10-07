@@ -1,0 +1,13 @@
+import { mkdir, copyFile, writeFile, rm } from 'node:fs/promises';
+import { runtimeHeaders } from './server.mjs';
+const config={appOrigin:'https://codezero-nine.vercel.app',runtimeOrigin:'https://codezero-practice-engine.vercel.app'};
+await rm('dist',{recursive:true,force:true});
+await mkdir('dist/pyodide',{recursive:true});await mkdir('dist/sqlite',{recursive:true});
+for(const name of ['frame.mjs','worker.mjs','protocol.mjs'])await copyFile(name,'dist/'+name);
+for(const name of ['pyodide.mjs','pyodide.asm.mjs','pyodide.asm.wasm','python_stdlib.zip','pyodide-lock.json'])await copyFile('node_modules/pyodide/'+name,'dist/pyodide/'+name);
+for(const name of ['index.mjs','sqlite3.wasm'])await copyFile('node_modules/@sqlite.org/sqlite-wasm/dist/'+name,'dist/sqlite/'+name);
+await writeFile('dist/frame.html',`<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Práctica de CodeZero</title></head><body><p>Motor de práctica con datos ficticios.</p><script type="module" src="${config.runtimeOrigin}/frame.mjs" data-parent="${config.appOrigin}"></script></body></html>`);
+await writeFile('dist/index.html','<!doctype html><title>CodeZero · motor de práctica</title><p>Motor de Python y SQL para la práctica en CodeZero.</p>');
+const headers=Object.entries(runtimeHeaders(config)).map(([key,value])=>({key,value}));
+await writeFile('vercel.json',JSON.stringify({version:2,buildCommand:'npm run build',outputDirectory:'dist',headers:[{source:'/(.*)',headers}],rewrites:[{source:'/frame',destination:'/frame.html'}]},null,2)+'\n');
+console.log('Motor estático preparado; sin credenciales, API ni datos de alumnos.');

@@ -48,6 +48,7 @@ const nextConfig: NextConfig = {
       { source: "/checkout/:path*", headers: privateHeaders },
       { source: "/tutor/:path*", headers: privateHeaders },
       { source: "/certificate/:path*", headers: privateHeaders },
+      { source: "/verify/:path*", headers: privateHeaders },
       { source: "/login", headers: privateHeaders },
       { source: "/reset-password", headers: privateHeaders },
       { source: "/api/:path*", headers: privateApiHeaders },
@@ -55,8 +56,8 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
-      ...(codeRuntime ? [{ source: "/practice-preview", headers: [{ key: "Content-Security-Policy",
-        value: securityHeaders.find(header => header.key === "Content-Security-Policy")!.value + `; frame-src 'self' ${codeRuntime.runtimeOrigin}` }] }] : []),
+      ...(codeRuntime ? ["/practice-preview", "/practice"].map(source => ({ source, headers: [{ key: "Content-Security-Policy",
+        value: securityHeaders.find(header => header.key === "Content-Security-Policy")!.value + `; frame-src 'self' ${codeRuntime.runtimeOrigin}` }] })) : []),
     ];
   },
 };

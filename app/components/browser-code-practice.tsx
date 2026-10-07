@@ -53,7 +53,7 @@ export default function BrowserCodePractice({ runtimeOrigin, appOrigin }: { runt
   function reset(next = language) { choose(next===language ? challengeId : RUNTIME_CHALLENGES.find(item=>item.language===next)!.id); }
 
   return <section className="card browser-code-practice" style={{ marginTop: 24 }}>
-    <span className="pill">CÓDIGO EJECUTABLE · REVISIÓN LOCAL</span><h2>Escribe, ejecuta y explica</h2>
+    <span className="pill">PRÁCTICA DE PYTHON Y SQL</span><h2>Escribe, ejecuta y explica</h2>
     <p>Prueba con cuentas ficticias. Cada ejecución empieza de cero y su resultado no cuenta como examen, avance o diploma.</p>
     <label htmlFor="practice-language">Lenguaje</label>{" "}<select id="practice-language" value={language} disabled={!!session} onChange={event => reset(event.target.value as Language)}><option value="python">Python</option><option value="sql">SQL · SQLite</option></select>
     <label htmlFor="practice-challenge">Reto de práctica</label>{" "}<select id="practice-challenge" disabled={!!session} value={challengeId} onChange={event=>choose(event.target.value)}>{RUNTIME_CHALLENGES.filter(item=>item.language===language).map(item=><option key={item.id} value={item.id}>{item.title}</option>)}</select>

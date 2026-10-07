@@ -1,4 +1,5 @@
 import Stripe from "stripe";
+import { classifySubscription } from "../../../../lib/subscription-classification";
 import { headers } from "next/headers";
 import { createAdminSupabase } from "../../../../lib/admin";
 
@@ -15,15 +16,10 @@ const aiTutorPrices = new Set([
 ].filter(Boolean) as string[]);
 
 function isAiTutorSubscription(subscription: Stripe.Subscription) {
-  return (
-    subscription.metadata?.addon_key === "ai_tutor" ||
-    subscription.items.data.some((item) => aiTutorPrices.has(item.price.id))
-  );
+ return classifySubscription(subscription.items.data,priceToPlan,aiTutorPrices).legacyTutor;
 }
-
 function getPlanFromSubscription(subscription: Stripe.Subscription) {
-  const priceId = subscription.items.data[0]?.price?.id;
-  return priceId ? priceToPlan[priceId] : undefined;
+ return classifySubscription(subscription.items.data,priceToPlan,aiTutorPrices).basePlan;
 }
 
 function customerIdOf(value: Stripe.Subscription["customer"] | Stripe.Invoice["customer"] | Stripe.Checkout.Session["customer"]) {
@@ -107,7 +103,7 @@ export async function POST(req: Request) {
   }
 
   try {
-    if (event.type === "checkout.session.completed") {
+    if (event.type === "checkout.session.completed" || event.type === "checkout.session.async_payment_succeeded") {
       const session = event.data.object as Stripe.Checkout.Session;
       const userId = session.metadata?.user_id;
       const addonKey = session.metadata?.addon_key;
@@ -120,9 +116,7 @@ export async function POST(req: Request) {
             ? session.subscription
             : session.subscription?.id ?? null;
         const customerId = customerIdOf(session.customer);
-        const paymentConfirmed =
-          session.payment_status === "paid" ||
-          session.payment_status === "no_payment_required";
+        const paymentConfirmed = session.payment_status === "paid";
 
         if (subscriptionId && paymentConfirmed) {
           let scheduleId: string | null = null;
@@ -130,7 +124,7 @@ export async function POST(req: Request) {
           const month2 = process.env.STRIPE_AI_TUTOR_MONTH2_PRICE_ID;
           const month3 = process.env.STRIPE_AI_TUTOR_MONTH3PLUS_PRICE_ID;
 
-          if (month1 && month2 && month3) {
+          if (month1 && month3) {
             const schedule = await stripe.subscriptionSchedules.create({
               from_subscription: subscriptionId,
             });
@@ -146,13 +140,8 @@ export async function POST(req: Request) {
                     metadata: { user_id: userId, addon_key: "ai_tutor", phase: "1" },
                   },
                   {
-                    duration: { interval: "month", interval_count: 1 },
-                    items: [{ price: month2, quantity: 1 }],
-                    metadata: { user_id: userId, addon_key: "ai_tutor", phase: "2" },
-                  },
-                  {
                     items: [{ price: month3, quantity: 1 }],
-                    metadata: { user_id: userId, addon_key: "ai_tutor", phase: "3+" },
+                    metadata: { user_id: userId, addon_key: "ai_tutor", phase: "2+" },
                   },
                 ],
               });
@@ -175,7 +164,7 @@ export async function POST(req: Request) {
 
           if (error) throw error;
         }
-      } else if (userId && validPlan) {
+      } else if (userId && validPlan && session.payment_status === "paid") {
         const { error } = await admin
           .from("profiles")
           .update({
@@ -200,7 +189,8 @@ export async function POST(req: Request) {
       event.type === "customer.subscription.updated" ||
       event.type === "customer.subscription.deleted"
     ) {
-      const subscription = event.data.object as Stripe.Subscription;
+      const notifiedSubscription = event.data.object as Stripe.Subscription;
+      const subscription = event.type === "customer.subscription.deleted" ? notifiedSubscription : await stripe.subscriptions.retrieve(notifiedSubscription.id);
       const customerId = customerIdOf(subscription.customer);
       const metadataUserId = subscription.metadata?.user_id;
       const aiTutor = isAiTutorSubscription(subscription);
@@ -246,9 +236,10 @@ export async function POST(req: Request) {
 
           if (error) throw error;
         }
-      } else {
+      } else if (getPlanFromSubscription(subscription)) {
         const plan = getPlanFromSubscription(subscription);
-        const usable = ["active", "trialing", "past_due"].includes(subscription.status);
+        const combinedTutor = subscription.items.data.some(item=>aiTutorPrices.has(item.price.id));
+        const usable = ["active", "trialing", "past_due"].includes(subscription.status) || (combinedTutor && subscription.status === "unpaid");
 
         let query = admin.from("profiles").update({
           plan_name:
@@ -280,43 +271,45 @@ export async function POST(req: Request) {
 
         const { error } = await query;
         if (error) throw error;
+        const {data:owner,error:ownerError}=await admin.from("profiles").select("id").eq("stripe_subscription_id",subscription.id).maybeSingle();
+        if(ownerError)throw ownerError;
+        const addonOwner=owner?.id??metadataUserId;
+        if(addonOwner){
+          const tutorItem=subscription.items.data.find(item=>aiTutorPrices.has(item.price.id));
+          const {data:previous,error:previousError}=await admin.from("account_addons").select("status,cancel_at_period_end").eq("user_id",addonOwner).eq("addon_key","ai_tutor").eq("stripe_subscription_id",subscription.id).maybeSingle();
+          if(previousError)throw previousError;
+          if(tutorItem&&event.type!=="customer.subscription.deleted"){
+            const status=subscription.status==='active'?(previous?.status==='active'?'active':'incomplete'):['past_due','unpaid'].includes(subscription.status)?'past_due':'incomplete';
+            const saved=await admin.from('account_addons').upsert({user_id:addonOwner,addon_key:'ai_tutor',catalog_key:'ai_tutor',status,stripe_customer_id:customerId,stripe_subscription_id:subscription.id,stripe_subscription_item_id:tutorItem.id,current_price_id:tutorItem.price.id,cancel_at_period_end:previous?.cancel_at_period_end??false,updated_at:nowIso},{onConflict:'user_id,addon_key'});if(saved.error)throw saved.error;
+          }else if(previous){const saved=await admin.from('account_addons').update({status:'canceled',stripe_subscription_item_id:null,cancel_at_period_end:false,updated_at:nowIso}).eq('user_id',addonOwner).eq('addon_key','ai_tutor').eq('stripe_subscription_id',subscription.id);if(saved.error)throw saved.error;}
+        }
       }
     }
 
     if (event.type === "invoice.paid" || event.type === "invoice.payment_failed") {
-      const invoice = event.data.object as Stripe.Invoice;
+      const notifiedInvoice = event.data.object as Stripe.Invoice;
+      const invoice = await stripe.invoices.retrieve(notifiedInvoice.id!);
       const customerId = customerIdOf(invoice.customer);
-      const invoiceLines = ((invoice as any).lines?.data ?? []) as any[];
+      const invoiceLines = invoice.lines?.data ?? [];
       const aiTutorInvoice = invoiceLines.some((line) => {
         const priceId =
           line?.pricing?.price_details?.price ??
-          line?.price?.id ??
+          (line as unknown as {price?:{id?:string}})?.price?.id ??
           null;
-        return priceId ? aiTutorPrices.has(priceId) : false;
+        return priceId ? aiTutorPrices.has(typeof priceId === "string" ? priceId : priceId.id) : false;
       });
 
-      if (customerId && aiTutorInvoice) {
-        const { error } = await admin
-          .from("account_addons")
-          .update({
-            status: event.type === "invoice.paid" ? "active" : "past_due",
-            updated_at: nowIso,
-          })
-          .eq("stripe_customer_id", customerId)
-          .eq("addon_key", "ai_tutor");
-
-        if (error) throw error;
-      } else if (customerId) {
-        const { error } = await admin
-          .from("profiles")
-          .update({
-            billing_status: event.type === "invoice.paid" ? "active" : "past_due",
-            updated_at: nowIso,
-          })
-          .eq("stripe_customer_id", customerId)
-          .not("stripe_subscription_id", "is", null);
-
-        if (error) throw error;
+      const subscriptionRef=invoice.parent?.subscription_details?.subscription ?? (invoice as unknown as {subscription?:string}).subscription;
+      const invoiceSubscriptionId=typeof subscriptionRef==='string'?subscriptionRef:subscriptionRef?.id;
+      if(customerId&&invoiceSubscriptionId){
+        const current=await stripe.subscriptions.retrieve(invoiceSubscriptionId);
+        const latest=typeof current.latest_invoice==='string'?current.latest_invoice:current.latest_invoice?.id;
+        if(latest===invoice.id && (event.type!=='invoice.paid'||invoice.status==='paid')){
+        if(aiTutorInvoice && current.items.data.some(item=>aiTutorPrices.has(item.price.id))){
+          const saved=await admin.from('account_addons').update({status:event.type==='invoice.paid'?'active':'past_due',updated_at:nowIso}).eq('stripe_subscription_id',invoiceSubscriptionId).eq('stripe_customer_id',customerId).eq('addon_key','ai_tutor');if(saved.error)throw saved.error;
+        }
+        const saved=await admin.from('profiles').update({billing_status:event.type==='invoice.paid'?'active':'past_due',updated_at:nowIso}).eq('stripe_subscription_id',invoiceSubscriptionId).eq('stripe_customer_id',customerId);if(saved.error)throw saved.error;
+        }
       }
     }
 
@@ -348,3 +341,4 @@ export async function POST(req: Request) {
     return new Response("Webhook processing failed", { status: 500 });
   }
 }
+

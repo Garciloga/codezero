@@ -1,4 +1,5 @@
 import Stripe from "stripe";
+import { randomInt } from "node:crypto";
 import { createServerSupabase } from "../../../../lib/supabase-server";
 import { NextResponse } from "next/server";
 import { isTrustedBrowserRequest } from "../../../../lib/security";
@@ -52,7 +53,8 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "PAYMENT_AUTHORIZATION_REQUIRED" }, { status: 400 });
   }
 
-  if (typeof plan !== "string" || !["starter", "pro", "enterprise"].includes(plan)) {
+  if (plan === "enterprise") return NextResponse.json({error:"CONTACT_REQUIRED"},{status:409});
+  if (typeof plan !== "string" || !["starter", "pro"].includes(plan)) {
     return NextResponse.json({ error: "INVALID_PLAN" }, { status: 400 });
   }
 
@@ -93,6 +95,7 @@ export async function POST(req: Request) {
   }
 
   const session = await stripe.checkout.sessions.create({
+    integration_identifier: "codezero-base-" + Array.from({length:8},()=>String.fromCharCode(97+randomInt(26))).join(""),
     mode: "subscription",
     line_items: [{ price, quantity: 1 }],
     ...(profile.stripe_customer_id
@@ -120,3 +123,4 @@ export async function POST(req: Request) {
 
   return NextResponse.json({ url: session.url });
 }
+
