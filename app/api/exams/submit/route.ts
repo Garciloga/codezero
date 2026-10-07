@@ -153,7 +153,7 @@ export async function POST(req: Request) {
 
   return NextResponse.redirect(
     new URL(
-      `/learn/${levelNumber}/exam?result=${passed ? "passed" : "failed"}&score=${score}`,
+      `/learn/${levelNumber}/exam?result=${passed ? "passed" : "failed"}`,
       req.url
     ),
     303
