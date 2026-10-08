@@ -1,8 +1,11 @@
-/** Local review only. Never infer a trusted origin from request/forwarded headers. */
+/** Explicit reviewed origins only. Never infer trust from request/forwarded headers. */
 export function codeRuntimeConfiguration(env: Record<string, string | undefined>) {
+  // URL parsing tolerates copied whitespace while retaining the exact database URL.
+  let productionDatabase = false;
+  try { productionDatabase = new URL(env.NEXT_PUBLIC_SUPABASE_URL ?? "").href === "https://kwfzhpapvpdatdfwhouf.supabase.co/"; } catch { /* Fail closed. */ }
   if (env.CODEZERO_CODE_RUNTIME === "1" && env.CODEZERO_WORKSPACE_PRODUCTION === "1"
     && env.CODEZERO_ENVIRONMENT === "production" && env.VERCEL_ENV === "production"
-    && env.NEXT_PUBLIC_SUPABASE_URL === "https://kwfzhpapvpdatdfwhouf.supabase.co"
+    && productionDatabase
     && env.NEXT_PUBLIC_APP_URL === "https://codezero-nine.vercel.app"
     && env.CODEZERO_CODE_RUNTIME_ORIGIN === "https://codezero-practice-engine.vercel.app") {
     return {appOrigin:env.NEXT_PUBLIC_APP_URL,runtimeOrigin:env.CODEZERO_CODE_RUNTIME_ORIGIN};

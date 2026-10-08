@@ -1,6 +1,6 @@
 # Ampliación autorizada · 8 de octubre de 2026
 
-Isaac autorizó todo el backlog descrito y priorizó piloto multilingüe y práctica ejecutable. Amplió compañías, invitaciones con cupo exacto, permisos delegables, equipos internos, membresías múltiples y marca compartida. La entrega se prepara en sandbox/company-learning-expansion; producción vigente 8cab482 se conserva hasta completar comprobaciones.
+Isaac autorizó todo el backlog descrito y priorizó piloto multilingüe y práctica ejecutable. Amplió compañías, invitaciones con cupo exacto, permisos delegables, equipos internos, membresías múltiples y marca compartida. La entrega se preparó en sandbox/company-learning-expansion y se publicó en producción con PR 9, commit 8e19367. La consolidación productiva 20261008080219 incorpora las cinco migraciones de origen; no reaplicarlas separadamente.
 
 ## Reutilización y reglas
 
@@ -16,9 +16,9 @@ Marca: logo/imagen privada de compañía junto a Garciloga siempre visible. No s
 
 Extender lib/organization-server.ts, APIs y páginas /teams, VivoShell, layout y catálogos de traducción. Añadir migración company_teams_entitlements, páginas/API de configuración de compañía y administración de contratos, imagen privada, mensajes, comprobaciones SQL/HTTP y documentación. Reutilizar role-training-content y catálogos locales de idiomas. Reutilizar sandbox-runtime para Python/SQL aislados.
 
-## Bloqueo comprobado
+## Motor aislado y comprobación final
 
-Vercel no permite crear codezero-practice-engine en codezerov1 (403). CLI no tiene credenciales independientes; no se habilita ejecución en el origen principal para evitar perder aislamiento. Se verifica localmente y se conserva la activación cloud pendiente de ese acceso.
+El 403 inicial de creación quedó superado: codezero-practice-engine.vercel.app/frame responde 200 y conserva CSP de origen separado. Los flags productivos se configuraron y el despliegue principal quedó READY. Se detectó un salto de línea final en la URL configurada de Supabase: la comprobación del motor ahora compara la URL canónica, rechazando otros hosts, credenciales, rutas y queries. Integración con una sesión Auth productiva real pendiente; la ejecución y aislamiento sí pasaron en CI.
 
 ## Implementación y validación
 
@@ -36,3 +36,5 @@ Invitaciones: enlace listo al reservar cupo; el adaptador opcional Resend exige 
 
 Las nuevas tablas privadas tienen RLS. site_daily_metrics deliberadamente no tiene política de lectura de cliente (INFO del advisor: tabla solo backend). Se corrigen los dos índices FK nuevos señalados por el advisor. No se cambia la protección de contraseñas de Auth. El estado de CI, publicación y bloqueos vigentes se registra en Módulos, Bitácora y Roadmap de Garciloga HQ.
 
+
+Verificación de publicación: CI completo 37745707923 y Security 37745707988 aprobados; también los checks de 8e19367. Smoke productivo aprobado (salud/base, rutas privadas, protección de POST y ES/EN/PT/FR). Catálogo productivo 361 actividades; cero compañías creadas sin contrato. Python/SQLite: seis retos ejecutados, límites de salida/tiempo, cancelación, recuperación, cookies separadas y rechazo de solicitudes al sitio comprobados con fixtures. Estado operativo vigente en Garciloga HQ.

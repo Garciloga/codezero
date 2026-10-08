@@ -6,7 +6,8 @@
     "deploymentEnabled": {
       "sandbox/role-training-phases-0-1": false,
       "sandbox/account-personalization": false,
-      "sandbox/company-learning-expansion": false
+      "sandbox/company-learning-expansion": false,
+      "fix/runtime-production-url": false
     }
   }
 }
