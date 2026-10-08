@@ -1,0 +1,2 @@
+import LocalizedContent from '../components/localization/server';
+export default function SupportReturn(){return <LocalizedContent><main className="wrap"><h1>Finalizar revisión de soporte</h1><p>La sesión de revisión terminó. Regresa a tu cuenta de propietario para continuar.</p><form method="post" action="/api/admin/users/return"><button className="btn">Volver a mi cuenta de propietario</button></form></main></LocalizedContent>;}

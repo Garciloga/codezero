@@ -9,7 +9,8 @@ export async function POST(req:Request){
  const rate=await consumeRateLimit('mentoring:'+s.user.id,20,600);if(!rate.allowed)return new Response(null,{status:429});
  let form:FormData;try{form=await boundedForm(req,10000);}catch{return new Response(null,{status:400});}
  const action=String(form.get('action')??''),target=form.get('target'),request=form.get('request_id'),start=form.get('starts_at');
- if(!['apply','slot','close_slot','request','cancel','decline','confirm','complete','approve_mentor','pause_mentor'].includes(action)||target&&!isUuid(target)||action==='request'&&!isUuid(request))return new Response(null,{status:400});
+ if(!['owner_profile','slot','close_slot','request','cancel','decline','confirm','complete','approve_mentor','pause_mentor'].includes(action)||target&&!isUuid(target)||action==='request'&&!isUuid(request))return new Response(null,{status:400});
+ if(['owner_profile','slot','close_slot','decline','confirm','complete','approve_mentor','pause_mentor'].includes(action)&&s.profile.role!=='owner')return new Response(null,{status:403});
  let url=String(form.get('meeting_url')??'');
  if(action==='confirm'){try{const u=new URL(url);if(u.protocol!=='https:'||u.username||u.password)throw Error();url=u.toString();}catch{return new Response(null,{status:400});}}
  const timestamp=start?Date.parse(String(start)+'Z'):NaN;if(action==='slot'&&!Number.isFinite(timestamp))return new Response(null,{status:400});
@@ -17,3 +18,4 @@ export async function POST(req:Request){
  const path=['confirm','approve_mentor','pause_mentor'].includes(action)?'/admin/social':'/mentoring';
  return Response.redirect(new URL(path+'?result='+(r.error?'failed':'saved'),process.env.NEXT_PUBLIC_APP_URL??req.url),303);
 }
+

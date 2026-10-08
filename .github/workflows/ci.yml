@@ -44,6 +44,9 @@ jobs:
       - name: Community and mentoring permissions and booking checks
         run: node scripts/social-workflows-db-check.mjs
 
+      - name: Owner support, deletion and mentoring checks
+        run: node scripts/owner-support-db-check.mjs
+
       - name: Mixed role routes database checks
         run: node scripts/mixed-role-db-check.mjs
 
@@ -142,4 +145,5 @@ jobs:
       - name: Execute Python and SQL in isolated browser workers
         if: matrix.engine == 'chromium'
         run: node scripts/browser-practice-check.mjs
+
 

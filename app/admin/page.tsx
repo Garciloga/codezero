@@ -4,14 +4,15 @@ import { createServerSupabase } from "../../lib/supabase-server";
 import {workspaceEnabled} from "../../lib/workspace-sandbox";
 import { createAdminSupabase, requireAdmin } from "../../lib/admin";
 import {roleTrainingEnabled} from '../../lib/role-training-policy';
+import OwnerUserActions from '../components/owner-user-actions';
 import OwnerUserCreate from '../components/owner-user-create';
 
 type PageProps = {
-  searchParams: Promise<{ updated?: string; reviewed?: string; ticket?: string }>;
+  searchParams: Promise<{ updated?: string; reviewed?: string; ticket?: string; support?: string }>;
 };
 
 export default async function Admin({ searchParams }: PageProps) {
-  const { updated, reviewed, ticket } = await searchParams;
+  const { updated, reviewed, ticket, support } = await searchParams;
 
   const supabase = await createServerSupabase();
   const { data: { user } } = await supabase.auth.getUser();
@@ -44,7 +45,7 @@ export default async function Admin({ searchParams }: PageProps) {
     admin
       .from("profiles")
       .select("id,email,full_name,role,plan_name,status,billing_status,stripe_cancel_at_period_end,created_at")
-      .neq("role", "owner")
+      .neq("role", "owner").is("deleted_at",null)
       .order("created_at", { ascending: false })
       .limit(100),
     admin.from("profiles").select("*", { count: "exact", head: true }),
@@ -104,6 +105,7 @@ export default async function Admin({ searchParams }: PageProps) {
       {workspaceEnabled()&&<p><a className="btn" href="/admin/companies">Compañías, contratos e invitaciones</a> · <a href="/admin/metrics">Analítica de visitas</a></p>}
 
       {operatorRole === "owner" && <OwnerUserCreate />}
+      {support&&<p role="alert">No pudimos abrir la revisión. La cuenta debe estar activa y tener el correo verificado. Si ya estás en una revisión, vuelve primero a tu cuenta.</p>}
       {updated === "1" && (
         <div className="card" style={{ marginBottom: 18 }}>
           <b>Usuario actualizado.</b>
@@ -224,6 +226,7 @@ export default async function Admin({ searchParams }: PageProps) {
                         Guardar
                       </button>
                     </form>
+                    {operatorRole==='owner'&&<OwnerUserActions id={u.id} email={u.email}/>}
                   </td>
                 </tr>
               ))}
@@ -247,7 +250,7 @@ export default async function Admin({ searchParams }: PageProps) {
                 <p className="muted">
                   Usuario {supportTicket.user_id} · {supportTicket.category} · {supportTicket.priority} · {supportTicket.status}
                 </p>
-                <p style={{ whiteSpace: "pre-wrap" }}>{supportTicket.description}</p>
+                <p style={{ whiteSpace: "pre-wrap" }}>{supportTicket.description}</p>{operatorRole==='owner'&&<form action="/api/admin/users/become" method="post"><input type="hidden" name="user_id" value={supportTicket.user_id}/><button className="btn secondary">Ver como usuario</button></form>}
                 <form action="/api/admin/support/tickets/update" method="post" style={{ display:"grid", gap:10, maxWidth:760 }}>
                   <input type="hidden" name="ticket_id" value={supportTicket.id} />
                   <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10 }}>
@@ -378,6 +381,7 @@ export default async function Admin({ searchParams }: PageProps) {
     </main></LocalizedContent>
   );
 }
+
 
 
 

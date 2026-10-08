@@ -1,5 +1,7 @@
 import { translatedMetadata } from '../lib/localization/metadata';
 import "./globals.css";
+import SupportSessionBanner from './components/support-session-banner';
+import {supportSession} from '../lib/support-session';
 import SiteVisit from './components/site-visit';
 import "@fontsource/inter/latin-ext-400.css";
 import "@fontsource/inter/latin-ext-500.css";
@@ -45,6 +47,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const { supabase, user, locale } = await localeContext();
   const section=messageSection((await headers()).get('x-garciloga-path')??'/');
   const messages = locale==='es'?{}:(await import(`../lib/localization/sections/${locale}-${section}.json`)).default;
+  const support=await supportSession();
   const navigation = user ? await accountNavigation() : null;
   const preference = user && workspaceEnabled()
     ? (await supabase.from("user_preferences").select("mode,accent,colors,news_read").eq("user_id",user.id).maybeSingle()).data : null;
@@ -54,6 +57,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body>
         <SiteVisit/>
         <LanguageProvider section={section} locale={locale} messages={messages}>
+        {support&&<SupportSessionBanner expires={support.expires}/>}
         <AppearanceProvider userId={user?.id ?? null} serverPreference={preference} />
         <LocalizedServer><a className="skip-link" href="#main-content">Saltar al contenido</a></LocalizedServer>
         <VivoShell newsRead={preference?.news_read??null} userId={user?.id} roleTrainingActive={roleTrainingEnabled()} avatarVersion={navigation?.profile?.avatar_version} authenticated={Boolean(navigation)} name={navigation?.profile?.full_name || "Mi cuenta"} plan={navigation?.profile?.plan_name || "Free"} organizations={(navigation?.organizations ?? []) as any} selected={navigation?.organization?.organization_id ?? null}>{children}</VivoShell>
@@ -62,4 +66,5 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     </html>
   );
 }
+
 
