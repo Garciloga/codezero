@@ -1,3 +1,7 @@
+import PublicHeader from '../components/public-header';
+import {translatedMetadata} from '../../lib/localization/metadata';
+import {publicMetadata} from '../../lib/public-metadata';
+export async function generateMetadata(){return translatedMetadata(publicMetadata('Centro de ayuda','Respuestas sobre aprendizaje, equipos y privacidad.','/help'));}
 import { serverTranslator } from "../../lib/localization/server";
 import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
@@ -6,6 +10,7 @@ import { createServerSupabase, getServerUser } from "../../lib/supabase-server";
 type PageProps = { searchParams: Promise<{ q?: string; feedback?: string }> };
 
 const categories = [
+  "Equipos y compañías", "Rutas por puesto y casos", "Comunidad y mentoría", "Práctica ejecutable", "Portafolio y privacidad",
   "Cuenta y acceso",
   "Aprendizaje y progreso",
   "Ejercicios y exámenes",
@@ -42,7 +47,7 @@ export default async function HelpPage({ searchParams }: PageProps) {
   }
 
   return (
-    <LocalizedContent><main className="wrap">
+    <LocalizedContent><div className="public-site">{!user&&<PublicHeader authenticated={false}/>}<main className="wrap">
       <div className="nav">
         <div>
           <span className="pill">GARCILOGA SUPPORT</span>
@@ -137,7 +142,8 @@ export default async function HelpPage({ searchParams }: PageProps) {
           )}
         </div>
       </section>
-    </main></LocalizedContent>
+    </main><footer className="public-footer"><Link href="/news">Novedades</Link> · <Link href="/privacy">Privacidad</Link></footer></div></LocalizedContent>
   );
 }
+
 

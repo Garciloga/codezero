@@ -33,7 +33,7 @@ try{
  await db.exec(readFileSync('supabase/sandbox/migrations/20261008042551_project_approval_workflows.sql','utf8'));
  await db.exec(readFileSync('supabase/sandbox/migrations/20261008042816_project_review_delegation_scope.sql','utf8'));
  }
- const seed=trainingCatalogSeed();assert.equal(readFileSync('supabase/sandbox/role_training_catalog_seed.sql','utf8'),seed);await db.exec(seed);
+ const seed=trainingCatalogSeed();assert.equal(readFileSync('supabase/sandbox/role_training_catalog_seed.sql','utf8').trimEnd(),seed.trimEnd());await db.exec(seed);
  const as=async(role,user,f)=>{await db.exec('set role '+role);await db.query("select set_config('request.jwt.claim.sub',$1,false)",[user]);try{return await f();}finally{await db.exec('reset role');}};
  const call=(q,p=[])=>as('service_role',id(1),()=>db.query(q,p));
  const aid=(await db.query("select id from public.learning_activity_catalog where content_key='common-communication'")).rows[0].id;
@@ -170,10 +170,10 @@ try{
  if(process.env.CODEZERO_PROFESSIONAL_ROUTES_CHECK==='1'){
  await db.exec(`create function codezero_private.effective_learning_plan(p_user uuid) returns text language sql stable as $$ select plan_name from public.profiles where id=p_user $$;`);
  const expansion=readFileSync('supabase/migrations/20261008065441_professional_routes_expansion.sql','utf8');
- assert.ok(expansion.includes(professionalCatalogSeed()));await db.exec(expansion);
- await check('seven curricula reuse the catalog, with twenty units and twenty-four integrators each',async()=>{
+ assert.ok(expansion.includes(professionalCatalogSeed(PROFESSIONAL_ACTIVITIES.filter(a=>a.route!=='grc'))));await db.exec(expansion);await db.exec(readFileSync('supabase/migrations/20261008214606_grc_learning_catalog.sql','utf8'));
+ await check('eight curricula preserve catalog keys and review requirements',async()=>{
  const counts=(await db.query("select route_key,count(*)::integer n from public.learning_activity_catalog where route_key not in ('common','customer_success') group by route_key")).rows;
- assert.equal(counts.length,7);assert.ok(counts.every(r=>r.n===44));assert.equal(PROFESSIONAL_ACTIVITIES.length,308);
+ assert.equal(counts.length,8);assert.ok(counts.every(r=>r.n===(r.route_key==='grc'?48:44)));assert.equal(PROFESSIONAL_ACTIVITIES.length,356);
  });
  await check('new units use the existing submission and review history, without client grading authority',async()=>{
  const key='quality-unit-1-1',unit=(await db.query('select id from public.learning_activity_catalog where content_key=$1',[key])).rows[0].id;
@@ -205,3 +205,4 @@ try{
  }
  console.log(checks+' database checks passed');
 }finally{await db.close();}
+

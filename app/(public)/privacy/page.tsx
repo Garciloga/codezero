@@ -7,7 +7,7 @@ export async function generateMetadata() { return translatedMetadata(publicMetad
 
 export default function PrivacyPage() {
   return (
-    <LocalizedContent><main className="wrap"><section className="card"><h2>Activación y portafolio voluntario</h2><p>Registramos cinco eventos mínimos: registro, primera lección completada, primera entrega, primera asignación y regreso después de una semana. Guardamos únicamente identificador de cuenta, evento y fecha por un máximo de 90 días para mejorar el aprendizaje. No registramos el contenido de tus entregas en estos eventos. Se incluyen en la exportación de tu cuenta.</p><p>El portafolio está apagado por defecto. Con tu consentimiento explícito, cualquier persona con el enlace puede ver tu nombre público y la selección de proyectos personales aprobados, competencias y certificados. No publica textos de entregas, datos de compañías, datos de otras personas ni tu foto privada. Puedes retirarlo en cualquier momento; los enlaces anteriores dejan de funcionar. Una persona que lo haya visto puede conservar una copia fuera de Garciloga.</p></section>
+    <LocalizedContent><main className="wrap">
       <div className="nav">
         <div><span className="pill">PRIVACIDAD</span><h1>Aviso de privacidad</h1></div>
         <Link prefetch={false} className="btn secondary" href="/">Inicio</Link>
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
         </p>
 
         <p>Idioma preferido y edad opcional de registro. La elección de idioma solo personaliza la presentación; no cambia permisos, calificaciones ni precios.</p>
-        <h2>Finalidades</h2>
+        <section className="card"><h2>Activación y portafolio voluntario</h2><p>Registramos cinco eventos mínimos: registro, primera lección completada, primera entrega, primera asignación y regreso después de una semana. Guardamos únicamente identificador de cuenta, evento y fecha por un máximo de 90 días para mejorar el aprendizaje. No registramos el contenido de tus entregas en estos eventos. Se incluyen en la exportación de tu cuenta.</p><p>El portafolio está apagado por defecto. Con tu consentimiento explícito, cualquier persona con el enlace puede ver tu nombre público y la selección de proyectos personales aprobados, competencias y certificados. No publica textos de entregas, datos de compañías, datos de otras personas ni tu foto privada. Puedes retirarlo en cualquier momento; los enlaces anteriores dejan de funcionar. Una persona que lo haya visto puede conservar una copia fuera de Garciloga.</p></section><h2>Fotos, soporte y colaboración</h2><p>Tu foto de perfil se guarda en almacenamiento privado, puedes cambiarla o eliminarla desde Mi cuenta. La marca de compañía solo es visible a sus miembros autorizados.</p><p>El propietario puede abrir una vista de alumno de solo lectura durante un máximo de 20 minutos para revisar progreso y errores. La sesión se registra, caduca y bloquea escrituras; no entrega tu contraseña.</p><p>La comunidad usa un alias voluntario y publicaciones moderadas. Puedes retirar tus publicaciones; los moderadores revisan reportes. Las solicitudes de mentoría guardan tema, horario y estado visibles a ti y al propietario.</p><p>Los mensajes de compañía se limitan a la organización o equipo autorizado y se conservan hasta 90 días. La práctica ejecutable utiliza código y datos ficticios en ejecución aislada; la evidencia guardada pertenece a tu aprendizaje.</p><p>Los planes de desarrollo conservan objetivos, fecha, actividades, aceptación y comentarios dentro del mismo alcance del equipo. No modifican calificaciones ni se vinculan a compensación.</p><p>Los avisos se derivan de eventos existentes; guardamos preferencias y marcas de lectura, estas últimas por un máximo de 90 días. Puedes silenciar cada tipo y exportar tus datos desde Mi cuenta.</p><h2>Finalidades</h2>
         <p>
           Autenticación, prestación del servicio, seguimiento del progreso, soporte, prevención
           de abuso, operación de pagos, seguridad y mejora del producto.
@@ -114,5 +114,6 @@ export default function PrivacyPage() {
     </main></LocalizedContent>
   );
 }
+
 
 

@@ -1,0 +1,15 @@
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+.page-motion{min-width:0}
+.btn,button,summary,a{transition:border-color 180ms ease,box-shadow 180ms ease}
+.card{transition:border-color 180ms ease,box-shadow 180ms ease}
+img{max-width:100%;image-rendering:auto}
+.career-ladder{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;list-style:none;padding:0}
+.career-ladder [aria-current=step]{border:2px solid var(--user-accent,#6843bb)}
+.notice-list{display:grid;gap:1rem;margin:1rem 0}.notice-preference{display:flex;gap:.6rem;align-items:center;min-height:44px}
+.notification-bell{position:relative;min-width:0}.notification-bell summary{cursor:pointer;display:flex;gap:.5rem;align-items:center}
+.notification-popover{position:absolute;inset-inline-end:0;top:100%;width:min(340px,calc(100vw - 2rem));z-index:50;box-shadow:0 12px 36px #0002}
+.vivo-toolbar{gap:1rem;align-items:center;justify-content:flex-end}
+.public-feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.public-feature-grid .card{min-width:0}
+.public-comparison table{table-layout:fixed;width:100%;min-width:0}.public-comparison th,.public-comparison td{overflow-wrap:anywhere}
+@media(max-width:700px){.career-ladder,.public-feature-grid{grid-template-columns:1fr}.public-comparison th,.public-comparison td{padding:.55rem .25rem;font-size:.875rem}.public-comparison{overflow:visible}.notification-popover{position:fixed;inset:5rem 1rem auto;width:auto}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}

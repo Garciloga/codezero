@@ -1,0 +1,6 @@
+import Link from 'next/link';
+import {redirect} from 'next/navigation';
+import {loadNotices} from '../../lib/notifications-server';
+import {NOTICE_TYPES} from '../../lib/notification-types';
+import LocalizedContent from '../components/localization/server';
+export default async function Notifications(){const d=await loadNotices();if(!d)redirect('/login');return <LocalizedContent><main className="wrap"><h1>Avisos</h1><p>Actividad de los últimos 90 días dentro de tu alcance.</p><form action="/api/notifications" method="post"><button className="btn secondary" name="action" value="read_all">Marcar todo como leído</button></form><div className="notice-list">{d.notices.map(n=><article className="card" key={n.id}><span className="pill">{NOTICE_TYPES[n.type]} · {n.read?'Leído':'Sin leer'}</span><h2><Link prefetch={false} href={n.href}>{n.title}</Link></h2><time dateTime={n.at}>{n.at.slice(0,10)}</time>{!n.read&&<form action="/api/notifications" method="post"><input type="hidden" name="id" value={n.id}/><button className="btn secondary" name="action" value="read">Marcar como leído</button></form>}</article>)}</div>{!d.notices.length&&<p>No hay avisos para mostrar.</p>}<Link href="/profile">Preferencias de avisos</Link></main></LocalizedContent>;}

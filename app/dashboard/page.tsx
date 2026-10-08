@@ -1,3 +1,5 @@
+import DevelopmentPlans from '../components/development-plan';
+import {trainingPerson} from '../../lib/role-training-server';
 import ActivationReturn from "../components/activation-return";
 import WeeklyCaseCard from "../components/weekly-case-card";
 import {roleTrainingEnabled} from "../../lib/role-training-policy";
@@ -32,6 +34,7 @@ export default async function Dashboard({ searchParams }: PageProps) {
   const team=account?.organization?await organizationView(account.organization.organization_id):null;
   const own=team?.people.find(p=>p.user_id===account?.user.id);
   const supabase = await createServerSupabase();
+  const training=roleTrainingEnabled()&&account?.organization?await trainingPerson(account.user.id,account.organization.organization_id):null;
   const tutorEnabled = Boolean(process.env.OPENAI_API_KEY);
 
   const {
@@ -174,6 +177,8 @@ export default async function Dashboard({ searchParams }: PageProps) {
       )}
 
       <NextStepCard routeLesson={nextLesson?{slug:nextLesson.slug,title:nextLesson.title,minutes:nextLesson.estimated_minutes}:null} userId={user.id} org={account?.organization?.organization_id??null} progress={overallProgress} nextLevel={nextRoute?.level_number??null}/>
+      {training&&account?.organization&&<DevelopmentPlans org={account.organization.organization_id} userId={user.id} summary={training.summary}/>}
+      <Link className="btn secondary" href="/role-training/career-map">Mapa de carrera</Link>
       {roleTrainingEnabled()&&<WeeklyCaseCard userId={user.id} org={account?.organization?.organization_id??null}/>}
       <section className="card"><h2>Mis competencias</h2><SkillBars skills={own?.competencies??[]}/></section>
       {team&&<Organigram members={team.directory} visible={team.people.map(p=>p.user_id)} user={user.id}/>}
@@ -318,4 +323,5 @@ export default async function Dashboard({ searchParams }: PageProps) {
     </main></LocalizedContent>
   );
 }
+
 

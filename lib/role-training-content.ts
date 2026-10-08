@@ -1,4 +1,5 @@
 import {publishedWeeklyCases} from './weekly-cases.ts';
+import {enrichTrainingActivity} from './workplace-practice-content.ts';
 import {PROFESSIONAL_ACTIVITIES} from './professional-route-content.ts';
 import {CS_CASE_STAGES,CS_CASE_METRICS} from './customer-success-practical-case.ts';
 import {CS_LESSONS,CS_CAPSTONE_RUBRIC} from './customer-success-course.ts';
@@ -155,7 +156,7 @@ const seeds:Seed[]=[
  'Recomendación: validar dos ciclos comparables y objetivo con sponsor; alternativa temporal CSV con límites. Renovación sigue proceso comercial.',
  [['¿Qué debe permitir una EBR?','Decidir con evidencia, alternativas y riesgos','Ver todas las funciones del producto','La revisión ejecutiva se orienta a decisiones.'],['El sponsor pide certeza que no tienes. ¿Qué haces?','Declaro incertidumbre y cómo reducirla','Invento una garantía','El criterio ejecutivo incluye reconocer límites.'],['¿Qué cierra el acuerdo?','Dueños, criterios y próxima revisión','Solo un agradecimiento','La decisión requiere seguimiento.']]],
 ];
-export const TRAINING_UNITS:TrainingActivity[]=seeds.map((s,i)=>({
+export const TRAINING_UNITS:TrainingActivity[]=seeds.map((s,i):TrainingActivity=>({
  key:s[0],title:s[1],competencies:s[2],hours:s[3],route:i<9?'common':'customer_success',level:i<9?0:Math.floor((i-9)/5)+1,
  kind:'deliverable',lesson:s[4],task:s[5],example:s[6],template:'Objetivo y contexto:\nHechos y fuentes:\nSupuestos y datos pendientes:\nAlternativas y decisión justificada:\nEntregable:\nRiesgos y límites:\nResponsable, fecha y criterio de verificación:',
  decisions:s[7].map(([prompt,a,b,feedback],n)=>({prompt,options:n%2?[b,a]:[a,b],correct:n%2?1:0,feedback})),
@@ -163,7 +164,7 @@ export const TRAINING_UNITS:TrainingActivity[]=seeds.map((s,i)=>({
   `Transferencia: repite “${s[1]}” con una restricción nueva de tiempo y justifica qué decisión cambias.`,
   `Contraste: compara tu entrega con el ejemplo; identifica una afirmación sin evidencia y corrígela.`,
  ],
-}));
+})).map(enrichTrainingActivity);
 export const TECHNICAL_BORROWING=[
  {topic:'SQL',level:6,purpose:'Comprender extracción y agregación de adopción; apoyo opcional, sin duplicar lecciones ni conceder acceso nuevo.'},
  {topic:'APIs',level:8,purpose:'Interpretar contratos, errores y escalaciones; no exigir desarrollar una API para Customer Success.'},

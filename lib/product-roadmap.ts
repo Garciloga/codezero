@@ -10,18 +10,19 @@ export const PRODUCT_ROADMAP = [
   { key: 'learner_community', label: 'Comunidad de alumnos', audience: 'Todos los alumnos', detail: 'Un espacio para compartir avances, dudas y experiencias durante una beta cerrada.', gate: 'Moderación, reglas y grupos de prueba antes de abrir la comunidad.' },
   { key: 'executable_code', label: 'Práctica de código ejecutable', audience: 'Programación e integraciones', detail: 'Editor y ejecución aislada de Python y SQL, con proyectos de integración aplicados al trabajo.', gate: 'Seguridad, límites y pruebas del motor antes de habilitarlo.' },
   { key: 'annual_plans', label: 'Planes anuales y ofertas de lanzamiento', audience: 'Todos los alumnos', detail: 'Opciones comerciales futuras después de validar la beta y los procesos de facturación.', gate: 'Condiciones y precios por confirmar. Los planes mensuales actuales conservan sus límites.' },
-  ...ADDON_OFFERS.filter(o => !['verified_certificate', 'route_customer_success'].includes(o.key)).map(o => ({ key: o.key, label: o.label, audience: o.key === 'mentoring' ? 'Puestos y procesos' : 'Desarrollo profesional', detail: o.detail ?? '', gate: o.key === 'mentoring' ? 'Sesiones impartidas por Isaac López García. Horarios y reservas sujetos a su disponibilidad.' : o.key === 'ai_tutor' ? 'Proveedor, presupuesto y pruebas antes de activar el tutor. Las compras siguen bloqueadas.' : 'Contenido, evaluación y validación antes de habilitar compras.' })),
+  ...ADDON_OFFERS.filter(o => !['verified_certificate', 'route_customer_success'].includes(o.key)).map(o => ({ key: o.key, label: o.label, audience: o.key === 'mentoring' ? 'Puestos y procesos' : 'Desarrollo profesional', detail: 'detail' in o ? o.detail ?? '' : '', gate: o.key === 'mentoring' ? 'Sesiones impartidas por Isaac López García. Horarios y reservas sujetos a su disponibilidad.' : o.key === 'ai_tutor' ? 'Proveedor, presupuesto y pruebas antes de activar el tutor. Las compras siguen bloqueadas.' : 'Contenido, evaluación y validación antes de habilitar compras.' })),
 ] as const;
 
 /** Match labels to executable, guarded routes; commercial add-ons stay blocked. */
 export const RELEASED_PRACTICE_ROUTES: Record<string,string> = {
- route_operations:'operations', route_qa:'quality', route_data_bi:'data_bi',
+ grc_courses:'grc', route_operations:'operations', route_qa:'quality', route_data_bi:'data_bi',
  route_product:'product', route_management:'leadership',
  route_solutions_integrations:'solutions', route_enablement:'enablement',
 };
 export function pendingProductRoadmap({companyMessaging,codePractice,roleTraining,community=false}:{companyMessaging:boolean;codePractice:boolean;roleTraining:boolean;community?:boolean}){
  return PRODUCT_ROADMAP.filter(item=>!(community&&['learner_community','mentoring'].includes(item.key))&&!(companyMessaging&&item.key==='enterprise_communicator')&&!(codePractice&&item.key==='executable_code')&&!(roleTraining&&(item.key==='leadership_courses'||Object.hasOwn(RELEASED_PRACTICE_ROUTES,item.key))));
 }
+
 
 
 

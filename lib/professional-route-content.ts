@@ -1,3 +1,5 @@
+import {GRC_FOCUS,GRC_SOURCES} from './grc-content.ts';
+import {enrichTrainingActivity} from './workplace-practice-content.ts';
 import type {TrainingActivity,Decision} from './role-training-content.ts';
 import type {CompetencyKey} from './competency-matrix.ts';
 import type {CareerPositionKey} from './career-guidance.ts';
@@ -10,6 +12,7 @@ type Route={key:string;title:string;family:CareerPositionKey;focus:Focus[]};
 const focus=(title:string,concept:string,task:string,accept:string,unsafe:string,competencies:CompetencyKey[]):Focus=>({title,concept,task,accept,unsafe,competencies});
 /** New curricula reuse the sixteen position profiles and the canonical Faro account. */
 export const PROFESSIONAL_ROUTES:Route[]=[
+ {key:'grc',title:'GRC · Gobierno, Riesgo y Cumplimiento',family:'project_manager',focus:GRC_FOCUS},
  {key:'operations',title:'Operaciones',family:'project_manager',focus:[
   focus('Proceso y trabajo en curso','Un proceso conecta entrada, responsable, decisión y salida. El volumen entrante no equivale a capacidad disponible; cuenta tareas abiertas y sus dependencias antes de aceptar otro compromiso.','Traza la preparación del reporte de Faro desde la solicitud hasta su verificación; identifica dos esperas y una decisión sin responsable.','Mapa con entradas, salidas, esperas y responsables verificables','Aumentar compromisos sin revisar trabajo abierto',['documentation','prioritization']),
   focus('Capacidad y compromisos','Estima esfuerzo con rangos y explicita variabilidad. Una cola sin límite oculta retrasos. Negocia alcance o fecha cuando demanda y capacidad no coinciden.','Propón una semana de trabajo usando tareas de Faro. Declara estimaciones como supuestos y muestra qué se desplaza ante el bloqueo de exportación.','Capacidad y demanda comparables, con decisiones sobre alcance y fecha','Presentar toda la demanda como compromiso confirmado',['prioritization','planning']),
@@ -85,19 +88,19 @@ export const PROFESSIONAL_UNITS:TrainingActivity[]=PROFESSIONAL_ROUTES.flatMap(r
  competencies:f.competencies,lesson:`${f.concept} ${LEARNING_GUIDES[route.family].concept} ${p.constraint}`,
  task:`${f.task} ${p.constraint} Reutiliza Cuenta Faro; etiqueta cualquier dato adicional como supuesto de esta práctica.`,
  template,example:`Criterio de calidad: ${f.accept}. Flujo de referencia: ${ROLE_WORKFLOWS[route.family].process}. Conserva la fuente canónica y declara lo que aún no puedes verificar.`,
- decisions:decisions(f,level+1),rubric,sourceUrls:[ROLE_WORKFLOWS[route.family].source],optionalPractice:[LEARNING_GUIDES[route.family].twist],
+ decisions:decisions(f,level+1),rubric,sourceUrls:route.key==='grc'?GRC_SOURCES:[ROLE_WORKFLOWS[route.family].source],optionalPractice:[LEARNING_GUIDES[route.family].twist],
 }))));
 export const PROFESSIONAL_EXTRAS:TrainingActivity[]=PROFESSIONAL_ROUTES.flatMap(route=>{
  const base=(key:string,title:string,level:number,kind:TrainingActivity['kind'],hours:number,task:string,competencies:CompetencyKey[]=route.focus[0].competencies):TrainingActivity=>({
-  key:`${route.key}-${key}`,route:route.key,title,level,kind,hours,task,competencies,lesson:'Integra las decisiones y entregables revisados del nivel. Conserva evidencia y riesgos, y distingue propuesta de resultado verificado.',template,example:ROLE_WORKFLOWS[route.family].quality,decisions:[],rubric,sourceUrls:[ROLE_WORKFLOWS[route.family].source],optionalPractice:[],
+  key:`${route.key}-${key}`,route:route.key,title,level,kind,hours,task,competencies,lesson:'Integra las decisiones y entregables revisados del nivel. Conserva evidencia y riesgos, y distingue propuesta de resultado verificado.',template,example:ROLE_WORKFLOWS[route.family].quality,decisions:[],rubric,sourceUrls:route.key==='grc'?GRC_SOURCES:[ROLE_WORKFLOWS[route.family].source],optionalPractice:[],
  });
  return [
-  ...CS_CASE_STAGES.map((stage,i)=>({...base(`episode-${stage.key}`,`Cuenta Faro · ${stage.title}`,Math.floor(i/2)+1,'deliverable',2,`Reutiliza el episodio canónico y aplica el enfoque de ${route.title.toLowerCase()}: ${route.focus[i%5].task}`,route.focus[i%5].competencies),sourceStage:stage.key,example:stage.example})),
+  ...CS_CASE_STAGES.map((stage,i)=>({...base(`episode-${stage.key}`,`Cuenta Faro · ${stage.title}`,Math.floor(i/2)+1,'deliverable',2,`Reutiliza el episodio canónico y aplica el enfoque de ${route.title.toLowerCase()}: ${route.focus[i%route.focus.length].task}`,route.focus[i%route.focus.length].competencies),sourceStage:stage.key,example:stage.example})),
   ...progression.map((p,i)=>base(`roleplay-${i+1}`,`Role-play · ${p.name}`,i+1,'deliverable',2,`Escribe ocho turnos con quien recibe tu entrega de ${route.focus[i].title.toLowerCase()}. Incluye una objeción y una pregunta sobre evidencia. ${p.constraint}`,['communication','collaboration'])),
-  ...[1,2,3].map((level,i)=>base(`project-${i+1}`,`Proyecto · ${progression[level].name}`,level+1,'project',6,`Integra las cinco entregas del nivel ${level+1} de ${route.title}. Presenta decisiones, fuentes, alternativas, riesgos y handoff. La revisión humana usa la misma rúbrica; tu autoevaluación no aprueba el proyecto.`,['documentation','planning','collaboration'])),
+  ...[1,2,3].map((level,i)=>base(`project-${i+1}`,`Proyecto · ${progression[level].name}`,level+1,'project',6,`Integra las ${route.key==='grc'?'seis':'cinco'} entregas del nivel ${level+1} de ${route.title}. Presenta decisiones, fuentes, alternativas, riesgos y handoff. La revisión humana usa la misma rúbrica; tu autoevaluación no aprueba el proyecto.`,['documentation','planning','collaboration'])),
   base('capstone',`Capstone · ${route.title} y Cuenta Faro`,4,'capstone',10,`Presenta un expediente de los ocho episodios de Faro desde ${route.title.toLowerCase()}, integrando decisiones y entregas de los cuatro niveles. Defiende dos alternativas, un riesgo no resuelto y tu propuesta de verificación. Enlaza evidencia revisada de las competencias de peso Alto de tu perfil del puesto.`,['diagnosis','planning','communication']),
-  ...progression.map((p,i)=>({...base(`exam-${i+1}`,`Examen · ${p.name}`,i+1,'exercise',2,'Resuelve cinco decisiones del nivel. Cuatro respuestas correctas acreditan reconocimiento formativo, no autonomía.'),decisions:PROFESSIONAL_UNITS.filter(u=>u.route===route.key&&u.level===i+1).map(u=>u.decisions[0])})),
+  ...progression.map((p,i)=>({...base(`exam-${i+1}`,`Examen · ${p.name}`,i+1,'exercise',2,route.key==='grc'?'Resuelve seis decisiones del nivel. Cinco respuestas correctas acreditan reconocimiento formativo, no autonomía.':'Resuelve cinco decisiones del nivel. Cuatro respuestas correctas acreditan reconocimiento formativo, no autonomía.'),decisions:PROFESSIONAL_UNITS.filter(u=>u.route===route.key&&u.level===i+1).map(u=>u.decisions[0])})),
   ...progression.map((p,i)=>({...base(`reevaluation-${i+1}`,`Reevaluación a 30 días · ${p.name}`,i+1,'deliverable',2,`Retoma tu entrega revisada de ${route.focus[i].title.toLowerCase()} a los 30 días. Cambia una restricción hipotética y muestra qué decisión mantienes, qué cambia y cómo la verificas.`,route.focus[i].competencies),reevaluationOf:`${route.key}-unit-${i+1}-${i+1}`})),
  ];
 });
-export const PROFESSIONAL_ACTIVITIES=[...PROFESSIONAL_UNITS,...PROFESSIONAL_EXTRAS];
+export const PROFESSIONAL_ACTIVITIES=[...PROFESSIONAL_UNITS,...PROFESSIONAL_EXTRAS].map(enrichTrainingActivity);

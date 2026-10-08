@@ -6,5 +6,6 @@ export async function normalizeProfilePhoto(bytes: Uint8Array, mime: string) {
   const image=sharp(bytes,{limitInputPixels:16000000,animated:false,failOn:"warning"});
   const metadata=await image.metadata();
   if (!metadata.format || !["jpeg","png","webp"].includes(metadata.format) || (metadata.pages ?? 1)>1) throw new Error("INVALID_PHOTO");
-  return image.rotate().resize(512,512,{fit:"cover",withoutEnlargement:true}).webp({quality:82}).toBuffer();
+  return image.rotate().resize(512,512,{fit:"cover",withoutEnlargement:true}).webp({quality:92,effort:6,smartSubsample:true}).toBuffer();
 }
+

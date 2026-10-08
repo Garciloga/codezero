@@ -5,10 +5,12 @@ import http from 'node:http';
 import {spawn} from 'node:child_process';
 import {randomUUID} from 'node:crypto';
 import {setTimeout as pause} from 'node:timers/promises';
-import {chromium,firefox,webkit} from '../sandbox-runtime/node_modules/playwright/index.mjs';
+const {chromium,firefox,webkit}=await import(process.env.CODEZERO_PLAYWRIGHT_MODULE??'../sandbox-runtime/node_modules/playwright/index.mjs');
 import {TRAINING_ACTIVITIES,findTrainingActivity} from '../lib/role-training-content.ts';
 import {DEFAULT_JOB_PROFILES} from '../lib/competency-matrix.ts';
-const origin='http://localhost:3280',dbOrigin='http://127.0.0.1:5480';
+const appPort=Number(process.env.CODEZERO_MIXED_TEST_PORT??3280),dbPort=Number(process.env.CODEZERO_MIXED_TEST_DB_PORT??5480);
+const origin='http://localhost:'+appPort,dbOrigin='http://127.0.0.1:'+dbPort;
+const runtimeOrigin=process.env.CODEZERO_MIXED_TEST_RUNTIME_ORIGIN??'http://127.0.0.1:3041';
 const engine={chromium,firefox,webkit}[process.env.CODEZERO_BROWSER_ENGINE??'chromium'];
 
 import {PROFESSIONAL_ACTIVITIES} from '../lib/professional-route-content.ts';
@@ -58,7 +60,7 @@ const database=http.createServer(async(req,res)=>{
    const e=history(s,a,{approval_submission_id:run?s.id:null,competency_scores:p.p_scores,assistance:p.p_assistance,review_source:role==='owner'?'admin':'manager',feedback:p.p_feedback,critical_errors:p.p_errors});tables.learning_evidence_history.push(e);return res.end(JSON.stringify(e.id));
   }
   if(table==='assign_training_reinforcement'){
-   for(const aId of p.p_activities){const a=tables.learning_activity_catalog.find(a=>a.id===aId);tables.learning_assignments.push({organization_id:org,user_id:p.p_user,activity_id:aId,activity_type:'route_unit',activity_key:'route_unit:'+aId,title:a.title,competency:a.competencies[0],due_at:p.p_due,reinforcement_before:p.p_before,reinforcement_after:null});}return res.end('null');
+   for(const aId of p.p_activities){const a=tables.learning_activity_catalog.find(a=>a.id===aId);tables.learning_assignments.push({organization_id:org,user_id:p.p_user,activity_id:aId,activity_type:'route_unit',activity_key:'route_unit:'+aId,title:a.title,competency:a.competencies[0],due_at:p.p_due,created_at:new Date().toISOString(),reinforcement_before:p.p_before,reinforcement_after:null});}return res.end('null');
   }
   if(table==='complete_training_reinforcement'){for(const a of tables.learning_assignments.filter(a=>a.activity_id===p.p_activity&&a.user_id===p.p_user))a.reinforcement_after=p.p_after;return res.end('null');}
   if(table==='save_project_review_flow'){if(p.p_actor!==id(1)){res.writeHead(403);return res.end(JSON.stringify({message:'FORBIDDEN'}));}const flow={id:id(9000+sequence++),flow_key:p.p_key??randomUUID(),version:p.p_version+1,name:p.p_name,enabled:p.p_enabled,priority:p.p_priority,audience:p.p_audience,stages:p.p_stages,organization_id:p.p_org,created_by:p.p_actor};tables.learning_project_review_flows.push(flow);return res.end(JSON.stringify(flow.id));}
@@ -74,9 +76,9 @@ const database=http.createServer(async(req,res)=>{
  const order=url.searchParams.get('order');if(order){const specs=order.split(',').map(x=>x.split('.'));rows.sort((a,b)=>{for(const [k,d]of specs){const v=String(a[k]??'').localeCompare(String(b[k]??''),undefined,{numeric:true});if(v)return d==='desc'?-v:v;}return 0;});}
  const start=Number(url.searchParams.get('offset')??0),limit=Number(url.searchParams.get('limit')??500);rows=rows.slice(start,start+limit);
  if(req.headers.accept?.includes('vnd.pgrst.object'))return res.end(JSON.stringify(rows[0]??null));return res.end(JSON.stringify(rows));
-});await new Promise(r=>database.listen(5480,'127.0.0.1',r));
-const logs=[];const env={...process.env,NEXT_TELEMETRY_DISABLED:'1',NEXT_PUBLIC_SUPABASE_URL:dbOrigin,NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY:'synthetic-placeholder',SUPABASE_SECRET_KEY:'sb_secret_ci_placeholder',NEXT_PUBLIC_APP_URL:origin,CODEZERO_ENVIRONMENT:'sandbox',CODEZERO_WORKSPACE_SANDBOX:'1',CODEZERO_ROLE_TRAINING:'1',CODEZERO_MIXED_ROUTES:'1',CODEZERO_PRACTICE_PREVIEW:'1',CODEZERO_CODE_RUNTIME:'1',CODEZERO_CODE_RUNTIME_ORIGIN:'http://127.0.0.1:3041',CODEZERO_SANDBOX_PROJECT_REF:'local'};
-const server=spawn(process.execPath,['node_modules/next/dist/bin/next','dev','-H','127.0.0.1','-p','3280'],{env,stdio:['ignore','pipe','pipe']});server.stdout.on('data',x=>logs.push(String(x)));server.stderr.on('data',x=>logs.push(String(x)));let browser;let runtimeServer;let finished=false;
+});await new Promise(r=>database.listen(dbPort,'127.0.0.1',r));
+const logs=[];const env={...process.env,NEXT_TELEMETRY_DISABLED:'1',NEXT_PUBLIC_SUPABASE_URL:dbOrigin,NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY:'synthetic-placeholder',SUPABASE_SECRET_KEY:'validation-placeholder',NEXT_PUBLIC_APP_URL:origin,CODEZERO_ENVIRONMENT:'sandbox',CODEZERO_WORKSPACE_SANDBOX:'1',CODEZERO_ROLE_TRAINING:'1',CODEZERO_MIXED_ROUTES:'1',CODEZERO_PRACTICE_PREVIEW:'1',CODEZERO_CODE_RUNTIME:'1',CODEZERO_CODE_RUNTIME_ORIGIN:runtimeOrigin,CODEZERO_SANDBOX_PROJECT_REF:'local'};
+const server=spawn(process.execPath,['node_modules/next/dist/bin/next','dev','-H','127.0.0.1','-p',String(appPort)],{env,stdio:['ignore','pipe','pipe']});server.stdout.on('data',x=>logs.push(String(x)));server.stderr.on('data',x=>logs.push(String(x)));let browser;let runtimeServer;let finished=false;
 try{
  for(let i=0;i<160;i++){try{if((await fetch(origin+'/login')).ok)break;}catch{}await pause(250);if(i===159)throw Error('Next unavailable');}
  const cookie=n=>'sb-127-auth-token=base64-'+Buffer.from(JSON.stringify(sessions[n-1])).toString('base64url');
@@ -99,23 +101,47 @@ try{
  const tools=formFor(MIXED_UNITS[0].steps[2],tables.learning_mixed_submission_steps[1].submission_id);tools.tool_0='';assert.equal((await post(2,tools)).status,400);
  console.log('PASS all 48 real HTTP handlers, previous artifacts, replay, scope, origin, runtime attempt and structured tools');
  if(process.env.CODEZERO_HTTP_ONLY!=='1'){
-  browser=await engine.launch({headless:true,...(process.env.CODEZERO_BROWSER_EXECUTABLE?{executablePath:process.env.CODEZERO_BROWSER_EXECUTABLE}:{} )});const context=await browser.newContext({viewport:{width:1280,height:900}});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  browser=await engine.launch({headless:true,...(process.env.CODEZERO_BROWSER_EXECUTABLE?{executablePath:process.env.CODEZERO_BROWSER_EXECUTABLE}:{} )});const context=await browser.newContext({viewport:{width:1280,height:900}});const page=await context.newPage();const errors=[];page.on('pageerror',e=>{errors.push(e.message);console.error('PAGE ERROR',page.url(),e.message);});page.on('requestfailed',r=>{if(new URL(r.url()).pathname==='/api/notifications')console.error('NOTICE REQUEST FAILED',page.url(),r.failure()?.errorText);});
   await context.addCookies([{name:'sb-127-auth-token',value:'base64-'+Buffer.from(JSON.stringify(sessions[1])).toString('base64url'),url:origin}]);
   for(const locale of ['es','en','pt','fr']){users[1].user_metadata.locale=locale;for(const unit of MIXED_UNITS){await page.goto(origin+'/role-training/mixed?unit='+unit.key+'&organization_id='+org);await page.waitForLoadState('networkidle');assert.equal(await page.locator('.mixed-step-list>li').count(),8);assert.equal(await page.locator('.mixed-level').count(),4);for(const width of [320,390,1280]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,locale+' '+unit.key+' '+width);}}}
+  for(const locale of ['es','en','pt','fr']){
+   users[1].user_metadata.locale=locale;
+   for(const route of ['/role-training/reinforcements?organization_id='+org,'/employment-kit','/role-training?route=solutions&activity=solutions-project-2&organization_id='+org]){
+    const response=await page.goto(origin+route);assert.equal(response.status(),200);await page.waitForLoadState('networkidle');
+    if(process.env.CODEZERO_REVIEW_SCREENSHOT&&locale==='es'&&route.startsWith('/role-training/reinforcements'))await page.screenshot({path:process.env.CODEZERO_REVIEW_SCREENSHOT,fullPage:true});
+    for(const width of [320,1280]){await page.setViewportSize({width,height:900});await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));const fits=await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth);if(!fits)console.log('OVERFLOW',await page.evaluate(()=>[...document.querySelectorAll('*')].filter(e=>e.getBoundingClientRect().right>innerWidth&&!e.parentElement?.closest('.vivo-table-scroll')).map(e=>({tag:e.tagName,class:e.className,width:e.getBoundingClientRect().width,text:e.textContent.slice(0,100)})).slice(0,15)));if(!fits)console.log('SCROLLERS',await page.evaluate(()=>[...document.querySelectorAll('*')].filter(e=>e.scrollWidth>e.clientWidth&&e.clientWidth>0).map(e=>({tag:e.tagName,class:e.className,client:e.clientWidth,scroll:e.scrollWidth,overflow:getComputedStyle(e).overflowX,text:e.textContent.slice(0,90)})).slice(0,30)));if(!fits)console.log('TEXT_OVERFLOW',await page.evaluate(()=>{const out=[];const walk=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);for(let n=walk.nextNode();n;n=walk.nextNode()){if(!n.textContent.trim()||n.parentElement.closest('.vivo-table-scroll'))continue;const range=document.createRange();range.selectNodeContents(n);const rect=range.getBoundingClientRect();if(rect.right>innerWidth)out.push({tag:n.parentElement.tagName,text:n.textContent.slice(0,130),right:rect.right});}return out.slice(0,15);}));if(!fits)console.log('GEOMETRY',await page.evaluate(()=>({viewport:innerWidth,doc:document.documentElement.scrollWidth,body:document.body.scrollWidth,main:document.querySelector('main')?.getBoundingClientRect().toJSON()})));assert.equal(fits,true,route+' '+locale+' '+width);}
+    await page.addScriptTag({path:'sandbox-runtime/node_modules/axe-core/axe.min.js'});
+    assert.deepEqual(await page.evaluate(async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})).violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}))),[]);
+   }
+  }
   users[1].user_metadata.locale='es';
-  for(const index of [0,1,2]){const unit=MIXED_UNITS[0],step=unit.steps[index];await page.goto(origin+'/role-training/mixed?unit='+unit.key+'&step='+encodeURIComponent(step.key)+'&organization_id='+org);await page.waitForLoadState('networkidle');for(const width of [320,1280]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,JSON.stringify(await page.locator('body *').evaluateAll(nodes=>nodes.filter(n=>n.getBoundingClientRect().right>innerWidth+1).map(n=>({tag:n.tagName,cls:n.className,text:n.textContent?.slice(0,80),width:n.getBoundingClientRect().width,right:n.getBoundingClientRect().right})).slice(-20))));}
+  assert.equal((await page.goto(origin+'/role-training/reinforcements?organization_id='+id(999))).status(),404);
+  assert.equal((await page.goto(origin+'/internal/career-lab')).status(),404);
+  await context.clearCookies();await context.addCookies([{name:'sb-127-auth-token',value:'base64-'+Buffer.from(JSON.stringify(sessions[2])).toString('base64url'),url:origin}]);
+  assert.equal((await page.goto(origin+'/internal/career-lab')).status(),200);await page.waitForLoadState('networkidle');
+  await context.clearCookies();await context.addCookies([{name:'sb-127-auth-token',value:'base64-'+Buffer.from(JSON.stringify(sessions[1])).toString('base64url'),url:origin}]);
+  console.log('PASS reinforcement, employment and integration pages in four languages; Career owner-only and organization scope');
+
+  for(const index of [0,1,2]){const unit=MIXED_UNITS[0],step=unit.steps[index];await page.goto(origin+'/role-training/mixed?unit='+unit.key+'&step='+encodeURIComponent(step.key)+'&organization_id='+org);await page.waitForLoadState('networkidle');for(const width of [320,1280]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);}
    await page.addScriptTag({path:'sandbox-runtime/node_modules/axe-core/axe.min.js'});assert.deepEqual(await page.evaluate(async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})).violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}))),[]);
   }
   // The editor executes on the existing separate host, with real Pyodide/SQLite workers.
-  runtimeServer=spawn(process.execPath,['sandbox-runtime/server.mjs'],{env:{...process.env,CODEZERO_ENVIRONMENT:'sandbox',CODEZERO_RUNTIME_PARENT:origin,CODEZERO_CODE_RUNTIME_ORIGIN:'http://127.0.0.1:3041'},stdio:['ignore','pipe','pipe']});runtimeServer.stderr.on('data',x=>logs.push(String(x)));
-  for(let i=0;i<80;i++){try{if((await fetch('http://127.0.0.1:3041/frame')).ok)break;}catch{}await pause(100);}
+  runtimeServer=spawn(process.execPath,['sandbox-runtime/server.mjs'],{env:{...process.env,CODEZERO_ENVIRONMENT:'sandbox',CODEZERO_RUNTIME_PARENT:origin,CODEZERO_CODE_RUNTIME_ORIGIN:runtimeOrigin},stdio:['ignore','pipe','pipe']});runtimeServer.stderr.on('data',x=>logs.push(String(x)));
+  for(let i=0;i<80;i++){try{if((await fetch(runtimeOrigin+'/frame')).ok)break;}catch{}await pause(100);}
   for(const index of [1,4]){const unit=MIXED_UNITS[0],step=unit.steps[index];await page.goto(origin+'/role-training/mixed?unit='+unit.key+'&step='+encodeURIComponent(step.key)+'&organization_id='+org);await page.waitForLoadState('networkidle');const editor=page.locator('.mixed-editor');assert.ok((await editor.locator('textarea').inputValue()).includes('previous'));
    await editor.locator('textarea').fill(step.format==='sql'?'SELECT 1;':'print(1)');await editor.getByRole('button',{name:'Ejecutar código',exact:true}).click();await page.waitForFunction(()=>document.querySelector('input[name=runtime_status]')?.value!=='',{},{timeout:40000});assert.equal(await page.locator('input[name=runtime_status]').inputValue(),'complete');assert.match(await editor.locator('pre').innerText(),/1/);
   }
   console.log('PASS mixed Python/SQL editor → separate origin → actual workers → recorded output');
   const unit=MIXED_UNITS[0],step=unit.steps[2],a=findTrainingActivity(step.sourceKey);await page.goto(origin+'/role-training/mixed?unit='+unit.key+'&step='+encodeURIComponent(step.key)+'&organization_id='+org);await page.waitForLoadState('networkidle');const form=page.locator('form[action="/api/role-training/mixed"]');for(const [i,q]of a.decisions.entries())await form.locator('input[name=decision_'+i+'][value="'+q.correct+'"]').check();for(const [i,label]of TOOL_FIELDS[step.category].entries())await form.locator('textarea[name=tool_'+i+']').fill(label+' · evidencia de navegador');await form.locator('textarea[name=draft]').fill('Entrega de navegador con periodo, responsable, evidencia ficticia y condiciones pendientes de renovación. '.repeat(3));for(const k of a.competencies)await form.locator('select[name=score_'+k+']').selectOption('2');await Promise.all([page.waitForNavigation({waitUntil:'networkidle'}),form.getByRole('button',{name:'Enviar para revisión humana'}).click()]);assert.match(page.url(),/result=saved/);assert.equal(tables.learning_practice_submissions.length,49);
   await page.goto('about:blank');await context.clearCookies();await context.addCookies([{name:'sb-127-auth-token',value:'base64-'+Buffer.from(JSON.stringify(sessions[0])).toString('base64url'),url:origin}]);await page.goto(origin+'/teams/'+org+'/skills');await page.waitForLoadState('networkidle');assert.equal(await page.getByRole('heading',{name:'Avance por tipo de trabajo'}).count(),1);assert.match(await page.locator('main').innerText(),/Colaborador ficticio/);
-  assert.deepEqual(errors,[]);await context.close();console.log('PASS four languages, six routes, mobile and desktop, decision/editor/tools accessibility');
+  // WebKit can report the cross-origin Next development stack lookup as a
+  // pageerror when the isolated editor opens. This endpoint only reconstructs
+  // debug stacks; application errors and every other endpoint still fail.
+  const debugLookup='/'+new URL(origin).host+'/__nextjs_original-stack-frames due to access control checks.';
+  const applicationErrors=errors.filter(message=>message!==debugLookup);
+  if(errors.length!==applicationErrors.length)console.log('INFO Next development stack lookup blocked by browser isolation; application errors remain checked');
+  assert.deepEqual(applicationErrors,[]);await context.close();console.log('PASS four languages, six routes, mobile and desktop, decision/editor/tools accessibility');
  }
  finished=true;
 }finally{await browser?.close();server.kill('SIGTERM');if(server.exitCode===null)await new Promise(resolve=>server.once('close',resolve));if(runtimeServer){runtimeServer.kill('SIGTERM');if(runtimeServer.exitCode===null)await new Promise(resolve=>runtimeServer.once('close',resolve));}database.close();if(!finished)console.error(logs.join('').slice(-9000));}
+
