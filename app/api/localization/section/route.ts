@@ -1,0 +1,2 @@
+import {validLocale} from '../../../../lib/localization/shared';
+export async function GET(req:Request){const q=new URL(req.url).searchParams,l=q.get('locale'),s=q.get('section');if(!validLocale(l)||!['common','public','learning','teams','admin','help'].includes(s??''))return new Response(null,{status:400});if(l==='es')return Response.json({});const messages=(await import(`../../../../lib/localization/sections/${l}-${s}.json`)).default;return Response.json(messages,{headers:{'Cache-Control':'public, max-age=3600'}});}

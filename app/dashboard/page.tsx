@@ -1,3 +1,7 @@
+import ActivationReturn from "../components/activation-return";
+import WeeklyCaseCard from "../components/weekly-case-card";
+import {roleTrainingEnabled} from "../../lib/role-training-policy";
+import NextStepCard from "../components/next-step";
 import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -62,8 +66,8 @@ export default async function Dashboard({ searchParams }: PageProps) {
 
   const { data: lessons } = await supabase
     .from("lessons")
-    .select("id, level_id")
-    .eq("status", "published");
+    .select("id, level_id, slug, title, estimated_minutes, sort_order")
+    .eq("status", "published").order("sort_order");
 
   const lessonRows = lessons ?? [];
   const lessonIds = lessonRows.map((lesson: any) => lesson.id);
@@ -114,8 +118,11 @@ export default async function Dashboard({ searchParams }: PageProps) {
       ? 0
       : Math.min(100, Math.round((used / Math.max(1, limit)) * 100));
 
+  const nextRoute=learningLevels.find(l=>!passedLevels.has(l.level_number)&&isLevelUnlocked(l.level_number,passedLevels)&&isLevelIncludedInPlan(l.level_number,profile?.plan_name??ent.plan_name,profile?.role));
+  const nextLesson=nextRoute?lessonRows.find(l=>l.level_id===nextRoute.id&&!completedLessonIds.has(Number(l.id))):null;
+
   return (
-    <LocalizedContent><main className="wrap">
+    <LocalizedContent><main className="wrap"><ActivationReturn userId={user.id}/>
       <div className="nav">
         <div>
           <span className="pill">{ent.plan_name}</span>
@@ -166,6 +173,8 @@ export default async function Dashboard({ searchParams }: PageProps) {
         </div>
       )}
 
+      <NextStepCard routeLesson={nextLesson?{slug:nextLesson.slug,title:nextLesson.title,minutes:nextLesson.estimated_minutes}:null} userId={user.id} org={account?.organization?.organization_id??null} progress={overallProgress} nextLevel={nextRoute?.level_number??null}/>
+      {roleTrainingEnabled()&&<WeeklyCaseCard userId={user.id} org={account?.organization?.organization_id??null}/>}
       <section className="card"><h2>Mis competencias</h2><SkillBars skills={own?.competencies??[]}/></section>
       {team&&<Organigram members={team.directory} visible={team.people.map(p=>p.user_id)} user={user.id}/>}
       <LearningNavigation teamsEnabled={Boolean(account?.organization)} practiceEnabled={workspaceEnabled()}/>

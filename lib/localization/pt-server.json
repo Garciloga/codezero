@@ -221,7 +221,6 @@
   "CERTIFICACIÓN": "CERTIFICAÇÃO",
   "CHECKOUT": "CONCORRÊNCIA",
   "CODEZERO": "CODEZERO",
-  "CODEZERO SUPPORT": "APOIO AO CÓDIGO",
   "COMPLETADA": "COMPLETO",
   "CONTACTO": "CONTACTO",
   "CONTENIDO DEL NIVEL": "ÍNDICE DO NÍVEL",
@@ -662,7 +661,6 @@
   "Día": "Dia",
   "Días de preparación": "Dias de preparação",
   "Días desde cierre de datos hasta aprobación, con control de exactitud": "Dias desde o encerramento dos dados até à aprovação com monitorização precisa",
-  "EMITIDO POR CODEZERO": "EMITIDO POR CODEZERO",
   "EN CURSO": "ANTERIORMENTE",
   "ERROR": "ERRO",
   "EVALUACIÓN FINAL": "APRECIAÇÃO FINAL",
@@ -2962,5 +2960,7 @@
   "Planes anuales y ofertas de lanzamiento": "Planos anuais e ofertas de lançamento",
   "Opciones comerciales futuras después de validar la beta y los procesos de facturación.": "Opções comerciais futuras após validar a versão beta e os processos de cobrança.",
   "Condiciones y precios por confirmar. Los planes mensuales actuales conservan sus límites.": "Condições e preços a confirmar. Os planos mensais atuais mantêm seus limites.",
-  "Proveedor, presupuesto y pruebas antes de activar el tutor. Las compras siguen bloqueadas.": "Provedor, orçamento e testes antes de ativar o tutor. As compras continuam bloqueadas."
+  "Proveedor, presupuesto y pruebas antes de activar el tutor. Las compras siguen bloqueadas.": "Provedor, orçamento e testes antes de ativar o tutor. As compras continuam bloqueadas.",
+  "GARCILOGA SUPPORT": "APOIO AO CÓDIGO",
+  "EMITIDO POR GARCILOGA": "EMITIDO POR GARCILOGA"
 }

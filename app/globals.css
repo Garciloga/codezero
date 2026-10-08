@@ -57,3 +57,7 @@ button,.btn,summary { min-height: 44px; }
 
 /* Native WebKit form controls must shrink inside nested activity fieldsets. */
 .mixed-activity fieldset,.mixed-activity label,.mixed-activity select,.mixed-activity textarea{min-inline-size:0;max-inline-size:100%}.mixed-activity fieldset{inline-size:100%;margin-inline:0}.mixed-activity legend{inline-size:100%;white-space:normal}.mixed-activity button{min-inline-size:0;max-inline-size:100%;white-space:normal;overflow-wrap:anywhere}
+
+.next-step{margin-block:24px;font-size:1rem}.next-step progress{width:100%;height:16px}.competency-cell{min-height:44px;min-width:100px;border:1px solid currentColor;border-radius:10px;padding:8px;color:var(--text);background:var(--surface)}.level-0{border-style:dashed}.level-1{background:#fff0da;color:#553500}.level-2{background:#f8e7b5;color:#4e3900}.level-3{background:#d7eddb;color:#184827}.level-4{background:#c8e9e7;color:#124846}.competency-drawer{margin-top:16px;border:2px solid currentColor}.competency-mobile{display:none}.news-dot{font-size:10px;margin-left:auto}@media(max-width:700px){.competency-desktop{display:none}.competency-mobile{display:block}.competency-cell{width:100%}}
+
+.competency-drawer{position:fixed;inset:80px 16px 16px auto;width:min(420px,calc(100vw - 32px));max-height:calc(100dvh - 96px);overflow:auto;z-index:50;margin:0;box-shadow:0 12px 48px #10182833}

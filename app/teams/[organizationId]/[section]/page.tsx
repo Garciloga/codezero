@@ -284,6 +284,7 @@ export default async function TeamSection({
                 Actualizar desde el aprendizaje registrado
               </button>
             </form>
+            <Link prefetch={false} className="btn" href={`/teams/${org}/monthly`}>Reporte mensual</Link>
             <a className="btn secondary" href={`/api/teams/${org}/report`}>
               Descargar reporte CSV de mi alcance
             </a>

@@ -1,5 +1,6 @@
 "use client";
-import { useEffect, useRef, type ReactNode } from "react";
+import {LATEST_RELEASE} from "../../lib/release-notes";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -10,7 +11,7 @@ import LineIcon from "./line-icon";
 import LocalizedContent from "./localization/client";
 import ProfileAvatar from "./profile-avatar";
 import LanguageSelector from "./localization/language-selector";
-const publicHeaderPaths = ["/", "/about", "/pricing", "/roadmap", "/login", "/terms", "/privacy", "/refunds", "/contact", "/experience-preview", "/practice-preview", "/modular-preview"];
+const publicHeaderPaths = ["/", "/about", "/pricing", "/roadmap", "/login", "/terms", "/privacy", "/refunds", "/contact", "/experience-preview", "/practice-preview", "/modular-preview", "/companies"];
 type Organization = {
   organization_id: string;
   name: string;
@@ -33,10 +34,12 @@ const publicPaths = [
   "/experience-preview",
   "/practice-preview",
   "/modular-preview",
+  "/companies",
   "/verify",
 ];
 export default function VivoShell({
   children,
+  newsRead=null,
   name,
   plan,
   organizations,
@@ -47,6 +50,7 @@ export default function VivoShell({
   userId,
 }: {
   children: ReactNode;
+  newsRead?:string|null;
   name: string;
   plan: string;
   organizations: Organization[];
@@ -57,6 +61,9 @@ export default function VivoShell({
   userId?:string;
 }) {
   const path = usePathname();
+  const [read,setRead]=useState(newsRead);
+  useEffect(()=>setRead(newsRead),[userId,newsRead]);
+  useEffect(()=>{if(path==='/news'&&read!==LATEST_RELEASE){fetch('/api/news/read',{method:'POST'}).then(r=>{if(r.ok)setRead(LATEST_RELEASE);}).catch(()=>{});}},[path,read]);
   const menu = useRef<HTMLDetailsElement>(null);
   useEffect(() => {
     const media = matchMedia("(max-width:900px)");
@@ -71,7 +78,7 @@ export default function VivoShell({
     publicPaths.some(
       (p) => path === p || (p === "/verify" && path.startsWith("/verify/")),
     ) ||
-    path.startsWith("/auth/") || !authenticated
+    path.startsWith("/auth/") || path.startsWith('/portfolio/share/') || !authenticated
   )
     return (
       <div id="main-content" tabIndex={-1}>
@@ -137,6 +144,7 @@ export default function VivoShell({
       title: "AYUDA",
       items: [
         ...(org?[["Compañía y equipos",base+"/settings","settings"],["Comunicador",base+"/messages","people"],...(!company&&org.can_invite?[["Invitar personas",base+"/invite","people"]]:[])]:[]),
+        ["Novedades", "/news", "help"],
         ["Soporte", "/help", "help"],
         ["Ajustes", "/profile", "settings"],
       ],
@@ -205,7 +213,7 @@ export default function VivoShell({
                         aria-current={active ? "page" : undefined}
                       >
                         <LineIcon kind={icon} />
-                        <span>{label}</span>
+                        <span>{label}</span>{href==="/news"&&read!==LATEST_RELEASE&&<span className="news-dot" aria-label="Hay novedades">●</span>}
                       </Link>
                     );
                   })}

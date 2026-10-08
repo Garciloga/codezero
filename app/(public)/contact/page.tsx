@@ -5,13 +5,16 @@ import { publicMetadata } from "../../../lib/public-metadata";
 
 export async function generateMetadata() { return translatedMetadata(publicMetadata("Contacto", "Opciones de contacto de soporte, facturación y privacidad de Garciloga.", "/contact")); }
 
-export default function ContactPage() {
+export default async function ContactPage({searchParams}:{searchParams:Promise<{name?:string;company?:string;size?:string;positions?:string}>}) {
+  const q=await searchParams;
+  const body=[q.name,q.company,q.size,q.positions].filter(v=>typeof v==='string').map(v=>v!.slice(0,300)).join('\n');
   return (
     <LocalizedContent><main className="wrap">
       <div className="nav">
         <div><span className="pill">CONTACTO</span><h1>Contacto Garciloga</h1></div>
-        <Link className="btn secondary" href="/">Inicio</Link>
+        <Link prefetch={false} className="btn secondary" href="/">Inicio</Link>
       </div>
+      {body&&<p><a className="btn" href={"mailto:codescerooficial@gmail.com?subject="+encodeURIComponent("Garciloga · Equipos")+"&body="+encodeURIComponent(body)}>Enviar consulta por mi correo</a></p>}
       <div className="card" style={{lineHeight:1.75}}>
         <p><b>Responsable:</b> Isaac López Garcia</p>
         <p><b>Alias público:</b> Isaac Garciloga</p>

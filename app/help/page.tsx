@@ -45,7 +45,7 @@ export default async function HelpPage({ searchParams }: PageProps) {
     <LocalizedContent><main className="wrap">
       <div className="nav">
         <div>
-          <span className="pill">CODEZERO SUPPORT</span>
+          <span className="pill">GARCILOGA SUPPORT</span>
           <h1>Centro de ayuda</h1>
           <p className="muted">Busca una respuesta. Si no la encuentras, puedes enviar una sugerencia o abrir un ticket.</p>
         </div>
