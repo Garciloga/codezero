@@ -47,6 +47,15 @@ jobs:
       - name: Mixed role routes database checks
         run: node scripts/mixed-role-db-check.mjs
 
+      - name: Section catalog budgets
+        run: node scripts/localization-sections.mjs
+
+      - name: Visible brand guard
+        run: node scripts/brand-audit.mjs
+
+      - name: Suggestions permissions and workflows
+        run: node scripts/suggestions-db-check.mjs
+
       - name: Translation coverage
         run: node scripts/localization-audit.mjs
 

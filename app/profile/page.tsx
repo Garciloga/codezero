@@ -85,7 +85,7 @@ export default async function ProfilePage({ searchParams }: PageProps) {
 
         <section className="card">
           <h2>Suscripción</h2>
-          {profile?.role !== 'owner' && <p><Link className="btn secondary" href="/teams/seats">Contratar o administrar seats · mínimo 5 usuarios</Link></p>}
+          {profile?.role !== 'owner' && <p><Link prefetch={false} className="btn secondary" href="/teams/seats">Contratar o administrar seats · mínimo 5 usuarios</Link></p>}
           <p><b>Plan:</b> {profile?.plan_name}</p>
           <p><b>Estado de cuenta:</b> {profile?.status}</p>
           {profile?.plan_name !== "free" && (
@@ -135,6 +135,7 @@ export default async function ProfilePage({ searchParams }: PageProps) {
         <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
           <Link prefetch={false} className="btn secondary" href="/help">Centro de ayuda</Link>
           <Link prefetch={false} className="btn secondary" href="/help/tickets">Mis tickets</Link>
+          <Link prefetch={false} className="btn secondary" href="/portfolio">Mi portafolio público</Link>
           <a className="btn secondary" href="/api/profile/export">Descargar mis datos</a>
         </div>
       </div>

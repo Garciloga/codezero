@@ -221,7 +221,6 @@
   "CERTIFICACIÓN": "CERTIFICATION",
   "CHECKOUT": "CONTRÔLE",
   "CODEZERO": "CODEZERO",
-  "CODEZERO SUPPORT": "SOUTIEN DE CODEZERO",
   "COMPLETADA": "REMPLIR",
   "CONTACTO": "CONTACTER",
   "CONTENIDO DEL NIVEL": "CONTENU DU NIVEAU",
@@ -662,7 +661,6 @@
   "Día": "Jour",
   "Días de preparación": "Jours de préparation",
   "Días desde cierre de datos hasta aprobación, con control de exactitud": "Jours de fermeture des données à l'approbation avec surveillance de l'exactitude",
-  "EMITIDO POR CODEZERO": "EMIDIÉ PAR CODEZERO",
   "EN CURSO": "EN FUTUR",
   "ERROR": "ERREUR",
   "EVALUACIÓN FINAL": "ÉVALUATION FINALE",
@@ -2962,5 +2960,7 @@
   "Planes anuales y ofertas de lanzamiento": "Forfaits annuels et offres de lancement",
   "Opciones comerciales futuras después de validar la beta y los procesos de facturación.": "Options commerciales futures après validation de la version bêta et des processus de facturation.",
   "Condiciones y precios por confirmar. Los planes mensuales actuales conservan sus límites.": "Conditions et prix à confirmer. Les forfaits mensuels actuels conservent leurs limites.",
-  "Proveedor, presupuesto y pruebas antes de activar el tutor. Las compras siguen bloqueadas.": "Fournisseur, budget et tests avant l’activation du tuteur. Les achats restent bloqués."
+  "Proveedor, presupuesto y pruebas antes de activar el tutor. Las compras siguen bloqueadas.": "Fournisseur, budget et tests avant l’activation du tuteur. Les achats restent bloqués.",
+  "GARCILOGA SUPPORT": "SOUTIEN DE GARCILOGA",
+  "EMITIDO POR GARCILOGA": "EMIDIÉ PAR GARCILOGA"
 }

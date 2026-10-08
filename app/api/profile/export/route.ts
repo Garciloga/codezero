@@ -1,3 +1,4 @@
+import {createAdminSupabase} from "../../../../lib/admin";
 import { NextResponse } from "next/server";
 import { createServerSupabase } from "../../../../lib/supabase-server";
 import { workspaceEnabled } from "../../../../lib/workspace-sandbox";
@@ -96,7 +97,11 @@ export async function GET() {
   if(training.some(q=>q.error))return NextResponse.json({error:'EXPORT_FAILED'},{status:500});
   const cancellations=await readWorkspacePages((a,b)=>supabase.from('account_cancellation_history').select('event_id,subscription_id,action,occurred_at').eq('user_id',user.id).order('occurred_at').order('event_id').range(a,b));
   if(cancellations.error)return NextResponse.json({error:'EXPORT_FAILED'},{status:500});
+  const admin=createAdminSupabase();
+  const [activation,portfolio]=await Promise.all([admin.from('activation_events').select('event,observed_at').eq('user_id',user.id).gte('observed_at',new Date(Date.now()-90*86400000).toISOString()),admin.from('public_portfolios').select('published,display_name,evidence_ids,certificate_ids,competency_keys,consent_at,updated_at').eq('user_id',user.id)]);
+  if(activation.error||portfolio.error)return NextResponse.json({error:'EXPORT_FAILED'},{status:500});
   const body = JSON.stringify({
+    activation_events:activation.data,public_portfolio:portfolio.data,
     exported_at: new Date().toISOString(),
     account: {
       id: user.id,

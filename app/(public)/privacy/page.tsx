@@ -7,13 +7,13 @@ export async function generateMetadata() { return translatedMetadata(publicMetad
 
 export default function PrivacyPage() {
   return (
-    <LocalizedContent><main className="wrap">
+    <LocalizedContent><main className="wrap"><section className="card"><h2>Activación y portafolio voluntario</h2><p>Registramos cinco eventos mínimos: registro, primera lección completada, primera entrega, primera asignación y regreso después de una semana. Guardamos únicamente identificador de cuenta, evento y fecha por un máximo de 90 días para mejorar el aprendizaje. No registramos el contenido de tus entregas en estos eventos. Se incluyen en la exportación de tu cuenta.</p><p>El portafolio está apagado por defecto. Con tu consentimiento explícito, cualquier persona con el enlace puede ver tu nombre público y la selección de proyectos personales aprobados, competencias y certificados. No publica textos de entregas, datos de compañías, datos de otras personas ni tu foto privada. Puedes retirarlo en cualquier momento; los enlaces anteriores dejan de funcionar. Una persona que lo haya visto puede conservar una copia fuera de Garciloga.</p></section>
       <div className="nav">
         <div><span className="pill">PRIVACIDAD</span><h1>Aviso de privacidad</h1></div>
-        <Link className="btn secondary" href="/">Inicio</Link>
+        <Link prefetch={false} className="btn secondary" href="/">Inicio</Link>
       </div>
       <article className="card" style={{lineHeight:1.75}}>
-        <p>Última actualización: 7 de octubre de 2026.</p>
+        <p>Última actualización: 8 de octubre de 2026.</p>
 
         <h2>Responsable</h2>
         <p>

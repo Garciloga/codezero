@@ -43,6 +43,11 @@ export async function POST(req:Request){
   const target=String(f.get('user_id')??session.user.id);
   if(!isUuid(target))return new Response(null,{status:400});
   ({error}=await admin.rpc('set_training_position',{p_actor:session.user.id,p_user:target,p_org:org,p_position:String(f.get('position'))}));
+ }else if(action==='weekly_assign'){
+  const target=String(f.get('user_id')??''),date=String(f.get('due_at')??''),activity=findTrainingActivity(String(f.get('activity')??''));
+  if(!org||!isUuid(target)||!activity?.key.startsWith('weekly-faro-')||!/^\d{4}-\d{2}-\d{2}$/.test(date))return new Response(null,{status:400});
+  const {data:catalog}=await session.supabase.from('learning_activity_catalog').select('id').eq('content_key',activity.key).eq('active',true).single();if(!catalog)return new Response(null,{status:409});
+  ({error}=await admin.rpc('assign_weekly_case',{p_actor:session.user.id,p_org:org,p_user:target,p_activity:catalog.id,p_due:date+'T23:59:59-06:00'}));
  }else if(action==='reinforce'){
   const target=String(f.get('user_id')??''),date=String(f.get('due_at')??''),keys=f.getAll('units').map(String);
   if(!org||!isUuid(target)||keys.length<1||keys.length>3||new Set(keys).size!==keys.length||!/^\d{4}-\d{2}-\d{2}$/.test(date))return new Response(null,{status:400});

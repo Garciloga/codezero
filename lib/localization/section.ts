@@ -1,0 +1,1 @@
+export function messageSection(path:string){if(path.startsWith('/admin'))return 'admin';if(path.startsWith('/teams'))return 'teams';if(/^\/(dashboard|learn|role-training|competencies|certificates|community|mentoring|employment-kit)/.test(path))return 'learning';if(/^\/(help|profile|news|portfolio)/.test(path))return 'help';return 'public';}

@@ -10,6 +10,7 @@ const links = [
   { label: "Sobre Garciloga", href: "/about" },
   { label: "Cómo funciona", href: "/#como-funciona" },
   { label: "La ruta", href: "/#ruta" },
+  { label: "Para empresas", href: "/companies" },
   { label: "Precios", href: "/pricing" },
   { label: "Próximamente", href: "/roadmap" },
   { label: "Preguntas", href: "/#preguntas" },

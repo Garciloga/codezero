@@ -1,0 +1,29 @@
+{
+  "en": {
+    "before": 252086,
+    "common": 2747,
+    "public": 75248,
+    "learning": 157511,
+    "teams": 102289,
+    "admin": 157784,
+    "help": 154592
+  },
+  "pt": {
+    "before": 261685,
+    "common": 2925,
+    "public": 78315,
+    "learning": 162912,
+    "teams": 105952,
+    "admin": 163220,
+    "help": 159846
+  },
+  "fr": {
+    "before": 272387,
+    "common": 3038,
+    "public": 81387,
+    "learning": 169502,
+    "teams": 110143,
+    "admin": 169914,
+    "help": 166321
+  }
+}

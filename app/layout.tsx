@@ -17,7 +17,9 @@ import type {CSSProperties} from "react";
 import type { Metadata } from "next";
 import { ReactNode } from "react";
 import AppearanceProvider from "./components/appearance-provider";
-import LanguageProvider from "./components/localization/provider";
+import LanguageProvider from "./components/localization/section-loader";
+import {headers} from "next/headers";
+import {messageSection} from "../lib/localization/section";
 import LocalizedServer from "./components/localization/server";
 import { localeContext, uiMessages } from "../lib/localization/server";
 import { LANGUAGE_TAGS } from "../lib/localization/shared";
@@ -41,19 +43,20 @@ export async function generateMetadata() { return translatedMetadata({
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const { supabase, user, locale } = await localeContext();
-  const messages = await uiMessages(locale);
+  const section=messageSection((await headers()).get('x-garciloga-path')??'/');
+  const messages = locale==='es'?{}:(await import(`../lib/localization/sections/${locale}-${section}.json`)).default;
   const navigation = user ? await accountNavigation() : null;
   const preference = user && workspaceEnabled()
-    ? (await supabase.from("user_preferences").select("mode,accent,colors").eq("user_id",user.id).maybeSingle()).data : null;
+    ? (await supabase.from("user_preferences").select("mode,accent,colors,news_read").eq("user_id",user.id).maybeSingle()).data : null;
   return (
     <html lang={LANGUAGE_TAGS[locale]} data-design="vivo" style={VIVO_CSS_VARIABLES as CSSProperties}>
       <head><style>{VIVO_THEME_CSS}</style></head>
       <body>
         <SiteVisit/>
-        <LanguageProvider locale={locale} messages={messages}>
+        <LanguageProvider section={section} locale={locale} messages={messages}>
         <AppearanceProvider userId={user?.id ?? null} serverPreference={preference} />
         <LocalizedServer><a className="skip-link" href="#main-content">Saltar al contenido</a></LocalizedServer>
-        <VivoShell userId={user?.id} roleTrainingActive={roleTrainingEnabled()} avatarVersion={navigation?.profile?.avatar_version} authenticated={Boolean(navigation)} name={navigation?.profile?.full_name || "Mi cuenta"} plan={navigation?.profile?.plan_name || "Free"} organizations={(navigation?.organizations ?? []) as any} selected={navigation?.organization?.organization_id ?? null}>{children}</VivoShell>
+        <VivoShell newsRead={preference?.news_read??null} userId={user?.id} roleTrainingActive={roleTrainingEnabled()} avatarVersion={navigation?.profile?.avatar_version} authenticated={Boolean(navigation)} name={navigation?.profile?.full_name || "Mi cuenta"} plan={navigation?.profile?.plan_name || "Free"} organizations={(navigation?.organizations ?? []) as any} selected={navigation?.organization?.organization_id ?? null}>{children}</VivoShell>
       </LanguageProvider>
       </body>
     </html>
