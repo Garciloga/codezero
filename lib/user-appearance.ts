@@ -57,3 +57,14 @@ export function paletteWarnings(preference: Appearance, mode: "light" | "dark") 
   return ([["text","bg"],["text","surface"],["muted","surface"],["sidebar-text","sidebar"],["sidebar-muted","sidebar"],["button-text","primary"],["selected-text","accent"],["selection-text","selection"],["alert-text","alert-bg"]] as const)
     .filter(([text,bg]) => contrastRatio(p[text],p[bg])<4.5).map(([text,bg])=>`${PALETTE_FIELDS[text].label} / ${PALETTE_FIELDS[bg].label}`);
 }
+
+export function withAccent(preference: Appearance, accent: Appearance["accent"]): Appearance {
+  if (!preference.colors) return {...preference,accent};
+  const colors: Palette = {};
+  for (const mode of ["light","dark"] as const) {
+    if (!preference.colors[mode]) continue;
+    const {primary,hover,"button-text":buttonText,...remaining}=preference.colors[mode];
+    colors[mode]=remaining;
+  }
+  return {...preference,accent,colors};
+}

@@ -16,7 +16,7 @@ Migración aditiva `account_palette_and_profile_photos`: `user_preferences.color
 
 ## Verificación y estado
 
-Migración aplicada en sandbox; validador remoto acepta colores hex y rechaza CSS, bucket privado/2 MB comprobado. Advisor de seguridad sin nuevos avisos respecto a su baseline. PostgreSQL/PGlite comprueba selección/escritura/borrado propios, rechazo entre cuentas y cambio de dueño; no simula transferencia real de Storage. Tres pruebas nuevas comprueban validación de paleta, contraste y decodificación/recorte/metadatos/límites de fotos. 184 pruebas unitarias, TypeScript, compilación, traducciones EN/PT/FR, auditoría npm de todas las severidades, Semgrep y escaneo de secretos aprobados localmente. Regresión existente de equipos: 26 grupos PostgreSQL aprobados.
+Migración aplicada en sandbox; validador remoto acepta colores hex y rechaza CSS, bucket privado/2 MB comprobado. Advisor de seguridad sin nuevos avisos respecto a su baseline. PostgreSQL/PGlite comprueba selección/escritura/borrado propios, rechazo entre cuentas y cambio de dueño; no simula transferencia real de Storage. Cuatro pruebas nuevas comprueban validación de paleta, contraste y decodificación/recorte/metadatos/límites de fotos. 185 pruebas unitarias, TypeScript, compilación, traducciones EN/PT/FR, auditoría npm de todas las severidades, Semgrep y escaneo de secretos aprobados localmente. Regresión existente de equipos: 26 grupos PostgreSQL aprobados.
 
 El navegador de CI incorpora preview/guardar/recargar/descartar/restablecer, bordes reales y paleta oscura, ausencia de plan superior, subida/lectura/recarga/borrado de foto y rechazo de origen/colores inválidos. Utiliza Auth/REST/Storage ficticios con handlers de aplicación reales; su resultado se verifica en el PR antes de publicar. No equivale a sesiones de personas reales o prueba de extremo a extremo contra Storage cloud. Producción y resultado CI se registran en Notion al cerrar, sin inventar resultados futuros.
 
@@ -29,3 +29,7 @@ Primer CI del PR (`bf19ab6`): build/seguridad aprobados; el navegador detectó q
 La actualización inmediata del avatar también se limita al ID de cuenta: eventos de otra sesión no reemplazan la foto visible. El recorrido de navegador incluye el control de un evento ajeno.
 
 Segundo CI (`0628a91`): borde visual ya correcto; una espera de la prueba leía la preferencia local antes de terminar el guardado asíncrono. Se agrega una guarda para esperar la copia existente, conservando la verificación posterior a recarga. Se vuelve a ejecutar el mismo PR.
+
+Seleccionar un acento predefinido reemplaza los colores propios de botón/hover/texto de botón, conservando los bordes y demás colores independientes; el editor abre inicialmente la paleta del modo actual.
+
+Tercer CI (`9899188`) aprobó el recorrido de paleta/foto y la regresión de equipos, pero axe detectó un CTA público de acento cuyo fondo aún usaba primario. Se hace consistente su fondo con el token de acento para conservar contraste. Se mantiene axe sin excepciones y se verifica el head final con las mejoras de presets.

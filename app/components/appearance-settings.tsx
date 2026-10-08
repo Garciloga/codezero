@@ -3,7 +3,7 @@ import LineIcon from "./line-icon";
 import LocalizedContent from "./localization/client";
 
 import { useEffect, useState } from "react";
-import { ACCENTS, PALETTE_FIELDS, paletteFor, paletteWarnings, DEFAULT_APPEARANCE, appearanceStorageKey, parseAppearance, type Appearance } from "../../lib/user-appearance";
+import { ACCENTS, withAccent, PALETTE_FIELDS, paletteFor, paletteWarnings, DEFAULT_APPEARANCE, appearanceStorageKey, parseAppearance, type Appearance } from "../../lib/user-appearance";
 import { APPEARANCE_EVENT } from "./appearance-provider";
 export default function AppearanceSettings({ userId, initialPreference, syncEnabled=false }: { userId: string | null; initialPreference?: unknown; syncEnabled?: boolean }) {
   const [preference, setPreference] = useState<Appearance>(DEFAULT_APPEARANCE);
@@ -19,7 +19,7 @@ export default function AppearanceSettings({ userId, initialPreference, syncEnab
   const palette = paletteFor(editing,paletteMode);
   const warnings = paletteWarnings(editing,paletteMode);
   useEffect(() => {
-    try { setPreference(parseAppearance(initialPreference ?? JSON.parse(localStorage.getItem(appearanceStorageKey(userId)) ?? "null"))); }
+    try { const next=parseAppearance(initialPreference ?? JSON.parse(localStorage.getItem(appearanceStorageKey(userId)) ?? "null"));setPreference(next);setPaletteMode(next.mode === "system" ? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : next.mode); }
     catch { setPreference({ ...DEFAULT_APPEARANCE }); }
   }, [userId, initialPreference]);
   const [saving,setSaving] = useState(false);
@@ -59,7 +59,7 @@ export default function AppearanceSettings({ userId, initialPreference, syncEnab
     <fieldset disabled={saving} style={{ marginTop: 16 }}><legend>Color de botones y énfasis</legend><div className="appearance-options">
       {Object.entries(ACCENTS).map(([key, value]) => <label className="appearance-choice" key={key}>
         <input type="radio" name="appearance-accent" value={key} checked={editing.accent === key}
-          onChange={() => draft ? preview({ ...draft, accent: key as Appearance["accent"] }) : save({ ...preference, accent: key as Appearance["accent"] })} /><span className="appearance-swatch" style={{background:value.light}} aria-hidden="true"/><strong>{value.label}</strong>
+          onChange={() => draft ? preview(withAccent(draft,key as Appearance["accent"])) : save(withAccent(preference,key as Appearance["accent"]))} /><span className="appearance-swatch" style={{background:value.light}} aria-hidden="true"/><strong>{value.label}</strong>
       </label>)}
     </div></fieldset>
     <details className="appearance-palette" style={{marginTop:20}}>

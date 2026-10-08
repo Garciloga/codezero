@@ -23,3 +23,4 @@ html[data-design="vivo"][data-custom-palette="true"] .public-site .btn.secondary
 html[data-design="vivo"] .public-site .public-dark .btn.secondary {color:var(--vivo-sidebar-text,#fff);border-color:var(--vivo-border-strong,var(--vivo-sidebar-text,#fff))}
 
 html[data-design="vivo"] .vivo-kpis .positive {color:var(--vivo-positive-text,#fff)}
+html[data-design="vivo"] .public-site .btn.accent {background:var(--vivo-accent);color:var(--vivo-selected-text,var(--vivo-sidebar))}

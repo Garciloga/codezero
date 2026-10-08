@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import sharp from 'sharp';
-import {validAppearance,parseAppearance,readableForeground,contrastRatio,paletteWarnings} from '../lib/user-appearance.ts';
+import {withAccent,validAppearance,parseAppearance,readableForeground,contrastRatio,paletteWarnings} from '../lib/user-appearance.ts';
 import {normalizeProfilePhoto,MAX_PHOTO_BYTES} from '../lib/profile-photo.ts';
 test('palettes reject CSS injection, unexpected keys, arrays and incomplete hex values',()=>{
  for(const colors of [{light:{bg:'url(x)'}},{light:{bg:'#fff'}},{light:{unknown:'#112233'}},{system:{}},{dark:null},[],{light:[]}]) {
@@ -24,4 +24,10 @@ test('profile photo normalization decodes, crops, strips metadata and caps dimen
  await assert.rejects(()=>normalizeProfilePhoto(Buffer.from('<svg></svg>'),'image/svg+xml'));
  await assert.rejects(()=>normalizeProfilePhoto(Buffer.from('not a picture'),'image/png'));
  await assert.rejects(()=>normalizeProfilePhoto(Buffer.alloc(MAX_PHOTO_BYTES+1),'image/jpeg'));
+});
+
+test('preset accent replaces custom button colors while retaining independent borders and selection',()=>{
+ const preference={mode:'light',accent:'blue',colors:{light:{primary:'#000000',hover:'#112233','button-text':'#ffffff',border:'#445566',selection:'#abcdef'}}};
+ assert.deepEqual(withAccent(preference,'green'),{mode:'light',accent:'green',colors:{light:{border:'#445566',selection:'#abcdef'}}});
+ assert.deepEqual(withAccent({mode:'dark',accent:'blue'},'purple'),{mode:'dark',accent:'purple'});
 });
