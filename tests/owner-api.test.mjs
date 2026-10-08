@@ -21,7 +21,7 @@ test('owner deletion cannot run without owner role or archive authorization',asy
  mocks['../../../../../lib/admin'].requireOwner=async()=>{throw Error();};assert.equal((await route.POST(req({user_id:target}))).status,403);assert.equal(rpcs,1);
 });
 test('become requires owner authorization and records only a short support session',async()=>{
- process.env.SUPABASE_SECRET_KEY='test-server-secret';let audited=0,generated=0,registered=0;const jar=new Map();
+ process.env.SUPABASE_SECRET_KEY='sb_secret_ci_placeholder';let audited=0,generated=0,registered=0;const jar=new Map();
  const next={NextResponse:{redirect:(url,status=307)=>new Response(null,{status,headers:{location:String(url)}})}};
  const client={auth:{getUser:async()=>({data:{user:{id:owner}}}),getSession:async()=>({data:{session:{refresh_token:'original-private-refresh'}}}),verifyOtp:async()=>({data:{user:{id:target},session:{access_token:'head.'+Buffer.from(JSON.stringify({session_id:target})).toString('base64url')+'.signature'}},error:null})}};
  const admin={from:table=>({select:()=>({eq:()=>({single:async()=>({data:{role:'student',status:'active',deleted_at:null}})})}),insert:async()=>{if(table==='admin_audit_log')audited++;else registered++;return{error:null};}}),auth:{admin:{getUserById:async()=>({data:{user:{id:target,email:'learner@example.test',email_confirmed_at:new Date().toISOString()}}}),generateLink:async()=>{generated++;return{data:{properties:{hashed_token:'never-exposed'}},error:null};}}}};
@@ -30,6 +30,6 @@ test('become requires owner authorization and records only a short support sessi
  const route=load('app/api/admin/users/become/route.ts',mocks);
  assert.equal((await route.POST(req({user_id:target}))).status,403);assert.equal(generated,0);
  mocks['../../../../../lib/admin'].requireOwner=async()=>{};const response=await route.POST(req({user_id:target}));assert.equal(response.status,303);assert.match(response.headers.get('location'),/dashboard$/);assert.equal(audited,1);assert.equal(registered,1);assert.equal(generated,1);
- const backup=crypto.openSupport(jar.get(crypto.SUPPORT_COOKIE),'test-server-secret');assert.equal(backup.owner,owner);assert.equal(backup.target,target);assert.equal(backup.refresh,'original-private-refresh');assert.ok(backup.expires>Date.now());assert.equal(response.headers.get('location').includes('never-exposed'),false);
+ const backup=crypto.openSupport(jar.get(crypto.SUPPORT_COOKIE),'sb_secret_ci_placeholder');assert.equal(backup.owner,owner);assert.equal(backup.target,target);assert.equal(backup.refresh,'original-private-refresh');assert.ok(backup.expires>Date.now());assert.equal(response.headers.get('location').includes('never-exposed'),false);
  const repeat=await route.POST(req({user_id:target}));assert.equal(repeat.status,303);assert.match(repeat.headers.get('location'),/support-return$/);assert.equal(generated,1);
 });

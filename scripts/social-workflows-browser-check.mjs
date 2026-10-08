@@ -23,9 +23,8 @@ const database=http.createServer(async(req,res)=>{
    if(p.p_action==='report'){tables.community_reports.push({id:randomUUID(),post_id:p.p_target,reason:p.p_body,resolved_at:null});return res.end(JSON.stringify(p.p_target));}
   }
   if(table==='mentoring_action'){
-   if(p.p_action==='apply'){if(!p.p_consent)return deny();tables.mentoring_profiles.push({user_id:p.p_actor,display_name:p.p_name,bio:p.p_bio,languages:p.p_languages,status:'pending'});return res.end(JSON.stringify(p.p_actor));}
-   if(p.p_action==='approve_mentor'){if(!mod)return deny();tables.mentoring_profiles.find(x=>x.user_id===p.p_target).status='approved';return res.end(JSON.stringify(p.p_target));}
-   if(p.p_action==='slot'){const row={id:randomUUID(),mentor_id:p.p_actor,starts_at:p.p_start,ends_at:new Date(Date.parse(p.p_start)+2700000).toISOString(),active:true};tables.mentoring_slots.push(row);return res.end(JSON.stringify(row.id));}
+   if(p.p_action==='owner_profile'){if(!mod||!p.p_consent)return deny();const row={user_id:p.p_actor,display_name:p.p_name,bio:p.p_bio,languages:p.p_languages,status:'approved'};tables.mentoring_profiles.splice(0,tables.mentoring_profiles.length,row);return res.end(JSON.stringify(p.p_actor));}
+   if(p.p_action==='slot'){if(!mod)return deny();const row={id:randomUUID(),mentor_id:p.p_actor,starts_at:p.p_start,ends_at:new Date(Date.parse(p.p_start)+2700000).toISOString(),active:true};tables.mentoring_slots.push(row);return res.end(JSON.stringify(row.id));}
    if(p.p_action==='request'){const row={id:randomUUID(),slot_id:p.p_target,learner_id:p.p_actor,topic:p.p_topic,status:'pending',expires_at:new Date(Date.now()+86400000).toISOString(),price_cents:69900};tables.mentoring_requests.push(row);return res.end(JSON.stringify(row.id));}
    if(p.p_action==='confirm'){if(!mod)return deny();Object.assign(tables.mentoring_requests.find(x=>x.id===p.p_target),{status:'confirmed',meeting_url:p.p_url,payment_reference:p.p_reference});return res.end(JSON.stringify(p.p_target));}
   }
@@ -33,7 +32,7 @@ const database=http.createServer(async(req,res)=>{
  }
  let rows=(tables[table]??[]).map(x=>({...x}));
  if(table==='mentoring_requests')rows=rows.map(x=>({...x,mentoring_slots:tables.mentoring_slots.find(s=>s.id===x.slot_id)}));
- if(table==='mentoring_profiles')rows=rows.map(x=>({...x,profiles:{status:'active'}}));
+ if(table==='mentoring_profiles')rows=rows.map(x=>({...x,profiles:tables.profiles.find(p=>p.id===x.user_id)}));
  if(table==='community_reports')rows=rows.map(x=>({...x,community_posts:tables.community_posts.find(s=>s.id===x.post_id)}));
  for(const[k,v]of u.searchParams){const read=r=>k.split('.').reduce((a,b)=>a?.[b],r);if(v.startsWith('eq.'))rows=rows.filter(r=>String(read(r))===v.slice(3));if(v.startsWith('gt.'))rows=rows.filter(r=>String(read(r))>v.slice(3));if(v==='is.null')rows=rows.filter(r=>read(r)==null);if(v.startsWith('in.'))rows=rows.filter(r=>v.slice(4,-1).split(',').includes(String(read(r))));}
  rows=rows.slice(0,Number(u.searchParams.get('limit')??100));if(req.headers.accept?.includes('vnd.pgrst.object'))return res.end(JSON.stringify(rows[0]??null));return res.end(JSON.stringify(rows));
@@ -47,7 +46,8 @@ try{
  assert.equal((await post(1,'/api/community',{action:'join',alias:'Test',consent:'1'},'https://invalid.example')).status,403);assert.equal(calls,0);
  assert.equal((await post(4,'/api/community',{action:'join',alias:'Test',consent:'1'})).status,401);assert.equal(calls,0);
  assert.equal((await post(1,'/api/mentoring',{action:'request',target:'bad',request_id:randomUUID()})).status,400);
- assert.equal((await post(1,'/api/mentoring',{action:'confirm',target:randomUUID(),meeting_url:'javascript:alert(1)'})).status,400);
+ assert.equal((await post(1,'/api/mentoring',{action:'confirm',target:randomUUID(),meeting_url:'javascript:alert(1)'})).status,403);
+ assert.equal((await post(3,'/api/mentoring',{action:'confirm',target:randomUUID(),meeting_url:'javascript:alert(1)'})).status,400);
  console.log('PASS actual HTTP handlers reject anonymous, unverified, hostile origin and invalid identifiers/links');
 
  if(process.env.CODEZERO_HTTP_ONLY==='1'){
@@ -59,15 +59,16 @@ try{
   const pending=await (await get(1,'/community')).text();assert.ok(pending.includes('&lt;script&gt;'));assert.ok(!pending.includes('<script>window.injected=true</script>'));
   assert.equal((await post(1,'/api/community',{action:'approve',target:tables.community_posts[0].id})).headers.get('location').includes('result=failed'),true);
   await post(3,'/api/community',{action:'approve',target:tables.community_posts[0].id});assert.equal((await get(1,'/community/'+tables.community_posts[0].id)).status,200);
-  await post(2,'/api/mentoring',{action:'apply',display_name:'Mentor ficticio',bio:'Experiencia ficticia sobre liderazgo y procesos.',languages:'es',consent:'1'});
-  await post(3,'/api/mentoring',{action:'approve_mentor',target:id(2)});
-  await post(2,'/api/mentoring',{action:'slot',starts_at:new Date(Date.now()+3*86400000).toISOString().slice(0,16)});
-  const catalog=await (await get(1,'/mentoring')).text();assert.match(catalog,/Mentor ficticio/);assert.match(catalog,/Solicitar sesión/);
+  assert.equal((await post(2,'/api/mentoring',{action:'apply',consent:'1'})).status,400);
+  assert.equal((await post(2,'/api/mentoring',{action:'slot',starts_at:new Date(Date.now()+3*86400000).toISOString().slice(0,16)})).status,403);
+  await post(3,'/api/mentoring',{action:'owner_profile',display_name:'Isaac sintético',bio:'Experiencia ficticia sobre liderazgo y procesos.',languages:'es',consent:'1'});
+  await post(3,'/api/mentoring',{action:'slot',starts_at:new Date(Date.now()+3*86400000).toISOString().slice(0,16)});
+  const catalog=await (await get(1,'/mentoring')).text();assert.match(catalog,/Isaac sintético/);assert.match(catalog,/Solicitar sesión/);
   await post(1,'/api/mentoring',{action:'request',target:tables.mentoring_slots[0].id,request_id:randomUUID(),topic:'Objetivo ficticio para una sesión de prueba'});
-  assert.equal((await post(1,'/api/mentoring',{action:'confirm',target:tables.mentoring_requests[0].id,payment_reference:'synthetic-reference',meeting_url:'https://meeting.example.test/room'})).headers.get('location').includes('result=failed'),true);
+  assert.equal((await post(1,'/api/mentoring',{action:'confirm',target:tables.mentoring_requests[0].id,payment_reference:'synthetic-reference',meeting_url:'https://meeting.example.test/room'})).status,403);
   await post(3,'/api/mentoring',{action:'confirm',target:tables.mentoring_requests[0].id,payment_reference:'synthetic-reference',meeting_url:'https://meeting.example.test/room'});
   const confirmed=await (await get(1,'/mentoring')).text();assert.match(confirmed,/https:\/\/meeting.example.test\/room/);
-  const admin=await (await get(3,'/admin/social')).text();assert.match(admin,/Perfiles de mentoría/);
+  const admin=await (await get(3,'/admin/social')).text();assert.match(admin,/Mi perfil y disponibilidad de mentoría/);
   users[0].user_metadata.locale='en';const english=await (await get(1,'/community')).text();assert.match(english,/Participation rules/);
   console.log('PASS real Next HTTP pages and handlers: opt-in, replay, moderation, HTML escaping, mentor workflow, private administration and English rendering; Auth/REST are fixtures');finished=true;
  }else{
@@ -79,13 +80,14 @@ try{
  const form=page.locator('form').filter({has:page.locator('input[name=action][value=post]')});await form.locator('[name=title]').fill('Pregunta de aprendizaje');await form.locator('[name=body]').fill('<img src=x onerror="window.socialInjected=true"> Texto de prueba');await Promise.all([page.waitForNavigation({waitUntil:'networkidle'}),form.locator('button').click()]);assert.equal(tables.community_posts.length,1);assert.equal(tables.community_posts[0].status,'pending');assert.equal(await page.evaluate(()=>window.socialInjected),undefined);assert.equal(await page.locator('.social-body img').count(),0);
  await signIn(3);await go('/admin/social');await Promise.all([page.waitForNavigation({waitUntil:'networkidle'}),page.getByRole('button',{name:'Aprobar publicación'}).click()]);await signIn(1);await go('/community/'+tables.community_posts[0].id);assert.match(await page.locator('main').innerText(),/Texto de prueba/);
  console.log('PASS browser opt-in, form persistence, private review, moderation and escaped user content');
- await signIn(2);await go('/mentoring');await page.getByText('Postularme como mentor',{exact:true}).click();const application=page.locator('form').filter({has:page.locator('input[name=action][value=apply]')});await application.locator('[name=display_name]').fill('Mentor sintético');await application.locator('[name=bio]').fill('Experiencia ficticia de pruebas en liderazgo y procesos.');await application.locator('[name=consent]').check();await Promise.all([page.waitForNavigation({waitUntil:'networkidle'}),application.locator('button').click()]);assert.equal(tables.mentoring_profiles.length,1);
- await signIn(3);await go('/admin/social');await Promise.all([page.waitForNavigation({waitUntil:'networkidle'}),page.getByRole('button',{name:'Aprobar mentor',exact:true}).click()]);await signIn(2);await go('/mentoring');const availability=page.locator('form').filter({has:page.locator('input[name=action][value=slot]')});await availability.locator('[name=starts_at]').fill(new Date(Date.now()+3*86400000).toISOString().slice(0,16));await Promise.all([page.waitForNavigation({waitUntil:'networkidle'}),availability.locator('button').click()]);assert.equal(tables.mentoring_slots.length,1);
+ await signIn(2);await go('/mentoring');assert.equal(await page.getByText('Postularme como mentor',{exact:true}).count(),0);await signIn(3);await go('/mentoring');const application=page.locator('form').filter({has:page.locator('input[name=action][value=owner_profile]')});await application.locator('[name=display_name]').fill('Isaac sintético');await application.locator('[name=bio]').fill('Experiencia ficticia de pruebas en liderazgo y procesos.');await application.locator('[name=consent]').check();await Promise.all([page.waitForNavigation({waitUntil:'networkidle'}),application.locator('button').click()]);assert.equal(tables.mentoring_profiles.length,1);assert.equal(tables.mentoring_profiles[0].status,'approved');
+ const availability=page.locator('form').filter({has:page.locator('input[name=action][value=slot]')});await availability.locator('[name=starts_at]').fill(new Date(Date.now()+3*86400000).toISOString().slice(0,16));await Promise.all([page.waitForNavigation({waitUntil:'networkidle'}),availability.locator('button').click()]);assert.equal(tables.mentoring_slots.length,1);
  await signIn(1);await go('/mentoring');const request=page.locator('form').filter({has:page.locator('input[name=action][value=request]')});await request.locator('[name=topic]').fill('Objetivo ficticio: mejorar un proceso de liderazgo.');await Promise.all([page.waitForNavigation({waitUntil:'networkidle'}),request.locator('button').click()]);assert.equal(tables.mentoring_requests.length,1);
  await signIn(3);await go('/admin/social');const confirmation=page.locator('form').filter({has:page.locator('input[name=payment_reference]')});await confirmation.locator('[name=payment_reference]').fill('synthetic-payment-reference');await confirmation.locator('[name=meeting_url]').fill('https://meeting.example.test/synthetic');await Promise.all([page.waitForNavigation({waitUntil:'networkidle'}),confirmation.locator('button').click()]);await signIn(1);await go('/mentoring');assert.equal(await page.getByRole('link',{name:'Abrir sesión',exact:true}).getAttribute('href'),'https://meeting.example.test/synthetic');
- console.log('PASS browser mentor application, approval, availability, learner request and operator confirmation without charges');
+ console.log('PASS browser owner profile, owner availability, learner request and owner confirmation without charges');
  for(const n of [1,3]){await signIn(n);for(const path of n===3?['/admin/social']:['/community','/mentoring']){await go(path);for(const width of [390,1280]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,path+' responsive '+width);}await page.addScriptTag({path:'sandbox-runtime/node_modules/axe-core/axe.min.js'});const violations=await page.evaluate(async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})).violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)})));assert.deepEqual(violations,[]);}}
  for(const locale of ['es','en','pt','fr']){users[0].user_metadata.locale=locale;await signIn(1);const dictionary=locale==='es'?{}:JSON.parse(readFileSync('lib/localization/'+locale+'-social.json','utf8'));for(const [route,title]of [['/community','Comunidad de alumnos'],['/mentoring','Mentorías']]){await go(route);assert.equal(await page.locator('h1').innerText(),dictionary[title]??title);}}assert.deepEqual(errors,[]);console.log('PASS mobile/desktop, English UI, unchanged field values, automated WCAG checks and no browser errors');
  finished=true;await context.close();
  }
 }finally{await browser?.close();server.kill('SIGTERM');if(server.exitCode===null)await new Promise(r=>server.once('close',r));database.close();if(!finished)console.error(logs.join('').slice(-7000));}
+

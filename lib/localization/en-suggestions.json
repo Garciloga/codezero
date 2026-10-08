@@ -194,5 +194,8 @@
   "Enviar enlace de acceso": "Send access link",
   "El proveedor aceptó el envío del enlace de acceso. Revisa también spam.": "The provider accepted the access email. Also check spam.",
   "El proveedor no aceptó el envío. Revisa la configuración de correo.": "The provider did not accept the email. Check email settings.",
-  "No pudimos confirmar el envío.": "Could not confirm the email was sent."
+  "No pudimos confirmar el envío.": "Could not confirm the email was sent.",
+  ": sesiones impartidas por Isaac López García, sujetas a su disponibilidad y confirmación.": ": sessions led by Isaac López García, subject to his availability and confirmation.",
+  "Sesiones impartidas por Isaac López García. Horarios y reservas sujetos a su disponibilidad.": "Sessions led by Isaac López García. Scheduling and bookings depend on his availability.",
+  "Sesiones impartidas por Isaac López García, sujetas a su disponibilidad y pago verificado. Solicitar una sesión no genera cobros.": "Sessions led by Isaac López García, subject to his availability and verified payment. Requesting a session does not charge you."
 }

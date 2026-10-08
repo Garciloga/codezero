@@ -194,5 +194,8 @@
   "Enviar enlace de acceso": "Enviar link de acesso",
   "El proveedor aceptó el envío del enlace de acceso. Revisa también spam.": "O provedor aceitou o envio do link de acesso. Confira também o spam.",
   "El proveedor no aceptó el envío. Revisa la configuración de correo.": "O provedor não aceitou o envio. Verifique a configuração de e-mail.",
-  "No pudimos confirmar el envío.": "Não foi possível confirmar o envio."
+  "No pudimos confirmar el envío.": "Não foi possível confirmar o envio.",
+  ": sesiones impartidas por Isaac López García, sujetas a su disponibilidad y confirmación.": ": sessões ministradas por Isaac López García, sujeitas à disponibilidade e confirmação dele.",
+  "Sesiones impartidas por Isaac López García. Horarios y reservas sujetos a su disponibilidad.": "Sessões ministradas por Isaac López García. Horários e reservas dependem da disponibilidade dele.",
+  "Sesiones impartidas por Isaac López García, sujetas a su disponibilidad y pago verificado. Solicitar una sesión no genera cobros.": "Sessões ministradas por Isaac López García, sujeitas à disponibilidade dele e a pagamento verificado. Solicitar uma sessão não gera cobrança."
 }
