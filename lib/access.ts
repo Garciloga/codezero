@@ -1,3 +1,4 @@
+import {effectiveLearningPlan} from "./company-learning-server";
 import { createAdminSupabase } from "./admin";
 import { createServerSupabase } from "./supabase-server";
 import { getPassedLevelNumbers, isLevelIncludedInPlan, isLevelUnlocked } from "./learning";
@@ -14,7 +15,7 @@ export async function canAccessLevel(userId: string, levelNumber: number) {
 
   const included = isLevelIncludedInPlan(
     levelNumber,
-    profile.plan_name ?? "free",
+    await effectiveLearningPlan(userId,profile.plan_name ?? "free"),
     profile.role
   );
 

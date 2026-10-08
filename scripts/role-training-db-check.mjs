@@ -3,6 +3,8 @@ import {readFileSync} from 'node:fs';
 import assert from 'node:assert/strict';
 import {TRAINING_ACTIVITIES} from '../lib/role-training-content.ts';
 import {DEFAULT_JOB_PROFILES} from '../lib/competency-matrix.ts';
+import {PROFESSIONAL_ACTIVITIES} from '../lib/professional-route-content.ts';
+import {professionalCatalogSeed} from './professional-route-catalog.mjs';
 import {trainingCatalogSeed} from './role-training-catalog.mjs';
 const db=new PGlite();let checks=0;
 const id=n=>'00000000-0000-4000-8000-'+String(n).padStart(12,'0');
@@ -164,5 +166,25 @@ try{
   await reject(()=>call('select public.review_training_practice($1,$2,$3,$4,$5)',[id(2),own,{communication:3,diagnosis:3,planning:3},feedback,[]]));
   await reject(()=>call('select public.review_training_practice_direct($1,$2,$3,$4,$5)',[id(3),own,{communication:3,diagnosis:3,planning:3},feedback,[]]));
  });
+
+ if(process.env.CODEZERO_PROFESSIONAL_ROUTES_CHECK==='1'){
+ await db.exec(`create function codezero_private.effective_learning_plan(p_user uuid) returns text language sql stable as $$ select plan_name from public.profiles where id=p_user $$;`);
+ const expansion=readFileSync('supabase/migrations/20261008065441_professional_routes_expansion.sql','utf8');
+ assert.ok(expansion.includes(professionalCatalogSeed()));await db.exec(expansion);
+ await check('seven curricula reuse the catalog, with twenty units and twenty-four integrators each',async()=>{
+ const counts=(await db.query("select route_key,count(*)::integer n from public.learning_activity_catalog where route_key not in ('common','customer_success') group by route_key")).rows;
+ assert.equal(counts.length,7);assert.ok(counts.every(r=>r.n===44));assert.equal(PROFESSIONAL_ACTIVITIES.length,308);
+ });
+ await check('new units use the existing submission and review history, without client grading authority',async()=>{
+ const key='quality-unit-1-1',unit=(await db.query('select id from public.learning_activity_catalog where content_key=$1',[key])).rows[0].id;
+ const scores={diagnosis:3,documentation:3,technical:3};
+ await call('select public.submit_training_practice($1,$2,$3,$4,$5,$6,$7,$8,$9)',[id(3),unit,id(500),id(10),feedback.repeat(3),scores,'independent',[1,0,1],[1,1,1]]);
+ await call('select public.review_training_practice($1,$2,$3,$4,$5)',[id(2),id(500),scores,feedback,[]]);
+ assert.ok((await db.query('select count(*)::integer n from public.learning_evidence_history where submission_id=$1',[id(500)])).rows[0].n>=2);
+ await reject(()=>as('authenticated',id(3),()=>db.query('select public.issue_professional_route_diploma($1,$2,$3)',[id(3),id(10),'quality'])));
+ await reject(()=>call('select public.issue_professional_route_diploma($1,$2,$3)',[id(3),id(10),'unknown']));
+ await reject(()=>call('select public.issue_professional_route_diploma($1,$2,$3)',[id(3),id(10),'quality']));
+ });
+ }
  console.log(checks+' database checks passed');
 }finally{await db.close();}

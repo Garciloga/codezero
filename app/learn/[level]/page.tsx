@@ -1,3 +1,4 @@
+import {effectiveLearningPlan} from "../../../lib/company-learning-server";
 import LocalizedContent from "../../components/localization/server";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
@@ -47,7 +48,7 @@ export default async function LevelPage({ params }: PageProps) {
   if (
     !isLevelIncludedInPlan(
       levelNumber,
-      profile?.plan_name ?? "free",
+      await effectiveLearningPlan(user.id,profile?.plan_name ?? "free"),
       profile?.role
     )
   ) {

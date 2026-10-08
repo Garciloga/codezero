@@ -1,5 +1,6 @@
 import { translatedMetadata } from '../lib/localization/metadata';
 import "./globals.css";
+import SiteVisit from './components/site-visit';
 import "@fontsource/outfit/600.css";
 import "@fontsource/outfit/700.css";
 import "@fontsource/plus-jakarta-sans/400.css";
@@ -46,6 +47,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     <html lang={LANGUAGE_TAGS[locale]} data-design="vivo" style={VIVO_CSS_VARIABLES as CSSProperties}>
       <head><style>{VIVO_THEME_CSS}</style></head>
       <body>
+        <SiteVisit/>
         <LanguageProvider locale={locale} messages={messages}>
         <AppearanceProvider userId={user?.id ?? null} serverPreference={preference} />
         <LocalizedServer><a className="skip-link" href="#main-content">Saltar al contenido</a></LocalizedServer>

@@ -14,9 +14,9 @@ export const localeContext = cache(async () => {
 export const uiMessages = cache(async (locale: Locale) => {
   if (locale === 'es') return (await import('./es-ui.json')).default;
   switch (locale) {
-    case 'en': return (await import('./en-ui.json')).default;
-    case 'pt': return (await import('./pt-ui.json')).default;
-    case 'fr': return (await import('./fr-ui.json')).default;
+    case 'en': return {...(await import('./en-ui.json')).default,...(await import('./en-client-extension.json')).default};
+    case 'pt': return {...(await import('./pt-ui.json')).default,...(await import('./pt-client-extension.json')).default};
+    case 'fr': return {...(await import('./fr-ui.json')).default,...(await import('./fr-client-extension.json')).default};
   }
 });
 export const serverMessages = cache(async (locale: Locale) => {
@@ -33,7 +33,8 @@ export function translationForLocale(locale: Locale) {
       const curriculum = locale === 'es' ? (await import('./es-curriculum.json')).default
         : locale === 'en' ? (await import('./en-curriculum.json')).default
         : locale === 'pt' ? (await import('./pt-curriculum.json')).default : (await import('./fr-curriculum.json')).default;
-      return translator({ ...await serverMessages(locale), ...curriculum });
+      const extension=locale==='es'?{}:locale==='en'?(await import('./en-extension.json')).default:locale==='pt'?(await import('./pt-extension.json')).default:(await import('./fr-extension.json')).default;
+      return translator({ ...await serverMessages(locale), ...curriculum,...extension });
     })();
     compiled.set(locale, result);
     result.catch(() => compiled.delete(locale));

@@ -1,3 +1,4 @@
+import {effectiveLearningPlan} from "../../../../lib/company-learning-server";
 import LocalizedContent from "../../../components/localization/server";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
@@ -31,7 +32,7 @@ export default async function ExamPage({ params, searchParams }: PageProps) {
     .eq("id", user.id)
     .single();
 
-  if (!isLevelIncludedInPlan(levelNumber, profile?.plan_name ?? "free", profile?.role)) {
+  if (!isLevelIncludedInPlan(levelNumber, await effectiveLearningPlan(user.id,profile?.plan_name ?? "free"), profile?.role)) {
     redirect("/pricing");
   }
 

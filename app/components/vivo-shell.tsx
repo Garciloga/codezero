@@ -16,6 +16,7 @@ type Organization = {
   name: string;
   role: OrganizationRole;
   job_title: string | null;
+  can_invite?: boolean;can_view_teams?:boolean;logo_version?:string|null;cover_version?:string|null;
 };
 const publicPaths = [
   "/",
@@ -84,7 +85,7 @@ export default function VivoShell({
     organizations[0];
   const role = org?.role;
   const base = org ? "/teams/" + org.organization_id : "";
-  const team = role && role !== "learner",
+  const team = role && (role !== "learner" || org?.can_view_teams),
     company = role === "owner" || role === "admin";
   const home = team ? base + "/people" : "/dashboard";
   const groups = [
@@ -133,6 +134,7 @@ export default function VivoShell({
     {
       title: "AYUDA",
       items: [
+        ...(org?[["Compañía y equipos",base+"/settings","settings"],["Comunicador",base+"/messages","people"],...(!company&&org.can_invite?[["Invitar personas",base+"/invite","people"]]:[])]:[]),
         ["Soporte", "/help", "help"],
         ["Ajustes", "/profile", "settings"],
       ],
@@ -152,6 +154,8 @@ export default function VivoShell({
           <Link prefetch={false} className="vivo-logo" href={home}>
             Garciloga
           </Link>
+          {org?.logo_version&&<img alt={org.name} width={64} height={64} style={{objectFit:"contain"}} src={`/api/company/${org.organization_id}/brand?kind=logo&v=${org.logo_version}`}/>}
+          {org?.cover_version&&<img alt="Imagen de compañía" width={220} height={80} style={{objectFit:"cover",maxWidth:"100%"}} src={`/api/company/${org.organization_id}/brand?kind=cover&v=${org.cover_version}`}/>}
           {org && <section className="vivo-position">
             {org ? (
               <>

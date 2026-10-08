@@ -5,6 +5,7 @@ import {createAdminSupabase} from '../../../lib/admin';
 import {hasCustomerSuccessCourse} from '../../../lib/customer-success-course';
 import {findTrainingActivity,gradeTrainingDecisions} from '../../../lib/role-training-content';
 import {COMPETENCIES,validScores} from '../../../lib/competency-matrix';
+import {PROFESSIONAL_ROUTES} from '../../../lib/professional-route-content';
 import {consumeRateLimit} from '../../../lib/rate-limit';
 
 export async function POST(req:Request){
@@ -19,7 +20,7 @@ export async function POST(req:Request){
  if(action==='submit'){
   const activity=findTrainingActivity(String(f.get('activity')??'')),id=f.get('request_id');
   if(!activity||!isUuid(id))return new Response(null,{status:400});
-  if(activity.route==='customer_success'&&!hasCustomerSuccessCourse(session.profile))return new Response(null,{status:403});
+  if(activity.route!=='common'&&!hasCustomerSuccessCourse(session.profile))return new Response(null,{status:403});
   const {data:catalog,error:catalogError}=await session.supabase.from('learning_activity_catalog').select('id').eq('content_key',activity.key).eq('active',true).single();
   if(catalogError||!catalog)return new Response(null,{status:409});
   const answers=activity.decisions.map((_,i)=>{const v=f.get('decision_'+i);return typeof v==='string'&&/^[0-9]$/.test(v)?Number(v):NaN;});
@@ -35,7 +36,9 @@ export async function POST(req:Request){
   ({error}=await admin.rpc('submit_training_practice',{p_actor:session.user.id,p_activity:catalog.id,p_request:id,p_org:org,p_draft:draft,p_scores:scores,p_assistance:assistance,p_answers:answers,
    p_auto_results:answers.map((v,i)=>v===activity.decisions[i].correct?1:0),p_reevaluation:reevaluation}));
  }else if(action==='diploma'){
-  ({error}=await admin.rpc('issue_training_route_diploma',{p_user:session.user.id,p_org:org}));
+  const route=String(f.get('route')??'customer_success');
+  if(route==='customer_success')({error}=await admin.rpc('issue_training_route_diploma',{p_user:session.user.id,p_org:org}));
+  else {if(!PROFESSIONAL_ROUTES.some(r=>r.key===route))return new Response(null,{status:400});({error}=await admin.rpc('issue_professional_route_diploma',{p_user:session.user.id,p_org:org,p_route:route}));}
  }else if(action==='position'){
   const target=String(f.get('user_id')??session.user.id);
   if(!isUuid(target))return new Response(null,{status:400});
@@ -56,5 +59,5 @@ export async function POST(req:Request){
  if(error&&['INSUFFICIENT_REVIEWERS','FLOW_PRIORITY_CONFLICT'].some(code=>error.message?.includes(code)))return Response.json({error:'APPROVAL_CONFIG_BLOCKED',detail:'Tu manager debe ajustar la prioridad del flujo o el mínimo de revisores disponibles antes de enviar.'},{status:409});
  if(error)return Response.json({error:'TRAINING_SAVE_FAILED',detail:'Revisa permisos, fecha, rúbrica o conflicto de versión.'},{status:409});
  const destination=action==='reinforce'?`/teams/${org}/person/${String(f.get('user_id'))}`:'/role-training';
- return Response.redirect(new URL(destination+'?result='+(action==='diploma'?'diploma':'saved')+(destination==='/role-training'&&org?'&organization_id='+org:''),req.url),303);
+ return Response.redirect(new URL(destination+'?result='+(action==='diploma'?'diploma':'saved')+(destination==='/role-training'&&org?'&organization_id='+org:'')+(destination==='/role-training'&&PROFESSIONAL_ROUTES.some(r=>r.key===f.get('route'))?'&route='+String(f.get('route')):''),req.url),303);
 }

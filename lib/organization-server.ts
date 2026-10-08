@@ -28,7 +28,7 @@ export const accountNavigation = cache(async () => {
     ? ((
         await supabase
           .from("organization_memberships")
-          .select("organization_id,role,display_name,job_title")
+          .select("organization_id,role,display_name,job_title,can_brand")
           .eq("user_id", user.id)
           .eq("active", true)
       ).data ?? [])
@@ -37,7 +37,7 @@ export const accountNavigation = cache(async () => {
     ? ((
         await supabase
           .from("organizations")
-          .select("id,name")
+          .select("id,name,logo_version,cover_version")
           .eq("active", true)
           .in(
             "id",
@@ -49,8 +49,12 @@ export const accountNavigation = cache(async () => {
     .map((m) => ({
       ...m,
       name: organizations.find((o) => o.id === m.organization_id)?.name,
+      logo_version: organizations.find((o) => o.id === m.organization_id)?.logo_version,
+      cover_version: organizations.find((o) => o.id === m.organization_id)?.cover_version,
     }))
     .filter((m) => m.name);
+  const grants = memberships.length ? (await supabase.from("organization_team_grants").select("organization_id,can_view,can_invite").eq("user_id",user.id)).data ?? [] : [];
+  for(const choice of choices){Object.assign(choice,{can_invite:grants.some(g=>g.organization_id===choice.organization_id&&g.can_invite),can_view_teams:grants.some(g=>g.organization_id===choice.organization_id&&g.can_view)});}
   const selected = (await cookies()).get("codezero_organization")?.value;
   return {
     user,
@@ -91,7 +95,13 @@ export async function organizationView(
     .eq("user_id", user.id)
     .eq("active", true)
     .maybeSingle();
-  if (!own || !allowed.includes(own.role)) return null;
+  if (!own) return null;
+  if(!allowed.includes(own.role)) {
+    // Read-only team oversight is a separate permission, never organization administration.
+    if(allowed.includes("learner") || !allowed.includes("manager") || allowed.includes("owner")&&!allowed.includes("supervisor"))return null;
+    const {data:grants,error:grantError}=await supabase.from("organization_team_grants").select("team_id").eq("organization_id",org).eq("user_id",user.id).eq("can_view",true).limit(1);
+    if(grantError||!grants?.length)return null;
+  }
   const { data: organization } = await supabase
     .from("organizations")
     .select("id,name")

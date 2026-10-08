@@ -1,3 +1,4 @@
+import {effectiveLearningPlan} from "../../../../lib/company-learning-server";
 import LearningCompanion from "../../../components/learning-companion";
 import StudyGuide from "../../../components/study-guide";
 import LocalizedContent from "../../../components/localization/server";
@@ -47,7 +48,7 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
     .eq("id", user.id)
     .single();
 
-  if (!isLevelIncludedInPlan(levelNumber, profile?.plan_name ?? "free", profile?.role)) {
+  if (!isLevelIncludedInPlan(levelNumber, await effectiveLearningPlan(user.id,profile?.plan_name ?? "free"), profile?.role)) {
     redirect("/pricing");
   }
 
