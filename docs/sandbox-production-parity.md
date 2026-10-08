@@ -1,0 +1,15 @@
+# Sandbox y producción · revisión del 7 de octubre de 2026
+
+Isaac aprobó avanzar con las validaciones pendientes y pidió publicar las adiciones y comprobar diferencias. La aprobación habilita el trabajo; no acredita haber ejecutado sesiones reales, pruebas con alumnos o lectores físicos.
+
+La rama `sandbox/role-training-phases-0-1` está incluida como padre del commit productivo `ca0462f96b5fa05d943281599e8daaaf28903760`: cero commits por delante y uno por detrás. Vercel confirmó READY y el dominio productivo asignado a ese mismo SHA. El árbol local de la entrega coincide exactamente con el árbol publicado `85b627b9f4393792d5d65ae0fca4228668dfbb0e`.
+
+Se comparó el esquema público de ambos proyectos: sandbox tiene 47 tablas y producción 54; ninguna tabla ni firma de función del sandbox falta en producción. Ambos tienen 53 actividades y 16 perfiles. Catálogo y configuración semántica de perfiles (pesos, niveles esperados, versión) coinciden por hash; las fechas de creación de cada entorno son distintas y no se copian. Las migraciones usan versiones diferentes porque producción recibió consolidaciones compatibles: no repetir bootstrap ni DDL sandbox por diferencia de nombre.
+
+La rama histórica `codex/career-guidance-phase-0` diverge por integración de archivos, sin merge de su historial. Sus motores, datos y pruebas educativas están incorporados con blobs idénticos; las pantallas vigentes contienen adaptación de diseño e idiomas. No reemplazar esas pantallas por las antiguas.
+
+Sí se detectó una diferencia pendiente: workflow gratuito de seguridad, reglas/fixtures y dependencias fijadas de Semgrep/detect-secrets. Se recuperan como una adición; el scanner de secretos vigente se conserva. CodeQL queda manual según la sustitución previamente autorizada. No se cambia comportamiento de la aplicación, esquemas, datos, precios o Auth. La nota antigua CAREER_GUIDANCE_PHASE_0.md conserva estados históricos en su rama y no se copia como estado vigente.
+
+Validación local de la recuperación: seis reglas y seis fixtures aprobados; 209 archivos TS/TSX analizados sin hallazgos; auditoría npm de todas las severidades sin vulnerabilidades; 181 pruebas, TypeScript y build aprobados. El scanner detectó el placeholder sintético literal del fixture HTTP; se revisó y agregó únicamente su hash exacto, tipo y archivo a la lista existente, sin exceptuar archivos completos o hallazgos futuros. Scanner limpio y control negativo aprobados: bloquea una credencial sintética ajena a la lista sin mostrar su valor, y se elimina el fixture temporal. El estado de CI remoto se verifica aparte y no se infiere de estas pruebas.
+
+Continúan pendientes como trabajo de validación, no como código publicable: sesiones Auth reales de operador/alumno, revisión visual/accesibilidad del nuevo piloto y calibración editorial con alumnos. Chromium no está instalado en este entorno y el intento de descarga anterior no terminó; no se afirma ejecución visual. Tampoco se ejecutaron lectores físicos o restauración cloud completa. Las otras seis rutas y liderazgo completo no están construidos en sandbox ni en producción; Tutor IA conserva su estado excluido.

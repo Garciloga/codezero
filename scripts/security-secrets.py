@@ -19,7 +19,8 @@ try:
 except (ValueError, KeyError):
     print("Invalid secret scanner report.", file=sys.stderr)
     sys.exit(2)
-# Reviewed literal password labels and curriculum headings only. Exact hashes,
+# Reviewed literal password labels, curriculum headings and one synthetic fixture
+# credential placeholder only. Exact hashes,
 # file and detector type; changed text or any other finding remains a failure.
 allowlist = json.loads((Path(__file__).parent / "localization-secret-allowlist.json").read_text())
 count = 0
