@@ -44,7 +44,7 @@ const nextConfig: NextConfig = {
       { source: "/dashboard/:path*", headers: privateHeaders },
       { source: "/learn/:path*", headers: privateHeaders },
       { source: "/profile/:path*", headers: privateHeaders },
-      ...["practice", "modules", "teams", "diplomas", "role-training"].map(path => ({ source: `/${path}/:path*`, headers: privateHeaders })),
+      ...["practice", "modules", "teams", "diplomas", "role-training", "community", "mentoring"].map(path => ({ source: `/${path}/:path*`, headers: privateHeaders })),
       { source: "/checkout/:path*", headers: privateHeaders },
       { source: "/tutor/:path*", headers: privateHeaders },
       { source: "/certificate/:path*", headers: privateHeaders },
@@ -63,3 +63,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+

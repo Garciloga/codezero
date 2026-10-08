@@ -457,6 +457,7 @@ export default async function TeamSection({
                       Abrir incorporación
                     </Link>
                     <form action="/api/company/manage" method="post"><input type="hidden" name="action" value="revoke"/><input type="hidden" name="organization_id" value={org}/><input type="hidden" name="invitation_id" value={i.id}/><button className="btn secondary">Revocar invitación</button></form>
+                    {i.email_status!=='queued'&&<form action="/api/company/manage" method="post"><input type="hidden" name="action" value="retry_invite"/><input type="hidden" name="organization_id" value={org}/><input type="hidden" name="invitation_id" value={i.id}/><button className="btn secondary">Reintentar correo</button></form>}
                   </li>
                 ))}
               </ul>
@@ -528,3 +529,4 @@ export default async function TeamSection({
     </LocalizedContent>
   );
 }
+

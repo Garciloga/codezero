@@ -19,7 +19,7 @@ export function authoredStrings(file,source){
  }visit(tree);return [...found].filter(s=>s&&s!=='·');
 }
 export function audit(root='.'){
- const locales=['en','pt','fr'];const catalogs=Object.fromEntries(locales.map(lang=>[lang,Object.assign({},...['ui','server','curriculum','extension'].map(kind=>JSON.parse(fs.readFileSync(path.join(root,`lib/localization/${lang}-${kind}.json`)))))]));
+ const locales=['en','pt','fr'];const catalogs=Object.fromEntries(locales.map(lang=>[lang,Object.assign({},...['ui','server','curriculum','extension','social'].map(kind=>JSON.parse(fs.readFileSync(path.join(root,`lib/localization/${lang}-${kind}.json`)))))]));
  const ignored=JSON.parse(fs.readFileSync(path.join(root,'scripts/localization-audit-exceptions.json')));
  const problems=[];let checked=0;
  function walk(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,entry.name);if(file.includes('/localization/'))continue;if(entry.isDirectory())walk(file);else if(/\.(tsx|ts)$/.test(file)){for(const s of authoredStrings(file,fs.readFileSync(file,'utf8'))){checked++;const relative=path.relative(root,file);if(ignored[relative]?.includes(s))continue;for(const lang of locales)if(!Object.hasOwn(catalogs[lang],s)||!catalogs[lang][s]?.trim())problems.push({file:relative,locale:lang,source:s});}}}}
@@ -35,3 +35,4 @@ if(process.argv[1]&&fileURLToPath(import.meta.url)===path.resolve(process.argv[1
  const result=audit();for(const x of result.problems)console.error(`${x.locale} ${x.file}: ${x.source.slice(0,120)}`);
  console.log(`Translation audit: ${result.checked} authored occurrences; ${result.problems.length} missing translations.`);if(result.problems.length)process.exitCode=1;
 }
+

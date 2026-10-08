@@ -23,14 +23,22 @@ export async function POST(req:Request){
  return NextResponse.redirect(new URL('/admin/companies?result='+(result.error?'failed':'saved'),process.env.NEXT_PUBLIC_APP_URL??req.url),303);
  }
  if(!isUuid(org))return new Response(null,{status:400});
- if(action!=='invite'&&!await companyContext(org))return new Response(null,{status:403});
+ if(!['invite','retry_invite'].includes(action)&&!await companyContext(org))return new Response(null,{status:403});
  const nullable=(key:string)=>{const v=String(form.get(key)??'');if(v&&!isUuid(v))throw Error('INVALID_ID');return v||null;};
  try{
+ if(action==='retry_invite'){
+ const invitation=nullable('invitation_id');if(!invitation)return new Response(null,{status:400});
+ const {data:row}=await admin.from('organization_invitations').select('id').eq('id',invitation).eq('organization_id',org).maybeSingle();if(!row)return new Response(null,{status:404});
+ const delivery=await deliverCompanyInvitation(invitation,session.user.id);
+ const path=['owner','admin'].includes(session.profile.role)?`/admin/companies/${org}/invite`:`/teams/${org}/invite`;
+ return NextResponse.redirect(new URL(`${path}?invitation=${invitation}&result=${delivery}`,process.env.NEXT_PUBLIC_APP_URL??req.url),303);
+ }
  if(action==='invite'){
  result=await admin.rpc('create_company_invitation',{p_org:org,p_actor:session.user.id,p_email:String(form.get('email')??'').trim().toLowerCase(),p_role:String(form.get('role')??'learner'),p_reports:nullable('reports_to'),p_team:nullable('team_id')});
  if(result.error)return Response.json({error:'INVITATION_FAILED',detail:'Comprueba permisos, contrato vigente, cupo disponible y correo.'},{status:409});
  const delivery=await deliverCompanyInvitation(result.data,session.user.id);
- return NextResponse.redirect(new URL(`/admin/companies/${org}/invite?invitation=${result.data}&result=${delivery}`,process.env.NEXT_PUBLIC_APP_URL??req.url),303);
+ const path=['owner','admin'].includes(session.profile.role)?`/admin/companies/${org}/invite`:`/teams/${org}/invite`;
+ return NextResponse.redirect(new URL(`${path}?invitation=${result.data}&result=${delivery}`,process.env.NEXT_PUBLIC_APP_URL??req.url),303);
  }
  if(action==='team')result=await admin.rpc('configure_company_team',{p_org:org,p_actor:session.user.id,p_team:nullable('team_id'),p_name:String(form.get('name')??'').trim(),p_user:nullable('user_id'),p_member:form.get('member')==='1',p_view:form.get('can_view')==='1',p_invite:form.get('can_invite')==='1'});
  else if(action==='revoke')result=await admin.rpc('revoke_company_invitation',{p_org:org,p_actor:session.user.id,p_invite:nullable('invitation_id')});
@@ -39,3 +47,4 @@ export async function POST(req:Request){
  }catch{return new Response(null,{status:400});}
  return NextResponse.redirect(new URL(`/teams/${org}/settings?result=${result.error?'failed':'saved'}`,process.env.NEXT_PUBLIC_APP_URL??req.url),303);
 }
+

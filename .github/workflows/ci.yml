@@ -41,6 +41,9 @@ jobs:
       - name: Company permissions, capacity and channels database checks
         run: CODEZERO_OWNER_SEATS_CHECK=1 node scripts/company-teams-db-check.mjs
 
+      - name: Community and mentoring permissions and booking checks
+        run: node scripts/social-workflows-db-check.mjs
+
       - name: Translation coverage
         run: node scripts/localization-audit.mjs
 
@@ -97,6 +100,11 @@ jobs:
           CODEZERO_BROWSER_ENGINE: ${{ matrix.engine }}
         run: node scripts/localization-browser-check.mjs
 
+      - name: Community and mentoring browser workflows
+        env:
+          CODEZERO_BROWSER_ENGINE: ${{ matrix.engine }}
+        run: node scripts/social-workflows-browser-check.mjs
+
       - name: Role-training sandbox browser flow
         if: matrix.engine == 'chromium'
         run: node scripts/role-training-browser-check.mjs
@@ -117,3 +125,4 @@ jobs:
       - name: Execute Python and SQL in isolated browser workers
         if: matrix.engine == 'chromium'
         run: node scripts/browser-practice-check.mjs
+
