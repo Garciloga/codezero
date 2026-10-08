@@ -6,7 +6,7 @@ html[data-design="vivo"] .vivo-sidebar,html[data-design="vivo"] .vivo-sidebar na
 html[data-design="vivo"] .vivo-sidebar nav a[aria-current="page"] {color:var(--vivo-selected-text,var(--vivo-sidebar))}
 html[data-design="vivo"] .vivo-avatar img {width:100%;height:100%;object-fit:cover;border-radius:inherit}
 html[data-design="vivo"] .vivo-avatar {overflow:hidden}
-html[data-design="vivo"][data-custom-palette="true"] .card {border:1px solid var(--borde)}
+html[data-design="vivo"][data-custom-palette="true"] .card {border:1px solid var(--borde) !important}
 html[data-design="vivo"][data-custom-palette="true"] input,html[data-design="vivo"][data-custom-palette="true"] textarea,html[data-design="vivo"][data-custom-palette="true"] select,html[data-design="vivo"][data-custom-palette="true"] fieldset,html[data-design="vivo"][data-custom-palette="true"] th,html[data-design="vivo"][data-custom-palette="true"] td {border-color:var(--borde) !important}
 html[data-design="vivo"][data-custom-palette="true"] .btn.secondary {border-color:var(--borde-fuerte)}
 html[data-design="vivo"][data-custom-palette="true"] .language-selector,html[data-design="vivo"][data-custom-palette="true"] .language-selector select {color:var(--vivo-text);background:var(--vivo-surface)}
