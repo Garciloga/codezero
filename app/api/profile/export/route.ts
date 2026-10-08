@@ -32,7 +32,7 @@ export async function GET() {
     usage,
   ] = await Promise.all([
     supabase.from("profiles")
-      .select("id,email,full_name,role,plan_name,status,billing_status,stripe_cancel_at_period_end,created_at,updated_at")
+      .select("id,email,full_name,role,plan_name,status,billing_status,stripe_cancel_at_period_end,created_at,updated_at,avatar_version")
       .eq("id", user.id)
       .maybeSingle(),
     supabase.from("progress")
@@ -76,7 +76,7 @@ export async function GET() {
   }
 
   const workspace = workspaceEnabled() ? await Promise.all([
-    supabase.from("user_preferences").select("mode,accent,updated_at").eq("user_id",user.id),
+    supabase.from("user_preferences").select("mode,accent,colors,updated_at").eq("user_id",user.id),
     supabase.from("private_practice_progress").select("progress,revision,updated_at").eq("user_id",user.id),
     supabase.from("addon_waitlist").select("addon_key,created_at").eq("user_id",user.id),
     supabase.from("issued_block_diplomas").select("id,level_number,learner_name,block_title,issued_at").eq("user_id",user.id),

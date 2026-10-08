@@ -4,7 +4,8 @@
   "cleanUrls": true,
   "git": {
     "deploymentEnabled": {
-      "sandbox/role-training-phases-0-1": false
+      "sandbox/role-training-phases-0-1": false,
+      "sandbox/account-personalization": false
     }
   }
 }

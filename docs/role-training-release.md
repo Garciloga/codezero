@@ -1,3 +1,7 @@
+## Validación posterior a la publicación inicial
+
+El cierre del PR #7 (`edfd964`) aprobó CI y seguridad: Chromium/Firefox/WebKit para navegador general, piloto alumno/manager en Chromium, reflow y axe WCAG. Los informes de la publicación inicial que siguen conservaron la limitación visual existente en esa fecha. Ese pendiente automático está resuelto; sesiones humanas reales, lectores físicos, calibración editorial y restauración cloud siguen pendientes. Referencias verificables y árbol publicado: `sandbox-production-parity.md`.
+
 # Publicación · formación por puesto y aprobación de proyectos
 
 Isaac autorizó «Pasa todo a producción» el 7 de octubre de 2026 a las 22:37 CDMX. Se publica todo el alcance previamente aprobado: matriz, tronco común, piloto CS y manager v1, más revisión de proyectos por supervisor/manager y flujos opcionales. No se activan rutas futuras ni Tutor IA, ni se modifica Stripe o precios. Capstones conservan Admin; práctica simulada sigue identificada como tal.
