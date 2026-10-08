@@ -7,7 +7,7 @@ function EvidenceReferences({records}:{records:CompetencyEvidence[]}){
 export default function CompetencyPanel({evidence,profile,org,userId,canAssign=false}:{evidence:CompetencyEvidence[];profile:JobProfile|null;org:string|null;userId:string;canAssign?:boolean}){
  const s=competencyProfile(evidence,profile);
  const errors=new Map<string,Set<string>>();for(const e of evidence)for(const error of e.critical_errors){if(!errors.has(error))errors.set(error,new Set());errors.get(error)!.add(e.independent_key);}
- return <section className="card" lang="es-MX" translate="no">
+ return <section className="card training-competency-panel" lang="es-MX" translate="no">
   <h2>Competencias por evidencia</h2><p role="note">{TRAINING_NOTICE}</p>
   <p>{profile?`Perfil esperado: ${profile.position_key} · versión ${profile.version}`:'Elige un puesto de aprendizaje para comparar brechas. No concede permisos de organización.'}</p>
   <div className="vivo-table-scroll"><table><caption>Niveles demostrados, separados de las calificaciones históricas</caption><thead><tr><th>Competencia</th><th>Nivel validado</th><th>Autoevaluación provisional</th><th>Esperado</th><th>Evidencias</th><th>Rúbrica ponderada</th><th>Tendencia 90 días</th></tr></thead><tbody>{s.competencies.map(c=><tr key={c.key}><th scope="row">{c.name}</th><td>{c.level} · {c.label}</td><td>{c.provisional>c.level?LEVEL_LABELS[c.provisional]:'—'}</td><td>{c.expected??'Sin perfil'}{c.weight&&` · ${({high:'Alto',medium:'Medio',low:'Bajo'})[c.weight]}`}</td><td>{c.count}</td><td>{c.weightedScore===null?"Sin datos":`${c.weightedScore}/4`}</td><td>{c.trend90===null?'Datos insuficientes':`${c.trend90>0?'+':''}${c.trend90} puntos de rúbrica`}</td></tr>)}</tbody></table></div>
