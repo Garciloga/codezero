@@ -1,3 +1,4 @@
+import {companyContext} from '../../../../lib/company-server';
 import {deliverCompanyInvitation} from "../../../../lib/company-invitation-delivery";
 import {NextResponse} from 'next/server';
 import {workspaceUser} from '../../../../lib/workspace-server';
@@ -22,6 +23,7 @@ export async function POST(req:Request){
  return NextResponse.redirect(new URL('/admin/companies?result='+(result.error?'failed':'saved'),process.env.NEXT_PUBLIC_APP_URL??req.url),303);
  }
  if(!isUuid(org))return new Response(null,{status:400});
+ if(action!=='invite'&&!await companyContext(org))return new Response(null,{status:403});
  const nullable=(key:string)=>{const v=String(form.get(key)??'');if(v&&!isUuid(v))throw Error('INVALID_ID');return v||null;};
  try{
  if(action==='invite'){

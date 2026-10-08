@@ -44,6 +44,7 @@ try {
  const provision=(owner,ref,seats)=>rpc("select public.provision_company_contract($1,$2,$3,$4,$5,'enterprise',now()+interval '1 year') id",[id(1),'Compañía '+ref,`persona${owner}@codezero.example.test`,ref,seats]);
  const org=(await provision(2,'contract-A',5)).rows[0].id;
  await db.exec(readFileSync('supabase/migrations/20261008071824_company_contract_indexes.sql','utf8'));
+ await db.exec(readFileSync('supabase/migrations/20261008073155_company_active_scope_guards.sql','utf8'));
  const other=(await provision(6,'contract-B',2)).rows[0].id;
  const invite=(actor,email,team=null,role='learner')=>rpc('select public.create_company_invitation($1,$2,$3,$4,null,$5) id',[org,id(actor),email,role,team]);
  const accept=(n,inv)=>rpc('select public.accept_workspace_invitation($1,$2,$3,$4)',[inv,id(n),`persona${n}@codezero.example.test`,`Persona ${n}`]);
@@ -163,6 +164,13 @@ try {
  assert.equal((await db.query("select visits from public.site_daily_metrics where page_key='home'")).rows[0].visits,2);
  await rejected(()=>rpc("select public.record_site_visit('arbitrary query with email')"));
  await rejected(()=>as('authenticated',id(3),()=>db.query('select * from public.site_daily_metrics')));
+ });
+ await check('deactivation revokes company tables and private images without relying on the page gate',async()=>{
+ await db.query('update public.organizations set active=false where id=$1',[org]);
+ for(const table of ['organization_contracts','organization_teams','organization_team_members','organization_team_grants','organization_invitations'])assert.equal((await as('authenticated',id(2),()=>db.query('select * from public.'+table+' where organization_id=$1',[org]))).rows.length,0,table);
+ assert.equal((await as('authenticated',id(3),()=>db.query("select * from storage.objects where bucket_id='company-brand'"))).rows.length,0);
+ await db.query('update public.organizations set active=true where id=$1',[org]);
+ await db.query("update public.profiles set status='suspended' where id=$1",[id(3)]);assert.equal((await as('authenticated',id(3),()=>db.query('select * from public.organization_teams'))).rows.length,0);
  });
  console.log(`PASS ${checks} company access/capacity PostgreSQL groups`);
 }finally{await db.close();}

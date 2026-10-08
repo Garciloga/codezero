@@ -22,7 +22,7 @@ Vercel no permite crear codezero-practice-engine en codezerov1 (403). CLI no tie
 
 ## Implementación y validación
 
-Cuatro migraciones nuevas, aplicadas en CodeZero Sandbox (PostgreSQL 17.11): company_teams_entitlements, company_messages_and_metrics, professional_routes_expansion y company_contract_indexes. En local pasan comprobaciones de cupo, delegación, visibilidad, reactivación y múltiples compañías; se prueba además el flujo real de Next con Auth/REST ficticios. Estas pruebas no sustituyen una sesión real de un cliente.
+Cinco migraciones nuevas, aplicadas en CodeZero Sandbox (PostgreSQL 17.11): company_teams_entitlements, company_messages_and_metrics, professional_routes_expansion company_contract_indexes y company_active_scope_guards. En local pasan comprobaciones de cupo, delegación, visibilidad, reactivación y múltiples compañías; se prueba además el flujo real de Next con Auth/REST ficticios. Estas pruebas no sustituyen una sesión real de un cliente.
 
 El piloto conserva sus 29 unidades y 24 integradores. Se añaden 7 rutas (operaciones, QA, datos/BI, producto, soluciones/integraciones, enablement y liderazgo), cada una con 20 unidades que progresan en 5 áreas, 8 episodios reutilizados de Faro, 4 role-plays, 3 proyectos, 1 capstone, 4 exámenes y 4 reevaluaciones. 188 h estimadas por ruta más 45 h de tronco común reutilizado; no son horas de video ni acreditaciones laborales. Comparten el historial, perfiles existentes, rúbricas, flujo de proyectos y certificados. Las otras rutas usan el perfil del puesto elegido para verificar competencias de peso Alto; no inventan otros puestos de afinidad.
 
