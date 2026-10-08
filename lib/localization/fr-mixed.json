@@ -138,7 +138,7 @@
   "Correlación": "Corrélation",
   "Hora del fallo": "Heure de l'échec",
   "Hipótesis": "Hypothèses",
-  "Redacción de secretos": "Masquage des secrets",
+  "Ocultar datos sensibles": "Masquer les données sensibles",
   "Reproducción": "Reproduction",
   "Población": "Population",
   "Siguiente validación": "Prochaine validation",
@@ -150,5 +150,7 @@
   "Límites del análisis": "Limites de l'analyse",
   "Evidencia de la llamada": "Preuves de l'appel",
   "Criterio de rúbrica": "Critère de la grille",
-  "Product Specialist": "Spécialiste produit"
+  "Product Specialist": "Spécialiste produit",
+  "Con guía": "Avec aide",
+  "Sin guía": "Sans aide"
 }

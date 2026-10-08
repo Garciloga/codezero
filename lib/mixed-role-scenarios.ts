@@ -13,7 +13,7 @@ export const TOOL_FIELDS:Record<string,string[]>={
  'Firma digital':['Versión','Firmantes','Autoridad de firma','Orden de firma','Pendientes'],
  'Hoja de cálculo':['Columnas de origen','Columnas de destino','Reglas de transformación','Validaciones'],
  'Video asíncrono':['Guion','Pasos','Advertencias','Comprobación final'],
- Observabilidad:['Correlación','Hora del fallo','Hechos observados','Hipótesis','Redacción de secretos'],
+ Observabilidad:['Correlación','Hora del fallo','Hechos observados','Hipótesis','Ocultar datos sensibles'],
  'Gestión de incidencias':['Resumen','Esperado y observado','Reproducción','Responsable','Estado confirmado'],
  'Gestión de feedback':['Problema','Población','Evidencia','Prioridad','Estado'],
  Prototipos:['Flujo elegido','Brecha atendida','Criterios de aceptación','Siguiente validación'],

@@ -138,7 +138,7 @@
   "Correlación": "Correlação",
   "Hora del fallo": "Horário da falha",
   "Hipótesis": "Hipóteses",
-  "Redacción de secretos": "Ocultação de segredos",
+  "Ocultar datos sensibles": "Ocultar dados sensíveis",
   "Reproducción": "Reprodução",
   "Población": "População",
   "Siguiente validación": "Próxima validação",
@@ -150,5 +150,7 @@
   "Límites del análisis": "Limites da análise",
   "Evidencia de la llamada": "Evidência da chamada",
   "Criterio de rúbrica": "Critério da rubrica",
-  "Product Specialist": "Especialista de Produto"
+  "Product Specialist": "Especialista de Produto",
+  "Con guía": "Com orientação",
+  "Sin guía": "Sem orientação"
 }

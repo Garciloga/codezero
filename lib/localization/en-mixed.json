@@ -138,7 +138,7 @@
   "Correlación": "Correlation",
   "Hora del fallo": "Failure time",
   "Hipótesis": "Hypotheses",
-  "Redacción de secretos": "Secret redaction",
+  "Ocultar datos sensibles": "Hide sensitive data",
   "Reproducción": "Reproduction",
   "Población": "Population",
   "Siguiente validación": "Next validation",
@@ -150,5 +150,7 @@
   "Límites del análisis": "Analysis limitations",
   "Evidencia de la llamada": "Call evidence",
   "Criterio de rúbrica": "Rubric criterion",
-  "Product Specialist": "Product Specialist"
+  "Product Specialist": "Product Specialist",
+  "Con guía": "Guided",
+  "Sin guía": "Independent"
 }
