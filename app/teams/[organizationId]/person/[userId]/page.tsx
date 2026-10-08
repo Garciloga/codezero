@@ -29,7 +29,7 @@ export default async function PersonPage({
       <main className="wrap">
         <h1>Ficha de aprendizaje</h1>
         <PersonCard org={organizationId} person={person} />
-        {training&&<><section className="card"><h2>Perfil del puesto para aprendizaje</h2><form action="/api/role-training" method="post"><input type="hidden" name="action" value="position"/><input type="hidden" name="organization_id" value={organizationId}/><input type="hidden" name="user_id" value={userId}/><label>Puesto<select name="position" defaultValue={training.profile?.position_key??''} required><option value="" disabled>Elige un puesto</option>{Object.entries(ROLE_WORKFLOWS).map(([key,r])=><option key={key} value={key}>{r.title}</option>)}</select></label><button className="btn">Guardar perfil de aprendizaje</button></form></section><CompetencyPanel evidence={training.evidence} profile={training.profile} org={organizationId} userId={userId} canAssign={true}/>
+        {training&&<><section className="card"><h2>Perfil del puesto para aprendizaje</h2><form action="/api/role-training" method="post"><input type="hidden" name="action" value="position"/><input type="hidden" name="organization_id" value={organizationId}/><input type="hidden" name="user_id" value={userId}/><label>Puesto<select name="position" defaultValue={training.profile?.position_key??''} required><option value="" disabled>Elige un puesto</option>{Object.entries(ROLE_WORKFLOWS).map(([key,r])=><option key={key} value={key}>{r.title}</option>)}{training.profiles.some(p=>p.position_key==='product_specialist')&&<option value="product_specialist">Product Specialist</option>}</select></label><button className="btn">Guardar perfil de aprendizaje</button></form></section><CompetencyPanel evidence={training.evidence} profile={training.profile} org={organizationId} userId={userId} canAssign={true}/>
          {reinforcement?.error?<p>No pudimos cargar los refuerzos.</p>:<ReinforcementPanel records={reinforcement?.data??[]}/>}</>}
         <section className="card">
           <h2>Competencias</h2>
@@ -39,3 +39,4 @@ export default async function PersonPage({
     </LocalizedContent>
   );
 }
+

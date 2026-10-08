@@ -56,7 +56,7 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
-      ...(codeRuntime ? ["/practice-preview", "/practice"].map(source => ({ source, headers: [{ key: "Content-Security-Policy",
+      ...(codeRuntime ? ["/practice-preview", "/practice", "/role-training/mixed"].map(source => ({ source, headers: [{ key: "Content-Security-Policy",
         value: securityHeaders.find(header => header.key === "Content-Security-Policy")!.value + `; frame-src 'self' ${codeRuntime.runtimeOrigin}` }] })) : []),
     ];
   },
