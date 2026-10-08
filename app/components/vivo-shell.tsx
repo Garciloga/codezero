@@ -98,6 +98,8 @@ export default function VivoShell({
         ["Mis competencias", "/competencies", "learning"],
         ...(roleTrainingActive?[["Formación por puesto", "/role-training"+(org?"?organization_id="+org.organization_id:""), "learning"],...(org?[["Revisar proyectos", "/role-training/review?organization_id="+org.organization_id, "task"]]:[])]:[]),
         ["Mis certificados", "/certificates", "certificate"],
+        ["Comunidad", "/community", "people"],
+        ["Mentorías", "/mentoring", "people"],
       ],
     },
     ...(team
@@ -227,3 +229,4 @@ export default function VivoShell({
     </div>
   );
 }
+

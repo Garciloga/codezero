@@ -112,12 +112,17 @@ try {
  await db.query("update public.organization_contracts set valid_until=now()-interval '1 second' where organization_id=$1",[org]);await rejected(()=>invite(2,'persona8@codezero.example.test'));
  await db.query("update public.organization_contracts set valid_until=now()+interval '1 year' where organization_id=$1",[org]);
  });
+ await db.exec(readFileSync('supabase/migrations/20261008130141_company_invitation_retry_controls.sql','utf8'));
  await check('mail claims serialize retries and refuse unknown responses beyond the provider idempotency window',async()=>{
  const inv=(await invite(2,'persona7@codezero.example.test',alpha)).rows[0].id;
  const claim=()=>rpc('select public.claim_company_invitation_email($1,$2) ok',[inv,id(2)]);
  assert.equal((await claim()).rows[0].ok,true);assert.equal((await claim()).rows[0].ok,false);
- await db.query("update public.organization_invitations set email_status='failed',email_started_at=now()-interval '61 seconds' where id=$1",[inv]);assert.equal((await claim()).rows[0].ok,true);
+ await db.query("update public.organization_invitations set email_status='failed',email_started_at=now()-interval '61 seconds',email_claimed_at=now()-interval '61 seconds' where id=$1",[inv]);assert.equal((await claim()).rows[0].ok,true);
+ assert.equal((await claim()).rows[0].ok,false,'a retry receives a fresh exclusive claim');
  await db.query("update public.organization_invitations set email_status='failed',email_started_at=now()-interval '24 hours' where id=$1",[inv]);assert.equal((await claim()).rows[0].ok,false);
+ await db.query("update public.organization_invitations set email_status='failed',email_started_at=now()-interval '61 seconds' where id=$1",[inv]);
+ for(let attempt=3;attempt<=5;attempt++){await db.query("update public.organization_invitations set email_claimed_at=now()-interval '61 seconds' where id=$1",[inv]);assert.equal((await claim()).rows[0].ok,true);}
+ await db.query("update public.organization_invitations set email_claimed_at=now()-interval '61 seconds' where id=$1",[inv]);assert.equal((await claim()).rows[0].ok,false,'five provider attempts is the hard ceiling');
  });
  await check('brand remains private to company; editing is independently delegated',async()=>{
  await db.query("insert into storage.objects(bucket_id,name) values('company-brand',$1)",[org+'/logo-'+id(100)+'.webp']);
@@ -232,4 +237,5 @@ try {
 
  console.log(`PASS ${checks} company access/capacity PostgreSQL groups`);
 }finally{await db.close();}
+
 

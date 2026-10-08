@@ -94,7 +94,7 @@ export default async function Admin({ searchParams }: PageProps) {
       <div className="nav">
         <div>
           <span className="pill">OWNER / ADMIN</span>
-          <h1>Garciloga Control Center</h1><p><a className="btn secondary" href="/customer-success/review">Revisar proyectos Customer Success</a></p>
+          <p><a className="btn secondary" href="/admin/social">Administrar comunidad y mentorías</a></p><h1>Garciloga Control Center</h1><p><a className="btn secondary" href="/customer-success/review">Revisar proyectos Customer Success</a></p>
           {roleTrainingEnabled()&&<p><a className="btn secondary" href="/role-training/review">Revisar proyectos y capstones · piloto por puesto</a>{operatorRole==='owner'&&<> · <a href="/role-training/profiles">Configurar perfiles de competencia</a></>}</p>}
           <p className="muted">Usuarios, planes, acceso y actividad académica.</p>
         </div>
@@ -378,5 +378,6 @@ export default async function Admin({ searchParams }: PageProps) {
     </main></LocalizedContent>
   );
 }
+
 
 

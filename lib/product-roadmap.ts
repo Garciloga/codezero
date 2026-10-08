@@ -18,7 +18,8 @@ export const RELEASED_PRACTICE_ROUTES: Record<string,string> = {
  route_product:'product', route_management:'leadership',
  route_solutions_integrations:'solutions', route_enablement:'enablement',
 };
-export function pendingProductRoadmap({companyMessaging,codePractice,roleTraining}:{companyMessaging:boolean;codePractice:boolean;roleTraining:boolean}){
- return PRODUCT_ROADMAP.filter(item=>!(companyMessaging&&item.key==='enterprise_communicator')&&!(codePractice&&item.key==='executable_code')&&!(roleTraining&&(item.key==='leadership_courses'||Object.hasOwn(RELEASED_PRACTICE_ROUTES,item.key))));
+export function pendingProductRoadmap({companyMessaging,codePractice,roleTraining,community=false}:{companyMessaging:boolean;codePractice:boolean;roleTraining:boolean;community?:boolean}){
+ return PRODUCT_ROADMAP.filter(item=>!(community&&item.key==='learner_community')&&!(companyMessaging&&item.key==='enterprise_communicator')&&!(codePractice&&item.key==='executable_code')&&!(roleTraining&&(item.key==='leadership_courses'||Object.hasOwn(RELEASED_PRACTICE_ROUTES,item.key))));
 }
+
 

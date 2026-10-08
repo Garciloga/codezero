@@ -41,3 +41,12 @@ button,.btn,summary { min-height: 44px; }
 /* Evidence and reinforcement links need usable touch targets in the pilot. */
 .training-competency-panel li > a { display: inline-flex; align-items: center; min-height: 44px; min-width: 24px; max-width: 100%; padding: 4px 2px; }
 
+
+/* Plain user content stays inside responsive cards and never becomes HTML. */
+.social-stack{display:grid;gap:1rem;margin-block:1.5rem;min-width:0}
+.social-post header{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;justify-content:space-between}
+.social-body{white-space:pre-wrap;overflow-wrap:anywhere}
+.social-stack form,.social-stack article,.wrap>details{min-width:0}
+.social-stack form+form{margin-block-start:1rem}
+.social-stack form button{margin:.35rem .35rem .35rem 0;max-width:100%;white-space:normal}
+.social-stack textarea,.social-stack input,.wrap>details textarea{max-width:100%;box-sizing:border-box}
