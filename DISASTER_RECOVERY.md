@@ -8,7 +8,7 @@ Este documento define cómo recuperar CodeZero ante fallos graves sin incluir cr
 
 Producción: `kwfzhpapvpdatdfwhouf`, PostgreSQL 17.11. El sandbox cloud anterior fue eliminado; las pruebas usan PostgreSQL local y sesiones ficticias aisladas. No se ha creado un proyecto adicional.
 
-Se guardó `supabase/baselines/20261008-production-manifest.json`: 65 migraciones observadas, sus checksums de declaraciones, inventario de tablas/RLS y SHA-256 de los archivos fuente. `scripts/migration-baseline-check.mjs` comprueba su integridad. Este manifiesto conserva la base de implementación; no contiene datos personales ni sustituye un respaldo completo.
+Se guardó `supabase/baselines/20261008-production-manifest.json`: 65 migraciones observadas, sus checksums de declaraciones, inventario de tablas/RLS y SHA-256 de los archivos fuente, normalizados a UTF-8/LF y un salto de línea final. Esta normalización evita diferencias de descarga en líneas vacías finales; cualquier cambio en el contenido sigue fallando. `scripts/migration-baseline-check.mjs` comprueba su integridad. Este manifiesto conserva la base de implementación; no contiene datos personales ni sustituye un respaldo completo.
 
 El respaldo completo cloud y su restauración siguen **sin confirmarse**. La conexión disponible no expone inventario/descarga de backups ni una conexión PostgreSQL protegida para `pg_dump`. No hay destino privado externo confirmado ni exportación de binarios de Storage. No se declaran backup reciente, restauración cloud, RPO o RTO cumplidos. Antes de una liberación que exija ese respaldo, obtener evidencia verificable o completar el procedimiento privado descrito abajo; nunca subir dumps con datos a Git.
 

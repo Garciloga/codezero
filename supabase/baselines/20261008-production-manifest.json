@@ -782,11 +782,11 @@
   "local_files": [
     {
       "path": "supabase/migrations/001_initial.sql",
-      "sha256": "a456b5a1b858b5db17200c349c5a044f262ca3c1318dc9a9477fc144e8a5ffe5"
+      "sha256": "c984a75389d32cd162c5d19007b82ee00a1109a751c125f82f885f4fecfe5ccf"
     },
     {
       "path": "supabase/migrations/002_learning_schema.sql",
-      "sha256": "a3121d8c86b65c2dd62d50b197d319d33bccdeed466a29fc694366d288d42a03"
+      "sha256": "9009d49952245f271a383feeb0d26db8bd94376f449423744398d2451b02e2a6"
     },
     {
       "path": "supabase/migrations/003_curriculum_seed.sql",
@@ -794,215 +794,215 @@
     },
     {
       "path": "supabase/migrations/004_stripe_webhook_events.sql",
-      "sha256": "46d40fa76ffe94a8e26b4c4463358c33fa06c7fda04b167cdc008fffe5e5ca75"
+      "sha256": "1a0c5275dcd0005841eb8d6b9001ba208fa2375c48c6228988d0887e5067fffb"
     },
     {
       "path": "supabase/migrations/005_billing_status_and_quota_security.sql",
-      "sha256": "5ee14f29e63f83aa4528e83c27e7a5021a6a094f8eac3e702b7fd2f6dedddcc7"
+      "sha256": "59a261a478d098249e72193d15a6d50c114b0f6e2e271d4b1c37d9249ee0a5b1"
     },
     {
       "path": "supabase/migrations/006_align_free_plan_access.sql",
-      "sha256": "669d9658bed9849af409ba006dccb4316057003df0c0b6a4691996c4f01ad0f9"
+      "sha256": "0cd2dc59bb6b14d6b9728cc4579e302811755aec707c6c56b1e2504a50ea450e"
     },
     {
       "path": "supabase/migrations/007_optimize_rls_auth_uid.sql",
-      "sha256": "6b40dabed720655d9375bc295bd3ab76721e199a49f1f640c96d30860d819bc7"
+      "sha256": "6d458f9f9cb501725fd6599d1f8cad34249b501dba5273a2fc3ddfd7cb39e198"
     },
     {
       "path": "supabase/migrations/008_lock_learning_writes_to_server.sql",
-      "sha256": "c75634c059580f9b6a9ef3b0f128513d08c0cdc924e1471341b0ced3efeee343"
+      "sha256": "1c177b364c32a2bad4ae5b0e7a87caed4fe40e8c420aa6757c053745632f7286"
     },
     {
       "path": "supabase/migrations/009_harden_stripe_webhook_events.sql",
-      "sha256": "fa1e405b69a9880a9acd7734869e797e3492c1387ce225666e7179f95e7113d4"
+      "sha256": "e5d1e7b2a53529c30dea733faf4ad51f9d021afe15b9dda5c27bc51fb2b85d62"
     },
     {
       "path": "supabase/migrations/010_curriculum_quality_pass.sql",
-      "sha256": "8f03cdce317c3e883ef71b8159ea94b2cf5ff04101f0ddfa9b8fd6b2849cebe5"
+      "sha256": "15be88d85ceaf8241d19e14d2ccd6dacd77d085fa3c0ba3ef1c9d0278ebca5db"
     },
     {
       "path": "supabase/migrations/011_integrity_constraints.sql",
-      "sha256": "ac8a2f093a60b907213313602b334869453505bfc97c4e57131396709a1b0470"
+      "sha256": "d8837a0dcc44af5817fd898d56ecceb4b220bae3a0149857a05bbc5e977396e9"
     },
     {
       "path": "supabase/migrations/012_curriculum_guided_practice.sql",
-      "sha256": "a5c559ddccf4feca1ed17ea5677ea3a6f051b9c2cb650d9fe4137c1013f27d65"
+      "sha256": "bc032a2d7b3b2ffd4b654417e4bf280c84e965a53787a2e8548873278f739d67"
     },
     {
       "path": "supabase/migrations/013_expand_exam_bank.sql",
-      "sha256": "29320a329333c0b48e4134e808b8b9553ead26cae65fe56e2423eb2190d781a4"
+      "sha256": "70e11c9cd67a63aabffe77f633859092e69177d68816bb85371eaa3617af612e"
     },
     {
       "path": "supabase/migrations/014_repair_scenario_exam_solutions.sql",
-      "sha256": "16ccba0613f41316b2a8e4e9f674262df2b23bece67afc69c466e7e835e4d957"
+      "sha256": "f6b9fb4ccd634e96f89067a26aa78efb92b16a2d6157f7e3beec9b2215474bad"
     },
     {
       "path": "supabase/migrations/015_fix_server_quota_rpc.sql",
-      "sha256": "f6eefa9cc75e38c5d47b5ab8aceae7773f87b080a54e81969b358b34a4abb2b2"
+      "sha256": "5066cf2b8b1c21420265466d6a5ad1798a1ab6c7cfdf5ec30588d4d955105287"
     },
     {
       "path": "supabase/migrations/016_assessment_integrity_constraints.sql",
-      "sha256": "5b84427af9c9265d8bbea813bf011adfb3cc7e93b906c0029ae647100400496d"
+      "sha256": "c2cfb39940026d98da7469331ee6a58bc9c2d26862e78502f5f96081c0229bd2"
     },
     {
       "path": "supabase/migrations/018_level_one_editorial_examples_a.sql",
-      "sha256": "e9d56935600170dc1d5b53b8d2767edcdc995c82a88b0bfd66d76d1c505a2812"
+      "sha256": "5c04dce8568a9c4113581f4f3ba0bf5dc0da6ecb5c50ee0edfcf97a2be956f2f"
     },
     {
       "path": "supabase/migrations/019_level_one_editorial_examples_b.sql",
-      "sha256": "03d1fc32554ed4f9a7799789e096ee514d57d328a6a9b5ebf2538d8b3fa43082"
+      "sha256": "368fcf7e18914e4f2be1165385f939c997c2ce0f29eb94b01f44cc6a234bb64c"
     },
     {
       "path": "supabase/migrations/020_level_one_second_exercises.sql",
-      "sha256": "7bd8ac74fc30b35bfbb60301787f26c7a035b1366a6adab918f0e907530de18e"
+      "sha256": "113cf8de0a9b3264b611956784f0c5be9e864bc38f1fe19bbbb1014283d48cf6"
     },
     {
       "path": "supabase/migrations/021_enforce_plan_read_entitlements.sql",
-      "sha256": "422614724f826d3f846293cc844971e971d80ca897dc488ecd5cbcd27d3a25f1"
+      "sha256": "bb19f30284293fe70d04776c5543d701dc9bc7b1bca4d3b35405c2581cc115d4"
     },
     {
       "path": "supabase/migrations/022_tighten_sensitive_privileges.sql",
-      "sha256": "11322fe5c1543a6111e3df91bf9657eabc43d5a8b5701be180e2986eebbafaa5"
+      "sha256": "84dc981a00fd208cb7c857ba9b4a647c7224a7dc0ff2d8b589d67882eca8dfb6"
     },
     {
       "path": "supabase/migrations/023_remove_exposed_rls_helper.sql",
-      "sha256": "f4ce25178b8ae25887f5d81efb95af432c48ea8518cce8d7bcab4127d917d362"
+      "sha256": "b13b6324732b6b98c1ccb9806ef3f104081a75300bc85bdf67e62b3c313448a3"
     },
     {
       "path": "supabase/migrations/024_remove_duplicate_level_unique.sql",
-      "sha256": "f0ed33c2be480a4cd9a1f10c6be4607388da252d7859650056662ce254e06a4c"
+      "sha256": "70163c3feec2c735387ae87f14235cc2e708e91cf74de5260e86c1e678c63928"
     },
     {
       "path": "supabase/migrations/025_explicit_server_only_rls.sql",
-      "sha256": "b62e5bb1b97740ca6b85a39110751ca4ce4745efeef76d793a171fa6782f6067"
+      "sha256": "33b9f22e536c883220561484b85d1dfd19ffb5abb3a73975c4c8abed9c18d696"
     },
     {
       "path": "supabase/migrations/026_add_admin_audit_log.sql",
-      "sha256": "cd705c3522768ddbcf3d768a159cec36d1e0ebf199978da240fccd52eeaeec57"
+      "sha256": "ef657fa9349f54c6348c13db9129e3836548d0024e73f86c512939f453a7d08c"
     },
     {
       "path": "supabase/migrations/027_add_second_exercises_levels_2_3.sql",
-      "sha256": "9c0c98f364ab87971f57b3e1ea818d7beb40aac642861096f0c04e282446b443"
+      "sha256": "ede97dc12bfe6345a865544de60de17fb73ed57eb39cee4ddb8af5427548c416"
     },
     {
       "path": "supabase/migrations/028_add_second_exercises_levels_4_5.sql",
-      "sha256": "02a98381ccebc44ea805fbb6ee2795495d7ba3b309d48ec682dcfbeb62c9a329"
+      "sha256": "64885b53dfe5d0a52c578d3104e4629d2791da1ca7c2e79942e7a92b604409c4"
     },
     {
       "path": "supabase/migrations/029_add_second_exercises_levels_6_7.sql",
-      "sha256": "8eb14a811da2c48808f619fbd4d1e1d8d648e0457cae9df9ce8f61abf8f263ce"
+      "sha256": "9addb109e5ab61cbf131374b20c1fd34c98d2bd08fedc28579b43dd469b4d4fa"
     },
     {
       "path": "supabase/migrations/030_add_second_exercises_levels_8_9.sql",
-      "sha256": "42f0d0771bc1a7e4c6c0be5d95f7221862f7874add2c09123e4b12d7bbd13331"
+      "sha256": "9ce952de44a26635179d3b45484b1d1d1e9753820e2b89f55959d65c506bd6b7"
     },
     {
       "path": "supabase/migrations/031_add_second_exercises_levels_10_11.sql",
-      "sha256": "1c6441dffee6c4ac1583e44aa0af185ef351d6c7ee455a296f46ec6f6d10a0d8"
+      "sha256": "77c95982882e4dfd1623461a8a8c270b750ea936be6619c28f948cda13083ffe"
     },
     {
       "path": "supabase/migrations/032_add_second_exercises_levels_12_13.sql",
-      "sha256": "86f8df59a4c67669843a037dc098e3d337abfe4348b6361c230024b2c356d99e"
+      "sha256": "7dc4d17b3901a0f40c8c461fd2341743e00a8eadc68fcaf410982ae1167d4785"
     },
     {
       "path": "supabase/migrations/033_add_second_exercises_levels_14_15.sql",
-      "sha256": "7b6246a9ebe8b7103af6395a06169ed453ef698a94d81d14e80dee3ea8936a51"
+      "sha256": "006ff2fabcad7e13df43a3e9d1329b77fef7646cc09219a549c8309512f55622"
     },
     {
       "path": "supabase/migrations/034_add_api_rate_limits.sql",
-      "sha256": "7a058b41e58923f515f1824cc136c976bf080672991a01cc114caa4289a59983"
+      "sha256": "405a15532575cfbc2d5036b4c51238783e375177f973f6a268a8695191668406"
     },
     {
       "path": "supabase/migrations/035_editorial_cases_levels_2_5.sql",
-      "sha256": "df90b00d22ed7181301799aacf6b49ea02b67222c1c87805ee1622e712f92300"
+      "sha256": "e81e32f83643a51e142e96ae47b57884df6450aac79c57295e20b27732bf0a27"
     },
     {
       "path": "supabase/migrations/036_editorial_cases_levels_6_9.sql",
-      "sha256": "bf50b2eb3817913597a9ab1ddf9bb0658485f4483651956b9d1966182d465b89"
+      "sha256": "fb84d000a75cdba469e2683e12988c6fc4faeecd7e62642cf8984d9516098d97"
     },
     {
       "path": "supabase/migrations/037_editorial_cases_levels_10_12.sql",
-      "sha256": "2263c7701c2980493dd3301f29eb5c009cd7508d8b76dae6be071d8eda15027a"
+      "sha256": "bca08c6b350e2738f69a8bc1a12ac623278f11faad1d61ad6ee19c3b39edd428"
     },
     {
       "path": "supabase/migrations/038_editorial_cases_levels_13_15.sql",
-      "sha256": "58f1b47d4a3228e06f1ca187b316f490192d22ff8a537a3409c261c9d615bd5e"
+      "sha256": "30ad274c85ab2c7739bb89a36f57cf88751965e9e0378a558bce093b82125bfd"
     },
     {
       "path": "supabase/migrations/039_add_ai_tutor_addon.sql",
-      "sha256": "7a4a760ec95d0eb75f2c1634ccf276c9507d42ef9dd883c24713ab395c3bc4a2"
+      "sha256": "8fd6e76c36fa1a424e06017d221ecb2d9cb7a48dcdc4f9a5eee15ff788a2fe0e"
     },
     {
       "path": "supabase/migrations/039_deepen_capstone_requirements.sql",
-      "sha256": "85547ef076b01363bc13b58aa889223d77609c8efcad3179b32aa7a7e367674b"
+      "sha256": "fa9b63e362592213fc8ef831c3286c5956ef0c7878dfc07a02434a21c7b0bcc7"
     },
     {
       "path": "supabase/migrations/040_add_support_system_s1.sql",
-      "sha256": "a654cf7e2e4ecc085039fff78bf4fe4700154dbf4f8ad197a45f010e4e0daa93"
+      "sha256": "6a8bcdb357e777d63480833589c180c58331fe6da9758b599714379b5291a602"
     },
     {
       "path": "supabase/migrations/041_support_indexes_and_addon_rls_cleanup.sql",
-      "sha256": "85dbd02b0f8d9ef446d7defd6b11075d12eb05e8d31033c98337503c85de4494"
+      "sha256": "5d8b8a325eca87509255736c34aa697013135dcec4f3a101e66ea27212de0759"
     },
     {
       "path": "supabase/migrations/20261007170319_production_workspace_activation.sql",
-      "sha256": "032feb919f6196468cfbfd5b59915ac8558741f98df2da2570e40f9a5e751656"
+      "sha256": "ce4065d8c01e32237338154599daf80b268ed75856aeed0fad95eda392819203"
     },
     {
       "path": "supabase/migrations/20261007174240_production_learning_integrations.sql",
-      "sha256": "86685c1eebc7497a188597e2bd8694abc2e4c96196cde050c9e91a072e74526b"
+      "sha256": "2e38ae01c3375afa9f664a3ac6d65779e1fa3d0898f6721823fceef4b8b13ec9"
     },
     {
       "path": "supabase/migrations/20261007184737_included_customer_success_course.sql",
-      "sha256": "dd00270915f9d6ca3fbee7d11a44b35ff9114e898ad776aa7c75d7f53b3a613e"
+      "sha256": "17d3d16649b3f7fcb50596d3cce1222953848cb2056334b0e0e5c0f7e954bab0"
     },
     {
       "path": "supabase/migrations/20261007204936_profile_registration_name.sql",
-      "sha256": "bf0447ad4be0ff0957e47473e3e81bb727d7896db18fa50f321b781202bc8715"
+      "sha256": "b140298b8fe51f3404dc4de5de40cfa09a9e8d0c8485099d4b838721065128ce"
     },
     {
       "path": "supabase/migrations/20261007213241_support_atomic_workflow.sql",
-      "sha256": "cea18b0b3b7450cd22b28359a5d39adcc9d9ca9d3f7881d3e7f4c46a75e441f4"
+      "sha256": "b33e60276039725ee9b6b3d8bf5226a3ac96fafd313e54bfeff15e8ede22c9ed"
     },
     {
       "path": "supabase/migrations/20261007222517_vivo_enterprise_workspace.sql",
-      "sha256": "cfdde289711fb0f2e323414e627df7bb4bdf6ba70210a2aae8dfe0eb5b46866b"
+      "sha256": "08855d6316ff61933968f81e97bd089e9e41fba260a2befd3735ae8384cddff2"
     },
     {
       "path": "supabase/migrations/20261007225000_support_backend_only_writes.sql",
-      "sha256": "26ed88a34602a95e673ecf519f7ae77a99dae9aac7d3684ef0fedfb07015e707"
+      "sha256": "08da5fadd77bfedeba2f5156855ed143ea67ecf77b63360baedbec27aff978f7"
     },
     {
       "path": "supabase/migrations/20261008044128_production_role_training_and_project_approval.sql",
-      "sha256": "5450ac926734d7d4f02f835dba932c5486c4ce12e7b784b3637d30d94696ea2d"
+      "sha256": "e46258edd71eae9a3786ed0340f819e625a22ba7fb7b70d6a903ebd568ca2f4a"
     },
     {
       "path": "supabase/migrations/20261008053713_account_palette_and_profile_photos.sql",
-      "sha256": "7adf8acb34e5d201668fec1302d2d125b9b7400161136b8c59162964203aea3a"
+      "sha256": "7ed46d50ad9e32622dace6783a60310b16685b0b38b413fb1887334f24794468"
     },
     {
       "path": "supabase/migrations/20261008062034_company_teams_entitlements.sql",
-      "sha256": "9072bb0d09c023ab1ffdf95f967e0d665142a212cdff8c380ff3b86f04a31c4d"
+      "sha256": "872e4637864d00167c5d67720ae27abef4060895ce49e9c9e756f93f6a686845"
     },
     {
       "path": "supabase/migrations/20261008063418_company_messages_and_metrics.sql",
-      "sha256": "2ab9df0536a12a314cccb8f04bb4da2e63b1972c9e5ac2a24ead4a3d4234a67a"
+      "sha256": "392b11a2ac8a77f962932000fb14901ea0324833a4cb9f59c5f037d6aecf0aa3"
     },
     {
       "path": "supabase/migrations/20261008065441_professional_routes_expansion.sql",
-      "sha256": "267ea9acef725e65e03649708a7571ae0d6f2e22672b822769606af14611dad5"
+      "sha256": "456cc709c613c34665552d9b58acc61631630011275102e7af91540b096b5f53"
     },
     {
       "path": "supabase/migrations/20261008071824_company_contract_indexes.sql",
-      "sha256": "f96e66a0aca5a824d0ab5a77cda03280e33aab4308024db803c2807bfb32fffc"
+      "sha256": "308ae5b4e8f59333212bbf38bd0b39c9ec52e063b42c6a4804d08448da7b24dc"
     },
     {
       "path": "supabase/migrations/20261008073155_company_active_scope_guards.sql",
-      "sha256": "9e75b0e93048e5b09ae43361006e2159cc389f1405b118e85ddbae6a76809db9"
+      "sha256": "81fe7185e4eb3f723bfc6c69c7bb4253ba04c53122ba696de5120116a9fd7688"
     },
     {
       "path": "supabase/migrations/20261008081159_owner_and_seat_billing.sql",
-      "sha256": "74fb20121f6373b13bdd61a2ea4d56c73f45d2268f4654877541f517614a7eda"
+      "sha256": "ef0b3e423f5943c6ac75b0a7305f70d43795a592786e7944b6dc1ed5849cca1f"
     },
     {
       "path": "supabase/migrations/20261008130124_community_and_mentoring_workflows.sql",
@@ -1022,7 +1022,9 @@
     },
     {
       "path": "supabase/sandbox/source_schema.sql",
-      "sha256": "4cf2d4fe148285208b7c691ed38f479d9fcc0b7e1ba53d7cf54b170abc5dc8e7"
+      "sha256": "b971df41d65f61eef1aba4fda3cfdd77e088eddc5cd301ff18f7a9eff2a97205"
     }
-  ]
+  ],
+  "source_commit": "cffc8bfcc22c64d0b04b7a6607c236e884b748f0",
+  "source_hash_algorithm": "sha256-utf8-lf-trim-end-single-newline"
 }
