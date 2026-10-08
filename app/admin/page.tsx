@@ -4,7 +4,7 @@ import { createServerSupabase } from "../../lib/supabase-server";
 import {workspaceEnabled} from "../../lib/workspace-sandbox";
 import { createAdminSupabase, requireAdmin } from "../../lib/admin";
 import {roleTrainingEnabled} from '../../lib/role-training-policy';
-import OwnerUserActions from '../components/owner-user-actions';
+import AdminUserList from '../components/admin-user-list';
 import OwnerUserCreate from '../components/owner-user-create';
 
 type PageProps = {
@@ -91,7 +91,7 @@ export default async function Admin({ searchParams }: PageProps) {
   ]);
 
   return (
-    <LocalizedContent><main className="wrap">
+    <LocalizedContent><main className="wrap admin-workspace">
       <div className="nav">
         <div>
           <span className="pill">OWNER / ADMIN</span>
@@ -102,9 +102,10 @@ export default async function Admin({ searchParams }: PageProps) {
         <a className="btn secondary" href="/dashboard">Mi cuenta</a>
       </div>
 
+      {operatorRole==='owner'&&<p><a className="btn" href="/admin/usage">Uso por persona · más y menos actividad</a></p>}
       {workspaceEnabled()&&<p><a className="btn" href="/admin/companies">Compañías, contratos e invitaciones</a> · <a href="/admin/metrics">Analítica de visitas</a></p>}
 
-      {operatorRole === "owner" && <OwnerUserCreate />}
+      {operatorRole === "owner" && <details className="card admin-create"><summary>Crear usuario</summary><OwnerUserCreate /></details>}
       {support&&<p role="alert">No pudimos abrir la revisión. La cuenta debe estar activa y tener el correo verificado. Si ya estás en una revisión, vuelve primero a tu cuenta.</p>}
       {updated === "1" && (
         <div className="card" style={{ marginBottom: 18 }}>
@@ -161,79 +162,7 @@ export default async function Admin({ searchParams }: PageProps) {
         </div>
       )}
 
-      <div className="card" style={{ marginTop: 18 }}>
-        <h2>Usuarios</h2>
-
-        <div style={{ overflowX: "auto" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 900 }}>
-            <thead>
-              <tr>
-                <th align="left">Email</th>
-                <th align="left">Rol</th>
-                <th align="left">Plan</th>
-                <th align="left">Facturación</th>
-                <th align="left">Acción</th>
-              </tr>
-            </thead>
-            <tbody>
-              {users?.map((u) => (
-                <tr key={u.id} style={{ borderTop: "1px solid #e5e9f0" }}>
-                  <td style={{ padding: "14px 8px" }}><span translate="no">{u.email}</span></td>
-                  <td style={{ padding: "14px 8px" }}>{u.role}</td>
-                  <td style={{ padding: "14px 8px" }}>{u.plan_name}</td>
-                  <td style={{ padding: "14px 8px" }}>
-                    <span>{u.billing_status ?? "—"}</span>
-                    {u.stripe_cancel_at_period_end && (
-                      <div className="muted" style={{ fontSize: 12 }}>Cancela al final del periodo</div>
-                    )}
-                  </td>
-                  <td style={{ padding: "14px 8px" }}>
-                    <form
-                      action="/api/admin/users/update"
-                      method="post"
-                      style={{
-                        display: "grid",
-                        gridTemplateColumns: "160px 160px auto",
-                        gap: 10,
-                        alignItems: "center",
-                      }}
-                    >
-                      <input type="hidden" name="user_id" value={u.id} />
-
-                      <select
-                        name="plan_name"
-                        defaultValue={u.plan_name}
-                        style={{ padding: 10, borderRadius: 10, border: "1px solid #d8dee8" }}
-                      >
-                        {(plans ?? []).map((plan) => (
-                          <option key={plan.id} value={plan.name}>
-                            <span translate="no">{plan.name}</span>
-                          </option>
-                        ))}
-                      </select>
-
-                      <select
-                        name="status"
-                        defaultValue={u.status}
-                        style={{ padding: 10, borderRadius: 10, border: "1px solid #d8dee8" }}
-                      >
-                        <option value="active">active</option>
-                        <option value="suspended">suspended</option>
-                        <option value="cancelled">cancelled</option>
-                      </select>
-
-                      <button className="btn secondary" type="submit">
-                        Guardar
-                      </button>
-                    </form>
-                    {operatorRole==='owner'&&<OwnerUserActions id={u.id} email={u.email}/>}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <AdminUserList users={users??[]} plans={plans??[]} owner={operatorRole==='owner'}/>
 
       <div className="card" style={{ marginTop: 18 }}>
         <span className="pill">GARCILOGA SUPPORT</span>

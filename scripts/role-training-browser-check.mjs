@@ -14,7 +14,8 @@ const id=n=>'00000000-0000-4000-8000-'+String(n).padStart(12,'0');const org=id(1
 const users=[1,2,3,4].map(n=>({id:id(n),email:`synthetic${n}@codezero.example.test`,aud:'authenticated',role:'authenticated',email_confirmed_at:new Date().toISOString(),user_metadata:{full_name:'Synthetic '+n,locale:'es'},app_metadata:{provider:'email'}}));
 const sessions=users.map(user=>{const claims={sub:user.id,aud:'authenticated',role:'authenticated',exp:Math.floor(Date.now()/1000)+3600,iat:Math.floor(Date.now()/1000)};const access_token=[{alg:'HS256',typ:'JWT'},claims].map(v=>Buffer.from(JSON.stringify(v)).toString('base64url')).join('.')+'.synthetic-fixture-signature';return {access_token,refresh_token:'synthetic-refresh',token_type:'bearer',expires_in:3600,expires_at:claims.exp,user};});
 const members=[{organization_id:org,user_id:id(1),display_name:'Manager ficticio',role:'manager',active:true,reports_to:null,job_title:'Customer Success',learning_position_key:'customer_success'}, {organization_id:org,user_id:id(2),display_name:'Colaborador ficticio',role:'learner',active:true,reports_to:id(1),job_title:'Customer Success',learning_position_key:'customer_success'}];
-const tables={profiles:users.map((u,i)=>({...u,full_name:u.user_metadata.full_name,status:'active',role:i===2?'owner':'student',plan_name:'enterprise',learning_position_key:'customer_success'})),organizations:[{id:org,name:'Sandbox ficticio',active:true}],organization_memberships:members,learning_activity_catalog:TRAINING_ACTIVITIES.map((a,i)=>({id:i+1,content_key:a.key,title:a.title,kind:a.kind,competencies:a.competencies,route_key:a.route,active:true})),learning_job_profiles:DEFAULT_JOB_PROFILES,learning_evidence_history:[],learning_practice_submissions:[],learning_assignments:[],learning_evidence:[],learning_errors:[],learning_project_review_flows:[],learning_project_review_runs:[],learning_project_review_votes:[]};
+const tables={profiles:users.map((u,i)=>({...u,full_name:u.user_metadata.full_name,status:'active',role:i===2?'owner':'student',plan_name:'enterprise',learning_position_key:'customer_success',deleted_at:null})),organizations:[{id:org,name:'Sandbox ficticio',active:true}],organization_memberships:members,learning_activity_catalog:TRAINING_ACTIVITIES.map((a,i)=>({id:i+1,content_key:a.key,title:a.title,kind:a.kind,competencies:a.competencies,route_key:a.route,active:true})),learning_job_profiles:DEFAULT_JOB_PROFILES,learning_evidence_history:[],learning_practice_submissions:[],learning_assignments:[],learning_evidence:[],learning_errors:[],learning_project_review_flows:[],learning_project_review_runs:[],learning_project_review_votes:[]};
+tables.platform_usage_start=[{singleton:true,started_at:new Date().toISOString()}];
 const rpcCalls=[];let sequence=0;
 const history=(s,a,props)=>({id:id(2000+sequence++),submission_id:s.id,user_id:s.user_id,organization_id:s.organization_id,activity_key:a.content_key,independent_key:a.content_key,kind:a.kind,competency_scores:s.self_scores,assistance:s.assistance,review_source:'self',observed_at:new Date().toISOString(),reevaluation_of:null,critical_errors:[],feedback:null,...props});
 const database=http.createServer(async(req,res)=>{
@@ -26,6 +27,8 @@ const database=http.createServer(async(req,res)=>{
  if(url.pathname.includes('/rpc/')){
   let raw='';for await(const chunk of req)raw+=chunk;const p=JSON.parse(raw||'{}');rpcCalls.push({name:table,p});
   if(table==='consume_api_rate_limit')return res.end(JSON.stringify({allowed:true,count:1,retry_after_seconds:0}));
+  if(table==='record_platform_usage')return res.end('null');
+  if(table==='platform_usage_report')return res.end(JSON.stringify(tables.profiles.filter(u=>u.role!=='owner'&&u.status==='active').map((u,i)=>({user_id:u.id,email:u.email,full_name:u.full_name,clicks:i*3,visits:i,active_days:i,last_seen:i?new Date().toISOString():null,total_users:3}))));
   if(table==='workspace_directory')return res.end(JSON.stringify(members));
   if(table==='workspace_current_levels')return res.end(JSON.stringify(members.map(m=>({user_id:m.user_id,current_level:1}))));
   if(table==='submit_training_practice'){
@@ -88,6 +91,18 @@ try{
   assert.equal((await get(3,'/admin/companies/setup')).status,200);assert.equal((await post(2,'/api/company/setup',{action:'advance',organization_id:org})).status,403);assert.equal((await post(3,'/api/company/setup',{action:'advance',organization_id:org,step:'2'})).status,303);assert.equal(tables.organization_setup_drafts[0].step,3);
   assert.equal((await get(2,'/news')).status,200);assert.equal((await get(2,'/weekly-cases')).status,200);
   console.log('PASS suggestions: scoped monthly CSV/PDF, opt-in owned personal portfolio/revocation, setup resumption and news/cases');
+
+ const usagePost=(n,payload,requestOrigin=origin)=>fetch(origin+'/api/usage',{method:'POST',headers:{...(n?{cookie:cookie(n)}:{}),origin:requestOrigin,'Content-Type':'application/json'},body:JSON.stringify(payload)});
+ const usageBatch={id:randomUUID(),section:'learning',clicks:3,visits:1};
+ assert.equal((await usagePost(2,usageBatch)).status,204);
+ assert.equal(rpcCalls.filter(c=>c.name==='record_platform_usage').at(-1).p.p_user,id(2));
+ assert.equal((await usagePost(2,{...usageBatch,user_id:id(3)})).status,400);
+ assert.equal((await usagePost(2,usageBatch,'https://invalid.example')).status,403);
+ assert.equal((await usagePost(null,usageBatch)).status,401);
+ const beforeOwner=rpcCalls.filter(c=>c.name==='record_platform_usage').length;assert.equal((await usagePost(3,usageBatch)).status,204);assert.equal(rpcCalls.filter(c=>c.name==='record_platform_usage').length,beforeOwner);
+ assert.equal((await get(2,'/admin/usage')).status,307);
+ const usagePage=await get(3,'/admin/usage?days=7&order=most');assert.equal(usagePage.status,200);assert.match(await usagePage.text(),/Sin actividad registrada/);
+ console.log('PASS usage real HTTP: verified identity, anonymous/origin/forged identity rejection, owner exclusion and owner-only ranking');
  if(process.env.CODEZERO_HTTP_ONLY==='1'){
   assert.equal((await get(3,'/teams/'+org+'/settings')).status,404);
   assert.equal((await post(2,'/api/company/manage',{action:'contract_update',organization_id:org,seats:'999999',plan:'enterprise',valid_until:'2030-01-01'})).status,403);
@@ -130,6 +145,20 @@ try{
  await signIn(1);await go(`/teams/${org}/skills`);assert.ok(await page.locator('h2').filter({hasText:'Mapa del equipo'}).count());const filter=page.locator('label').filter({hasText:'Filtrar por puesto'}).locator('select');await filter.selectOption('customer_success');await page.locator('.competency-desktop .competency-cell').first().click();assert.equal(await page.getByRole('region',{name:'Evidencia de competencia'}).count(),1);await page.waitForFunction(()=>document.activeElement?.getAttribute('aria-label')==='Evidencia de competencia');await page.getByRole('button',{name:'Cerrar detalle'}).click();assert.ok(await page.evaluate(()=>document.activeElement?.classList.contains('competency-cell')));for(const width of [390,1280]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'matrix '+width);}await page.setViewportSize({width:1280,height:900});await signIn(4);assert.equal((await context.request.get(origin+'/role-training?organization_id='+org)).status(),404);await signIn(3);await go('/role-training/profiles');assert.equal(await page.locator('form').filter({has:page.locator('input[name=action][value=profile]')}).count(),16);await go('/role-training/review');console.log('PASS team map, isolated organization, Admin queue and sixteen reused position profiles');
  await signIn(2);await go('/role-training?organization_id='+org);for(const width of [390,1280]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'responsive pilot '+width);}
  await page.addScriptTag({path:'sandbox-runtime/node_modules/axe-core/axe.min.js'});const violations=await page.evaluate(async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})).violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)})));assert.deepEqual(violations,[]);assert.deepEqual(errors,[]);assert.ok(rpcCalls.every(c=>!['consume_usage','consume_project_quota','consume_monthly_usage'].includes(c.name)));console.log('PASS mobile/desktop, WCAG automated checks, console and no project-quota mutation');
+
+ await signIn(2);await page.setViewportSize({width:1280,height:900});await go('/role-training?organization_id='+org);
+ const beforeClicks=rpcCalls.filter(c=>c.name==='record_platform_usage').length;
+ await page.locator('form[action="/api/role-training"]').first().locator('select[name=assistance]').click();
+ await go('/profile');await page.waitForFunction(()=>true);await pause(300);
+ assert.ok(rpcCalls.slice().filter(c=>c.name==='record_platform_usage').length>beforeClicks);
+ assert.ok(rpcCalls.filter(c=>c.name==='record_platform_usage').some(c=>c.p.p_user===id(2)&&c.p.p_clicks>0));
+ await signIn(3);await go('/admin');
+ for(const width of [390,1280,1920]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'admin reflow '+width);const bounds=await page.locator('main.wrap').evaluate(el=>({width:el.getBoundingClientRect().width,parent:el.closest('.vivo-content').getBoundingClientRect().width}));assert.ok(bounds.parent-bounds.width<2,'workspace fills available canvas');}
+ await page.setViewportSize({width:1920,height:900});assert.ok(await page.locator('.admin-user-edit label').count());await page.locator('.admin-create>summary').click();assert.ok(await page.locator('.admin-create[open]').count());
+ if(process.env.CODEZERO_BROWSER_ENGINE==='chromium')await page.screenshot({path:'/tmp/codezero-admin-usage-layout.png',fullPage:true});
+ await go('/admin/usage');for(const width of [390,1280,1920]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'usage reflow '+width);}
+ await page.addScriptTag({path:'sandbox-runtime/node_modules/axe-core/axe.min.js'});assert.deepEqual(await page.evaluate(async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})).violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}))),[]);assert.deepEqual(errors,[]);
+ console.log('PASS usage browser: trusted click → bounded API batch, full-width admin at 390/1280/1920, separated user controls, owner ranking and WCAG checks');
  finished=true;await context.close();
  }
 }finally{await browser?.close();server.kill('SIGTERM');if(server.exitCode===null)await new Promise(resolve=>server.once('close',resolve));database.close();if(!finished||logs.some(x=>/TRAINING_DATA_UNAVAILABLE|REVIEW_DATA_UNAVAILABLE|Error:/.test(x)))console.error(logs.join('').slice(-9000));}

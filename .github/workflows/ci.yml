@@ -53,6 +53,9 @@ jobs:
       - name: Development plans and notices scope checks
         run: node scripts/growth-db-check.mjs
 
+      - name: Platform usage isolation and aggregation checks
+        run: node scripts/platform-usage-db-check.mjs
+
       - name: Section catalog budgets
         run: node scripts/localization-sections.mjs
 
