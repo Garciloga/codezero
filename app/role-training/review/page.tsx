@@ -1,0 +1,23 @@
+import {notFound,redirect} from 'next/navigation';
+import {roleTrainingEnabled,roleTrainingSession} from '../../../lib/role-training-server';
+import {createAdminSupabase} from '../../../lib/admin';
+import {readWorkspacePages} from '../../../lib/workspace-pages';
+import {findTrainingActivity,TRAINING_NOTICE} from '../../../lib/role-training-content';
+import {COMPETENCIES} from '../../../lib/competency-matrix';
+import {isUuid} from '../../../lib/workspace-sandbox';
+import Link from 'next/link';
+type Submission={id:string;user_id:string;organization_id:string|null;activity_id:number;draft:string;assistance:string;created_at:string};
+export default async function TrainingReview({searchParams}:{searchParams:Promise<{organization_id?:string}>}){
+ if(!roleTrainingEnabled())notFound();const session=await roleTrainingSession();if(!session)redirect('/login');
+ const org=(await searchParams).organization_id??null,privileged=['owner','admin'].includes(session.profile.role);
+ if(org&&!isUuid(org))notFound();
+ if(!privileged){if(!org)notFound();const {data:m}=await session.supabase.from('organization_memberships').select('role').eq('organization_id',org).eq('user_id',session.user.id).eq('active',true).single();if(!m||!['owner','admin','manager','supervisor'].includes(m.role))notFound();}
+ const reader=privileged?createAdminSupabase():session.supabase;
+ const r=await readWorkspacePages<Submission>((a,b)=>{let q=reader.from('learning_practice_submissions').select('id,user_id,organization_id,activity_id,draft,assistance,created_at');if(org)q=q.eq('organization_id',org);return q.order('created_at').order('id').range(a,b);});
+ const {data:catalog,error:ce}=await reader.from('learning_activity_catalog').select('id,content_key');
+ const history=await readWorkspacePages<{id:string;submission_id:string;review_source:string;observed_at:string}>((a,b)=>{let q=reader.from('learning_evidence_history').select('id,submission_id,review_source,observed_at').in('review_source',['admin','manager']);if(org)q=q.eq('organization_id',org);return q.order('observed_at',{ascending:false}).order('id',{ascending:false}).range(a,b);});
+ if(r.error||ce||history.error)throw Error('REVIEW_DATA_UNAVAILABLE');
+ return <main className="wrap" lang="es-MX" translate="no"><h1>Revisión humana · formación por puesto</h1><p>{TRAINING_NOTICE}</p><p>Proyectos y capstone: revisión exclusiva desde Administración. Entregables: manager dentro de su alcance, con la misma rúbrica.</p><Link href={'/role-training'+(org?'?organization_id='+org:'')}>Volver al aprendizaje</Link>
+ {(r.data??[]).map(s=>{const activity=findTrainingActivity(catalog?.find(c=>c.id===s.activity_id)?.content_key??'');if(!activity||activity.kind==='exercise'||(!privileged&&activity.kind!=='deliverable')||(!privileged&&s.user_id===session.user.id))return null;const latest=history.data?.find(e=>e.submission_id===s.id);return <section className="card" key={s.id} style={{marginTop:20}}><h2>{activity.title}</h2><p>Entrega {s.id} · {latest?'Ya revisada; cualquier corrección agrega historial':'Pendiente de revisión'}</p><p style={{whiteSpace:'pre-wrap'}} translate="no">{s.draft}</p>{activity.sourceRubric&&<ul>{activity.sourceRubric.map(r=><li key={r}>{r}</li>)}</ul>}<ul>{activity.rubric.map(t=><li key={t}>{t}</li>)}</ul><form action="/api/role-training/review" method="post"><input type="hidden" name="submission_id" value={s.id}/><input type="hidden" name="expected" value={latest?.id??''}/>{activity.competencies.map(k=><label key={k}>{COMPETENCIES[k]}<select name={'score_'+k} required defaultValue=""><option value="" disabled>Valora la evidencia</option>{[0,1,2,3,4].map(v=><option key={v} value={v}>{v}/4</option>)}</select></label>)}<label>Autonomía comprobada<select name="assistance" defaultValue="guided"><option value="guided">Aplicó con guía o autonomía sin comprobar</option><option value="independent">Aplicó sin guía; evidencia suficiente</option></select></label><fieldset><legend>Errores críticos observados</legend>{[['data_exposure','Exposición de datos o credenciales'],['unauthorized_change','Cambio sin autorización'],['invented_commitment','Hecho o compromiso inventado'],['unverified_closure','Cierre sin verificar']].map(([key,label])=><label key={key} style={{display:'block'}}><input type="checkbox" name="errors" value={key}/>{label}</label>)}</fieldset><label>Feedback con evidencia y siguiente paso<textarea name="feedback" rows={5} minLength={40} maxLength={6000} required/></label><button className="btn">Guardar revisión humana</button></form></section>;})}
+ {!r.data?.length&&<p>No hay entregas para revisar.</p>}</main>;
+}

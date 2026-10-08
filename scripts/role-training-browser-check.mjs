@@ -1,0 +1,99 @@
+// Real Next handlers and browser rendering; Auth and REST use synthetic fixtures.
+// Database permissions/transactions are checked separately against PostgreSQL.
+import assert from 'node:assert/strict';
+import http from 'node:http';
+import {spawn} from 'node:child_process';
+import {randomUUID} from 'node:crypto';
+import {setTimeout as pause} from 'node:timers/promises';
+import {chromium} from '../sandbox-runtime/node_modules/playwright/index.mjs';
+import {TRAINING_ACTIVITIES,findTrainingActivity} from '../lib/role-training-content.ts';
+import {DEFAULT_JOB_PROFILES} from '../lib/competency-matrix.ts';
+const origin='http://localhost:3260',dbOrigin='http://127.0.0.1:5460';
+const id=n=>'00000000-0000-4000-8000-'+String(n).padStart(12,'0');const org=id(100);
+const users=[1,2,3,4].map(n=>({id:id(n),email:`synthetic${n}@codezero.example.test`,aud:'authenticated',role:'authenticated',email_confirmed_at:new Date().toISOString(),user_metadata:{full_name:'Synthetic '+n,locale:'es'},app_metadata:{provider:'email'}}));
+const sessions=users.map(user=>{const claims={sub:user.id,aud:'authenticated',role:'authenticated',exp:Math.floor(Date.now()/1000)+3600,iat:Math.floor(Date.now()/1000)};const access_token=[{alg:'HS256',typ:'JWT'},claims].map(v=>Buffer.from(JSON.stringify(v)).toString('base64url')).join('.')+'.synthetic-fixture-signature';return {access_token,refresh_token:'synthetic-refresh',token_type:'bearer',expires_in:3600,expires_at:claims.exp,user};});
+const members=[{organization_id:org,user_id:id(1),display_name:'Manager ficticio',role:'manager',active:true,reports_to:null,job_title:'Customer Success',learning_position_key:'customer_success'}, {organization_id:org,user_id:id(2),display_name:'Colaborador ficticio',role:'learner',active:true,reports_to:id(1),job_title:'Customer Success',learning_position_key:'customer_success'}];
+const tables={profiles:users.map((u,i)=>({...u,full_name:u.user_metadata.full_name,status:'active',role:i===2?'owner':'student',plan_name:'enterprise',learning_position_key:'customer_success'})),organizations:[{id:org,name:'Sandbox ficticio',active:true}],organization_memberships:members,learning_activity_catalog:TRAINING_ACTIVITIES.map((a,i)=>({id:i+1,content_key:a.key,title:a.title,kind:a.kind,competencies:a.competencies,route_key:a.route,active:true})),learning_job_profiles:DEFAULT_JOB_PROFILES,learning_evidence_history:[],learning_practice_submissions:[],learning_assignments:[],learning_evidence:[],learning_errors:[]};
+const rpcCalls=[];let sequence=0;
+const history=(s,a,props)=>({id:id(2000+sequence++),submission_id:s.id,user_id:s.user_id,organization_id:s.organization_id,activity_key:a.content_key,independent_key:a.content_key,kind:a.kind,competency_scores:s.self_scores,assistance:s.assistance,review_source:'self',observed_at:new Date().toISOString(),reevaluation_of:null,critical_errors:[],feedback:null,...props});
+const database=http.createServer(async(req,res)=>{
+ const url=new URL(req.url,dbOrigin);res.setHeader('Content-Type','application/json');
+ const actor=sessions.find(s=>req.headers.authorization==='Bearer '+s.access_token)?.user;
+ if(url.pathname==='/auth/v1/user'){res.writeHead(actor?200:401);return res.end(JSON.stringify(actor??{message:'Synthetic Auth denial'}));}
+ if(!url.pathname.startsWith('/rest/v1/')){res.writeHead(404);return res.end('{}');}
+ const table=url.pathname.split('/').pop();
+ if(url.pathname.includes('/rpc/')){
+  let raw='';for await(const chunk of req)raw+=chunk;const p=JSON.parse(raw||'{}');rpcCalls.push({name:table,p});
+  if(table==='consume_api_rate_limit')return res.end(JSON.stringify({allowed:true,count:1,retry_after_seconds:0}));
+  if(table==='workspace_directory')return res.end(JSON.stringify(members));
+  if(table==='workspace_current_levels')return res.end(JSON.stringify(members.map(m=>({user_id:m.user_id,current_level:1}))));
+  if(table==='submit_training_practice'){
+   const a=tables.learning_activity_catalog.find(a=>a.id===p.p_activity),prior=tables.learning_practice_submissions.find(s=>s.id===p.p_request);
+   if(!prior){const s={id:p.p_request,user_id:p.p_actor,organization_id:p.p_org,activity_id:p.p_activity,draft:p.p_draft,self_scores:p.p_scores,assistance:p.p_assistance,created_at:new Date().toISOString()};tables.learning_practice_submissions.push(s);
+    p.p_auto_results.forEach((v,i)=>tables.learning_evidence_history.push(history(s,a,{independent_key:a.content_key+':decision:'+(i+1),kind:'exercise',competency_scores:{[a.competencies[i%a.competencies.length]]:v},review_source:'auto',assistance:'recognition'})));
+    if(a.kind!=='exercise')tables.learning_evidence_history.push(history(s,a,{}));
+   }
+   return res.end(JSON.stringify(p.p_request));
+  }
+  if(table==='review_training_practice'){
+   const s=tables.learning_practice_submissions.find(s=>s.id===p.p_submission),a=tables.learning_activity_catalog.find(a=>a.id===s.activity_id);
+   const role=tables.profiles.find(u=>u.id===p.p_actor)?.role;
+   if(role!=='owner'&&(p.p_actor!==id(1)||s.user_id!==id(2)||a.kind!=='deliverable')){res.writeHead(403);return res.end(JSON.stringify({message:'FORBIDDEN'}));}
+   const e=history(s,a,{competency_scores:p.p_scores,assistance:p.p_assistance,review_source:role==='owner'?'admin':'manager',feedback:p.p_feedback,critical_errors:p.p_errors});tables.learning_evidence_history.push(e);return res.end(JSON.stringify(e.id));
+  }
+  if(table==='assign_training_reinforcement'){
+   for(const aId of p.p_activities){const a=tables.learning_activity_catalog.find(a=>a.id===aId);tables.learning_assignments.push({organization_id:org,user_id:p.p_user,activity_id:aId,activity_type:'route_unit',activity_key:'route_unit:'+aId,title:a.title,competency:a.competencies[0],due_at:p.p_due,reinforcement_before:p.p_before,reinforcement_after:null});}return res.end('null');
+  }
+  if(table==='complete_training_reinforcement'){for(const a of tables.learning_assignments.filter(a=>a.activity_id===p.p_activity&&a.user_id===p.p_user))a.reinforcement_after=p.p_after;return res.end('null');}
+  if(table==='set_training_position')return res.end('null');
+  if(table==='issue_training_route_diploma'){res.writeHead(400);return res.end(JSON.stringify({message:'DIPLOMA_NOT_ELIGIBLE'}));}
+  res.writeHead(400);return res.end(JSON.stringify({message:'Unsupported fixture RPC '+table}));
+ }
+ let rows=[...(tables[table]??[])];
+ if(actor&&['organization_memberships','learning_assignments','learning_evidence','learning_errors','learning_evidence_history','learning_practice_submissions'].includes(table))rows=rows.filter(r=>actor.id===id(1)?[id(1),id(2)].includes(r.user_id):r.user_id===actor.id);
+ if(actor&&table==='organizations'&&![id(1),id(2)].includes(actor.id))rows=[];
+ for(const [key,value]of url.searchParams){if(value.startsWith('eq.'))rows=rows.filter(r=>String(r[key])===value.slice(3));if(value==='is.null')rows=rows.filter(r=>r[key]===null);if(value.startsWith('in.'))rows=rows.filter(r=>value.slice(3).slice(1,-1).split(',').includes(String(r[key])));}
+ const order=url.searchParams.get('order');if(order){const specs=order.split(',').map(x=>x.split('.'));rows.sort((a,b)=>{for(const [k,d]of specs){const v=String(a[k]??'').localeCompare(String(b[k]??''),undefined,{numeric:true});if(v)return d==='desc'?-v:v;}return 0;});}
+ const start=Number(url.searchParams.get('offset')??0),limit=Number(url.searchParams.get('limit')??500);rows=rows.slice(start,start+limit);
+ if(req.headers.accept?.includes('vnd.pgrst.object'))return res.end(JSON.stringify(rows[0]??null));return res.end(JSON.stringify(rows));
+});await new Promise(r=>database.listen(5460,'127.0.0.1',r));
+const logs=[];const env={...process.env,NEXT_TELEMETRY_DISABLED:'1',NEXT_PUBLIC_SUPABASE_URL:dbOrigin,NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY:'synthetic-placeholder',SUPABASE_SECRET_KEY:'synthetic-placeholder',NEXT_PUBLIC_APP_URL:origin,CODEZERO_ENVIRONMENT:'sandbox',CODEZERO_WORKSPACE_SANDBOX:'1',CODEZERO_ROLE_TRAINING:'1',CODEZERO_SANDBOX_PROJECT_REF:'local'};
+const server=spawn(process.execPath,['node_modules/next/dist/bin/next','dev','-H','127.0.0.1','-p','3260'],{env,stdio:['ignore','pipe','pipe']});server.stdout.on('data',x=>logs.push(String(x)));server.stderr.on('data',x=>logs.push(String(x)));let browser;let finished=false;
+try{
+ for(let i=0;i<120;i++){try{if((await fetch(origin+'/login')).ok)break;}catch{}await pause(250);if(i===119)throw Error('Next unavailable');}
+ if(process.env.CODEZERO_HTTP_ONLY==='1'){
+  const cookie=n=>'sb-127-auth-token=base64-'+Buffer.from(JSON.stringify(sessions[n-1])).toString('base64url');
+  const get=(n,path)=>fetch(origin+path,{headers:{cookie:cookie(n)},redirect:'manual'});
+  const post=(n,path,form,requestOrigin=origin)=>fetch(origin+path,{method:'POST',headers:{cookie:cookie(n),origin:requestOrigin},body:new URLSearchParams(form),redirect:'manual'});
+  const first=await get(2,'/role-training?organization_id='+org);assert.equal(first.status,200);const html=await first.text();assert.match(html,/Formación por puesto/);assert.match(html,/práctica simulada/);assert.match(html,/select name="assistance"/);assert.ok(!html.includes('input type="hidden" name="assistance"'));
+  const request=html.match(/name="request_id" value="([^"]+)"/)[1],activity=findTrainingActivity('common-communication');
+  const payload={action:'submit',organization_id:org,activity:activity.key,request_id:request,draft:'Entrega ficticia: evidencia verificable, decisión, incertidumbre, responsable y siguiente paso. '.repeat(3),assistance:'guided',...Object.fromEntries(activity.competencies.map(k=>['score_'+k,'3'])),...Object.fromEntries(activity.decisions.map((q,i)=>['decision_'+i,String(q.correct)]))};
+  assert.equal((await post(2,'/api/role-training',payload)).status,303);assert.equal(tables.learning_practice_submissions.length,1);assert.equal(tables.learning_practice_submissions[0].assistance,'guided');assert.equal(tables.learning_evidence_history.length,4);
+  assert.equal((await post(2,'/api/role-training',payload)).status,303);assert.equal(tables.learning_evidence_history.length,4);console.log('PASS HTTP rendered form → real Next submit handler → fixture RPC → evidence; replay does not duplicate');
+  assert.equal((await post(2,'/api/role-training',{action:'position'},'https://invalid.example')).status,403);assert.equal((await get(2,'/role-training/review?organization_id='+org)).status,404);assert.equal((await get(2,`/teams/${org}/person/${id(2)}`)).status,307);console.log('PASS hostile origin, learner review denial and unchanged leader-only URL');
+  assert.equal((await post(1,'/api/role-training',{action:'reinforce',organization_id:org,user_id:id(2),units:activity.key,due_at:'2099-10-08'})).status,303);assert.equal(tables.learning_assignments.length,1);assert.equal(tables.learning_assignments[0].reinforcement_before.competencies.length,10);
+  const queue=await get(1,'/role-training/review?organization_id='+org);assert.equal(queue.status,200);assert.match(await queue.text(),/Evidencia ficticia|Entrega ficticia/);
+  const review={submission_id:request,expected:'',assistance:'independent',feedback:'Evidencia ficticia: decisión justificada y autonomía comprobada; siguiente paso verificable.',...Object.fromEntries(activity.competencies.map(k=>['score_'+k,'3']))};assert.equal((await post(1,'/api/role-training/review',review)).status,303);assert.equal(tables.learning_evidence_history.length,5);assert.equal(tables.learning_assignments[0].reinforcement_after.competencies.length,10);console.log('PASS real assign/review handlers preserve before/date and calculate after');
+  const boss=await get(1,`/teams/${org}/person/${id(2)}`),own=await get(2,'/role-training?organization_id='+org);assert.equal(boss.status,200);assert.equal(own.status,200);const bossHtml=await boss.text(),ownHtml=await own.text();const matrix=x=>x.match(/<table><caption>Niveles demostrados[\s\S]*?<\/table>/)[0];assert.equal(matrix(bossHtml),matrix(ownHtml));assert.match(ownHtml,/Comparación registrada/);console.log('PASS identical matrix/evidence presentation for learner and boss, shared snapshots');
+  const map=await get(1,`/teams/${org}/skills`);assert.equal(map.status,200);assert.match(await map.text(),/Mapa del equipo/);assert.equal((await get(4,'/role-training?organization_id='+org)).status,404);assert.equal((await get(3,'/role-training/profiles')).status,200);assert.equal((await get(3,'/role-training/review')).status,200);assert.equal((await post(2,'/api/role-training',{action:'diploma',organization_id:org})).status,409);assert.ok(rpcCalls.every(c=>!c.name.includes('quota')));console.log('PASS scoped map, Admin screens, unqualified diploma rejected and no quota RPC');
+  finished=true;
+ }else{
+ browser=await chromium.launch({headless:true,executablePath:process.env.CODEZERO_BROWSER_EXECUTABLE,args:['--no-sandbox','--disable-dev-shm-usage','--disable-gpu']});
+ const context=await browser.newContext({viewport:{width:1280,height:900}});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ const signIn=async n=>{await context.clearCookies();await context.addCookies([{name:'sb-127-auth-token',value:'base64-'+Buffer.from(JSON.stringify(sessions[n-1])).toString('base64url'),url:origin}]);};
+ const go=async path=>{const r=await page.goto(origin+path);assert.equal(r.status(),200,path);await page.waitForLoadState('networkidle');};
+ await signIn(2);await go('/role-training?organization_id='+org);assert.match(await page.locator('h1').innerText(),/Formación por puesto/);assert.match(await page.locator('main').innerText(),/práctica simulada/);assert.equal(await page.locator('input[name=assistance]').count(),0);assert.equal(await page.locator('select[name=assistance]').count(),1);
+ const form=page.locator('form[action="/api/role-training"]').filter({has:page.locator('input[name=action][value=submit]')});const a=findTrainingActivity('common-communication');for(const [i,q]of a.decisions.entries())await form.locator(`input[name=decision_${i}][value="${q.correct}"]`).check();await form.locator('textarea[name=draft]').fill('Entrega ficticia: se describe impacto observado, evidencia, alternativas, responsable, incertidumbre y fecha de siguiente actualización. '.repeat(3));for(const k of a.competencies)await form.locator(`select[name=score_${k}]`).selectOption('3');await form.locator('select[name=assistance]').selectOption('guided');await form.locator('button').click();await page.waitForURL(/result=saved/);assert.equal(tables.learning_practice_submissions.length,1);assert.equal(tables.learning_practice_submissions[0].assistance,'guided');assert.equal(tables.learning_evidence_history.length,4);console.log('PASS actual browser submit → Next API → fixture RPC → immutable evidence rendered');
+ const hostile=await context.request.post(origin+'/api/role-training',{headers:{origin:'https://invalid.example'},form:{action:'position',position:'customer_success'}});assert.equal(hostile.status(),403);
+ assert.equal((await context.request.get(origin+`/teams/${org}/person/${id(2)}`)).status(),307,'legacy person URL remains restricted to leaders');
+ assert.equal((await context.request.get(origin+'/role-training/review?organization_id='+org)).status(),404);console.log('PASS origin rejection and unchanged learner/leader route scope');
+ await signIn(1);await go(`/teams/${org}/person/${id(2)}`);assert.ok(await page.locator('h2').filter({hasText:'Competencias por evidencia'}).count());
+ const reinforce=page.locator('form[action="/api/role-training"]').filter({has:page.locator('input[name=action][value=reinforce]')}).filter({has:page.locator('input[name=units][value=common-communication]')}).first();await reinforce.locator('input[name=units][value=common-communication]').check();await reinforce.locator('input[name=due_at]').fill('2099-10-08');await reinforce.locator('button').click();await page.waitForURL(/result=saved/);assert.equal(tables.learning_assignments.length,1);assert.equal(tables.learning_assignments[0].reinforcement_before.competencies.length,10);
+ await go('/role-training/review?organization_id='+org);const review=page.locator('form[action="/api/role-training/review"]').first();for(const k of a.competencies)await review.locator(`select[name=score_${k}]`).selectOption('3');await review.locator('select[name=assistance]').selectOption('independent');await review.locator('textarea[name=feedback]').fill('Evidencia ficticia: decisión justificada, contexto claro y autonomía comprobada; siguiente paso verificable.');await review.locator('button').click();await page.waitForLoadState('networkidle');assert.equal(tables.learning_evidence_history.length,5);assert.equal(tables.learning_assignments[0].reinforcement_after.competencies.length,10);assert.equal(rpcCalls.filter(c=>c.name==='review_training_practice').length,1);console.log('PASS manager assigns with before/date, uses identical rubric and persists after');
+ await go(`/teams/${org}/person/${id(2)}`);const bossTable=await page.locator('section').filter({has:page.locator('h2').filter({hasText:'Competencias por evidencia'})}).locator('table').first().innerText();await signIn(2);await go('/role-training?organization_id='+org);const ownTable=await page.locator('section').filter({has:page.locator('h2').filter({hasText:'Competencias por evidencia'})}).locator('table').first().innerText();assert.equal(ownTable,bossTable);assert.match(await page.locator('main').innerText(),/Comparación registrada/);console.log('PASS collaborator and boss see identical evidence calculation and before/after');
+ await signIn(1);await go(`/teams/${org}/skills`);assert.ok(await page.locator('h2').filter({hasText:'Mapa del equipo'}).count());await signIn(4);assert.equal((await context.request.get(origin+'/role-training?organization_id='+org)).status(),404);await signIn(3);await go('/role-training/profiles');assert.equal(await page.locator('form').filter({has:page.locator('input[name=action][value=profile]')}).count(),16);await go('/role-training/review');console.log('PASS team map, isolated organization, Admin queue and sixteen reused position profiles');
+ await signIn(2);await go('/role-training?organization_id='+org);for(const width of [390,1280]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'responsive pilot '+width);}
+ await page.addScriptTag({path:'sandbox-runtime/node_modules/axe-core/axe.min.js'});const violations=await page.evaluate(async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})).violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)})));assert.deepEqual(violations,[]);assert.deepEqual(errors,[]);assert.ok(rpcCalls.every(c=>!['consume_usage','consume_project_quota','consume_monthly_usage'].includes(c.name)));console.log('PASS mobile/desktop, WCAG automated checks, console and no project-quota mutation');
+ finished=true;await context.close();
+ }
+}finally{await browser?.close();server.kill('SIGTERM');if(server.exitCode===null)await new Promise(resolve=>server.once('close',resolve));database.close();if(!finished||logs.some(x=>/TRAINING_DATA_UNAVAILABLE|REVIEW_DATA_UNAVAILABLE|Error:/.test(x)))console.error(logs.join('').slice(-9000));}

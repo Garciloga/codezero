@@ -9,6 +9,8 @@ import PersonCard, {
 import Organigram from "../../../components/enterprise/organigram";
 import PermissionsTable from "../../../components/enterprise/permissions-table";
 import { readWorkspacePages } from "../../../../lib/workspace-pages";
+import {roleTrainingEnabled} from '../../../../lib/role-training-server';
+import TrainingTeam from '../../../components/enterprise/training-team';
 const actions: Record<string, string> = {
   organization_created: "Organización creada",
   membership_updated: "Puesto y jerarquía actualizados",
@@ -301,6 +303,7 @@ export default async function TeamSection({
             <SkillBars skills={skills} />
           </section>
         )}
+        {roleTrainingEnabled()&&["people","skills"].includes(section)&&<TrainingTeam org={org} people={team}/>}
         {["people", "permissions"].includes(section) && (
           <PermissionsTable role={d.own.role} />
         )}
