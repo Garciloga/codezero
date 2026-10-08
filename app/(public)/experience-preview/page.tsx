@@ -13,7 +13,7 @@ import "../../diplomas/diploma.css";
 export async function generateMetadata() { return translatedMetadata({title:"Revisión de experiencia",robots:{index:false,follow:false}}); }
 export default function ExperiencePreview(){
  if(process.env.CODEZERO_EXPERIENCE_PREVIEW!=="1"||!workspaceSandboxEnabled())notFound();
- return <LocalizedContent><main className="wrap experience-preview"><div className="card"><span className="pill">REVISIÓN DE PRUEBAS</span><h1>Tu forma de aprender, tu CodeZero</h1><p>Revisión de interfaz con datos ficticios. Explora la apariencia y la impresión del diploma.</p>
+ return <LocalizedContent><main className="wrap experience-preview"><div className="card"><span className="pill">REVISIÓN DE PRUEBAS</span><h1>Tu forma de aprender, tu Garciloga</h1><p>Revisión de interfaz con datos ficticios. Explora la apariencia y la impresión del diploma.</p>
   <nav className="review-section-nav" aria-label="Secciones de la revisión"><a href="#appearance-heading">Apariencia</a><a href="#role-cases">Casos</a><a href="#learning-review">Mi camino</a><a href="#diploma-review">Diploma</a></nav></div>
   <AppearanceSettings userId={null}/>
   <RoleCasePractice/>

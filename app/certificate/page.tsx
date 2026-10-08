@@ -35,18 +35,18 @@ export default async function CertificatePage() {
         <div>
           <span className="pill">CERTIFICACIÓN</span>
           <h1>{certificate.title}</h1>
-          <p className="muted">Emitido por CodeZero</p>
+          <p className="muted">Emitido por Garciloga</p>
         </div>
-        <Link className="btn secondary" href="/dashboard">Volver a Mi CodeZero</Link>
+        <Link className="btn secondary" href="/dashboard">Volver a Mi Garciloga</Link>
       </div>
 
       <div className="card" style={{ textAlign: "center", padding: 48 }}>
         <p className="muted">Se certifica que</p>
         <h2 style={{ fontSize: 36, marginBottom: 8 }}>
-          <span translate="no">{profile?.full_name || profile?.email || "Estudiante CodeZero"}</span>
+          <span translate="no">{profile?.full_name || profile?.email || "Estudiante Garciloga"}</span>
         </h2>
         <p style={{ fontSize: 18, lineHeight: 1.6 }}>
-          completó satisfactoriamente los 15 niveles de CodeZero,
+          completó satisfactoriamente los 15 niveles de Garciloga,
           incluyendo programación, desarrollo web, APIs, SaaS,
           integraciones empresariales, arquitectura y seguridad.
         </p>
@@ -57,7 +57,7 @@ export default async function CertificatePage() {
           ID de certificado: {certificate.id}
         </p>
       </div>
-      {workspaceEnabled() && <CertificateSharing certificateId={certificate.id} initialPath={publication?.status === "verified" ? `/verify/${publication.public_id}` : null} displayName={profile?.full_name || "Estudiante CodeZero"}/>}
+      {workspaceEnabled() && <CertificateSharing certificateId={certificate.id} initialPath={publication?.status === "verified" ? `/verify/${publication.public_id}` : null} displayName={profile?.full_name || "Estudiante Garciloga"}/>}
     </main></LocalizedContent>
   );
 }

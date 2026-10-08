@@ -145,5 +145,47 @@ try {
  const after=(await db.query('select (select count(*) from public.issued_block_diplomas) diplomas, (select count(*) from public.learning_evidence) evidence, (select count(*) from public.exam_attempts) exams')).rows;
  assert.deepEqual(after,before);assert.deepEqual(await visible(2),[id(2),id(3),id(4)]);
  });
+ await db.exec(readFileSync('supabase/migrations/20261007222517_vivo_enterprise_workspace.sql','utf8'));
+ await check('Vivo nullable job title and role edits remain atomic',async()=>{
+ await rpc('select public.update_workspace_member_details($1,$2,$3,$4,$5,$6,$7)',[org,id(1),id(4),'learner',id(3),true,'Agente de Soporte N2']);
+ assert.equal((await as('authenticated',id(4),()=>db.query('select job_title from public.organization_memberships'))).rows[0].job_title,'Agente de Soporte N2');
+ await rejected(()=>rpc('select public.update_workspace_member_details($1,$2,$3,$4,$5,$6,$7)',[org,id(1),id(4),'supervisor',id(3),true,'x'.repeat(121)]));
+ assert.equal((await as('authenticated',id(4),()=>db.query('select role from public.organization_memberships'))).rows[0].role,'learner');
+ });
+ await check('Vivo supervisor assigns direct report but cannot assign a peer',async()=>{
+ await rpc('select public.assign_workspace_activity($1,$2,$3,$4,$5,$6)',[org,id(3),id(4),'exam',20,'Fundamentos técnicos']);
+ await rejected(()=>rpc('select public.assign_workspace_activity($1,$2,$3,$4,$5,$6)',[org,id(3),id(5),'exam',20,'Fundamentos técnicos']));
+ await rejected(()=>as('authenticated',id(3),()=>db.query('select public.assign_workspace_activity($1,$2,$3,$4,$5,$6)',[org,id(3),id(5),'exam',20,'Fundamentos técnicos'])));
+ });
+ await check('Vivo manager assignments and levels include descendants only',async()=>{
+ await rpc('select public.assign_workspace_activity($1,$2,$3,$4,$5,$6)',[org,id(2),id(4),'exam',20,'Fundamentos técnicos']);
+ await rejected(()=>rpc('select public.assign_workspace_activity($1,$2,$3,$4,$5,$6)',[org,id(2),id(5),'exam',20,'Fundamentos técnicos']));
+ const rows=(await rpc('select * from public.workspace_current_levels($1,$2)',[org,id(2)])).rows;
+ assert.deepEqual(rows.map(r=>r.user_id),[id(2),id(3),id(4)]);assert.equal(rows.find(r=>r.user_id===id(4)).current_level,2);
+ });
+ await check('Vivo directory has only name, role, job title and hierarchy outside scope',async()=>{
+ const rows=(await rpc('select * from public.workspace_directory($1,$2)',[org,id(3)])).rows;
+ assert.equal(rows.length,5);assert.deepEqual(Object.keys(rows[0]).sort(),['user_id','display_name','role','reports_to','active','job_title'].sort());
+ await rejected(()=>as('authenticated',id(3),()=>db.query('select * from public.workspace_directory($1,$2)',[org,id(1)])));
+ await rejected(()=>rpc('select * from public.workspace_directory($1,$2)',[org,id(7)]));
+ });
+ await check('Vivo invite and create functions accept the new optional column',async()=>{
+ const newOrg=(await rpc('select public.create_workspace_organization($1,$2) id',[id(1),'Vivo nueva organización'])).rows[0].id;
+ const inv=(await rpc('select public.create_workspace_invitation($1,$2,$3,$4,$5) id',[newOrg,id(1),'persona7@codezero.example.test','learner',id(1)])).rows[0].id;
+ await rpc('select public.accept_workspace_invitation($1,$2,$3,$4)',[inv,id(7),'persona7@codezero.example.test','Persona 7']);
+ });
+ await check('Vivo acceptance roster: owner, admin, two managers, supervisor and three learners',async()=>{
+ const fixture=(await rpc('select public.create_workspace_organization($1,$2) id',[id(1),'Organización Vivo de ocho personas'])).rows[0].id;
+ for(const [n,role,parent] of [[2,'admin',1],[3,'manager',1],[4,'manager',1],[5,'supervisor',3],[6,'learner',5],[7,'learner',4],[8,'learner',3]]){
+ const inv=(await rpc('select public.create_workspace_invitation($1,$2,$3,$4,$5) id',[fixture,id(1),`vivo${n}@codezero.example.test`,role,id(parent)])).rows[0].id;
+ await rpc('select public.accept_workspace_invitation($1,$2,$3,$4)',[inv,id(n),`vivo${n}@codezero.example.test`,`Persona Vivo ${n}`]);
+ }
+ for(const [n,expected] of [[1,[1,2,3,4,5,6,7,8]],[2,[1,2,3,4,5,6,7,8]],[3,[3,5,6,8]],[4,[4,7]],[5,[5,6]],[6,[6]],[7,[7]],[8,[8]]]){
+ const rows=(await as('authenticated',id(n),()=>db.query('select user_id from public.organization_memberships where organization_id=$1 order by user_id',[fixture]))).rows;
+ assert.deepEqual(rows.map(r=>r.user_id),expected.map(id));
+ }
+ await rejected(()=>rpc('select public.assign_workspace_activity($1,$2,$3,$4,$5,$6)',[fixture,id(5),id(7),'exam',20,'APIs']));
+ });
  console.log(`${checks} database checks passed. No remote database or Auth service was contacted.`);
 } finally {await db.close();}
+

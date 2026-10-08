@@ -943,5 +943,420 @@
     "OAuth 2.0",
     "OAuth 2.0",
     "OAuth 2.0"
+  ],
+  "Mis competencias": [
+    "My competencies",
+    "Minhas competências",
+    "Mes compétences"
+  ],
+  "de 15": [
+    "of 15",
+    "de 15",
+    "sur 15"
+  ],
+  "Avance de sus reportes directos": [
+    "Direct reports’ progress",
+    "Progresso dos subordinados diretos",
+    "Progression des collaborateurs directs"
+  ],
+  "Avance de toda su rama": [
+    "Progress across the reporting branch",
+    "Progresso de toda a sua equipe hierárquica",
+    "Progression de toute la branche hiérarchique"
+  ],
+  "Fortalezas y áreas de mejora del equipo": [
+    "Team strengths and areas for improvement",
+    "Pontos fortes e áreas de melhoria da equipe",
+    "Points forts et axes d’amélioration de l’équipe"
+  ],
+  "Invitar personas y editar el organigrama": [
+    "Invite people and edit the organization chart",
+    "Convidar pessoas e editar o organograma",
+    "Inviter des personnes et modifier l’organigramme"
+  ],
+  "Puestos, permisos e historial de cambios": [
+    "Roles, permissions and change history",
+    "Cargos, permissões e histórico de alterações",
+    "Rôles, autorisations et historique des modifications"
+  ],
+  "Qué puede ver cada puesto": [
+    "What each role can see",
+    "O que cada cargo pode ver",
+    "Ce que chaque rôle peut consulter"
+  ],
+  "Permisos por puesto": [
+    "Permissions by role",
+    "Permissões por cargo",
+    "Autorisations par rôle"
+  ],
+  "Permiso": [
+    "Permission",
+    "Permissão",
+    "Autorisation"
+  ],
+  "Aún no hay resultados": [
+    "No results yet",
+    "Ainda não há resultados",
+    "Aucun résultat pour le moment"
+  ],
+  "Nivel aún no disponible": [
+    "Level not yet available",
+    "Nível ainda não disponível",
+    "Niveau indisponible pour le moment"
+  ],
+  "Nivel {0} de 15": [
+    "Level {0} of 15",
+    "Nível {0} de 15",
+    "Niveau {0} sur 15"
+  ],
+  "Sin tareas asignadas": [
+    "No assigned tasks",
+    "Sem tarefas atribuídas",
+    "Aucune tâche attribuée"
+  ],
+  "Fuerte en:": [
+    "Strong in:",
+    "Ponto forte:",
+    "Point fort :"
+  ],
+  "Por reforzar:": [
+    "Needs improvement:",
+    "A reforçar:",
+    "À renforcer :"
+  ],
+  "Al día": [
+    "Up to date",
+    "Em dia",
+    "À jour"
+  ],
+  "Ver ficha": [
+    "View profile",
+    "Ver perfil",
+    "Voir la fiche"
+  ],
+  "Fortalezas y áreas de mejora": [
+    "Strengths and areas for improvement",
+    "Pontos fortes e áreas de melhoria",
+    "Points forts et axes d’amélioration"
+  ],
+  "Historial de cambios": [
+    "Change history",
+    "Histórico de alterações",
+    "Historique des modifications"
+  ],
+  "Ves toda la organización, incluida la facturación.": [
+    "You can see the whole organization, including billing.",
+    "Você pode ver toda a organização, incluindo o faturamento.",
+    "Vous pouvez consulter toute l’organisation, y compris la facturation."
+  ],
+  "Ves toda la organización. Sin acceso a facturación.": [
+    "You can see the whole organization. No billing access.",
+    "Você pode ver toda a organização. Sem acesso ao faturamento.",
+    "Vous pouvez consulter toute l’organisation. Sans accès à la facturation."
+  ],
+  "Ves tu rama completa: reportes directos e indirectos.": [
+    "You can see your whole reporting branch: direct and indirect reports.",
+    "Você pode ver toda a sua equipe hierárquica: subordinados diretos e indiretos.",
+    "Vous pouvez consulter toute votre branche : collaborateurs directs et indirects."
+  ],
+  "Ves solo a tus reportes directos.": [
+    "You can see only your direct reports.",
+    "Você pode ver apenas seus subordinados diretos.",
+    "Vous pouvez consulter uniquement vos collaborateurs directs."
+  ],
+  "Ves solo tu propio avance y tus competencias.": [
+    "You can see only your own progress and competencies.",
+    "Você pode ver apenas seu próprio progresso e suas competências.",
+    "Vous pouvez consulter uniquement votre progression et vos compétences."
+  ],
+  "Tu puesto en": [
+    "Your role at",
+    "Seu cargo em",
+    "Votre rôle dans"
+  ],
+  "Tu plan": [
+    "Your plan",
+    "Seu plano",
+    "Votre forfait"
+  ],
+  "YO APRENDO": [
+    "MY LEARNING",
+    "MEU APRENDIZADO",
+    "MON APPRENTISSAGE"
+  ],
+  "MI EQUIPO": [
+    "MY TEAM",
+    "MINHA EQUIPE",
+    "MON ÉQUIPE"
+  ],
+  "MI EMPRESA": [
+    "MY COMPANY",
+    "MINHA EMPRESA",
+    "MON ENTREPRISE"
+  ],
+  "AYUDA": [
+    "HELP",
+    "AJUDA",
+    "AIDE"
+  ],
+  "Mi ruta": [
+    "My learning path",
+    "Minha trilha",
+    "Mon parcours"
+  ],
+  "Mis tareas": [
+    "My tasks",
+    "Minhas tarefas",
+    "Mes tâches"
+  ],
+  "Personas": [
+    "People",
+    "Pessoas",
+    "Personnes"
+  ],
+  "Asignar aprendizaje": [
+    "Assign learning",
+    "Atribuir aprendizagem",
+    "Attribuer des activités"
+  ],
+  "Invitar personas": [
+    "Invite people",
+    "Convidar pessoas",
+    "Inviter des personnes"
+  ],
+  "Puestos y permisos": [
+    "Roles and permissions",
+    "Cargos e permissões",
+    "Rôles et autorisations"
+  ],
+  "Menú de Garciloga": [
+    "Garciloga menu",
+    "Menu do Garciloga",
+    "Menu Garciloga"
+  ],
+  "Navegación de Garciloga": [
+    "Garciloga navigation",
+    "Navegação do Garciloga",
+    "Navigation Garciloga"
+  ],
+  "Hola,": [
+    "Hello,",
+    "Olá,",
+    "Bonjour,"
+  ],
+  "Así vas en tu ruta.": [
+    "Here is your learning progress.",
+    "Veja seu progresso na trilha.",
+    "Voici votre progression dans le parcours."
+  ],
+  "Puesto": [
+    "Role",
+    "Cargo",
+    "Rôle"
+  ],
+  "Así va tu equipo.": [
+    "Here is how your team is doing.",
+    "Veja como sua equipe está progredindo.",
+    "Voici la progression de votre équipe."
+  ],
+  "Personas a tu cargo": [
+    "People you manage",
+    "Pessoas sob sua gestão",
+    "Personnes sous votre responsabilité"
+  ],
+  "Avance promedio": [
+    "Average progress",
+    "Progresso médio",
+    "Progression moyenne"
+  ],
+  "Con alerta": [
+    "With an alert",
+    "Com alerta",
+    "Avec une alerte"
+  ],
+  "Tareas pendientes": [
+    "Pending tasks",
+    "Tarefas pendentes",
+    "Tâches en attente"
+  ],
+  "Aún no hay personas a tu cargo.": [
+    "You do not manage anyone yet.",
+    "Você ainda não tem pessoas sob sua gestão.",
+    "Vous n’avez pas encore de collaborateurs sous votre responsabilité."
+  ],
+  "Invita a tu primera persona": [
+    "Invite your first person",
+    "Convide sua primeira pessoa",
+    "Invitez votre première personne"
+  ],
+  "Competencias del equipo": [
+    "Team competencies",
+    "Competências da equipe",
+    "Compétences de l’équipe"
+  ],
+  "Puesto de trabajo": [
+    "Job title",
+    "Cargo profissional",
+    "Intitulé du poste"
+  ],
+  "Persona": [
+    "Person",
+    "Pessoa",
+    "Personne"
+  ],
+  "No pudimos cargar las invitaciones.": [
+    "We could not load invitations.",
+    "Não foi possível carregar os convites.",
+    "Impossible de charger les invitations."
+  ],
+  "Catálogo publicado. Los permisos y límites de cada plan se conservan.": [
+    "Published catalog. Each plan’s permissions and limits remain unchanged.",
+    "Catálogo publicado. As permissões e os limites de cada plano são mantidos.",
+    "Catalogue publié. Les autorisations et les limites de chaque forfait sont conservées."
+  ],
+  "No pudimos cargar el historial.": [
+    "We could not load the history.",
+    "Não foi possível carregar o histórico.",
+    "Impossible de charger l’historique."
+  ],
+  "Aún no hay cambios registrados.": [
+    "No changes recorded yet.",
+    "Ainda não há alterações registradas.",
+    "Aucune modification enregistrée pour le moment."
+  ],
+  "Cambio": [
+    "Change",
+    "Alteração",
+    "Modification"
+  ],
+  "Esta organización aún no tiene una cuenta de facturación vinculada.": [
+    "This organization does not have a linked billing account yet.",
+    "Esta organização ainda não tem uma conta de faturamento vinculada.",
+    "Cette organisation n’a pas encore de compte de facturation associé."
+  ],
+  "La suscripción personal se administra por separado.": [
+    "Your personal subscription is managed separately.",
+    "Sua assinatura pessoal é gerenciada separadamente.",
+    "Votre abonnement personnel est géré séparément."
+  ],
+  "Ver mi suscripción personal": [
+    "View my personal subscription",
+    "Ver minha assinatura pessoal",
+    "Voir mon abonnement personnel"
+  ],
+  "Ficha de aprendizaje": [
+    "Learning profile",
+    "Perfil de aprendizagem",
+    "Fiche d’apprentissage"
+  ],
+  "Competencias": [
+    "Competencies",
+    "Competências",
+    "Compétences"
+  ],
+  "Dueño": [
+    "Owner",
+    "Proprietário",
+    "Propriétaire"
+  ],
+  "Gerente": [
+    "Manager",
+    "Gerente",
+    "Responsable"
+  ],
+  "Colaborador": [
+    "Team member",
+    "Colaborador",
+    "Collaborateur"
+  ],
+  "Administrador": [
+    "Administrator",
+    "Administrador",
+    "Administrateur"
+  ],
+  "Supervisor": [
+    "Supervisor",
+    "Supervisor",
+    "Superviseur"
+  ],
+  "Proyecto por corregir": [
+    "Project needs revision",
+    "Projeto precisa de revisão",
+    "Projet à corriger"
+  ],
+  "{0} pendientes": [
+    "{0} pending",
+    "{0} pendentes",
+    "{0} en attente"
+  ],
+  "Fuerte": [
+    "Strong",
+    "Forte",
+    "Point fort"
+  ],
+  "En camino": [
+    "In progress",
+    "Em progresso",
+    "En progression"
+  ],
+  "Por reforzar": [
+    "Needs improvement",
+    "A reforçar",
+    "À renforcer"
+  ],
+  "Organización creada": [
+    "Organization created",
+    "Organização criada",
+    "Organisation créée"
+  ],
+  "Puesto y jerarquía actualizados": [
+    "Role and reporting line updated",
+    "Cargo e hierarquia atualizados",
+    "Rôle et hiérarchie mis à jour"
+  ],
+  "Invitación creada": [
+    "Invitation created",
+    "Convite criado",
+    "Invitation créée"
+  ],
+  "Invitación aceptada": [
+    "Invitation accepted",
+    "Convite aceito",
+    "Invitation acceptée"
+  ],
+  "Aprendizaje asignado": [
+    "Learning assigned",
+    "Aprendizagem atribuída",
+    "Activité attribuée"
+  ],
+  "Puesto de trabajo actualizado": [
+    "Job title updated",
+    "Cargo profissional atualizado",
+    "Intitulé du poste mis à jour"
+  ],
+  "Cambio registrado": [
+    "Change recorded",
+    "Alteração registrada",
+    "Modification enregistrée"
+  ],
+  "C · Vivo mantiene una paleta fija. Tus preferencias anteriores se conservan en tu cuenta.": [
+    "C · Vivo uses a fixed palette. Your previous preferences are kept in your account.",
+    "C · Vivo mantém uma paleta fixa. Suas preferências anteriores são mantidas na sua conta.",
+    "C · Vivo utilise une palette fixe. Vos préférences précédentes sont conservées dans votre compte."
+  ],
+  "Editar puestos y jerarquía": [
+    "Edit roles and reporting lines",
+    "Editar cargos e hierarquia",
+    "Modifier les rôles et la hiérarchie"
+  ],
+  "Volver a intentar": [
+    "Try again",
+    "Tentar novamente",
+    "Réessayer"
+  ],
+  "1 pendiente": [
+    "1 pending",
+    "1 pendente",
+    "1 en attente"
   ]
 }

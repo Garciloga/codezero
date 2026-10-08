@@ -50,8 +50,8 @@ export default async function HelpPage({ searchParams }: PageProps) {
           <p className="muted">Busca una respuesta. Si no la encuentras, puedes enviar una sugerencia o abrir un ticket.</p>
         </div>
         <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
-          {user ? <Link className="btn secondary" href="/help/tickets">Mis tickets</Link> : null}
-          <Link className="btn secondary" href="/">Inicio</Link>
+          {user ? <Link prefetch={false} className="btn secondary" href="/help/tickets">Mis tickets</Link> : null}
+          <Link prefetch={false} className="btn secondary" href="/">Inicio</Link>
         </div>
       </div>
 
@@ -67,7 +67,7 @@ export default async function HelpPage({ searchParams }: PageProps) {
             style={{flex:"1 1 320px",padding:12,borderRadius:10,border:"1px solid #d8dee8"}}
           />
           <button className="btn" type="submit">Buscar</button>
-          {query ? <Link className="btn secondary" href="/help">Limpiar</Link> : null}
+          {query ? <Link prefetch={false} className="btn secondary" href="/help">Limpiar</Link> : null}
         </form>
         {query && (
           <p className="muted" style={{marginBottom:0}}>
@@ -125,15 +125,15 @@ export default async function HelpPage({ searchParams }: PageProps) {
 
       <section className="card" style={{marginTop:30}}>
         <h2>¿No encontraste la respuesta?</h2>
-        <p className="muted">El soporte está integrado dentro de CodeZero.</p>
+        <p className="muted">El soporte está integrado dentro de Garciloga.</p>
         <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
           {user ? (
             <>
-              <Link className="btn" href={"/help/tickets"+(query ? "?q="+encodeURIComponent(query) : "")}>Abrir ticket</Link>
-              <Link className="btn secondary" href="/help/suggestions">Enviar sugerencia</Link>
+              <Link prefetch={false} className="btn" href={"/help/tickets"+(query ? "?q="+encodeURIComponent(query) : "")}>Abrir ticket</Link>
+              <Link prefetch={false} className="btn secondary" href="/help/suggestions">Enviar sugerencia</Link>
             </>
           ) : (
-            <Link className="btn" href="/login">Iniciar sesión</Link>
+            <Link prefetch={false} className="btn" href="/login">Iniciar sesión</Link>
           )}
         </div>
       </section>

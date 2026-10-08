@@ -1,0 +1,503 @@
+/* C · Vivo: the complete shared design system, including legacy token aliases. */
+html[data-design="vivo"] {
+  --fondo: var(--vivo-bg);
+  --superficie: var(--vivo-surface);
+  --tinta: var(--vivo-text);
+  --texto-2: var(--vivo-muted);
+  --borde: var(--vivo-soft);
+  --borde-fuerte: var(--vivo-sidebar);
+  --primario: var(--vivo-primary);
+  --primario-hover: var(--vivo-hover);
+  --primario-tinte: var(--vivo-soft);
+  --acento: var(--vivo-accent);
+  --exito: var(--vivo-positive);
+  --error: var(--vivo-reinforce);
+  --error-tinte: var(--vivo-alert-bg);
+  --user-bg: var(--vivo-bg);
+  --user-surface: var(--vivo-surface);
+  --user-text: var(--vivo-text);
+  --user-muted: var(--vivo-muted);
+  --user-border: var(--vivo-soft);
+  --user-tint: var(--vivo-soft);
+  color-scheme: light;
+}
+html[data-design="vivo"] body,
+html[data-design="vivo"] .public-site {
+  background: var(--vivo-bg);
+  color: var(--vivo-text);
+  font-family: var(--fuente-cuerpo);
+}
+html[data-design="vivo"] h1,
+html[data-design="vivo"] h2,
+html[data-design="vivo"] h3,
+html[data-design="vivo"] h4,
+html[data-design="vivo"] .stat,
+html[data-design="vivo"] .vivo-logo {
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+}
+html[data-design="vivo"] .card {
+  background: var(--vivo-surface);
+  border: 0;
+  border-radius: var(--radio-tarjeta);
+  box-shadow: 0 4px 20px rgb(43 27 90 / 5%);
+}
+html[data-design="vivo"] .muted {
+  color: var(--vivo-muted);
+}
+html[data-design="vivo"] .btn,
+html[data-design="vivo"] button.btn {
+  background: var(--vivo-primary);
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: var(--radio-pill);
+  min-height: 44px;
+  padding: 11px 20px;
+  font-weight: 600;
+}
+html[data-design="vivo"] .btn:hover {
+  background: var(--vivo-hover);
+}
+html[data-design="vivo"] .btn.secondary {
+  background: transparent;
+  border: 2px solid var(--vivo-sidebar);
+  color: var(--vivo-sidebar);
+}
+html[data-design="vivo"] .btn.secondary:hover {
+  background: var(--vivo-soft);
+}
+html[data-design="vivo"] .btn.accent {
+  background: var(--vivo-accent);
+  color: var(--vivo-sidebar);
+}
+html[data-design="vivo"] .pill {
+  border-radius: var(--radio-pill);
+  background: var(--vivo-soft);
+  color: var(--vivo-primary);
+}
+html[data-design="vivo"] .bar {
+  height: var(--vivo-progress-height);
+  background: var(--vivo-soft);
+  border-radius: var(--radio-pill);
+}
+html[data-design="vivo"] .bar > i {
+  background: var(--vivo-primary);
+}
+html[data-design="vivo"] input,
+html[data-design="vivo"] select,
+html[data-design="vivo"] textarea {
+  background: var(--vivo-surface);
+  color: var(--vivo-text);
+  max-width: 100%;
+  min-height: 44px;
+}
+html[data-design="vivo"] textarea {
+  border-radius: 18px !important;
+}
+html[data-design="vivo"] :focus-visible {
+  outline: 3px solid var(--vivo-primary);
+  outline-offset: 4px;
+}
+html[data-design="vivo"] .public-dark {
+  background: var(--vivo-sidebar);
+  color: #fff;
+}
+html[data-design="vivo"] .public-dark p,
+html[data-design="vivo"] .public-dark li {
+  color: var(--vivo-sidebar-muted);
+}
+html[data-design="vivo"] .public-close {
+  background: var(--vivo-soft);
+  color: var(--vivo-text);
+}
+html[data-design="vivo"] .public-nav a {
+  color: var(--vivo-text);
+}
+html[data-design="vivo"] .public-nav a:hover {
+  background: var(--vivo-soft);
+  color: var(--vivo-primary);
+}
+.vivo-shell {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  min-height: 100dvh;
+}
+.vivo-sidebar {
+  background: var(--vivo-sidebar);
+  color: #fff;
+  padding: 28px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  min-height: 100dvh;
+}
+.vivo-logo {
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+.vivo-position {
+  background: var(--vivo-sidebar-card);
+  border-radius: var(--radio-tarjeta);
+  padding: 20px;
+  display: grid;
+  gap: 10px;
+}
+.vivo-position small,
+.vivo-position p,
+.vivo-account small {
+  color: var(--vivo-sidebar-muted);
+}
+.vivo-position p {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+}
+.vivo-position strong {
+  font-size: 20px;
+}
+.vivo-sidebar nav section {
+  margin-bottom: 20px;
+}
+.vivo-sidebar nav h2 {
+  font: 600 11px var(--fuente-cuerpo);
+  letter-spacing: 0.1em;
+  color: var(--vivo-sidebar-muted);
+}
+.vivo-sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 11px 12px;
+  border-radius: var(--radio-pill);
+  font-size: 13px;
+  color: #fff;
+}
+.vivo-sidebar nav a[aria-current="page"] {
+  background: var(--vivo-accent);
+  color: var(--vivo-sidebar);
+  font-weight: 700;
+}
+.vivo-sidebar nav a:hover:not([aria-current]) {
+  background: var(--vivo-sidebar-card);
+}
+.vivo-sidebar :focus-visible {
+  outline-color: var(--vivo-accent) !important;
+}
+.vivo-mobile-navigation > summary {
+  display: none;
+}
+.vivo-account {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: auto;
+}
+.vivo-account div {
+  display: grid;
+  gap: 5px;
+}
+.vivo-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--vivo-soft);
+  color: var(--vivo-sidebar);
+  flex-shrink: 0;
+  font-weight: 700;
+}
+.vivo-content {
+  min-width: 0;
+}
+.vivo-content .wrap {
+  max-width: 1260px;
+  padding: 32px;
+}
+.vivo-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.vivo-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radio-tarjeta);
+}
+.vivo-table-scroll table {
+  min-width: 760px;
+}
+.vivo-table-scroll th,
+.vivo-table-scroll td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--vivo-soft);
+}
+.vivo-table-scroll .current-role {
+  background: var(--vivo-alert-bg);
+}
+.vivo-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 24px 0;
+}
+.vivo-kpis .card {
+  padding: 24px;
+}
+.vivo-kpis strong {
+  display: block;
+  font: 700 32px var(--fuente-titulo);
+  margin-top: 10px;
+}
+html[data-design="vivo"] .vivo-kpis .primary {
+  background: var(--vivo-primary);
+  color: #fff;
+}
+html[data-design="vivo"] .vivo-kpis .accent {
+  background: var(--vivo-accent);
+  color: var(--vivo-sidebar);
+}
+html[data-design="vivo"] .vivo-kpis .positive {
+  background: var(--vivo-positive);
+  color: #fff;
+}
+.vivo-person {
+  display: grid;
+  gap: 14px;
+}
+.vivo-person h3,
+.vivo-person p {
+  margin: 0;
+}
+.vivo-person-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.vivo-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 6px 12px;
+  border-radius: var(--radio-pill);
+  font-size: 13px;
+  background: var(--vivo-soft);
+  color: var(--vivo-primary);
+}
+.vivo-chip.alert {
+  background: var(--vivo-alert-bg);
+  color: var(--vivo-alert-text);
+}
+.vivo-skill {
+  margin: 18px 0;
+}
+.vivo-skill .bar {
+  margin-top: 10px;
+}
+.vivo-skill .label {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+}
+.vivo-skill [data-band="strong"] {
+  color: var(--vivo-positive);
+}
+.vivo-skill [data-band="weak"] {
+  color: var(--vivo-reinforce);
+}
+.vivo-organigram {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.vivo-organigram li {
+  border-radius: 18px;
+  padding: 12px;
+  background: var(--vivo-soft);
+}
+.vivo-organigram .limited {
+  background: var(--vivo-bg);
+  color: var(--vivo-muted);
+}
+.vivo-form {
+  display: grid;
+  gap: 16px;
+  max-width: 780px;
+}
+.vivo-form label {
+  display: grid;
+  gap: 8px;
+}
+.vivo-form input,
+.vivo-form select {
+  padding: 12px;
+  border: 1px solid var(--vivo-muted);
+  border-radius: var(--radio-pill);
+}
+.vivo-form fieldset {
+  border: 0;
+  padding: 0;
+}
+@media (max-width: 1000px) {
+  .vivo-shell {
+    grid-template-columns: 240px minmax(0, 1fr);
+  }
+  .vivo-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .vivo-shell {
+    display: block;
+  }
+  .vivo-sidebar {
+    position: static;
+    min-height: 0;
+    padding: 16px;
+    gap: 14px;
+  }
+  .vivo-logo {
+    font-size: 26px;
+  }
+  .vivo-position {
+    padding: 16px;
+  }
+  .vivo-mobile-navigation > summary {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    cursor: pointer;
+  }
+  .vivo-account {
+    margin-top: 0;
+  }
+  .vivo-content .wrap {
+    padding: 20px 16px;
+  }
+  .vivo-kpis,
+  .vivo-content .grid2,
+  .vivo-content .grid4 {
+    grid-template-columns: 1fr;
+  }
+  .vivo-organigram li {
+    margin-left: min(var(--depth, 0px), 48px) !important;
+  }
+  .vivo-sidebar nav a {
+    font-size: 14px;
+  }
+}
+@media print {
+  .vivo-sidebar,
+  .language-selector {
+    display: none;
+  }
+  .vivo-shell {
+    display: block;
+  }
+}
+
+.vivo-person-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 20px;
+  margin: 24px 0;
+}
+.vivo-content form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 14px;
+  margin: 20px 0;
+}
+.vivo-content form label {
+  display: grid;
+  gap: 8px;
+}
+.vivo-content input,
+.vivo-content select {
+  padding: 10px 14px;
+  border: 1px solid var(--vivo-muted);
+  border-radius: var(--radio-pill);
+}
+.vivo-content input[type="checkbox"] {
+  width: 22px;
+  min-height: 22px;
+}
+.vivo-content :where(p, h1, h2, h3, li, td, th) {
+  overflow-wrap: anywhere;
+}
+html[data-design="vivo"]
+  :where(.public-site, .wrap)
+  :where(.card, .btn, .pill, .hero, .public-close) {
+  background-image: none;
+}
+
+html[data-design="vivo"] .public-site .btn {
+  background: var(--vivo-primary);
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: var(--radio-pill);
+}
+html[data-design="vivo"] .public-site .btn.secondary {
+  background: transparent;
+  color: var(--vivo-sidebar);
+  border: 2px solid var(--vivo-sidebar);
+}
+html[data-design="vivo"] .public-site .public-dark .btn.secondary {
+  color: #fff;
+  border-color: #fff;
+}
+html[data-design="vivo"] .public-site .btn:hover {
+  background: var(--vivo-hover);
+  color: #fff;
+}
+html[data-design="vivo"] .public-site .btn.secondary:hover {
+  background: var(--vivo-soft);
+  color: var(--vivo-sidebar);
+}
+html[data-design="vivo"] .public-site h3 {
+  font-family: var(--fuente-titulo);
+}
+html[data-design="vivo"] .language-selector {
+  color: var(--vivo-text);
+}
+html[data-design="vivo"] .language-selector select {
+  color: var(--vivo-text);
+  background: var(--vivo-surface);
+}
+
+html[data-design="vivo"] .card {
+  border: 0 !important;
+  border-radius: var(--radio-tarjeta) !important;
+}
+html[data-design="vivo"] :where(input, select) {
+  border-color: var(--vivo-muted) !important;
+  border-radius: var(--radio-control) !important;
+}
+html[data-design="vivo"] :where(textarea) {
+  border-color: var(--vivo-muted) !important;
+}
+.vivo-sidebar {
+  max-height: 100dvh;
+  overflow-y: auto;
+}
+.vivo-sidebar :where(strong, small, p) {
+  overflow-wrap: anywhere;
+}
+.vivo-account div {
+  min-width: 0;
+}
+@media (max-width: 700px) {
+  .vivo-sidebar {
+    max-height: none;
+    overflow: visible;
+  }
+}

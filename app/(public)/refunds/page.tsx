@@ -3,7 +3,7 @@ import LocalizedContent from "../../components/localization/server";
 import Link from "next/link";
 import { publicMetadata } from "../../../lib/public-metadata";
 
-export async function generateMetadata() { return translatedMetadata(publicMetadata("Cancelaciones y reembolsos", "Consulta las condiciones de cancelación, reembolsos y contacto de facturación de CodeZero.", "/refunds")); }
+export async function generateMetadata() { return translatedMetadata(publicMetadata("Cancelaciones y reembolsos", "Consulta las condiciones de cancelación, reembolsos y contacto de facturación de Garciloga.", "/refunds")); }
 
 export default function RefundsPage() {
   return (
@@ -16,7 +16,7 @@ export default function RefundsPage() {
         <p>Última actualización: 7 de octubre de 2026.</p>
 
         <p>
-          Esta política aplica a CodeZero, operado por <b>Isaac López García</b>
+          Esta política aplica a Garciloga, operado por <b>Isaac López García</b>
           (<b>Isaac Garciloga</b>), persona física con operación en Ciudad de México, México.
         </p>
 
@@ -37,7 +37,7 @@ export default function RefundsPage() {
 
         <h2>Pagos fallidos</h2>
         <p>
-          Stripe puede reintentar cobros fallidos. Durante ese proceso, CodeZero puede mostrar
+          Stripe puede reintentar cobros fallidos. Durante ese proceso, Garciloga puede mostrar
           el estado de facturación correspondiente y solicitar la actualización del método de pago.
         </p>
 

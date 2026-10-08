@@ -3,7 +3,7 @@ import LocalizedContent from "../../components/localization/server";
 import Link from "next/link";
 import { publicMetadata } from "../../../lib/public-metadata";
 
-export async function generateMetadata() { return translatedMetadata(publicMetadata("Términos", "Consulta los Términos de uso de CodeZero.", "/terms")); }
+export async function generateMetadata() { return translatedMetadata(publicMetadata("Términos", "Consulta los Términos de uso de Garciloga.", "/terms")); }
 
 export default function TermsPage() {
   return (
@@ -17,7 +17,7 @@ export default function TermsPage() {
 
         <h2>Responsable del servicio</h2>
         <p>
-          CodeZero es operado por <b>Isaac López García</b>, también identificado públicamente
+          Garciloga es operado por <b>Isaac López García</b>, también identificado públicamente
           como <b>Isaac Garciloga</b>, en calidad de persona física con operación en
           Ciudad de México, México.
         </p>
@@ -28,14 +28,14 @@ export default function TermsPage() {
 
         <h2>Objeto del servicio</h2>
         <p>
-          CodeZero ofrece contenido educativo, ejercicios, evaluaciones, proyectos y funciones
+          Garciloga ofrece contenido educativo, ejercicios, evaluaciones, proyectos y funciones
           digitales para aprender programación, SaaS e integraciones. El acceso a determinadas
           funciones depende del plan contratado.
         </p>
 
         <h2>Usuarios menores de edad</h2>
         <p>
-          CodeZero puede ser utilizado por personas menores y mayores de 18 años. Cuando la persona
+          Garciloga puede ser utilizado por personas menores y mayores de 18 años. Cuando la persona
           usuaria sea menor de edad, deberá contar con la autorización y supervisión de su madre,
           padre o tutor legal cuando corresponda. La contratación de planes de pago por una persona
           menor deberá realizarse con autorización del adulto responsable.
@@ -59,10 +59,10 @@ export default function TermsPage() {
         <p>Los exámenes se incluyen dentro de la cuota y el contenido disponible de tu plan. No se cobran intentos por separado. Al agotar la cuota puedes esperar al siguiente periodo o cambiar de plan. Los diplomas y certificados se emiten sin cargo adicional al completar las lecciones, aprobar los exámenes y obtener la aprobación de los proyectos requeridos. No se pueden comprar para omitir requisitos.</p>
         <p>Los certificados ya emitidos se conservan al cancelar o bajar de plan. Publicar un enlace de verificación requiere consentimiento y puedes retirarlo desde Mis certificados.</p>
         <h2>Alcance de los certificados</h2>
-        <p>Los documentos acreditan formación en CodeZero. No se presentan como títulos con reconocimiento oficial, licencias profesionales ni garantía de empleo. Los módulos identificados como Próximamente no forman parte de la entrega disponible ni generan derechos por apuntarse a una lista de espera.</p>
+        <p>Los documentos acreditan formación en Garciloga. No se presentan como títulos con reconocimiento oficial, licencias profesionales ni garantía de empleo. Los módulos identificados como Próximamente no forman parte de la entrega disponible ni generan derechos por apuntarse a una lista de espera.</p>
         <h2>Contenido educativo</h2>
         <p>
-          CodeZero busca ofrecer material útil y actualizado, pero no garantiza resultados
+          Garciloga busca ofrecer material útil y actualizado, pero no garantiza resultados
           profesionales, laborales, académicos ni comerciales específicos. El contenido no
           sustituye asesoría profesional especializada.
         </p>

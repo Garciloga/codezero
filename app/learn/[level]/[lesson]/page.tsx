@@ -244,7 +244,7 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
               </Link>
             ) : (
               <Link className="btn secondary" href="/dashboard">
-                Volver a Mi CodeZero
+                Volver a Mi Garciloga
               </Link>
             )}
           </div>

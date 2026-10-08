@@ -1,5 +1,15 @@
 import { translatedMetadata } from '../lib/localization/metadata';
 import "./globals.css";
+import "@fontsource/outfit/600.css";
+import "@fontsource/outfit/700.css";
+import "@fontsource/plus-jakarta-sans/400.css";
+import "@fontsource/plus-jakarta-sans/500.css";
+import "@fontsource/plus-jakarta-sans/600.css";
+import "@fontsource/plus-jakarta-sans/700.css";
+import VivoShell from "./components/vivo-shell";
+import {accountNavigation} from "../lib/organization-server";
+import {VIVO_CSS_VARIABLES} from "../lib/vivo-design";
+import type {CSSProperties} from "react";
 import type { Metadata } from "next";
 import { ReactNode } from "react";
 import AppearanceProvider from "./components/appearance-provider";
@@ -13,14 +23,14 @@ import { workspaceEnabled } from "../lib/workspace-sandbox";
 export async function generateMetadata() { return translatedMetadata({
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "https://codezero-nine.vercel.app"),
   title: {
-    default: "CodeZero",
-    template: "%s · CodeZero",
+    default: "Garciloga",
+    template: "%s · Garciloga",
   },
-  description: "Aprende programación, SaaS e integraciones con una ruta práctica y progresiva.",
-  applicationName: "CodeZero",
+  description: "Desarrolla habilidades con programación, cursos y decisiones: desde tus primeros pasos hasta liderazgo y dirección.",
+  applicationName: "Garciloga",
   openGraph: {
-    title: "CodeZero",
-    description: "De cero a construir y entender soluciones técnicas para SaaS.",
+    title: "Garciloga",
+    description: "Aprende, practica y decide: construye tu camino profesional con Garciloga.",
     type: "website",
     locale: "es_MX",
   },
@@ -29,16 +39,17 @@ export async function generateMetadata() { return translatedMetadata({
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const { supabase, user, locale } = await localeContext();
   const messages = await uiMessages(locale);
+  const navigation = user ? await accountNavigation() : null;
   const preference = user && workspaceEnabled()
     ? (await supabase.from("user_preferences").select("mode,accent").eq("user_id",user.id).maybeSingle()).data : null;
   return (
-    <html lang={LANGUAGE_TAGS[locale]}>
+    <html lang={LANGUAGE_TAGS[locale]} data-design="vivo" style={VIVO_CSS_VARIABLES as CSSProperties}>
       <body>
         <LanguageProvider locale={locale} messages={messages}>
         <AppearanceProvider userId={user?.id ?? null} serverPreference={preference} />
         <LocalizedServer><a className="skip-link" href="#main-content">Saltar al contenido</a></LocalizedServer>
         <LanguageSelector />
-        <div id="main-content" tabIndex={-1}>{children}</div>
+        <div id={navigation?undefined:"main-content"} tabIndex={navigation?undefined:-1}>{navigation ? <VivoShell name={navigation.profile?.full_name || "Mi cuenta"} plan={navigation.profile?.plan_name || "Free"} organizations={navigation.organizations as any} selected={navigation.organization?.organization_id ?? null}>{children}</VivoShell> : children}</div>
       </LanguageProvider>
       </body>
     </html>

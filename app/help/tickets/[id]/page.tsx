@@ -42,7 +42,7 @@ export default async function TicketPage({ params, searchParams }: PageProps) {
           <h1><span translate="no">{ticket.subject}</span></h1>
           <p className="muted">{ticket.category} · prioridad {ticket.priority} · estado {ticket.status}</p>
         </div>
-        <Link className="btn secondary" href="/help/tickets">Mis tickets</Link>
+        <Link prefetch={false} className="btn secondary" href="/help/tickets">Mis tickets</Link>
       </div>
 
       {created === "1" && <div className="card"><b>Ticket creado correctamente.</b></div>}
@@ -55,7 +55,7 @@ export default async function TicketPage({ params, searchParams }: PageProps) {
         <div style={{display:"grid",gap:12}}>
           {(messages ?? []).map((message) => (
             <div key={message.id} className="support-message" style={{padding:14,borderRadius:12}}>
-              <b>{message.sender_role === "admin" ? "CodeZero Support" : "Tú"}</b>
+              <b>{message.sender_role === "admin" ? "Garciloga Support" : "Tú"}</b>
               <p style={{whiteSpace:"pre-wrap",lineHeight:1.6}}><span translate="no">{message.body}</span></p>
               <div className="muted" style={{fontSize:12}}><LocalizedDate value={message.created_at} includeTime /></div>
             </div>

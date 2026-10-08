@@ -32,6 +32,9 @@ jobs:
       - name: Unit tests
         run: npm test
 
+      - name: Enterprise scope database checks
+        run: node scripts/workspace-db-check.mjs
+
       - name: Translation coverage
         run: node scripts/localization-audit.mjs
 

@@ -1,0 +1,13 @@
+import { ADDON_OFFERS } from './modular-offers';
+
+/** Commercial references only; never used by Stripe or quota authorization. */
+export const COMMERCIAL_REFERENCES = { mentoringMxn: 699, mentoringMinutes: 45, teamSeatMxn: 249, minimumSeats: 5 } as const;
+export const PRODUCT_ROADMAP = [
+  { key: 'enterprise_communicator', label: 'Comunicador Enterprise', audience: 'Equipos Enterprise', detail: 'Mensajes, emojis e información entre compañeros. Actualizaciones de líderes con contexto para su equipo.', gate: 'Permisos por organización, moderación, conservación y pruebas de privacidad antes de abrirlo.' },
+  { key: 'leadership_courses', label: 'Cursos de supervisión, gerencia y dirección', audience: 'De colaborador a directivo', detail: 'Delegación, coaching, seguimiento de procesos, decisiones con datos y coordinación de equipos. La guía introductoria de liderazgo ya puede consultarse.', gate: 'Cursos completos, proyectos y evaluación humana antes de anunciar certificación.' },
+  { key: 'career_guidance', label: 'Orientación profesional por habilidades', audience: 'Desarrollo profesional', detail: 'Explora afinidades, rutas y misiones por puesto. El laboratorio interno todavía no es una herramienta pública.', gate: 'Privacidad, consentimiento y validación de resultados antes de abrir una beta.' },
+  { key: 'learner_community', label: 'Comunidad de alumnos', audience: 'Todos los alumnos', detail: 'Un espacio para compartir avances, dudas y experiencias durante una beta cerrada.', gate: 'Moderación, reglas y grupos de prueba antes de abrir la comunidad.' },
+  { key: 'executable_code', label: 'Práctica de código ejecutable', audience: 'Programación e integraciones', detail: 'Editor y ejecución aislada de Python y SQL, con proyectos de integración aplicados al trabajo.', gate: 'Seguridad, límites y pruebas del motor antes de habilitarlo.' },
+  { key: 'annual_plans', label: 'Planes anuales y ofertas de lanzamiento', audience: 'Todos los alumnos', detail: 'Opciones comerciales futuras después de validar la beta y los procesos de facturación.', gate: 'Condiciones y precios por confirmar. Los planes mensuales actuales conservan sus límites.' },
+  ...ADDON_OFFERS.filter(o => !['verified_certificate', 'route_customer_success'].includes(o.key)).map(o => ({ key: o.key, label: o.label, audience: o.key === 'mentoring' ? 'Puestos y procesos' : 'Desarrollo profesional', detail: o.detail ?? '', gate: o.key === 'mentoring' ? 'Agenda y disponibilidad de mentores antes de habilitar reservas.' : o.key === 'ai_tutor' ? 'Proveedor, presupuesto y pruebas antes de activar el tutor. Las compras siguen bloqueadas.' : 'Contenido, evaluación y validación antes de habilitar compras.' })),
+] as const;

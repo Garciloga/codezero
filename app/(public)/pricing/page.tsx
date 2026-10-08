@@ -4,9 +4,10 @@ import Link from "next/link";
 import { publicMetadata } from "../../../lib/public-metadata";
 import { getPublicPlans } from "../../../lib/public-plans-server";
 import { createServerSupabase } from "../../../lib/supabase-server";
+import { COMMERCIAL_REFERENCES } from "../../../lib/product-roadmap";
 import PricingPlans from "../../components/pricing-plans";
 
-export async function generateMetadata() { return translatedMetadata(publicMetadata("Precios", "Compara los planes de CodeZero, sus precios en pesos mexicanos y sus límites mensuales.", "/pricing")); }
+export async function generateMetadata() { return translatedMetadata(publicMetadata("Precios", "Compara los planes de Garciloga, sus precios en pesos mexicanos y sus límites mensuales.", "/pricing")); }
 type PageProps = { searchParams: Promise<{ checkout?: string }> };
 
 async function getCurrentPlan() {
@@ -25,7 +26,8 @@ export default async function Pricing({ searchParams }: PageProps) {
       <p role="alert">No pudimos cargar los planes. Intenta de nuevo o contacta a soporte.</p>
       <div className="public-actions"><a className="btn" href="/pricing">Reintentar</a><Link className="btn secondary" href="/contact">Contacto</Link></div>
     </section>}
-    <section className="public-dark public-enterprise"><h2>Para equipos y empresas</h2><Link className="btn accent" href="/contact">Hablar con nosotros</Link></section>
+    <section className="public-dark public-enterprise"><h2>Enterprise · Para equipos y empresas</h2><p>Organigrama, puestos y visibilidad de avance, competencias, fortalezas y áreas de mejora según el alcance de cada persona.</p><p>Referencia comercial de Equipos: ${COMMERCIAL_REFERENCES.teamSeatMxn} MXN por asiento al mes, mínimo {COMMERCIAL_REFERENCES.minimumSeats} personas. Contratación y alcance mediante propuesta comercial.</p><Link className="btn accent" href="/contact">Hablar con nosotros</Link></section>
+    <section className="public-section card"><span className="pill">Próximamente</span><h2>Mentoría de puestos y procesos</h2><p>${COMMERCIAL_REFERENCES.mentoringMxn} MXN por {COMMERCIAL_REFERENCES.mentoringMinutes} minutos para trabajar decisiones, procesos y desarrollo en tu puesto.</p><Link prefetch={false} className="btn secondary" href="/roadmap">Conocer próximos lanzamientos</Link></section>
     <section className="public-section public-faq"><h2>Sobre los pagos</h2>
       <details open><summary>¿Qué pasa si cancelo?</summary><p>Conservas tu plan hasta el final del periodo que ya pagaste. Después tu cuenta pasa a Free y tu avance se queda guardado.</p></details>
       <details><summary>¿Hay reembolsos?</summary><p>Consulta las condiciones y los casos que se revisan en <Link href="/refunds">Cancelaciones y reembolsos</Link>.</p></details>

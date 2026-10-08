@@ -24,10 +24,10 @@ export default async function SuggestionsPage({ searchParams }: PageProps) {
       <div className="nav">
         <div>
           <span className="pill">SUGERENCIAS</span>
-          <h1>Ayúdanos a mejorar CodeZero</h1>
+          <h1>Ayúdanos a mejorar Garciloga</h1>
           <p className="muted">Ideas de producto, mejoras de contenido, dudas confusas o una nueva FAQ.</p>
         </div>
-        <Link className="btn secondary" href="/help">Centro de ayuda</Link>
+        <Link prefetch={false} className="btn secondary" href="/help">Centro de ayuda</Link>
       </div>
 
       {submitted === "1" && <div className="card"><b>Sugerencia enviada. Gracias por ayudarnos a mejorar.</b></div>}

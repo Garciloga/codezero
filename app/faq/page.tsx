@@ -4,7 +4,7 @@ import Link from "next/link";
 const faqs = [
   {
     q: "¿Necesito experiencia previa?",
-    a: "No. CodeZero comienza con pensamiento computacional y avanza de forma progresiva hacia programación, web, backend e integraciones SaaS.",
+    a: "No. Garciloga comienza con pensamiento computacional y avanza de forma progresiva hacia programación, web, backend e integraciones SaaS.",
   },
   {
     q: "¿Qué incluye el plan Free?",
@@ -23,7 +23,7 @@ const faqs = [
     a: "Los certificados y exámenes están incluidos en los planes, dentro de sus límites y requisitos académicos. No cobramos un cargo separado por emitir el certificado.",
   },
   {
-    q: "¿Pueden usar CodeZero personas menores de edad?",
+    q: "¿Pueden usar Garciloga personas menores de edad?",
     a: "Sí. Cuando corresponda deben contar con autorización y supervisión de su madre, padre o tutor legal. Las compras deben realizarse con autorización del adulto responsable y del titular del método de pago.",
   },
   {
@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: "¿Dónde puedo pedir soporte o ejercer derechos de privacidad?",
-    a: "Puedes usar la página de contacto o escribir al correo publicado en CodeZero. Desde tu perfil también puedes descargar una copia de tus datos de cuenta y aprendizaje.",
+    a: "Puedes usar la página de contacto o escribir al correo publicado en Garciloga. Desde tu perfil también puedes descargar una copia de tus datos de cuenta y aprendizaje.",
   },
 ];
 

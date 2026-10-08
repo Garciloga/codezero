@@ -3,7 +3,7 @@ import LocalizedContent from "../../components/localization/server";
 import Link from "next/link";
 import { publicMetadata } from "../../../lib/public-metadata";
 
-export async function generateMetadata() { return translatedMetadata(publicMetadata("Aviso de privacidad", "Consulta cómo CodeZero trata los datos de cuenta y aprendizaje.", "/privacy")); }
+export async function generateMetadata() { return translatedMetadata(publicMetadata("Aviso de privacidad", "Consulta cómo Garciloga trata los datos de cuenta y aprendizaje.", "/privacy")); }
 
 export default function PrivacyPage() {
   return (
@@ -17,7 +17,7 @@ export default function PrivacyPage() {
 
         <h2>Responsable</h2>
         <p>
-          El responsable del tratamiento de datos de CodeZero es <b>Isaac López García</b>,
+          El responsable del tratamiento de datos de Garciloga es <b>Isaac López García</b>,
           también identificado públicamente como <b>Isaac Garciloga</b>, persona física con
           operación en Ciudad de México, México.
         </p>
@@ -28,7 +28,7 @@ export default function PrivacyPage() {
 
         <h2>Personas menores de edad</h2>
         <p>
-          CodeZero está diseñado también para estudiantes menores de 18 años. Cuando una persona
+          Garciloga está diseñado también para estudiantes menores de 18 años. Cuando una persona
           menor utilice la plataforma, se espera la autorización y supervisión de su madre, padre o
           tutor legal cuando corresponda. Procuramos limitar el tratamiento a los datos necesarios
           para prestar el servicio educativo y operar la cuenta.
@@ -43,7 +43,7 @@ export default function PrivacyPage() {
         <p>
           Información de cuenta como nombre y correo, progreso académico, respuestas e intentos,
           proyectos enviados, datos de plan y referencias de facturación. Los datos completos de
-          tarjeta son procesados por Stripe y no se almacenan directamente en CodeZero.
+          tarjeta son procesados por Stripe y no se almacenan directamente en Garciloga.
         </p>
 
         <p>Idioma preferido y edad opcional de registro. La elección de idioma solo personaliza la presentación; no cambia permisos, calificaciones ni precios.</p>
@@ -53,9 +53,15 @@ export default function PrivacyPage() {
           de abuso, operación de pagos, seguridad y mejora del producto.
         </p>
 
+        <h2>Marco de seguridad y privacidad</h2>
+        <p>Trabajamos en la adopción progresiva de controles tomando como referencia ISO/IEC 27001:2022 para la gestión de seguridad de la información, ISO/IEC 27002:2022 para controles de seguridad e ISO/IEC 27701:2025 para la gestión de privacidad. Esto describe nuestro marco de trabajo; Garciloga no anuncia una certificación ISO ni una auditoría independiente completada.</p>
+        <p>Consideramos los principios y obligaciones del Reglamento General de Protección de Datos de la Unión Europea (GDPR/RGPD), cuando resulte aplicable por su ámbito territorial y el tratamiento realizado: finalidad y base jurídica, minimización, transparencia, conservación limitada, seguridad y atención de derechos. La aplicabilidad, los acuerdos con encargados y las salvaguardas de transferencias internacionales requieren revisión específica; no presentamos esta declaración como garantía de cumplimiento integral.</p>
+        <p>Aplicamos sesiones verificadas, permisos en servidor y restricciones por organización y jerarquía para el avance de equipos. Un supervisor consulta a sus reportes directos; un gerente, a su rama; Dueño y Administrador, a la organización. El organigrama puede mostrar nombre, puesto y relaciones de otros miembros, sin sus resultados de aprendizaje.</p>
+        <p>Puedes solicitar revisión del tratamiento o ejercer los derechos aplicables mediante el contacto de privacidad. Revisaremos la identidad y la solicitud, sin pedir tu contraseña. Los controles, incidencias y medidas de recuperación deben revisarse de forma continua.</p>
+        <p>Referencias: <a href="https://www.iso.org/standard/27001">ISO/IEC 27001</a>, <a href="https://www.iso.org/standard/75652.html">ISO/IEC 27002</a>, <a href="https://www.iso.org/standard/27701">ISO/IEC 27701</a> y <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng">GDPR/RGPD</a>.</p>
         <h2>Proveedores</h2>
         <p>
-          CodeZero utiliza proveedores tecnológicos para operar la plataforma. Entre ellos se
+          Garciloga utiliza proveedores tecnológicos para operar la plataforma. Entre ellos se
           encuentran Vercel para hosting y despliegue, Supabase para base de datos y autenticación,
           y Stripe para procesamiento y administración de pagos. Resend podrá utilizarse para correo
           transaccional cuando el servicio de dominio y SMTP quede habilitado. El proveedor de IA
@@ -67,7 +73,7 @@ export default function PrivacyPage() {
         <h2>Transferencias y procesamiento técnico</h2>
         <p>
           Algunos proveedores pueden procesar información en infraestructura ubicada fuera de
-          México. CodeZero procura limitar los datos compartidos a lo necesario para prestar cada
+          México. Garciloga procura limitar los datos compartidos a lo necesario para prestar cada
           servicio y mantener controles de acceso adecuados.
         </p>
 

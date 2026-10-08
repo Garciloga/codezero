@@ -9,6 +9,7 @@ const links = [
   { label: "Cómo funciona", href: "/#como-funciona" },
   { label: "La ruta", href: "/#ruta" },
   { label: "Precios", href: "/pricing" },
+  { label: "Próximamente", href: "/roadmap" },
   { label: "Preguntas", href: "/#preguntas" },
 ];
 export default function PublicHeader({ authenticated }: { authenticated: boolean }) {
@@ -27,7 +28,7 @@ export default function PublicHeader({ authenticated }: { authenticated: boolean
     aria-current={pathname === link.href ? "page" : undefined}>{link.label}</Link>)}</></LocalizedContent>;
   return <LocalizedContent><header className="public-header">
     <div className="public-header-inner">
-      <Link prefetch={false} className="public-brand" href="/" aria-label="CodeZero · Inicio">CodeZero</Link>
+      <Link prefetch={false} className="public-brand" href="/" aria-label="Garciloga · Inicio">Garciloga</Link>
       <nav className="public-nav public-desktop-nav" aria-label="Navegación pública">{navigation}</nav>
       <div className="public-auth">{authenticated ? <Link prefetch={false} className="btn" href="/dashboard">Ir a mi panel</Link> : <>
         <Link prefetch={false} href="/login">Entrar</Link><Link prefetch={false} className="btn" href="/login?modo=registro">Empezar gratis</Link>
@@ -37,7 +38,7 @@ export default function PublicHeader({ authenticated }: { authenticated: boolean
           closeMenu();
           mobileMenu.current.querySelector("summary")?.focus();
         }
-      }}><summary>Explorar CodeZero <span className="menu-chevron" aria-hidden="true">⌄</span></summary>
+      }}><summary>Explorar Garciloga <span className="menu-chevron" aria-hidden="true">⌄</span></summary>
         <nav className="public-nav" aria-label="Navegación pública móvil" onClick={event => {
           if ((event.target as HTMLElement).closest("a")) closeMenu();
         }}>{navigation}</nav>

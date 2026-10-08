@@ -2,7 +2,7 @@ import { translatedMetadata } from '../../lib/localization/metadata';
 import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
 import { publicMetadata } from "../../lib/public-metadata";
-export async function generateMetadata() { return translatedMetadata(publicMetadata("Aprende a programar desde cero", "Una ruta guiada de programación, SaaS e integraciones. El Nivel 1 completo es gratis.", "/")); }
+export async function generateMetadata() { return translatedMetadata(publicMetadata("Construye tu camino profesional desde cero", "Programación, cursos, procesos y decisiones para desarrollar habilidades profesionales con Garciloga.", "/")); }
 const foundation = ["Pensamiento computacional", "Python desde cero", "Python intermedio y código limpio", "Algoritmos y estructuras de datos", "Git, terminal y flujo profesional", "Bases de datos y SQL", "Web: HTML + CSS + JavaScript", "Backend y APIs", "Ingeniería de software", "Capstone · Proyecto profesional"];
 const integrations = ["APIs y webhooks", "SaaS, OAuth y automatización", "Sistemas empresariales", "Arquitectura y seguridad", "Proyecto final de integración"];
 // Approved manual snapshot, verified against published catalog on 2026-10-06.
@@ -10,10 +10,10 @@ export default function Home() {
   return <LocalizedContent><main className="wrap public-home">
     <section className="public-hero">
       <div>
-        <p className="public-eyebrow">Programación · SaaS · Integraciones</p>
-        <h1>Aprende a programar desde cero, paso a paso.</h1>
-        <p>Una sola ruta guiada de 15 niveles: lees una lección corta, practicas, presentas el examen y avanzas. Sin conocimientos previos.</p>
-        <p className="muted">Aprende a tu ritmo con texto y ejemplos que puedes consultar desde el celular, sin depender de reproducir videos.</p>
+        <p className="public-eyebrow">Programación · Puestos · Procesos · Decisiones</p>
+        <h1>Construye habilidades para tu siguiente puesto.</h1>
+        <p>Empieza desde cero con programación e integraciones, cursos y decisiones aplicadas a puestos reales. Desarrolla tu criterio para crecer hacia supervisión, gerencia y dirección.</p>
+        <p className="muted">La ruta técnica de 15 niveles y el curso de Customer Success ya están disponibles según tu plan. Explora guías por puesto y liderazgo; los nuevos cursos se anunciarán en el roadmap.</p>
         <div className="public-actions"><Link className="btn" href="/login?modo=registro">Empezar gratis</Link><Link className="btn secondary" href="#ruta">Ver la ruta completa</Link></div>
         <p className="muted">El Nivel 1 completo es gratis.</p>
       </div>
@@ -31,7 +31,7 @@ export default function Home() {
       {[["15", "niveles en una sola ruta"], ["92", "lecciones con dos ejercicios"], ["15", "exámenes, uno por nivel"], ["2", "proyectos finales"]].map(([n, label]) => <div key={label}><strong>{n}</strong><span>{label}</span></div>)}
     </section>
     <section id="como-funciona" className="public-section">
-      <h2>Así se avanza en CodeZero</h2><p className="muted">Siempre sabes qué sigue. Cada nivel repite los mismos cuatro pasos.</p>
+      <h2>Así se avanza en Garciloga</h2><p className="muted">Siempre sabes qué sigue. Cada nivel repite los mismos cuatro pasos.</p>
       <div className="public-steps">
         {[["Lee la lección", "Texto claro, un ejemplo guiado y una lista para comprobar que entendiste."], ["Practica", "Dos ejercicios por lección. Al responder ves la explicación, aciertes o no."], ["Presenta el examen", "Cinco preguntas al cierre del nivel. Con 70 % o más pasas al siguiente."], ["Construye un proyecto", "En los niveles 10 y 15 entregas un proyecto final y recibes retroalimentación."]].map(([title, text], i) => <article className="card" key={title}><span className="public-step-number">{i + 1}</span><h3>{title}</h3><p>{text}</p></article>)}
       </div>
@@ -48,6 +48,7 @@ export default function Home() {
         {[["Empiezas de cero", "Nunca has programado. El Nivel 1 enseña a pensar el problema antes de escribir una sola línea."], ["Trabajas en SaaS", "Customer Success, Onboarding o soporte, y quieres entender la parte técnica de tu producto."], ["Buscas especializarte", "Apuntas a Integraciones o Solutions Engineering: APIs, OAuth, webhooks y sistemas empresariales."]].map(([title, text]) => <article className="card" key={title}><h3>{title}</h3><p>{text}</p></article>)}
       </div><p className="notice">¿Tienes menos de 18 años? Puedes registrarte con la autorización de tu madre, padre o tutor.</p>
     </section>
+    <section className="public-section card"><h2>Tu desarrollo, de cero a liderazgo</h2><p>Aprende un proceso, practica una decisión y prepara un entregable. Explora la guía introductoria de liderazgo y conoce los próximos cursos, mentorías y el comunicador Enterprise.</p><div className="public-actions"><Link prefetch={false} className="btn" href="/leadership">Explorar liderazgo y procesos</Link><Link prefetch={false} className="btn secondary" href="/roadmap">Ver lo que viene</Link></div></section>
     <section id="preguntas" className="public-section public-faq">
       <h2>Preguntas frecuentes</h2>
       <details open><summary>¿Necesito saber programar?</summary><p>No. La ruta empieza con pensamiento computacional y el primer lenguaje, Python, llega hasta el Nivel 2.</p></details>

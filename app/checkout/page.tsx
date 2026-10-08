@@ -64,7 +64,7 @@ export default function CheckoutPage() {
       <div className="nav">
         <div>
           <span className="pill">CHECKOUT</span>
-          <h1>Contratar CodeZero</h1>
+          <h1>Contratar Garciloga</h1>
           <p className="muted">Revisa tu selección antes de continuar al pago seguro.</p>
         </div>
         <Link className="btn secondary" href="/pricing">Volver a planes</Link>

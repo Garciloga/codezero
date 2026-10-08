@@ -3,13 +3,13 @@ import LocalizedContent from "../../components/localization/server";
 import Link from "next/link";
 import { publicMetadata } from "../../../lib/public-metadata";
 
-export async function generateMetadata() { return translatedMetadata(publicMetadata("Contacto", "Opciones de contacto de soporte, facturación y privacidad de CodeZero.", "/contact")); }
+export async function generateMetadata() { return translatedMetadata(publicMetadata("Contacto", "Opciones de contacto de soporte, facturación y privacidad de Garciloga.", "/contact")); }
 
 export default function ContactPage() {
   return (
     <LocalizedContent><main className="wrap">
       <div className="nav">
-        <div><span className="pill">CONTACTO</span><h1>Contacto CodeZero</h1></div>
+        <div><span className="pill">CONTACTO</span><h1>Contacto Garciloga</h1></div>
         <Link className="btn secondary" href="/">Inicio</Link>
       </div>
       <div className="card" style={{lineHeight:1.75}}>

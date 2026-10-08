@@ -32,7 +32,7 @@ export function translator(messages: Messages) {
         break;
       }
     }
-    if (result === undefined || !key) return source;
-    return source.match(/^\s*/)?.[0] + result + (source.match(/\s*$/)?.[0] ?? '');
+    if (result === undefined || !key) return source.replaceAll("CodeZero", "Garciloga");
+    return (source.match(/^\s*/)?.[0] + result + (source.match(/\s*$/)?.[0] ?? '')).replaceAll("CodeZero", "Garciloga");
   };
 }

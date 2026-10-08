@@ -155,7 +155,7 @@ export async function POST(req: Request) {
       {
         user_id: user.id,
         certificate_type: "codezero-complete",
-        title: "CodeZero · Programa completo",
+        title: "Garciloga · Programa completo",
         metadata: { completed_levels: 15, final_exam_score: score },
       },
       { onConflict: "user_id,certificate_type" }
@@ -170,4 +170,5 @@ export async function POST(req: Request) {
     303
   );
 }
+
 

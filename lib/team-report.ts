@@ -1,3 +1,4 @@
+import {ORGANIZATION_ROLES,type OrganizationRole} from "./organization-metrics.ts";
 export function parseAssignedActivity(value: unknown): { type: string; id: number } | null {
   if (typeof value !== "string" || !/^(lesson|exam|project):[1-9][0-9]*$/.test(value)) return null;
   const [type, raw] = value.split(":"); const id = Number(raw);
@@ -19,7 +20,8 @@ export function teamReportCsv(members: ReportMember[], assignments: ReportAssign
   for (const activity of assignments) {
     const member = roster.get(activity.user_id); if (!member) continue;
     const result = results.get(`${activity.user_id}:${activity.activity_key}`);
-    rows.push([member.display_name, member.role, activity.title, activity.competency, result?.completed ? "Completada" : "Pendiente", result?.score ?? "", result?.observed_at ?? ""]);
+    rows.push([member.display_name, ORGANIZATION_ROLES[member.role as OrganizationRole]??member.role, activity.title, activity.competency, result?.completed ? "Completada" : "Pendiente", result?.score ?? "", result?.observed_at ?? ""]);
   }
   return "\ufeff" + rows.map(row => row.map(csvCell).join(",")).join("\r\n") + "\r\n";
 }
+

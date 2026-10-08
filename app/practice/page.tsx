@@ -22,6 +22,6 @@ export default async function PracticePage() {
  <p>Trabaja con casos ficticios de Customer Success, soporte e integraciones. Este progreso es privado y no sustituye las evaluaciones del curso.</p>
  <PracticeLearningPreview key={session.user.id} initialLevel={null} persistence={persistence} saved={saved}/><RoleCasePractice/><PracticeEvidenceReview/>
  {runtime && <BrowserCodePractice {...runtime}/>}
- <p><Link href="/dashboard" className="btn secondary">Volver a Mi CodeZero</Link></p></main></LocalizedContent>;
+ <p><Link href="/dashboard" className="btn secondary">Volver a Mi Garciloga</Link></p></main></LocalizedContent>;
 }
 

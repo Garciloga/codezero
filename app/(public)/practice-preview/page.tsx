@@ -10,7 +10,7 @@ import { workspaceSandboxEnabled } from "../../../lib/workspace-sandbox";
 import { workspaceUser } from "../../../lib/workspace-server";
 import { validPracticeProgress } from "../../../lib/practice-progress";
 
-export async function generateMetadata() { return translatedMetadata({ title: "Práctica guiada · revisión CodeZero", robots: { index: false, follow: false } }); }
+export async function generateMetadata() { return translatedMetadata({ title: "Práctica guiada · revisión Garciloga", robots: { index: false, follow: false } }); }
 export const dynamic = "force-dynamic";
 export default async function PracticePreview({ searchParams }: { searchParams: Promise<{ level?: string }> }) {
   if (process.env.CODEZERO_PRACTICE_PREVIEW !== "1") notFound();
@@ -34,7 +34,7 @@ export default async function PracticePreview({ searchParams }: { searchParams: 
     <h1>Practica lo que harías en un equipo SaaS</h1><p>Ordena pasos, completa código, detecta errores y diagnostica integraciones.</p>
     {runtime ? <BrowserCodePractice {...runtime} /> : <p>La ejecución de Python y SQL requiere el motor de revisión local; aquí puedes explorar las muestras guiadas.</p>}
     <PracticeLearningPreview key={viewerIdentity} initialLevel={initialLevel} persistence={persistence} saved={saved} />
-    <p><Link className="btn secondary" href="/dashboard">Volver a Mi CodeZero</Link></p>
+    <p><Link className="btn secondary" href="/dashboard">Volver a Mi Garciloga</Link></p>
   </main></LocalizedContent>;
 }
 

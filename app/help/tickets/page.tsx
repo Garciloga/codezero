@@ -26,7 +26,7 @@ export default async function TicketsPage({ searchParams }: PageProps) {
           <h1>Mis casos de soporte</h1>
           <p className="muted">Abre un ticket si el Centro de ayuda no resolvió tu problema.</p>
         </div>
-        <Link className="btn secondary" href="/help">Centro de ayuda</Link>
+        <Link prefetch={false} className="btn secondary" href="/help">Centro de ayuda</Link>
       </div>
 
       {created === "invalid" && <div className="card"><b>Revisa el asunto y la descripción del caso.</b></div>}
@@ -61,7 +61,7 @@ export default async function TicketsPage({ searchParams }: PageProps) {
         {(tickets ?? []).length === 0 ? <p className="muted">Todavía no tienes tickets.</p> : (
           <div style={{display:"grid",gap:10}}>
             {(tickets ?? []).map((ticket) => (
-              <Link key={ticket.id} href={"/help/tickets/"+ticket.id} style={{borderTop:"1px solid #e5e9f0",paddingTop:12}}>
+              <Link prefetch={false} key={ticket.id} href={"/help/tickets/"+ticket.id} style={{borderTop:"1px solid #e5e9f0",paddingTop:12}}>
                 <b>#{ticket.id} · <span translate="no">{ticket.subject}</span></b>
                 <div className="muted">{ticket.category} · {ticket.priority} · {ticket.status}</div>
               </Link>

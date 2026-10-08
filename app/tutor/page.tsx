@@ -9,6 +9,6 @@ export default async function TutorPage(){
  const model=process.env.OPENAI_MODEL??'gpt-6-luna';
  const ready=Boolean(process.env.OPENAI_API_KEY)
   && model==='gpt-6-luna';
- return <LocalizedContent><main className="wrap"><span className="pill">APRENDE CON CONTEXTO</span><h1>Tutor IA</h1><p>Explicaciones breves, ejemplos y preguntas para comprobar tu comprensión. Las lecciones se habilitan según tu plan y el avance aprobado.</p><TutorChat lessons={error?[]:data??[]} ready={ready}/><p><Link href="/dashboard" className="btn secondary">Volver a Mi CodeZero</Link></p></main></LocalizedContent>;
+ return <LocalizedContent><main className="wrap"><span className="pill">APRENDE CON CONTEXTO</span><h1>Tutor IA</h1><p>Explicaciones breves, ejemplos y preguntas para comprobar tu comprensión. Las lecciones se habilitan según tu plan y el avance aprobado.</p><TutorChat lessons={error?[]:data??[]} ready={ready}/><p><Link href="/dashboard" className="btn secondary">Volver a Mi Garciloga</Link></p></main></LocalizedContent>;
 }
 

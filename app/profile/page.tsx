@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { createServerSupabase, getServerUser } from "../../lib/supabase-server";
 import AppearanceSettings from "../components/appearance-settings";
 import { workspaceEnabled } from "../../lib/workspace-sandbox";
+import { accountNavigation } from "../../lib/organization-server";
 
 type PageProps = { searchParams: Promise<{ updated?: string }> };
 
@@ -27,6 +28,7 @@ export default async function ProfilePage({ searchParams }: PageProps) {
     .maybeSingle();
 
   const cloudAppearance = workspaceEnabled();
+  const hasOrganization = Boolean((await accountNavigation())?.organization);
   const appearance = cloudAppearance
     ? (await supabase.from("user_preferences").select("mode,accent").eq("user_id",user.id).maybeSingle()).data : null;
   return (
@@ -37,7 +39,7 @@ export default async function ProfilePage({ searchParams }: PageProps) {
           <h1>Mi cuenta</h1>
           <p className="muted">Consulta tu cuenta y estado de aprendizaje.</p>
         </div>
-        <Link className="btn secondary" href="/dashboard">Volver a Mi CodeZero</Link>
+        <Link prefetch={false} className="btn secondary" href="/dashboard">Volver a Mi Garciloga</Link>
       </div>
 
       {updated === "1" && (
@@ -102,7 +104,7 @@ export default async function ProfilePage({ searchParams }: PageProps) {
             </p>
           ) : (
             <div style={{ marginTop: 20 }}>
-              <Link className="btn secondary" href="/pricing">
+              <Link prefetch={false} className="btn secondary" href="/pricing">
                 Ver planes
               </Link>
             </div>
@@ -112,14 +114,14 @@ export default async function ProfilePage({ searchParams }: PageProps) {
             <div style={{ marginTop: 20 }}>
               <span className="pill">CERTIFICACIÓN</span>
               <p>{certificate.title}</p>
-              <Link className="btn secondary" href="/certificate">Ver certificado</Link>
+              <Link prefetch={false} className="btn secondary" href="/certificate">Ver certificado</Link>
             </div>
           )}
         </section>
       </div>
 
       <AppearanceSettings userId={user.id} initialPreference={appearance} syncEnabled={cloudAppearance} />
-      {cloudAppearance && <p><Link className="btn secondary" href="/teams">Mis equipos y organigrama</Link></p>}
+      {hasOrganization && <p><Link prefetch={false} className="btn secondary" href="/teams">Mis equipos y organigrama</Link></p>}
       <div className="card" style={{marginTop:18}}>
         <h2>Privacidad y soporte</h2>
         <p className="muted">
@@ -128,8 +130,8 @@ export default async function ProfilePage({ searchParams }: PageProps) {
           {" "}<a href="mailto:codescerooficial@gmail.com">codescerooficial@gmail.com</a>.
         </p>
         <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
-          <Link className="btn secondary" href="/help">Centro de ayuda</Link>
-          <Link className="btn secondary" href="/help/tickets">Mis tickets</Link>
+          <Link prefetch={false} className="btn secondary" href="/help">Centro de ayuda</Link>
+          <Link prefetch={false} className="btn secondary" href="/help/tickets">Mis tickets</Link>
           <a className="btn secondary" href="/api/profile/export">Descargar mis datos</a>
         </div>
       </div>

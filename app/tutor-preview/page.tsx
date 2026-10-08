@@ -18,6 +18,6 @@ export default async function TutorPreview({searchParams}:{searchParams:Promise<
  <p>Esta revisión comprueba la lección, el acceso y la práctica registrada en tu cuenta. Prepara el contexto; todavía no genera respuestas de IA ni consume cuotas.</p>
  {session?<TutorContextPreview key={session.user.id} lessonId={lessonId}/>:<section className="card"><h2>Inicia sesión en el entorno de pruebas</h2><p>Tu contexto de aprendizaje requiere una cuenta activa. No se utilizan datos ficticios para simular tu avance.</p><Link className="btn" href="/login">Iniciar sesión</Link></section>}
  <TutorCostEstimate/>
- <p><Link className="btn secondary" href="/dashboard">Volver a Mi CodeZero</Link></p></main></LocalizedContent>;
+ <p><Link className="btn secondary" href="/dashboard">Volver a Mi Garciloga</Link></p></main></LocalizedContent>;
 }
 

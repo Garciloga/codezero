@@ -12,7 +12,7 @@ import "../diploma.css";
 export async function generateMetadata() { return translatedMetadata({ title: "Diploma de bloque", robots: { index: false, follow: false } }); }
 function Diploma({level,name,title,id,issuedAt,canSave}: {level:number;name:string;title:string;id?:string;issuedAt?:string;canSave?:boolean}) {
   return <LocalizedContent><main className="wrap diploma-page">
-    <div className="diploma-controls"><Link className="btn secondary" href="/dashboard">Volver a Mi CodeZero</Link><PrintDiploma />
+    <div className="diploma-controls"><Link className="btn secondary" href="/dashboard">Volver a Mi Garciloga</Link><PrintDiploma />
       {canSave && <form action="/api/diplomas/issue" method="post"><input type="hidden" name="level" value={level}/><button className="btn" type="submit">Guardar diploma en mi cuenta</button></form>}
     </div>
     <BlockDiplomaDocument level={level} name={name} title={title} id={id} issuedAt={issuedAt}/>
@@ -60,6 +60,6 @@ export default async function BlockDiplomaPage({ params, searchParams }: { param
     approvedProjectIds: (approvals.data ?? []).map(row => Number(row.project_id)),
   });
   if (!eligible) return <LocalizedContent><main className="wrap"><h1>Tu diploma de bloque</h1><p>Completa todas las lecciones publicadas, aprueba el examen y consigue aprobación del proyecto si este bloque lo requiere.</p><Link className="btn secondary" href={`/learn/${level}`}>Volver al bloque</Link></main></LocalizedContent>;
-  return <LocalizedContent><Diploma level={block.level_number} name={profile.data?.full_name || "Estudiante CodeZero"} title={block.title} canSave={sandbox}/></LocalizedContent>;
+  return <LocalizedContent><Diploma level={block.level_number} name={profile.data?.full_name || "Estudiante Garciloga"} title={block.title} canSave={sandbox}/></LocalizedContent>;
 }
 

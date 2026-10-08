@@ -3,12 +3,15 @@ import { createAdminSupabase } from "../../../../lib/admin";
 import { workspaceUser } from "../../../../lib/workspace-server";
 import { isUuid, isTestInvitationEmail, validInvitationEmail, workspaceProductionEnabled, trustedWorkspaceMutation, workspaceEnabled } from "../../../../lib/workspace-sandbox";
 import { parseAssignedActivity } from "../../../../lib/team-report";
+import { boundedForm } from "../../../../lib/bounded-form";
 export async function POST(req: Request) {
   if (!workspaceEnabled()) return new Response(null,{status:404});
   if (!trustedWorkspaceMutation(req,process.env.NEXT_PUBLIC_APP_URL)) return new Response(null,{status:403});
   const context = await workspaceUser();
   if (!context) return new Response(null,{status:401});
-  const form = await req.formData();
+  let form: FormData;
+  try { form = await boundedForm(req,8192); }
+  catch(error) { return new Response(null,{status:error instanceof Error && error.message==="FORM_TOO_LARGE" ? 413 : 400}); }
   const action = String(form.get("action"));
   const admin = createAdminSupabase();
   if (action === "create") {
@@ -29,8 +32,9 @@ export async function POST(req: Request) {
     const target = String(form.get("user_id"));
     const role = String(form.get("role"));
     const reports = String(form.get("reports_to") ?? "") || null;
-    if (!isUuid(target) || (reports && !isUuid(reports)) || !["owner","admin","manager","supervisor","learner"].includes(role)) return new Response(null,{status:400});
-    failed = Boolean((await admin.rpc("update_workspace_member",{p_org:org,p_actor:context.user.id,p_target:target,p_role:role,p_reports:reports,p_active:form.get("active")==="1"})).error);
+    const jobTitle = String(form.get("job_title")??"").trim();
+    if (!isUuid(target) || jobTitle.length>120 || (reports && !isUuid(reports)) || !["owner","admin","manager","supervisor","learner"].includes(role)) return new Response(null,{status:400});
+    failed = Boolean((await admin.rpc("update_workspace_member_details",{p_org:org,p_actor:context.user.id,p_target:target,p_role:role,p_reports:reports,p_active:form.get("active")==="1",p_job_title:jobTitle})).error);
   } else if (action === "invite" && manager) {
     const email = String(form.get("email") ?? "").trim().toLowerCase();
     const role = String(form.get("role"));
@@ -45,7 +49,7 @@ export async function POST(req: Request) {
       return NextResponse.redirect(new URL(`/teams/${org}?result=${result.error ? "mail_failed" : "mail_requested"}`,process.env.NEXT_PUBLIC_APP_URL ?? req.url),303);
     }
     if (!error) return NextResponse.redirect(new URL(`/teams/${org}?result=invitation_pending`,process.env.NEXT_PUBLIC_APP_URL ?? req.url),303);
-  } else if (action === "assign" && manager) {
+  } else if (action === "assign" && ["owner","admin","manager","supervisor"].includes(membership.role)) {
     const target = String(form.get("user_id"));
     const selected = parseAssignedActivity(form.get("activity_key"));
     const type = selected?.type;
@@ -56,3 +60,4 @@ export async function POST(req: Request) {
   } else {return new Response(null,{status:403});}
   return NextResponse.redirect(new URL(`/teams/${org}?result=${failed?"failed":"saved"}`,process.env.NEXT_PUBLIC_APP_URL ?? req.url),303);
 }
+

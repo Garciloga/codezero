@@ -12,7 +12,7 @@ export default function NotFound() {
         </p>
         <div style={{display:"flex",gap:10,justifyContent:"center",flexWrap:"wrap"}}>
           <Link className="btn" href="/">Ir al inicio</Link>
-          <Link className="btn secondary" href="/dashboard">Mi CodeZero</Link>
+          <Link className="btn secondary" href="/dashboard">Mi Garciloga</Link>
         </div>
       </div>
     </main></LocalizedContent>

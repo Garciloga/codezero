@@ -6,6 +6,9 @@ import { getEntitlements } from "../../lib/entitlements";
 import { getPassedLevelNumbers, isLevelUnlocked, isLevelIncludedInPlan } from "../../lib/learning";
 import LearningNavigation from '../components/learning-navigation';
 import {workspaceEnabled} from '../../lib/workspace-sandbox';
+import {accountNavigation,organizationView} from '../../lib/organization-server';
+import {SkillBars} from '../components/enterprise/person-card';
+import Organigram from '../components/enterprise/organigram';
 
 type Level = {
   id: number;
@@ -16,10 +19,14 @@ type Level = {
   estimated_hours: number | null;
 };
 
-type PageProps = { searchParams: Promise<{ checkout?: string }> };
+type PageProps = { searchParams: Promise<{ checkout?: string; view?: string }> };
 
 export default async function Dashboard({ searchParams }: PageProps) {
-  const { checkout } = await searchParams;
+  const { checkout,view } = await searchParams;
+  const account=await accountNavigation();
+  if(account?.organization&&account.organization.role!=="learner"&&view!=="learning")redirect(`/teams/${account.organization.organization_id}/people`);
+  const team=account?.organization?await organizationView(account.organization.organization_id):null;
+  const own=team?.people.find(p=>p.user_id===account?.user.id);
   const supabase = await createServerSupabase();
   const tutorEnabled = Boolean(process.env.OPENAI_API_KEY);
 
@@ -112,17 +119,17 @@ export default async function Dashboard({ searchParams }: PageProps) {
       <div className="nav">
         <div>
           <span className="pill">{ent.plan_name}</span>
-          <h1>Mi CodeZero</h1>
-          <p className="muted">De cero a construir soluciones técnicas para SaaS.</p>
+          <h1>Hola, <span translate="no">{account?.profile?.full_name||"estudiante"}</span></h1>
+          <p className="muted">Así vas en tu ruta.</p>
         </div>
 
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "flex-end" }}>
           {(profile?.role === "owner" || profile?.role === "admin") && (
-            <Link className="btn secondary" href="/admin">Admin</Link>
+            <Link prefetch={false} className="btn secondary" href="/admin">Admin</Link>
           )}
-          <Link className="btn secondary" href="/profile">Perfil</Link>
+          <Link prefetch={false} className="btn secondary" href="/profile">Perfil</Link>
           {tutorEnabled ? (
-            <Link className="btn secondary" href="/tutor">Tutor IA</Link>
+            <Link prefetch={false} className="btn secondary" href="/tutor">Tutor IA</Link>
           ) : (
             <span className="btn secondary" style={{ cursor: "not-allowed" }}>Tutor IA · próximamente</span>
           )}
@@ -159,7 +166,9 @@ export default async function Dashboard({ searchParams }: PageProps) {
         </div>
       )}
 
-      <LearningNavigation teamsEnabled={workspaceEnabled()} practiceEnabled={workspaceEnabled()}/>
+      <section className="card"><h2>Mis competencias</h2><SkillBars skills={own?.competencies??[]}/></section>
+      {team&&<Organigram members={team.directory} visible={team.people.map(p=>p.user_id)} user={user.id}/>}
+      <LearningNavigation teamsEnabled={Boolean(account?.organization)} practiceEnabled={workspaceEnabled()}/>
       <div className="grid grid4">
         <div className="card">
           <div className="muted">Plan</div>
@@ -190,7 +199,7 @@ export default async function Dashboard({ searchParams }: PageProps) {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", gap: 16, marginBottom: 16 }}>
           <div>
             <span className="pill">RUTA DE APRENDIZAJE</span>
-            <h2 style={{ marginBottom: 6 }}>Tu camino en CodeZero</h2>
+            <h2 style={{ marginBottom: 6 }}>Tu camino en Garciloga</h2>
             <p className="muted" style={{ margin: 0 }}>
               Completa cada nivel y aprueba su evaluación para desbloquear el siguiente.
             </p>
@@ -240,13 +249,13 @@ export default async function Dashboard({ searchParams }: PageProps) {
                 </div>
 
                 <div style={{ marginTop: 18 }}>
-                  {passed && <Link className="btn secondary" style={{ marginRight: 8, marginBottom: 8 }} href={`/diplomas/${level.level_number}`}>Diploma del bloque</Link>}
+                  {passed && <Link prefetch={false} className="btn secondary" style={{ marginRight: 8, marginBottom: 8 }} href={`/diplomas/${level.level_number}`}>Diploma del bloque</Link>}
                   {unlocked ? (
-                    <Link className="btn secondary" href={`/learn/${level.level_number}`}>
+                    <Link prefetch={false} className="btn secondary" href={`/learn/${level.level_number}`}>
                       {passed ? "Repasar nivel" : "Entrar al nivel"}
                     </Link>
                   ) : !includedInPlan ? (
-                    <Link className="btn secondary" href="/pricing">
+                    <Link prefetch={false} className="btn secondary" href="/pricing">
                       Ver planes
                     </Link>
                   ) : (
@@ -269,9 +278,9 @@ export default async function Dashboard({ searchParams }: PageProps) {
         <section style={{ marginTop: 32 }}>
           <div className="card">
             <span className="pill">PROGRAMA COMPLETADO</span>
-            <h2>Tu certificación CodeZero está disponible</h2>
+            <h2>Tu certificación Garciloga está disponible</h2>
             <p className="muted">Completaste los 15 niveles y aprobaste la evaluación final.</p>
-            <Link className="btn" href="/certificate">Ver certificado</Link>
+            <Link prefetch={false} className="btn" href="/certificate">Ver certificado</Link>
           </div>
         </section>
       )}

@@ -1,6 +1,7 @@
 import LocalizedContent from "../components/localization/server";
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../lib/supabase-server";
+import {workspaceEnabled} from "../../lib/workspace-sandbox";
 import { createAdminSupabase, requireAdmin } from "../../lib/admin";
 
 type PageProps = {
@@ -15,8 +16,9 @@ export default async function Admin({ searchParams }: PageProps) {
 
   if (!user) redirect("/login");
 
+  let operatorRole="";
   try {
-    await requireAdmin(user.id);
+    operatorRole=(await requireAdmin(user.id)).role;
   } catch {
     redirect("/dashboard");
   }
@@ -89,11 +91,13 @@ export default async function Admin({ searchParams }: PageProps) {
       <div className="nav">
         <div>
           <span className="pill">OWNER / ADMIN</span>
-          <h1>CodeZero Control Center</h1><p><a className="btn secondary" href="/customer-success/review">Revisar proyectos Customer Success</a></p>
+          <h1>Garciloga Control Center</h1><p><a className="btn secondary" href="/customer-success/review">Revisar proyectos Customer Success</a></p>
           <p className="muted">Usuarios, planes, acceso y actividad académica.</p>
         </div>
         <a className="btn secondary" href="/dashboard">Mi cuenta</a>
       </div>
+
+      {operatorRole==="owner"&&workspaceEnabled()&&<section className="card"><h2>Crear organización</h2><form action="/api/teams/manage" method="post"><input type="hidden" name="action" value="create"/><label>Nombre <input name="name" minLength={2} maxLength={120} required/></label><button className="btn" type="submit">Crear organización</button></form></section>}
 
       {updated === "1" && (
         <div className="card" style={{ marginBottom: 18 }}>

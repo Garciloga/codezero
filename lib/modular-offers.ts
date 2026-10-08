@@ -8,7 +8,7 @@ export const FUTURE_ROUTES = [
   { key: "route_qa", label: "QA / Tester", stage: "Interés inicial", detail: "Calidad, pruebas y documentación de errores." },
   { key: "route_data_bi", label: "Analista de datos / BI", stage: "Interés inicial", detail: "Análisis y visualización de datos con SQL y Python." },
   { key: "route_product", label: "Producto · Product Owner / Product Manager", stage: "Etapa posterior", detail: "Priorización, descubrimiento y coordinación de producto." },
-  { key: "route_management", label: "Management", stage: "Etapa posterior", detail: "Liderazgo y gestión de equipos." },
+  { key: "route_management", label: "Liderazgo · Supervisión, Gerencia y Dirección", stage: "Etapa posterior", detail: "Delegación, seguimiento, coaching, decisiones y dirección de equipos." },
   { key: "route_solutions_integrations", label: "Solutions Engineer / Integraciones", stage: "Considerar después", detail: "Soluciones técnicas e integración de sistemas SaaS." },
   { key: "route_enablement", label: "Capacitación y Enablement", stage: "Considerar después", detail: "Customer Education, bases de conocimiento y documentación." },
   { key: "route_growth", label: "Marketing digital / Growth", stage: "Exploración futura", detail: "Adquisición, experimentación y crecimiento." },
@@ -27,7 +27,7 @@ export const ADDON_OFFERS = [
   { key: "tool_labs", label: "Laboratorios de herramientas", kind: "monthly", cents: 9900, includedInPro: false, detail: "Práctica de herramientas" },
   { key: "verified_certificate", label: "Certificado verificable", kind: "one_time", cents: 0, readiness: "certificate", includedInPro: true, detail: "Incluido sin cargo adicional al completar y aprobar el contenido disponible en tu plan" },
   { key: "deep_diagnostic", label: "Diagnóstico profundo", kind: "one_time", cents: 19900, includedInPro: false, detail: "Diagnóstico de afinidad" },
-  { key: "mentoring", label: "Mentoría 1:1", kind: "one_time", cents: 39900, includedInPro: false, detail: "Sesión de 45 minutos" },
+  { key: "mentoring", label: "Mentoría 1:1", kind: "one_time", cents: 69900, includedInPro: false, detail: "45 minutos sobre puestos, procesos, decisiones y liderazgo" },
 ] as const;
 export type AddonKey = typeof ADDON_OFFERS[number]["key"];
 export const UNREADY: Readiness = { tutor: false, customerSuccess: false, certificate: false };
@@ -69,4 +69,5 @@ export function quoteModularPlan(plan: BasePlan, keys: readonly string[], ready:
   }
   return { firstMonthCents, renewalCents, oneTimeCents, included, startsAt: "next_renewal" as const };
 }
+
 

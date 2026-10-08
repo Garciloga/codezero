@@ -3,11 +3,14 @@ import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { workspaceEnabled } from "../../lib/workspace-sandbox";
+import {accountNavigation} from '../../lib/organization-server';
 import { workspaceUser } from "../../lib/workspace-server";
 import { isTestInvitationEmail } from "../../lib/workspace-sandbox";
 export async function generateMetadata() { return translatedMetadata({title:"Mis equipos",robots:{index:false,follow:false}}); }
 export default async function TeamsPage({searchParams}: {searchParams:Promise<{result?:string}>}) {
   if (!workspaceEnabled()) notFound();
+  const account=await accountNavigation();
+  if(!account?.organization)redirect("/dashboard");
   const context = await workspaceUser();
   if (!context) redirect("/login");
   const {data:organizations,error} = await context.supabase.from("organizations").select("id,name").eq("active",true);

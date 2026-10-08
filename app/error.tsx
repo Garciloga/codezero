@@ -13,7 +13,7 @@ export default function ErrorPage({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error("CodeZero page error", error);
+    console.error("Garciloga page error", error);
   }, [error]);
 
   return (
@@ -26,7 +26,7 @@ export default function ErrorPage({
         </p>
         <div style={{display:"flex",gap:10,justifyContent:"center",flexWrap:"wrap"}}>
           <button className="btn" type="button" onClick={() => reset()}>Reintentar</button>
-          <Link className="btn secondary" href="/dashboard">Mi CodeZero</Link>
+          <Link className="btn secondary" href="/dashboard">Mi Garciloga</Link>
         </div>
       </div>
     </main></LocalizedContent>

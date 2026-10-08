@@ -104,7 +104,7 @@ function LoginForm() {
         <p className="muted">Si no ves el mensaje, revisa la carpeta de spam. Después vuelve para iniciar sesión.</p>
         <button className="btn" type="button" onClick={() => changeMode("login")}>Volver a Entrar</button>
       </section> : <>
-        <div className="public-login-tabs" role="tablist" aria-label="Acceso a CodeZero">
+        <div className="public-login-tabs" role="tablist" aria-label="Acceso a Garciloga">
           {(["login", "signup"] as const).map(tab => <button key={tab} id={tab + "-tab"} type="button" role="tab"
             aria-selected={mode === tab} aria-controls="account-panel" tabIndex={mode === tab ? 0 : -1}
             className="btn secondary" disabled={busy} onClick={() => changeMode(tab)}
@@ -142,7 +142,7 @@ function LoginForm() {
             </div>
             {mode === "signup" && <>
               <div><label className="public-checkbox" htmlFor="eligibility"><input id="eligibility" type="checkbox" checked={eligibilityConfirmed} onChange={e => { setEligibilityConfirmed(e.target.checked); clearError("eligibility"); }} required disabled={busy} aria-invalid={!!errors.eligibility} aria-describedby={errors.eligibility ? "eligibility-error" : undefined} />
-                <span>Soy mayor de 18 años o cuento con autorización de mi madre, padre o tutor legal para usar CodeZero.</span></label>{fieldError("eligibility")}
+                <span>Soy mayor de 18 años o cuento con autorización de mi madre, padre o tutor legal para usar Garciloga.</span></label>{fieldError("eligibility")}
               </div>
               <div><label className="public-checkbox" htmlFor="legal"><input id="legal" type="checkbox" checked={legalAccepted} onChange={e => { setLegalAccepted(e.target.checked); clearError("legal"); }} required disabled={busy} aria-invalid={!!errors.legal} aria-describedby={errors.legal ? "legal-error" : undefined} />
                 <span>Acepto los <Link prefetch={false} href="/terms">Términos</Link> y confirmo que leí el <Link prefetch={false} href="/privacy">Aviso de privacidad</Link>.</span></label>{fieldError("legal")}

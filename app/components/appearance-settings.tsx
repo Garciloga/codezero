@@ -1,4 +1,5 @@
 "use client";
+import LineIcon from "./line-icon";
 import LocalizedContent from "./localization/client";
 
 import { useEffect, useState } from "react";
@@ -36,12 +37,12 @@ export default function AppearanceSettings({ userId, initialPreference, syncEnab
     setSaving(false);
   }
   return <LocalizedContent><section className="card appearance-settings" style={{ marginTop: 18 }} aria-labelledby="appearance-heading" aria-busy={saving}>
-    <span className="pill">A TU MANERA</span><h2 id="appearance-heading">Personaliza CodeZero</h2>
-    <p className="muted">Elige una pantalla cómoda para tu próxima sesión de aprendizaje.</p>
+    <span className="pill">A TU MANERA</span><h2 id="appearance-heading">Personaliza Garciloga</h2>
+    <p className="muted">C · Vivo mantiene una paleta fija. Tus preferencias anteriores se conservan en tu cuenta.</p>
     <fieldset disabled={saving}><legend>Modo de pantalla</legend><div className="appearance-options">
-      {([{key:"system",label:"Dispositivo",detail:"Sigue tu preferencia del sistema",symbol:"◐"},{key:"light",label:"Claro",detail:"Una superficie luminosa",symbol:"☀"},{key:"dark",label:"Oscuro",detail:"Una superficie tenue",symbol:"☾"}] as const).map(mode=>
+      {([{key:"system",label:"Dispositivo",detail:"Sigue tu preferencia del sistema"},{key:"light",label:"Claro",detail:"Una superficie luminosa"},{key:"dark",label:"Oscuro",detail:"Una superficie tenue"}] as const).map(mode=>
         <label className="appearance-choice" key={mode.key}><input type="radio" name="appearance-mode" value={mode.key} checked={preference.mode===mode.key} onChange={()=>save({...preference,mode:mode.key})}/>
-          <span aria-hidden="true" className="appearance-symbol">{mode.symbol}</span><span><strong>{mode.label}</strong><small>{mode.detail}</small></span></label>)}
+          <span className="appearance-symbol"><LineIcon kind="settings"/></span><span><strong>{mode.label}</strong><small>{mode.detail}</small></span></label>)}
     </div></fieldset>
     <fieldset disabled={saving} style={{ marginTop: 16 }}><legend>Color de botones y énfasis</legend><div className="appearance-options">
       {Object.entries(ACCENTS).map(([key, value]) => <label className="appearance-choice" key={key}>
