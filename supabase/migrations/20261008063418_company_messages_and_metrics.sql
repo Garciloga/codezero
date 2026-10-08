@@ -24,6 +24,8 @@ begin
  perform 1 from public.organizations where id=p_org and active for update;
  if not found or not codezero_private.company_channel_access(p_org,p_team,p_actor) then raise exception 'FORBIDDEN';end if;
  if p_team is null and not exists(select 1 from public.organization_memberships where organization_id=p_org and user_id=p_actor and active and role in ('owner','admin')) then raise exception 'ANNOUNCEMENT_PERMISSION';end if;
+ -- Cross-team viewing is read-only, never an implicit posting grant.
+ if p_team is not null and not exists(select 1 from public.organization_memberships where organization_id=p_org and user_id=p_actor and active and role in ('owner','admin')) and not exists(select 1 from public.organization_team_members where organization_id=p_org and team_id=p_team and user_id=p_actor) then raise exception 'TEAM_POST_PERMISSION';end if;
  if length(trim(p_body))<1 or length(p_body)>4000 then raise exception 'INVALID_MESSAGE';end if;
  select id,body into result,existing from public.organization_messages where organization_id=p_org and author_id=p_actor and request_id=p_request;
  if result is not null then if existing<>trim(p_body) then raise exception 'REQUEST_CONFLICT';end if;return result;end if;

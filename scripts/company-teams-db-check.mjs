@@ -151,6 +151,7 @@ try {
  await check('messages respect company/team channels, replay deduplicates, and moderation clears text',async()=>{
  const send=(actor,team,request,body)=>rpc('select public.send_company_message($1,$2,$3,$4,$5) id',[org,team,id(actor),id(request),body]);
  const a=(await send(3,alpha,301,'Mensaje de prueba 🙂')).rows[0].id;assert.equal((await send(3,alpha,301,'Mensaje de prueba 🙂')).rows[0].id,a);
+ await rejected(()=>send(5,alpha,305,'Consulta no concede publicación'));await rejected(()=>send(5,beta,306,'Consulta no concede publicación'));
  await rejected(()=>send(3,beta,302,'No permitido'));await rejected(()=>send(3,null,303,'No es un aviso autorizado'));
  await send(2,null,304,'Aviso para compañía');
  const read=async n=>(await as('authenticated',id(n),()=>db.query('select body from public.organization_messages order by created_at'))).rows.map(r=>r.body);
