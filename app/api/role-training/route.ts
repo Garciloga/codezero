@@ -53,6 +53,7 @@ export async function POST(req:Request){
   const expected=Object.fromEntries(Object.keys(COMPETENCIES).map(k=>[k,Number(f.get('expected_'+k))]));
   ({error}=await admin.rpc('save_training_job_profile',{p_actor:session.user.id,p_position:String(f.get('position')),p_version:Number(f.get('version')),p_weights:weights,p_expected:expected}));
  }else return new Response(null,{status:400});
+ if(error&&['INSUFFICIENT_REVIEWERS','FLOW_PRIORITY_CONFLICT'].some(code=>error.message?.includes(code)))return Response.json({error:'APPROVAL_CONFIG_BLOCKED',detail:'Tu manager debe ajustar la prioridad del flujo o el mínimo de revisores disponibles antes de enviar.'},{status:409});
  if(error)return Response.json({error:'TRAINING_SAVE_FAILED',detail:'Revisa permisos, fecha, rúbrica o conflicto de versión.'},{status:409});
  const destination=action==='reinforce'?`/teams/${org}/person/${String(f.get('user_id'))}`:'/role-training';
  return Response.redirect(new URL(destination+'?result='+(action==='diploma'?'diploma':'saved')+(destination==='/role-training'&&org?'&organization_id='+org:''),req.url),303);

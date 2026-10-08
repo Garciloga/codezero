@@ -13,7 +13,7 @@ export async function trainingPerson(userId:string,org:string|null){
   if(!data)return null;
  }
  const history=await readWorkspacePages<CompetencyEvidence>((a,b)=>{
-  let q=session.supabase.from('learning_evidence_history').select('id,user_id,organization_id,activity_key,independent_key,kind,competency_scores,assistance,review_source,observed_at,reevaluation_of,critical_errors,feedback').eq('user_id',userId);
+  let q=session.supabase.from('learning_evidence_history').select('id,user_id,organization_id,activity_key,independent_key,kind,competency_scores,assistance,review_source,observed_at,reevaluation_of,critical_errors,feedback,approval_submission_id').eq('user_id',userId);
   q=org?q.eq('organization_id',org):q.is('organization_id',null);return q.order('observed_at').order('id').range(a,b);
  });
  const position=org?await session.supabase.from('organization_memberships').select('learning_position_key').eq('organization_id',org).eq('user_id',userId).eq('active',true).maybeSingle()

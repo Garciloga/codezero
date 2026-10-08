@@ -20,8 +20,13 @@ export async function POST(req:Request){
  const {data:a}=await reader.from('learning_activity_catalog').select('competencies').eq('id',s.activity_id).single();if(!a)return new Response(null,{status:400});
  if(a.competencies.some((k:string)=>!f.has('score_'+k)))return new Response(null,{status:400});
  const scores=Object.fromEntries(a.competencies.map((k:string)=>[k,Number(f.get('score_'+k))]));if(!validScores(scores))return new Response(null,{status:400});
- const {error}=await admin.rpc('review_training_practice',{p_actor:session.user.id,p_submission:id,p_scores:scores,p_feedback:String(f.get('feedback')??''),p_errors:f.getAll('errors').map(String),p_expected:expected,p_assistance:String(f.get('assistance'))});
+ const stageText=f.get('stage'),stage=stageText===null?null:Number(stageText),decision=String(f.get('decision')??'approve');
+ if(stage!==null&&(!Number.isInteger(stage)||stage<0||stage>7)||!['approve','request_changes'].includes(decision))return new Response(null,{status:400});
+ const {error}=await admin.rpc('review_training_practice',{p_actor:session.user.id,p_submission:id,p_scores:scores,p_feedback:String(f.get('feedback')??''),p_errors:f.getAll('errors').map(String),p_expected:expected,p_assistance:String(f.get('assistance')),p_stage:stage,p_decision:decision});
  if(error)return Response.json({error:'REVIEW_FAILED',detail:'Revisa alcance, rúbrica y versión de la revisión.'},{status:409});
+ const {data:run,error:runError}=await admin.from('learning_project_review_runs').select('state,authorizer_id').eq('submission_id',id).maybeSingle();
+ if(runError)return Response.json({error:'REVIEW_SAVED_STATUS_PENDING'},{status:503});
+ if(run&&run.state!=='approved')return Response.redirect(new URL('/role-training/review?organization_id='+s.organization_id,req.url),303);
  if(s.organization_id){
   const [h,m,profiles]=await Promise.all([
    readWorkspacePages<CompetencyEvidence>((start,end)=>admin.from('learning_evidence_history').select('id,user_id,organization_id,activity_key,independent_key,kind,competency_scores,assistance,review_source,observed_at,reevaluation_of,critical_errors').eq('organization_id',s.organization_id).eq('user_id',s.user_id).order('observed_at').order('id').range(start,end)),
@@ -32,7 +37,7 @@ export async function POST(req:Request){
   const profile=(profiles.data??[]).find(p=>p.position_key===m.data?.learning_position_key) as JobProfile|undefined;
   const summary=competencyProfile(h.data as CompetencyEvidence[],profile??null);
   const after={observed_at:new Date().toISOString(),profile_version:profile?.version??null,competencies:summary.competencies.map(c=>({key:c.key,level:c.level,count:c.count}))};
-  const {error:snapshotError}=await admin.rpc('complete_training_reinforcement',{p_actor:session.user.id,p_org:s.organization_id,p_user:s.user_id,p_activity:s.activity_id,p_after:after});
+  const {error:snapshotError}=await admin.rpc('complete_training_reinforcement',{p_actor:run?.authorizer_id??session.user.id,p_org:s.organization_id,p_user:s.user_id,p_activity:s.activity_id,p_after:after});
   if(snapshotError)return Response.json({error:'REVIEW_SAVED_SNAPSHOT_PENDING'},{status:503});
  }
  return Response.redirect(new URL('/role-training/review'+(s.organization_id?'?organization_id='+s.organization_id:''),req.url),303);

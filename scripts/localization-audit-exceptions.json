@@ -29,6 +29,7 @@
     "Revisa alcance, rúbrica y versión de la revisión."
   ],
   "app/api/role-training/route.ts": [
+    "Tu manager debe ajustar la prioridad del flujo o el mínimo de revisores disponibles antes de enviar.",
     "Revisa permisos, fecha, rúbrica o conflicto de versión."
   ],
   "app/competencies/page.tsx": [
@@ -465,5 +466,43 @@
   ],
   "app/components/enterprise/competency-panel.tsx": [
     "Sin registros para esta competencia."
-  ]
+  ],
+  "lib/project-review-flow.ts": [
+    "Dueño"
+  ],
+  "app/role-training/approval-flow/editor.tsx": [
+    "Todas las personas activas en mi alcance",
+    "Las selecciones se suman: basta coincidir con un rol, puesto o persona. Nunca incluye al autor como revisor.",
+    "Por rol",
+    "Por puesto",
+    "Por nombre o usuario",
+    "Buscar nombre o ID",
+    "Nombre del flujo",
+    "Estado",
+    "Activado para nuevas entregas",
+    "Desactivado para nuevas entregas",
+    "Prioridad del flujo (1 primero)",
+    "Si coinciden varios flujos, se aplica el de número menor. Un empate impide enviar hasta corregir la configuración.",
+    "A quién se aplica",
+    "Paso",
+    "Nombre del paso",
+    "Aprobaciones mínimas de personas distintas",
+    "Quién califica y aprueba",
+    "Subir paso",
+    "Bajar paso",
+    "Eliminar paso",
+    "Nueva revisión",
+    "Agregar paso",
+    "Hasta 8 pasos, en el orden mostrado. Un solo paso con varios revisores sirve para revisión paralela. Una solicitud de cambios detiene el avance; cada persona puede corregir su propia revisión con historial.",
+    "Las entregas existentes conservan su flujo. Los revisores se fijan al enviar; si alguien pierde acceso, no podrá seguir revisando. Una nueva entrega utilizará la configuración vigente.",
+    "Guardar nueva versión del flujo"
+  ],
+  "app/role-training/approval-flow/page.tsx": [],
+  "app/role-training/review/page.tsx": [],
+  "app/role-training/page.tsx": [],
+  "app/api/role-training/approval-flow/route.ts": [
+    "Revisa permisos, participantes y versión de la configuración."
+  ],
+  "app/components/enterprise/training-team.tsx": [],
+  "app/components/enterprise/project-review-progress.tsx": []
 }

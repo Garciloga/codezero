@@ -33,7 +33,7 @@ Nivel 0 con menos de tres evidencias reconocidas; nivel 1 por reconocimiento; ni
 
 El diploma nuevo `customer-success-v2` reutiliza `certificates`, mantiene los diplomas v1 y se emite una sola vez por usuario al verificar en servidor capstone independiente aprobado por Admin y nivel 3 en cada competencia de peso Alto del perfil CS vigente. No se emiten diplomas por una autoevaluación. La ruta conserva los derechos Pro/Enterprise y de Admin del CS existente.
 
-Entregables, proyectos y capstone obligatorios incluidos en este piloto no llaman al consumo de cuota de proyectos. Esta regla no cambia cuotas o facturación anteriores. Revisor a volumen queda pendiente de la decisión de Isaac; hoy proyectos/capstone corresponden a Administración y entregables al manager dentro de su alcance.
+Entregables, proyectos y capstone obligatorios incluidos en este piloto no llaman al consumo de cuota de proyectos. Esta regla no cambia cuotas o facturación anteriores. Revisor a volumen queda pendiente de la decisión de Isaac; supervisores y managers ahora pueden calificar proyectos dentro de su alcance, y un flujo opcional permite delegar revisiones específicas. Capstones permanecen en Administración. Esta ampliación fue solicitada expresamente por Isaac después de la entrega inicial.
 
 ## Experiencia y permisos
 
@@ -43,9 +43,31 @@ Entregables, proyectos y capstone obligatorios incluidos en este piloto no llama
 
 El manager asigna de una a tres unidades con fecha; el servidor calcula el antes y, tras una revisión humana, el después. Se reutilizan las asignaciones y la auditoría existentes. Cambios de perfil entre snapshots quedan señalados. El colaborador ve ambas mediciones. El aviso visible indica que se mide práctica simulada, no desempeño laboral real.
 
-`/role-training/review` permite a managers revisar entregables ajenos dentro del alcance. Proyectos/capstones solo desde Admin. `/role-training/profiles` permite al dueño ajustar pesos Alto/Medio/Bajo y niveles esperados con una versión nueva. Los cambios usan control de concurrencia. Las lecturas de historial, puestos y versiones se paginan; un fallo no se presenta como cero evidencia.
+`/role-training/review` permite a supervisores y managers revisar entregables y proyectos ajenos dentro del alcance, o únicamente los proyectos delegados por un flujo. Capstones solo desde Admin. `/role-training/profiles` permite al dueño ajustar pesos Alto/Medio/Bajo y niveles esperados con una versión nueva. Los cambios usan control de concurrencia. Las lecturas de historial, puestos y versiones se paginan; un fallo no se presenta como cero evidencia.
 
 El piloto nuevo está explícitamente en español (`lang=es-MX`, `translate=no`); las excepciones de traducción están enumeradas por texto/archivo usando el mecanismo existente. No se alteran las traducciones existentes. Traducción editorial del piloto a EN/PT/FR queda pendiente; no se copian textos en español como traducciones falsas.
+
+## Aprobación opcional de proyectos · extensión solicitada
+
+En `/teams` se enlaza `/role-training/approval-flow?organization_id=…`. Pueden configurar supervisores, managers, administradores y dueños de organización; un colaborador únicamente revisa un proyecto si fue seleccionado explícitamente. Se reutilizan los cinco roles reales: owner, admin, manager, supervisor y learner. No se inventan roles ni se cambia su jerarquía general.
+
+Cada flujo define destinatarios por rol, puesto o persona; el buscador muestra nombre y UUID para desambiguar. Las selecciones se suman (OR), incluyendo “todos en mi alcance”. Los mismos criterios eligen revisores. Todo queda limitado a miembros activos de la organización que están dentro del alcance del configurador; el autor de la entrega se excluye siempre.
+
+De uno a ocho pasos, ordenables con Subir/Bajar. Cada paso exige de una a veinte aprobaciones de personas distintas; una persona no cuenta dos veces en el mismo paso. Un único paso permite revisión paralela; varios pasos exigen secuencia. La misma persona puede participar en pasos distintos si así se configura. No existe un quorum global separado: todos los pasos deben cumplir su mínimo.
+
+Prioridad de flujo 1–1000, número menor primero si coinciden reglas. Un empate o un mínimo imposible rechaza el envío de forma atómica y pide al manager corregirlo. Sin flujo aplicable se conserva revisión directa por un líder dentro del alcance o Admin. No se crea un flujo obligatorio ni se habilita una política para todos los equipos automáticamente.
+
+Guardar genera una versión inmutable con concurrencia optimista. Al enviar, la entrega fija esa versión, orden, quorum y personas elegibles. Editar/desactivar afecta nuevas entregas. No cambia procesos en curso. El equipo crea sus flujos desde la pantalla; el sandbox queda sin flujos inventados para usuarios reales.
+
+Cada revisión registra rúbrica, autonomía comprobada, errores críticos, feedback y decisión. Aprobar requiere todas las competencias ≥3/4 y cero errores críticos. Una solicitud de cambios bloquea el paso aun si otros votos alcanzan el mínimo. El revisor puede corregir su propia revisión en el paso actual, conservando eventos previos; no puede modificar la entrega del alumno. El alumno envía una nueva entrega para corregir su trabajo. Los pasos cerrados y flujos aprobados no admiten más votos.
+
+Solo el consenso final agrega **una** evidencia humana de proyecto, con el mínimo de las calificaciones aprobadas por competencia. Autonomía independiente requiere acuerdo de todos los votos aprobados. No se convierte cada voto en otra evidencia independiente ni en nivel/diploma. El colaborador ve pasos, revisores, progreso y feedback en su propia ficha; la evidencia final se etiqueta “Flujo configurado”. El snapshot después del refuerzo se calcula únicamente al terminar, usando la autoridad del configurador guardada en la entrega; el evento de aprobación conserva al actor real.
+
+El delegado accede únicamente al proyecto nombrado, nunca a todo el historial o directorio del autor. La RPC vuelve a verificar selección, paso, acceso y estado actuales; ni Admin usa revisión directa para saltar un flujo configurado. El alcance delegado se revoca dentro de las transacciones de cambios de acceso, rol/membresía o suspensión del autorizador, mediante triggers invoker en el esquema privado. No se añade SECURITY DEFINER ni se expone el acceso privado de otros viewers.
+
+Si un revisor pierde acceso, ya no puede seguir calificando. Si queda imposible el quorum de una entrega antigua, se requiere restaurar un acceso legítimo o ajustar el flujo y enviar una entrega nueva; no se reescriben revisores ni votos anteriores silenciosamente. Notificaciones automáticas y reasignación de procesos en curso quedan fuera de esta extensión.
+
+Se agregan cuatro tablas de flujo/versiones, proceso por entrega, participantes y votos, con RLS y escritura solo desde servidor; una FK de procedencia en evidencia y auditoría de configuración/aprobación. Se extiende la RPC de revisión existente y se mantiene el helper directo protegido contra bypass. Las entregas anteriores no se incorporan retroactivamente a un flujo.
 
 ## Estado remoto y migraciones
 
@@ -56,8 +78,10 @@ El piloto nuevo está explícitamente en español (`lang=es-MX`, `translate=no`)
 | 20261008032420 | role_training_phases_0_1 |
 | 20261008033010 | role_training_included_diploma |
 | 20261008033350 | role_training_review_foreign_key_index |
+| 20261008042551 | project_approval_workflows |
+| 20261008042816 | project_review_delegation_scope |
 
-SQL canónico en `supabase/sandbox/migrations`. Son adiciones de cuatro tablas, columnas de puesto/snapshots/fecha, tipo de asignación adicional y RPCs solo para servidor. Las tablas nuevas tienen RLS. Los roles anon/authenticated no pueden escribir evidencia ni invocar las RPCs de calificación. No se modifica Auth ni RLS productivo.
+SQL canónico en `supabase/sandbox/migrations`. Las primeras tres migraciones agregan cuatro tablas, columnas de puesto/snapshots/fecha, tipo de asignación adicional y RPCs solo para servidor. Las tablas nuevas tienen RLS. Los roles anon/authenticated no pueden escribir evidencia ni invocar las RPCs de calificación. No se modifica Auth ni RLS productivo.
 
 Catálogo sembrado: 53 actividades, 16 perfiles por puesto. `supabase/sandbox/role_training_catalog_seed.sql` es bootstrap idempotente y no sobrescribe perfiles editados. El catálogo se genera sin IDs hardcodeados con `node scripts/role-training-catalog.mjs`. Se ajustaron tres reevaluaciones antes de registrar entregas, para enlazarlas a kickoff, health score y renovación; la cuarta usa voz del cliente. El estado final coincide con el archivo de seed. No repetir migraciones ya registradas.
 
@@ -68,11 +92,11 @@ El autodespliegue Vercel está deshabilitado para esta rama en `vercel.json`; ni
 ## Verificación y límites
 
 - 181 pruebas unitarias/regresión y auditoría de traducción sin faltantes fuera de las excepciones explícitas del piloto.
-- Nueve grupos PostgreSQL locales: aislamiento/RLS, permisos de escritura, replay/conflicto, revisión/roles/concurrencia, reevaluación a 30 días, asignación/snapshots, perfiles y diploma idempotente conservando certificados existentes.
-- Transacción en Supabase sandbox: entrega/replay/conflicto, aislamiento entre organizaciones, revisión de manager, rechazo de proyecto al manager, rechazo de reevaluación prematura/diploma sin requisitos, snapshots y RLS de alumno/manager/externo. Todo se revirtió: cero organizaciones, entregas o evidencias de prueba residuales. SQL reproducible: `supabase/sandbox/validate_role_training.sql`.
-- Cinco grupos HTTP con servidor Next y handlers reales: formulario→API→RPC fixture→evidencia, permisos/origen, asignación/revisión/snapshots, igualdad de matriz propia/manager y mapa/Admin/diploma/cuota. Auth/REST son fixtures sintéticos; esto no acredita una sesión Auth real en cloud.
+- Diecisiete grupos PostgreSQL locales: aislamiento/RLS, permisos de escritura, replay/conflicto, revisión/roles/concurrencia, reevaluación a 30 días, asignación/snapshots, perfiles y diploma idempotente conservando certificados existentes.
+- Transacción en Supabase sandbox: entrega/replay/conflicto, aislamiento entre organizaciones, revisión de manager, revisión de proyecto por manager, flujo delegado de dos pasos, rechazo de orden incorrecto/bypass, evidencia solo al final y revocación por suspensión del autorizador, rechazo de reevaluación prematura/diploma sin requisitos, snapshots y RLS de alumno/manager/externo. Todo se revirtió: cero organizaciones, entregas, evidencias, flujos o votos de prueba residuales. SQL reproducible: `supabase/sandbox/validate_role_training.sql`.
+- Siete grupos HTTP con servidor Next y handlers reales: formulario→API→RPC fixture→evidencia, permisos/origen, asignación/revisión/snapshots, igualdad de matriz propia/manager y mapa/Admin/diploma/cuota, configuración del flujo con origen/permiso/payload verificados y revisión que retiene evidencia/snapshot hasta completar los pasos. Auth/REST son fixtures sintéticos; esto no acredita una sesión Auth real en cloud.
 - TypeScript y build Next completados; npm audit sin vulnerabilidades. También pasan los checks CI anteriores de workspace, soporte, learning flows, CS, registro y recuperación.
-- Advisor sandbox: sin problemas nuevos de seguridad ni claves foráneas sin índice. Permanece aviso previo de [protección de contraseñas filtradas deshabilitada](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection); no se cambia Auth en esta entrega. Avisos informativos de índices todavía sin uso son normales en el sandbox recién sembrado.
+- Advisor sandbox: sin problemas nuevos de seguridad ni claves foráneas sin índice. Permanece aviso previo de [protección de contraseñas filtradas deshabilitada](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection); no se cambia Auth en esta entrega. El advisor de rendimiento marca dos políticas SELECT permisivas para entregas: se conserva la original y se añade el acceso delegado puntual; ambas se evalúan y esto puede requerir optimización al aumentar volumen. [Referencia del advisor](https://supabase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies). Avisos informativos de índices todavía sin uso son normales en el sandbox recién sembrado.
 
 La ejecución visual Playwright está preparada pero no pasó en este entorno: no hay Chromium y la descarga devolvió archivos inválidos. No se afirma validación visual, móvil, teclado, contraste, axe ni navegador físico. CI agrega comprobaciones PostgreSQL y el flujo Chromium del piloto para ejecutarlas donde exista el navegador.
 

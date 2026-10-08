@@ -2,7 +2,7 @@ import {COMPETENCIES,LEVEL_LABELS,competencyProfile,type CompetencyEvidence,type
 import {TRAINING_NOTICE,suggestedUnits} from '../../../lib/role-training-content';
 import Link from 'next/link';
 function EvidenceReferences({records}:{records:CompetencyEvidence[]}){
- return records.length?<ul>{records.slice(0,3).map(e=><li key={e.id}><a href={'#evidence-'+e.id}>{e.activity_key} · {e.observed_at.slice(0,10)} · {e.review_source}</a></li>)}</ul>:<p>Sin registros para esta competencia.</p>;
+ return records.length?<ul>{records.slice(0,3).map(e=><li key={e.id}><a href={'#evidence-'+e.id}>{e.activity_key} · {e.observed_at.slice(0,10)} · {e.approval_submission_id?'Flujo configurado':e.review_source}</a></li>)}</ul>:<p>Sin registros para esta competencia.</p>;
 }
 export default function CompetencyPanel({evidence,profile,org,userId,canAssign=false}:{evidence:CompetencyEvidence[];profile:JobProfile|null;org:string|null;userId:string;canAssign?:boolean}){
  const s=competencyProfile(evidence,profile);
@@ -18,6 +18,6 @@ export default function CompetencyPanel({evidence,profile,org,userId,canAssign=f
   </div>):<p>No hay brechas calculables con el perfil y las evidencias disponibles.</p>}
   <h3>Preguntas para el 1:1</h3><ol>{s.questions.map(q=><li key={q}>{q}</li>)}</ol>
   <h3>Criterio profesional: errores críticos registrados</h3>{errors.size?<ul>{[...errors].map(([key,activities])=><li key={key}>{key} · {activities.size} actividades con registro. Revisa abajo el historial y las correcciones.</li>)}</ul>:<p>Sin errores críticos registrados. Esto no acredita desempeño laboral real.</p>}
-  <details><summary>Evidencias e historial de revisión</summary>{evidence.length?<ul>{[...evidence].sort((a,b)=>Date.parse(b.observed_at)-Date.parse(a.observed_at)).map(e=><li key={e.id} id={'evidence-'+e.id}><strong>{e.activity_key}</strong> · {e.review_source} · <time dateTime={e.observed_at}>{e.observed_at.slice(0,10)}</time><p>{Object.entries(e.competency_scores).map(([key,value])=>`${COMPETENCIES[key as keyof typeof COMPETENCIES]}: ${value}/4`).join(' · ')}</p>{e.feedback&&<p translate="no">{e.feedback}</p>}{e.critical_errors.length>0&&<p>Errores: {e.critical_errors.join(', ')}</p>}</li>)}</ul>:<p>Sin evidencia registrada.</p>}</details>
+  <details><summary>Evidencias e historial de revisión</summary>{evidence.length?<ul>{[...evidence].sort((a,b)=>Date.parse(b.observed_at)-Date.parse(a.observed_at)).map(e=><li key={e.id} id={'evidence-'+e.id}><strong>{e.activity_key}</strong> · {e.approval_submission_id?'Flujo configurado':e.review_source} · <time dateTime={e.observed_at}>{e.observed_at.slice(0,10)}</time><p>{Object.entries(e.competency_scores).map(([key,value])=>`${COMPETENCIES[key as keyof typeof COMPETENCIES]}: ${value}/4`).join(' · ')}</p>{e.feedback&&<p translate="no">{e.feedback}</p>}{e.critical_errors.length>0&&<p>Errores: {e.critical_errors.join(', ')}</p>}</li>)}</ul>:<p>Sin evidencia registrada.</p>}</details>
  </section>;
 }

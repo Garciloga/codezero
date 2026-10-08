@@ -7,6 +7,9 @@ import {TRAINING_UNITS,TRAINING_EXTRAS,TRAINING_NOTICE,FARO_DATA,TECHNICAL_BORRO
 import {COMPETENCIES} from '../../lib/competency-matrix';
 import {ROLE_WORKFLOWS} from '../../lib/career-role-workflows';
 import {isUuid} from '../../lib/workspace-sandbox';
+import ProjectReviewProgress from '../components/enterprise/project-review-progress';
+import {readWorkspacePages} from '../../lib/workspace-pages';
+import type {ReviewRun,ReviewVote} from '../../lib/project-review-flow';
 import CompetencyPanel from '../components/enterprise/competency-panel';
 import ReinforcementPanel from '../components/enterprise/reinforcement-panel';
 export default async function RoleTraining({searchParams}:{searchParams:Promise<{organization_id?:string;activity?:string;result?:string}>}){
@@ -24,11 +27,17 @@ export default async function RoleTraining({searchParams}:{searchParams:Promise<
  const reinforcement=org?await session.supabase.from('learning_assignments').select('activity_key,title,due_at,reinforcement_before,reinforcement_after').eq('organization_id',org).eq('user_id',session.user.id).eq('activity_type','route_unit'):null;
  const {data:submissions,error:submissionsError}=await session.supabase.from('learning_practice_submissions').select('id,activity_id,created_at').eq('user_id',session.user.id).order('created_at',{ascending:false}).limit(1000);
  if(submissionsError)throw Error('TRAINING_DATA_UNAVAILABLE');
+ const [runs,votes]=await Promise.all([
+ readWorkspacePages<ReviewRun>((a,b)=>{let q=session.supabase.from('learning_project_review_runs').select('*').eq('learner_id',session.user.id);if(org)q=q.eq('organization_id',org);return q.order('created_at').order('submission_id').range(a,b);}),
+ readWorkspacePages<ReviewVote>((a,b)=>{let q=session.supabase.from('learning_project_review_votes').select('id,submission_id,stage_index,user_id,decision,feedback,observed_at').eq('learner_id',session.user.id);if(org)q=q.eq('organization_id',org);return q.order('observed_at').order('id').range(a,b);})]);
+ if(runs.error||votes.error)throw Error('PROJECT_APPROVAL_UNAVAILABLE');
  return <main className="wrap" lang="es-MX" translate="no"><h1>Formación por puesto · piloto sandbox</h1><p>{TRAINING_NOTICE}</p><p>Tronco común: 9 unidades, 45 h estimadas. Customer Success: 20 unidades y actividades integradoras, 120 h adicionales. Las horas incluyen trabajo independiente; no son horas de video ni una acreditación profesional.</p>
  {params.result&&<p role="status">{diploma?.data?'Diploma de ruta registrado en tus certificados de sandbox.':'Cambios guardados. La autoevaluación permanece provisional hasta revisión.'}</p>}
  {diploma?.data&&<section className="card"><h2>{diploma.data.title}</h2><p>Constancia de práctica simulada · emitida {diploma.data.issued_at.slice(0,10)} · ID {diploma.data.id}</p></section>}
  <nav aria-label="Ruta piloto"><Link href={'/role-training'+(org?'?organization_id='+org:'')}>Todas las actividades</Link> · <Link href="/customer-success">Curso CS existente</Link>{org&&<> · <Link href={`/teams/${org}`}>Mi equipo</Link></>}</nav>
  <section className="card"><h2>Puesto de aprendizaje</h2><form action="/api/role-training" method="post"><input type="hidden" name="action" value="position"/>{org&&<input type="hidden" name="organization_id" value={org}/>}<label>Puesto<select name="position" defaultValue={p.profile?.position_key??''} required><option value="" disabled>Selecciona un puesto</option>{Object.entries(ROLE_WORKFLOWS).map(([key,role])=><option key={key} value={key}>{role.title}</option>)}</select></label><button className="btn">Guardar puesto</button></form><p>Este puesto define comparación de competencias; no cambia permisos, plan ni derechos.</p></section>
+ {org&&<p><Link href={`/role-training/review?organization_id=${org}`}>Proyectos que me asignaron para revisar</Link></p>}
+ <ProjectReviewProgress runs={runs.data??[]} votes={votes.data??[]}/>
  <CompetencyPanel evidence={p.evidence} profile={p.profile} org={org} userId={session.user.id}/>
  {reinforcement&&!reinforcement.error&&<ReinforcementPanel records={reinforcement.data??[]}/>}
  <section className="card"><h2>Contenido y actividades de la ruta</h2>{['Tronco común','Fundamentos','Operación','Dominio','Especialista'].map((name,level)=><details key={level} open={level===0}><summary>{name}</summary><ul>{visible.filter(a=>a.level===level).map(a=><li key={a.key}><Link prefetch={false} href={'/role-training?'+(org?'organization_id='+org+'&':'')+'activity='+a.key}>{a.title}</Link> · {a.hours} h estimadas</li>)}</ul></details>)}</section>

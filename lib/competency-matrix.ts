@@ -14,7 +14,7 @@ export type CompetencyEvidence = {
   id: string; user_id: string; organization_id: string | null; activity_key: string; independent_key: string;
   kind: EvidenceKind; competency_scores: Partial<Record<CompetencyKey, number>>;
   assistance: 'recognition'|'guided'|'independent'; review_source: 'auto'|'self'|'manager'|'admin';
-  observed_at: string; reevaluation_of?: string | null; critical_errors: string[]; feedback?: string | null;
+  observed_at: string; reevaluation_of?: string | null; critical_errors: string[]; feedback?: string | null; approval_submission_id?:string|null;
 };
 export type JobProfile = { position_key: string; version: number; weights: Record<CompetencyKey,'high'|'medium'|'low'>; expected: Record<CompetencyKey,number> };
 const keys = Object.keys(COMPETENCIES) as CompetencyKey[];
