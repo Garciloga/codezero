@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   ORGANIZATION_ROLES,
-  initials,
   type OrganizationRole,
 } from "../../lib/organization-metrics";
 import LineIcon from "./line-icon";
@@ -44,6 +43,7 @@ export default function VivoShell({
   authenticated,
   roleTrainingActive=false,
   avatarVersion,
+  userId,
 }: {
   children: ReactNode;
   name: string;
@@ -53,6 +53,7 @@ export default function VivoShell({
   authenticated: boolean;
   roleTrainingActive?:boolean;
   avatarVersion?:string|null;
+  userId?:string;
 }) {
   const path = usePathname();
   const menu = useRef<HTMLDetailsElement>(null);
@@ -207,7 +208,7 @@ export default function VivoShell({
             </nav>
           </details>
           <div className="vivo-account">
-            <ProfileAvatar name={name} version={avatarVersion}/>
+            <ProfileAvatar name={name} version={avatarVersion} userId={userId}/>
             <div>
               <strong translate="no">{name}</strong>
               <small>{plan.charAt(0).toUpperCase() + plan.slice(1)}</small>

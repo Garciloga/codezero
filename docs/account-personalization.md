@@ -25,3 +25,7 @@ El navegador de CI incorpora preview/guardar/recargar/descartar/restablecer, bor
 Volver al código anterior conserva perfiles, colores, fotos y preferencias. No borrar columnas, bucket o fotografías para revertir la interfaz. Una subida de Storage y actualización de avatar no son una única transacción entre servicios: una falla de metadatos responde 503 y permite reintentar; no se confirma un cambio fallido. Rutas futuras, Tutor y validaciones humanas mantienen su alcance anterior.
 
 Primer CI del PR (`bf19ab6`): build/seguridad aprobados; el navegador detectó que `border: 0 !important` del diseño Vivo anterior ocultaba el borde propio. Se agrega una sobrescritura acotada a paletas personalizadas y se repite CI en el mismo PR antes de publicar. No se suprime la aserción del borde.
+
+La actualización inmediata del avatar también se limita al ID de cuenta: eventos de otra sesión no reemplazan la foto visible. El recorrido de navegador incluye el control de un evento ajeno.
+
+Segundo CI (`0628a91`): borde visual ya correcto; una espera de la prueba leía la preferencia local antes de terminar el guardado asíncrono. Se agrega una guarda para esperar la copia existente, conservando la verificación posterior a recarga. Se vuelve a ejecutar el mismo PR.

@@ -62,7 +62,7 @@ export default async function ProfilePage({ searchParams }: PageProps) {
       <div className="grid grid2">
         <section className="card">
           <h2>Datos</h2>
-          <ProfilePhotoSettings name={profile?.full_name || "Mi cuenta"} initialVersion={profile?.avatar_version}/>
+          <ProfilePhotoSettings userId={user.id} name={profile?.full_name || "Mi cuenta"} initialVersion={profile?.avatar_version}/>
           <p><b>Nombre:</b> {profile?.full_name ? <span translate="no">{profile.full_name}</span> : "Sin configurar"}</p>
           <p><b>Email:</b> <span translate="no">{profile?.email || user.email}</span></p>
           <p><b>Rol:</b> {profile?.role}</p>

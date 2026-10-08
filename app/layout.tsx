@@ -49,7 +49,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <LanguageProvider locale={locale} messages={messages}>
         <AppearanceProvider userId={user?.id ?? null} serverPreference={preference} />
         <LocalizedServer><a className="skip-link" href="#main-content">Saltar al contenido</a></LocalizedServer>
-        <VivoShell roleTrainingActive={roleTrainingEnabled()} avatarVersion={navigation?.profile?.avatar_version} authenticated={Boolean(navigation)} name={navigation?.profile?.full_name || "Mi cuenta"} plan={navigation?.profile?.plan_name || "Free"} organizations={(navigation?.organizations ?? []) as any} selected={navigation?.organization?.organization_id ?? null}>{children}</VivoShell>
+        <VivoShell userId={user?.id} roleTrainingActive={roleTrainingEnabled()} avatarVersion={navigation?.profile?.avatar_version} authenticated={Boolean(navigation)} name={navigation?.profile?.full_name || "Mi cuenta"} plan={navigation?.profile?.plan_name || "Free"} organizations={(navigation?.organizations ?? []) as any} selected={navigation?.organization?.organization_id ?? null}>{children}</VivoShell>
       </LanguageProvider>
       </body>
     </html>

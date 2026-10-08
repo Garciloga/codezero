@@ -94,7 +94,7 @@ try{
  await page.waitForFunction(()=>getComputedStyle(document.documentElement).getPropertyValue('--vivo-border').trim()==='#123456');
  assert.equal(await page.locator('main .card').first().evaluate(el=>getComputedStyle(el).borderTopColor),'rgb(18, 52, 86)');
  await page.getByRole('button',{name:'Guardar colores',exact:true}).click();
- await page.waitForFunction(()=>JSON.parse(localStorage.getItem('codezero.appearance.v1:account:00000000-0000-4000-8000-000000000001')).colors.light.border==='#123456');
+ await page.waitForFunction(()=>JSON.parse(localStorage.getItem('codezero.appearance.v1:account:00000000-0000-4000-8000-000000000001'))?.colors?.light?.border==='#123456');
  await page.reload();await page.waitForFunction(()=>getComputedStyle(document.documentElement).getPropertyValue('--vivo-border').trim()==='#123456');
  await page.locator('.appearance-palette summary').click();
  await page.getByLabel('Fondo de la plataforma',{exact:true}).fill('#ffffff');await page.getByLabel('Texto principal',{exact:true}).fill('#ffffff');
@@ -102,7 +102,7 @@ try{
  await page.getByRole('button',{name:'Descartar cambios',exact:true}).click();
  await page.waitForFunction(()=>getComputedStyle(document.documentElement).getPropertyValue('--vivo-bg').trim()!=='#ffffff');
  await page.locator('#palette-mode').selectOption('dark');await page.getByLabel('Selección de texto',{exact:true}).fill('#13579b');
- await page.getByRole('button',{name:'Guardar colores',exact:true}).click();await page.waitForFunction(()=>JSON.parse(localStorage.getItem('codezero.appearance.v1:account:00000000-0000-4000-8000-000000000001')).colors.dark.selection==='#13579b');
+ await page.getByRole('button',{name:'Guardar colores',exact:true}).click();await page.waitForFunction(()=>JSON.parse(localStorage.getItem('codezero.appearance.v1:account:00000000-0000-4000-8000-000000000001'))?.colors?.dark?.selection==='#13579b');
  await page.reload();await page.waitForFunction(()=>getComputedStyle(document.documentElement).getPropertyValue('--vivo-selection').trim()==='#13579b');
  await page.locator('input[name="appearance-mode"][value="light"]').click();await page.waitForFunction(()=>document.documentElement.dataset.appearance==='light');
  // Generate a valid fixture rather than depending on a remote user image.
@@ -110,6 +110,8 @@ try{
  await page.locator('#profile-photo').setInputFiles({name:'fixture.png',mimeType:'image/png',buffer:validPhoto});
  await page.getByRole('button',{name:'Subir foto',exact:true}).click();
  await page.waitForFunction(()=>document.querySelector('.vivo-account .vivo-avatar img')?.naturalWidth>0);
+ await page.evaluate(()=>window.dispatchEvent(new CustomEvent('garciloga-profile-photo',{detail:{userId:'00000000-0000-4000-8000-000000000002',version:null}})));
+ assert.equal(await page.locator('.vivo-account .vivo-avatar img').count(),1,'photo events are scoped to the current account');
  const fetched=await context.request.get(origin+'/api/profile/photo');assert.equal(fetched.status(),200);assert.equal(fetched.headers()['content-type'],'image/webp');
  await page.reload();await page.waitForFunction(()=>document.querySelector('.vivo-account .vivo-avatar img')?.naturalWidth>0);
  await page.getByRole('button',{name:'Eliminar foto',exact:true}).click();await page.waitForFunction(()=>!document.querySelector('.vivo-account .vivo-avatar img'));

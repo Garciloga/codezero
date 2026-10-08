@@ -2,7 +2,7 @@
 import LocalizedContent from "./localization/client";
 import {useRef,useState} from "react";
 import ProfileAvatar,{PHOTO_EVENT} from "./profile-avatar";
-export default function ProfilePhotoSettings({name,initialVersion}:{name:string;initialVersion?:string|null}) {
+export default function ProfilePhotoSettings({name,initialVersion,userId}:{name:string;initialVersion?:string|null;userId:string}) {
   const [version,setVersion]=useState(initialVersion);
   const [saving,setSaving]=useState(false);
   const [message,setMessage]=useState("");
@@ -16,14 +16,14 @@ export default function ProfilePhotoSettings({name,initialVersion}:{name:string;
       const response=await fetch("/api/profile/photo",{method:remove?"DELETE":"POST",...(remove?{}:{body:form})});
       const result=await response.json();
       if(!response.ok) throw new Error(result.error);
-      setVersion(result.version);window.dispatchEvent(new CustomEvent(PHOTO_EVENT,{detail:{version:result.version}}));
+      setVersion(result.version);window.dispatchEvent(new CustomEvent(PHOTO_EVENT,{detail:{userId,version:result.version}}));
       if(fileInput.current)fileInput.current.value="";
       setMessage(remove?"Foto eliminada.":"Foto de perfil guardada.");
     } catch {setMessage("No pudimos guardar el cambio. Revisa que la imagen sea válida e intenta nuevamente.");}
     finally {setSaving(false);}
   }
   return <LocalizedContent><section aria-labelledby="photo-heading" aria-busy={saving}>
-    <h3 id="photo-heading">Foto de perfil</h3><ProfileAvatar name={name} version={version}/>
+    <h3 id="photo-heading">Foto de perfil</h3><ProfileAvatar name={name} version={version} userId={userId}/>
     <p className="muted">JPG, PNG o WebP, hasta 2 MB. Puedes reemplazar o eliminar tu foto cuando quieras.</p>
     <label htmlFor="profile-photo">Seleccionar foto</label>
     <input ref={fileInput} id="profile-photo" type="file" accept="image/jpeg,image/png,image/webp" disabled={saving}/>
