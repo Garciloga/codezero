@@ -94,6 +94,8 @@ export async function GET() {
     readWorkspacePages((a,b)=>supabase.from('learning_assignments').select('organization_id,activity_key,title,due_at,reinforcement_before,reinforcement_after').eq('user_id',user.id).eq('activity_type','route_unit').order('organization_id').order('activity_key').range(a,b)),
   ]):[];
   if(training.some(q=>q.error))return NextResponse.json({error:'EXPORT_FAILED'},{status:500});
+  const cancellations=await readWorkspacePages((a,b)=>supabase.from('account_cancellation_history').select('event_id,subscription_id,action,occurred_at').eq('user_id',user.id).order('occurred_at').order('event_id').range(a,b));
+  if(cancellations.error)return NextResponse.json({error:'EXPORT_FAILED'},{status:500});
   const body = JSON.stringify({
     exported_at: new Date().toISOString(),
     account: {
@@ -112,6 +114,7 @@ export async function GET() {
       certificates: certificates.data ?? [],
     },
     usage: usage.data ?? [],
+    cancellation_history:cancellations.data??[],
     role_training:training.length?{submissions:training[0].data,evidence_history:training[1].data,reinforcements:training[2].data}:null,
     workspace: workspace.length ? {appearance:workspace[0].data,practice:workspace[1].data,interests:workspace[2].data,diplomas:workspace[3].data,memberships:workspace[4].data,certificate_publications:workspace[5].data,customer_success:{units:workspace[6].data,attempts:workspace[7].data,projects:workspace[8].data},billing_operations:workspace[9].data} : null,
   }, null, 2);

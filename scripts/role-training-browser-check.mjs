@@ -68,6 +68,14 @@ try{
   const cookie=n=>'sb-127-auth-token=base64-'+Buffer.from(JSON.stringify(sessions[n-1])).toString('base64url');
   const get=(n,path)=>fetch(origin+path,{headers:{cookie:cookie(n)},redirect:'manual'});
   const post=(n,path,form,requestOrigin=origin)=>fetch(origin+path,{method:'POST',headers:{cookie:cookie(n),origin:requestOrigin},body:new URLSearchParams(form),redirect:'manual'});
+  assert.equal((await get(3,'/teams/'+org+'/settings')).status,404);
+  assert.equal((await post(2,'/api/company/manage',{action:'contract_update',organization_id:org,seats:'999999',plan:'enterprise',valid_until:'2030-01-01'})).status,403);
+  assert.equal((await post(2,'/api/company/manage',{action:'invite',organization_id:org,email:'outside@codezero.example.test'},'https://invalid.example')).status,403);
+  assert.equal((await post(3,'/api/company/'+org+'/brand?kind=logo',{})).status,403);
+  console.log('PASS real company handlers reject outside membership, quota self-edit and hostile origin');
+  for(const [language,phrase] of [['en','Useful communication helps someone act'],['pt','Uma comunicação útil permite agir'],['fr','Une communication utile permet']]){
+   users[1].user_metadata.locale=language;const translated=await get(2,'/role-training?organization_id='+org+'&activity=common-communication');assert.equal(translated.status,200);const text=await translated.text();assert.ok(text.includes(phrase));assert.ok(text.includes('name="decision_0"'));assert.ok(text.includes('value="guided"'));
+  }users[1].user_metadata.locale='es';console.log('PASS EN/PT/FR pilot lessons render through real Next handlers without changing form values');
   const first=await get(2,'/role-training?organization_id='+org);assert.equal(first.status,200);const html=await first.text();assert.match(html,/Formación por puesto/);assert.match(html,/práctica simulada/);assert.match(html,/select name="assistance"/);assert.ok(!html.includes('input type="hidden" name="assistance"'));
   const request=html.match(/name="request_id" value="([^"]+)"/)[1],activity=findTrainingActivity('common-communication');
   const payload={action:'submit',organization_id:org,activity:activity.key,request_id:request,draft:'Entrega ficticia: evidencia verificable, decisión, incertidumbre, responsable y siguiente paso. '.repeat(3),assistance:'guided',...Object.fromEntries(activity.competencies.map(k=>['score_'+k,'3'])),...Object.fromEntries(activity.decisions.map((q,i)=>['decision_'+i,String(q.correct)]))};

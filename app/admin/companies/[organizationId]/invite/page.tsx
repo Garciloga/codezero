@@ -1,0 +1,14 @@
+import Link from 'next/link';
+import {notFound,redirect} from 'next/navigation';
+import {requireAdmin,createAdminSupabase} from '../../../../../lib/admin';
+import {getServerUser} from '../../../../../lib/supabase-server';
+import {isUuid} from '../../../../../lib/workspace-sandbox';
+import {companyCapacity} from '../../../../../lib/company-server';
+import LocalizedContent from '../../../../components/localization/server';
+export default async function OperatorInvitation({params,searchParams}:{params:Promise<{organizationId:string}>,searchParams:Promise<{invitation?:string;result?:string}>}){
+ const {data:{user}}=await getServerUser();if(!user)redirect('/login');try{await requireAdmin(user.id);}catch{notFound();}
+ const {organizationId:org}=await params;if(!isUuid(org))notFound();const admin=createAdminSupabase();
+ const [{data:company},{data:teams},capacity]=await Promise.all([admin.from('organizations').select('name').eq('id',org).eq('active',true).maybeSingle(),admin.from('organization_teams').select('id,name').eq('organization_id',org),companyCapacity(org)]);if(!company)notFound();
+ const query=await searchParams;const invitation=isUuid(query.invitation)?await admin.from('organization_invitations').select('id,email,email_status').eq('id',query.invitation!).eq('organization_id',org).eq('created_by',user.id).is('revoked_at',null).maybeSingle():null;
+ return <LocalizedContent><main className="wrap"><h1>Invitar a una compañía</h1><p translate="no">{company.name}</p><p>Asientos disponibles: {capacity.available}. Crear esta invitación no incorpora al administrador a la compañía.</p>{invitation?.data&&<section className="card"><h2>Invitación preparada</h2><p translate="no">{invitation.data.email}</p><p>{invitation.data.email_status==='queued'?'El proveedor aceptó el correo; la entrega al buzón no está confirmada.':'Comparte el enlace de invitación. El envío por correo no está confirmado.'}</p><Link href={'/teams/join?id='+invitation.data.id}>Abrir enlace de invitación</Link><p translate="no">{process.env.NEXT_PUBLIC_APP_URL+'/teams/join?id='+invitation.data.id}</p></section>}<form action="/api/company/manage" method="post"><input type="hidden" name="action" value="invite"/><input type="hidden" name="organization_id" value={org}/><label>Correo<input type="email" name="email" required maxLength={200}/></label><label>Rol<select name="role" defaultValue="learner"><option value="learner">Colaborador</option><option value="supervisor">Supervisor</option><option value="manager">Gerente</option><option value="admin">Administrador de compañía</option></select></label><label>Equipo interno<select name="team_id"><option value="">Sin equipo interno</option>{teams?.map(t=><option key={t.id} value={t.id}>{t.name}</option>)}</select></label><button className="btn" disabled={capacity.available<1}>Preparar invitación</button></form></main></LocalizedContent>;
+}

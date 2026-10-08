@@ -1,4 +1,5 @@
 import Stripe from "stripe";
+import {cancellationAction} from '../../../../lib/cancellation-history';
 import { classifySubscription } from "../../../../lib/subscription-classification";
 import { headers } from "next/headers";
 import { createAdminSupabase } from "../../../../lib/admin";
@@ -238,6 +239,14 @@ export async function POST(req: Request) {
         }
       } else if (getPlanFromSubscription(subscription)) {
         const plan = getPlanFromSubscription(subscription);
+        const cancellation=cancellationAction(event.type,Boolean(subscription.cancel_at_period_end),event.data.previous_attributes);
+        if(cancellation){
+          let target=admin.from('profiles').select('id').eq('stripe_subscription_id',subscription.id);
+          if(metadataUserId)target=admin.from('profiles').select('id').eq('id',metadataUserId);
+          const {data:cancelOwner,error:cancelOwnerError}=await target.maybeSingle();
+          if(cancelOwnerError)throw cancelOwnerError;
+          if(cancelOwner){const {error}=await admin.from('account_cancellation_history').upsert({event_id:event.id,user_id:cancelOwner.id,subscription_id:subscription.id,action:cancellation,occurred_at:new Date(event.created*1000).toISOString()},{onConflict:'event_id',ignoreDuplicates:true});if(error)throw error;}
+        }
         const combinedTutor = subscription.items.data.some(item=>aiTutorPrices.has(item.price.id));
         const usable = ["active", "trialing", "past_due"].includes(subscription.status) || (combinedTutor && subscription.status === "unpaid");
 

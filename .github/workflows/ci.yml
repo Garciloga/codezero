@@ -38,6 +38,9 @@ jobs:
       - name: Account personalization database checks
         run: node scripts/account-personalization-db-check.mjs
 
+      - name: Company permissions, capacity and channels database checks
+        run: node scripts/company-teams-db-check.mjs
+
       - name: Translation coverage
         run: node scripts/localization-audit.mjs
 
@@ -51,7 +54,7 @@ jobs:
         run: node scripts/customer-success-db-check.mjs
 
       - name: Role-training sandbox database checks
-        run: node scripts/role-training-db-check.mjs
+        run: CODEZERO_PROFESSIONAL_ROUTES_CHECK=1 node scripts/role-training-db-check.mjs
 
       - name: Registration and recovery database checks
         run: node scripts/profile-registration-db-check.mjs && node scripts/recovery-local-check.mjs
@@ -97,3 +100,20 @@ jobs:
       - name: Role-training sandbox browser flow
         if: matrix.engine == 'chromium'
         run: node scripts/role-training-browser-check.mjs
+
+      - name: Build isolated runtime review target
+        if: matrix.engine == 'chromium'
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: validation-placeholder
+          NEXT_PUBLIC_APP_URL: http://localhost:3032
+          CODEZERO_ENVIRONMENT: sandbox
+          CODEZERO_PRACTICE_PREVIEW: '1'
+          CODEZERO_MODULAR_PREVIEW: '1'
+          CODEZERO_CODE_RUNTIME: '1'
+          CODEZERO_CODE_RUNTIME_ORIGIN: http://127.0.0.1:3041
+        run: npm run build
+
+      - name: Execute Python and SQL in isolated browser workers
+        if: matrix.engine == 'chromium'
+        run: node scripts/browser-practice-check.mjs

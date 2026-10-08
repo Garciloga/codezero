@@ -43,14 +43,19 @@ export default async function TeamSection({
   const { organizationId: org, section } = await params;
   if (!titles[section]) redirect("/dashboard");
   const allowed =
-    section === "tasks"
+    ["tasks","invite"].includes(section)
       ? Object.keys(ORGANIZATION_ROLES)
       : section === "billing"
         ? ["owner"]
-        : ["invite", "permissions", "modules", "history"].includes(section)
+        : ["permissions", "modules", "history"].includes(section)
           ? ["owner", "admin"]
           : leaders;
   const d = await requireOrganization(org, allowed);
+  if(section==="invite"&&!['owner','admin'].includes(d.own.role)){
+    const {data:grants,error}=await d.supabase.from('organization_team_grants').select('team_id').eq('organization_id',org).eq('user_id',d.user.id).eq('can_invite',true).limit(1);
+    if(error||!grants?.length)redirect('/dashboard');
+  }
+  const {data:inviteTeams}=section==='invite'?await d.supabase.from('organization_teams').select('id,name').eq('organization_id',org):{data:null};
   const team = d.people.filter((p) => p.user_id !== d.user.id);
   const own = d.people.find((p) => p.user_id === d.user.id);
   const rated = team.filter((p) => p.percent !== null);
@@ -197,9 +202,9 @@ export default async function TeamSection({
     section === "invite"
       ? await d.supabase
           .from("organization_invitations")
-          .select("id,email,role")
+          .select("id,email,role,email_status")
           .eq("organization_id", org)
-          .is("accepted_at", null)
+          .is("accepted_at", null).is("revoked_at",null).gt("expires_at",new Date().toISOString())
       : null;
   return (
     <LocalizedContent>
@@ -224,7 +229,11 @@ export default async function TeamSection({
           <p role="status">
             {result === "saved"
               ? "Cambios guardados."
-              : result === "invitation_pending"
+              : result === "mail_queued"
+                ? "El proveedor aceptó el correo; la entrega al buzón no está confirmada."
+                : result === "mail_failed"
+                ? "Invitación preparada. El correo no está confirmado; comparte el enlace."
+                : result === "invitation_pending"
                 ? "Invitación preparada. Comparte el enlace con la persona; debe iniciar sesión con el correo invitado."
                 : "No se pudo completar el cambio. Revisa permisos, roles y jefaturas."}
           </p>
@@ -432,8 +441,9 @@ export default async function TeamSection({
                 Correo{" "}
                 <input name="email" type="email" required maxLength={200} />
               </label>
-              {roles()}
+              {['owner','admin'].includes(d.own.role)?roles():<input type="hidden" name="role" value="learner"/>}
               {reports()}
+              <label>Equipo interno<select name="team_id" required={!['owner','admin'].includes(d.own.role)}><option value="">Sin equipo interno</option>{inviteTeams?.map(t=><option key={t.id} value={t.id}>{t.name}</option>)}</select></label>
               <button className="btn">Preparar invitación</button>
             </form>
             {invitations?.error ? (
@@ -442,10 +452,11 @@ export default async function TeamSection({
               <ul>
                 {invitations?.data?.map((i) => (
                   <li key={i.id}>
-                    <span translate="no">{i.email}</span> ·{" "}
+                    <span translate="no">{i.email}</span> · {i.email_status==='queued'?'Correo aceptado por el proveedor':'Enlace preparado; entrega de correo sin confirmar'} ·{" "}
                     <Link prefetch={false} href={`/teams/join?id=${i.id}`}>
                       Abrir incorporación
                     </Link>
+                    <form action="/api/company/manage" method="post"><input type="hidden" name="action" value="revoke"/><input type="hidden" name="organization_id" value={org}/><input type="hidden" name="invitation_id" value={i.id}/><button className="btn secondary">Revocar invitación</button></form>
                   </li>
                 ))}
               </ul>

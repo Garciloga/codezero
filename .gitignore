@@ -12,3 +12,6 @@ out/
 
 *.tsbuildinfo
 lib/localization/.cache-*.json
+
+# Reproducible local translation model cache
+lib/localization/.extension-cache-*.json

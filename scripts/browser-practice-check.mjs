@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import { chromium } from "../sandbox-runtime/node_modules/playwright/index.mjs";
 import { RUNTIME_CHALLENGES } from '../lib/runtime-challenges.ts';
+import { ADDON_OFFERS } from '../lib/modular-offers.ts';
 
 const env={...process.env,NEXT_PUBLIC_SUPABASE_URL:"https://example.supabase.co",NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY:"validation-placeholder",
   NEXT_PUBLIC_APP_URL:"http://localhost:3032",CODEZERO_PRACTICE_PREVIEW:"1",CODEZERO_MODULAR_PREVIEW:"1",CODEZERO_CODE_RUNTIME:"1",CODEZERO_ENVIRONMENT:"sandbox",CODEZERO_CODE_RUNTIME_ORIGIN:"http://127.0.0.1:3041"};
@@ -42,7 +43,7 @@ try {
   const modular = await browser.newPage();
   await modular.goto("http://localhost:3032/modular-preview");
   const waitlistButtons = modular.getByRole("button",{name:"Me interesa · lista de espera",exact:true});
-  assert.equal(await waitlistButtons.count(),16);
+  assert.equal(await waitlistButtons.count(), ADDON_OFFERS.filter(offer => !('readiness' in offer)).length);
   for(const button of await waitlistButtons.all())assert.equal(await button.isDisabled(),true);
   await modular.close();console.log("PASS anonymous previews do not claim saved progress or accept waitlist writes");
   const code=page.getByLabel("Tu código de Python",{exact:true});const run=page.getByRole("button",{name:"Ejecutar código",exact:true});

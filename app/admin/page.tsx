@@ -99,7 +99,7 @@ export default async function Admin({ searchParams }: PageProps) {
         <a className="btn secondary" href="/dashboard">Mi cuenta</a>
       </div>
 
-      {operatorRole==="owner"&&workspaceEnabled()&&<section className="card"><h2>Crear organización</h2><form action="/api/teams/manage" method="post"><input type="hidden" name="action" value="create"/><label>Nombre <input name="name" minLength={2} maxLength={120} required/></label><button className="btn" type="submit">Crear organización</button></form></section>}
+      {workspaceEnabled()&&<p><a className="btn" href="/admin/companies">Compañías, contratos e invitaciones</a> · <a href="/admin/metrics">Analítica de visitas</a></p>}
 
       {updated === "1" && (
         <div className="card" style={{ marginBottom: 18 }}>

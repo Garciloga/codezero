@@ -1,3 +1,4 @@
+import {PROFESSIONAL_ACTIVITIES} from './professional-route-content.ts';
 import {CS_CASE_STAGES,CS_CASE_METRICS} from './customer-success-practical-case.ts';
 import {CS_LESSONS,CS_CAPSTONE_RUBRIC} from './customer-success-course.ts';
 import type {CompetencyKey,EvidenceKind} from './competency-matrix.ts';
@@ -5,7 +6,7 @@ import type {CompetencyKey,EvidenceKind} from './competency-matrix.ts';
 export const ROLE_TRAINING_VERSION='role-practice-v1';
 export const TRAINING_NOTICE='Esto mide práctica simulada, no desempeño laboral real. No hay ranking de personas.';
 export type Decision={prompt:string;options:readonly string[];correct:number;feedback:string};
-export type TrainingActivity={key:string;title:string;route:'common'|'customer_success';level:number;kind:EvidenceKind;
+export type TrainingActivity={key:string;title:string;route:string;level:number;kind:EvidenceKind;
  hours:number;competencies:CompetencyKey[];lesson:string;task:string;template:string;example:string;decisions:Decision[];
  sourceStage?:string;sourceRubric?:readonly string[];sourceUrls:string[];reevaluationOf?:string;rubric:string[];optionalPractice:string[]};
 type Seed=[string,string,CompetencyKey[],number,string,string,string,[string,string,string,string][]];
@@ -198,7 +199,7 @@ export const TRAINING_ACTIVITIES=[...TRAINING_UNITS,...TRAINING_EXTRAS];
 export const FARO_DATA=CS_CASE_METRICS;
 export const TRAINING_LEVEL_HOURS=[20,32,36,32];
 export function suggestedUnits(key:CompetencyKey){return TRAINING_UNITS.filter(u=>u.competencies.includes(key)).slice(0,3);}
-export function findTrainingActivity(key:string){return TRAINING_ACTIVITIES.find(a=>a.key===key);}
+export function findTrainingActivity(key:string){return [...TRAINING_ACTIVITIES,...PROFESSIONAL_ACTIVITIES].find(a=>a.key===key);}
 export function gradeTrainingDecisions(activity:TrainingActivity,answers:number[]){
  if(answers.length!==activity.decisions.length||!answers.length||answers.some((v,i)=>!Number.isInteger(v)||v<0||v>=activity.decisions[i].options.length))throw Error('INVALID_ANSWERS');
  return {score:Math.round(answers.filter((v,i)=>v===activity.decisions[i].correct).length/answers.length*100),feedback:activity.decisions.map(q=>q.feedback)};
