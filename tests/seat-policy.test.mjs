@@ -18,3 +18,12 @@ test('only activated releases leave coming soon; mentoring and community remain 
  for(const key of ['enterprise_communicator','executable_code','leadership_courses','route_operations'])assert.ok(!active.some(p=>p.key===key));
  for(const key of ['mentoring','learner_community','route_growth'])assert.ok(active.some(p=>p.key===key));
 });
+
+// Brand normalization must not rewrite the authored historical name.
+import {translator} from '../lib/localization/shared.ts';
+test('brand history preserves CodeZero while current labels use Garciloga',()=>{
+ const history='Empezó con el nombre CodeZero, como una plataforma para aprender a programar desde cero.';
+ assert.equal(translator({})(history),history);
+ assert.equal(translator({[history]:'It began as CodeZero, a programming platform.'})(history),'It began as CodeZero, a programming platform.');
+ assert.equal(translator({})('Aprende con CodeZero'),'Aprende con Garciloga');
+});

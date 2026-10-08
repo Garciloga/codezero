@@ -32,7 +32,10 @@ export function translator(messages: Messages) {
         break;
       }
     }
-    if (result === undefined || !key) return source.replaceAll("CodeZero", "Garciloga");
-    return (source.match(/^\s*/)?.[0] + result + (source.match(/\s*$/)?.[0] ?? '')).replaceAll("CodeZero", "Garciloga");
+    // The founder's history names the original brand; preserve that historical fact.
+    const brand = (copy: string) => key.startsWith("Empezó con el nombre CodeZero,") ? copy : copy.replaceAll("CodeZero", "Garciloga");
+    if (result === undefined || !key) return brand(source);
+    return brand(source.match(/^\s*/)?.[0] + result + (source.match(/\s*$/)?.[0] ?? ''));
   };
 }
+

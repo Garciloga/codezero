@@ -12,6 +12,6 @@ Starter and Pro use the existing monthly MXN unit prices and existing per-person
 
 Available company messaging, executable code practice and seven role practice routes are removed from the pending roadmap only when their production flags are active. Mentoring, community and other unfinished features remain pending. Role practice uses existing Pro/Enterprise access; commercial add-ons are not enabled.
 
-Validation: 192 unit tests, 20 PostgreSQL permission/capacity groups, production migration checks, localization coverage, production build, and Chromium browser fixtures covering four languages, appearance, mobile widths, zoom, accessibility, owner-only forms and request denial. Auth/PostgREST browser data was synthetic.
+Validation: 193 unit tests, 20 PostgreSQL permission/capacity groups, production migration checks, localization coverage, production build, and Chromium browser fixtures covering four languages, appearance, mobile widths, zoom, accessibility, owner-only forms and request denial. Auth/PostgREST browser data was synthetic.
 
 Supabase's security advisor reports intentionally closed RLS tables with no client policies. Its existing leaked-password protection warning is unrelated to this release: https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection
