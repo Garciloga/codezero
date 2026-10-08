@@ -134,7 +134,13 @@ try{
   console.log('PASS mixed Python/SQL editor → separate origin → actual workers → recorded output');
   const unit=MIXED_UNITS[0],step=unit.steps[2],a=findTrainingActivity(step.sourceKey);await page.goto(origin+'/role-training/mixed?unit='+unit.key+'&step='+encodeURIComponent(step.key)+'&organization_id='+org);await page.waitForLoadState('networkidle');const form=page.locator('form[action="/api/role-training/mixed"]');for(const [i,q]of a.decisions.entries())await form.locator('input[name=decision_'+i+'][value="'+q.correct+'"]').check();for(const [i,label]of TOOL_FIELDS[step.category].entries())await form.locator('textarea[name=tool_'+i+']').fill(label+' · evidencia de navegador');await form.locator('textarea[name=draft]').fill('Entrega de navegador con periodo, responsable, evidencia ficticia y condiciones pendientes de renovación. '.repeat(3));for(const k of a.competencies)await form.locator('select[name=score_'+k+']').selectOption('2');await Promise.all([page.waitForNavigation({waitUntil:'networkidle'}),form.getByRole('button',{name:'Enviar para revisión humana'}).click()]);assert.match(page.url(),/result=saved/);assert.equal(tables.learning_practice_submissions.length,49);
   await page.goto('about:blank');await context.clearCookies();await context.addCookies([{name:'sb-127-auth-token',value:'base64-'+Buffer.from(JSON.stringify(sessions[0])).toString('base64url'),url:origin}]);await page.goto(origin+'/teams/'+org+'/skills');await page.waitForLoadState('networkidle');assert.equal(await page.getByRole('heading',{name:'Avance por tipo de trabajo'}).count(),1);assert.match(await page.locator('main').innerText(),/Colaborador ficticio/);
-  assert.deepEqual(errors,[]);await context.close();console.log('PASS four languages, six routes, mobile and desktop, decision/editor/tools accessibility');
+  // WebKit can report the cross-origin Next development stack lookup as a
+  // pageerror when the isolated editor opens. This endpoint only reconstructs
+  // debug stacks; application errors and every other endpoint still fail.
+  const debugLookup='/'+new URL(origin).host+'/__nextjs_original-stack-frames due to access control checks.';
+  const applicationErrors=errors.filter(message=>message!==debugLookup);
+  if(errors.length!==applicationErrors.length)console.log('INFO Next development stack lookup blocked by browser isolation; application errors remain checked');
+  assert.deepEqual(applicationErrors,[]);await context.close();console.log('PASS four languages, six routes, mobile and desktop, decision/editor/tools accessibility');
  }
  finished=true;
 }finally{await browser?.close();server.kill('SIGTERM');if(server.exitCode===null)await new Promise(resolve=>server.once('close',resolve));if(runtimeServer){runtimeServer.kill('SIGTERM');if(runtimeServer.exitCode===null)await new Promise(resolve=>runtimeServer.once('close',resolve));}database.close();if(!finished)console.error(logs.join('').slice(-9000));}
