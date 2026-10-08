@@ -1,0 +1,5 @@
+import {COMPETENCIES,type CompetencyKey,type competencyProfile} from './competency-matrix.ts';
+export type DevelopmentGoal={key:CompetencyKey;target:number;baseline:number;activity:string};
+export type DevelopmentPlan={id:string;organization_id:string;user_id:string;proposed_by:string;goals:DevelopmentGoal[];due_at:string;state:'proposed'|'accepted'|'commented';revision:number;history:{action:string;actor:string;at:string;comment?:string}[];created_at:string;updated_at:string};
+export function goalProgress(goal:DevelopmentGoal,summary:ReturnType<typeof competencyProfile>){const c=summary.competencies.find(c=>c.key===goal.key);return {level:c?.level??0,met:Boolean(c&&c.count>=3&&c.level>=goal.target)};}
+export function validDevelopmentGoals(goals:unknown):goals is DevelopmentGoal[]{return Array.isArray(goals)&&goals.length>=1&&goals.length<=3&&new Set(goals.map(g=>g?.key)).size===goals.length&&goals.every(g=>g&&g.key in COMPETENCIES&&Number.isInteger(g.target)&&g.target>=1&&g.target<=4&&Number.isInteger(g.baseline)&&g.baseline>=0&&g.baseline<=4&&typeof g.activity==='string'&&g.activity.length<=120);}

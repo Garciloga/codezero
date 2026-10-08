@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export function publicMetadata(title: string, description: string, path: string): Metadata {
-  const image = { url: "/social/codezero", width: 1200, height: 630, alt: "Garciloga · Aprende a programar desde cero, paso a paso." };
+  const image = { url: "/social/codezero", width: 1200, height: 630, alt: "Garciloga · Habilidades para tu siguiente puesto." };
   return {
     title, description,
     alternates: { canonical: path },
@@ -9,4 +9,5 @@ export function publicMetadata(title: string, description: string, path: string)
     twitter: { card: "summary_large_image", title: title + " · Garciloga", description, images: [image] },
   };
 }
+
 

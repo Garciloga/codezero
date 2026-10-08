@@ -10,8 +10,10 @@ import {
 import LineIcon from "./line-icon";
 import LocalizedContent from "./localization/client";
 import ProfileAvatar from "./profile-avatar";
+import NotificationBell from './notification-bell';
+import PageMotion from './page-motion';
 import LanguageSelector from "./localization/language-selector";
-const publicHeaderPaths = ["/", "/about", "/pricing", "/roadmap", "/login", "/terms", "/privacy", "/refunds", "/contact", "/experience-preview", "/practice-preview", "/modular-preview", "/companies"];
+const publicHeaderPaths = ["/", "/about", "/pricing", "/roadmap", "/login", "/terms", "/privacy", "/refunds", "/contact", "/experience-preview", "/practice-preview", "/modular-preview", "/companies", "/help", "/news"];
 type Organization = {
   organization_id: string;
   name: string;
@@ -29,6 +31,7 @@ const publicPaths = [
   "/refunds",
   "/contact",
   "/faq",
+  "/news",
   "/about",
   "/reset-password",
   "/experience-preview",
@@ -82,8 +85,8 @@ export default function VivoShell({
   )
     return (
       <div id="main-content" tabIndex={-1}>
-        {!publicHeaderPaths.includes(path) && <div className="vivo-toolbar"><LanguageSelector /></div>}
-        {children}
+        {!publicHeaderPaths.includes(path) && <div className="vivo-toolbar"><NotificationBell/><LanguageSelector /></div>}
+        <PageMotion>{children}</PageMotion>
       </div>
     );
   const requested = path.match(/^\/teams\/([0-9a-f-]{36})(?:\/|$)/)?.[1];
@@ -103,7 +106,7 @@ export default function VivoShell({
         ["Mi ruta", "/dashboard?view=learning#my-learning-path", "learning"],
         ...(org ? [["Mis tareas", base + "/tasks", "task"]] : []),
         ["Mis competencias", "/competencies", "learning"],
-        ...(roleTrainingActive?[["Formación por puesto", "/role-training"+(org?"?organization_id="+org.organization_id:""), "learning"],...(org?[["Revisar proyectos", "/role-training/review?organization_id="+org.organization_id, "task"]]:[])]:[]),
+        ...(roleTrainingActive?[["Mapa de carrera", "/role-training/career-map"+(org?"?organization_id="+org.organization_id:""), "learning"],["Formación por puesto", "/role-training"+(org?"?organization_id="+org.organization_id:""), "learning"],...(org?[["Revisar proyectos", "/role-training/review?organization_id="+org.organization_id, "task"]]:[])]:[]),
         ["Mis certificados", "/certificates", "certificate"],
         ["Comunidad", "/community", "people"],
         ["Mentorías", "/mentoring", "people"],
@@ -164,8 +167,8 @@ export default function VivoShell({
           <Link prefetch={false} className="vivo-logo" href={home}>
             Garciloga
           </Link>
-          {org?.logo_version&&<img alt={org.name} width={64} height={64} style={{objectFit:"contain"}} src={`/api/company/${org.organization_id}/brand?kind=logo&v=${org.logo_version}`}/>}
-          {org?.cover_version&&<img alt="Imagen de compañía" width={220} height={80} style={{objectFit:"cover",maxWidth:"100%"}} src={`/api/company/${org.organization_id}/brand?kind=cover&v=${org.cover_version}`}/>}
+          {org?.logo_version&&<img decoding="async" alt={org.name} width={64} height={64} style={{objectFit:"contain"}} src={`/api/company/${org.organization_id}/brand?kind=logo&v=${org.logo_version}`}/>}
+          {org?.cover_version&&<img loading="lazy" decoding="async" alt="Imagen de compañía" width={220} height={80} style={{objectFit:"cover",maxWidth:"100%"}} src={`/api/company/${org.organization_id}/brand?kind=cover&v=${org.cover_version}`}/>}
           {org && <section className="vivo-position">
             {org ? (
               <>
@@ -231,10 +234,11 @@ export default function VivoShell({
         </aside>
       </LocalizedContent>
       <div className="vivo-content" id="main-content" tabIndex={-1}>
-        <div className="vivo-toolbar"><LanguageSelector /></div>
-        {children}
+        <div className="vivo-toolbar"><NotificationBell/><LanguageSelector /></div>
+        <PageMotion>{children}</PageMotion>
       </div>
     </div>
   );
 }
+
 

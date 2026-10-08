@@ -95,12 +95,15 @@ export async function GET() {
     readWorkspacePages((a,b)=>supabase.from('learning_assignments').select('organization_id,activity_key,title,due_at,reinforcement_before,reinforcement_after').eq('user_id',user.id).eq('activity_type','route_unit').order('organization_id').order('activity_key').range(a,b)),
   ]):[];
   if(training.some(q=>q.error))return NextResponse.json({error:'EXPORT_FAILED'},{status:500});
+  const growth=workspaceEnabled()?await Promise.all([readWorkspacePages((a,b)=>supabase.from('learning_development_plans').select('*').eq('user_id',user.id).order('created_at').order('id').range(a,b)),supabase.from('notice_preferences').select('disabled_types,updated_at').eq('user_id',user.id),readWorkspacePages((a,b)=>supabase.from('notice_read_states').select('event_key,read_at').eq('user_id',user.id).order('event_key').range(a,b))]):[];
+  if(growth.some(q=>q.error))return NextResponse.json({error:'EXPORT_FAILED'},{status:500});
   const cancellations=await readWorkspacePages((a,b)=>supabase.from('account_cancellation_history').select('event_id,subscription_id,action,occurred_at').eq('user_id',user.id).order('occurred_at').order('event_id').range(a,b));
   if(cancellations.error)return NextResponse.json({error:'EXPORT_FAILED'},{status:500});
   const admin=createAdminSupabase();
   const [activation,portfolio]=await Promise.all([admin.from('activation_events').select('event,observed_at').eq('user_id',user.id).gte('observed_at',new Date(Date.now()-90*86400000).toISOString()),admin.from('public_portfolios').select('published,display_name,evidence_ids,certificate_ids,competency_keys,consent_at,updated_at').eq('user_id',user.id)]);
   if(activation.error||portfolio.error)return NextResponse.json({error:'EXPORT_FAILED'},{status:500});
   const body = JSON.stringify({
+    development_plans:growth[0]?.data??[],notification_preferences:growth[1]?.data??[],notification_read_states:growth[2]?.data??[],
     activation_events:activation.data,public_portfolio:portfolio.data,
     exported_at: new Date().toISOString(),
     account: {
@@ -132,6 +135,7 @@ export async function GET() {
     },
   });
 }
+
 
 
 

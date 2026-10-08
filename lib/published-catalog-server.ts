@@ -1,0 +1,3 @@
+import 'server-only';
+import {createAdminSupabase} from './admin';
+export async function publishedCatalogCounts(){const s=createAdminSupabase();const results=await Promise.all([s.from('levels').select('id',{count:'exact',head:true}),s.from('lessons').select('id',{count:'exact',head:true}).eq('status','published'),s.from('level_projects').select('id',{count:'exact',head:true}).eq('status','published'),s.from('learning_activity_catalog').select('id',{count:'exact',head:true}).eq('active',true).eq('kind','capstone')]);return results.some(r=>r.error)?null:{levels:results[0].count??0,lessons:results[1].count??0,technicalProjects:results[2].count??0,roleProjects:results[3].count??0};}

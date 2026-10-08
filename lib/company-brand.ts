@@ -6,5 +6,6 @@ export async function normalizeCompanyBrand(bytes:Uint8Array,mime:string,kind:'l
  const image=sharp(bytes,{limitInputPixels:16000000,animated:false,failOn:'warning'});
  const metadata=await image.metadata();
  if(!metadata.format||!['jpeg','png','webp'].includes(metadata.format)||(metadata.pages??1)>1)throw Error('INVALID_IMAGE');
- return image.rotate().resize(kind==='logo'?{width:512,height:512,fit:'inside',withoutEnlargement:true}:{width:1440,height:480,fit:'cover',withoutEnlargement:true}).webp({quality:82}).toBuffer();
+ return image.rotate().resize(kind==='logo'?{width:512,height:512,fit:'inside',withoutEnlargement:true}:{width:1920,height:640,fit:'cover',withoutEnlargement:true}).webp(kind==='logo'?{lossless:true,effort:6}:{quality:92,effort:6,smartSubsample:true}).toBuffer();
 }
+

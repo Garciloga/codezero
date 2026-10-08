@@ -1,5 +1,6 @@
 import { translatedMetadata } from '../lib/localization/metadata';
 import "./globals.css";
+import "./motion-quality.css";
 import SupportSessionBanner from './components/support-session-banner';
 import {supportSession} from '../lib/support-session';
 import SiteVisit from './components/site-visit';
@@ -66,5 +67,6 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     </html>
   );
 }
+
 
 

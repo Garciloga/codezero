@@ -1,3 +1,6 @@
+import {publishedCatalogCounts} from '../../lib/published-catalog-server';
+import CompanyDemo from '../components/company-demo';
+import {PUBLIC_JOB_CASES} from '../../lib/public-job-cases';
 import { translatedMetadata } from '../../lib/localization/metadata';
 import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
@@ -6,14 +9,15 @@ export async function generateMetadata() { return translatedMetadata(publicMetad
 const foundation = ["Pensamiento computacional", "Python desde cero", "Python intermedio y código limpio", "Algoritmos y estructuras de datos", "Git, terminal y flujo profesional", "Bases de datos y SQL", "Web: HTML + CSS + JavaScript", "Backend y APIs", "Ingeniería de software", "Capstone · Proyecto profesional"];
 const integrations = ["APIs y webhooks", "SaaS, OAuth y automatización", "Sistemas empresariales", "Arquitectura y seguridad", "Proyecto final de integración"];
 // Approved manual snapshot, verified against published catalog on 2026-10-06.
-export default function Home() {
+export default async function Home() {
+  const counts=await publishedCatalogCounts();
   return <LocalizedContent><main className="wrap public-home">
     <section className="public-hero">
       <div>
         <p className="public-eyebrow">Programación · Puestos · Procesos · Decisiones</p>
         <h1>Construye habilidades para tu siguiente puesto.</h1>
         <p>Empieza desde cero con programación e integraciones, cursos y decisiones aplicadas a puestos reales. Desarrolla tu criterio para crecer hacia supervisión, gerencia y dirección.</p>
-        <p className="muted">La ruta técnica de 15 niveles y el curso de Customer Success ya están disponibles según tu plan. Explora guías por puesto y liderazgo; los nuevos cursos se anunciarán en el roadmap.</p>
+        <p className="muted">Practica Customer Success, Onboarding, Soporte y gestión de cuentas con datos ficticios, decisiones y revisión humana según tu plan.</p>
         <div className="public-actions"><Link className="btn" href="/login?modo=registro">Empezar gratis</Link><Link className="btn secondary" href="#ruta">Ver la ruta completa</Link></div>
         <p className="muted">El Nivel 1 completo es gratis.</p>
       </div>
@@ -27,15 +31,16 @@ export default function Home() {
         <p className="example-feedback"><b>Correcto.</b> Descomponer permite tratar cada parte de forma independiente y verificable.</p>
       </aside>
     </section>
-    <section className="public-stats" aria-label="Contenido de la ruta">
-      {[["15", "niveles en una sola ruta"], ["92", "lecciones con dos ejercicios"], ["15", "exámenes, uno por nivel"], ["2", "proyectos finales"]].map(([n, label]) => <div key={label}><strong>{n}</strong><span>{label}</span></div>)}
-    </section>
+    <section className="public-section"><h2>Elige tu camino</h2><div className="public-feature-grid">{[["Quiero crecer en mi puesto","Casos de Customer Success, Soporte, Onboarding y liderazgo.","/role-training"],["Quiero aprender a programar","Python, SQL e integraciones con práctica ejecutable.","/practice"],["Quiero formar a mi equipo","Competencias, refuerzos y seguimiento dentro de cada compañía.","/companies"]].map(([title,text,href])=><article className="card" key={title}><h3>{title}</h3><p>{text}</p><Link className="btn secondary" href={href}>Explorar</Link></article>)}</div></section>
+    <section className="public-section"><h2>Practica tu trabajo</h2><div className="public-feature-grid">{PUBLIC_JOB_CASES.map(unit=><article className="card" key={unit.key}><h3>{unit.title}</h3><p>{unit.caseTitle}</p><Link href={'/role-training/mixed?unit='+unit.key}>Explorar el caso</Link></article>)}</div><aside className="card"><span className="pill">Decisión respondida · Cuenta Faro</span><h3>Dos usuarios no pueden exportar. ¿Qué confirmas primero?</h3><p>Respuesta: compara permisos, pasos y alcance con una cuenta que sí funciona. Un error aislado no demuestra una caída general.</p></aside></section>
+    {counts&&<section className="public-stats" aria-label="Catálogo publicado">{[[counts.levels,"niveles técnicos"],[counts.lessons,"lecciones publicadas"],[counts.technicalProjects,"proyectos técnicos"],[counts.roleProjects,"integradores por ruta"]].map(([n,label])=><div key={String(label)}><strong>{n}</strong><span>{label}</span></div>)}</section>}
     <section id="como-funciona" className="public-section">
-      <h2>Así se avanza en Garciloga</h2><p className="muted">Siempre sabes qué sigue. Cada nivel repite los mismos cuatro pasos.</p>
+      <h2>Así se avanza en Garciloga</h2><p className="muted">Lección, práctica, decisiones, proyecto revisado y evidencia. Cada recorrido conserva sus requisitos.</p>
       <div className="public-steps">
         {[["Lee la lección", "Texto claro, un ejemplo guiado y una lista para comprobar que entendiste."], ["Practica", "Dos ejercicios por lección. Al responder ves la explicación, aciertes o no."], ["Presenta el examen", "Cinco preguntas al cierre del nivel. Con 70 % o más pasas al siguiente."], ["Construye un proyecto", "En los niveles 10 y 15 entregas un proyecto final y recibes retroalimentación."]].map(([title, text], i) => <article className="card" key={title}><span className="public-step-number">{i + 1}</span><h3>{title}</h3><p>{text}</p></article>)}
       </div>
     </section>
+    <section className="public-section"><h2>Para líderes de equipo</h2><p>Detecta fortalezas y necesidades de refuerzo usando evidencia de práctica revisada.</p><CompanyDemo compact/><Link className="btn secondary" href="/companies">Para empresas</Link></section>
     <section id="ruta" className="public-section">
       <h2>La ruta completa</h2><p className="muted">Dos etapas. Primero aprendes a programar; después te especializas en integraciones para SaaS.</p>
       <div className="public-route-grid">
@@ -48,7 +53,7 @@ export default function Home() {
         {[["Empiezas de cero", "Nunca has programado. El Nivel 1 enseña a pensar el problema antes de escribir una sola línea."], ["Trabajas en SaaS", "Customer Success, Onboarding o soporte, y quieres entender la parte técnica de tu producto."], ["Buscas especializarte", "Apuntas a Integraciones o Solutions Engineering: APIs, OAuth, webhooks y sistemas empresariales."]].map(([title, text]) => <article className="card" key={title}><h3>{title}</h3><p>{text}</p></article>)}
       </div><p className="notice">¿Tienes menos de 18 años? Puedes registrarte con la autorización de tu madre, padre o tutor.</p>
     </section>
-    <section className="public-section card"><h2>Tu desarrollo, de cero a liderazgo</h2><p>Aprende un proceso, practica una decisión y prepara un entregable. Explora la guía introductoria de liderazgo y conoce los próximos cursos, mentorías y el comunicador Enterprise.</p><div className="public-actions"><Link prefetch={false} className="btn" href="/leadership">Explorar liderazgo y procesos</Link><Link prefetch={false} className="btn secondary" href="/roadmap">Ver lo que viene</Link></div></section>
+    <section className="public-section card"><h2>Tu desarrollo, de cero a liderazgo</h2><p>Aprende un proceso, practica una decisión y prepara un entregable. Explora rutas por puesto, casos semanales, comunidad y solicitudes de mentoría. Los equipos cuentan con seguimiento de competencias y mensajes según su contrato.</p><div className="public-actions"><Link prefetch={false} className="btn" href="/leadership">Explorar liderazgo y procesos</Link><Link prefetch={false} className="btn secondary" href="/roadmap">Ver lo que viene</Link></div></section>
     <section id="preguntas" className="public-section public-faq">
       <h2>Preguntas frecuentes</h2>
       <details open><summary>¿Necesito saber programar?</summary><p>No. La ruta empieza con pensamiento computacional y el primer lenguaje, Python, llega hasta el Nivel 2.</p></details>
@@ -59,4 +64,5 @@ export default function Home() {
     <section className="public-close"><h2>Empieza hoy con el Nivel 1, sin costo.</h2><Link className="btn accent" href="/login?modo=registro">Empezar gratis</Link></section>
   </main></LocalizedContent>;
 }
+
 

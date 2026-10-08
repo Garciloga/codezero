@@ -1,3 +1,5 @@
+import {hasCustomerSuccessCourse} from '../../lib/customer-success-course';
+import {publishedCatalogCounts} from '../../lib/published-catalog-server';
 import { localeContext } from "../../lib/localization/server";
 import { LANGUAGE_TAGS } from "../../lib/localization/shared";
 import LocalizedContent from "./localization/server";
@@ -10,6 +12,7 @@ const notes = { free: "Para probar si esto es para ti", starter: "Para avanzar c
 
 export default async function PricingPlans({ plans, currentPlan }: { plans: PublicPlan[]; currentPlan: string | null }) {
   const { locale } = await localeContext();
+  const counts=await publishedCatalogCounts();
   return <LocalizedContent><>
     <div className="public-plans">
       {plans.map(plan => <article className={"card public-plan " + (plan.name === "starter" ? "featured" : "")} key={plan.name}>
@@ -31,10 +34,16 @@ export default async function PricingPlans({ plans, currentPlan }: { plans: Publ
       </article>)}
     </div>
     <section className="public-section"><h2>Compara los planes</h2>
-      <p>Actualmente hay dos proyectos finales. Tu plan limita las entregas que puedes enviar cada mes.</p>
-      <div className="public-comparison" tabIndex={0} role="region" aria-label="Comparación de planes con desplazamiento horizontal">
+      <p>Proyectos publicados: {counts?.technicalProjects??"—"} técnicos y {counts?.roleProjects??"—"} integradores por ruta. El acceso y las entregas conservan los límites de tu plan.</p>
+      <div className="public-comparison" tabIndex={0} role="region" aria-label="Comparación de planes">
         <table><caption>Contenido y límites mensuales</caption><thead><tr><th scope="col">Qué incluye</th>{plans.map(p => <th scope="col" key={p.name}>{labels[p.name]}</th>)}</tr></thead>
-          <tbody>
+          <tbody><tr><th colSpan={4} scope="colgroup">Aprender</th></tr>
+            <tr><th scope="row">Curso Customer Success y rutas completas por puesto</th>{plans.map(p=><td key={p.name}>{hasCustomerSuccessCourse({status:'active',plan_name:p.name})?'Incluido':'Solo tronco común'}</td>)}</tr>
+            <tr><th colSpan={4} scope="colgroup">Practicar</th></tr>
+            <tr><th scope="row">Casos semanales, comunidad y práctica Python/SQL</th>{plans.map(p=><td key={p.name}>Disponible con cuenta activa</td>)}</tr>
+            <tr><th colSpan={4} scope="colgroup">Demostrar</th></tr>
+            <tr><th scope="row">Portafolio público voluntario</th>{plans.map(p=><td key={p.name}>Evidencia personal aprobada</td>)}</tr>
+            <tr><th scope="row">Revisión humana de proyectos</th>{plans.map(p=><td key={p.name}>{p.project_limit===0?'Sin entregas técnicas; casos semanales disponibles':'Según entregas y acceso del plan'}</td>)}</tr>
             <tr><th scope="row">Niveles disponibles</th>{plans.map(p => <td key={p.name}>{p.name === "free" ? "Nivel 1" : "Ruta completa e Integraciones"}</td>)}</tr>
             <tr><th scope="row">Ejercicios al mes</th>{plans.map(p => <td key={p.name}>{planLimit(p.exercise_limit, LANGUAGE_TAGS[locale])}</td>)}</tr>
             <tr><th scope="row">Exámenes al mes</th>{plans.map(p => <td key={p.name}>{planLimit(p.exam_limit, LANGUAGE_TAGS[locale])}</td>)}</tr>
@@ -48,6 +57,7 @@ export default async function PricingPlans({ plans, currentPlan }: { plans: Publ
     </section>
   </></LocalizedContent>;
 }
+
 
 
 

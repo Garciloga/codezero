@@ -50,6 +50,9 @@ jobs:
       - name: Mixed role routes database checks
         run: node scripts/mixed-role-db-check.mjs
 
+      - name: Development plans and notices scope checks
+        run: node scripts/growth-db-check.mjs
+
       - name: Section catalog budgets
         run: node scripts/localization-sections.mjs
 
@@ -76,6 +79,9 @@ jobs:
 
       - name: Registration and recovery database checks
         run: node scripts/profile-registration-db-check.mjs && node scripts/recovery-local-check.mjs
+
+      - name: Migration baseline integrity and recovery
+        run: node scripts/migration-baseline-check.mjs
 
       - name: Build
         env:
@@ -126,7 +132,8 @@ jobs:
         run: node scripts/mixed-role-browser-check.mjs
 
       - name: Role-training sandbox browser flow
-        if: matrix.engine == 'chromium'
+        env:
+          CODEZERO_BROWSER_ENGINE: ${{ matrix.engine }}
         run: node scripts/role-training-browser-check.mjs
 
       - name: Build isolated runtime review target
@@ -145,5 +152,6 @@ jobs:
       - name: Execute Python and SQL in isolated browser workers
         if: matrix.engine == 'chromium'
         run: node scripts/browser-practice-check.mjs
+
 
 

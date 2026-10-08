@@ -1,3 +1,4 @@
+import NotificationPreferences from '../components/notification-preferences';
 import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -139,8 +140,10 @@ export default async function ProfilePage({ searchParams }: PageProps) {
           <a className="btn secondary" href="/api/profile/export">Descargar mis datos</a>
         </div>
       </div>
+    {cloudAppearance&&<NotificationPreferences userId={user.id}/>}
     </main></LocalizedContent>
   );
 }
+
 
 

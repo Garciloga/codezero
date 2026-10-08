@@ -1,0 +1,1030 @@
+{
+  "captured_at": "2026-10-08",
+  "project_ref": "kwfzhpapvpdatdfwhouf",
+  "postgres_version": "17.11",
+  "production_sha": "2a96b643afccbd1193613a68bfce60af74b71c19",
+  "status": "schema-history-inventory-only",
+  "cloud_data_backup_confirmed": false,
+  "cloud_restore_verified": false,
+  "migrations": [
+    {
+      "version": "20261006220115",
+      "name": "seed_level_one_lessons",
+      "statement_md5": "ed643234b917970cde8b9c0b855e9b72"
+    },
+    {
+      "version": "20261006220629",
+      "name": "add_level_one_exercises",
+      "statement_md5": "742bde50f5efbd1fd69129edf3e7c181"
+    },
+    {
+      "version": "20261006220829",
+      "name": "seed_levels_2_to_15_curriculum",
+      "statement_md5": "2d3c99b368015adb87f302f775165dc1"
+    },
+    {
+      "version": "20261006220857",
+      "name": "add_level_exams_and_attempts",
+      "statement_md5": "a7e7c19e36dd2b952fed4f0ef48ccd1b"
+    },
+    {
+      "version": "20261006221056",
+      "name": "add_capstone_projects",
+      "statement_md5": "0ba3afb010388266c3c4eead14369b10"
+    },
+    {
+      "version": "20261006221209",
+      "name": "harden_learning_security_and_indexes",
+      "statement_md5": "540db3d250869c8dc953649f751c3dde"
+    },
+    {
+      "version": "20261006221215",
+      "name": "add_certificates",
+      "statement_md5": "b559be2368daaee1bfe9ffebb421744e"
+    },
+    {
+      "version": "20261006221315",
+      "name": "update_commercial_pricing",
+      "statement_md5": "4129c4b402bfc097c9a7d5093c59c1bd"
+    },
+    {
+      "version": "20261006221439",
+      "name": "restrict_quota_rpc_to_service_role",
+      "statement_md5": "1f7db6803830c7e459ffecad120b0328"
+    },
+    {
+      "version": "20261006221457",
+      "name": "restore_authenticated_quota_rpc_with_uid_guard",
+      "statement_md5": "851c880c5fd11f0b826adb5f405f539c"
+    },
+    {
+      "version": "20261006230925",
+      "name": "create_stripe_webhook_events",
+      "statement_md5": "a04715185ebe93cb004df19a8de3bfa1"
+    },
+    {
+      "version": "20261006231308",
+      "name": "harden_quota_and_add_billing_status",
+      "statement_md5": "1e4d4ecc1a5704b3a4a43c14a75d24c4"
+    },
+    {
+      "version": "20261006231529",
+      "name": "align_free_plan_with_level_access",
+      "statement_md5": "453307abdc4a47b4b068ded7f0d8e229"
+    },
+    {
+      "version": "20261006232558",
+      "name": "expand_curriculum_lesson_content",
+      "statement_md5": "d53068a33de12cffe5d3f106c4b31bbb"
+    },
+    {
+      "version": "20261006232649",
+      "name": "replace_generic_exam_questions",
+      "statement_md5": "a01b5aeee83135d15bdf58ec2e3f8b0e"
+    },
+    {
+      "version": "20261006232736",
+      "name": "improve_formative_exercises",
+      "statement_md5": "d0236e289487516cd1f78b0e67cc0f1d"
+    },
+    {
+      "version": "20261006232843",
+      "name": "optimize_rls_auth_uid",
+      "statement_md5": "df50a3393b7a42ac4c297389a8c169ed"
+    },
+    {
+      "version": "20261006232951",
+      "name": "lock_learning_writes_to_server",
+      "statement_md5": "5dcaf80b9fde38268e1993b569dd9572"
+    },
+    {
+      "version": "20261006233121",
+      "name": "harden_stripe_webhook_event_tracking",
+      "statement_md5": "666dd293bf11706fcb16f1a4a486ec11"
+    },
+    {
+      "version": "20261007003950",
+      "name": "integrity_constraints",
+      "statement_md5": "dd2c7b2602fed2894a2ebbc9aea10c68"
+    },
+    {
+      "version": "20261007004228",
+      "name": "curriculum_guided_practice",
+      "statement_md5": "9bf705ae283b864f5d1e1191f8be05da"
+    },
+    {
+      "version": "20261007004339",
+      "name": "expand_exam_bank",
+      "statement_md5": "fc967049f6f3d4c14fd323fa475095fc"
+    },
+    {
+      "version": "20261007004441",
+      "name": "repair_scenario_exam_solutions",
+      "statement_md5": "4863820d87e93e4e44bd52b2dcf5606d"
+    },
+    {
+      "version": "20261007004720",
+      "name": "fix_server_quota_rpc",
+      "statement_md5": "6883f39c99d2ef73fd179b060bef4933"
+    },
+    {
+      "version": "20261007010144",
+      "name": "assessment_integrity_constraints",
+      "statement_md5": "3375a5f417d3e82989782bece0565653"
+    },
+    {
+      "version": "20261007010802",
+      "name": "level_one_editorial_examples_a",
+      "statement_md5": "227ba60ab81b78e887aaba35371dfe38"
+    },
+    {
+      "version": "20261007010828",
+      "name": "level_one_editorial_examples_b",
+      "statement_md5": "ccb0f5687e9904cc80f94d1c84efd19b"
+    },
+    {
+      "version": "20261007010910",
+      "name": "level_one_second_exercises",
+      "statement_md5": "e16e43543628923718c7f30e29b9c2ff"
+    },
+    {
+      "version": "20261007011051",
+      "name": "enforce_plan_read_entitlements",
+      "statement_md5": "708fede2472ae33f02f5b9111acede5d"
+    },
+    {
+      "version": "20261007011128",
+      "name": "tighten_sensitive_privileges",
+      "statement_md5": "71ff829082bea6549c4cffb8c60238a9"
+    },
+    {
+      "version": "20261007011219",
+      "name": "remove_exposed_rls_helper",
+      "statement_md5": "ec308215a940e7cf768efd3563e185dd"
+    },
+    {
+      "version": "20261007011259",
+      "name": "remove_duplicate_level_unique",
+      "statement_md5": "c3f9c450c31ff1e49cc88eda37ed1546"
+    },
+    {
+      "version": "20261007011326",
+      "name": "explicit_server_only_rls",
+      "statement_md5": "65f5e72d45a1d39dee5d27fde0c9de1d"
+    },
+    {
+      "version": "20261007011400",
+      "name": "add_admin_audit_log",
+      "statement_md5": "b3a3a39a6484a8690a78a74bc8ba6ab3"
+    },
+    {
+      "version": "20261007011732",
+      "name": "add_second_exercises_levels_2_3",
+      "statement_md5": "1f6f3bb1ef7395d16c2f37305e8456e6"
+    },
+    {
+      "version": "20261007011825",
+      "name": "add_second_exercises_levels_4_5",
+      "statement_md5": "9d9134b34f397a61a773315116fc54a6"
+    },
+    {
+      "version": "20261007011857",
+      "name": "add_second_exercises_levels_6_7",
+      "statement_md5": "c9149215a6d836fd269c3f21e4b5af79"
+    },
+    {
+      "version": "20261007012101",
+      "name": "add_second_exercises_levels_8_9",
+      "statement_md5": "b7c787410c8d0f637bce87c8387e762b"
+    },
+    {
+      "version": "20261007012125",
+      "name": "add_second_exercises_levels_10_11",
+      "statement_md5": "909aa6602a9886c5b7f2d29c928d9680"
+    },
+    {
+      "version": "20261007012147",
+      "name": "add_second_exercises_levels_12_13",
+      "statement_md5": "20b0a1e65aab876a8fdd7cc1794086ca"
+    },
+    {
+      "version": "20261007012210",
+      "name": "add_second_exercises_levels_14_15",
+      "statement_md5": "7ea76f898474a8a0a4166ae1ab07b985"
+    },
+    {
+      "version": "20261007013051",
+      "name": "add_api_rate_limits",
+      "statement_md5": "61db8d60a4b85b366251a6d3d526226a"
+    },
+    {
+      "version": "20261007013357",
+      "name": "editorial_cases_levels_2_5",
+      "statement_md5": "3c4ac70730f3c4f1631b597be7e76758"
+    },
+    {
+      "version": "20261007013437",
+      "name": "editorial_cases_levels_6_9",
+      "statement_md5": "7990738d953d942cd46c57634cff1e73"
+    },
+    {
+      "version": "20261007013510",
+      "name": "editorial_cases_levels_10_12",
+      "statement_md5": "3b8f3b9eda4bbaa0140e2e9083cec36d"
+    },
+    {
+      "version": "20261007013544",
+      "name": "editorial_cases_levels_13_15",
+      "statement_md5": "5ded3f08aff59f8df583ad92b5f254f0"
+    },
+    {
+      "version": "20261007014439",
+      "name": "deepen_capstone_requirements",
+      "statement_md5": "076a2a21656996aac52e113f1dc3c3d5"
+    },
+    {
+      "version": "20261007020525",
+      "name": "add_ai_tutor_addon",
+      "statement_md5": "45786258df176993b490e698d16778b7"
+    },
+    {
+      "version": "20261007023331",
+      "name": "add_support_system_s1",
+      "statement_md5": "eb451112dd99125f0f1843fd67cb719d"
+    },
+    {
+      "version": "20261007023918",
+      "name": "support_indexes_and_addon_rls_cleanup",
+      "statement_md5": "2d7496dcee62a3e33104bf48b992a359"
+    },
+    {
+      "version": "20261007170857",
+      "name": "production_workspace_activation",
+      "statement_md5": "ad4e7059429117c5838ea4ae9f4192fb"
+    },
+    {
+      "version": "20261007181900",
+      "name": "production_learning_integrations",
+      "statement_md5": "b162d7ec3b644b67d03cc83995332763"
+    },
+    {
+      "version": "20261007191515",
+      "name": "included_customer_success_course",
+      "statement_md5": "53a6aab041c058d40d254061ed86f7b0"
+    },
+    {
+      "version": "20261007211312",
+      "name": "profile_registration_name",
+      "statement_md5": "07cfc32fd6a011a1e37ae7f887ec52de"
+    },
+    {
+      "version": "20261007215523",
+      "name": "support_atomic_workflow",
+      "statement_md5": "c3b695346f44e59d4517142e98549681"
+    },
+    {
+      "version": "20261007220858",
+      "name": "support_backend_only_writes",
+      "statement_md5": "3530804da699e6812c7471e923934375"
+    },
+    {
+      "version": "20261007224503",
+      "name": "vivo_enterprise_workspace",
+      "statement_md5": "6a0f0ac296f475504f812b490eba8456"
+    },
+    {
+      "version": "20261008044128",
+      "name": "production_role_training_and_project_approval",
+      "statement_md5": "68b1e023aeb68d64c6c3165f2acba1fc"
+    },
+    {
+      "version": "20261008060008",
+      "name": "account_palette_and_profile_photos",
+      "statement_md5": "7cdac9e5b1934e94775415bccd31dc58"
+    },
+    {
+      "version": "20261008080219",
+      "name": "production_company_learning_expansion",
+      "statement_md5": "3731be5e4e1252c424c50d6afde8ae4d"
+    },
+    {
+      "version": "20261008083241",
+      "name": "owner_and_seat_billing",
+      "statement_md5": "47f80ee72ab973454340e06f94f310fa"
+    },
+    {
+      "version": "20261008144145",
+      "name": "company_invitation_retry_controls",
+      "statement_md5": "ed3dab384140e1e4bd660d04ad86f186"
+    },
+    {
+      "version": "20261008144245",
+      "name": "community_and_mentoring_workflows",
+      "statement_md5": "fcff6b819bf4fdaf5c96e831b5a5a9aa"
+    },
+    {
+      "version": "20261008144645",
+      "name": "mixed_role_routes",
+      "statement_md5": "bddf55451c71d5fc1857b1695cb8557a"
+    },
+    {
+      "version": "20261008162340",
+      "name": "mixed_route_predecessor_consistency",
+      "statement_md5": "8b561d4096ffc0a317de03590f30bda9"
+    }
+  ],
+  "tables": [
+    {
+      "schema_name": "codezero_private",
+      "table_name": "organization_access",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "codezero_private",
+      "table_name": "platform_owner",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "account_addons",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "account_cancellation_history",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "addon_billing_operations",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "addon_waitlist",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "addons",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "admin_audit_log",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "api_rate_limits",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "certificate_publications",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "certificates",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "community_members",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "community_posts",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "community_reports",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "company_seat_orders",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "courses",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "cs_course_attempts",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "cs_course_projects",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "cs_course_units",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "exam_attempts",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "exam_questions",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "exam_sittings",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "exam_solutions",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "exercise_attempts",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "exercise_solutions",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "exercises",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "issued_block_diplomas",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "learning_activity_catalog",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "learning_assignments",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "learning_errors",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "learning_evidence",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "learning_evidence_history",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "learning_job_profiles",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "learning_mixed_release",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "learning_mixed_steps",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "learning_mixed_submission_steps",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "learning_practice_submissions",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "learning_project_review_flows",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "learning_project_review_participants",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "learning_project_review_runs",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "learning_project_review_votes",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "lesson_progress",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "lessons",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "level_exams",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "level_projects",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "levels",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "mentoring_profiles",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "mentoring_requests",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "mentoring_slots",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "organization_audit_log",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "organization_contracts",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "organization_invitations",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "organization_memberships",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "organization_messages",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "organization_team_grants",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "organization_team_members",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "organization_teams",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "organizations",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "plans",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "private_practice_progress",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "profiles",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "progress",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "project_submissions",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "site_daily_metrics",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "social_workflow_audit",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "stripe_webhook_events",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "support_faq_feedback",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "support_faqs",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "support_suggestions",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "support_ticket_messages",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "support_tickets",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "tutor_requests",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "usage_monthly",
+      "rls": true,
+      "force_rls": false
+    },
+    {
+      "schema_name": "public",
+      "table_name": "user_preferences",
+      "rls": true,
+      "force_rls": false
+    }
+  ],
+  "local_files": [
+    {
+      "path": "supabase/migrations/001_initial.sql",
+      "sha256": "c984a75389d32cd162c5d19007b82ee00a1109a751c125f82f885f4fecfe5ccf"
+    },
+    {
+      "path": "supabase/migrations/002_learning_schema.sql",
+      "sha256": "9009d49952245f271a383feeb0d26db8bd94376f449423744398d2451b02e2a6"
+    },
+    {
+      "path": "supabase/migrations/003_curriculum_seed.sql",
+      "sha256": "c7ca0708701bd7dca4824890a4f0a36e549524c47677bf0442aa06ccfd7ea8e1"
+    },
+    {
+      "path": "supabase/migrations/004_stripe_webhook_events.sql",
+      "sha256": "1a0c5275dcd0005841eb8d6b9001ba208fa2375c48c6228988d0887e5067fffb"
+    },
+    {
+      "path": "supabase/migrations/005_billing_status_and_quota_security.sql",
+      "sha256": "59a261a478d098249e72193d15a6d50c114b0f6e2e271d4b1c37d9249ee0a5b1"
+    },
+    {
+      "path": "supabase/migrations/006_align_free_plan_access.sql",
+      "sha256": "0cd2dc59bb6b14d6b9728cc4579e302811755aec707c6c56b1e2504a50ea450e"
+    },
+    {
+      "path": "supabase/migrations/007_optimize_rls_auth_uid.sql",
+      "sha256": "6d458f9f9cb501725fd6599d1f8cad34249b501dba5273a2fc3ddfd7cb39e198"
+    },
+    {
+      "path": "supabase/migrations/008_lock_learning_writes_to_server.sql",
+      "sha256": "1c177b364c32a2bad4ae5b0e7a87caed4fe40e8c420aa6757c053745632f7286"
+    },
+    {
+      "path": "supabase/migrations/009_harden_stripe_webhook_events.sql",
+      "sha256": "e5d1e7b2a53529c30dea733faf4ad51f9d021afe15b9dda5c27bc51fb2b85d62"
+    },
+    {
+      "path": "supabase/migrations/010_curriculum_quality_pass.sql",
+      "sha256": "15be88d85ceaf8241d19e14d2ccd6dacd77d085fa3c0ba3ef1c9d0278ebca5db"
+    },
+    {
+      "path": "supabase/migrations/011_integrity_constraints.sql",
+      "sha256": "d8837a0dcc44af5817fd898d56ecceb4b220bae3a0149857a05bbc5e977396e9"
+    },
+    {
+      "path": "supabase/migrations/012_curriculum_guided_practice.sql",
+      "sha256": "bc032a2d7b3b2ffd4b654417e4bf280c84e965a53787a2e8548873278f739d67"
+    },
+    {
+      "path": "supabase/migrations/013_expand_exam_bank.sql",
+      "sha256": "70e11c9cd67a63aabffe77f633859092e69177d68816bb85371eaa3617af612e"
+    },
+    {
+      "path": "supabase/migrations/014_repair_scenario_exam_solutions.sql",
+      "sha256": "f6b9fb4ccd634e96f89067a26aa78efb92b16a2d6157f7e3beec9b2215474bad"
+    },
+    {
+      "path": "supabase/migrations/015_fix_server_quota_rpc.sql",
+      "sha256": "5066cf2b8b1c21420265466d6a5ad1798a1ab6c7cfdf5ec30588d4d955105287"
+    },
+    {
+      "path": "supabase/migrations/016_assessment_integrity_constraints.sql",
+      "sha256": "c2cfb39940026d98da7469331ee6a58bc9c2d26862e78502f5f96081c0229bd2"
+    },
+    {
+      "path": "supabase/migrations/018_level_one_editorial_examples_a.sql",
+      "sha256": "5c04dce8568a9c4113581f4f3ba0bf5dc0da6ecb5c50ee0edfcf97a2be956f2f"
+    },
+    {
+      "path": "supabase/migrations/019_level_one_editorial_examples_b.sql",
+      "sha256": "368fcf7e18914e4f2be1165385f939c997c2ce0f29eb94b01f44cc6a234bb64c"
+    },
+    {
+      "path": "supabase/migrations/020_level_one_second_exercises.sql",
+      "sha256": "113cf8de0a9b3264b611956784f0c5be9e864bc38f1fe19bbbb1014283d48cf6"
+    },
+    {
+      "path": "supabase/migrations/021_enforce_plan_read_entitlements.sql",
+      "sha256": "bb19f30284293fe70d04776c5543d701dc9bc7b1bca4d3b35405c2581cc115d4"
+    },
+    {
+      "path": "supabase/migrations/022_tighten_sensitive_privileges.sql",
+      "sha256": "84dc981a00fd208cb7c857ba9b4a647c7224a7dc0ff2d8b589d67882eca8dfb6"
+    },
+    {
+      "path": "supabase/migrations/023_remove_exposed_rls_helper.sql",
+      "sha256": "b13b6324732b6b98c1ccb9806ef3f104081a75300bc85bdf67e62b3c313448a3"
+    },
+    {
+      "path": "supabase/migrations/024_remove_duplicate_level_unique.sql",
+      "sha256": "70163c3feec2c735387ae87f14235cc2e708e91cf74de5260e86c1e678c63928"
+    },
+    {
+      "path": "supabase/migrations/025_explicit_server_only_rls.sql",
+      "sha256": "33b9f22e536c883220561484b85d1dfd19ffb5abb3a73975c4c8abed9c18d696"
+    },
+    {
+      "path": "supabase/migrations/026_add_admin_audit_log.sql",
+      "sha256": "ef657fa9349f54c6348c13db9129e3836548d0024e73f86c512939f453a7d08c"
+    },
+    {
+      "path": "supabase/migrations/027_add_second_exercises_levels_2_3.sql",
+      "sha256": "ede97dc12bfe6345a865544de60de17fb73ed57eb39cee4ddb8af5427548c416"
+    },
+    {
+      "path": "supabase/migrations/028_add_second_exercises_levels_4_5.sql",
+      "sha256": "64885b53dfe5d0a52c578d3104e4629d2791da1ca7c2e79942e7a92b604409c4"
+    },
+    {
+      "path": "supabase/migrations/029_add_second_exercises_levels_6_7.sql",
+      "sha256": "9addb109e5ab61cbf131374b20c1fd34c98d2bd08fedc28579b43dd469b4d4fa"
+    },
+    {
+      "path": "supabase/migrations/030_add_second_exercises_levels_8_9.sql",
+      "sha256": "9ce952de44a26635179d3b45484b1d1d1e9753820e2b89f55959d65c506bd6b7"
+    },
+    {
+      "path": "supabase/migrations/031_add_second_exercises_levels_10_11.sql",
+      "sha256": "77c95982882e4dfd1623461a8a8c270b750ea936be6619c28f948cda13083ffe"
+    },
+    {
+      "path": "supabase/migrations/032_add_second_exercises_levels_12_13.sql",
+      "sha256": "7dc4d17b3901a0f40c8c461fd2341743e00a8eadc68fcaf410982ae1167d4785"
+    },
+    {
+      "path": "supabase/migrations/033_add_second_exercises_levels_14_15.sql",
+      "sha256": "006ff2fabcad7e13df43a3e9d1329b77fef7646cc09219a549c8309512f55622"
+    },
+    {
+      "path": "supabase/migrations/034_add_api_rate_limits.sql",
+      "sha256": "405a15532575cfbc2d5036b4c51238783e375177f973f6a268a8695191668406"
+    },
+    {
+      "path": "supabase/migrations/035_editorial_cases_levels_2_5.sql",
+      "sha256": "e81e32f83643a51e142e96ae47b57884df6450aac79c57295e20b27732bf0a27"
+    },
+    {
+      "path": "supabase/migrations/036_editorial_cases_levels_6_9.sql",
+      "sha256": "fb84d000a75cdba469e2683e12988c6fc4faeecd7e62642cf8984d9516098d97"
+    },
+    {
+      "path": "supabase/migrations/037_editorial_cases_levels_10_12.sql",
+      "sha256": "bca08c6b350e2738f69a8bc1a12ac623278f11faad1d61ad6ee19c3b39edd428"
+    },
+    {
+      "path": "supabase/migrations/038_editorial_cases_levels_13_15.sql",
+      "sha256": "30ad274c85ab2c7739bb89a36f57cf88751965e9e0378a558bce093b82125bfd"
+    },
+    {
+      "path": "supabase/migrations/039_add_ai_tutor_addon.sql",
+      "sha256": "8fd6e76c36fa1a424e06017d221ecb2d9cb7a48dcdc4f9a5eee15ff788a2fe0e"
+    },
+    {
+      "path": "supabase/migrations/039_deepen_capstone_requirements.sql",
+      "sha256": "fa9b63e362592213fc8ef831c3286c5956ef0c7878dfc07a02434a21c7b0bcc7"
+    },
+    {
+      "path": "supabase/migrations/040_add_support_system_s1.sql",
+      "sha256": "6a8bcdb357e777d63480833589c180c58331fe6da9758b599714379b5291a602"
+    },
+    {
+      "path": "supabase/migrations/041_support_indexes_and_addon_rls_cleanup.sql",
+      "sha256": "5d8b8a325eca87509255736c34aa697013135dcec4f3a101e66ea27212de0759"
+    },
+    {
+      "path": "supabase/migrations/20261007170319_production_workspace_activation.sql",
+      "sha256": "ce4065d8c01e32237338154599daf80b268ed75856aeed0fad95eda392819203"
+    },
+    {
+      "path": "supabase/migrations/20261007174240_production_learning_integrations.sql",
+      "sha256": "2e38ae01c3375afa9f664a3ac6d65779e1fa3d0898f6721823fceef4b8b13ec9"
+    },
+    {
+      "path": "supabase/migrations/20261007184737_included_customer_success_course.sql",
+      "sha256": "17d3d16649b3f7fcb50596d3cce1222953848cb2056334b0e0e5c0f7e954bab0"
+    },
+    {
+      "path": "supabase/migrations/20261007204936_profile_registration_name.sql",
+      "sha256": "b140298b8fe51f3404dc4de5de40cfa09a9e8d0c8485099d4b838721065128ce"
+    },
+    {
+      "path": "supabase/migrations/20261007213241_support_atomic_workflow.sql",
+      "sha256": "b33e60276039725ee9b6b3d8bf5226a3ac96fafd313e54bfeff15e8ede22c9ed"
+    },
+    {
+      "path": "supabase/migrations/20261007222517_vivo_enterprise_workspace.sql",
+      "sha256": "08855d6316ff61933968f81e97bd089e9e41fba260a2befd3735ae8384cddff2"
+    },
+    {
+      "path": "supabase/migrations/20261007225000_support_backend_only_writes.sql",
+      "sha256": "08da5fadd77bfedeba2f5156855ed143ea67ecf77b63360baedbec27aff978f7"
+    },
+    {
+      "path": "supabase/migrations/20261008044128_production_role_training_and_project_approval.sql",
+      "sha256": "e46258edd71eae9a3786ed0340f819e625a22ba7fb7b70d6a903ebd568ca2f4a"
+    },
+    {
+      "path": "supabase/migrations/20261008053713_account_palette_and_profile_photos.sql",
+      "sha256": "7ed46d50ad9e32622dace6783a60310b16685b0b38b413fb1887334f24794468"
+    },
+    {
+      "path": "supabase/migrations/20261008062034_company_teams_entitlements.sql",
+      "sha256": "872e4637864d00167c5d67720ae27abef4060895ce49e9c9e756f93f6a686845"
+    },
+    {
+      "path": "supabase/migrations/20261008063418_company_messages_and_metrics.sql",
+      "sha256": "392b11a2ac8a77f962932000fb14901ea0324833a4cb9f59c5f037d6aecf0aa3"
+    },
+    {
+      "path": "supabase/migrations/20261008065441_professional_routes_expansion.sql",
+      "sha256": "456cc709c613c34665552d9b58acc61631630011275102e7af91540b096b5f53"
+    },
+    {
+      "path": "supabase/migrations/20261008071824_company_contract_indexes.sql",
+      "sha256": "308ae5b4e8f59333212bbf38bd0b39c9ec52e063b42c6a4804d08448da7b24dc"
+    },
+    {
+      "path": "supabase/migrations/20261008073155_company_active_scope_guards.sql",
+      "sha256": "81fe7185e4eb3f723bfc6c69c7bb4253ba04c53122ba696de5120116a9fd7688"
+    },
+    {
+      "path": "supabase/migrations/20261008081159_owner_and_seat_billing.sql",
+      "sha256": "ef0b3e423f5943c6ac75b0a7305f70d43795a592786e7944b6dc1ed5849cca1f"
+    },
+    {
+      "path": "supabase/migrations/20261008130124_community_and_mentoring_workflows.sql",
+      "sha256": "1ffac077400b9896d6b97ef8e59141dd621bf6bdc086b2c4bca78d025cdd607c"
+    },
+    {
+      "path": "supabase/migrations/20261008130141_company_invitation_retry_controls.sql",
+      "sha256": "e44cb5491f78498a3e7243c0d2c962b6d3d5affdc70513770444f0f448b0e7ee"
+    },
+    {
+      "path": "supabase/migrations/20261008142517_mixed_role_routes.sql",
+      "sha256": "4c0f0ef48b23a0685f0eae3f24c1765f1a082146ade80bbc87c51cc37b311a12"
+    },
+    {
+      "path": "supabase/migrations/20261008162000_mixed_route_predecessor_consistency.sql",
+      "sha256": "8a0f9d8dcd6d3f53d62339dc274e4e55482b4df8c5a69160de46a8b3ccf214a0"
+    },
+    {
+      "path": "supabase/sandbox/source_schema.sql",
+      "sha256": "b971df41d65f61eef1aba4fda3cfdd77e088eddc5cd301ff18f7a9eff2a97205"
+    }
+  ],
+  "source_commit": "cffc8bfcc22c64d0b04b7a6607c236e884b748f0",
+  "source_hash_algorithm": "sha256-utf8-lf-trim-end-single-newline"
+}
