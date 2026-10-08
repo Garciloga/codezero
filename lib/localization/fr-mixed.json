@@ -138,7 +138,6 @@
   "Correlación": "Corrélation",
   "Hora del fallo": "Heure de l'échec",
   "Hipótesis": "Hypothèses",
-  "Ocultar datos sensibles": "Masquer les données sensibles",
   "Reproducción": "Reproduction",
   "Población": "Population",
   "Siguiente validación": "Prochaine validation",
@@ -150,9 +149,6 @@
   "Límites del análisis": "Limites de l'analyse",
   "Evidencia de la llamada": "Preuves de l'appel",
   "Criterio de rúbrica": "Critère de la grille",
-  "Product Specialist": "Spécialiste produit",
-  "Con guía": "Avec aide",
-  "Sin guía": "Sans aide",
   "Atención y recuperación tras interrupciones": "Attention et reprise après interruption",
   "Faro necesita un reporte a las 16:00 UTC. Tienes 90 minutos y recibes tres mensajes: exportación bloqueada para dos usuarios, revisión de formato sin fecha y llamada de seguimiento a las 17:00 UTC. Ordena las tareas por impacto y dependencia, reserva un bloque de concentración de 25 minutos y documenta qué entrega se desplaza. A mitad del bloque llega un error 401: registra dónde te detuviste, la siguiente comprobación y cómo retomas sin perder contexto.": "Faro attend un rapport à 16:00 UTC. Vous disposez de 90 minutes et recevez trois messages : export bloqué pour deux utilisateurs, révision de format sans échéance et appel de suivi à 17:00 UTC. Classez par impact et dépendance, réservez 25 minutes de concentration et documentez le livrable reporté. Une erreur 401 interrompt le bloc : notez le point d’arrêt, la prochaine vérification et la reprise sans perte de contexte.",
   "Comprueba: orden justificado, capacidad explícita, punto de reanudación y siguiente actualización. La rapidez y el tiempo frente a pantalla no demuestran atención ni competencia.": "Vérifiez : ordre justifié, capacité explicite, point de reprise et prochaine mise à jour. La rapidité et le temps d’écran ne démontrent ni attention ni compétence.",
@@ -192,5 +188,7 @@
   "Tipo más bajo del equipo": "Type de travail le plus faible de l’équipe",
   "Promedio provisional: faltan evidencias suficientes de algunas personas. Revisa la tabla antes de asignar refuerzo.": "Moyenne provisoire : les preuves de certaines personnes sont insuffisantes. Consultez le tableau avant d’attribuer un renforcement.",
   "Observatorio Laboral · México": "Observatorio Laboral · México",
-  "Data México": "Data México"
+  "Data México": "Data México",
+  "Puestos y evidencia de práctica": "Postes et preuves de pratique",
+  "Elige un puesto y prepara su caso para el portafolio. Una entrega revisada demuestra práctica simulada; conserva sus límites al presentarla en una entrevista.": "Choisissez un poste et préparez son cas pour votre portfolio. Un livrable examiné démontre une pratique simulée ; précisez ses limites lors d’un entretien."
 }

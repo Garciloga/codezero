@@ -15,6 +15,10 @@ for(const migration of baseline.local_files){
  const data=fs.readFileSync(migration.path,'utf8').replaceAll('\r\n','\n').trimEnd()+'\n';
  assert.equal(crypto.createHash('sha256').update(data).digest('hex'),migration.sha256,migration.path);
 }
+const fingerprints=new Set([baseline.production_sha,baseline.source_commit,...baseline.migrations.map(m=>m.statement_md5),...baseline.local_files.map(m=>m.sha256)].map(value=>crypto.createHash('sha1').update(value).digest('hex')));
+const reviewed=JSON.parse(fs.readFileSync('scripts/localization-secret-allowlist.json','utf8'))[file];
+assert.equal(reviewed.length,fingerprints.size);
+assert.ok(reviewed.every(item=>item.type==='Hex High Entropy String'&&fingerprints.has(item.hashed_secret)));
 assert.ok(baseline.local_files.some(m=>m.path.endsWith('mixed_role_routes.sql')));
 assert.ok(baseline.local_files.some(m=>m.path.endsWith('mixed_route_predecessor_consistency.sql')));
 console.log('PASS baseline history, table RLS inventory and '+baseline.local_files.length+' migration/source hashes; cloud backup remains unconfirmed');

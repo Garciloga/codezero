@@ -138,7 +138,6 @@
   "Correlación": "Correlation",
   "Hora del fallo": "Failure time",
   "Hipótesis": "Hypotheses",
-  "Ocultar datos sensibles": "Hide sensitive data",
   "Reproducción": "Reproduction",
   "Población": "Population",
   "Siguiente validación": "Next validation",
@@ -150,9 +149,6 @@
   "Límites del análisis": "Analysis limitations",
   "Evidencia de la llamada": "Call evidence",
   "Criterio de rúbrica": "Rubric criterion",
-  "Product Specialist": "Product Specialist",
-  "Con guía": "Guided",
-  "Sin guía": "Independent",
   "Atención y recuperación tras interrupciones": "Attention and recovery after interruptions",
   "Faro necesita un reporte a las 16:00 UTC. Tienes 90 minutos y recibes tres mensajes: exportación bloqueada para dos usuarios, revisión de formato sin fecha y llamada de seguimiento a las 17:00 UTC. Ordena las tareas por impacto y dependencia, reserva un bloque de concentración de 25 minutos y documenta qué entrega se desplaza. A mitad del bloque llega un error 401: registra dónde te detuviste, la siguiente comprobación y cómo retomas sin perder contexto.": "Faro needs a report at 16:00 UTC. You have 90 minutes and receive three messages: export blocked for two users, an undated formatting review and a follow-up call at 17:00 UTC. Rank tasks by impact and dependency, reserve a 25-minute focus block and document which delivery moves. A 401 error interrupts the block: record your stopping point, next check and how you resume without losing context.",
   "Comprueba: orden justificado, capacidad explícita, punto de reanudación y siguiente actualización. La rapidez y el tiempo frente a pantalla no demuestran atención ni competencia.": "Check: justified order, explicit capacity, resumption point and next update. Speed and screen time do not demonstrate attention or competence.",
@@ -192,5 +188,7 @@
   "Tipo más bajo del equipo": "Lowest team work type",
   "Promedio provisional: faltan evidencias suficientes de algunas personas. Revisa la tabla antes de asignar refuerzo.": "Provisional average: some people lack sufficient evidence. Review the table before assigning reinforcement.",
   "Observatorio Laboral · México": "Observatorio Laboral · México",
-  "Data México": "Data México"
+  "Data México": "Data México",
+  "Puestos y evidencia de práctica": "Roles and practice evidence",
+  "Elige un puesto y prepara su caso para el portafolio. Una entrega revisada demuestra práctica simulada; conserva sus límites al presentarla en una entrevista.": "Choose a role and prepare its case for your portfolio. A reviewed deliverable demonstrates simulated practice; preserve its limits when discussing it in an interview."
 }
