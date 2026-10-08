@@ -9,6 +9,8 @@ import {
 } from "../../lib/organization-metrics";
 import LineIcon from "./line-icon";
 import LocalizedContent from "./localization/client";
+import LanguageSelector from "./localization/language-selector";
+const publicHeaderPaths = ["/", "/pricing", "/roadmap", "/login", "/terms", "/privacy", "/refunds", "/contact", "/experience-preview", "/practice-preview", "/modular-preview"];
 type Organization = {
   organization_id: string;
   name: string;
@@ -29,6 +31,7 @@ const publicPaths = [
   "/reset-password",
   "/experience-preview",
   "/practice-preview",
+  "/modular-preview",
   "/verify",
 ];
 export default function VivoShell({
@@ -37,12 +40,14 @@ export default function VivoShell({
   plan,
   organizations,
   selected,
+  authenticated,
 }: {
   children: ReactNode;
   name: string;
   plan: string;
   organizations: Organization[];
   selected: string | null;
+  authenticated: boolean;
 }) {
   const path = usePathname();
   const menu = useRef<HTMLDetailsElement>(null);
@@ -59,10 +64,11 @@ export default function VivoShell({
     publicPaths.some(
       (p) => path === p || (p === "/verify" && path.startsWith("/verify/")),
     ) ||
-    path.startsWith("/auth/")
+    path.startsWith("/auth/") || !authenticated
   )
     return (
       <div id="main-content" tabIndex={-1}>
+        {!publicHeaderPaths.includes(path) && <div className="vivo-toolbar"><LanguageSelector /></div>}
         {children}
       </div>
     );
@@ -210,6 +216,7 @@ export default function VivoShell({
         </aside>
       </LocalizedContent>
       <div className="vivo-content" id="main-content" tabIndex={-1}>
+        <div className="vivo-toolbar"><LanguageSelector /></div>
         {children}
       </div>
     </div>

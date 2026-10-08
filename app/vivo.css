@@ -48,7 +48,7 @@ html[data-design="vivo"] .muted {
 html[data-design="vivo"] .btn,
 html[data-design="vivo"] button.btn {
   background: var(--vivo-primary);
-  color: #fff;
+  color: var(--user-accent-foreground, #fff);
   border: 2px solid transparent;
   border-radius: var(--radio-pill);
   min-height: 44px;
@@ -60,8 +60,8 @@ html[data-design="vivo"] .btn:hover {
 }
 html[data-design="vivo"] .btn.secondary {
   background: transparent;
-  border: 2px solid var(--vivo-sidebar);
-  color: var(--vivo-sidebar);
+  border: 2px solid var(--vivo-text);
+  color: var(--vivo-text);
 }
 html[data-design="vivo"] .btn.secondary:hover {
   background: var(--vivo-soft);
@@ -209,7 +209,7 @@ html[data-design="vivo"] .public-nav a:hover {
   display: grid;
   place-items: center;
   background: var(--vivo-soft);
-  color: var(--vivo-sidebar);
+  color: var(--vivo-text);
   flex-shrink: 0;
   font-weight: 700;
 }
@@ -257,7 +257,7 @@ html[data-design="vivo"] .public-nav a:hover {
 }
 html[data-design="vivo"] .vivo-kpis .primary {
   background: var(--vivo-primary);
-  color: #fff;
+  color: var(--user-accent-foreground, #fff);
 }
 html[data-design="vivo"] .vivo-kpis .accent {
   background: var(--vivo-accent);
@@ -396,7 +396,8 @@ html[data-design="vivo"] .vivo-kpis .positive {
 }
 @media print {
   .vivo-sidebar,
-  .language-selector {
+  .language-selector,
+  .vivo-toolbar {
     display: none;
   }
   .vivo-shell {
@@ -442,14 +443,14 @@ html[data-design="vivo"]
 
 html[data-design="vivo"] .public-site .btn {
   background: var(--vivo-primary);
-  color: #fff;
+  color: var(--user-accent-foreground, #fff);
   border: 2px solid transparent;
   border-radius: var(--radio-pill);
 }
 html[data-design="vivo"] .public-site .btn.secondary {
   background: transparent;
-  color: var(--vivo-sidebar);
-  border: 2px solid var(--vivo-sidebar);
+  color: var(--vivo-text);
+  border: 2px solid var(--vivo-text);
 }
 html[data-design="vivo"] .public-site .public-dark .btn.secondary {
   color: #fff;
@@ -457,11 +458,11 @@ html[data-design="vivo"] .public-site .public-dark .btn.secondary {
 }
 html[data-design="vivo"] .public-site .btn:hover {
   background: var(--vivo-hover);
-  color: #fff;
+  color: var(--user-accent-foreground, #fff);
 }
 html[data-design="vivo"] .public-site .btn.secondary:hover {
   background: var(--vivo-soft);
-  color: var(--vivo-sidebar);
+  color: var(--vivo-text);
 }
 html[data-design="vivo"] .public-site h3 {
   font-family: var(--fuente-titulo);
@@ -500,4 +501,60 @@ html[data-design="vivo"] :where(textarea) {
     max-height: none;
     overflow: visible;
   }
+}
+
+html[data-design="vivo"][data-appearance="dark"] .vivo-kpis .positive {
+  color: #101828;
+}
+.vivo-toolbar {
+  max-width: 1260px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 32px 0;
+}
+.vivo-toolbar .language-selector,
+.public-header-inner .language-selector {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+.public-header-inner .language-selector {
+  width: 160px;
+  min-width: 0;
+  flex: 0 0 auto;
+}
+.public-header-inner .language-selector label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media (max-width: 700px) {
+  .vivo-toolbar { padding: 16px 16px 0; }
+}
+@media (max-width: 639px) {
+  .public-header-inner .public-mobile-menu {
+    width: auto;
+    min-width: 0;
+    flex: 1 1 calc(100% - 172px);
+  }
+  .public-header-inner .public-mobile-menu summary,
+  .public-header-inner .public-mobile-menu .public-nav a {
+    overflow-wrap: anywhere;
+  }
+  .public-header-inner .public-mobile-menu .public-nav a { max-width: 100%; }
+  .public-header-inner .language-selector { order: 4; }
+}
+
+html[data-design="vivo"] .public-stats {
+  background: var(--vivo-sidebar);
+  color: #fff;
+}
+html[data-design="vivo"] .public-stats span {
+  color: var(--vivo-sidebar-muted);
 }

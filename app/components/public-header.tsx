@@ -1,5 +1,6 @@
 "use client";
 import LocalizedContent from "./localization/client";
+import LanguageSelector from "./localization/language-selector";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -43,6 +44,7 @@ export default function PublicHeader({ authenticated }: { authenticated: boolean
           if ((event.target as HTMLElement).closest("a")) closeMenu();
         }}>{navigation}</nav>
       </details>
+      <LanguageSelector />
     </div>
   </header></LocalizedContent>;
 }

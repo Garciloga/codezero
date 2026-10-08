@@ -38,7 +38,7 @@ export default function AppearanceSettings({ userId, initialPreference, syncEnab
   }
   return <LocalizedContent><section className="card appearance-settings" style={{ marginTop: 18 }} aria-labelledby="appearance-heading" aria-busy={saving}>
     <span className="pill">A TU MANERA</span><h2 id="appearance-heading">Personaliza Garciloga</h2>
-    <p className="muted">C · Vivo mantiene una paleta fija. Tus preferencias anteriores se conservan en tu cuenta.</p>
+    <p className="muted">Elige modo claro, oscuro o automático y el color de tus botones.</p>
     <fieldset disabled={saving}><legend>Modo de pantalla</legend><div className="appearance-options">
       {([{key:"system",label:"Dispositivo",detail:"Sigue tu preferencia del sistema"},{key:"light",label:"Claro",detail:"Una superficie luminosa"},{key:"dark",label:"Oscuro",detail:"Una superficie tenue"}] as const).map(mode=>
         <label className="appearance-choice" key={mode.key}><input type="radio" name="appearance-mode" value={mode.key} checked={preference.mode===mode.key} onChange={()=>save({...preference,mode:mode.key})}/>

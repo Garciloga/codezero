@@ -8,13 +8,12 @@ import "@fontsource/plus-jakarta-sans/600.css";
 import "@fontsource/plus-jakarta-sans/700.css";
 import VivoShell from "./components/vivo-shell";
 import {accountNavigation} from "../lib/organization-server";
-import {VIVO_CSS_VARIABLES} from "../lib/vivo-design";
+import {VIVO_CSS_VARIABLES, VIVO_THEME_CSS} from "../lib/vivo-design";
 import type {CSSProperties} from "react";
 import type { Metadata } from "next";
 import { ReactNode } from "react";
 import AppearanceProvider from "./components/appearance-provider";
 import LanguageProvider from "./components/localization/provider";
-import LanguageSelector from "./components/localization/language-selector";
 import LocalizedServer from "./components/localization/server";
 import { localeContext, uiMessages } from "../lib/localization/server";
 import { LANGUAGE_TAGS } from "../lib/localization/shared";
@@ -44,12 +43,12 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     ? (await supabase.from("user_preferences").select("mode,accent").eq("user_id",user.id).maybeSingle()).data : null;
   return (
     <html lang={LANGUAGE_TAGS[locale]} data-design="vivo" style={VIVO_CSS_VARIABLES as CSSProperties}>
+      <head><style>{VIVO_THEME_CSS}</style></head>
       <body>
         <LanguageProvider locale={locale} messages={messages}>
         <AppearanceProvider userId={user?.id ?? null} serverPreference={preference} />
         <LocalizedServer><a className="skip-link" href="#main-content">Saltar al contenido</a></LocalizedServer>
-        <LanguageSelector />
-        <div id={navigation?undefined:"main-content"} tabIndex={navigation?undefined:-1}>{navigation ? <VivoShell name={navigation.profile?.full_name || "Mi cuenta"} plan={navigation.profile?.plan_name || "Free"} organizations={navigation.organizations as any} selected={navigation.organization?.organization_id ?? null}>{children}</VivoShell> : children}</div>
+        <VivoShell authenticated={Boolean(navigation)} name={navigation?.profile?.full_name || "Mi cuenta"} plan={navigation?.profile?.plan_name || "Free"} organizations={(navigation?.organizations ?? []) as any} selected={navigation?.organization?.organization_id ?? null}>{children}</VivoShell>
       </LanguageProvider>
       </body>
     </html>

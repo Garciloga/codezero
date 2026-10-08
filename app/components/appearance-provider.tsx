@@ -17,8 +17,8 @@ export default function AppearanceProvider({ userId, serverPreference }: { userI
       const dark = preference.mode === "dark" || (preference.mode === "system" && media.matches);
       const root = document.documentElement;
       root.dataset.appearance = dark ? "dark" : "light";
-      root.style.setProperty("--user-accent", root.dataset.design === "vivo" ? "var(--vivo-primary)" : ACCENTS[preference.accent][dark ? "dark" : "light"]);
-      root.style.setProperty("--user-accent-foreground", root.dataset.design === "vivo" ? "#ffffff" : dark ? "#101828" : "#ffffff");
+      root.style.setProperty("--user-accent", ACCENTS[preference.accent][dark ? "dark" : "light"]);
+      root.style.setProperty("--user-accent-foreground", dark ? "#101828" : "#ffffff");
     }
     apply();
     const onPreference = (event: Event) => {
