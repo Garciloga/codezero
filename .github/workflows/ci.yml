@@ -47,6 +47,9 @@ jobs:
       - name: Customer Success database checks
         run: node scripts/customer-success-db-check.mjs
 
+      - name: Role-training sandbox database checks
+        run: node scripts/role-training-db-check.mjs
+
       - name: Registration and recovery database checks
         run: node scripts/profile-registration-db-check.mjs && node scripts/recovery-local-check.mjs
 
@@ -87,3 +90,7 @@ jobs:
           CODEZERO_REVIEW_BUILT: '1'
           CODEZERO_BROWSER_ENGINE: ${{ matrix.engine }}
         run: node scripts/localization-browser-check.mjs
+
+      - name: Role-training sandbox browser flow
+        if: matrix.engine == 'chromium'
+        run: node scripts/role-training-browser-check.mjs

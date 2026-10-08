@@ -41,6 +41,7 @@ export default function VivoShell({
   organizations,
   selected,
   authenticated,
+  roleTrainingActive=false,
 }: {
   children: ReactNode;
   name: string;
@@ -48,6 +49,7 @@ export default function VivoShell({
   organizations: Organization[];
   selected: string | null;
   authenticated: boolean;
+  roleTrainingActive?:boolean;
 }) {
   const path = usePathname();
   const menu = useRef<HTMLDetailsElement>(null);
@@ -89,6 +91,7 @@ export default function VivoShell({
         ["Mi ruta", "/dashboard?view=learning#my-learning-path", "learning"],
         ...(org ? [["Mis tareas", base + "/tasks", "task"]] : []),
         ["Mis competencias", "/competencies", "learning"],
+        ...(roleTrainingActive?[["Formación por puesto", "/role-training"+(org?"?organization_id="+org.organization_id:""), "learning"],...(org?[["Revisar proyectos", "/role-training/review?organization_id="+org.organization_id, "task"]]:[])]:[]),
         ["Mis certificados", "/certificates", "certificate"],
       ],
     },
@@ -102,6 +105,7 @@ export default function VivoShell({
               ["Avance", base + "/progress", "learning"],
               ["Fortalezas y áreas de mejora", base + "/skills", "learning"],
               ["Asignar aprendizaje", base + "/assign", "task"],
+              ...(roleTrainingActive?[["Aprobación de proyectos", "/role-training/approval-flow?organization_id="+org.organization_id, "task"]]:[]),
             ],
           },
         ]

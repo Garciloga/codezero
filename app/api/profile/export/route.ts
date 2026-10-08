@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { createServerSupabase } from "../../../../lib/supabase-server";
 import { workspaceEnabled } from "../../../../lib/workspace-sandbox";
 import { consumeRateLimit } from "../../../../lib/rate-limit";
+import {roleTrainingEnabled} from '../../../../lib/role-training-policy';
+import {readWorkspacePages} from '../../../../lib/workspace-pages';
 
 export async function GET() {
   const supabase = await createServerSupabase();
@@ -86,6 +88,12 @@ export async function GET() {
     supabase.from("addon_billing_operations").select("addon_key,action,status,created_at,updated_at").eq("user_id",user.id),
   ]) : [];
   if(workspace.some(query=>query.error)) return NextResponse.json({error:"EXPORT_FAILED"},{status:500});
+  const training=roleTrainingEnabled()?await Promise.all([
+    readWorkspacePages((a,b)=>supabase.from('learning_practice_submissions').select('id,organization_id,activity_id,draft,self_scores,assistance,answers,reevaluation_of,created_at').eq('user_id',user.id).order('created_at').order('id').range(a,b)),
+    readWorkspacePages((a,b)=>supabase.from('learning_evidence_history').select('id,submission_id,organization_id,activity_key,independent_key,kind,competency_scores,assistance,review_source,observed_at,reevaluation_of,critical_errors,feedback,rubric_version').eq('user_id',user.id).order('observed_at').order('id').range(a,b)),
+    readWorkspacePages((a,b)=>supabase.from('learning_assignments').select('organization_id,activity_key,title,due_at,reinforcement_before,reinforcement_after').eq('user_id',user.id).eq('activity_type','route_unit').order('organization_id').order('activity_key').range(a,b)),
+  ]):[];
+  if(training.some(q=>q.error))return NextResponse.json({error:'EXPORT_FAILED'},{status:500});
   const body = JSON.stringify({
     exported_at: new Date().toISOString(),
     account: {
@@ -104,6 +112,7 @@ export async function GET() {
       certificates: certificates.data ?? [],
     },
     usage: usage.data ?? [],
+    role_training:training.length?{submissions:training[0].data,evidence_history:training[1].data,reinforcements:training[2].data}:null,
     workspace: workspace.length ? {appearance:workspace[0].data,practice:workspace[1].data,interests:workspace[2].data,diplomas:workspace[3].data,memberships:workspace[4].data,certificate_publications:workspace[5].data,customer_success:{units:workspace[6].data,attempts:workspace[7].data,projects:workspace[8].data},billing_operations:workspace[9].data} : null,
   }, null, 2);
 

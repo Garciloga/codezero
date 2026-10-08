@@ -1,0 +1,1 @@
+create index learning_history_submission_user_idx on public.learning_evidence_history(submission_id,user_id);

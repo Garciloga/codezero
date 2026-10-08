@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../lib/supabase-server";
 import {workspaceEnabled} from "../../lib/workspace-sandbox";
 import { createAdminSupabase, requireAdmin } from "../../lib/admin";
+import {roleTrainingEnabled} from '../../lib/role-training-policy';
 
 type PageProps = {
   searchParams: Promise<{ updated?: string; reviewed?: string; ticket?: string }>;
@@ -92,6 +93,7 @@ export default async function Admin({ searchParams }: PageProps) {
         <div>
           <span className="pill">OWNER / ADMIN</span>
           <h1>Garciloga Control Center</h1><p><a className="btn secondary" href="/customer-success/review">Revisar proyectos Customer Success</a></p>
+          {roleTrainingEnabled()&&<p><a className="btn secondary" href="/role-training/review">Revisar proyectos y capstones · piloto por puesto</a>{operatorRole==='owner'&&<> · <a href="/role-training/profiles">Configurar perfiles de competencia</a></>}</p>}
           <p className="muted">Usuarios, planes, acceso y actividad académica.</p>
         </div>
         <a className="btn secondary" href="/dashboard">Mi cuenta</a>

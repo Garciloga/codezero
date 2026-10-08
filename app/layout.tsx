@@ -6,6 +6,7 @@ import "@fontsource/plus-jakarta-sans/400.css";
 import "@fontsource/plus-jakarta-sans/500.css";
 import "@fontsource/plus-jakarta-sans/600.css";
 import "@fontsource/plus-jakarta-sans/700.css";
+import {roleTrainingEnabled} from '../lib/role-training-policy';
 import VivoShell from "./components/vivo-shell";
 import {accountNavigation} from "../lib/organization-server";
 import {VIVO_CSS_VARIABLES, VIVO_THEME_CSS} from "../lib/vivo-design";
@@ -48,7 +49,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <LanguageProvider locale={locale} messages={messages}>
         <AppearanceProvider userId={user?.id ?? null} serverPreference={preference} />
         <LocalizedServer><a className="skip-link" href="#main-content">Saltar al contenido</a></LocalizedServer>
-        <VivoShell authenticated={Boolean(navigation)} name={navigation?.profile?.full_name || "Mi cuenta"} plan={navigation?.profile?.plan_name || "Free"} organizations={(navigation?.organizations ?? []) as any} selected={navigation?.organization?.organization_id ?? null}>{children}</VivoShell>
+        <VivoShell roleTrainingActive={roleTrainingEnabled()} authenticated={Boolean(navigation)} name={navigation?.profile?.full_name || "Mi cuenta"} plan={navigation?.profile?.plan_name || "Free"} organizations={(navigation?.organizations ?? []) as any} selected={navigation?.organization?.organization_id ?? null}>{children}</VivoShell>
       </LanguageProvider>
       </body>
     </html>
