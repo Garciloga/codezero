@@ -69,7 +69,7 @@ try{
  for(let i=0;i<120;i++){try{if((await fetch(origin+'/login')).ok)break;}catch{}await pause(250);if(i===119)throw Error('Local server unavailable');}
  const engine=process.env.CODEZERO_BROWSER_ENGINE??'chromium';
  browser=await ({chromium,firefox,webkit}[engine]).launch(engine==='chromium'?{headless:true,executablePath:process.env.CODEZERO_BROWSER_EXECUTABLE,args:['--no-sandbox','--disable-dev-shm-usage','--disable-gpu']}:engine==='firefox'?{headless:true,timeout:30000,env:{...process.env,MOZ_DISABLE_CONTENT_SANDBOX:'1'},firefoxUserPrefs:{'security.sandbox.content.level':0}}:{headless:true,timeout:30000});
- const context=await browser.newContext({viewport:{width:1280,height:900}});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));const navigate=page.goto.bind(page);page.goto=async(...args)=>{const result=await navigate(...args);if(result)assert.ok(result.status()<400,'navigation response '+args[0]+' '+result.status());await page.waitForLoadState('networkidle');return result;};
+ const context=await browser.newContext({viewport:{width:1280,height:900}});const page=await context.newPage();const errors=[];page.on('pageerror',e=>{errors.push(e.message);console.error('PAGE ERROR',page.url(),e.stack);});const navigate=page.goto.bind(page);page.goto=async(...args)=>{const result=await navigate(...args);if(result)assert.ok(result.status()<400,'navigation response '+args[0]+' '+result.status());await page.waitForLoadState('networkidle');return result;};
  const reload=page.reload.bind(page);page.reload=async(...args)=>{await page.waitForLoadState('networkidle');const result=await reload(...args);await page.waitForLoadState('networkidle');return result;};
  const authCookie=s=>({name:'sb-127-auth-token',value:'base64-'+Buffer.from(JSON.stringify(s)).toString('base64url'),url:origin});
  if(process.env.CODEZERO_BRAND_SEATS_ONLY!=='1'){
@@ -201,17 +201,18 @@ assert.equal(await page.locator('h1').innerText(),'Mi cuenta');await page.locato
  await context.addCookies([authCookie(session)]);await page.goto(origin+'/leadership');assert.equal(await page.locator('main details').count(),4);await page.locator('main details').first().locator('summary').click();assert.equal(await page.locator('main details').first().evaluate(d=>d.open),true);
  console.log('PASS Garciloga public branding, commercial references, roadmap readiness, leadership access, 390px and WCAG',engine);
  }
- await context.clearCookies();
- for(const locale of ['es','en','pt','fr']){await context.request.post(origin+'/api/locale',{headers:{origin},data:{locale}});await page.goto(origin+'/about');assert.ok((await page.locator('main').innerText()).includes('CodeZero'),'historical name '+locale);}
- await context.addCookies([authCookie(ownerSession)]);await page.goto(origin+'/admin');
+ // End the previous document before replacing Auth cookies in this fixture.
+ await page.goto('about:blank');await context.clearCookies();
+ for(const locale of ['es','en','pt','fr']){await page.goto('about:blank');await context.request.post(origin+'/api/locale',{headers:{origin},data:{locale}});await page.goto(origin+'/about');assert.ok((await page.locator('main').innerText()).includes('CodeZero'),'historical name '+locale);}
+ await page.goto('about:blank');await context.addCookies([authCookie(ownerSession)]);await page.goto(origin+'/admin');
  assert.equal(await page.locator('.owner-user-form').count(),1);assert.equal(await page.locator('input[name=user_id][value="'+ownerUser.id+'"]').count(),0);
  await page.setViewportSize({width:320,height:844});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'owner administration mobile');
- await context.addCookies([authCookie(session)]);await page.goto(origin+'/teams/seats');
+ await page.goto('about:blank');await context.addCookies([authCookie(session)]);await page.goto(origin+'/teams/seats');
  assert.equal((await context.request.post(origin+'/api/admin/users/create',{headers:{origin},form:{email:'test@example.test',full_name:'Test User',plan_name:'free'}})).status(),403);
  assert.equal((await context.request.post(origin+'/api/stripe/seats',{headers:{origin:'https://example.invalid'}})).status(),403);
  assert.equal(await page.locator('input[name=seats]').getAttribute('min'),'5');
  assert.equal(await page.locator('input[name=permissions_acknowledged]').getAttribute('required'),'');
- for(const width of [320,390,768]){await page.setViewportSize({width,height:844});for(const route of ['/teams/seats','/about','/pricing']){await page.goto(origin+route);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true,route+' '+width+' '+JSON.stringify(await page.evaluate(()=>Array.from(document.querySelectorAll('body *')).filter(e=>e.getBoundingClientRect().right>innerWidth+1).map(e=>({tag:e.tagName,cls:e.className,right:e.getBoundingClientRect().right,text:e.textContent.slice(0,60)})).slice(0,10))));}}
+ for(const width of [320,390,768]){await page.setViewportSize({width,height:844});for(const route of ['/teams/seats','/about','/pricing']){await page.goto(origin+route);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,route+' '+width+' '+JSON.stringify(await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,innerWidth}))));}}
  await page.emulateMedia({reducedMotion:'reduce'});await page.goto(origin+'/teams/seats');assert.equal(await page.locator('main').evaluate(el=>getComputedStyle(el).animationName),'none');
  console.log('PASS institutional content, minimum five seats, consent, mobile widths and reduced motion');
  assert.deepEqual(errors,[]);console.log('Browser localization checks passed (synthetic local Auth/PostgREST fixtures only).');

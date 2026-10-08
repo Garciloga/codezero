@@ -17,7 +17,7 @@ export default async function PricingPlans({ plans, currentPlan }: { plans: Publ
         <h2>{labels[plan.name]}</h2><p className="muted">{notes[plan.name]}</p>
         <p className="public-price"><strong>{planPrice(plan.price_monthly_cents, LANGUAGE_TAGS[locale])}</strong><span>MXN al mes</span></p>
         {currentPlan === plan.name && plan.name !== "free" ? <button className="btn" disabled>Tu plan actual</button> :
-          <Link className={"btn " + (plan.name === "starter" ? "" : "secondary")} href={plan.name === "free" ? "/login?modo=registro" : "/checkout?plan=" + plan.name}>
+          <Link prefetch={false} className={"btn " + (plan.name === "starter" ? "" : "secondary")} href={plan.name === "free" ? "/login?modo=registro" : "/checkout?plan=" + plan.name}>
             {plan.name === "free" ? "Empezar gratis" : "Elegir " + labels[plan.name]}
           </Link>}
         <ul>
@@ -48,5 +48,6 @@ export default async function PricingPlans({ plans, currentPlan }: { plans: Publ
     </section>
   </></LocalizedContent>;
 }
+
 
 
