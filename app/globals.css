@@ -35,3 +35,6 @@ button,input,select,textarea { max-width: 100%; }
 button,.btn,summary { min-height: 44px; }
 .public-login-tabs > * { flex: 1; min-width: 0; }
 .support-message { background: var(--user-tint, #eef2ff); color: var(--user-text, #152033); }
+
+/* Evidence and reinforcement links need usable touch targets in the pilot. */
+.training-competency-panel li > a { display: inline-flex; align-items: center; min-height: 44px; min-width: 24px; max-width: 100%; padding: 4px 2px; }
