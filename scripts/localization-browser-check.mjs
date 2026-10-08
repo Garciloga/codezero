@@ -127,7 +127,9 @@ assert.equal(await page.locator('h1').innerText(),'Mi cuenta');await page.locato
  // Appearance regression: wait for the controlled inputs to finish their asynchronous API save.
  async function chooseAppearance(name,value){await page.locator(`input[name="${name}"][value="${value}"]`).click();await page.waitForFunction(({name,value})=>{const input=document.querySelector(`input[name="${name}"][value="${value}"]`);return input.checked&&!input.matches(':disabled');},{name,value});}
  assert.equal(await page.locator('.vivo-content #codezero-language').count(),1);
- assert.equal(await page.locator('.vivo-sidebar').evaluate(x=>x.getBoundingClientRect().top),0);
+ // Font reflow and Firefox scroll restoration can leave a subpixel sticky offset.
+ await page.evaluate(async()=>{await document.fonts.ready;window.scrollTo(0,0);});
+ assert.ok(Math.abs(await page.locator('.vivo-sidebar').evaluate(x=>x.getBoundingClientRect().top))<2,'sidebar starts at viewport top without a toolbar strip');
  for(const [mode,bg] of [['dark','rgb(24, 20, 35)'],['light','rgb(243, 235, 221)']]) {
   await chooseAppearance('appearance-mode',mode);
   await page.waitForFunction(({mode,bg})=>document.documentElement.dataset.appearance===mode&&getComputedStyle(document.body).backgroundColor===bg,{mode,bg});
