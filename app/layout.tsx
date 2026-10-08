@@ -1,6 +1,8 @@
 import { translatedMetadata } from '../lib/localization/metadata';
 import "./globals.css";
 import "./motion-quality.css";
+import "./workspace-layout.css";
+import PlatformUsage from './components/platform-usage';
 import SupportSessionBanner from './components/support-session-banner';
 import {supportSession} from '../lib/support-session';
 import SiteVisit from './components/site-visit';
@@ -57,11 +59,12 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <head><style>{VIVO_THEME_CSS}</style></head>
       <body>
         <SiteVisit/>
+        <PlatformUsage userId={user?.id??null} enabled={Boolean(user)&&workspaceEnabled()&&!support&&navigation?.profile?.role!=='owner'}/>
         <LanguageProvider section={section} locale={locale} messages={messages}>
         {support&&<SupportSessionBanner expires={support.expires}/>}
         <AppearanceProvider userId={user?.id ?? null} serverPreference={preference} />
         <LocalizedServer><a className="skip-link" href="#main-content">Saltar al contenido</a></LocalizedServer>
-        <VivoShell newsRead={preference?.news_read??null} userId={user?.id} roleTrainingActive={roleTrainingEnabled()} avatarVersion={navigation?.profile?.avatar_version} authenticated={Boolean(navigation)} name={navigation?.profile?.full_name || "Mi cuenta"} plan={navigation?.profile?.plan_name || "Free"} organizations={(navigation?.organizations ?? []) as any} selected={navigation?.organization?.organization_id ?? null}>{children}</VivoShell>
+        <VivoShell operatorRole={navigation?.profile?.role} newsRead={preference?.news_read??null} userId={user?.id} roleTrainingActive={roleTrainingEnabled()} avatarVersion={navigation?.profile?.avatar_version} authenticated={Boolean(navigation)} name={navigation?.profile?.full_name || "Mi cuenta"} plan={navigation?.profile?.plan_name || "Free"} organizations={(navigation?.organizations ?? []) as any} selected={navigation?.organization?.organization_id ?? null}>{children}</VivoShell>
       </LanguageProvider>
       </body>
     </html>

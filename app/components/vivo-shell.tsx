@@ -51,6 +51,7 @@ export default function VivoShell({
   roleTrainingActive=false,
   avatarVersion,
   userId,
+  operatorRole,
 }: {
   children: ReactNode;
   newsRead?:string|null;
@@ -62,6 +63,7 @@ export default function VivoShell({
   roleTrainingActive?:boolean;
   avatarVersion?:string|null;
   userId?:string;
+  operatorRole?:string;
 }) {
   const path = usePathname();
   const [read,setRead]=useState(newsRead);
@@ -99,6 +101,7 @@ export default function VivoShell({
     company = role === "owner" || role === "admin";
   const home = team ? base + "/people" : "/dashboard";
   const groups = [
+    ...(['owner','admin'].includes(operatorRole??'') ? [{title:'PLATAFORMA',items:[['Panel de control','/admin','settings'],...(operatorRole==='owner'?[['Uso por persona','/admin/usage','learning']]:[])]}] : []),
     {
       title: "YO APRENDO",
       items: [

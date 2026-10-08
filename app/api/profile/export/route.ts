@@ -100,11 +100,11 @@ export async function GET() {
   const cancellations=await readWorkspacePages((a,b)=>supabase.from('account_cancellation_history').select('event_id,subscription_id,action,occurred_at').eq('user_id',user.id).order('occurred_at').order('event_id').range(a,b));
   if(cancellations.error)return NextResponse.json({error:'EXPORT_FAILED'},{status:500});
   const admin=createAdminSupabase();
-  const [activation,portfolio]=await Promise.all([admin.from('activation_events').select('event,observed_at').eq('user_id',user.id).gte('observed_at',new Date(Date.now()-90*86400000).toISOString()),admin.from('public_portfolios').select('published,display_name,evidence_ids,certificate_ids,competency_keys,consent_at,updated_at').eq('user_id',user.id)]);
-  if(activation.error||portfolio.error)return NextResponse.json({error:'EXPORT_FAILED'},{status:500});
+  const [activation,portfolio,platformUsage]=await Promise.all([admin.from('activation_events').select('event,observed_at').eq('user_id',user.id).gte('observed_at',new Date(Date.now()-90*86400000).toISOString()),admin.from('public_portfolios').select('published,display_name,evidence_ids,certificate_ids,competency_keys,consent_at,updated_at').eq('user_id',user.id),readWorkspacePages((a,b)=>supabase.from('platform_usage_daily').select('day,section,clicks,visits,last_seen').eq('user_id',user.id).order('day').order('section').range(a,b))]);
+  if(activation.error||portfolio.error||platformUsage.error)return NextResponse.json({error:'EXPORT_FAILED'},{status:500});
   const body = JSON.stringify({
     development_plans:growth[0]?.data??[],notification_preferences:growth[1]?.data??[],notification_read_states:growth[2]?.data??[],
-    activation_events:activation.data,public_portfolio:portfolio.data,
+    activation_events:activation.data,public_portfolio:portfolio.data,platform_usage:platformUsage.data,
     exported_at: new Date().toISOString(),
     account: {
       id: user.id,
