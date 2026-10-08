@@ -148,7 +148,7 @@ try{
 
  await signIn(2);await page.setViewportSize({width:1280,height:900});await go('/role-training?organization_id='+org);
  const beforeClicks=rpcCalls.filter(c=>c.name==='record_platform_usage').length;
- await page.locator('form[action="/api/role-training"]').first().locator('select[name=assistance]').click();
+ await page.locator('select[name=assistance]').click();
  await go('/profile');await page.waitForFunction(()=>true);await pause(300);
  assert.ok(rpcCalls.slice().filter(c=>c.name==='record_platform_usage').length>beforeClicks);
  assert.ok(rpcCalls.filter(c=>c.name==='record_platform_usage').some(c=>c.p.p_user===id(2)&&c.p.p_clicks>0));
