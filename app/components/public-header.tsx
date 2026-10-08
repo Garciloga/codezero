@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 
 const links = [
+  { label: "Sobre Garciloga", href: "/about" },
   { label: "Cómo funciona", href: "/#como-funciona" },
   { label: "La ruta", href: "/#ruta" },
   { label: "Precios", href: "/pricing" },
@@ -48,4 +49,5 @@ export default function PublicHeader({ authenticated }: { authenticated: boolean
     </div>
   </header></LocalizedContent>;
 }
+
 

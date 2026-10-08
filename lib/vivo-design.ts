@@ -23,8 +23,8 @@ export const VIVO_DARK_COLORS = {
 } as const;
 export const VIVO_THEME_CSS = `html[data-design="vivo"][data-appearance="dark"]{color-scheme:dark;${Object.entries(VIVO_DARK_COLORS).map(([key,value])=>`--vivo-theme-${key}:${value}`).join(";")}}`;
 export const VIVO_FONTS = {
-  heading: "Outfit",
-  body: "Plus Jakarta Sans",
+  heading: "Söhne",
+  body: "Inter",
 } as const;
 export const VIVO_CSS_VARIABLES = {
   ...Object.fromEntries(
@@ -32,11 +32,12 @@ export const VIVO_CSS_VARIABLES = {
   ),
   "--vivo-primary": "var(--user-accent,#5B3FD6)",
   "--vivo-hover": "color-mix(in srgb,var(--vivo-primary) 88%,#000)",
-  "--fuente-cuerpo": `"${VIVO_FONTS.body}",sans-serif`,
-  "--fuente-titulo": `"${VIVO_FONTS.heading}",sans-serif`,
+  "--fuente-cuerpo": `"${VIVO_FONTS.body}",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif`,
+  "--fuente-titulo": `"${VIVO_FONTS.heading}","Soehne","Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif`,
   "--radio-tarjeta": "24px",
   "--radio-bloque": "24px",
   "--radio-control": "999px",
   "--radio-pill": "999px",
   "--vivo-progress-height": "10px",
 };
+

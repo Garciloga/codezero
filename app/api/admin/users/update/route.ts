@@ -44,12 +44,16 @@ export async function POST(req: Request) {
 
   const { data: before, error: beforeError } = await admin
     .from("profiles")
-    .select("plan_name,status")
+    .select("plan_name,status,role")
     .eq("id", targetUserId)
     .single();
 
   if (beforeError || !before) {
     return NextResponse.json({ error: "USER_NOT_FOUND" }, { status: 404 });
+  }
+
+  if (before.role === "owner" && targetUserId !== user.id) {
+    return NextResponse.json({ error: "FORBIDDEN" }, { status: 403 });
   }
 
   const { error } = await admin
@@ -76,3 +80,4 @@ export async function POST(req: Request) {
 
   return NextResponse.redirect(new URL("/admin?updated=1", req.url), 303);
 }
+

@@ -21,3 +21,10 @@ export async function requireAdmin(userId: string) {
   }
   return data;
 }
+
+export async function requireOwner(userId: string) {
+  const data = await requireAdmin(userId);
+  if (data.role !== "owner") throw new Error("FORBIDDEN");
+  return data;
+}
+

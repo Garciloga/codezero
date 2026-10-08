@@ -12,9 +12,10 @@ export default async function PublicLayout({ children }: { children: ReactNode }
     <PublicHeader authenticated={!error && user !== null} />
     {children}
     <footer className="public-footer"><nav aria-label="Información legal y contacto">
-      <Link prefetch={false} href="/roadmap">Próximamente</Link><Link prefetch={false} href="/terms">Términos</Link><Link prefetch={false} href="/privacy">Privacidad</Link>
+      <Link prefetch={false} href="/about">Sobre Garciloga</Link><Link prefetch={false} href="/roadmap">Próximamente</Link><Link prefetch={false} href="/terms">Términos</Link><Link prefetch={false} href="/privacy">Privacidad</Link>
       <Link prefetch={false} href="/refunds">Cancelaciones y reembolsos</Link><Link prefetch={false} href="/contact">Contacto</Link>
     </nav></footer>
   </div></LocalizedContent>;
 }
+
 

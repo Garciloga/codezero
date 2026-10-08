@@ -1,4 +1,4 @@
-import { ADDON_OFFERS } from './modular-offers';
+import { ADDON_OFFERS } from './modular-offers.ts';
 
 /** Commercial references only; never used by Stripe or quota authorization. */
 export const COMMERCIAL_REFERENCES = { mentoringMxn: 699, mentoringMinutes: 45, teamSeatMxn: 249, minimumSeats: 5 } as const;
@@ -11,3 +11,14 @@ export const PRODUCT_ROADMAP = [
   { key: 'annual_plans', label: 'Planes anuales y ofertas de lanzamiento', audience: 'Todos los alumnos', detail: 'Opciones comerciales futuras después de validar la beta y los procesos de facturación.', gate: 'Condiciones y precios por confirmar. Los planes mensuales actuales conservan sus límites.' },
   ...ADDON_OFFERS.filter(o => !['verified_certificate', 'route_customer_success'].includes(o.key)).map(o => ({ key: o.key, label: o.label, audience: o.key === 'mentoring' ? 'Puestos y procesos' : 'Desarrollo profesional', detail: o.detail ?? '', gate: o.key === 'mentoring' ? 'Agenda y disponibilidad de mentores antes de habilitar reservas.' : o.key === 'ai_tutor' ? 'Proveedor, presupuesto y pruebas antes de activar el tutor. Las compras siguen bloqueadas.' : 'Contenido, evaluación y validación antes de habilitar compras.' })),
 ] as const;
+
+/** Match labels to executable, guarded routes; commercial add-ons stay blocked. */
+export const RELEASED_PRACTICE_ROUTES: Record<string,string> = {
+ route_operations:'operations', route_qa:'quality', route_data_bi:'data_bi',
+ route_product:'product', route_management:'leadership',
+ route_solutions_integrations:'solutions', route_enablement:'enablement',
+};
+export function pendingProductRoadmap({companyMessaging,codePractice,roleTraining}:{companyMessaging:boolean;codePractice:boolean;roleTraining:boolean}){
+ return PRODUCT_ROADMAP.filter(item=>!(companyMessaging&&item.key==='enterprise_communicator')&&!(codePractice&&item.key==='executable_code')&&!(roleTraining&&(item.key==='leadership_courses'||Object.hasOwn(RELEASED_PRACTICE_ROUTES,item.key))));
+}
+

@@ -10,7 +10,7 @@ import LineIcon from "./line-icon";
 import LocalizedContent from "./localization/client";
 import ProfileAvatar from "./profile-avatar";
 import LanguageSelector from "./localization/language-selector";
-const publicHeaderPaths = ["/", "/pricing", "/roadmap", "/login", "/terms", "/privacy", "/refunds", "/contact", "/experience-preview", "/practice-preview", "/modular-preview"];
+const publicHeaderPaths = ["/", "/about", "/pricing", "/roadmap", "/login", "/terms", "/privacy", "/refunds", "/contact", "/experience-preview", "/practice-preview", "/modular-preview"];
 type Organization = {
   organization_id: string;
   name: string;
@@ -59,7 +59,7 @@ export default function VivoShell({
   const path = usePathname();
   const menu = useRef<HTMLDetailsElement>(null);
   useEffect(() => {
-    const media = matchMedia("(max-width:700px)");
+    const media = matchMedia("(max-width:900px)");
     const apply = () => {
       if (menu.current) menu.current.open = !media.matches;
     };
@@ -181,7 +181,7 @@ export default function VivoShell({
               if (
                 event.key === "Escape" &&
                 menu.current &&
-                matchMedia("(max-width:700px)").matches
+                matchMedia("(max-width:900px)").matches
               ) {
                 menu.current.open = false;
                 menu.current.querySelector("summary")?.focus();

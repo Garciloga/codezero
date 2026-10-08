@@ -1,5 +1,5 @@
 export const ORGANIZATION_ROLES = {
-  owner: "Dueño",
+  owner: "Responsable de compañía",
   admin: "Administrador",
   manager: "Gerente",
   supervisor: "Supervisor",
@@ -126,3 +126,4 @@ export function hierarchyDepth(member: Member, roster: Member[]) {
   }
   return depth;
 }
+

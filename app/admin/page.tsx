@@ -4,6 +4,7 @@ import { createServerSupabase } from "../../lib/supabase-server";
 import {workspaceEnabled} from "../../lib/workspace-sandbox";
 import { createAdminSupabase, requireAdmin } from "../../lib/admin";
 import {roleTrainingEnabled} from '../../lib/role-training-policy';
+import OwnerUserCreate from '../components/owner-user-create';
 
 type PageProps = {
   searchParams: Promise<{ updated?: string; reviewed?: string; ticket?: string }>;
@@ -43,6 +44,7 @@ export default async function Admin({ searchParams }: PageProps) {
     admin
       .from("profiles")
       .select("id,email,full_name,role,plan_name,status,billing_status,stripe_cancel_at_period_end,created_at")
+      .neq("role", "owner")
       .order("created_at", { ascending: false })
       .limit(100),
     admin.from("profiles").select("*", { count: "exact", head: true }),
@@ -101,6 +103,7 @@ export default async function Admin({ searchParams }: PageProps) {
 
       {workspaceEnabled()&&<p><a className="btn" href="/admin/companies">Compañías, contratos e invitaciones</a> · <a href="/admin/metrics">Analítica de visitas</a></p>}
 
+      {operatorRole === "owner" && <OwnerUserCreate />}
       {updated === "1" && (
         <div className="card" style={{ marginBottom: 18 }}>
           <b>Usuario actualizado.</b>

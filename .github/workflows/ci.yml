@@ -39,7 +39,7 @@ jobs:
         run: node scripts/account-personalization-db-check.mjs
 
       - name: Company permissions, capacity and channels database checks
-        run: node scripts/company-teams-db-check.mjs
+        run: CODEZERO_OWNER_SEATS_CHECK=1 node scripts/company-teams-db-check.mjs
 
       - name: Translation coverage
         run: node scripts/localization-audit.mjs

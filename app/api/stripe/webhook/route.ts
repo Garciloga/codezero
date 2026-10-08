@@ -1,4 +1,5 @@
 import Stripe from "stripe";
+import {syncSeatSubscription} from '../../../../lib/seat-billing';
 import {cancellationAction} from '../../../../lib/cancellation-history';
 import { classifySubscription } from "../../../../lib/subscription-classification";
 import { headers } from "next/headers";
@@ -111,6 +112,12 @@ export async function POST(req: Request) {
       const plan = session.metadata?.plan_name;
       const validPlan = plan === "starter" || plan === "pro" || plan === "enterprise";
 
+      if (session.metadata?.garciloga_seat_order && session.payment_status === 'paid') {
+        const subscriptionId = typeof session.subscription === 'string' ? session.subscription : session.subscription?.id;
+        if (!subscriptionId) throw Error('SEAT_SUBSCRIPTION_MISSING');
+        await syncSeatSubscription(stripe, await stripe.subscriptions.retrieve(subscriptionId));
+      }
+
       if (userId && addonKey === "ai_tutor") {
         const subscriptionId =
           typeof session.subscription === "string"
@@ -192,6 +199,7 @@ export async function POST(req: Request) {
     ) {
       const notifiedSubscription = event.data.object as Stripe.Subscription;
       const subscription = event.type === "customer.subscription.deleted" ? notifiedSubscription : await stripe.subscriptions.retrieve(notifiedSubscription.id);
+      await syncSeatSubscription(stripe, subscription, event.type === 'customer.subscription.deleted');
       const customerId = customerIdOf(subscription.customer);
       const metadataUserId = subscription.metadata?.user_id;
       const aiTutor = isAiTutorSubscription(subscription);
@@ -312,6 +320,7 @@ export async function POST(req: Request) {
       const invoiceSubscriptionId=typeof subscriptionRef==='string'?subscriptionRef:subscriptionRef?.id;
       if(customerId&&invoiceSubscriptionId){
         const current=await stripe.subscriptions.retrieve(invoiceSubscriptionId);
+        await syncSeatSubscription(stripe,current);
         const latest=typeof current.latest_invoice==='string'?current.latest_invoice:current.latest_invoice?.id;
         if(latest===invoice.id && (event.type!=='invoice.paid'||invoice.status==='paid')){
         if(aiTutorInvoice && current.items.data.some(item=>aiTutorPrices.has(item.price.id))){

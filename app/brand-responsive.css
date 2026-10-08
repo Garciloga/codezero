@@ -1,0 +1,80 @@
+/* Söhne is used when installed. Licensed webfont files can be added through
+   next/font/local once supplied; no unlicensed remote copy is requested. */
+@font-face { font-family: "Söhne"; src: local("Söhne Buch"), local("Soehne Buch"), local("Söhne"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Söhne"; src: local("Söhne Kraftig"), local("Soehne Kraftig"); font-weight: 500 600; font-display: swap; }
+@font-face { font-family: "Söhne"; src: local("Söhne Halbfett"), local("Soehne Halbfett"); font-weight: 700; font-display: swap; }
+html[data-design="vivo"] :where(.public-brand, .btn, .vivo-position strong, .public-eyebrow) { font-family: var(--fuente-titulo); }
+html { scroll-padding-top: 5rem; }
+body { line-height: 1.55; }
+.vivo-content, .vivo-sidebar, .public-header-inner, .public-section, .public-hero > *, .grid > * { min-width: 0; }
+.card + .card { margin-top: 20px; }
+.grid > .card + .card { margin-top: 0; }
+.vivo-content form :where(label, fieldset) { min-width: 0; max-width: 100%; }
+.vivo-content :where(input:not([type=radio]):not([type=checkbox]):not([type=color]), textarea) { width: 100%; }
+.vivo-content form label { flex: 1 1 220px; }
+.vivo-content fieldset { flex-basis: 100%; }
+.vivo-content :where(input[type=radio], input[type=checkbox]) { flex: 0 0 auto; min-height: 22px; width: 22px; vertical-align: middle; }
+.vivo-content fieldset label { display: flex !important; align-items: flex-start; gap: 10px; padding: 8px 0; }
+.vivo-content fieldset label select { margin-left: auto; }
+.brand-story { max-width: 75ch; }
+.brand-story p { line-height: 1.8; }
+.seat-summary { padding: 16px; border-radius: 18px; background: var(--vivo-soft); }
+.seat-form, .owner-user-form { display: grid !important; gap: 18px; max-width: 760px; }
+.owner-user-form label, .seat-form label { display: grid; grid-template-columns: minmax(0,1fr); gap: 8px; }
+.owner-user-form select, .seat-form select { width: 100%; min-width: 0; max-width: 100%; }
+.seat-form label.consent { display: flex; align-items: flex-start; gap: 12px; }
+.setup-link { display: block; width: 100%; overflow-wrap: anywhere; word-break: break-all; }
+/* Entrance and state feedback remain short and never hide pending content. */
+@media (prefers-reduced-motion: no-preference) {
+  .vivo-content > main, .public-site > main { animation: garciloga-enter .32s ease-out both; }
+  .btn, .vivo-sidebar nav a, .card, .public-nav a { transition: box-shadow .18s, transform .18s; }
+  .bar > i { transition: width .45s ease-out; }
+  .btn:active { transform: scale(.98); }
+  @media (hover: hover) { .btn:hover { transform: translateY(-2px); } .grid > .card:hover, .vivo-person:hover { box-shadow: 0 8px 24px rgb(43 27 90 / 10%); } }
+}
+@keyframes garciloga-enter { from { opacity: .6; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+/* Switch the sidebar before it squeezes tablet/Chrome viewport content. */
+@media (max-width: 900px) {
+  .vivo-shell { display: block; }
+  .vivo-sidebar { position: static; min-height: 0; max-height: none; padding: 14px 18px; gap: 12px; overflow: visible; }
+  .vivo-logo { font-size: 25px; }
+  .vivo-position { padding: 14px; }
+  .vivo-mobile-navigation > summary { display: flex; align-items: center; min-height: 44px; cursor: pointer; }
+  .vivo-account { margin-top: 0; }
+  .vivo-content .wrap { padding: 20px 18px; }
+  .vivo-content .grid2, .vivo-content .grid4 { grid-template-columns: minmax(0,1fr); }
+  .vivo-toolbar { padding: 12px 18px 0; }
+}
+@media (max-width: 639px) {
+  html { scroll-padding-top: 1rem; }
+  .public-header { position: static; }
+  .public-header-inner { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 12px; padding: 12px 16px; }
+  .public-brand { grid-column: 1; font-size: 1.2rem; }
+  .public-auth { grid-column: 1 / -1; grid-row: 2; gap: 12px; justify-content: space-between; }
+  .public-mobile-menu { display: block; grid-column: 1 / -1; grid-row: 3; width: 100% !important; }
+  .public-desktop-nav { display: none !important; }
+  .public-header-inner .language-selector { grid-column: 2; grid-row: 1; width: auto; }
+  .public-header-inner .language-selector select { min-width: 110px; width: 110px; }
+  .public-mobile-menu .public-nav { display: grid; grid-template-columns: 1fr; gap: 4px; }
+  .public-mobile-menu summary { padding: 8px 0; }
+  .public-site .wrap, .vivo-content .wrap { padding-inline: 16px; }
+  .public-site .card, .card { padding: 18px; }
+  .public-site h1, .vivo-content h1 { font-size: clamp(1.7rem,7vw,2.3rem); line-height: 1.2; }
+  .public-site h2, .vivo-content h2 { font-size: 1.4rem; line-height: 1.3; }
+  .vivo-content form { display: grid !important; grid-template-columns: minmax(0,1fr) !important; width: 100%; align-items: stretch; }
+  .vivo-content form > * { min-width: 0; }
+  .vivo-content form label { flex-basis: auto; }
+  .vivo-content form div[style*="grid-template-columns"] { grid-template-columns: minmax(0,1fr) !important; }
+  .palette-grid { grid-template-columns: minmax(0,1fr); }
+  .learning-navigation { grid-template-columns: minmax(0,1fr); }
+  .public-actions { gap: 12px; }
+  .public-actions .btn { width: 100%; }
+  .public-stats, .public-steps { gap: 14px; }
+  .public-stats strong { font-size: 1.8rem; }
+  .vivo-sidebar nav section { margin-bottom: 14px; }
+  .vivo-position p { display: none; }
+  .vivo-account { display: none; }
+  .vivo-organigram li { margin-left: min(var(--depth,0px),32px) !important; }
+  :where(.card,.wrap) > table { display: block; width: 100%; max-width: 100%; overflow-x: auto; }
+}
+@media print { .public-header, .seat-form, .owner-user-form { display: none; } }

@@ -173,5 +173,63 @@ try {
  await db.query('update public.organizations set active=true where id=$1',[org]);
  await db.query("update public.profiles set status='suspended' where id=$1",[id(3)]);assert.equal((await as('authenticated',id(3),()=>db.query('select * from public.organization_teams'))).rows.length,0);
  });
+
+ if(process.env.CODEZERO_OWNER_SEATS_CHECK==='1'){
+  await db.exec(`update public.profiles set role='admin' where id='${id(6)}';
+   alter table public.profiles add column if not exists plan_name text default 'free', add column if not exists stripe_subscription_id text,add column if not exists updated_at timestamptz default now();
+   create table public.admin_audit_log(id bigint generated always as identity,actor_user_id uuid,action text,target_type text,target_id text,metadata jsonb);
+   grant all on public.profiles,public.admin_audit_log to service_role;
+   grant usage,select on all sequences in schema public to service_role;`);
+  await db.exec(readFileSync('supabase/migrations/20261008081159_owner_and_seat_billing.sql','utf8'));
+  await check('the sole platform owner cannot be duplicated, reassigned, disabled or deleted',async()=>{
+   await rejected(()=>db.query("update public.profiles set role='owner' where id=$1",[id(2)]));
+   await rejected(()=>db.query("update public.profiles set role='student' where id=$1",[id(1)]));
+   await rejected(()=>db.query("update public.profiles set status='suspended' where id=$1",[id(1)]));
+   await rejected(()=>db.query('delete from public.profiles where id=$1',[id(1)]));
+   assert.equal((await db.query("select count(*) n from public.profiles where role='owner'")).rows[0].n,1);
+  });
+  await check('platform owner cannot join a company; operator identifiers are unreadable through the company API',async()=>{
+   await rejected(()=>db.query("insert into public.organization_memberships(organization_id,user_id,display_name,role) values($1,$2,'Hidden owner','learner')",[org,id(1)]));
+   await rejected(()=>as('authenticated',id(2),()=>db.query('select recorded_by from public.organization_contracts')));
+   await rejected(()=>as('authenticated',id(2),()=>db.query('select actor_id,metadata from public.organization_audit_log')));
+   await rejected(()=>as('authenticated',id(2),()=>db.query('select created_by from public.organization_invitations')));
+   assert.equal((await as('authenticated',id(2),()=>db.query('select id,action,created_at from public.organization_audit_log'))).rows.length>0,true);
+  });
+  await check('only the platform owner assigns manual learner access and company admins cannot call it',async()=>{
+   await rejected(()=>rpc("select public.owner_grant_user_access($1,$2,'Prueba','pro')",[id(2),id(5)]));
+   await rejected(()=>as('authenticated',id(1),()=>db.query("select public.owner_grant_user_access($1,$2,'Prueba','pro')",[id(1),id(5)])));
+   await rpc("select public.owner_grant_user_access($1,$2,'Prueba','pro')",[id(1),id(5)]);
+   assert.equal((await db.query('select plan_name from public.profiles where id=$1',[id(5)])).rows[0].plan_name,'pro');
+   await rejected(()=>rpc("select public.owner_grant_user_access($1,$2,'Prueba','owner')",[id(1),id(5)]));
+  });
+  const order=id(700);
+  await db.query("insert into public.company_seat_orders(id,requester_id,company_name,plan_name,requested_seats,stripe_customer_id) values($1,$2,'Seats company','starter',5,'cus_fixture')",[order,id(5)]);
+  const sync=(paid,seats=5,active=true)=>rpc("select public.sync_company_seat_subscription($1,'sub_fixture','cus_fixture','starter',$2,now()+interval '1 month',$3,$4) org",[order,seats,active,paid]);
+  await check('a seat order cannot create a company before payment and cannot grant fewer than five seats',async()=>{
+   await rejected(()=>db.query("insert into public.company_seat_orders(requester_id,company_name,plan_name,requested_seats) values($1,'Bad seats','starter',4)",[id(5)]));
+   assert.equal((await sync(false)).rows[0].org,null);
+   assert.equal((await db.query('select organization_id from public.company_seat_orders where id=$1',[order])).rows[0].organization_id,null);
+   await rejected(()=>sync(true,4));
+   await rejected(()=>as('authenticated',id(5),()=>db.query("select public.sync_company_seat_subscription($1,'sub_fixture','cus_fixture','starter',5,now()+interval '1 month',true,true)",[order])));
+  });
+  const seatOrg=(await sync(true)).rows[0].org;
+  await check('paid seats create one company, consume one responsible seat and replay without duplicates',async()=>{
+   assert.equal((await sync(true)).rows[0].org,seatOrg);
+   assert.equal((await db.query('select count(*) n from public.organization_memberships where organization_id=$1',[seatOrg])).rows[0].n,1);
+   assert.equal((await db.query('select public.company_seat_usage($1) n',[seatOrg])).rows[0].n,1);
+   assert.equal((await db.query('select seat_limit from public.organization_contracts where organization_id=$1',[seatOrg])).rows[0].seat_limit,5);
+   assert.equal((await as('authenticated',id(4),()=>db.query('select id from public.company_seat_orders'))).rows.length,0);
+   await rejected(()=>rpc("select public.sync_company_seat_subscription($1,'sub_fixture','cus_foreign','starter',5,now()+interval '1 month',true,true)",[order]));
+  });
+  await check('exact capacity survives invite acceptance and nonpayment revokes the purchased entitlement',async()=>{
+   for(const n of [2,4,6,7])await rpc("select public.create_company_invitation($1,$2,$3,'learner',null,null)",[seatOrg,id(5),`persona${n}@codezero.example.test`]);
+   await rejected(()=>rpc("select public.create_company_invitation($1,$2,'persona8@codezero.example.test','learner',null,null)",[seatOrg,id(5)]));
+   await sync(false,5,false);
+   assert.equal((await db.query('select active from public.organization_contracts where organization_id=$1',[seatOrg])).rows[0].active,false);
+   await rejected(()=>rpc("select public.create_company_invitation($1,$2,'persona8@codezero.example.test','learner',null,null)",[seatOrg,id(5)]));
+  });
+ }
+
  console.log(`PASS ${checks} company access/capacity PostgreSQL groups`);
 }finally{await db.close();}
+
