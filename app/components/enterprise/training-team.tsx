@@ -1,3 +1,4 @@
+import MixedTeam from './mixed-team';
 import LocalizedContent from '../localization/server';
 import Link from 'next/link';
 import {roleTrainingSession} from '../../../lib/role-training-server';
@@ -21,7 +22,7 @@ export default async function TrainingTeam({org,people}:{org:string;people:Membe
  const gaps=Object.keys(COMPETENCIES).map(key=>({key:key as CompetencyKey,count:rows.filter(r=>r.summary.competencies.some(c=>c.key===key&&c.count>=3&&c.expected!==null&&c.level<c.expected)).length})).sort((a,b)=>b.count-a.count||a.key.localeCompare(b.key));
  const common=gaps[0]?.count?gaps[0]:null;
  const mentors=common?rows.filter(r=>r.summary.competencies.some(c=>c.key===common.key&&c.level>=3&&c.count>=3)):[];
- return <LocalizedContent><section className="card"><h2>Mapa del equipo · competencias 0–4</h2><p>{TRAINING_NOTICE}</p><p>Personas en orden alfabético. “Sin evidencia” no demuestra falta de habilidad. Los mentores son candidatos por práctica validada; su participación requiere acuerdo.</p>
+ return <LocalizedContent><MixedTeam org={org} people={people}/><section className="card"><h2>Mapa del equipo · competencias 0–4</h2><p>{TRAINING_NOTICE}</p><p>Personas en orden alfabético. “Sin evidencia” no demuestra falta de habilidad. Los mentores son candidatos por práctica validada; su participación requiere acuerdo.</p>
  <div className="vivo-table-scroll"><table><caption>Comparación con el perfil de aprendizaje del puesto</caption><thead><tr><th>Persona</th>{Object.values(COMPETENCIES).map(name=><th key={name}>{name}</th>)}</tr></thead><tbody>{rows.map(r=><tr key={r.user_id}><th scope="row"><Link href={`/teams/${org}/person/${r.user_id}`}>{r.display_name}</Link></th>{r.summary.competencies.map(c=><td key={c.key}>{c.level} / {c.expected??'—'}<br/>{c.count<3?'Sin evidencia suficiente':c.label}</td>)}</tr>)}</tbody></table></div>
  <p>{common?`Brecha más común entre personas con evidencia: ${COMPETENCIES[common.key]} (${common.count} personas).`:'Aún no hay evidencia suficiente para identificar una brecha común.'}</p>
  <p>Posibles mentores internos para esa brecha: {mentors.length?mentors.map(m=>m.display_name).join(', '):'sin candidatos demostrados en tu alcance.'}</p>
@@ -29,3 +30,4 @@ export default async function TrainingTeam({org,people}:{org:string;people:Membe
  <p><Link href={`/role-training/approval-flow?organization_id=${org}`}>Configurar aprobación opcional de proyectos</Link></p>
  </section></LocalizedContent>;
 }
+
