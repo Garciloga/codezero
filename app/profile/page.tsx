@@ -2,6 +2,7 @@ import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createServerSupabase, getServerUser } from "../../lib/supabase-server";
+import ProfilePhotoSettings from "../components/profile-photo-settings";
 import AppearanceSettings from "../components/appearance-settings";
 import { workspaceEnabled } from "../../lib/workspace-sandbox";
 import { accountNavigation } from "../../lib/organization-server";
@@ -16,7 +17,7 @@ export default async function ProfilePage({ searchParams }: PageProps) {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("email,full_name,role,plan_name,status,billing_status,stripe_customer_id,stripe_cancel_at_period_end,created_at")
+    .select("email,full_name,role,plan_name,status,billing_status,stripe_customer_id,stripe_cancel_at_period_end,created_at,avatar_version")
     .eq("id", user.id)
     .single();
 
@@ -30,7 +31,7 @@ export default async function ProfilePage({ searchParams }: PageProps) {
   const cloudAppearance = workspaceEnabled();
   const hasOrganization = Boolean((await accountNavigation())?.organization);
   const appearance = cloudAppearance
-    ? (await supabase.from("user_preferences").select("mode,accent").eq("user_id",user.id).maybeSingle()).data : null;
+    ? (await supabase.from("user_preferences").select("mode,accent,colors").eq("user_id",user.id).maybeSingle()).data : null;
   return (
     <LocalizedContent><main className="wrap">
       <div className="nav">
@@ -61,6 +62,7 @@ export default async function ProfilePage({ searchParams }: PageProps) {
       <div className="grid grid2">
         <section className="card">
           <h2>Datos</h2>
+          <ProfilePhotoSettings userId={user.id} name={profile?.full_name || "Mi cuenta"} initialVersion={profile?.avatar_version}/>
           <p><b>Nombre:</b> {profile?.full_name ? <span translate="no">{profile.full_name}</span> : "Sin configurar"}</p>
           <p><b>Email:</b> <span translate="no">{profile?.email || user.email}</span></p>
           <p><b>Rol:</b> {profile?.role}</p>

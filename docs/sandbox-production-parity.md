@@ -1,3 +1,9 @@
+## Estado comprobado posterior al cierre del PR #7
+
+La producción `edfd964b36b55e65a56383c90211511c6f898229` incluye la corrección de áreas táctiles. [CI 37731710685](https://github.com/Garciloga/codezero/actions/runs/37731710685) y [Security 37731710593](https://github.com/Garciloga/codezero/actions/runs/37731710593) aprobaron el head final `051d0ad`: navegadores generales Chromium/Firefox/WebKit y recorrido del piloto en Chromium con axe WCAG. El árbol probado/productivo es `ca8909683ec5a0ca00d1a62c81a15c86e16be296`. La rama del piloto no tiene cambios pendientes. Los informes siguientes son la secuencia histórica de la revisión; sus pruebas pendientes no sustituyen este resultado. Sesiones humanas reales, lectores físicos, calibración y restauración cloud siguen pendientes.
+
+La nueva adición de personalización y fotos se documenta separadamente en `account-personalization.md`; no estaba incluida en esta comparación histórica.
+
 # Sandbox y producción · revisión del 7 de octubre de 2026
 
 Isaac aprobó avanzar con las validaciones pendientes y pidió publicar las adiciones y comprobar diferencias. La aprobación habilita el trabajo; no acredita haber ejecutado sesiones reales, pruebas con alumnos o lectores físicos.

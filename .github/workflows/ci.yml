@@ -35,6 +35,9 @@ jobs:
       - name: Enterprise scope database checks
         run: node scripts/workspace-db-check.mjs
 
+      - name: Account personalization database checks
+        run: node scripts/account-personalization-db-check.mjs
+
       - name: Translation coverage
         run: node scripts/localization-audit.mjs
 

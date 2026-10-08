@@ -10,6 +10,6 @@ export async function POST(req: Request) {
   let value: unknown;
   try {value = await req.json();} catch {return new Response(null,{status:400});}
   if (!validAppearance(value)) return new Response(null,{status:400});
-  const {error} = await context.supabase.from("user_preferences").upsert({user_id:context.user.id,mode:value.mode,accent:value.accent,updated_at:new Date().toISOString()});
+  const {error} = await context.supabase.from("user_preferences").upsert({user_id:context.user.id,mode:value.mode,accent:value.accent,colors:value.colors ?? {},updated_at:new Date().toISOString()});
   return NextResponse.json(error ? {saved:false} : {saved:true},{status:error?503:200,headers:{"Cache-Control":"private, no-store"}});
 }

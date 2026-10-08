@@ -33,7 +33,7 @@ const allSessions=[session,secondSession,ownerSession,...orgMembers.map(m=>{cons
 tables.organizations=[{id:orgId,name:'Empresa Vivo',active:true}];tables.organization_memberships=orgMembers;
 tables.learning_assignments=orgMembers.map(m=>({organization_id:orgId,user_id:m.user_id,activity_key:'exam:1',activity_type:'exam',activity_id:1,title:'Prueba de APIs',competency:'APIs'}));
 tables.learning_evidence=orgMembers.map(m=>({organization_id:orgId,user_id:m.user_id,activity_key:'exam:1',completed:m.role!=='learner',score:m.role==='learner'?40:80}));tables.learning_errors=[];
-let authReads=0;
+let authReads=0;const profilePhotos=new Map();
 const database=http.createServer(async(req,res)=>{
  const url=new URL(req.url,dbOrigin);res.setHeader('Content-Type','application/json');
  if(url.pathname==='/auth/v1/user'){
@@ -42,11 +42,20 @@ const database=http.createServer(async(req,res)=>{
   if(req.method==='PUT'){let body='';for await(const chunk of req)body+=chunk;const data=JSON.parse(body);assert.deepEqual(Object.keys(data.data),['locale']);selectedUser.user_metadata={...selectedUser.user_metadata,...data.data};}
   if(req.method==='GET')authReads++;return res.end(JSON.stringify(selectedUser));
  }
+ if(url.pathname.startsWith('/storage/v1/object/')) {
+  const actor=allSessions.find(s=>req.headers.authorization==='Bearer '+s.access_token)?.user;
+  const path=decodeURIComponent(url.pathname).replace('/storage/v1/object/authenticated/','').replace('/storage/v1/object/','');
+  if(!actor || (req.method!=='DELETE' && path!==`profile-photos/${actor.id}/avatar.webp`)) {res.writeHead(403);return res.end('{}');}
+  if(req.method==='POST'){const parts=[];for await(const chunk of req)parts.push(chunk);profilePhotos.set(actor.id,Buffer.concat(parts));return res.end(JSON.stringify({Key:path}));}
+  if(req.method==='DELETE'){let raw='';for await(const c of req)raw+=c;assert.deepEqual(JSON.parse(raw).prefixes,[`${actor.id}/avatar.webp`]);profilePhotos.delete(actor.id);return res.end('[]');}
+  if(req.method==='GET'){const photo=profilePhotos.get(actor.id);if(!photo){res.writeHead(404);return res.end('{}');}res.setHeader('Content-Type','image/webp');return res.end(photo);}
+ }
  if(url.pathname.startsWith('/rest/v1/')){
   const table=url.pathname.split('/').pop();
   if(url.pathname.includes('/rpc/')) {let raw='';for await(const c of req)raw+=c;const p=JSON.parse(raw||'{}');if(table==='workspace_directory')return res.end(JSON.stringify(orgMembers.filter(m=>m.active).map(({organization_id,...m})=>m)));if(table==='workspace_current_levels')return res.end(JSON.stringify((scope[Number(p.p_actor?.slice(-12))]??[]).map(n=>({user_id:actorId(n),current_level:1}))));if(table==='consume_api_rate_limit')return res.end(JSON.stringify({allowed:true,count:1,retry_after_seconds:0}));if(table==='mutate_support_ticket'){let ticket=tables.support_tickets.find(t=>t.id===p.p_ticket);const now=new Date().toISOString();if(p.p_action==='create'){ticket={id:tables.support_tickets.length+1,user_id:p.p_actor,...p.p_payload,priority:'normal',status:'open',created_at:now,updated_at:now};tables.support_tickets.push(ticket);}if(!ticket){res.writeHead(400);return res.end(JSON.stringify({message:'TICKET_NOT_FOUND'}));}const body=p.p_action==='create'?p.p_payload.description:p.p_payload.body;if(body)tables.support_ticket_messages.push({id:tables.support_ticket_messages.length+1,ticket_id:ticket.id,sender_role:p.p_action==='update'?'admin':'user',body,created_at:now});if(p.p_action==='update'){ticket.status=p.p_payload.status;ticket.priority=p.p_payload.priority;}if(p.p_action==='reply'&&ticket.status==='waiting_user')ticket.status='open';return res.end(JSON.stringify(ticket.id));}return res.end('null');}
   let rows=table==='account_entitlements'?tables.profiles.map(p=>({user_id:p.id,plan_name:p.plan_name,exercise_limit:p.plan_name==='enterprise'?-1:p.plan_name==='free'?20:p.plan_name==='starter'?200:1000,exam_limit:p.plan_name==='enterprise'?-1:p.plan_name==='free'?1:p.plan_name==='starter'?10:50,project_limit:p.plan_name==='enterprise'?-1:p.plan_name==='free'?0:p.plan_name==='starter'?5:20,ai_query_limit:p.plan_name==='pro'?100:0,usage:{exercises:0,exams:0,projects:0,ai_queries:0}})):tables[table]??[];const actor=allSessions.find(s=>req.headers.authorization==='Bearer '+s.access_token)?.user;const allowed=scope[Number(actor?.id.slice(-12))]??[];if(table==='organizations'&&!allowed.length)rows=[];if(['organization_memberships','learning_assignments','learning_evidence','learning_errors'].includes(table))rows=rows.filter(r=>allowed.includes(Number(r.user_id.slice(-12))));for(const [key,value]of url.searchParams){if(value.startsWith('eq.'))rows=rows.filter(r=>!(key in r)||String(r[key])===value.slice(3));}
 
+  if(req.method==='PATCH' && table==='profiles'){let raw='';for await(const c of req)raw+=c;const data=JSON.parse(raw);assert.equal(url.searchParams.get('id'),'eq.'+id);assert.deepEqual(Object.keys(data).sort(),['avatar_version','updated_at']);Object.assign(tables.profiles[0],data);return res.end('null');}
   if(req.method==='POST'){if(table==='user_preferences'){let body='';for await(const chunk of req)body+=chunk;const preference=JSON.parse(body);tables.user_preferences=[...(tables.user_preferences??[]).filter(p=>p.user_id!==preference.user_id),preference];}res.writeHead(201);return res.end('null');}
   if(req.headers.accept?.includes('vnd.pgrst.object'))return res.end(JSON.stringify(rows[0]??null));
   return res.end(JSON.stringify(rows));
@@ -75,7 +84,43 @@ try{
  await page.addScriptTag({path:'sandbox-runtime/node_modules/axe-core/axe.min.js'});for(const [mode,colors]of Object.entries({light:['#2346d8','#09634d','#7133ae','#983d12'],dark:['#a5b4fc','#6ee7b7','#d8b4fe','#fdba74']})){for(const accent of colors){await page.evaluate(({mode,accent})=>{const r=document.documentElement;r.dataset.appearance=mode;r.style.setProperty('--user-accent',accent);r.style.setProperty('--user-accent-foreground',mode==='dark'?'#101828':'#fff');},{mode,accent});await page.waitForTimeout(200);const violations=await page.evaluate(async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})).violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)})));assert.deepEqual(violations,[],'invalid login form '+mode+' '+accent);}}assert.equal(await page.locator('#password').getAttribute('aria-invalid'),'true');assert.ok((await page.locator('#password').getAttribute('aria-describedby')).includes('password-error'));console.log('PASS invalid-form semantics and contrast for all four accents in light/dark');
 
  await context.addCookies([{name:'sb-127-auth-token',value:'base64-'+Buffer.from(JSON.stringify(session)).toString('base64url'),url:origin}]);
- await page.goto('about:blank');authReads=0;await context.request.get(origin+'/profile');console.log('MEASURE Auth reads for one profile HTTP render',authReads);assert.equal(authReads,1,'locale and profile must share verified Auth for one render');await page.goto(origin+'/profile');assert.equal(await page.locator('h1').innerText(),'Mi cuenta');await page.locator('#codezero-language').selectOption('fr');await page.waitForFunction(()=>document.documentElement.lang==='fr');await page.reload();assert.equal(await page.locator('h1').innerText(),'Mon compte');assert.equal(user.user_metadata.locale,'fr');assert.equal(tables.profiles[0].role,'student');assert.equal(tables.profiles[0].plan_name,'free');assert.equal(await page.locator('input[name=full_name]').inputValue(),'Nom de test');console.log('PASS authenticated preference persistence; name, role and plan unchanged');
+ await page.goto('about:blank');authReads=0;await context.request.get(origin+'/profile');console.log('MEASURE Auth reads for one profile HTTP render',authReads);assert.equal(authReads,1,'locale and profile must share verified Auth for one render');await page.goto(origin+'/profile');
+ // Complete custom palette + profile photo journey through real handlers and fixture storage.
+ await page.locator('#codezero-language').selectOption('es');await page.waitForFunction(()=>document.documentElement.lang==='es-MX');
+ assert.equal(await page.locator('.vivo-position').count(),0,'plan card is absent above navigation');
+ assert.equal(await page.locator('.vivo-account small').innerText(),'Free');
+ await page.locator('.appearance-palette summary').click();
+ await page.getByLabel('Bordes',{exact:true}).fill('#123456');
+ await page.waitForFunction(()=>getComputedStyle(document.documentElement).getPropertyValue('--vivo-border').trim()==='#123456');
+ assert.equal(await page.locator('main .card').first().evaluate(el=>getComputedStyle(el).borderTopColor),'rgb(18, 52, 86)');
+ await page.getByRole('button',{name:'Guardar colores',exact:true}).click();
+ await page.waitForFunction(()=>JSON.parse(localStorage.getItem('codezero.appearance.v1:account:00000000-0000-4000-8000-000000000001'))?.colors?.light?.border==='#123456');
+ await page.reload();await page.waitForFunction(()=>getComputedStyle(document.documentElement).getPropertyValue('--vivo-border').trim()==='#123456');
+ await page.locator('.appearance-palette summary').click();
+ await page.getByLabel('Fondo de la plataforma',{exact:true}).fill('#ffffff');await page.getByLabel('Texto principal',{exact:true}).fill('#ffffff');
+ assert.ok((await page.locator('.appearance-palette [role=status]').innerText()).includes('Contraste bajo'));
+ await page.getByRole('button',{name:'Descartar cambios',exact:true}).click();
+ await page.waitForFunction(()=>getComputedStyle(document.documentElement).getPropertyValue('--vivo-bg').trim()!=='#ffffff');
+ await page.locator('#palette-mode').selectOption('dark');await page.getByLabel('Selección de texto',{exact:true}).fill('#13579b');
+ await page.getByRole('button',{name:'Guardar colores',exact:true}).click();await page.waitForFunction(()=>JSON.parse(localStorage.getItem('codezero.appearance.v1:account:00000000-0000-4000-8000-000000000001'))?.colors?.dark?.selection==='#13579b');
+ await page.reload();await page.waitForFunction(()=>getComputedStyle(document.documentElement).getPropertyValue('--vivo-selection').trim()==='#13579b');
+ await page.locator('input[name="appearance-mode"][value="light"]').click();await page.waitForFunction(()=>document.documentElement.dataset.appearance==='light');
+ // Generate a valid fixture rather than depending on a remote user image.
+ const sharp=(await import('sharp')).default;const validPhoto=await sharp({create:{width:20,height:20,channels:3,background:'#112233'}}).png().toBuffer();
+ await page.locator('#profile-photo').setInputFiles({name:'fixture.png',mimeType:'image/png',buffer:validPhoto});
+ await page.getByRole('button',{name:'Subir foto',exact:true}).click();
+ await page.waitForFunction(()=>document.querySelector('.vivo-account .vivo-avatar img')?.naturalWidth>0);
+ await page.evaluate(()=>window.dispatchEvent(new CustomEvent('garciloga-profile-photo',{detail:{userId:'00000000-0000-4000-8000-000000000002',version:null}})));
+ assert.equal(await page.locator('.vivo-account .vivo-avatar img').count(),1,'photo events are scoped to the current account');
+ const fetched=await context.request.get(origin+'/api/profile/photo');assert.equal(fetched.status(),200);assert.equal(fetched.headers()['content-type'],'image/webp');
+ await page.reload();await page.waitForFunction(()=>document.querySelector('.vivo-account .vivo-avatar img')?.naturalWidth>0);
+ await page.getByRole('button',{name:'Eliminar foto',exact:true}).click();await page.waitForFunction(()=>!document.querySelector('.vivo-account .vivo-avatar img'));
+ assert.equal((await context.request.get(origin+'/api/profile/photo')).status(),404);
+ assert.equal((await context.request.post(origin+'/api/profile/photo',{headers:{origin:'https://invalid.example.test'}})).status(),403);
+ assert.equal((await context.request.post(origin+'/api/preferences',{headers:{origin},data:{mode:'light',accent:'blue',colors:{light:{border:'url(x)'}}}})).status(),400);
+ await page.getByRole('button',{name:'Restablecer apariencia',exact:true}).click();await page.waitForFunction(()=>document.documentElement.dataset.customPalette==='false');
+ console.log('PASS custom palette preview/save/reload/discard/reset/contrast and own photo upload/read/reload/delete/origin');
+assert.equal(await page.locator('h1').innerText(),'Mi cuenta');await page.locator('#codezero-language').selectOption('fr');await page.waitForFunction(()=>document.documentElement.lang==='fr');await page.reload();assert.equal(await page.locator('h1').innerText(),'Mon compte');assert.equal(user.user_metadata.locale,'fr');assert.equal(tables.profiles[0].role,'student');assert.equal(tables.profiles[0].plan_name,'free');assert.equal(await page.locator('input[name=full_name]').inputValue(),'Nom de test');console.log('PASS authenticated preference persistence; name, role and plan unchanged');
  // Appearance regression: wait for the controlled inputs to finish their asynchronous API save.
  async function chooseAppearance(name,value){await page.locator(`input[name="${name}"][value="${value}"]`).click();await page.waitForFunction(({name,value})=>{const input=document.querySelector(`input[name="${name}"][value="${value}"]`);return input.checked&&!input.matches(':disabled');},{name,value});}
  assert.equal(await page.locator('.vivo-content #codezero-language').count(),1);

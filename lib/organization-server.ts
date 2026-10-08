@@ -21,7 +21,7 @@ export const accountNavigation = cache(async () => {
   if (!user) return null;
   const { data: profile } = await supabase
     .from("profiles")
-    .select("id,full_name,plan_name,status,role")
+    .select("id,full_name,plan_name,status,role,avatar_version")
     .eq("id", user.id)
     .maybeSingle();
   const memberships = workspaceEnabled()

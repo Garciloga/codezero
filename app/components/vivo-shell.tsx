@@ -4,11 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   ORGANIZATION_ROLES,
-  initials,
   type OrganizationRole,
 } from "../../lib/organization-metrics";
 import LineIcon from "./line-icon";
 import LocalizedContent from "./localization/client";
+import ProfileAvatar from "./profile-avatar";
 import LanguageSelector from "./localization/language-selector";
 const publicHeaderPaths = ["/", "/pricing", "/roadmap", "/login", "/terms", "/privacy", "/refunds", "/contact", "/experience-preview", "/practice-preview", "/modular-preview"];
 type Organization = {
@@ -42,6 +42,8 @@ export default function VivoShell({
   selected,
   authenticated,
   roleTrainingActive=false,
+  avatarVersion,
+  userId,
 }: {
   children: ReactNode;
   name: string;
@@ -50,6 +52,8 @@ export default function VivoShell({
   selected: string | null;
   authenticated: boolean;
   roleTrainingActive?:boolean;
+  avatarVersion?:string|null;
+  userId?:string;
 }) {
   const path = usePathname();
   const menu = useRef<HTMLDetailsElement>(null);
@@ -148,7 +152,7 @@ export default function VivoShell({
           <Link prefetch={false} className="vivo-logo" href={home}>
             Garciloga
           </Link>
-          <section className="vivo-position">
+          {org && <section className="vivo-position">
             {org ? (
               <>
                 <small>
@@ -163,13 +167,8 @@ export default function VivoShell({
                 </strong>
                 <p>{scopes[org.role]}</p>
               </>
-            ) : (
-              <>
-                <small>Tu plan</small>
-                <strong>{plan.charAt(0).toUpperCase() + plan.slice(1)}</strong>
-              </>
-            )}
-          </section>
+            ) : null}
+          </section>}
           <details
             ref={menu}
             open
@@ -209,9 +208,7 @@ export default function VivoShell({
             </nav>
           </details>
           <div className="vivo-account">
-            <span className="vivo-avatar" aria-hidden="true">
-              {initials(name)}
-            </span>
+            <ProfileAvatar name={name} version={avatarVersion} userId={userId}/>
             <div>
               <strong translate="no">{name}</strong>
               <small>{plan.charAt(0).toUpperCase() + plan.slice(1)}</small>
