@@ -1,4 +1,5 @@
 {
+  "20": "20",
   "Comunicación clara y compromisos": "Comunicação clara e compromissos",
   "Una comunicación útil permite actuar: describe el impacto observado, qué se sabe, qué falta y cuándo habrá actualización. Separa fecha de seguimiento de fecha de solución. Adapta el detalle al receptor: el usuario necesita un siguiente paso; soporte necesita reproducción; el sponsor necesita impacto y decisiones. Antes de enviar, comprueba que cada afirmación tenga una fuente y cada compromiso un responsable. Evita ocultar incertidumbre detrás de lenguaje técnico. Una buena respuesta también verifica comprensión: pide al receptor confirmar la acción y sus límites. Mantén el registro de acuerdos en el sistema compartido; un mensaje privado no basta para coordinar al equipo.": "Uma comunicação útil permite agir: descreva o impacto observado, o que se sabe, o que falta e quando haverá atualização. Separe a data de acompanhamento da data de resolução. Adapte os detalhes ao destinatário: o usuário precisa de um próximo passo; o suporte, de passos de reprodução; o sponsor, de impacto e decisões. Antes de enviar, confira se cada afirmação tem uma fonte e cada compromisso tem um responsável. Não esconda incerteza atrás de linguagem técnica. Verifique a compreensão pedindo que o destinatário confirme a ação e seus limites. Registre os acordos no sistema compartilhado; uma mensagem privada não basta para coordenar a equipe.",
   "Redacta una respuesta al cliente y un resumen interno del mismo problema, con distinto nivel de detalle.": "Reforma uma resposta interna e um resumo interno do mesmo problema com diferentes níveis de detalhe.",
@@ -420,7 +421,6 @@
   "Transferencia: repite “NPS, CSAT y escucha responsable” con una restricción nueva de tiempo y justifica qué decisión cambias.": "Transferência: Reagir \"NPS, CSAT e ouvir com responsabilidade \"com uma nova limitação de tempo e justifica que decisão você muda.",
   "¿Cuál es el NPS del ejemplo?": "O que é isso? NPS do exemplo?",
   "Se resta proporción de detractores a promotores.": "A proporção de detratores para promotores é subtraída.",
-  "20": "20",
   "No respondieron varias personas. ¿Qué haces?": "Várias pessoas responderam. O que estás a fazer?",
   "No respuesta no es una calificación.": "Nenhuma resposta é uma avaliação.",
   "Las cuento como pasivas": "Eu as considero passivas.",
@@ -1576,7 +1576,7 @@
   "Pesos y niveles esperados configurables. Guardar agrega una versión; no cambia afinidad, scoring de misiones ni permisos.": "Configurar e níveis esperados e pesos. Salvar adiciona uma versão e não muda a afinidade, missão de escotismo ou permissão.",
   "Versión": "Versão",
   "Peso": "Peso",
-  "Alto": "Parar",
+  "Alto": "Alto",
   "Medio": "Médio",
   "Bajo": "Baixo",
   "Nivel esperado": "Nível esperado",
@@ -1843,5 +1843,8 @@
   "Evidencia, no pseudociencia": "Evidência, não pseudociência",
   "Empleabilidad real": "Empregabilidade real",
   "Privacidad y consentimiento": "Privacidade e consentimento",
-  "Responsable de compañía": "Responsável pela empresa"
+  "Responsable de compañía": "Responsável pela empresa",
+  "Sin evidencia suficiente": "Evidências insuficientes",
+  "Sin datos": "Sem dados",
+  "Competencia": "Competência"
 }

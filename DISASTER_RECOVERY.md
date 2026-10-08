@@ -1,8 +1,18 @@
 # CodeZero · Disaster Recovery
 
-Última actualización: 7 de octubre de 2026.
+Última actualización: 8 de octubre de 2026.
 
 Este documento define cómo recuperar CodeZero ante fallos graves sin incluir credenciales ni secretos.
+
+## Estado comprobado el 8 de octubre
+
+Producción: `kwfzhpapvpdatdfwhouf`, PostgreSQL 17.11. El sandbox cloud anterior fue eliminado; las pruebas usan PostgreSQL local y sesiones ficticias aisladas. No se ha creado un proyecto adicional.
+
+Se guardó `supabase/baselines/20261008-production-manifest.json`: 65 migraciones observadas, sus checksums de declaraciones, inventario de tablas/RLS y SHA-256 de los archivos fuente. `scripts/migration-baseline-check.mjs` comprueba su integridad. Este manifiesto conserva la base de implementación; no contiene datos personales ni sustituye un respaldo completo.
+
+El respaldo completo cloud y su restauración siguen **sin confirmarse**. La conexión disponible no expone inventario/descarga de backups ni una conexión PostgreSQL protegida para `pg_dump`. No hay destino privado externo confirmado ni exportación de binarios de Storage. No se declaran backup reciente, restauración cloud, RPO o RTO cumplidos. Antes de una liberación que exija ese respaldo, obtener evidencia verificable o completar el procedimiento privado descrito abajo; nunca subir dumps con datos a Git.
+
+Referencia: https://supabase.com/docs/guides/platform/backups . El plan Free requiere respaldos manuales fuera del proyecto; conservar historial de migraciones no asegura recuperación de progreso, certificados o evidencias.
 
 ## Objetivos
 
@@ -92,4 +102,5 @@ Estos comandos son una plantilla operativa, no una exportación ya realizada. Re
 ## Simulacro recomendado
 
 Antes de escalar a más usuarios, realizar un simulacro de recuperación en un entorno separado: aplicar migraciones desde cero, crear una cuenta de prueba, completar una lección, un ejercicio y una evaluación, y verificar que RLS y cuotas funcionen.
+
 

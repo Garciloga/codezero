@@ -1,4 +1,5 @@
 {
+  "20": "20",
   "Comunicación clara y compromisos": "Communication claire et engagements",
   "Una comunicación útil permite actuar: describe el impacto observado, qué se sabe, qué falta y cuándo habrá actualización. Separa fecha de seguimiento de fecha de solución. Adapta el detalle al receptor: el usuario necesita un siguiente paso; soporte necesita reproducción; el sponsor necesita impacto y decisiones. Antes de enviar, comprueba que cada afirmación tenga una fuente y cada compromiso un responsable. Evita ocultar incertidumbre detrás de lenguaje técnico. Una buena respuesta también verifica comprensión: pide al receptor confirmar la acción y sus límites. Mantén el registro de acuerdos en el sistema compartido; un mensaje privado no basta para coordinar al equipo.": "Une communication utile permet d'agir : décrivez l'impact observé, ce qui est connu, ce qui manque et la date de la prochaine mise à jour. Distinguez la date de suivi de la date de résolution. Adaptez le détail au destinataire : l'utilisateur a besoin d'une prochaine étape, le support de procédures de reproduction, et le sponsor d'informations sur l'impact et les décisions. Avant l'envoi, vérifiez que chaque affirmation a une source et chaque engagement un responsable. Ne masquez pas l'incertitude derrière un langage technique. Vérifiez la compréhension en demandant de confirmer l'action et ses limites. Consignez les accords dans le système partagé ; un message privé ne suffit pas à coordonner l'équipe.",
   "Redacta una respuesta al cliente y un resumen interno del mismo problema, con distinto nivel de detalle.": "Réforme une réponse interne et un résumé interne du même problème avec différents niveaux de détail.",
@@ -420,7 +421,6 @@
   "Transferencia: repite “NPS, CSAT y escucha responsable” con una restricción nueva de tiempo y justifica qué decisión cambias.": "Transfert: Réagit > > .NPS, CSAT et d'écouter avec responsabilité \"avec une nouvelle limitation de temps et justifie quelle décision vous changez.",
   "¿Cuál es el NPS del ejemplo?": "Qu'est-ce que c'est ? NPS de l'exemple ?",
   "Se resta proporción de detractores a promotores.": "Le rapport entre les détracteurs et les promoteurs est soustrait.",
-  "20": "20",
   "No respondieron varias personas. ¿Qué haces?": "Un certain nombre de personnes ont répondu. Qu'est-ce que tu fais ?",
   "No respuesta no es una calificación.": "Pas de réponse n'est pas une note.",
   "Las cuento como pasivas": "Je les considère comme passifs.",
@@ -1576,8 +1576,8 @@
   "Pesos y niveles esperados configurables. Guardar agrega una versión; no cambia afinidad, scoring de misiones ni permisos.": "Configurer les niveaux et les poids attendus. Enregistrer ajoute une version et ne change pas l'affinité, le scoutisme de mission ou la permission.",
   "Versión": "Version",
   "Peso": "Poids",
-  "Alto": "Arrêter",
-  "Medio": "Moyenne",
+  "Alto": "Élevé",
+  "Medio": "Moyen",
   "Bajo": "Faible",
   "Nivel esperado": "Niveau prévu",
   "Guardar nueva versión": "Enregistrer une nouvelle version",
@@ -1843,5 +1843,8 @@
   "Evidencia, no pseudociencia": "Des preuves, pas de pseudoscience",
   "Empleabilidad real": "Une employabilité concrète",
   "Privacidad y consentimiento": "Confidentialité et consentement",
-  "Responsable de compañía": "Responsable de l’entreprise"
+  "Responsable de compañía": "Responsable de l’entreprise",
+  "Sin evidencia suficiente": "Preuves insuffisantes",
+  "Sin datos": "Aucune donnée",
+  "Competencia": "Compétence"
 }

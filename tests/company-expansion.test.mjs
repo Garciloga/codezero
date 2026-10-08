@@ -24,7 +24,8 @@ test('company logos retain aspect ratio and strip metadata; raster covers and in
 test('all route decisions have distinct localized alternatives; pilot numeric facts remain unchanged',()=>{
  const normalized=s=>s.replace(/\s+/g,' ').trim();
  for(const lang of ['en','pt','fr']){
- const messages=Object.assign({},...['ui','server','curriculum','extension'].map(kind=>JSON.parse(fs.readFileSync(`lib/localization/${lang}-${kind}.json`))));
+ const messages=Object.assign({},...['ui','server','curriculum','extension','social','mixed'].map(kind=>JSON.parse(fs.readFileSync(`lib/localization/${lang}-${kind}.json`))));
+ for(const label of ['Sin evidencia suficiente','Reconoce','Aplica con apoyo','Aplica solo','Sostiene','Sin datos','Alto','Medio','Bajo'])assert.ok(messages[label],lang+': '+label);
  for(const activity of [...TRAINING_ACTIVITIES,...PROFESSIONAL_ACTIVITIES]){
  for(const key of ['title','lesson','task','template','example'])assert.ok(messages[normalized(activity[key])],`${lang}: ${activity.key}: ${key}`);
  for(const d of activity.decisions){const options=d.options.map(s=>messages[normalized(s)]);assert.ok(options.every(Boolean),activity.key);assert.equal(new Set(options).size,options.length,`${lang}: ${activity.key}: ambiguous options`);assert.ok(messages[normalized(d.feedback)]);}
@@ -36,3 +37,4 @@ test('professional route keys and reevaluations refer to unique activities and e
  const keys=new Set(PROFESSIONAL_ACTIVITIES.map(a=>a.key));assert.equal(keys.size,308);
  for(const route of PROFESSIONAL_ROUTES){const activities=PROFESSIONAL_ACTIVITIES.filter(a=>a.route===route.key);assert.equal(activities.length,44);for(const level of [1,2,3,4])assert.equal(activities.filter(a=>a.key.includes('-unit-')&&a.level===level).length,5);assert.equal(activities.filter(a=>a.kind==='capstone').length,1);for(const a of activities.filter(a=>a.reevaluationOf))assert.ok(keys.has(a.reevaluationOf));}
 });
+

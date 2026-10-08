@@ -1,3 +1,4 @@
+import {enrichTrainingActivity} from './workplace-practice-content.ts';
 import type {TrainingActivity,Decision} from './role-training-content.ts';
 import type {CompetencyKey} from './competency-matrix.ts';
 import type {CareerPositionKey} from './career-guidance.ts';
@@ -100,4 +101,5 @@ export const PROFESSIONAL_EXTRAS:TrainingActivity[]=PROFESSIONAL_ROUTES.flatMap(
   ...progression.map((p,i)=>({...base(`reevaluation-${i+1}`,`Reevaluación a 30 días · ${p.name}`,i+1,'deliverable',2,`Retoma tu entrega revisada de ${route.focus[i].title.toLowerCase()} a los 30 días. Cambia una restricción hipotética y muestra qué decisión mantienes, qué cambia y cómo la verificas.`,route.focus[i].competencies),reevaluationOf:`${route.key}-unit-${i+1}-${i+1}`})),
  ];
 });
-export const PROFESSIONAL_ACTIVITIES=[...PROFESSIONAL_UNITS,...PROFESSIONAL_EXTRAS];
+export const PROFESSIONAL_ACTIVITIES=[...PROFESSIONAL_UNITS,...PROFESSIONAL_EXTRAS].map(enrichTrainingActivity);
+

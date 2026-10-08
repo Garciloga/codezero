@@ -1,4 +1,5 @@
 {
+  "20": "20",
   "Comunicación clara y compromisos": "Clear communication and commitments",
   "Una comunicación útil permite actuar: describe el impacto observado, qué se sabe, qué falta y cuándo habrá actualización. Separa fecha de seguimiento de fecha de solución. Adapta el detalle al receptor: el usuario necesita un siguiente paso; soporte necesita reproducción; el sponsor necesita impacto y decisiones. Antes de enviar, comprueba que cada afirmación tenga una fuente y cada compromiso un responsable. Evita ocultar incertidumbre detrás de lenguaje técnico. Una buena respuesta también verifica comprensión: pide al receptor confirmar la acción y sus límites. Mantén el registro de acuerdos en el sistema compartido; un mensaje privado no basta para coordinar al equipo.": "Useful communication helps someone act: describe the observed impact, what is known, what is missing and when you will provide an update. Separate the follow-up date from the resolution date. Adapt the detail to the recipient: users need a next step, support needs reproduction steps, and sponsors need impact and decisions. Before sending, check that every claim has a source and every commitment has an owner. Do not hide uncertainty behind technical language. Check understanding by asking the recipient to confirm the action and its limits. Record agreements in the shared system; a private message alone cannot coordinate the team.",
   "Redacta una respuesta al cliente y un resumen interno del mismo problema, con distinto nivel de detalle.": "Reforms an internal response and an internal summary of the same problem with different level of detail.",
@@ -420,7 +421,6 @@
   "Transferencia: repite “NPS, CSAT y escucha responsable” con una restricción nueva de tiempo y justifica qué decisión cambias.": "Transfer: Reacts \"NPS, CSAT and listen with responsibility \"with a new limitation of time and justifies what decision you change.",
   "¿Cuál es el NPS del ejemplo?": "What's the NPS from the example?",
   "Se resta proporción de detractores a promotores.": "The ratio of detractors to promoters is subtracted.",
-  "20": "20",
   "No respondieron varias personas. ¿Qué haces?": "A number of people responded. What are you doing?",
   "No respuesta no es una calificación.": "No answer isn't a rating.",
   "Las cuento como pasivas": "I count them as passive",
@@ -1576,7 +1576,7 @@
   "Pesos y niveles esperados configurables. Guardar agrega una versión; no cambia afinidad, scoring de misiones ni permisos.": "Configure and expected levels and weights. Save adds a version and doesn't change affinity, mission scouting or permission.",
   "Versión": "Version",
   "Peso": "Weight",
-  "Alto": "Stop",
+  "Alto": "High",
   "Medio": "Medium",
   "Bajo": "Low",
   "Nivel esperado": "Expected level",
@@ -1843,5 +1843,8 @@
   "Evidencia, no pseudociencia": "Evidence, not pseudoscience",
   "Empleabilidad real": "Real employability",
   "Privacidad y consentimiento": "Privacy and consent",
-  "Responsable de compañía": "Company lead"
+  "Responsable de compañía": "Company lead",
+  "Sin evidencia suficiente": "Insufficient evidence",
+  "Sin datos": "No data",
+  "Competencia": "Competency"
 }
