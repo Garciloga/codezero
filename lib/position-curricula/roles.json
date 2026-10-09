@@ -1,0 +1,1906 @@
+{
+  "onboarding": {
+    "key": "onboarding",
+    "title": "Onboarding Specialist",
+    "levels": [
+      {
+        "es": "Valor y tiempo al primer resultado",
+        "en": "Value and time to first outcome",
+        "pt": "Valor e tempo até o primeiro resultado",
+        "fr": "Valeur et délai jusqu’au premier résultat"
+      },
+      {
+        "es": "Traspaso comercial y alcance",
+        "en": "Sales handoff and scope",
+        "pt": "Handoff comercial e escopo",
+        "fr": "Passation commerciale et périmètre"
+      },
+      {
+        "es": "Kickoff y gobierno de implementación",
+        "en": "Kickoff and implementation governance",
+        "pt": "Kickoff e governança da implementação",
+        "fr": "Lancement et gouvernance de l’implémentation"
+      },
+      {
+        "es": "Acceso e importación de datos",
+        "en": "Access and data import",
+        "pt": "Acesso e importação de dados",
+        "fr": "Accès et importation des données"
+      },
+      {
+        "es": "Configuración y despliegue gradual",
+        "en": "Configuration and phased rollout",
+        "pt": "Configuração e implantação gradual",
+        "fr": "Configuration et déploiement progressif"
+      },
+      {
+        "es": "Capacitación por tareas",
+        "en": "Task-based training",
+        "pt": "Capacitação por tarefas",
+        "fr": "Formation par tâches"
+      },
+      {
+        "es": "Primer valor verificable",
+        "en": "Verifiable first value",
+        "pt": "Primeiro valor verificável",
+        "fr": "Première valeur vérifiable"
+      },
+      {
+        "es": "Plan de implementación 30-60-90",
+        "en": "30-60-90 implementation plan",
+        "pt": "Plano de implementação 30-60-90",
+        "fr": "Plan d’implémentation à 30-60-90 jours"
+      },
+      {
+        "es": "Rescate de implementación",
+        "en": "Implementation recovery",
+        "pt": "Resgate de implementação",
+        "fr": "Redressement d’implémentation"
+      },
+      {
+        "es": "Traspaso a operación",
+        "en": "Handoff to operations",
+        "pt": "Handoff para operação",
+        "fr": "Passation aux opérations"
+      },
+      {
+        "es": "Métricas de implementación",
+        "en": "Implementation metrics",
+        "pt": "Métricas de implementação",
+        "fr": "Métriques d’implémentation"
+      },
+      {
+        "es": "Mejora del onboarding",
+        "en": "Onboarding improvement",
+        "pt": "Melhoria do onboarding",
+        "fr": "Amélioration de l’intégration"
+      },
+      {
+        "es": "Supervisión: coaching y calidad",
+        "en": "Supervision: coaching and quality",
+        "pt": "Supervisão: coaching e qualidade",
+        "fr": "Supervision : coaching et qualité"
+      },
+      {
+        "es": "Gerencia: capacidad, métricas y playbooks",
+        "en": "Management: capacity, metrics and playbooks",
+        "pt": "Gestão: capacidade, métricas e playbooks",
+        "fr": "Gestion : capacité, métriques et playbooks"
+      },
+      {
+        "es": "Dirección: estrategia, presupuesto y gobierno",
+        "en": "Leadership: strategy, budget and governance",
+        "pt": "Direção: estratégia, orçamento e governança",
+        "fr": "Direction : stratégie, budget et gouvernance"
+      }
+    ],
+    "case": {
+      "es": "Orion es una simulación independiente de Faro. La implementación tiene plazo de 30 días y está en el día 18. Hay 100 usuarios, 20 capacitados; una importación de 1 000 filas acepta 980 y rechaza 20. Ingeniería dispone de cuatro horas esta semana. La tarea de primer valor y su aceptación aún no están confirmadas por el sponsor. Capacitación no equivale a valor entregado.",
+      "en": "Orion is a simulation independent of Faro. Implementation is due in 30 days and is on day 18. There are 100 users, 20 trained; an import accepts 980 of 1,000 rows and rejects 20. Engineering has four hours this week. The first-value task and its acceptance are not yet confirmed by the sponsor. Training does not equal delivered value.",
+      "pt": "Orion é uma simulação independente de Faro. A implementação tem prazo de 30 dias e está no dia 18. Há 100 usuários, 20 capacitados; uma importação aceita 980 de 1 000 linhas e rejeita 20. Engenharia dispõe de quatro horas nesta semana. A tarefa de primeiro valor e sua aceitação ainda não foram confirmadas pelo sponsor. Capacitação não equivale a valor entregue.",
+      "fr": "Orion est une simulation indépendante de Faro. L’implémentation est prévue sur 30 jours et se trouve au jour 18. Il y a 100 utilisateurs, dont 20 formés ; l’import accepte 980 lignes sur 1 000 et en rejette 20. L’ingénierie dispose de quatre heures cette semaine. La tâche de première valeur et son acceptation ne sont pas confirmées par le sponsor. Formation ne signifie pas valeur livrée."
+    },
+    "pitfall": {
+      "es": "Declarar completo el onboarding porque 20 de 100 usuarios asistieron",
+      "en": "Declare onboarding complete because 20 of 100 users attended",
+      "pt": "Declarar onboarding completo porque 20 de 100 usuários participaram",
+      "fr": "Déclarer l’intégration terminée parce que 20 utilisateurs sur 100 ont participé"
+    },
+    "projects": [
+      {
+        "es": "Plan de implementación de 30-60-90 días",
+        "en": "30-60-90-day implementation plan",
+        "pt": "Plano de implementação de 30-60-90 dias",
+        "fr": "Plan d’implémentation à 30-60-90 jours"
+      },
+      {
+        "es": "Rescate de una implementación atrasada",
+        "en": "Recovery of a delayed implementation",
+        "pt": "Resgate de uma implementação atrasada",
+        "fr": "Redressement d’une implémentation en retard"
+      }
+    ],
+    "role": {
+      "es": {
+        "process": "Traspaso → kickoff → configuración/datos → capacitación → primer valor → transición",
+        "deliverable": "Plan de implementación y acta de aceptación",
+        "decision": "¿Lanzar con integración incompleta o acordar un alcance temporal?",
+        "quality": "Cliente puede realizar el flujo acordado; asistencia no sustituye resultado."
+      },
+      "en": {
+        "process": "Transfer → kickoff → configuration / data → training → first value → transition",
+        "deliverable": "Implementation plan and acceptance report",
+        "decision": "To launch with complete integration or to agree to a time range?",
+        "quality": "Customer can conduct agreed flow and assistance does not replace result."
+      },
+      "pt": {
+        "process": "Transferência → kickoff → configuração / dados → treinamento → primeiro valor → transição",
+        "deliverable": "Plano de execução e relatório de aceitação",
+        "decision": "Para lançar com integração completa ou para concordar com um intervalo de tempo?",
+        "quality": "O cliente pode conduzir fluxo e assistência acordados não substitui o resultado."
+      },
+      "fr": {
+        "process": "Transfert → démarrage → configuration / données → formation → première valeur → transition",
+        "deliverable": "Plan de mise en œuvre et rapport d'acceptation",
+        "decision": "Lancer avec une intégration complète ou accepter une plage de temps ?",
+        "quality": "Le client peut effectuer un flux convenu et l'assistance ne remplace pas le résultat."
+      }
+    },
+    "rule": {
+      "es": "Cliente puede realizar el flujo acordado; asistencia no sustituye resultado.",
+      "en": "Customer can conduct agreed flow and assistance does not replace result.",
+      "pt": "O cliente pode conduzir fluxo e assistência acordados não substitui o resultado.",
+      "fr": "Le client peut effectuer un flux convenu et l'assistance ne remplace pas le résultat."
+    },
+    "evidence": {
+      "es": "Plan de implementación y acta de aceptación",
+      "en": "Implementation plan and acceptance report",
+      "pt": "Plano de execução e relatório de aceitação",
+      "fr": "Plan de mise en œuvre et rapport d'acceptation"
+    },
+    "competencies": {
+      "communication": "high",
+      "diagnosis": "medium",
+      "data": "medium",
+      "prioritization": "medium",
+      "documentation": "medium",
+      "deescalation": "medium",
+      "negotiation": "medium",
+      "planning": "high",
+      "technical": "medium",
+      "collaboration": "high"
+    },
+    "expectedByStage": {
+      "1": {
+        "communication": 1,
+        "diagnosis": 1,
+        "data": 1,
+        "prioritization": 1,
+        "documentation": 1,
+        "deescalation": 1,
+        "negotiation": 1,
+        "planning": 1,
+        "technical": 1,
+        "collaboration": 1
+      },
+      "2": {
+        "communication": 2,
+        "diagnosis": 2,
+        "data": 2,
+        "prioritization": 2,
+        "documentation": 2,
+        "deescalation": 2,
+        "negotiation": 2,
+        "planning": 2,
+        "technical": 2,
+        "collaboration": 2
+      },
+      "3": {
+        "communication": 3,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 3,
+        "technical": 3,
+        "collaboration": 3
+      },
+      "4": {
+        "communication": 4,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 4,
+        "technical": 3,
+        "collaboration": 4
+      },
+      "5": {
+        "communication": 4,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 4,
+        "technical": 3,
+        "collaboration": 4
+      }
+    },
+    "published": true,
+    "phase": "complete",
+    "editorial_review": "pending",
+    "calibration": "pending"
+  },
+  "account_manager": {
+    "key": "account_manager",
+    "title": "Account Manager",
+    "levels": [
+      {
+        "es": "Negocio y cartera comercial",
+        "en": "Business and commercial portfolio",
+        "pt": "Negócio e carteira comercial",
+        "fr": "Activité et portefeuille commercial"
+      },
+      {
+        "es": "Descubrimiento de cuenta",
+        "en": "Account discovery",
+        "pt": "Descoberta da conta",
+        "fr": "Découverte du compte"
+      },
+      {
+        "es": "Actores y proceso de compra",
+        "en": "Stakeholders and buying process",
+        "pt": "Atores e processo de compra",
+        "fr": "Acteurs et processus d’achat"
+      },
+      {
+        "es": "Contrato y condiciones",
+        "en": "Contract and terms",
+        "pt": "Contrato e condições",
+        "fr": "Contrat et conditions"
+      },
+      {
+        "es": "Valor y evidencia comercial",
+        "en": "Value and commercial evidence",
+        "pt": "Valor e evidência comercial",
+        "fr": "Valeur et preuves commerciales"
+      },
+      {
+        "es": "CRM y pronóstico",
+        "en": "CRM and forecasting",
+        "pt": "CRM e previsão",
+        "fr": "CRM et prévisions"
+      },
+      {
+        "es": "Prioridad de oportunidades",
+        "en": "Opportunity prioritization",
+        "pt": "Priorização de oportunidades",
+        "fr": "Priorité des opportunités"
+      },
+      {
+        "es": "Plan de cuenta",
+        "en": "Account plan",
+        "pt": "Plano de conta",
+        "fr": "Plan de compte"
+      },
+      {
+        "es": "Objeciones y conflicto",
+        "en": "Objections and conflict",
+        "pt": "Objeções e conflito",
+        "fr": "Objections et conflit"
+      },
+      {
+        "es": "Renovación y negociación",
+        "en": "Renewal and negotiation",
+        "pt": "Renovação e negociação",
+        "fr": "Renouvellement et négociation"
+      },
+      {
+        "es": "Expansión y contrapartidas",
+        "en": "Expansion and trade-offs",
+        "pt": "Expansão e contrapartidas",
+        "fr": "Extension et contreparties"
+      },
+      {
+        "es": "Traspaso comercial y continuidad",
+        "en": "Commercial handoff and continuity",
+        "pt": "Handoff comercial e continuidade",
+        "fr": "Passation commerciale et continuité"
+      },
+      {
+        "es": "Supervisión: coaching y calidad",
+        "en": "Supervision: coaching and quality",
+        "pt": "Supervisão: coaching e qualidade",
+        "fr": "Supervision : coaching et qualité"
+      },
+      {
+        "es": "Gerencia: capacidad, métricas y playbooks",
+        "en": "Management: capacity, metrics and playbooks",
+        "pt": "Gestão: capacidade, métricas e playbooks",
+        "fr": "Gestion : capacité, métriques et playbooks"
+      },
+      {
+        "es": "Dirección: estrategia, presupuesto y gobierno",
+        "en": "Leadership: strategy, budget and governance",
+        "pt": "Direção: estratégia, orçamento e governança",
+        "fr": "Direction : stratégie, budget et gouvernance"
+      }
+    ],
+    "case": {
+      "es": "Orion es una cuenta ficticia con ARR de 120 000 €, renovación en 90 días y un sponsor nuevo. Compras tarda 30 días y solicita reducir el presupuesto 10 %. El champion propone un módulo adicional cuya capacidad no se ha validado. Ningún descuento ni expansión está autorizado. Se necesita un pronóstico con estados respaldados por evidencia y una negociación que separe renovación y expansión.",
+      "en": "Orion is a fictional account with €120,000 ARR, renewal in 90 days and a new sponsor. Procurement takes 30 days and requests a 10% budget reduction. The champion proposes an additional module whose capability is unverified. No discount or expansion is authorized. The forecast needs evidence-backed states, and negotiation must separate renewal from expansion.",
+      "pt": "Orion é uma conta fictícia com ARR de 120 000 €, renovação em 90 dias e um novo sponsor. Compras leva 30 dias e pede redução de orçamento de 10 %. O champion propõe um módulo adicional cuja capacidade não foi validada. Nenhum desconto ou expansão está autorizado. A previsão precisa de estados sustentados por evidências e a negociação deve separar renovação de expansão.",
+      "fr": "Orion est un compte fictif avec un ARR de 120 000 €, un renouvellement dans 90 jours et un nouveau sponsor. Les achats prennent 30 jours et demandent une réduction budgétaire de 10 %. Le champion propose un module supplémentaire dont la capacité n’est pas vérifiée. Aucune remise ni extension n’est autorisée. La prévision exige des états étayés ; la négociation sépare renouvellement et extension."
+    },
+    "pitfall": {
+      "es": "Dar el descuento solicitado y registrar la renovación como confirmada sin autorización",
+      "en": "Give the requested discount and record renewal as confirmed without authorization",
+      "pt": "Dar o desconto solicitado e registrar renovação confirmada sem autorização",
+      "fr": "Accorder la remise et enregistrer le renouvellement confirmé sans autorisation"
+    },
+    "projects": [
+      {
+        "es": "Plan de cuenta con oportunidades",
+        "en": "Account plan with opportunities",
+        "pt": "Plano de conta com oportunidades",
+        "fr": "Plan de compte avec opportunités"
+      },
+      {
+        "es": "Negociación de renovación con objeciones",
+        "en": "Renewal negotiation with objections",
+        "pt": "Negociação de renovação com objeções",
+        "fr": "Négociation de renouvellement avec objections"
+      }
+    ],
+    "role": {
+      "es": {
+        "process": "Revisión de valor → renovación → negociación → acuerdo → expansión pertinente",
+        "deliverable": "Plan de renovación y opciones de negociación",
+        "decision": "¿Descuento, menor alcance o plazo distinto según la necesidad?",
+        "quality": "Propuesta coherente con valor y aprobación; no inventar compromiso."
+      },
+      "en": {
+        "process": "Value Review → renewal → negotiation → agreement → relevant expansion",
+        "deliverable": "Renewal plan and negotiation options",
+        "decision": "Do I discount, lower range or different term as necessary?",
+        "quality": "A proposal that's consistent with value and approval and that doesn't come up with a compromise."
+      },
+      "pt": {
+        "process": "Revisão de valor → renovação → negociação → acordo → expansão relevante",
+        "deliverable": "Plano de renovação e opções de negociação",
+        "decision": "Eu desconto, menor intervalo ou termo diferente, conforme necessário?",
+        "quality": "Uma proposta que é consistente com valor e aprovação e que não vem com um compromisso."
+      },
+      "fr": {
+        "process": "Revue de la valeur → renouvellement → négociation → accord → extension pertinente",
+        "deliverable": "Plan de renouvellement et options de négociation",
+        "decision": "Est-ce que je fais une remise, une fourchette inférieure ou un terme différent selon les besoins?",
+        "quality": "Une proposition qui est conforme à la valeur et à l'approbation et qui ne propose pas de compromis."
+      }
+    },
+    "rule": {
+      "es": "Propuesta coherente con valor y aprobación; no inventar compromiso.",
+      "en": "A proposal that's consistent with value and approval and that doesn't come up with a compromise.",
+      "pt": "Uma proposta que é consistente com valor e aprovação e que não vem com um compromisso.",
+      "fr": "Une proposition qui est conforme à la valeur et à l'approbation et qui ne propose pas de compromis."
+    },
+    "evidence": {
+      "es": "Plan de renovación y opciones de negociación",
+      "en": "Renewal plan and negotiation options",
+      "pt": "Plano de renovação e opções de negociação",
+      "fr": "Plan de renouvellement et options de négociation"
+    },
+    "competencies": {
+      "communication": "high",
+      "diagnosis": "medium",
+      "data": "medium",
+      "prioritization": "medium",
+      "documentation": "medium",
+      "deescalation": "medium",
+      "negotiation": "high",
+      "planning": "high",
+      "technical": "medium",
+      "collaboration": "medium"
+    },
+    "expectedByStage": {
+      "1": {
+        "communication": 1,
+        "diagnosis": 1,
+        "data": 1,
+        "prioritization": 1,
+        "documentation": 1,
+        "deescalation": 1,
+        "negotiation": 1,
+        "planning": 1,
+        "technical": 1,
+        "collaboration": 1
+      },
+      "2": {
+        "communication": 2,
+        "diagnosis": 2,
+        "data": 2,
+        "prioritization": 2,
+        "documentation": 2,
+        "deescalation": 2,
+        "negotiation": 2,
+        "planning": 2,
+        "technical": 2,
+        "collaboration": 2
+      },
+      "3": {
+        "communication": 3,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 3,
+        "technical": 3,
+        "collaboration": 3
+      },
+      "4": {
+        "communication": 4,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 4,
+        "planning": 4,
+        "technical": 3,
+        "collaboration": 3
+      },
+      "5": {
+        "communication": 4,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 4,
+        "planning": 4,
+        "technical": 3,
+        "collaboration": 3
+      }
+    },
+    "published": true,
+    "phase": "complete",
+    "editorial_review": "pending",
+    "calibration": "pending"
+  },
+  "customer_support": {
+    "key": "customer_support",
+    "title": "Customer Support",
+    "levels": [
+      {
+        "es": "Servicio y límites de promesa",
+        "en": "Service and promise boundaries",
+        "pt": "Serviço e limites de promessa",
+        "fr": "Service et limites des promesses"
+      },
+      {
+        "es": "Ciclo del ticket",
+        "en": "Ticket lifecycle",
+        "pt": "Ciclo do ticket",
+        "fr": "Cycle du ticket"
+      },
+      {
+        "es": "Recepción y clasificación",
+        "en": "Intake and classification",
+        "pt": "Recepção e classificação",
+        "fr": "Réception et classification"
+      },
+      {
+        "es": "Empatía y expectativas",
+        "en": "Empathy and expectations",
+        "pt": "Empatia e expectativas",
+        "fr": "Empathie et attentes"
+      },
+      {
+        "es": "Diagnóstico de la tarea",
+        "en": "Task diagnosis",
+        "pt": "Diagnóstico da tarefa",
+        "fr": "Diagnostic de la tâche"
+      },
+      {
+        "es": "Herramientas y registro",
+        "en": "Tools and records",
+        "pt": "Ferramentas e registro",
+        "fr": "Outils et registre"
+      },
+      {
+        "es": "Triage y prioridad",
+        "en": "Triage and priority",
+        "pt": "Triagem e prioridade",
+        "fr": "Triage et priorité"
+      },
+      {
+        "es": "Resolución de una cola",
+        "en": "Queue resolution",
+        "pt": "Resolução de uma fila",
+        "fr": "Résolution d’une file"
+      },
+      {
+        "es": "Escalación con evidencia",
+        "en": "Evidence-based escalation",
+        "pt": "Escalação com evidências",
+        "fr": "Escalade avec preuves"
+      },
+      {
+        "es": "Seguimiento y cierre",
+        "en": "Follow-up and closure",
+        "pt": "Acompanhamento e encerramento",
+        "fr": "Suivi et clôture"
+      },
+      {
+        "es": "Base de conocimiento",
+        "en": "Knowledge base",
+        "pt": "Base de conhecimento",
+        "fr": "Base de connaissances"
+      },
+      {
+        "es": "Calidad y mejora del servicio",
+        "en": "Quality and service improvement",
+        "pt": "Qualidade e melhoria do serviço",
+        "fr": "Qualité et amélioration du service"
+      },
+      {
+        "es": "Supervisión: coaching y calidad",
+        "en": "Supervision: coaching and quality",
+        "pt": "Supervisão: coaching e qualidade",
+        "fr": "Supervision : coaching et qualité"
+      },
+      {
+        "es": "Gerencia: capacidad, métricas y playbooks",
+        "en": "Management: capacity, metrics and playbooks",
+        "pt": "Gestão: capacidade, métricas e playbooks",
+        "fr": "Gestion : capacité, métriques et playbooks"
+      },
+      {
+        "es": "Dirección: estrategia, presupuesto y gobierno",
+        "en": "Leadership: strategy, budget and governance",
+        "pt": "Direção: estratégia, orçamento e governança",
+        "fr": "Direction : stratégie, budget et gouvernance"
+      }
+    ],
+    "case": {
+      "es": "La cola ficticia Orion tiene 12 casos: tres bloqueos sin alternativa, cuatro fallas menores con alternativa y cinco consultas de uso. El equipo dispone de seis horas. Uno de los bloqueos tiene una fecha del cliente en 24 horas, pero no existe plazo de solución confirmado. Los tickets incluyen versiones y pasos, sin contraseñas. Se necesita priorizar por impacto y urgencia, actualizar expectativas y verificar con el usuario antes de cerrar.",
+      "en": "The fictional Orion queue has 12 cases: three blockers without a workaround, four minor failures with a workaround and five usage questions. The team has six hours. One blocker has a customer deadline in 24 hours, but no resolution time is confirmed. Tickets include versions and steps, without passwords. Prioritize impact and urgency, update expectations and verify with the user before closing.",
+      "pt": "A fila fictícia Orion tem 12 casos: três bloqueios sem alternativa, quatro falhas menores com alternativa e cinco dúvidas de uso. A equipe dispõe de seis horas. Um bloqueio tem prazo do cliente em 24 horas, mas não há prazo de solução confirmado. Os tickets incluem versões e passos, sem senhas. Priorize impacto e urgência, atualize expectativas e verifique com o usuário antes de encerrar.",
+      "fr": "La file fictive Orion contient 12 cas : trois blocages sans alternative, quatre pannes mineures avec alternative et cinq questions d’usage. L’équipe dispose de six heures. Un blocage a une échéance client dans 24 heures, mais aucun délai de résolution confirmé. Les tickets contiennent versions et étapes, sans mots de passe. Priorisez impact et urgence, ajustez les attentes et vérifiez avec l’utilisateur avant clôture."
+    },
+    "pitfall": {
+      "es": "Atender primero al solicitante más insistente y cerrar al enviar una respuesta",
+      "en": "Serve the most insistent requester first and close when a reply is sent",
+      "pt": "Atender primeiro ao solicitante mais insistente e encerrar ao enviar resposta",
+      "fr": "Servir le demandeur le plus insistant et clôturer dès l’envoi d’une réponse"
+    },
+    "projects": [
+      {
+        "es": "Resolución documentada de una cola de casos",
+        "en": "Documented resolution of a case queue",
+        "pt": "Resolução documentada de uma fila de casos",
+        "fr": "Résolution documentée d’une file de cas"
+      },
+      {
+        "es": "Base de conocimiento para un producto",
+        "en": "Knowledge base for a product",
+        "pt": "Base de conhecimento para um produto",
+        "fr": "Base de connaissances pour un produit"
+      }
+    ],
+    "role": {
+      "es": {
+        "process": "Entender solicitud → acordar seguimiento → resolver o derivar → confirmar → documentar",
+        "deliverable": "Conversación y artículo de ayuda",
+        "decision": "¿Prometer plazo sin evidencia o comprometer la próxima actualización?",
+        "quality": "Comunicación comprensible, promesas sostenibles y cierre confirmado."
+      },
+      "en": {
+        "process": "Understand request → agree monitoring → solve or derive → confirm → document",
+        "deliverable": "Conversation and aid article",
+        "decision": "Promises term without evidence or compromises the next update?",
+        "quality": "Inclear communication, sustainable promise and confirmed closure."
+      },
+      "pt": {
+        "process": "Entenda a solicitação → concordar com o monitoramento → resolver ou derivar → confirmar → documento",
+        "deliverable": "Artigo de conversação e de ajuda",
+        "decision": "Promessas termo sem evidência ou compromete a próxima atualização?",
+        "quality": "Comunicação clara, promessa sustentável e encerramento confirmado."
+      },
+      "fr": {
+        "process": "Comprendre la requête → accepter la surveillance → résoudre ou dériver → confirmer → document",
+        "deliverable": "Conversation et article d'aide",
+        "decision": "Promises terme sans preuve ou compromis la prochaine mise à jour?",
+        "quality": "Communication claire, promesse durable et clôture confirmée."
+      }
+    },
+    "rule": {
+      "es": "Comunicación comprensible, promesas sostenibles y cierre confirmado.",
+      "en": "Inclear communication, sustainable promise and confirmed closure.",
+      "pt": "Comunicação clara, promessa sustentável e encerramento confirmado.",
+      "fr": "Communication claire, promesse durable et clôture confirmée."
+    },
+    "evidence": {
+      "es": "Conversación y artículo de ayuda",
+      "en": "Conversation and aid article",
+      "pt": "Artigo de conversação e de ajuda",
+      "fr": "Conversation et article d'aide"
+    },
+    "competencies": {
+      "communication": "high",
+      "diagnosis": "medium",
+      "data": "medium",
+      "prioritization": "medium",
+      "documentation": "high",
+      "deescalation": "high",
+      "negotiation": "medium",
+      "planning": "medium",
+      "technical": "medium",
+      "collaboration": "medium"
+    },
+    "expectedByStage": {
+      "1": {
+        "communication": 1,
+        "diagnosis": 1,
+        "data": 1,
+        "prioritization": 1,
+        "documentation": 1,
+        "deescalation": 1,
+        "negotiation": 1,
+        "planning": 1,
+        "technical": 1,
+        "collaboration": 1
+      },
+      "2": {
+        "communication": 2,
+        "diagnosis": 2,
+        "data": 2,
+        "prioritization": 2,
+        "documentation": 2,
+        "deescalation": 2,
+        "negotiation": 2,
+        "planning": 2,
+        "technical": 2,
+        "collaboration": 2
+      },
+      "3": {
+        "communication": 3,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 3,
+        "technical": 3,
+        "collaboration": 3
+      },
+      "4": {
+        "communication": 4,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 4,
+        "deescalation": 4,
+        "negotiation": 3,
+        "planning": 3,
+        "technical": 3,
+        "collaboration": 3
+      },
+      "5": {
+        "communication": 4,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 4,
+        "deescalation": 4,
+        "negotiation": 3,
+        "planning": 3,
+        "technical": 3,
+        "collaboration": 3
+      }
+    },
+    "published": true,
+    "phase": "complete",
+    "editorial_review": "pending",
+    "calibration": "pending"
+  },
+  "tech_support_l3": {
+    "key": "tech_support_l3",
+    "title": "Tech Support",
+    "levels": [
+      {
+        "es": "Arquitectura y límites de acceso",
+        "en": "Architecture and access boundaries",
+        "pt": "Arquitetura e limites de acesso",
+        "fr": "Architecture et limites d’accès"
+      },
+      {
+        "es": "Reproducción mínima",
+        "en": "Minimal reproduction",
+        "pt": "Reprodução mínima",
+        "fr": "Reproduction minimale"
+      },
+      {
+        "es": "Registros y línea temporal",
+        "en": "Logs and timeline",
+        "pt": "Registros e linha do tempo",
+        "fr": "Journaux et chronologie"
+      },
+      {
+        "es": "Hipótesis contrastables",
+        "en": "Testable hypotheses",
+        "pt": "Hipóteses testáveis",
+        "fr": "Hypothèses vérifiables"
+      },
+      {
+        "es": "Pruebas controladas",
+        "en": "Controlled tests",
+        "pt": "Testes controlados",
+        "fr": "Tests contrôlés"
+      },
+      {
+        "es": "Mitigación reversible",
+        "en": "Reversible mitigation",
+        "pt": "Mitigação reversível",
+        "fr": "Atténuation réversible"
+      },
+      {
+        "es": "Prioridad del incidente",
+        "en": "Incident priority",
+        "pt": "Prioridade do incidente",
+        "fr": "Priorité de l’incident"
+      },
+      {
+        "es": "Investigación y causa raíz",
+        "en": "Investigation and root cause",
+        "pt": "Investigação e causa raiz",
+        "fr": "Investigation et cause racine"
+      },
+      {
+        "es": "Coordinación con ingeniería",
+        "en": "Engineering coordination",
+        "pt": "Coordenação com engenharia",
+        "fr": "Coordination avec l’ingénierie"
+      },
+      {
+        "es": "Verificación de cambios",
+        "en": "Change verification",
+        "pt": "Verificação de mudanças",
+        "fr": "Vérification des changements"
+      },
+      {
+        "es": "Prevención y monitoreo",
+        "en": "Prevention and monitoring",
+        "pt": "Prevenção e monitoramento",
+        "fr": "Prévention et surveillance"
+      },
+      {
+        "es": "Guía de diagnóstico",
+        "en": "Diagnostic guide",
+        "pt": "Guia de diagnóstico",
+        "fr": "Guide de diagnostic"
+      },
+      {
+        "es": "Supervisión: coaching y calidad",
+        "en": "Supervision: coaching and quality",
+        "pt": "Supervisão: coaching e qualidade",
+        "fr": "Supervision : coaching et qualité"
+      },
+      {
+        "es": "Gerencia: capacidad, métricas y playbooks",
+        "en": "Management: capacity, metrics and playbooks",
+        "pt": "Gestão: capacidade, métricas e playbooks",
+        "fr": "Gestion : capacité, métriques et playbooks"
+      },
+      {
+        "es": "Dirección: estrategia, presupuesto y gobierno",
+        "en": "Leadership: strategy, budget and governance",
+        "pt": "Direção: estratégia, orçamento e governança",
+        "fr": "Direction : stratégie, budget et gouvernance"
+      }
+    ],
+    "case": {
+      "es": "En la simulación Orion, dos usuarios reciben 401 al exportar en la versión 2.4 y uno exporta correctamente. Hay un cambio de permisos a las 09:45 y un despliegue a las 10:00; la cercanía temporal no prueba causa. Los registros están redactados y las pruebas solo se autorizan en una copia sintética. Hay cuatro horas de investigación. Una reversión requiere aprobación; no se autoriza cambiar producción ni solicitar tokens.",
+      "en": "In the Orion simulation, two users receive 401 on export in version 2.4 and one succeeds. Permissions changed at 09:45 and deployment occurred at 10:00; timing does not prove cause. Logs are redacted and tests are authorized only on a synthetic copy. Investigation has four hours. Rollback needs approval; production changes and token requests are not authorized.",
+      "pt": "Na simulação Orion, dois usuários recebem 401 ao exportar na versão 2.4 e um consegue exportar. Houve mudança de permissões às 09:45 e implantação às 10:00; proximidade temporal não prova causa. Os registros estão sanitizados e testes só são autorizados em cópia sintética. Há quatro horas de investigação. Reversão exige aprovação; mudanças em produção e solicitação de tokens não estão autorizadas.",
+      "fr": "Dans la simulation Orion, deux utilisateurs reçoivent 401 à l’export en version 2.4 et un réussit. Les droits ont changé à 09 h 45 et un déploiement a eu lieu à 10 h ; la proximité temporelle ne prouve pas la cause. Journaux expurgés, tests autorisés uniquement sur copie synthétique. Quatre heures d’investigation. Un retour arrière exige une approbation ; aucun changement de production ni demande de jeton n’est autorisé."
+    },
+    "pitfall": {
+      "es": "Atribuir el 401 al despliegue solo por cercanía temporal y revertir sin aprobación",
+      "en": "Attribute the 401 to deployment based only on timing and roll back without approval",
+      "pt": "Atribuir o 401 à implantação apenas pelo horário e reverter sem aprovação",
+      "fr": "Attribuer le 401 au déploiement sur la seule chronologie et revenir en arrière sans accord"
+    },
+    "projects": [
+      {
+        "es": "Investigación de un incidente con causa raíz",
+        "en": "Incident investigation with root cause",
+        "pt": "Investigação de incidente com causa raiz",
+        "fr": "Investigation d’un incident et cause racine"
+      },
+      {
+        "es": "Guía de diagnóstico por síntomas",
+        "en": "Symptom-based diagnostic guide",
+        "pt": "Guia de diagnóstico por sintomas",
+        "fr": "Guide de diagnostic par symptômes"
+      }
+    ],
+    "role": {
+      "es": {
+        "process": "Investigación profunda → mitigación → coordinación con ingeniería → causa → prevención",
+        "deliverable": "Postmortem técnico",
+        "decision": "¿Cerrar porque bajaron errores aunque la causa siga incierta?",
+        "quality": "Causa respaldada o incertidumbre declarada; mitigación verificable."
+      },
+      "en": {
+        "process": "Research → mitigation → engineering co-ordination → cause → prevention",
+        "deliverable": "Technical Postmortem",
+        "decision": "To close because they have come down mistakes even if the cause remains uncertain?",
+        "quality": "Reported cause or uncertainty and verifiable mitigation."
+      },
+      "pt": {
+        "process": "Pesquisa → mitigação → coordenação de engenharia → causa → prevenção",
+        "deliverable": "Pós-morte técnico",
+        "decision": "Para fechar porque eles vieram para baixo erros, mesmo que a causa permanece incerta?",
+        "quality": "Causa ou incerteza declarada e atenuação verificável."
+      },
+      "fr": {
+        "process": "Recherche → atténuation → coordination technique → cause → prévention",
+        "deliverable": "Postmortem technique",
+        "decision": "Pour conclure parce qu'ils ont fait des erreurs même si la cause reste incertaine?",
+        "quality": "Cause ou incertitude signalée et atténuation vérifiable."
+      }
+    },
+    "rule": {
+      "es": "Causa respaldada o incertidumbre declarada; mitigación verificable.",
+      "en": "Reported cause or uncertainty and verifiable mitigation.",
+      "pt": "Causa ou incerteza declarada e atenuação verificável.",
+      "fr": "Cause ou incertitude signalée et atténuation vérifiable."
+    },
+    "evidence": {
+      "es": "Postmortem técnico",
+      "en": "Technical Postmortem",
+      "pt": "Pós-morte técnico",
+      "fr": "Postmortem technique"
+    },
+    "competencies": {
+      "communication": "medium",
+      "diagnosis": "high",
+      "data": "medium",
+      "prioritization": "medium",
+      "documentation": "medium",
+      "deescalation": "medium",
+      "negotiation": "medium",
+      "planning": "high",
+      "technical": "high",
+      "collaboration": "medium"
+    },
+    "expectedByStage": {
+      "1": {
+        "communication": 1,
+        "diagnosis": 1,
+        "data": 1,
+        "prioritization": 1,
+        "documentation": 1,
+        "deescalation": 1,
+        "negotiation": 1,
+        "planning": 1,
+        "technical": 1,
+        "collaboration": 1
+      },
+      "2": {
+        "communication": 2,
+        "diagnosis": 2,
+        "data": 2,
+        "prioritization": 2,
+        "documentation": 2,
+        "deescalation": 2,
+        "negotiation": 2,
+        "planning": 2,
+        "technical": 2,
+        "collaboration": 2
+      },
+      "3": {
+        "communication": 3,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 3,
+        "technical": 3,
+        "collaboration": 3
+      },
+      "4": {
+        "communication": 3,
+        "diagnosis": 4,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 4,
+        "technical": 4,
+        "collaboration": 3
+      },
+      "5": {
+        "communication": 3,
+        "diagnosis": 4,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 4,
+        "technical": 4,
+        "collaboration": 3
+      }
+    },
+    "published": true,
+    "phase": "complete",
+    "editorial_review": "pending",
+    "calibration": "pending"
+  },
+  "key_account_manager": {
+    "key": "key_account_manager",
+    "title": "Key Account Manager",
+    "levels": [
+      {
+        "es": "Valor de una cuenta estratégica",
+        "en": "Strategic account value",
+        "pt": "Valor de uma conta estratégica",
+        "fr": "Valeur d’un compte stratégique"
+      },
+      {
+        "es": "Mapa de poder y autoridad",
+        "en": "Power and authority map",
+        "pt": "Mapa de poder e autoridade",
+        "fr": "Carte de pouvoir et d’autorité"
+      },
+      {
+        "es": "Objetivos multianuales",
+        "en": "Multi-year goals",
+        "pt": "Objetivos plurianuais",
+        "fr": "Objectifs pluriannuels"
+      },
+      {
+        "es": "Comunicación con directivos",
+        "en": "Executive communication",
+        "pt": "Comunicação com executivos",
+        "fr": "Communication avec les dirigeants"
+      },
+      {
+        "es": "Caso de valor verificable",
+        "en": "Verifiable value case",
+        "pt": "Caso de valor verificável",
+        "fr": "Dossier de valeur vérifiable"
+      },
+      {
+        "es": "Gobierno y registro de cuenta",
+        "en": "Account governance and records",
+        "pt": "Governança e registro da conta",
+        "fr": "Gouvernance et registre du compte"
+      },
+      {
+        "es": "Cobertura de unidades",
+        "en": "Business-unit coverage",
+        "pt": "Cobertura de unidades",
+        "fr": "Couverture des unités"
+      },
+      {
+        "es": "Plan estratégico de cuenta",
+        "en": "Strategic account plan",
+        "pt": "Plano estratégico de conta",
+        "fr": "Plan stratégique de compte"
+      },
+      {
+        "es": "Riesgo estratégico",
+        "en": "Strategic risk",
+        "pt": "Risco estratégico",
+        "fr": "Risque stratégique"
+      },
+      {
+        "es": "Negociación multiactor",
+        "en": "Multi-stakeholder negotiation",
+        "pt": "Negociação com múltiplos atores",
+        "fr": "Négociation multipartite"
+      },
+      {
+        "es": "Expansión ante comité",
+        "en": "Committee expansion proposal",
+        "pt": "Expansão perante comitê",
+        "fr": "Extension devant le comité"
+      },
+      {
+        "es": "Coordinación y continuidad",
+        "en": "Coordination and continuity",
+        "pt": "Coordenação e continuidade",
+        "fr": "Coordination et continuité"
+      },
+      {
+        "es": "Supervisión: coaching y calidad",
+        "en": "Supervision: coaching and quality",
+        "pt": "Supervisão: coaching e qualidade",
+        "fr": "Supervision : coaching et qualité"
+      },
+      {
+        "es": "Gerencia: capacidad, métricas y playbooks",
+        "en": "Management: capacity, metrics and playbooks",
+        "pt": "Gestão: capacidade, métricas e playbooks",
+        "fr": "Gestion : capacité, métriques et playbooks"
+      },
+      {
+        "es": "Dirección: estrategia, presupuesto y gobierno",
+        "en": "Leadership: strategy, budget and governance",
+        "pt": "Direção: estratégia, orçamento e governança",
+        "fr": "Direction : stratégie, budget et gouvernance"
+      }
+    ],
+    "case": {
+      "es": "Orion es un grupo ficticio con tres unidades y ARR de 120 000 €. El champion solo representa la unidad A; un director acaba de cambiar. CFO e IT deben aprobar una expansión propuesta de 30 000 €, con proceso de compra de 60 días. Esa expansión no es ingreso confirmado. Faltan métricas de valor de dos unidades. Se necesita un plan multianual con autoridad verificada, cobertura y riesgos de dependencia de una sola relación.",
+      "en": "Orion is a fictional group with three business units and €120,000 ARR. The champion represents only unit A; a director has just changed. CFO and IT must approve a proposed €30,000 expansion, with a 60-day procurement process. That expansion is not confirmed revenue. Value metrics are missing for two units. A multi-year plan needs verified authority, coverage and single-relationship dependency risks.",
+      "pt": "Orion é um grupo fictício com três unidades e ARR de 120 000 €. O champion representa apenas a unidade A; um diretor acaba de mudar. CFO e TI devem aprovar expansão proposta de 30 000 €, com processo de compras de 60 dias. Essa expansão não é receita confirmada. Faltam métricas de valor de duas unidades. O plano plurianual precisa de autoridade verificada, cobertura e riscos de depender de uma única relação.",
+      "fr": "Orion est un groupe fictif de trois unités avec un ARR de 120 000 €. Le champion représente seulement l’unité A ; un directeur vient de changer. Le CFO et l’IT doivent approuver une extension proposée de 30 000 €, avec achat sur 60 jours. Ce n’est pas un revenu confirmé. Les métriques de valeur manquent pour deux unités. Le plan pluriannuel exige autorité vérifiée, couverture et risques de dépendance à une seule relation."
+    },
+    "pitfall": {
+      "es": "Suponer que el champion de la unidad A puede aprobar toda la expansión",
+      "en": "Assume the unit-A champion can approve the entire expansion",
+      "pt": "Supor que o champion da unidade A pode aprovar toda a expansão",
+      "fr": "Supposer que le champion de l’unité A peut approuver toute l’extension"
+    },
+    "projects": [
+      {
+        "es": "Plan estratégico de una cuenta clave",
+        "en": "Strategic key-account plan",
+        "pt": "Plano estratégico de conta-chave",
+        "fr": "Plan stratégique de compte clé"
+      },
+      {
+        "es": "Propuesta de expansión ante comité",
+        "en": "Expansion proposal to a committee",
+        "pt": "Proposta de expansão perante comitê",
+        "fr": "Proposition d’extension devant un comité"
+      }
+    ],
+    "role": {
+      "es": {
+        "process": "Mapa de actores → plan de cuenta → gobierno → alineación ejecutiva → seguimiento",
+        "deliverable": "Plan de cuenta y agenda de gobierno",
+        "decision": "¿Escalar al sponsor o resolver primero el desacuerdo entre áreas?",
+        "quality": "Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables."
+      },
+      "en": {
+        "process": "Factors's map → account plan → government → executive alignment → monitoring",
+        "deliverable": "The account plan and government agenda",
+        "decision": "Do you escalate to the sponsor or first solve the disagreement between areas?",
+        "quality": "explicit relations and responsibilities and clear decisions and monitoring."
+      },
+      "pt": {
+        "process": "Mapa dos fatores → plano de conta → governo → alinhamento executivo → monitoramento",
+        "deliverable": "O plano de conta e a agenda do governo",
+        "decision": "Você aumenta para o patrocinador ou primeiro resolve o desacordo entre as áreas?",
+        "quality": "Relações e responsabilidades explícitas e decisões e acompanhamento claros."
+      },
+      "fr": {
+        "process": "Carte des facteurs → plan de compte → gouvernement → alignement exécutif → suivi",
+        "deliverable": "Le plan comptable et l'ordre du jour du gouvernement",
+        "decision": "Augmentez-vous le rôle de parrain ou résolvez-vous d'abord le désaccord entre les zones?",
+        "quality": "des relations et des responsabilités explicites, des décisions claires et un suivi."
+      }
+    },
+    "rule": {
+      "es": "Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables.",
+      "en": "explicit relations and responsibilities and clear decisions and monitoring.",
+      "pt": "Relações e responsabilidades explícitas e decisões e acompanhamento claros.",
+      "fr": "des relations et des responsabilités explicites, des décisions claires et un suivi."
+    },
+    "evidence": {
+      "es": "Plan de cuenta y agenda de gobierno",
+      "en": "The account plan and government agenda",
+      "pt": "O plano de conta e a agenda do governo",
+      "fr": "Le plan comptable et l'ordre du jour du gouvernement"
+    },
+    "competencies": {
+      "communication": "medium",
+      "diagnosis": "medium",
+      "data": "medium",
+      "prioritization": "medium",
+      "documentation": "medium",
+      "deescalation": "medium",
+      "negotiation": "high",
+      "planning": "high",
+      "technical": "medium",
+      "collaboration": "high"
+    },
+    "expectedByStage": {
+      "1": {
+        "communication": 1,
+        "diagnosis": 1,
+        "data": 1,
+        "prioritization": 1,
+        "documentation": 1,
+        "deescalation": 1,
+        "negotiation": 1,
+        "planning": 1,
+        "technical": 1,
+        "collaboration": 1
+      },
+      "2": {
+        "communication": 2,
+        "diagnosis": 2,
+        "data": 2,
+        "prioritization": 2,
+        "documentation": 2,
+        "deescalation": 2,
+        "negotiation": 2,
+        "planning": 2,
+        "technical": 2,
+        "collaboration": 2
+      },
+      "3": {
+        "communication": 3,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 3,
+        "technical": 3,
+        "collaboration": 3
+      },
+      "4": {
+        "communication": 3,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 4,
+        "planning": 4,
+        "technical": 3,
+        "collaboration": 4
+      },
+      "5": {
+        "communication": 3,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 4,
+        "planning": 4,
+        "technical": 3,
+        "collaboration": 4
+      }
+    },
+    "published": true,
+    "phase": "complete",
+    "editorial_review": "pending",
+    "calibration": "pending"
+  },
+  "product_specialist": {
+    "key": "product_specialist",
+    "title": "Product Specialist",
+    "levels": [
+      {
+        "es": "Producto y límites comprobados",
+        "en": "Product and verified limitations",
+        "pt": "Produto e limites comprovados",
+        "fr": "Produit et limites vérifiées"
+      },
+      {
+        "es": "Casos de uso y resultado",
+        "en": "Use cases and outcomes",
+        "pt": "Casos de uso e resultado",
+        "fr": "Cas d’usage et résultats"
+      },
+      {
+        "es": "Descubrimiento de necesidades",
+        "en": "Needs discovery",
+        "pt": "Descoberta de necessidades",
+        "fr": "Découverte des besoins"
+      },
+      {
+        "es": "Demo narrada por tarea",
+        "en": "Task-led demo narrative",
+        "pt": "Demo narrada por tarefa",
+        "fr": "Démo guidée par tâche"
+      },
+      {
+        "es": "Criterios de encaje",
+        "en": "Fit criteria",
+        "pt": "Critérios de adequação",
+        "fr": "Critères d’adéquation"
+      },
+      {
+        "es": "Entorno de demostración",
+        "en": "Demo environment",
+        "pt": "Ambiente de demonstração",
+        "fr": "Environnement de démo"
+      },
+      {
+        "es": "Prioridad de requerimientos",
+        "en": "Requirements priority",
+        "pt": "Priorização de requisitos",
+        "fr": "Priorité des besoins"
+      },
+      {
+        "es": "Demo guiada por caso de uso",
+        "en": "Use-case-led demo",
+        "pt": "Demo guiada por caso de uso",
+        "fr": "Démo guidée par cas d’usage"
+      },
+      {
+        "es": "Escalación de límites",
+        "en": "Limitation escalation",
+        "pt": "Escalação de limites",
+        "fr": "Escalade des limites"
+      },
+      {
+        "es": "Requerimientos verificables",
+        "en": "Verifiable requirements",
+        "pt": "Requisitos verificáveis",
+        "fr": "Exigences vérifiables"
+      },
+      {
+        "es": "Análisis de voz del cliente",
+        "en": "Voice-of-customer analysis",
+        "pt": "Análise da voz do cliente",
+        "fr": "Analyse de la voix du client"
+      },
+      {
+        "es": "Lanzamiento y adopción",
+        "en": "Launch and adoption",
+        "pt": "Lançamento e adoção",
+        "fr": "Lancement et adoption"
+      },
+      {
+        "es": "Supervisión: coaching y calidad",
+        "en": "Supervision: coaching and quality",
+        "pt": "Supervisão: coaching e qualidade",
+        "fr": "Supervision : coaching et qualité"
+      },
+      {
+        "es": "Gerencia: capacidad, métricas y playbooks",
+        "en": "Management: capacity, metrics and playbooks",
+        "pt": "Gestão: capacidade, métricas e playbooks",
+        "fr": "Gestion : capacité, métriques et playbooks"
+      },
+      {
+        "es": "Dirección: estrategia, presupuesto y gobierno",
+        "en": "Leadership: strategy, budget and governance",
+        "pt": "Direção: estratégia, orçamento e governança",
+        "fr": "Direction : stratégie, budget et gouvernance"
+      }
+    ],
+    "case": {
+      "es": "La demo ficticia Orion exporta un CSV de diez filas. El cliente requiere un millón de filas y una integración que no está confirmada ni comprometida en un roadmap. Tres solicitudes similares afectan a 20 usuarios, pero falta la tarea de negocio y el criterio de aceptación. La demo usa datos sintéticos. Se necesita descubrir el caso de uso, demostrar solo capacidades comprobadas y redactar requerimientos sin inventar fechas de entrega.",
+      "en": "The fictional Orion demo exports a ten-row CSV. The customer needs one million rows and an integration that is neither confirmed nor committed on a roadmap. Three similar requests affect 20 users, but the business task and acceptance criterion are missing. The demo uses synthetic data. Discover the use case, demonstrate only verified capabilities and write requirements without inventing delivery dates.",
+      "pt": "A demo fictícia Orion exporta um CSV de dez linhas. O cliente precisa de um milhão de linhas e de integração não confirmada nem comprometida em roadmap. Três solicitações semelhantes afetam 20 usuários, mas faltam tarefa de negócio e critério de aceitação. A demo usa dados sintéticos. Descubra o caso de uso, demonstre apenas capacidades comprovadas e redija requisitos sem inventar datas de entrega.",
+      "fr": "La démo fictive Orion exporte un CSV de dix lignes. Le client demande un million de lignes et une intégration ni confirmée ni engagée dans une feuille de route. Trois demandes similaires touchent 20 utilisateurs, mais tâche métier et critère d’acceptation manquent. Données synthétiques. Découvrez le cas d’usage, démontrez uniquement les capacités vérifiées et rédigez les exigences sans inventer de dates."
+    },
+    "pitfall": {
+      "es": "Afirmar que una demo de diez filas garantiza un millón y prometer la integración",
+      "en": "Claim a ten-row demo guarantees one million and promise the integration",
+      "pt": "Afirmar que demo de dez linhas garante um milhão e prometer a integração",
+      "fr": "Affirmer qu’une démo de dix lignes garantit un million et promettre l’intégration"
+    },
+    "projects": [
+      {
+        "es": "Demo guiada por caso de uso",
+        "en": "Use-case-led demo",
+        "pt": "Demo guiada por caso de uso",
+        "fr": "Démo guidée par cas d’usage"
+      },
+      {
+        "es": "Documento de requerimientos desde la voz del cliente",
+        "en": "Requirements document from customer feedback",
+        "pt": "Documento de requisitos a partir da voz do cliente",
+        "fr": "Document d’exigences issu de la voix du client"
+      }
+    ],
+    "role": {
+      "es": {
+        "process": "Discovery técnica → diseño de demo → prueba de viabilidad → límites → traspaso",
+        "deliverable": "Guion de demo y reporte POC",
+        "decision": "¿Prometer escala por una demo pequeña o medir antes?",
+        "quality": "Capacidades demostradas; supuestos y exclusiones explícitos."
+      },
+      "en": {
+        "process": "Discovery technical → demo design → viability test → boundaries → handover",
+        "deliverable": "demo script and POC report",
+        "decision": "Promiser scale for a small demo or measure earlier?",
+        "quality": "Proven capabilities and explicit assumptions and exclusions."
+      },
+      "pt": {
+        "process": "Discovery technical → demo design → teste de viabilidade → limites → entrega",
+        "deliverable": "script demo e relatório POC",
+        "decision": "Promessor escala para uma pequena demonstração ou medida mais cedo?",
+        "quality": "Capacidades comprovadas e suposições e exclusões explícitas."
+      },
+      "fr": {
+        "process": "Découverte technique → conception de démonstration → test de viabilité → limites → transfert",
+        "deliverable": "script de démonstration et rapport POC",
+        "decision": "Une petite démo ou une petite mesure plus tôt ?",
+        "quality": "Capacités éprouvées et hypothèses et exclusions explicites."
+      }
+    },
+    "rule": {
+      "es": "Capacidades demostradas; supuestos y exclusiones explícitos.",
+      "en": "Proven capabilities and explicit assumptions and exclusions.",
+      "pt": "Capacidades comprovadas e suposições e exclusões explícitas.",
+      "fr": "Capacités éprouvées et hypothèses et exclusions explicites."
+    },
+    "evidence": {
+      "es": "Guion de demo y reporte POC",
+      "en": "demo script and POC report",
+      "pt": "script demo e relatório POC",
+      "fr": "script de démonstration et rapport POC"
+    },
+    "competencies": {
+      "communication": "high",
+      "diagnosis": "high",
+      "data": "medium",
+      "prioritization": "medium",
+      "documentation": "medium",
+      "deescalation": "medium",
+      "negotiation": "medium",
+      "planning": "medium",
+      "technical": "high",
+      "collaboration": "medium"
+    },
+    "expectedByStage": {
+      "1": {
+        "communication": 1,
+        "diagnosis": 1,
+        "data": 1,
+        "prioritization": 1,
+        "documentation": 1,
+        "deescalation": 1,
+        "negotiation": 1,
+        "planning": 1,
+        "technical": 1,
+        "collaboration": 1
+      },
+      "2": {
+        "communication": 2,
+        "diagnosis": 2,
+        "data": 2,
+        "prioritization": 2,
+        "documentation": 2,
+        "deescalation": 2,
+        "negotiation": 2,
+        "planning": 2,
+        "technical": 2,
+        "collaboration": 2
+      },
+      "3": {
+        "communication": 3,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 3,
+        "technical": 3,
+        "collaboration": 3
+      },
+      "4": {
+        "communication": 4,
+        "diagnosis": 4,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 3,
+        "technical": 4,
+        "collaboration": 3
+      },
+      "5": {
+        "communication": 4,
+        "diagnosis": 4,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 3,
+        "technical": 4,
+        "collaboration": 3
+      }
+    },
+    "published": true,
+    "phase": "complete",
+    "editorial_review": "pending",
+    "calibration": "pending"
+  },
+  "project_manager": {
+    "key": "project_manager",
+    "title": "Project Manager",
+    "levels": [
+      {
+        "es": "Resultado y alcance",
+        "en": "Outcome and scope",
+        "pt": "Resultado e escopo",
+        "fr": "Résultat et périmètre"
+      },
+      {
+        "es": "Acta y gobierno de proyecto",
+        "en": "Project charter and governance",
+        "pt": "Termo e governança do projeto",
+        "fr": "Charte et gouvernance de projet"
+      },
+      {
+        "es": "Interesados y decisiones",
+        "en": "Stakeholders and decisions",
+        "pt": "Partes interessadas e decisões",
+        "fr": "Parties prenantes et décisions"
+      },
+      {
+        "es": "Plan y secuencia de trabajo",
+        "en": "Plan and work sequence",
+        "pt": "Plano e sequência de trabalho",
+        "fr": "Plan et séquence de travail"
+      },
+      {
+        "es": "Dependencias y ruta crítica",
+        "en": "Dependencies and critical path",
+        "pt": "Dependências e caminho crítico",
+        "fr": "Dépendances et chemin critique"
+      },
+      {
+        "es": "Herramientas y registro",
+        "en": "Tools and records",
+        "pt": "Ferramentas e registro",
+        "fr": "Outils et registre"
+      },
+      {
+        "es": "Recursos y prioridades",
+        "en": "Resources and priorities",
+        "pt": "Recursos e prioridades",
+        "fr": "Ressources et priorités"
+      },
+      {
+        "es": "Plan de proyecto completo",
+        "en": "Complete project plan",
+        "pt": "Plano de projeto completo",
+        "fr": "Plan de projet complet"
+      },
+      {
+        "es": "Riesgos y cambios de alcance",
+        "en": "Risks and scope changes",
+        "pt": "Riscos e mudanças de escopo",
+        "fr": "Risques et changements de périmètre"
+      },
+      {
+        "es": "Comunicación del avance",
+        "en": "Progress communication",
+        "pt": "Comunicação do avanço",
+        "fr": "Communication de l’avancement"
+      },
+      {
+        "es": "Calidad y aceptación",
+        "en": "Quality and acceptance",
+        "pt": "Qualidade e aceitação",
+        "fr": "Qualité et acceptation"
+      },
+      {
+        "es": "Cierre y continuidad",
+        "en": "Closure and continuity",
+        "pt": "Encerramento e continuidade",
+        "fr": "Clôture et continuité"
+      },
+      {
+        "es": "Supervisión: coaching y calidad",
+        "en": "Supervision: coaching and quality",
+        "pt": "Supervisão: coaching e qualidade",
+        "fr": "Supervision : coaching et qualité"
+      },
+      {
+        "es": "Gerencia: capacidad, métricas y playbooks",
+        "en": "Management: capacity, metrics and playbooks",
+        "pt": "Gestão: capacidade, métricas e playbooks",
+        "fr": "Gestion : capacité, métriques et playbooks"
+      },
+      {
+        "es": "Dirección: estrategia, presupuesto y gobierno",
+        "en": "Leadership: strategy, budget and governance",
+        "pt": "Direção: estratégia, orçamento e governança",
+        "fr": "Direction : stratégie, budget et gouvernance"
+      }
+    ],
+    "case": {
+      "es": "El proyecto ficticio Orion debe terminar en el día 30 y está en el día 18. Se completaron 10 de 30 tareas; la ruta crítica restante dura 12 días, sin holgura. Un cliente pide una función que añadiría cinco días; el cambio no está aprobado. Ingeniería tiene cuatro horas esta semana. No todas las tareas tienen igual duración. Se necesita un plan trazable, control de cambios y aceptación explícita, sin confundir porcentaje de tareas con avance temporal.",
+      "en": "The fictional Orion project is due on day 30 and is on day 18. Ten of 30 tasks are complete; the remaining critical path takes 12 days with no slack. A customer requests a feature adding five days; the change is unapproved. Engineering has four hours this week. Tasks vary in duration. Prepare a traceable plan, change control and explicit acceptance; task-count percentage is not time progress.",
+      "pt": "O projeto fictício Orion deve terminar no dia 30 e está no dia 18. Foram concluídas 10 de 30 tarefas; o caminho crítico restante dura 12 dias, sem folga. O cliente pede uma função que acrescentaria cinco dias; a mudança não foi aprovada. Engenharia tem quatro horas nesta semana. As tarefas têm durações diferentes. Prepare plano rastreável, controle de mudanças e aceitação explícita; percentual de tarefas não equivale a avanço temporal.",
+      "fr": "Le projet fictif Orion se termine au jour 30 et se trouve au jour 18. Dix tâches sur 30 sont achevées ; le chemin critique restant dure 12 jours sans marge. Une fonctionnalité ajouterait cinq jours ; le changement n’est pas approuvé. L’ingénierie dispose de quatre heures cette semaine. Les durées des tâches diffèrent. Plan traçable, contrôle des changements et acceptation explicite ; le pourcentage de tâches n’est pas l’avancement temporel."
+    },
+    "pitfall": {
+      "es": "Añadir cinco días de alcance y mantener el día 30 como fecha confirmada sin aprobación",
+      "en": "Add five days of scope and keep day 30 as confirmed without approval",
+      "pt": "Adicionar cinco dias de escopo e manter dia 30 confirmado sem aprovação",
+      "fr": "Ajouter cinq jours de périmètre et maintenir le jour 30 confirmé sans accord"
+    },
+    "projects": [
+      {
+        "es": "Plan de proyecto completo",
+        "en": "Complete project plan",
+        "pt": "Plano de projeto completo",
+        "fr": "Plan de projet complet"
+      },
+      {
+        "es": "Recuperación de un proyecto en riesgo",
+        "en": "Recovery of an at-risk project",
+        "pt": "Recuperação de projeto em risco",
+        "fr": "Redressement d’un projet à risque"
+      }
+    ],
+    "role": {
+      "es": {
+        "process": "Alcance → planificación → dependencias/riesgos → ejecución/cambios → aceptación/cierre",
+        "deliverable": "Plan, registro de riesgos y acta de cierre",
+        "decision": "¿Reducir alcance, cambiar fecha o aceptar riesgo?",
+        "quality": "Cambio aprobado y efecto visible; aceptación verificable."
+      },
+      "en": {
+        "process": "Scope → planning → dependencies / risks → performance / changes → acceptance / closure",
+        "deliverable": "Plan, risk registration and closure report",
+        "decision": "To reduce range, change date or accept risk?",
+        "quality": "Approved change and visible effect and verifiable acceptance."
+      },
+      "pt": {
+        "process": "Escopo → planejamento → dependências / riscos → desempenho / mudanças → aceitação / fechamento",
+        "deliverable": "Plano, registo de risco e relatório de encerramento",
+        "decision": "Para reduzir o intervalo, alterar a data ou aceitar o risco?",
+        "quality": "Alteração aprovada e efeito visível e aceitação verificável."
+      },
+      "fr": {
+        "process": "Portée → planification → dépendances / risques → performance / changements → acceptation / fermeture",
+        "deliverable": "Plan, enregistrement des risques et rapport de clôture",
+        "decision": "Pour réduire la portée, modifier la date ou accepter le risque?",
+        "quality": "Changement approuvé, effet visible et acceptation vérifiable."
+      }
+    },
+    "rule": {
+      "es": "Cambio aprobado y efecto visible; aceptación verificable.",
+      "en": "Approved change and visible effect and verifiable acceptance.",
+      "pt": "Alteração aprovada e efeito visível e aceitação verificável.",
+      "fr": "Changement approuvé, effet visible et acceptation vérifiable."
+    },
+    "evidence": {
+      "es": "Plan, registro de riesgos y acta de cierre",
+      "en": "Plan, risk registration and closure report",
+      "pt": "Plano, registo de risco e relatório de encerramento",
+      "fr": "Plan, enregistrement des risques et rapport de clôture"
+    },
+    "competencies": {
+      "communication": "medium",
+      "diagnosis": "medium",
+      "data": "medium",
+      "prioritization": "high",
+      "documentation": "medium",
+      "deescalation": "medium",
+      "negotiation": "medium",
+      "planning": "high",
+      "technical": "medium",
+      "collaboration": "high"
+    },
+    "expectedByStage": {
+      "1": {
+        "communication": 1,
+        "diagnosis": 1,
+        "data": 1,
+        "prioritization": 1,
+        "documentation": 1,
+        "deescalation": 1,
+        "negotiation": 1,
+        "planning": 1,
+        "technical": 1,
+        "collaboration": 1
+      },
+      "2": {
+        "communication": 2,
+        "diagnosis": 2,
+        "data": 2,
+        "prioritization": 2,
+        "documentation": 2,
+        "deescalation": 2,
+        "negotiation": 2,
+        "planning": 2,
+        "technical": 2,
+        "collaboration": 2
+      },
+      "3": {
+        "communication": 3,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 3,
+        "technical": 3,
+        "collaboration": 3
+      },
+      "4": {
+        "communication": 3,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 4,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 4,
+        "technical": 3,
+        "collaboration": 4
+      },
+      "5": {
+        "communication": 3,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 4,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 4,
+        "technical": 3,
+        "collaboration": 4
+      }
+    },
+    "published": true,
+    "phase": "complete",
+    "editorial_review": "pending",
+    "calibration": "pending"
+  },
+  "manager_team_lead": {
+    "key": "manager_team_lead",
+    "title": "Managers y Team Leads",
+    "levels": [
+      {
+        "es": "Autoridad y delegación",
+        "en": "Authority and delegation",
+        "pt": "Autoridade e delegação",
+        "fr": "Autorité et délégation"
+      },
+      {
+        "es": "Matriz y evidencia de competencias",
+        "en": "Competency matrix and evidence",
+        "pt": "Matriz e evidência de competências",
+        "fr": "Matrice et preuves de compétences"
+      },
+      {
+        "es": "Objetivos del equipo",
+        "en": "Team goals",
+        "pt": "Objetivos da equipe",
+        "fr": "Objectifs de l’équipe"
+      },
+      {
+        "es": "Feedback y conversaciones",
+        "en": "Feedback and conversations",
+        "pt": "Feedback e conversas",
+        "fr": "Feedback et entretiens"
+      },
+      {
+        "es": "Coaching y refuerzo",
+        "en": "Coaching and reinforcement",
+        "pt": "Coaching e reforço",
+        "fr": "Coaching et renforcement"
+      },
+      {
+        "es": "Herramientas de capacidad",
+        "en": "Capacity tools",
+        "pt": "Ferramentas de capacidade",
+        "fr": "Outils de capacité"
+      },
+      {
+        "es": "Priorización del equipo",
+        "en": "Team prioritization",
+        "pt": "Priorização da equipe",
+        "fr": "Priorités de l’équipe"
+      },
+      {
+        "es": "Plan de desarrollo del equipo",
+        "en": "Team development plan",
+        "pt": "Plano de desenvolvimento da equipe",
+        "fr": "Plan de développement de l’équipe"
+      },
+      {
+        "es": "Conflicto y coordinación",
+        "en": "Conflict and coordination",
+        "pt": "Conflito e coordenação",
+        "fr": "Conflit et coordination"
+      },
+      {
+        "es": "Contratación y alternativas",
+        "en": "Hiring and alternatives",
+        "pt": "Contratação e alternativas",
+        "fr": "Recrutement et alternatives"
+      },
+      {
+        "es": "Métricas de operación",
+        "en": "Operating metrics",
+        "pt": "Métricas de operação",
+        "fr": "Métriques opérationnelles"
+      },
+      {
+        "es": "Mejora del servicio",
+        "en": "Service improvement",
+        "pt": "Melhoria do serviço",
+        "fr": "Amélioration du service"
+      },
+      {
+        "es": "Supervisión: coaching y calidad",
+        "en": "Supervision: coaching and quality",
+        "pt": "Supervisão: coaching e qualidade",
+        "fr": "Supervision : coaching et qualité"
+      },
+      {
+        "es": "Gerencia: capacidad, métricas y playbooks",
+        "en": "Management: capacity, metrics and playbooks",
+        "pt": "Gestão: capacidade, métricas e playbooks",
+        "fr": "Gestion : capacité, métriques et playbooks"
+      },
+      {
+        "es": "Dirección: estrategia, presupuesto y gobierno",
+        "en": "Leadership: strategy, budget and governance",
+        "pt": "Direção: estratégia, orçamento e governança",
+        "fr": "Direction : stratégie, budget et gouvernance"
+      }
+    ],
+    "case": {
+      "es": "El equipo ficticio Orion tiene cuatro personas con 40 horas semanales cada una. Hay 20 horas de ausencia y 20 de trabajo operativo fijo: capacidad neta 120 horas, demanda 150. Dos personas tienen evidencia documental de nivel 2 y dos de nivel 3 en la simulación; esto no clasifica su desempeño laboral. No existe presupuesto nuevo aprobado. Se necesita decidir qué desplazar y un plan de desarrollo sin autoaprobar proyectos ni convertir clics en competencia.",
+      "en": "The fictional Orion team has four people with 40 weekly hours each. Absence uses 20 hours and fixed operating work another 20: net capacity 120 hours, demand 150. Two people have level-2 documentation evidence and two level-3 evidence in the simulation; this does not rank workplace performance. No new budget is approved. Decide what to defer and create a development plan without self-approving projects or treating clicks as competence.",
+      "pt": "A equipe fictícia Orion tem quatro pessoas com 40 horas semanais cada. Há 20 horas de ausência e 20 de trabalho operacional fixo: capacidade líquida de 120 horas, demanda de 150. Duas pessoas têm evidência documental de nível 2 e duas de nível 3 na simulação; isso não classifica desempenho profissional. Não há orçamento novo aprovado. Decida o que adiar e crie plano de desenvolvimento sem autoaprovar projetos nem tratar cliques como competência.",
+      "fr": "L’équipe fictive Orion compte quatre personnes à 40 heures hebdomadaires. Absences : 20 heures ; travail opérationnel fixe : 20 heures. Capacité nette : 120 heures, demande : 150. Deux personnes ont des preuves documentaires de niveau 2 et deux de niveau 3 dans la simulation ; ce n’est pas un classement professionnel. Aucun nouveau budget approuvé. Décidez quoi reporter et préparez un plan de développement sans autoapprobation ni assimilation des clics aux compétences."
+    },
+    "pitfall": {
+      "es": "Comprometer 150 horas con 120 disponibles y evaluar habilidad por clics",
+      "en": "Commit 150 hours with 120 available and assess skill by clicks",
+      "pt": "Comprometer 150 horas com 120 disponíveis e avaliar habilidade por cliques",
+      "fr": "Engager 150 heures avec 120 disponibles et évaluer les compétences par les clics"
+    },
+    "projects": [
+      {
+        "es": "Plan de desarrollo de equipo usando la matriz",
+        "en": "Team development plan using the matrix",
+        "pt": "Plano de desenvolvimento da equipe usando a matriz",
+        "fr": "Plan de développement d’équipe utilisant la matrice"
+      },
+      {
+        "es": "Revisión trimestral con decisiones de capacidad",
+        "en": "Quarterly review with capacity decisions",
+        "pt": "Revisão trimestral com decisões de capacidade",
+        "fr": "Revue trimestrielle avec décisions de capacité"
+      }
+    ],
+    "role": {
+      "es": {
+        "process": "Objetivos → capacidad → delegación → acompañamiento → revisión/mejora",
+        "deliverable": "Plan de equipo y guion de seguimiento",
+        "decision": "¿Asignar al más rápido o desarrollar capacidad sostenible?",
+        "quality": "Expectativas claras, autonomía proporcional y seguimiento concreto."
+      },
+      "en": {
+        "process": "Objectives → capacity → delegation → accompaniment → review / improvement",
+        "deliverable": "Monitoring equipment and script",
+        "decision": "To assign to the fastest or to develop sustainable capacity?",
+        "quality": "Clear expectations, proportional autonomy and concrete monitoring."
+      },
+      "pt": {
+        "process": "Objectivos → capacidade → delegação → acompanhamento → revisão / melhoria",
+        "deliverable": "Equipamento de monitorização e guião",
+        "decision": "Atribuir ao mais rápido ou desenvolver uma capacidade sustentável?",
+        "quality": "Expectativas claras, autonomia proporcional e monitoramento concreto."
+      },
+      "fr": {
+        "process": "Objectifs → capacité → délégation → accompagnement → revue / amélioration",
+        "deliverable": "Matériel de surveillance et scripts",
+        "decision": "Affecter au plus vite ou développer une capacité durable?",
+        "quality": "Des attentes claires, une autonomie proportionnelle et un suivi concret."
+      }
+    },
+    "rule": {
+      "es": "Expectativas claras, autonomía proporcional y seguimiento concreto.",
+      "en": "Clear expectations, proportional autonomy and concrete monitoring.",
+      "pt": "Expectativas claras, autonomia proporcional e monitoramento concreto.",
+      "fr": "Des attentes claires, une autonomie proportionnelle et un suivi concret."
+    },
+    "evidence": {
+      "es": "Plan de equipo y guion de seguimiento",
+      "en": "Monitoring equipment and script",
+      "pt": "Equipamento de monitorização e guião",
+      "fr": "Matériel de surveillance et scripts"
+    },
+    "competencies": {
+      "communication": "medium",
+      "diagnosis": "medium",
+      "data": "medium",
+      "prioritization": "high",
+      "documentation": "medium",
+      "deescalation": "medium",
+      "negotiation": "medium",
+      "planning": "high",
+      "technical": "medium",
+      "collaboration": "high"
+    },
+    "expectedByStage": {
+      "1": {
+        "communication": 1,
+        "diagnosis": 1,
+        "data": 1,
+        "prioritization": 1,
+        "documentation": 1,
+        "deescalation": 1,
+        "negotiation": 1,
+        "planning": 1,
+        "technical": 1,
+        "collaboration": 1
+      },
+      "2": {
+        "communication": 2,
+        "diagnosis": 2,
+        "data": 2,
+        "prioritization": 2,
+        "documentation": 2,
+        "deescalation": 2,
+        "negotiation": 2,
+        "planning": 2,
+        "technical": 2,
+        "collaboration": 2
+      },
+      "3": {
+        "communication": 3,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 3,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 3,
+        "technical": 3,
+        "collaboration": 3
+      },
+      "4": {
+        "communication": 3,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 4,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 4,
+        "technical": 3,
+        "collaboration": 4
+      },
+      "5": {
+        "communication": 3,
+        "diagnosis": 3,
+        "data": 3,
+        "prioritization": 4,
+        "documentation": 3,
+        "deescalation": 3,
+        "negotiation": 3,
+        "planning": 4,
+        "technical": 3,
+        "collaboration": 4
+      }
+    },
+    "published": true,
+    "phase": "complete",
+    "editorial_review": "pending",
+    "calibration": "pending"
+  }
+}
