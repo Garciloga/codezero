@@ -247,3 +247,10 @@ html[data-design="vivo"] .btn.secondary[aria-pressed="true"] { background: var(-
 @media (max-width: 767px) {
   html[data-design="vivo"] .public-home .competency-mobile > .card:nth-child(n+2) { display: none; }
 }
+
+/* Page headers inside the app: title on the left, actions aligned on one line. */
+html[data-design="vivo"] .vivo-content .nav { align-items: flex-start; flex-wrap: wrap; }
+html[data-design="vivo"] .vivo-content .nav > div:last-child { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+html[data-design="vivo"] .vivo-content .nav form { margin: 0; display: inline-flex; }
+html[data-design="vivo"] .pill:empty { display: none; }
+html[data-design="vivo"] .stat { font-weight: 800; letter-spacing: -0.02em; }
