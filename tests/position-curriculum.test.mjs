@@ -47,3 +47,10 @@ test('Onboarding exams and projects are gradable and reviewable like Customer Su
  }
  for(const project of ONBOARDING_PROGRAM.projects){for(const locale of ['es','en','pt','fr'])assert.ok(project.brief[locale].length>200&&project.title[locale]);assert.ok(project.source.rubric.length>0&&project.source.competencies.length>0);}
 });
+test('onboarding answer positions are not a fixed rotation and stay aligned across languages',()=>{
+ const seq=POSITION_ITEMS.filter(a=>a.position==='onboarding').flatMap(a=>a.decisions.map(q=>q.correct));
+ assert.equal(seq.length,167);
+ const next=seq.slice(1).filter((v,i)=>v===(seq[i]+1)%3).length/(seq.length-1);
+ assert.ok(next<0.5,'the correct option must not simply advance one position each question');
+ for(const index of [0,1,2]){const share=seq.filter(v=>v===index).length/seq.length;assert.ok(share>0.2&&share<0.45,'each position is used a reasonable share of the time');}
+});

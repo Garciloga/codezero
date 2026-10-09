@@ -38,6 +38,7 @@ create function public.consume_quota(p_user uuid,p_kind text,p_amount integer) r
 grant all on public.test_quota to service_role;grant execute on function public.check_cs_course_access(uuid),public.consume_quota(uuid,text,integer) to service_role;`);
 const migration=readFileSync('supabase/migrations/20261008235031_position_curriculum.sql','utf8');await db.exec(migration);
 await db.exec(readFileSync('supabase/migrations/20261009051500_position_programs.sql','utf8'));
+await db.exec(readFileSync('supabase/migrations/20261009102500_onboarding_answer_positions.sql','utf8'));
 let request=500;const submit=(user,key,org=id(10),answers=null,draft=null,req=null)=>{
  const item=POSITION_ITEMS.find(a=>a.key===key);return db.query('select submit_position_practice($1,$2,$3,$4,$5,$6,$7) result',[user,key,req??id(request++),org,draft??(['exam','diagnostic'].includes(item.type)?'':'Evidence, explicit constraints, owned decisions and next review with verifiable acceptance. '.repeat(4)),JSON.stringify(answers??item.decisions.map(d=>d.correct)),'guided']);
 };
