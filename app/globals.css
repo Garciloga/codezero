@@ -25,7 +25,7 @@ main{scroll-margin-top:16px}
 .language-selector select { min-height: 44px; min-width: 130px; border: 1px solid currentColor; border-radius: 8px; padding: .4rem .65rem; color: inherit; background: var(--surface, #fff); font: inherit; }
 .language-selector [role=status] { font-size: .85rem; flex-basis: 100%; text-align: right; }
 .language-selector [role=status]:empty { display: none; }
-.language-selector select:focus-visible { outline: 3px solid var(--user-accent, #2346d8); outline-offset: 3px; }
+.language-selector select:focus-visible { outline: 3px solid var(--user-accent, #09634d); outline-offset: 3px; }
 [data-appearance=dark] .language-selector { color: #f2f4f7; }
 [data-appearance=dark] .language-selector select { background: #182230; }
 

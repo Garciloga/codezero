@@ -1,8 +1,8 @@
 /*
  * Garciloga refresh · final visual layer.
  * Loaded after every legacy sheet so one file states the current look:
- * cool paper background, deep ink surfaces, squared controls and a single
- * highlighter-yellow accent reserved for "the right answer" and the main call.
+ * mint paper background, chalkboard-green surfaces, rounded controls and a single
+ * coral accent reserved for "the right answer" and the main call.
  * Colours come from lib/vivo-design.ts; nothing here hardcodes a brand colour.
  */
 html[data-design="vivo"] {
@@ -38,6 +38,10 @@ html[data-design="vivo"] :is(input, select, textarea) {
   border: 1.5px solid var(--linea-fuerte);
   border-radius: var(--radio-control) !important;
 }
+/* Multi-line fields and option rows stay softly rounded; a full pill would clip text. */
+html[data-design="vivo"] textarea,
+html[data-design="vivo"] select[multiple] { border-radius: 18px !important; }
+html[data-design="vivo"] .example-options li { border-radius: 16px; }
 html[data-design="vivo"] :is(input[type="checkbox"], input[type="radio"], input[type="range"], input[type="color"], input[type="file"]) {
   border: 0;
   border-radius: 0 !important;
@@ -62,7 +66,7 @@ html[data-design="vivo"] .public-header-inner { flex-wrap: wrap; gap: 4px 12px; 
 html[data-design="vivo"] .public-brand { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; white-space: nowrap; }
 html[data-design="vivo"] .public-desktop-nav { flex: 1 1 auto; min-width: 0; flex-wrap: wrap; gap: 2px; justify-content: center; }
 html[data-design="vivo"] .public-desktop-nav a { padding: 0 7px; font-size: .9rem; }
-html[data-design="vivo"] .public-nav a { border-radius: 8px; white-space: nowrap; }
+html[data-design="vivo"] .public-nav a { border-radius: var(--radio-control); white-space: nowrap; }
 html[data-design="vivo"] .public-nav a[aria-current="page"] { background: var(--vivo-soft); font-weight: 600; }
 html[data-design="vivo"] .public-auth { flex-wrap: wrap; gap: 6px 14px; white-space: nowrap; order: 3; min-width: 0; margin-left: auto; }
 html[data-design="vivo"] .public-auth .btn { padding: 9px 16px; min-height: 44px; white-space: nowrap; }
@@ -81,7 +85,7 @@ html[data-design="vivo"] .public-header-inner .language-selector select { min-wi
   html[data-design="vivo"] .public-mobile-menu { position: relative; }
   html[data-design="vivo"] .public-mobile-menu[open] .public-nav {
     position: absolute; right: 0; top: calc(100% + 8px); z-index: 30; min-width: 240px;
-    background: var(--vivo-surface); border: 1px solid var(--linea); border-radius: var(--radio-tarjeta);
+    background: var(--vivo-surface); border: 1px solid var(--linea); border-radius: 16px;
   }
 }
 
@@ -130,7 +134,7 @@ html[data-design="vivo"] .example-options .example-correct {
 html[data-design="vivo"] .example-options .example-correct b,
 html[data-design="vivo"] .marcador {
   background: linear-gradient(transparent 12%, var(--marcador) 12%, var(--marcador) 88%, transparent 88%);
-  color: #12142B;
+  color: var(--vivo-selected-text, var(--vivo-sidebar));
   padding: 0 4px;
   margin-left: -4px;
   border-radius: 3px;
@@ -224,7 +228,7 @@ html[data-design="vivo"] .vivo-position { border-radius: var(--radio-tarjeta); }
 html[data-design="vivo"] .bar { height: 8px; }
 
 /* Wide tables scroll inside their own frame instead of widening the page. */
-html[data-design="vivo"] .vivo-table-scroll { overflow-x: auto; max-width: 100%; border: 1px solid var(--linea); border-radius: var(--radio-control); }
+html[data-design="vivo"] .vivo-table-scroll { overflow-x: auto; max-width: 100%; border: 1px solid var(--linea); border-radius: 16px; }
 html[data-design="vivo"] .card { min-width: 0; }
 
 /* Phone header: brand and account actions on top, menu and language below. */
@@ -236,7 +240,8 @@ html[data-design="vivo"] .card { min-width: 0; }
   html[data-design="vivo"] .public-mobile-menu[open] { grid-column: 1 / -1; }
   html[data-design="vivo"] .public-header-inner .language-selector { grid-column: 2; grid-row: 2; }
   html[data-design="vivo"] .public-header-inner:has(.public-mobile-menu[open]) .language-selector { grid-row: 3; grid-column: 1 / -1; justify-content: flex-start; }
-  html[data-design="vivo"] .public-mobile-menu summary { padding: 8px 12px; border: 1.5px solid var(--linea-fuerte); border-radius: var(--radio-control); }
+  html[data-design="vivo"] .public-mobile-menu summary { padding: 8px 16px; border: 1.5px solid var(--linea-fuerte); border-radius: var(--radio-control); }
+  html[data-design="vivo"] .public-mobile-menu[open] summary { border-radius: 16px; }
 }
 
 /* Three-up utility used by view switches and summaries. */

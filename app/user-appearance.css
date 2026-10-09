@@ -1,4 +1,4 @@
-:root {--user-accent:#2346d8;--user-accent-foreground:#fff;--user-bg:#f5f7fb;--user-surface:#fff;--user-text:#152033;--user-muted:#4a5472;--user-border:#d9deec;--user-tint:#e8edff}
+:root {--user-accent:#09634d;--user-accent-foreground:#fff;--user-bg:#f5f7fb;--user-surface:#fff;--user-text:#152033;--user-muted:#4a5472;--user-border:#d9deec;--user-tint:#e8edff}
 html[data-appearance="dark"] {color-scheme:dark;--user-bg:#101828;--user-surface:#1d2939;--user-text:#f2f4f7;--user-muted:#d0d5dd;--user-border:#475467;--user-tint:#344054;--fondo:var(--user-bg);--superficie:var(--user-surface);--tinta:var(--user-text);--texto-2:var(--user-muted);--borde:var(--user-border);--borde-fuerte:#667085;--primario-tinte:var(--user-tint)}
 html[data-appearance] {--primario:var(--user-accent);--primario-hover:var(--user-accent);--exito-tinte:var(--user-tint);--error-tinte:var(--user-tint)}
 html[data-appearance] body,html[data-appearance] .public-site {background:var(--user-bg);color:var(--user-text)}
