@@ -4,6 +4,7 @@ import { createServerSupabase } from "../../../../lib/supabase-server";
 import { NextResponse } from "next/server";
 import { isTrustedBrowserRequest } from "../../../../lib/security";
 import { consumeRateLimit } from "../../../../lib/rate-limit";
+import { basePriceId, parseBillingInterval, type PaidPlan } from "../../../../lib/billing-interval";
 
 export async function POST(req: Request) {
   if (!isTrustedBrowserRequest(req)) {
@@ -39,7 +40,7 @@ export async function POST(req: Request) {
     );
   }
 
-  let payload: { plan?: string; paymentAuthorization?: boolean };
+  let payload: { plan?: string; paymentAuthorization?: boolean; interval?: unknown };
 
   try {
     payload = await req.json();
@@ -58,13 +59,12 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "INVALID_PLAN" }, { status: 400 });
   }
 
-  const prices: Record<string, string | undefined> = {
-    starter: process.env.STRIPE_STARTER_PRICE_ID,
-    pro: process.env.STRIPE_PRO_PRICE_ID,
-    enterprise: process.env.STRIPE_ENTERPRISE_PRICE_ID,
-  };
+  const interval = parseBillingInterval(payload.interval);
+  if (!interval) {
+    return NextResponse.json({ error: "INVALID_INTERVAL" }, { status: 400 });
+  }
 
-  const price = prices[plan];
+  const price = basePriceId(plan as PaidPlan, interval, process.env);
 
   if (!price) {
     return NextResponse.json({ error: "PRICE_NOT_CONFIGURED" }, { status: 400 });
@@ -105,6 +105,7 @@ export async function POST(req: Request) {
     metadata: {
       user_id: user.id,
       plan_name: plan,
+      billing_interval: interval,
       terms_version: "2026-10-06",
       payment_authorization_confirmed: "true",
       payment_authorization_confirmed_at: new Date().toISOString(),
@@ -113,6 +114,7 @@ export async function POST(req: Request) {
       metadata: {
         user_id: user.id,
         plan_name: plan,
+        billing_interval: interval,
         terms_version: "2026-10-06",
         payment_authorization_confirmed: "true",
       },

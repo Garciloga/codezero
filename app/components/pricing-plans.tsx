@@ -6,11 +6,12 @@ import LocalizedContent from "./localization/server";
 import Link from "next/link";
 import { planLimit, planPrice } from "../../lib/public-plans";
 import type { PublicPlan } from "../../lib/public-plans";
+import type { AnnualPrices } from "../../lib/annual-plans-server";
 
 const labels = { free: "Free", starter: "Starter", pro: "Pro" };
 const notes = { free: "Para probar si esto es para ti", starter: "Para avanzar con estructura", pro: "Para formación intensiva" };
 
-export default async function PricingPlans({ plans, currentPlan }: { plans: PublicPlan[]; currentPlan: string | null }) {
+export default async function PricingPlans({ plans, currentPlan, annual = null }: { plans: PublicPlan[]; currentPlan: string | null; annual?: AnnualPrices | null }) {
   const { locale } = await localeContext();
   const counts=await publishedCatalogCounts();
   return <LocalizedContent><>
@@ -23,6 +24,7 @@ export default async function PricingPlans({ plans, currentPlan }: { plans: Publ
           <Link prefetch={false} className={"btn " + (plan.name === "starter" ? "" : "secondary")} href={plan.name === "free" ? "/login?modo=registro" : "/checkout?plan=" + plan.name}>
             {plan.name === "free" ? "Empezar gratis" : "Elegir " + labels[plan.name]}
           </Link>}
+        {annual && plan.name !== "free" && currentPlan !== plan.name && <p className="public-annual"><span>Pago anual:</span> <strong>{planPrice(annual[plan.name], LANGUAGE_TAGS[locale])}</strong> <span>MXN al año</span> <Link prefetch={false} href={"/checkout?plan=" + plan.name + "&interval=year"}>Elegir pago anual</Link></p>}
         <ul>
           <li>{plan.name === "free" ? "Nivel 1 completo" : "Ruta completa: niveles 1 a 15"}</li>
           <li>{planLimit(plan.exercise_limit, LANGUAGE_TAGS[locale])} ejercicios al mes</li>

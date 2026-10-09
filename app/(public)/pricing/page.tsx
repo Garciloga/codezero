@@ -6,6 +6,7 @@ import { getPublicPlans } from "../../../lib/public-plans-server";
 import { createServerSupabase } from "../../../lib/supabase-server";
 import { COMMERCIAL_REFERENCES } from "../../../lib/product-roadmap";
 import PricingPlans from "../../components/pricing-plans";
+import { getAnnualPrices } from "../../../lib/annual-plans-server";
 
 export async function generateMetadata() { return translatedMetadata(publicMetadata("Precios", "Compara los planes de Garciloga, sus precios en pesos mexicanos y sus límites mensuales.", "/pricing")); }
 type PageProps = { searchParams: Promise<{ checkout?: string }> };
@@ -18,11 +19,11 @@ async function getCurrentPlan() {
   return !error && data?.status === "active" ? data.plan_name as string : null;
 }
 export default async function Pricing({ searchParams }: PageProps) {
-  const [{ checkout }, plans, currentPlan] = await Promise.all([searchParams, getPublicPlans(), getCurrentPlan()]);
+  const [{ checkout }, plans, currentPlan, annual] = await Promise.all([searchParams, getPublicPlans(), getCurrentPlan(), getAnnualPrices()]);
   return <LocalizedContent><main className="wrap public-pricing">
     <section className="public-pricing-intro"><h1>Empieza gratis. Paga cuando quieras avanzar.</h1><p className="muted">Precios en pesos mexicanos, por mes. Puedes cambiar o cancelar tu plan desde tu cuenta.</p></section>
     {checkout === "cancelled" && <div className="notice" role="status"><b>Pago cancelado.</b><p>No se realizó ningún cargo. Puedes elegir un plan cuando quieras.</p></div>}
-    {plans ? <PricingPlans plans={plans} currentPlan={currentPlan} /> : <section className="notice">
+    {plans ? <PricingPlans plans={plans} currentPlan={currentPlan} annual={annual} /> : <section className="notice">
       <p role="alert">No pudimos cargar los planes. Intenta de nuevo o contacta a soporte.</p>
       <div className="public-actions"><a className="btn" href="/pricing">Reintentar</a><Link className="btn secondary" href="/contact">Contacto</Link></div>
     </section>}

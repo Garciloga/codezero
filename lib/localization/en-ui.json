@@ -1880,5 +1880,11 @@
   "Texto secundario del menú": "Secondary menu text",
   "Texto seleccionado": "Selected text",
   "Todos los colores": "All colors",
-  "Éxito y avance": "Success and progress"
+  "Éxito y avance": "Success and progress",
+  "Pago anual:": "Annual billing:",
+  "MXN al año": "MXN per year",
+  "Elegir pago anual": "Choose annual billing",
+  "Pago anual.": "Annual billing.",
+  "Se cobra una vez al año y se renueva cada año hasta que canceles. Verás el importe exacto en Stripe antes de pagar.": "You are charged once a year and it renews every year until you cancel. You will see the exact amount in Stripe before you pay.",
+  "El pago anual no está disponible por ahora. Puedes elegir el pago mensual.": "Annual billing is not available right now. You can choose monthly billing."
 }

@@ -13,10 +13,12 @@ const labels: Record<string, string> = {
 
 export default function CheckoutPage() {
   const [plan, setPlan] = useState("starter");
+  const [annual, setAnnual] = useState(false);
 
   useEffect(() => {
     const selected = new URLSearchParams(window.location.search).get("plan");
     if (selected && labels[selected]) setPlan(selected);
+    setAnnual(new URLSearchParams(window.location.search).get("interval") === "year");
   }, []);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -35,7 +37,7 @@ export default function CheckoutPage() {
       const response = await fetch("/api/stripe/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plan, paymentAuthorization: true }),
+        body: JSON.stringify({ plan, paymentAuthorization: true, interval: annual ? "year" : "month" }),
       });
 
       const data = await response.json();
@@ -45,6 +47,8 @@ export default function CheckoutPage() {
           setError("Los pagos todavía no están activados.");
         } else if (data.error === "UNAUTHENTICATED") {
           setError("Inicia sesión antes de contratar un plan.");
+        } else if (data.error === "PRICE_NOT_CONFIGURED" && annual) {
+          setError("El pago anual no está disponible por ahora. Puedes elegir el pago mensual.");
         } else {
           setError("No fue posible iniciar el pago.");
         }
@@ -72,7 +76,9 @@ export default function CheckoutPage() {
 
       <div className="card" style={{ maxWidth: 620 }}>
         <div className="muted">Plan seleccionado</div>
-        <div className="stat">{labels[plan] ?? labels.starter}</div>
+        {annual && plan !== "enterprise"
+          ? <><div className="stat">{plan === "pro" ? "Pro" : "Starter"}</div><p><b>Pago anual.</b> Se cobra una vez al año y se renueva cada año hasta que canceles. Verás el importe exacto en Stripe antes de pagar.</p></>
+          : <div className="stat">{labels[plan] ?? labels.starter}</div>}
 
         <p className="muted">
           La suscripción se gestionará mediante Stripe.
