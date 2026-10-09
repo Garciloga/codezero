@@ -18,5 +18,9 @@
  {
   "key": "tech_support_l3",
   "title": "Tech Support"
+ },
+ {
+  "key": "key_account_manager",
+  "title": "Key Account Manager"
  }
 ]
