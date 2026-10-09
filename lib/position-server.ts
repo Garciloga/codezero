@@ -4,6 +4,7 @@ import {roleTrainingSession,trainingPerson} from './role-training-server';
 import {readWorkspacePages} from './workspace-pages';
 import {POSITION_ITEMS,POSITION_PROGRAMS,positionProjectApproved} from './position-curriculum';
 import {isUuid} from './workspace-sandbox';
+const CATALOG_BATCH=100;
 export const positionState=cache(async (org:string|null)=>{
  const session=await roleTrainingSession();if(!session)return null;
  if(org&&!isUuid(org))return null;
@@ -11,9 +12,12 @@ export const positionState=cache(async (org:string|null)=>{
  const person=await trainingPerson(session.user.id,org);if(!person)return null;
  const records=await readWorkspacePages<{id:string;activity_id:number;answers:number[];draft:string;created_at:string;assistance:string}>((a,b)=>{
  let q=session.supabase.from('learning_practice_submissions').select('id,activity_id,answers,draft,created_at,assistance').eq('user_id',session.user.id);q=org?q.eq('organization_id',org):q.is('organization_id',null);return q.order('created_at').order('id').range(a,b);});
- const {data:catalog,error}=await session.supabase.from('learning_activity_catalog').select('id,content_key').in('content_key',POSITION_ITEMS.map(a=>a.key)).eq('active',true);
+ // Keys are looked up in batches: a single request with every program's keys exceeds URL limits.
+ const keys=POSITION_ITEMS.map(a=>a.key);const batches=Array.from({length:Math.ceil(keys.length/CATALOG_BATCH)},(_,i)=>keys.slice(i*CATALOG_BATCH,(i+1)*CATALOG_BATCH));
+ const pages=await Promise.all(batches.map(batch=>session.supabase.from('learning_activity_catalog').select('id,content_key').in('content_key',batch).eq('active',true)));
+ const error=pages.find(p=>p.error)?.error??null;const catalog=pages.flatMap(p=>p.data??[]);
  if(records.error||error)throw Error('POSITION_UNAVAILABLE');
- const keyById=new Map((catalog??[]).map(a=>[a.id,a.content_key]));
+ const keyById=new Map(catalog.map(a=>[a.id,a.content_key]));
  const submissions=(records.data??[]).map(a=>({...a,key:keyById.get(a.activity_id)}));
  const completed=new Set(submissions.map(s=>s.key));
  // Progress is computed per position; no client-supplied answer keys decide unlocks.

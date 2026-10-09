@@ -14,5 +14,9 @@
  {
   "key": "customer_support",
   "title": "Customer Support"
+ },
+ {
+  "key": "tech_support_l3",
+  "title": "Tech Support"
  }
 ]
