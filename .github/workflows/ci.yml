@@ -56,6 +56,9 @@ jobs:
       - name: Platform usage isolation and aggregation checks
         run: node scripts/platform-usage-db-check.mjs
 
+      - name: Position progression and project gate checks
+        run: node scripts/position-db-check.mjs
+
       - name: Section catalog budgets
         run: node scripts/localization-sections.mjs
 

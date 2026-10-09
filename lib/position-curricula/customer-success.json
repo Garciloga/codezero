@@ -1,0 +1,734 @@
+[
+  {
+    "number": 1,
+    "source": "cs-roi",
+    "title": {
+      "es": "Negocio SaaS",
+      "en": "SaaS business",
+      "pt": "Negócio SaaS",
+      "fr": "Activité SaaS"
+    },
+    "topics": [
+      {
+        "es": "Ingresos recurrentes",
+        "en": "Recurring revenue",
+        "pt": "Receita recorrente",
+        "fr": "Revenu récurrent"
+      },
+      {
+        "es": "Churn de clientes",
+        "en": "Customer churn",
+        "pt": "Churn de clientes",
+        "fr": "Attrition des clients"
+      },
+      {
+        "es": "Churn de ingresos",
+        "en": "Revenue churn",
+        "pt": "Churn de receita",
+        "fr": "Attrition du revenu"
+      },
+      {
+        "es": "Retención neta",
+        "en": "Net retention",
+        "pt": "Retenção líquida",
+        "fr": "Rétention nette"
+      },
+      {
+        "es": "Valor frente a actividad",
+        "en": "Value versus activity",
+        "pt": "Valor versus atividade",
+        "fr": "Valeur et activité"
+      },
+      {
+        "es": "Responsabilidades de CS",
+        "en": "CS responsibilities",
+        "pt": "Responsabilidades de CS",
+        "fr": "Responsabilités CS"
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "source": "cs-handoff",
+    "title": {
+      "es": "Ciclo de vida y handoff",
+      "en": "Lifecycle and handoff",
+      "pt": "Ciclo de vida e handoff",
+      "fr": "Cycle de vie et transfert"
+    },
+    "topics": [
+      {
+        "es": "Etapas del cliente",
+        "en": "Customer stages",
+        "pt": "Etapas do cliente",
+        "fr": "Étapes du client"
+      },
+      {
+        "es": "Promesas comerciales",
+        "en": "Sales promises",
+        "pt": "Promessas comerciais",
+        "fr": "Promesses commerciales"
+      },
+      {
+        "es": "Alcance confirmado",
+        "en": "Confirmed scope",
+        "pt": "Escopo confirmado",
+        "fr": "Périmètre confirmé"
+      },
+      {
+        "es": "Dependencias abiertas",
+        "en": "Open dependencies",
+        "pt": "Dependências abertas",
+        "fr": "Dépendances ouvertes"
+      },
+      {
+        "es": "Registro del handoff",
+        "en": "Handoff record",
+        "pt": "Registro do handoff",
+        "fr": "Dossier de transfert"
+      },
+      {
+        "es": "Aceptación del traspaso",
+        "en": "Handoff acceptance",
+        "pt": "Aceitação do repasse",
+        "fr": "Acceptation du transfert"
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "source": "cs-kickoff",
+    "title": {
+      "es": "Onboarding y primer valor",
+      "en": "Onboarding and first value",
+      "pt": "Onboarding e primeiro valor",
+      "fr": "Onboarding et première valeur"
+    },
+    "topics": [
+      {
+        "es": "Agenda de kickoff",
+        "en": "Kickoff agenda",
+        "pt": "Agenda de kickoff",
+        "fr": "Ordre du jour initial"
+      },
+      {
+        "es": "Permisos iniciales",
+        "en": "Initial permissions",
+        "pt": "Permissões iniciais",
+        "fr": "Autorisations initiales"
+      },
+      {
+        "es": "Importación y conciliación",
+        "en": "Import and reconciliation",
+        "pt": "Importação e conciliação",
+        "fr": "Import et rapprochement"
+      },
+      {
+        "es": "Capacitación por tarea",
+        "en": "Task-based training",
+        "pt": "Capacitação por tarefa",
+        "fr": "Formation par tâche"
+      },
+      {
+        "es": "Criterios de primer valor",
+        "en": "First-value criteria",
+        "pt": "Critérios de primeiro valor",
+        "fr": "Critères de première valeur"
+      },
+      {
+        "es": "Cierre del onboarding",
+        "en": "Onboarding closure",
+        "pt": "Encerramento do onboarding",
+        "fr": "Clôture de l’onboarding"
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "source": "common-communication",
+    "title": {
+      "es": "Comunicación y expectativas",
+      "en": "Communication and expectations",
+      "pt": "Comunicação e expectativas",
+      "fr": "Communication et attentes"
+    },
+    "topics": [
+      {
+        "es": "Correo de actualización",
+        "en": "Update email",
+        "pt": "Email de atualização",
+        "fr": "Courriel de suivi"
+      },
+      {
+        "es": "Llamada de seguimiento",
+        "en": "Follow-up call",
+        "pt": "Chamada de acompanhamento",
+        "fr": "Appel de suivi"
+      },
+      {
+        "es": "Escucha y confirmación",
+        "en": "Listening and confirmation",
+        "pt": "Escuta e confirmação",
+        "fr": "Écoute et confirmation"
+      },
+      {
+        "es": "Reunión difícil",
+        "en": "Difficult meeting",
+        "pt": "Reunião difícil",
+        "fr": "Réunion difficile"
+      },
+      {
+        "es": "Límites de compromisos",
+        "en": "Commitment boundaries",
+        "pt": "Limites dos compromissos",
+        "fr": "Limites des engagements"
+      },
+      {
+        "es": "Resumen ejecutivo",
+        "en": "Executive summary",
+        "pt": "Resumo executivo",
+        "fr": "Synthèse exécutive"
+      }
+    ]
+  },
+  {
+    "number": 5,
+    "source": "cs-health",
+    "title": {
+      "es": "Adopción y salud",
+      "en": "Adoption and health",
+      "pt": "Adoção e saúde",
+      "fr": "Adoption et santé"
+    },
+    "topics": [
+      {
+        "es": "Usuarios habilitados y activos",
+        "en": "Enabled and active users",
+        "pt": "Usuários habilitados e ativos",
+        "fr": "Utilisateurs autorisés et actifs"
+      },
+      {
+        "es": "Flujo que produce valor",
+        "en": "Value-producing workflow",
+        "pt": "Fluxo que produz valor",
+        "fr": "Flux de création de valeur"
+      },
+      {
+        "es": "Barreras de adopción",
+        "en": "Adoption barriers",
+        "pt": "Barreiras de adoção",
+        "fr": "Obstacles à l’adoption"
+      },
+      {
+        "es": "Señales de salud",
+        "en": "Health signals",
+        "pt": "Sinais de saúde",
+        "fr": "Signaux de santé"
+      },
+      {
+        "es": "Ventana de medición",
+        "en": "Measurement window",
+        "pt": "Janela de medição",
+        "fr": "Période de mesure"
+      },
+      {
+        "es": "Intervención de adopción",
+        "en": "Adoption intervention",
+        "pt": "Intervenção de adoção",
+        "fr": "Action d’adoption"
+      }
+    ]
+  },
+  {
+    "number": 6,
+    "source": "common-documentation",
+    "title": {
+      "es": "Herramientas del puesto",
+      "en": "Workplace tools",
+      "pt": "Ferramentas do cargo",
+      "fr": "Outils du poste"
+    },
+    "topics": [
+      {
+        "es": "Registro de cuenta en CRM",
+        "en": "CRM account record",
+        "pt": "Registro de conta no CRM",
+        "fr": "Dossier client CRM"
+      },
+      {
+        "es": "Mesa de ayuda",
+        "en": "Help desk",
+        "pt": "Mesa de ajuda",
+        "fr": "Service d’assistance"
+      },
+      {
+        "es": "Tablero de cuentas",
+        "en": "Account board",
+        "pt": "Painel de contas",
+        "fr": "Tableau des comptes"
+      },
+      {
+        "es": "Diccionario de métricas",
+        "en": "Metric dictionary",
+        "pt": "Dicionário de métricas",
+        "fr": "Dictionnaire des métriques"
+      },
+      {
+        "es": "Higiene de datos",
+        "en": "Data hygiene",
+        "pt": "Higiene de dados",
+        "fr": "Qualité des données"
+      },
+      {
+        "es": "Traspaso entre sistemas",
+        "en": "Cross-system handoff",
+        "pt": "Repasse entre sistemas",
+        "fr": "Transfert entre systèmes"
+      }
+    ]
+  },
+  {
+    "number": 7,
+    "source": "cs-portfolio",
+    "title": {
+      "es": "Cartera y priorización",
+      "en": "Portfolio and prioritization",
+      "pt": "Carteira e priorização",
+      "fr": "Portefeuille et priorités"
+    },
+    "topics": [
+      {
+        "es": "Segmentación operativa",
+        "en": "Operational segmentation",
+        "pt": "Segmentação operacional",
+        "fr": "Segmentation opérationnelle"
+      },
+      {
+        "es": "Impacto y urgencia",
+        "en": "Impact and urgency",
+        "pt": "Impacto e urgência",
+        "fr": "Impact et urgence"
+      },
+      {
+        "es": "Capacidad semanal",
+        "en": "Weekly capacity",
+        "pt": "Capacidade semanal",
+        "fr": "Capacité hebdomadaire"
+      },
+      {
+        "es": "Dependencias de cartera",
+        "en": "Portfolio dependencies",
+        "pt": "Dependências da carteira",
+        "fr": "Dépendances du portefeuille"
+      },
+      {
+        "es": "Priorización de contactos",
+        "en": "Contact prioritization",
+        "pt": "Priorização de contatos",
+        "fr": "Priorité des contacts"
+      },
+      {
+        "es": "Revisión de carga",
+        "en": "Workload review",
+        "pt": "Revisão de carga",
+        "fr": "Revue de charge"
+      }
+    ]
+  },
+  {
+    "number": 8,
+    "source": "cs-qbr",
+    "title": {
+      "es": "Plan de éxito y QBR",
+      "en": "Success plan and QBR",
+      "pt": "Plano de sucesso e QBR",
+      "fr": "Plan de réussite et QBR"
+    },
+    "topics": [
+      {
+        "es": "Objetivo del cliente",
+        "en": "Customer objective",
+        "pt": "Objetivo do cliente",
+        "fr": "Objectif du client"
+      },
+      {
+        "es": "Línea base y meta",
+        "en": "Baseline and target",
+        "pt": "Linha de base e meta",
+        "fr": "Référence et cible"
+      },
+      {
+        "es": "Plan con responsables",
+        "en": "Plan with owners",
+        "pt": "Plano com responsáveis",
+        "fr": "Plan avec responsables"
+      },
+      {
+        "es": "Agenda de QBR",
+        "en": "QBR agenda",
+        "pt": "Agenda de QBR",
+        "fr": "Ordre du jour QBR"
+      },
+      {
+        "es": "Brecha y alternativas",
+        "en": "Gap and alternatives",
+        "pt": "Lacuna e alternativas",
+        "fr": "Écart et options"
+      },
+      {
+        "es": "Decisiones y seguimiento",
+        "en": "Decisions and follow-up",
+        "pt": "Decisões e acompanhamento",
+        "fr": "Décisions et suivi"
+      }
+    ]
+  },
+  {
+    "number": 9,
+    "source": "cs-churn",
+    "title": {
+      "es": "Riesgo y rescate",
+      "en": "Risk and recovery",
+      "pt": "Risco e recuperação",
+      "fr": "Risque et redressement"
+    },
+    "topics": [
+      {
+        "es": "Señal frente a certeza",
+        "en": "Signal versus certainty",
+        "pt": "Sinal versus certeza",
+        "fr": "Signal et certitude"
+      },
+      {
+        "es": "Cambio de sponsor",
+        "en": "Sponsor change",
+        "pt": "Troca de sponsor",
+        "fr": "Changement de sponsor"
+      },
+      {
+        "es": "Hipótesis de abandono",
+        "en": "Churn hypothesis",
+        "pt": "Hipótese de churn",
+        "fr": "Hypothèse d’attrition"
+      },
+      {
+        "es": "Plan de rescate",
+        "en": "Recovery plan",
+        "pt": "Plano de recuperação",
+        "fr": "Plan de redressement"
+      },
+      {
+        "es": "Escalación interna",
+        "en": "Internal escalation",
+        "pt": "Escalação interna",
+        "fr": "Escalade interne"
+      },
+      {
+        "es": "Verificación de recuperación",
+        "en": "Recovery verification",
+        "pt": "Verificação da recuperação",
+        "fr": "Vérification du rétablissement"
+      }
+    ]
+  },
+  {
+    "number": 10,
+    "source": "cs-renewal",
+    "title": {
+      "es": "Renovación y negociación",
+      "en": "Renewal and negotiation",
+      "pt": "Renovação e negociação",
+      "fr": "Renouvellement et négociation"
+    },
+    "topics": [
+      {
+        "es": "Calendario de renovación",
+        "en": "Renewal timeline",
+        "pt": "Calendário de renovação",
+        "fr": "Calendrier de renouvellement"
+      },
+      {
+        "es": "Decisor y compras",
+        "en": "Decision maker and procurement",
+        "pt": "Decisor e compras",
+        "fr": "Décideur et achats"
+      },
+      {
+        "es": "Evidencia de valor",
+        "en": "Value evidence",
+        "pt": "Evidência de valor",
+        "fr": "Preuves de valeur"
+      },
+      {
+        "es": "Objeciones comerciales",
+        "en": "Commercial objections",
+        "pt": "Objeções comerciais",
+        "fr": "Objections commerciales"
+      },
+      {
+        "es": "Opciones y contrapartidas",
+        "en": "Options and trade-offs",
+        "pt": "Opções e contrapartidas",
+        "fr": "Options et contreparties"
+      },
+      {
+        "es": "Confirmación del acuerdo",
+        "en": "Agreement confirmation",
+        "pt": "Confirmação do acordo",
+        "fr": "Confirmation de l’accord"
+      }
+    ]
+  },
+  {
+    "number": 11,
+    "source": "cs-expansion",
+    "title": {
+      "es": "Expansión y descubrimiento",
+      "en": "Expansion and discovery",
+      "pt": "Expansão e descoberta",
+      "fr": "Expansion et découverte"
+    },
+    "topics": [
+      {
+        "es": "Necesidad subyacente",
+        "en": "Underlying need",
+        "pt": "Necessidade subjacente",
+        "fr": "Besoin sous-jacent"
+      },
+      {
+        "es": "Preguntas de descubrimiento",
+        "en": "Discovery questions",
+        "pt": "Perguntas de descoberta",
+        "fr": "Questions de découverte"
+      },
+      {
+        "es": "Encaje de solución",
+        "en": "Solution fit",
+        "pt": "Adequação da solução",
+        "fr": "Adéquation de solution"
+      },
+      {
+        "es": "Capacidad confirmada",
+        "en": "Confirmed capability",
+        "pt": "Capacidade confirmada",
+        "fr": "Capacité confirmée"
+      },
+      {
+        "es": "Oportunidad comercial",
+        "en": "Commercial opportunity",
+        "pt": "Oportunidade comercial",
+        "fr": "Opportunité commerciale"
+      },
+      {
+        "es": "Separación de renovación",
+        "en": "Separate renewal",
+        "pt": "Separar renovação",
+        "fr": "Séparer le renouvellement"
+      }
+    ]
+  },
+  {
+    "number": 12,
+    "source": "cs-voc",
+    "title": {
+      "es": "Voz del cliente y colaboración",
+      "en": "Customer voice and collaboration",
+      "pt": "Voz do cliente e colaboração",
+      "fr": "Voix du client et collaboration"
+    },
+    "topics": [
+      {
+        "es": "Problema frente a función",
+        "en": "Problem versus feature",
+        "pt": "Problema versus função",
+        "fr": "Problème et fonctionnalité"
+      },
+      {
+        "es": "Frecuencia e impacto",
+        "en": "Frequency and impact",
+        "pt": "Frequência e impacto",
+        "fr": "Fréquence et impact"
+      },
+      {
+        "es": "Feedback a producto",
+        "en": "Product feedback",
+        "pt": "Feedback para produto",
+        "fr": "Retour vers produit"
+      },
+      {
+        "es": "Coordinación con soporte",
+        "en": "Support coordination",
+        "pt": "Coordenação com suporte",
+        "fr": "Coordination assistance"
+      },
+      {
+        "es": "Coordinación con ventas",
+        "en": "Sales coordination",
+        "pt": "Coordenação com vendas",
+        "fr": "Coordination commerciale"
+      },
+      {
+        "es": "Cierre del ciclo",
+        "en": "Close the loop",
+        "pt": "Fechar o ciclo",
+        "fr": "Boucler le suivi"
+      }
+    ]
+  },
+  {
+    "number": 13,
+    "source": "cs-training",
+    "title": {
+      "es": "Supervisión y coaching",
+      "en": "Supervision and coaching",
+      "pt": "Supervisão e coaching",
+      "fr": "Supervision et coaching"
+    },
+    "topics": [
+      {
+        "es": "Observación de práctica",
+        "en": "Practice observation",
+        "pt": "Observação da prática",
+        "fr": "Observation de pratique"
+      },
+      {
+        "es": "Feedback con evidencia",
+        "en": "Evidence-based feedback",
+        "pt": "Feedback com evidência",
+        "fr": "Retour avec preuves"
+      },
+      {
+        "es": "Plan de refuerzo",
+        "en": "Reinforcement plan",
+        "pt": "Plano de reforço",
+        "fr": "Plan de renforcement"
+      },
+      {
+        "es": "Revisión de cuentas",
+        "en": "Account review",
+        "pt": "Revisão de contas",
+        "fr": "Revue de comptes"
+      },
+      {
+        "es": "Calidad de entregables",
+        "en": "Deliverable quality",
+        "pt": "Qualidade das entregas",
+        "fr": "Qualité des livrables"
+      },
+      {
+        "es": "Seguimiento del coaching",
+        "en": "Coaching follow-up",
+        "pt": "Acompanhamento do coaching",
+        "fr": "Suivi du coaching"
+      }
+    ]
+  },
+  {
+    "number": 14,
+    "source": "cs-segmentation",
+    "title": {
+      "es": "Gerencia de CS",
+      "en": "CS management",
+      "pt": "Gestão de CS",
+      "fr": "Gestion CS"
+    },
+    "topics": [
+      {
+        "es": "Modelo de segmentación",
+        "en": "Segmentation model",
+        "pt": "Modelo de segmentação",
+        "fr": "Modèle de segmentation"
+      },
+      {
+        "es": "Capacidad del equipo",
+        "en": "Team capacity",
+        "pt": "Capacidade da equipe",
+        "fr": "Capacité de l’équipe"
+      },
+      {
+        "es": "Distribución de cartera",
+        "en": "Portfolio allocation",
+        "pt": "Distribuição da carteira",
+        "fr": "Répartition du portefeuille"
+      },
+      {
+        "es": "Métricas del equipo",
+        "en": "Team metrics",
+        "pt": "Métricas da equipe",
+        "fr": "Métriques d’équipe"
+      },
+      {
+        "es": "Playbook y excepciones",
+        "en": "Playbook and exceptions",
+        "pt": "Playbook e exceções",
+        "fr": "Guide et exceptions"
+      },
+      {
+        "es": "Revisión de desempeño",
+        "en": "Performance review",
+        "pt": "Revisão de desempenho",
+        "fr": "Revue de performance"
+      },
+      {
+        "es": "Decisión de contratación",
+        "en": "Hiring decision",
+        "pt": "Decisão de contratação",
+        "fr": "Décision de recrutement"
+      }
+    ]
+  },
+  {
+    "number": 15,
+    "source": "cs-ebr",
+    "title": {
+      "es": "Dirección de CS",
+      "en": "CS leadership",
+      "pt": "Direção de CS",
+      "fr": "Direction CS"
+    },
+    "topics": [
+      {
+        "es": "Estrategia de retención",
+        "en": "Retention strategy",
+        "pt": "Estratégia de retenção",
+        "fr": "Stratégie de rétention"
+      },
+      {
+        "es": "Presupuesto y escenarios",
+        "en": "Budget and scenarios",
+        "pt": "Orçamento e cenários",
+        "fr": "Budget et scénarios"
+      },
+      {
+        "es": "Pronóstico de renovaciones",
+        "en": "Renewal forecast",
+        "pt": "Previsão de renovações",
+        "fr": "Prévision des renouvellements"
+      },
+      {
+        "es": "Riesgos estratégicos",
+        "en": "Strategic risks",
+        "pt": "Riscos estratégicos",
+        "fr": "Risques stratégiques"
+      },
+      {
+        "es": "Reporte a dirección",
+        "en": "Executive report",
+        "pt": "Relatório à direção",
+        "fr": "Rapport de direction"
+      },
+      {
+        "es": "Asignación de inversión",
+        "en": "Investment allocation",
+        "pt": "Alocação de investimento",
+        "fr": "Allocation d’investissement"
+      },
+      {
+        "es": "Gobierno de decisiones",
+        "en": "Decision governance",
+        "pt": "Governança de decisões",
+        "fr": "Gouvernance des décisions"
+      }
+    ]
+  }
+]

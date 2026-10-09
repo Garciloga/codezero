@@ -36,7 +36,7 @@ export async function generateMetadata() { return translatedMetadata({
     default: "Garciloga",
     template: "%s · Garciloga",
   },
-  description: "Desarrolla habilidades con programación, cursos y decisiones: desde tus primeros pasos hasta liderazgo y dirección.",
+  description: "Formación por puesto · procesos, herramientas y decisiones",
   applicationName: "Garciloga",
   openGraph: {
     title: "Garciloga",

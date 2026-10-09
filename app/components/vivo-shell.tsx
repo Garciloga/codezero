@@ -106,7 +106,7 @@ export default function VivoShell({
       title: "YO APRENDO",
       items: [
         ["Inicio", "/dashboard", "home"],
-        ["Mi ruta", "/dashboard?view=learning#my-learning-path", "learning"],
+        ["Mi ruta", roleTrainingActive?"/positions"+(org?"?organization_id="+org.organization_id:""):"/dashboard?view=learning#my-learning-path", "learning"],
         ...(org ? [["Mis tareas", base + "/tasks", "task"]] : []),
         ["Mis competencias", "/competencies", "learning"],
         ...(roleTrainingActive?[["Mapa de carrera", "/role-training/career-map"+(org?"?organization_id="+org.organization_id:""), "learning"],["Formación por puesto", "/role-training"+(org?"?organization_id="+org.organization_id:""), "learning"],...(org?[["Revisar proyectos", "/role-training/review?organization_id="+org.organization_id, "task"]]:[])]:[]),

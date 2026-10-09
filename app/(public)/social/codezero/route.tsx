@@ -47,12 +47,12 @@ export async function GET(request: Request) {
         Garciloga
       </div>
       <div style={{ display: "flex", fontSize: 64, lineHeight: 1.05 }}>
-        {t("Aprende a programar desde cero, paso a paso.")}
+        {t("Construye habilidades para tu siguiente puesto.")}
       </div>
       <div
         style={{ display: "flex", fontSize: 28, color: VIVO_COLORS.primary }}
       >
-        {t("Programación · SaaS · Integraciones")}
+        {t("Formación por puesto · procesos, herramientas y decisiones")}
       </div>
       <div
         style={{

@@ -1,0 +1,106 @@
+[
+  {
+    "title": {
+      "es": "Hojas de cálculo para cartera",
+      "en": "Spreadsheets for account portfolios",
+      "pt": "Planilhas para carteiras de clientes",
+      "fr": "Tableurs pour portefeuilles clients"
+    },
+    "rule": {
+      "es": "Calcula por cuenta y ventana; valida duplicados y denominadores",
+      "en": "Calculate by account and window; validate duplicates and denominators",
+      "pt": "Calcule por conta e janela; valide duplicatas e denominadores",
+      "fr": "Calculez par compte et période ; vérifiez doublons et dénominateurs"
+    },
+    "evidence": {
+      "es": "Hoja con fórmula, muestra manual, fuente y controles de faltantes",
+      "en": "Sheet with formula, manual sample, source and missing-data controls",
+      "pt": "Planilha com fórmula, amostra manual, fonte e controles de ausências",
+      "fr": "Feuille avec formule, échantillon manuel, source et contrôles des absences"
+    },
+    "process": {
+      "es": "Crea una tabla sintética con cuenta, semana, usuarios habilitados y activos. Calcula activos/habilitados con control de cero y una tabla dinámica por cuenta. Comprueba un resultado a mano; no mezcles eventos y personas ni rellenes faltantes como cero.",
+      "en": "Create a synthetic table with account, week, enabled and active users. Calculate active/enabled with a zero check and pivot by account. Check one result manually; do not mix events with people or replace missing values with zero.",
+      "pt": "Crie uma tabela sintética com conta, semana, usuários habilitados e ativos. Calcule ativos/habilitados com controle de zero e tabela dinâmica por conta. Confira um resultado manualmente; não misture eventos e pessoas nem substitua ausências por zero.",
+      "fr": "Créez une table synthétique avec compte, semaine, utilisateurs habilités et actifs. Calculez actifs/habilités avec contrôle de zéro et tableau croisé par compte. Vérifiez un résultat manuellement ; ne mélangez pas événements et personnes et ne remplacez pas les absences par zéro."
+    }
+  },
+  {
+    "title": {
+      "es": "SQL básico de lectura para uso",
+      "en": "Read-only SQL basics for usage",
+      "pt": "SQL básico de leitura para uso",
+      "fr": "Bases SQL en lecture seule pour l’usage"
+    },
+    "rule": {
+      "es": "La consulta usa granularidad y filtros de cuenta y periodo explícitos",
+      "en": "The query uses explicit grain, account and period filters",
+      "pt": "A consulta usa granularidade e filtros de conta e período explícitos",
+      "fr": "La requête utilise granularité et filtres explicites de compte et période"
+    },
+    "evidence": {
+      "es": "SELECT documentado, resultado manual y control de duplicación por JOIN",
+      "en": "Documented SELECT, manual result and JOIN duplication check",
+      "pt": "SELECT documentado, resultado manual e controle de duplicação por JOIN",
+      "fr": "SELECT documenté, résultat manuel et contrôle des doublons de JOIN"
+    },
+    "process": {
+      "es": "Sobre datos sintéticos, usa SELECT, WHERE, GROUP BY y COUNT(DISTINCT user_id) para consultar usuarios activos por semana y cuenta. Define qué representa cada fila antes de unir tablas. Solo lectura; verifica con una muestra manual. No uses datos reales ni credenciales.",
+      "en": "On synthetic data, use SELECT, WHERE, GROUP BY and COUNT(DISTINCT user_id) to query active users by week and account. Define row grain before joining tables. Read-only; verify with a manual sample. Use no real data or credentials.",
+      "pt": "Em dados sintéticos, use SELECT, WHERE, GROUP BY e COUNT(DISTINCT user_id) para consultar usuários ativos por semana e conta. Defina a granularidade antes de unir tabelas. Somente leitura; verifique com amostra manual. Não use dados reais nem credenciais.",
+      "fr": "Sur données synthétiques, utilisez SELECT, WHERE, GROUP BY et COUNT(DISTINCT user_id) pour les utilisateurs actifs par semaine et compte. Définissez la granularité avant les jointures. Lecture seule ; vérifiez sur un échantillon manuel. N’utilisez ni données réelles ni identifiants."
+    }
+  },
+  {
+    "title": {
+      "es": "Automatización de recordatorios y reportes",
+      "en": "Reminder and report automation",
+      "pt": "Automação de lembretes e relatórios",
+      "fr": "Automatisation des rappels et rapports"
+    },
+    "rule": {
+      "es": "Automatizar exige evento, condición, responsable y control de reintentos",
+      "en": "Automation needs an event, condition, owner and retry control",
+      "pt": "Automatizar exige evento, condição, responsável e controle de tentativas",
+      "fr": "L’automatisation exige événement, condition, responsable et contrôle des relances"
+    },
+    "evidence": {
+      "es": "Diagrama de regla, clave idempotente y pruebas de duplicado y fallo",
+      "en": "Rule diagram, idempotency key and duplicate and failure tests",
+      "pt": "Diagrama da regra, chave idempotente e testes de duplicação e falha",
+      "fr": "Schéma de règle, clé d’idempotence et tests de doublon et d’échec"
+    },
+    "process": {
+      "es": "Diseña en papel: siete días antes de una revisión, crear un recordatorio si no existe. Usa cuenta+fecha+tipo como clave de deduplicación. Define zona horaria, destinatario, cancelación, reintento y escalación ante fallo. Simula el envío; no actives mensajes reales.",
+      "en": "Design on paper: seven days before a review, create a reminder if none exists. Deduplicate by account+date+type. Define timezone, recipient, cancellation, retry and failure escalation. Simulate delivery; do not activate real messages.",
+      "pt": "Desenhe em papel: sete dias antes de uma revisão, criar lembrete se não existir. Deduplicate por conta+data+tipo. Defina fuso, destinatário, cancelamento, nova tentativa e escalação em falha. Simule o envio; não ative mensagens reais.",
+      "fr": "Concevez sur papier : sept jours avant une revue, créer un rappel s’il n’existe pas. Dédupliquez par compte+date+type. Définissez fuseau, destinataire, annulation, relance et escalade d’échec. Simulez l’envoi ; n’activez aucun message réel."
+    }
+  },
+  {
+    "title": {
+      "es": "IA para preparar reuniones y resumir cuentas",
+      "en": "AI for meeting preparation and account summaries",
+      "pt": "IA para preparar reuniões e resumir contas",
+      "fr": "IA pour préparer les réunions et synthétiser les comptes"
+    },
+    "rule": {
+      "es": "La IA propone un borrador; una persona verifica fuentes y límites",
+      "en": "AI proposes a draft; a person verifies sources and limitations",
+      "pt": "A IA propõe um rascunho; uma pessoa verifica fontes e limites",
+      "fr": "L’IA propose un brouillon ; une personne vérifie sources et limites"
+    },
+    "evidence": {
+      "es": "Prompt con datos ficticios, tabla de fuentes y correcciones humanas",
+      "en": "Prompt with fictional data, source table and human corrections",
+      "pt": "Prompt com dados fictícios, tabela de fontes e correções humanas",
+      "fr": "Prompt avec données fictives, table des sources et corrections humaines"
+    },
+    "process": {
+      "es": "Escribe un prompt que pida agenda, riesgos y preguntas pendientes usando solo la ficha ficticia. Exige referencia a cada dato y que declare desconocidos. Revisa el borrador contra las fuentes, elimina afirmaciones inventadas y marca aprobación humana pendiente. No necesitas activar el Tutor IA ni enviar datos personales.",
+      "en": "Write a prompt requesting an agenda, risks and open questions using only the fictional record. Require a reference for each fact and explicit unknowns. Check the draft against sources, remove invented claims and mark human approval pending. No AI Tutor activation or personal-data transmission is required.",
+      "pt": "Escreva um prompt pedindo agenda, riscos e perguntas pendentes usando apenas a ficha fictícia. Exija referência para cada dado e desconhecidos explícitos. Confira o rascunho nas fontes, remova afirmações inventadas e marque aprovação humana pendente. Não é necessário ativar o Tutor IA nem enviar dados pessoais.",
+      "fr": "Rédigez un prompt demandant ordre du jour, risques et questions ouvertes à partir de la seule fiche fictive. Exigez une référence par fait et des inconnues explicites. Vérifiez le brouillon, supprimez les affirmations inventées et marquez l’approbation humaine en attente. Aucune activation du Tutor IA ni transmission de données personnelles n’est nécessaire."
+    }
+  }
+]

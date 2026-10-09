@@ -5,7 +5,7 @@ import { translatedMetadata } from '../../lib/localization/metadata';
 import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
 import { publicMetadata } from "../../lib/public-metadata";
-export async function generateMetadata() { return translatedMetadata(publicMetadata("Construye tu camino profesional desde cero", "Programación, cursos, procesos y decisiones para desarrollar habilidades profesionales con Garciloga.", "/")); }
+export async function generateMetadata() { return translatedMetadata(publicMetadata("Construye tu camino profesional desde cero", "Formación por puesto · procesos, herramientas y decisiones", "/")); }
 const foundation = ["Pensamiento computacional", "Python desde cero", "Python intermedio y código limpio", "Algoritmos y estructuras de datos", "Git, terminal y flujo profesional", "Bases de datos y SQL", "Web: HTML + CSS + JavaScript", "Backend y APIs", "Ingeniería de software", "Capstone · Proyecto profesional"];
 const integrations = ["APIs y webhooks", "SaaS, OAuth y automatización", "Sistemas empresariales", "Arquitectura y seguridad", "Proyecto final de integración"];
 // Approved manual snapshot, verified against published catalog on 2026-10-06.
@@ -14,21 +14,21 @@ export default async function Home() {
   return <LocalizedContent><main className="wrap public-home">
     <section className="public-hero">
       <div>
-        <p className="public-eyebrow">Programación · Puestos · Procesos · Decisiones</p>
+        <p className="public-eyebrow">Formación por puesto · procesos, herramientas y decisiones</p>
         <h1>Construye habilidades para tu siguiente puesto.</h1>
-        <p>Empieza desde cero con programación e integraciones, cursos y decisiones aplicadas a puestos reales. Desarrolla tu criterio para crecer hacia supervisión, gerencia y dirección.</p>
+        <p>Empieza por tu puesto y su diagnóstico. Practica procesos, herramientas y decisiones para crecer hacia supervisión, gerencia y dirección. Programación e integraciones son una ruta técnica opcional.</p>
         <p className="muted">Practica Customer Success, Onboarding, Soporte y gestión de cuentas con datos ficticios, decisiones y revisión humana según tu plan.</p>
-        <div className="public-actions"><Link className="btn" href="/login?modo=registro">Empezar gratis</Link><Link className="btn secondary" href="#ruta">Ver la ruta completa</Link></div>
-        <p className="muted">El Nivel 1 completo es gratis.</p>
+        <div className="public-actions"><Link className="btn" href="/login?modo=registro">Empezar gratis</Link><Link className="btn secondary" href="/positions">Ver la formación por puesto</Link></div>
+        <p className="muted">Diagnóstico inicial disponible sin completar programación.</p>
       </div>
       <aside className="card public-example" aria-label="Ejemplo de un ejercicio respondido">
-        <p className="public-eyebrow">Nivel 1 · Pensamiento computacional</p>
+        <p className="public-eyebrow">Decisión de Customer Success</p>
         <span className="pill">Ejemplo respondido</span>
-        <h2>¿Qué acción representa mejor la descomposición?</h2>
+        <h2>El reporte bajó de cinco a tres días. ¿Qué comunicas?</h2>
         <ul className="example-options">
-          <li>Resolver todo de una vez</li><li className="example-correct"><b>Respuesta correcta:</b> Separar un problema grande en subtareas manejables</li><li>Eliminar requisitos</li><li>Copiar una solución</li>
+          <li>Resolver todo de una vez</li><li className="example-correct"><b>Respuesta correcta:</b> Mejora observada de 40%; la meta de dos días sigue pendiente.</li><li>Eliminar requisitos</li><li>Copiar una solución</li>
         </ul>
-        <p className="example-feedback"><b>Correcto.</b> Descomponer permite tratar cada parte de forma independiente y verificable.</p>
+        <p className="example-feedback"><b>Correcto.</b> Una observación con su fórmula permite decidir sin prometer resultados no demostrados.</p>
       </aside>
     </section>
     <section className="public-section"><h2>Elige tu camino</h2><div className="public-feature-grid">{[["Quiero crecer en mi puesto","Casos de Customer Success, Soporte, Onboarding y liderazgo.","/role-training"],["Quiero aprender a programar","Python, SQL e integraciones con práctica ejecutable.","/practice"],["Quiero formar a mi equipo","Competencias, refuerzos y seguimiento dentro de cada compañía.","/companies"]].map(([title,text,href])=><article className="card" key={title}><h3>{title}</h3><p>{text}</p><Link className="btn secondary" href={href}>Explorar</Link></article>)}</div></section>
@@ -42,7 +42,7 @@ export default async function Home() {
     </section>
     <section className="public-section"><h2>Para líderes de equipo</h2><p>Detecta fortalezas y necesidades de refuerzo usando evidencia de práctica revisada.</p><CompanyDemo compact/><Link className="btn secondary" href="/companies">Para empresas</Link></section>
     <section id="ruta" className="public-section">
-      <h2>La ruta completa</h2><p className="muted">Dos etapas. Primero aprendes a programar; después te especializas en integraciones para SaaS.</p>
+      <h2>Ruta técnica opcional</h2><p className="muted">Programación e integraciones se conservan como apoyo adicional. No bloquean el avance de la formación por puesto.</p>
       <div className="public-route-grid">
         <article className="card"><p className="public-eyebrow">Niveles 1 a 10</p><h3>Etapa 1 · Fundamentos</h3><ol>{foundation.map(title => <li key={title}>{title}</li>)}</ol></article>
         <article className="public-dark"><p className="public-eyebrow">Niveles 11 a 15</p><h3>Etapa 2 · Integraciones</h3><ol start={11}>{integrations.map(title => <li key={title}>{title}</li>)}</ol></article>
@@ -50,13 +50,13 @@ export default async function Home() {
     </section>
     <section className="public-section">
       <h2>¿Para quién es?</h2><div className="public-audience">
-        {[["Empiezas de cero", "Nunca has programado. El Nivel 1 enseña a pensar el problema antes de escribir una sola línea."], ["Trabajas en SaaS", "Customer Success, Onboarding o soporte, y quieres entender la parte técnica de tu producto."], ["Buscas especializarte", "Apuntas a Integraciones o Solutions Engineering: APIs, OAuth, webhooks y sistemas empresariales."]].map(([title, text]) => <article className="card" key={title}><h3>{title}</h3><p>{text}</p></article>)}
+        {[["Empiezas de cero", "Nunca has trabajado en ese puesto. Empieza por sus procesos y decisiones, con un diagnóstico que recomienda dónde reforzar."], ["Trabajas en SaaS", "Customer Success, Onboarding o soporte, y quieres entender la parte técnica de tu producto."], ["Buscas especializarte", "Apuntas a Integraciones o Solutions Engineering: APIs, OAuth, webhooks y sistemas empresariales."]].map(([title, text]) => <article className="card" key={title}><h3>{title}</h3><p>{text}</p></article>)}
       </div><p className="notice">¿Tienes menos de 18 años? Puedes registrarte con la autorización de tu madre, padre o tutor.</p>
     </section>
     <section className="public-section card"><h2>Tu desarrollo, de cero a liderazgo</h2><p>Aprende un proceso, practica una decisión y prepara un entregable. Explora rutas por puesto, casos semanales, comunidad y solicitudes de mentoría. Los equipos cuentan con seguimiento de competencias y mensajes según su contrato.</p><div className="public-actions"><Link prefetch={false} className="btn" href="/leadership">Explorar liderazgo y procesos</Link><Link prefetch={false} className="btn secondary" href="/roadmap">Ver lo que viene</Link></div></section>
     <section id="preguntas" className="public-section public-faq">
       <h2>Preguntas frecuentes</h2>
-      <details open><summary>¿Necesito saber programar?</summary><p>No. La ruta empieza con pensamiento computacional y el primer lenguaje, Python, llega hasta el Nivel 2.</p></details>
+      <details open><summary>¿Necesito saber programar?</summary><p>No. Elige un puesto y empieza por sus situaciones y competencias. La programación es una ruta técnica opcional.</p></details>
       <details><summary>¿Cuánto cuesta?</summary><p>El Nivel 1 es gratis. Consulta los precios y los límites vigentes en <Link href="/pricing">Precios</Link>.</p></details>
       <details><summary>¿Puedo cancelar cuando quiera?</summary><p>Sí. Conservas tu plan hasta el final del periodo pagado. Los detalles están en <Link href="/refunds">Cancelaciones y reembolsos</Link>.</p></details>
       <details><summary>¿Dónde puedo pedir ayuda?</summary><p>Visita el <Link href="/help">Centro de ayuda</Link> o consulta nuestras opciones de <Link href="/contact">Contacto</Link>.</p></details>

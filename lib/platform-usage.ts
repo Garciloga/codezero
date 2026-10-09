@@ -5,7 +5,7 @@ export function usageSection(path: string): UsageSection | null {
   const root = path.split('?')[0].split('#')[0].split('/').filter(Boolean);
   const key = root[0];
   if (key === 'portfolio' && root[1] === 'share') return null;
-  if (key === 'customer-success' || key === 'weekly-cases') return 'training';
+  if (key === 'positions' || key === 'customer-success' || key === 'weekly-cases') return 'training';
   if (key === 'role-training') return root[1] === 'career-map' ? 'career' : root[1] === 'reinforcements' ? 'reinforcements' : 'training';
   const sections: Record<string, UsageSection> = {dashboard:'dashboard',learn:'learning',competencies:'competencies',certificates:'certificates',certificate:'certificates',diplomas:'certificates',community:'community',mentoring:'mentoring','employment-kit':'employment',practice:'practice',teams:'teams',profile:'profile',help:'support',news:'news',notifications:'notifications',portfolio:'portfolio',modules:'modules',checkout:'billing',admin:'administration'};
   return sections[key] ?? null;

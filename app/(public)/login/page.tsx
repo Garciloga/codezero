@@ -1,4 +1,5 @@
 "use client";
+import positionUi from '../../../lib/position-curricula/ui.json';
 import LocalizedContent from "../../components/localization/client";
 
 
@@ -80,7 +81,7 @@ function LoginForm() {
       if (!result.data.session) {
         setPassword(""); setShowPassword(false); setConfirmationEmail(email); return;
       }
-      router.push("/dashboard"); router.refresh();
+      router.push("/positions?diagnostic=1"); router.refresh();
     } catch {
       setMsg("No pudimos conectar. Intenta de nuevo en unos momentos.");
     } finally { setBusy(false); }
@@ -98,6 +99,7 @@ function LoginForm() {
 
   return <LocalizedContent><main className="wrap">
     <div className="card public-login">
+      {mode==="signup"&&<section><h2>{positionUi[locale].choose}</h2><label>{positionUi[locale].choose}<select name="learning_position_key"><option value="customer_success">Customer Success</option></select></label><p>{positionUi[locale].diagnosticNote}</p></section>}
       {confirmationEmail ? <section aria-labelledby="confirmation-title">
         <h1 id="confirmation-title">Revisa tu correo</h1>
         <p role="status">Revisa <b>{confirmationEmail}</b> y sigue las instrucciones de confirmación para continuar.</p>
