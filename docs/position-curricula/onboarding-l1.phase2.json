@@ -1,0 +1,631 @@
+{
+  "key": "onboarding-l1",
+  "status": "editorial-draft",
+  "published": false,
+  "editorialReview": "pending",
+  "studentCalibration": "pending",
+  "version": 1,
+  "role": "onboarding",
+  "level": 1,
+  "coverage": {
+    "lessons": 6,
+    "formativeExercises": 12,
+    "assessments": 0,
+    "projects": 0
+  },
+  "note": "First six applied lessons for editorial calibration. Not a complete level; no publication or progress unlock.",
+  "lessons": [
+    {
+      "key": "position-onboarding-l1-1",
+      "sharedSource": "cs-roi",
+      "localized": {
+        "es": {
+          "title": "Traspaso verificable",
+          "case": "Ventas prometió una integración sin fecha confirmada. El cliente espera empezar el lunes.",
+          "learningObjective": "Registrar la promesa, confirmar alcance con el equipo técnico y acordar un inicio condicionado con el cliente.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "Ventas prometió una integración sin fecha confirmada. El cliente espera empezar el lunes.",
+            "options": [
+              "Confirmar el lunes sin consultar dependencias.",
+              "Registrar la promesa, confirmar alcance con el equipo técnico y acordar un inicio condicionado con el cliente."
+            ],
+            "correctIndex": 1,
+            "feedback": "Registrar la promesa, confirmar alcance con el equipo técnico y acordar un inicio condicionado con el cliente."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Escribe una evidencia verificable, un responsable y una siguiente acción para este caso.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "en": {
+          "title": "Verifiable handoff",
+          "case": "Sales promised an integration without a confirmed date. The customer expects to start Monday.",
+          "learningObjective": "Record the promise, validate scope with engineering, and agree a conditional start with the customer.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "Sales promised an integration without a confirmed date. The customer expects to start Monday.",
+            "options": [
+              "Promise Monday without checking dependencies.",
+              "Record the promise, validate scope with engineering, and agree a conditional start with the customer."
+            ],
+            "correctIndex": 1,
+            "feedback": "Record the promise, validate scope with engineering, and agree a conditional start with the customer."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Write one verifiable piece of evidence, an owner and a next action for this case.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "pt": {
+          "title": "Transferência verificável",
+          "case": "Vendas prometeu uma integração sem data confirmada. O cliente espera iniciar na segunda-feira.",
+          "learningObjective": "Registrar a promessa, validar o escopo com engenharia e acordar um início condicionado com o cliente.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "Vendas prometeu uma integração sem data confirmada. O cliente espera iniciar na segunda-feira.",
+            "options": [
+              "Prometer segunda-feira sem verificar dependências.",
+              "Registrar a promessa, validar o escopo com engenharia e acordar um início condicionado com o cliente."
+            ],
+            "correctIndex": 1,
+            "feedback": "Registrar a promessa, validar o escopo com engenharia e acordar um início condicionado com o cliente."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Escreva uma evidência verificável, um responsável e a próxima ação para este caso.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "fr": {
+          "title": "Transfert vérifiable",
+          "case": "Les ventes ont promis une intégration sans date confirmée. Le client prévoit de démarrer lundi.",
+          "learningObjective": "Consigner la promesse, valider le périmètre avec l’équipe technique et convenir d’un démarrage conditionnel avec le client.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "Les ventes ont promis une intégration sans date confirmée. Le client prévoit de démarrer lundi.",
+            "options": [
+              "Promettre lundi sans vérifier les dépendances.",
+              "Consigner la promesse, valider le périmètre avec l’équipe technique et convenir d’un démarrage conditionnel avec le client."
+            ],
+            "correctIndex": 1,
+            "feedback": "Consigner la promesse, valider le périmètre avec l’équipe technique et convenir d’un démarrage conditionnel avec le client."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Rédigez une preuve vérifiable, un responsable et la prochaine action pour ce cas.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "key": "position-onboarding-l1-2",
+      "sharedSource": "cs-roi",
+      "localized": {
+        "es": {
+          "title": "Alcance y responsabilidades",
+          "case": "El cliente solicita importar datos históricos fuera del alcance firmado.",
+          "learningObjective": "Documentar la solicitud, evaluar impacto y tramitar una decisión de alcance antes de prometerla.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "El cliente solicita importar datos históricos fuera del alcance firmado.",
+            "options": [
+              "Añadir la tarea sin cambiar el plan.",
+              "Documentar la solicitud, evaluar impacto y tramitar una decisión de alcance antes de prometerla."
+            ],
+            "correctIndex": 1,
+            "feedback": "Documentar la solicitud, evaluar impacto y tramitar una decisión de alcance antes de prometerla."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Escribe una evidencia verificable, un responsable y una siguiente acción para este caso.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "en": {
+          "title": "Scope and responsibilities",
+          "case": "The customer requests historical data import outside the agreed scope.",
+          "learningObjective": "Document the request, assess impact and obtain a scope decision before committing.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "The customer requests historical data import outside the agreed scope.",
+            "options": [
+              "Add the task without updating the plan.",
+              "Document the request, assess impact and obtain a scope decision before committing."
+            ],
+            "correctIndex": 1,
+            "feedback": "Document the request, assess impact and obtain a scope decision before committing."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Write one verifiable piece of evidence, an owner and a next action for this case.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "pt": {
+          "title": "Escopo e responsabilidades",
+          "case": "O cliente solicita importação de dados históricos fora do escopo acordado.",
+          "learningObjective": "Documentar o pedido, avaliar o impacto e obter uma decisão de escopo antes de prometer.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "O cliente solicita importação de dados históricos fora do escopo acordado.",
+            "options": [
+              "Adicionar a tarefa sem alterar o plano.",
+              "Documentar o pedido, avaliar o impacto e obter uma decisão de escopo antes de prometer."
+            ],
+            "correctIndex": 1,
+            "feedback": "Documentar o pedido, avaliar o impacto e obter uma decisão de escopo antes de prometer."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Escreva uma evidência verificável, um responsável e a próxima ação para este caso.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "fr": {
+          "title": "Périmètre et responsabilités",
+          "case": "Le client demande l’import de données historiques hors périmètre convenu.",
+          "learningObjective": "Documenter la demande, évaluer l’impact et obtenir une décision de périmètre avant de s’engager.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "Le client demande l’import de données historiques hors périmètre convenu.",
+            "options": [
+              "Ajouter la tâche sans modifier le plan.",
+              "Documenter la demande, évaluer l’impact et obtenir une décision de périmètre avant de s’engager."
+            ],
+            "correctIndex": 1,
+            "feedback": "Documenter la demande, évaluer l’impact et obtenir une décision de périmètre avant de s’engager."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Rédigez une preuve vérifiable, un responsable et la prochaine action pour ce cas.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "key": "position-onboarding-l1-3",
+      "sharedSource": "cs-roi",
+      "localized": {
+        "es": {
+          "title": "Definir primer valor",
+          "case": "El equipo terminó tres sesiones de formación, pero nadie completó el flujo principal.",
+          "learningObjective": "Definir una tarea observable realizada por el cliente y comprobarla con evidencia.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "El equipo terminó tres sesiones de formación, pero nadie completó el flujo principal.",
+            "options": [
+              "Declarar éxito por horas de capacitación.",
+              "Definir una tarea observable realizada por el cliente y comprobarla con evidencia."
+            ],
+            "correctIndex": 1,
+            "feedback": "Definir una tarea observable realizada por el cliente y comprobarla con evidencia."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Escribe una evidencia verificable, un responsable y una siguiente acción para este caso.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "en": {
+          "title": "Define first value",
+          "case": "The team completed three training sessions, but nobody completed the core workflow.",
+          "learningObjective": "Define one observable customer-completed task and verify it with evidence.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "The team completed three training sessions, but nobody completed the core workflow.",
+            "options": [
+              "Declare success based on training hours.",
+              "Define one observable customer-completed task and verify it with evidence."
+            ],
+            "correctIndex": 1,
+            "feedback": "Define one observable customer-completed task and verify it with evidence."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Write one verifiable piece of evidence, an owner and a next action for this case.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "pt": {
+          "title": "Definir primeiro valor",
+          "case": "A equipe concluiu três treinamentos, mas ninguém executou o fluxo principal.",
+          "learningObjective": "Definir uma tarefa observável realizada pelo cliente e verificá-la com evidências.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "A equipe concluiu três treinamentos, mas ninguém executou o fluxo principal.",
+            "options": [
+              "Declarar sucesso pelas horas de treinamento.",
+              "Definir uma tarefa observável realizada pelo cliente e verificá-la com evidências."
+            ],
+            "correctIndex": 1,
+            "feedback": "Definir uma tarefa observável realizada pelo cliente e verificá-la com evidências."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Escreva uma evidência verificável, um responsável e a próxima ação para este caso.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "fr": {
+          "title": "Définir la première valeur",
+          "case": "L’équipe a suivi trois formations, mais personne n’a réalisé le parcours essentiel.",
+          "learningObjective": "Définir une tâche observable réalisée par le client et la vérifier avec des preuves.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "L’équipe a suivi trois formations, mais personne n’a réalisé le parcours essentiel.",
+            "options": [
+              "Déclarer la réussite selon le nombre d’heures de formation.",
+              "Définir une tâche observable réalisée par le client et la vérifier avec des preuves."
+            ],
+            "correctIndex": 1,
+            "feedback": "Définir une tâche observable réalisée par le client et la vérifier avec des preuves."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Rédigez une preuve vérifiable, un responsable et la prochaine action pour ce cas.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "key": "position-onboarding-l1-4",
+      "sharedSource": "cs-roi",
+      "localized": {
+        "es": {
+          "title": "Registro de riesgos",
+          "case": "El patrocinador estará ausente durante el momento de aprobación final.",
+          "learningObjective": "Asignar suplente, fecha de decisión, riesgo y plan de escalación por escrito.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "El patrocinador estará ausente durante el momento de aprobación final.",
+            "options": [
+              "Esperar sin informar a nadie.",
+              "Asignar suplente, fecha de decisión, riesgo y plan de escalación por escrito."
+            ],
+            "correctIndex": 1,
+            "feedback": "Asignar suplente, fecha de decisión, riesgo y plan de escalación por escrito."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Escribe una evidencia verificable, un responsable y una siguiente acción para este caso.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "en": {
+          "title": "Risk register",
+          "case": "The sponsor will be absent during final approval.",
+          "learningObjective": "Assign a delegate, decision date, risk and written escalation plan.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "The sponsor will be absent during final approval.",
+            "options": [
+              "Wait without informing anyone.",
+              "Assign a delegate, decision date, risk and written escalation plan."
+            ],
+            "correctIndex": 1,
+            "feedback": "Assign a delegate, decision date, risk and written escalation plan."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Write one verifiable piece of evidence, an owner and a next action for this case.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "pt": {
+          "title": "Registro de riscos",
+          "case": "O patrocinador estará ausente durante a aprovação final.",
+          "learningObjective": "Designar substituto, data de decisão, risco e plano de escalonamento por escrito.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "O patrocinador estará ausente durante a aprovação final.",
+            "options": [
+              "Esperar sem informar ninguém.",
+              "Designar substituto, data de decisão, risco e plano de escalonamento por escrito."
+            ],
+            "correctIndex": 1,
+            "feedback": "Designar substituto, data de decisão, risco e plano de escalonamento por escrito."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Escreva uma evidência verificável, um responsável e a próxima ação para este caso.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "fr": {
+          "title": "Registre des risques",
+          "case": "Le sponsor sera absent lors de la validation finale.",
+          "learningObjective": "Désigner un suppléant, une date de décision, le risque et un plan d’escalade écrit.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "Le sponsor sera absent lors de la validation finale.",
+            "options": [
+              "Attendre sans informer personne.",
+              "Désigner un suppléant, une date de décision, le risque et un plan d’escalade écrit."
+            ],
+            "correctIndex": 1,
+            "feedback": "Désigner un suppléant, une date de décision, le risque et un plan d’escalade écrit."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Rédigez une preuve vérifiable, un responsable et la prochaine action pour ce cas.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "key": "position-onboarding-l1-5",
+      "sharedSource": "cs-roi",
+      "localized": {
+        "es": {
+          "title": "Plan de implementación",
+          "case": "Hay cuatro responsables y tres hitos, pero ninguno tiene criterio de aceptación.",
+          "learningObjective": "Añadir entregable, responsable, dependencia, fecha y evidencia de aceptación a cada hito.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "Hay cuatro responsables y tres hitos, pero ninguno tiene criterio de aceptación.",
+            "options": [
+              "Conservar el plan porque tiene fechas.",
+              "Añadir entregable, responsable, dependencia, fecha y evidencia de aceptación a cada hito."
+            ],
+            "correctIndex": 1,
+            "feedback": "Añadir entregable, responsable, dependencia, fecha y evidencia de aceptación a cada hito."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Escribe una evidencia verificable, un responsable y una siguiente acción para este caso.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "en": {
+          "title": "Implementation plan",
+          "case": "Four owners and three milestones exist, but none has an acceptance criterion.",
+          "learningObjective": "Add deliverable, owner, dependency, date and acceptance evidence to each milestone.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "Four owners and three milestones exist, but none has an acceptance criterion.",
+            "options": [
+              "Keep the plan because it has dates.",
+              "Add deliverable, owner, dependency, date and acceptance evidence to each milestone."
+            ],
+            "correctIndex": 1,
+            "feedback": "Add deliverable, owner, dependency, date and acceptance evidence to each milestone."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Write one verifiable piece of evidence, an owner and a next action for this case.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "pt": {
+          "title": "Plano de implementação",
+          "case": "Há quatro responsáveis e três marcos, mas nenhum critério de aceitação.",
+          "learningObjective": "Adicionar entrega, responsável, dependência, data e evidência de aceitação a cada marco.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "Há quatro responsáveis e três marcos, mas nenhum critério de aceitação.",
+            "options": [
+              "Manter o plano porque contém datas.",
+              "Adicionar entrega, responsável, dependência, data e evidência de aceitação a cada marco."
+            ],
+            "correctIndex": 1,
+            "feedback": "Adicionar entrega, responsável, dependência, data e evidência de aceitação a cada marco."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Escreva uma evidência verificável, um responsável e a próxima ação para este caso.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "fr": {
+          "title": "Plan de déploiement",
+          "case": "Il y a quatre responsables et trois jalons, mais aucun critère d’acceptation.",
+          "learningObjective": "Ajouter livrable, responsable, dépendance, date et preuve d’acceptation à chaque jalon.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "Il y a quatre responsables et trois jalons, mais aucun critère d’acceptation.",
+            "options": [
+              "Conserver le plan puisqu’il comporte des dates.",
+              "Ajouter livrable, responsable, dépendance, date et preuve d’acceptation à chaque jalon."
+            ],
+            "correctIndex": 1,
+            "feedback": "Ajouter livrable, responsable, dépendance, date et preuve d’acceptation à chaque jalon."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Rédigez une preuve vérifiable, un responsable et la prochaine action pour ce cas.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "key": "position-onboarding-l1-6",
+      "sharedSource": "cs-roi",
+      "localized": {
+        "es": {
+          "title": "Cierre y transición",
+          "case": "El cliente ejecutó el flujo principal, pero aún hay dos incidencias menores.",
+          "learningObjective": "Validar aceptación con criterios acordados y trasladar incidencias con responsable y plazo.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "El cliente ejecutó el flujo principal, pero aún hay dos incidencias menores.",
+            "options": [
+              "Cerrar sin documentar incidencias pendientes.",
+              "Validar aceptación con criterios acordados y trasladar incidencias con responsable y plazo."
+            ],
+            "correctIndex": 1,
+            "feedback": "Validar aceptación con criterios acordados y trasladar incidencias con responsable y plazo."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Escribe una evidencia verificable, un responsable y una siguiente acción para este caso.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "en": {
+          "title": "Closure and transition",
+          "case": "The customer completed the core workflow, but two minor issues remain.",
+          "learningObjective": "Confirm acceptance against agreed criteria and hand off issues with owners and due dates.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "The customer completed the core workflow, but two minor issues remain.",
+            "options": [
+              "Close without documenting unresolved issues.",
+              "Confirm acceptance against agreed criteria and hand off issues with owners and due dates."
+            ],
+            "correctIndex": 1,
+            "feedback": "Confirm acceptance against agreed criteria and hand off issues with owners and due dates."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Write one verifiable piece of evidence, an owner and a next action for this case.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "pt": {
+          "title": "Encerramento e transição",
+          "case": "O cliente concluiu o fluxo principal, mas há duas falhas menores.",
+          "learningObjective": "Validar a aceitação pelos critérios acordados e transferir falhas com responsáveis e prazos.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "O cliente concluiu o fluxo principal, mas há duas falhas menores.",
+            "options": [
+              "Encerrar sem documentar pendências.",
+              "Validar a aceitação pelos critérios acordados e transferir falhas com responsáveis e prazos."
+            ],
+            "correctIndex": 1,
+            "feedback": "Validar a aceitação pelos critérios acordados e transferir falhas com responsáveis e prazos."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Escreva uma evidência verificável, um responsável e a próxima ação para este caso.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        },
+        "fr": {
+          "title": "Clôture et transition",
+          "case": "Le client a terminé le parcours essentiel, mais deux incidents mineurs subsistent.",
+          "learningObjective": "Valider l’acceptation selon les critères convenus et transférer les incidents avec responsables et échéances.",
+          "exercise1": {
+            "type": "decision",
+            "prompt": "Le client a terminé le parcours essentiel, mais deux incidents mineurs subsistent.",
+            "options": [
+              "Clore sans documenter les incidents ouverts.",
+              "Valider l’acceptation selon les critères convenus et transférer les incidents avec responsables et échéances."
+            ],
+            "correctIndex": 1,
+            "feedback": "Valider l’acceptation selon les critères convenus et transférer les incidents avec responsables et échéances."
+          },
+          "exercise2": {
+            "type": "deliverable",
+            "prompt": "Rédigez une preuve vérifiable, un responsable et la prochaine action pour ce cas.",
+            "rubric": [
+              "evidence",
+              "owner",
+              "next_action"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
