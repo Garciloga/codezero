@@ -44,6 +44,8 @@ await db.exec(readFileSync('supabase/migrations/20261009210000_customer_support_
 await db.exec(readFileSync('supabase/migrations/20261009230000_tech_support_program.sql','utf8'));
 await db.exec(readFileSync('supabase/migrations/20261010010000_key_account_manager_program.sql','utf8'));
 await db.exec(readFileSync('supabase/migrations/20261010030000_product_specialist_program.sql','utf8'));
+await db.exec(readFileSync('supabase/migrations/20261010050000_project_manager_program.sql','utf8'));
+await db.exec(readFileSync('supabase/migrations/20261010070000_manager_team_lead_program.sql','utf8'));
 let request=500;const submit=(user,key,org=id(10),answers=null,draft=null,req=null)=>{
  const item=POSITION_ITEMS.find(a=>a.key===key);return db.query('select submit_position_practice($1,$2,$3,$4,$5,$6,$7) result',[user,key,req??id(request++),org,draft??(['exam','diagnostic'].includes(item.type)?'':'Evidence, explicit constraints, owned decisions and next review with verifiable acceptance. '.repeat(4)),JSON.stringify(answers??item.decisions.map(d=>d.correct)),'guided']);
 };
@@ -103,13 +105,13 @@ assert.equal((await db.query(`select count(*) n from learning_practice_submissio
 assert.equal((await db.query(`select public.position_level_passed($1,$2,15) cs,public.position_level_passed($1,$2,15,'onboarding') ob,public.position_level_passed($1,$2,1,'account_manager') other`,[id(3),id(10)])).rows[0].cs,true);
 assert.deepEqual((await db.query(`select public.position_level_passed($1,$2,15,'onboarding') ob,public.position_level_passed($1,$2,1,'account_manager') other`,[id(3),id(10)])).rows[0],{ob:true,other:false});
 // Third program: its own catalog, keys and level gate; nothing passed elsewhere unlocks it.
-for(const role of ['account_manager','customer_support','tech_support_l3','key_account_manager','product_specialist']){
+for(const role of ['account_manager','customer_support','tech_support_l3','key_account_manager','product_specialist','project_manager','manager_team_lead']){
 assert.deepEqual((await db.query(`select count(*)::int n,count(*) filter(where item_type='exam')::int exams,count(*) filter(where item_type='project')::int projects from codezero_private.position_assessments where position_key='${role}'`)).rows[0],{n:109,exams:15,projects:2});
 assert.equal((await db.query(`select count(*)::int n from learning_activity_catalog where route_key='${role}'`)).rows[0].n,109);
 for(const item of POSITION_ITEMS.filter(a=>a.position===role&&a.decisions.length)){const row=(await db.query(`select correct_answers,option_counts from codezero_private.position_assessments where activity_key=$1`,[item.key])).rows[0];assert.deepEqual(row.correct_answers,item.decisions.map(q=>q.correct),item.key);assert.deepEqual(row.option_counts,item.decisions.map(q=>q.options.length));}
 await reject(()=>submit(id(3),`position-${role}-l2-1`));
 }
-console.log('PASS further positions (Account Manager, Customer Support, Tech Support, Key Account Manager, Product Specialist): 109 items each, keys equal to the curriculum and level gate independent of other programs');
+console.log('PASS further positions (Account Manager, Customer Support, Tech Support, Key Account Manager, Product Specialist, Project Manager, Managers y Team Leads): 109 items each, keys equal to the curriculum and level gate independent of other programs');
 console.log('PASS second position (Onboarding): separate gates, failed attempt, project approval, 92 lessons and its own certificate');
 
 await db.exec('reset role');await db.exec(`set role authenticated;select set_config('request.jwt.claim.sub','${id(4)}',false)`);
