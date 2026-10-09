@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export function publicMetadata(title: string, description: string, path: string): Metadata {
-  const image = { url: "/social/codezero", width: 1200, height: 630, alt: "Garciloga · Habilidades para tu siguiente puesto." };
+  const image = { url: "/social/codezero", width: 1200, height: 630, alt: "Garciloga · Aprende para el trabajo real. Crece hacia lo que sigue." };
   return {
     title, description,
     alternates: { canonical: path },

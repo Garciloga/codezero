@@ -275,3 +275,40 @@ html[data-design="vivo"] .stat { font-weight: 800; letter-spacing: -0.02em; }
 html[data-design="vivo"] .public-annual { margin: 10px 0 0; font-size: .9375rem; color: var(--vivo-muted); }
 html[data-design="vivo"] .public-annual strong { color: var(--vivo-text); }
 html[data-design="vivo"] .public-annual a { display: inline-flex; align-items: center; min-height: 44px; margin-left: 6px; font-weight: 600; color: var(--vivo-primary); text-decoration: underline; text-underline-offset: 4px; }
+
+/* ── Acerca de ────────────────────────────────────────────────────── */
+html[data-design="vivo"] .about-intro { padding-block: clamp(24px, 6vw, 72px) clamp(8px, 2vw, 24px); }
+html[data-design="vivo"] .about-intro h1 { max-width: 18ch; margin: 8px 0 20px; }
+html[data-design="vivo"] .public-site .about-lead { font-size: clamp(1.125rem, 1.6vw, 1.3125rem); line-height: 1.6; max-width: 60ch; color: var(--vivo-muted); }
+html[data-design="vivo"] .about :is(.about-mission, .about-vision) { margin-top: clamp(40px, 6vw, 80px); }
+html[data-design="vivo"] .about-mission { border-top: 1px solid var(--linea-fuerte); padding-top: clamp(24px, 3vw, 40px); }
+html[data-design="vivo"] .about-vision { padding: clamp(28px, 5vw, 64px); }
+html[data-design="vivo"] .about h2.public-eyebrow { font-family: var(--fuente-cuerpo); font-size: .9375rem; font-weight: 600; line-height: 1.4; margin: 0 0 16px; }
+html[data-design="vivo"] .about-mission h2.public-eyebrow { color: var(--vivo-muted); }
+html[data-design="vivo"] .public-site .about-statement {
+  font-family: var(--fuente-titulo); font-weight: 700; letter-spacing: -0.02em; text-wrap: balance;
+  font-size: clamp(1.5rem, 3.2vw, 2.5rem); line-height: 1.15; max-width: 26ch; margin: 0 0 clamp(20px, 3vw, 36px);
+}
+html[data-design="vivo"] .about-vision .about-statement { color: var(--vivo-sidebar-text, #fff); max-width: 30ch; }
+html[data-design="vivo"] .about-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px clamp(24px, 4vw, 56px); }
+html[data-design="vivo"] .public-site .about-columns p { margin: 0; line-height: 1.7; max-width: 58ch; }
+html[data-design="vivo"] .about-story .brand-story { max-width: 68ch; }
+html[data-design="vivo"] .about-story h3 { margin: 32px 0 8px; font-size: 1.1875rem; }
+html[data-design="vivo"] .public-site .about-story-lead { font-family: var(--fuente-titulo); font-weight: 700; font-size: clamp(1.1875rem, 2vw, 1.5rem); line-height: 1.35; letter-spacing: -0.01em; }
+html[data-design="vivo"] .about-values { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(24px, 3vw, 48px); margin: 0; }
+html[data-design="vivo"] .about-values > div { border-top: 1px solid var(--linea); padding: 18px 0 22px; }
+html[data-design="vivo"] .about-values dt { font-family: var(--fuente-titulo); font-weight: 700; font-size: 1.125rem; line-height: 1.3; }
+html[data-design="vivo"] .about-values dd { margin: 6px 0 0; color: var(--vivo-muted); line-height: 1.6; }
+html[data-design="vivo"] .about-goals { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; }
+html[data-design="vivo"] .about-goals h3 { margin: 0 0 8px; font-size: 1.1875rem; line-height: 1.3; }
+html[data-design="vivo"] .about-goals p { margin: 0; line-height: 1.6; }
+@media (max-width: 899px) { html[data-design="vivo"] .about-values { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 639px) {
+  html[data-design="vivo"] :is(.about-columns, .about-values) { grid-template-columns: minmax(0, 1fr); }
+  html[data-design="vivo"] .about-intro h1 { max-width: none; }
+}
+
+/* ── Logotipo ─────────────────────────────────────────────────────── */
+.brand-logo { display: block; height: 1.3em; width: auto; overflow: visible; }
+.brand-logo-leaf { fill: currentColor; }
+html[data-design="vivo"]:not([data-appearance="dark"]):not([data-custom-palette="true"]) .public-brand .brand-logo-leaf { fill: #09634D; }

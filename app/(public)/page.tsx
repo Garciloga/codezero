@@ -14,7 +14,7 @@ export default async function Home() {
   return <LocalizedContent><main className="wrap public-home">
     <section className="public-hero">
       <div>
-        <h1>Construye habilidades para tu siguiente puesto.</h1>
+        <h1>Aprende para el trabajo real. Crece hacia lo que sigue.</h1>
         <p>Empieza por tu puesto y su diagnóstico. Practica procesos, herramientas y decisiones para crecer hacia supervisión, gerencia y dirección. Programación e integraciones son una ruta técnica opcional.</p>
         <p className="muted">Practica Customer Success, Onboarding, Soporte y gestión de cuentas con datos ficticios, decisiones y revisión humana según tu plan.</p>
         <div className="public-actions"><Link className="btn accent" href="/login?modo=registro">Empezar gratis</Link><Link className="btn secondary" href="/positions">Ver la formación por puesto</Link></div>

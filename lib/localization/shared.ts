@@ -7,6 +7,8 @@ export const LOCALE_COOKIE = 'codezero_locale';
 export function validLocale(value: unknown): value is Locale {
   return typeof value === 'string' && (LOCALES as readonly string[]).includes(value);
 }
+// Founder's history: the only authored copy allowed to keep the original brand name.
+export const HISTORICAL_BRAND_COPY = ["Empezó con el nombre CodeZero,", "Inicialmente comenzó como CodeZero,"];
 export function normalizeText(text: string) { return text.replace(/\s+/g, ' ').trim(); }
 export function translator(messages: Messages) {
   const normalized = new Map(Object.entries(messages).map(([key, value]) => [normalizeText(key), value]));
@@ -33,7 +35,7 @@ export function translator(messages: Messages) {
       }
     }
     // The founder's history names the original brand; preserve that historical fact.
-    const brand = (copy: string) => key.startsWith("Empezó con el nombre CodeZero,") ? copy : copy.replaceAll("CodeZero", "Garciloga");
+    const brand = (copy: string) => HISTORICAL_BRAND_COPY.some(prefix => key.startsWith(prefix)) ? copy : copy.replaceAll("CodeZero", "Garciloga");
     if (result === undefined || !key) return brand(source);
     return brand(source.match(/^\s*/)?.[0] + result + (source.match(/\s*$/)?.[0] ?? ''));
   };
