@@ -1880,5 +1880,11 @@
   "Texto secundario del menú": "Texto secundário do menu",
   "Texto seleccionado": "Texto selecionado",
   "Todos los colores": "Todas as cores",
-  "Éxito y avance": "Sucesso e progresso"
+  "Éxito y avance": "Sucesso e progresso",
+  "Pago anual:": "Pagamento anual:",
+  "MXN al año": "MXN por ano",
+  "Elegir pago anual": "Escolher pagamento anual",
+  "Pago anual.": "Pagamento anual.",
+  "Se cobra una vez al año y se renueva cada año hasta que canceles. Verás el importe exacto en Stripe antes de pagar.": "A cobrança é feita uma vez por ano e renova a cada ano até você cancelar. Você verá o valor exato na Stripe antes de pagar.",
+  "El pago anual no está disponible por ahora. Puedes elegir el pago mensual.": "O pagamento anual não está disponível no momento. Você pode escolher o pagamento mensal."
 }

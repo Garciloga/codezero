@@ -4,12 +4,10 @@ import {cancellationAction} from '../../../../lib/cancellation-history';
 import { classifySubscription } from "../../../../lib/subscription-classification";
 import { headers } from "next/headers";
 import { createAdminSupabase } from "../../../../lib/admin";
+import { basePriceToPlan } from "../../../../lib/billing-interval";
 
-const priceToPlan: Record<string, "starter" | "pro" | "enterprise" | undefined> = {
-  [process.env.STRIPE_STARTER_PRICE_ID ?? ""]: "starter",
-  [process.env.STRIPE_PRO_PRICE_ID ?? ""]: "pro",
-  [process.env.STRIPE_ENTERPRISE_PRICE_ID ?? ""]: "enterprise",
-};
+// Monthly and, when configured, annual prices resolve to the same plan.
+const priceToPlan: Record<string, "starter" | "pro" | "enterprise" | undefined> = basePriceToPlan(process.env);
 
 const aiTutorPrices = new Set([
   process.env.STRIPE_AI_TUTOR_MONTH1_PRICE_ID,

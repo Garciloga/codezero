@@ -270,3 +270,8 @@ html[data-design="vivo"] .stat { font-weight: 800; letter-spacing: -0.02em; }
   html[data-design="vivo"] .public-header-inner:has(.public-mobile-menu[open]) .language-selector { grid-row: 4; }
   html[data-design="vivo"] .public-auth .btn { white-space: normal; }
 }
+
+/* Annual billing line under a plan's monthly price (shown only when configured). */
+html[data-design="vivo"] .public-annual { margin: 10px 0 0; font-size: .9375rem; color: var(--vivo-muted); }
+html[data-design="vivo"] .public-annual strong { color: var(--vivo-text); }
+html[data-design="vivo"] .public-annual a { display: inline-flex; align-items: center; min-height: 44px; margin-left: 6px; font-weight: 600; color: var(--vivo-primary); text-decoration: underline; text-underline-offset: 4px; }
