@@ -47,7 +47,7 @@ export async function GET(request: Request) {
         Garciloga
       </div>
       <div style={{ display: "flex", fontSize: 64, lineHeight: 1.05 }}>
-        {t("Construye habilidades para tu siguiente puesto.")}
+        {t("Aprende para el trabajo real. Crece hacia lo que sigue.")}
       </div>
       <div
         style={{ display: "flex", fontSize: 28, color: VIVO_COLORS.primary }}

@@ -1,4 +1,5 @@
 "use client";
+import BrandLogo from "./brand-logo";
 import {LATEST_RELEASE} from "../../lib/release-notes";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
@@ -167,9 +168,7 @@ export default function VivoShell({
     <div className="vivo-shell">
       <LocalizedContent>
         <aside className="vivo-sidebar">
-          <Link prefetch={false} className="vivo-logo" href={home}>
-            Garciloga
-          </Link>
+          <Link prefetch={false} className="vivo-logo" href={home} aria-label="Garciloga"><BrandLogo/></Link>
           {org?.logo_version&&<img decoding="async" alt={org.name} width={64} height={64} style={{objectFit:"contain"}} src={`/api/company/${org.organization_id}/brand?kind=logo&v=${org.logo_version}`}/>}
           {org?.cover_version&&<img loading="lazy" decoding="async" alt="Imagen de compañía" width={220} height={80} style={{objectFit:"cover",maxWidth:"100%"}} src={`/api/company/${org.organization_id}/brand?kind=cover&v=${org.cover_version}`}/>}
           {org && <section className="vivo-position">

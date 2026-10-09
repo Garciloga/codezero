@@ -25,5 +25,7 @@ test('brand history preserves CodeZero while current labels use Garciloga',()=>{
  const history='Empezó con el nombre CodeZero, como una plataforma para aprender a programar desde cero.';
  assert.equal(translator({})(history),history);
  assert.equal(translator({[history]:'It began as CodeZero, a programming platform.'})(history),'It began as CodeZero, a programming platform.');
+ const origin='Inicialmente comenzó como CodeZero, una plataforma diseñada para enseñar programación desde cero.';
+ assert.equal(translator({})(origin),origin);
  assert.equal(translator({})('Aprende con CodeZero'),'Aprende con Garciloga');
 });

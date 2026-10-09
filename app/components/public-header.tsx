@@ -3,6 +3,7 @@ import LocalizedContent from "./localization/client";
 import LanguageSelector from "./localization/language-selector";
 
 import Link from "next/link";
+import BrandLogo from "./brand-logo";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 
@@ -31,7 +32,7 @@ export default function PublicHeader({ authenticated }: { authenticated: boolean
     aria-current={pathname === link.href ? "page" : undefined}>{link.label}</Link>)}</></LocalizedContent>;
   return <LocalizedContent><header className="public-header">
     <div className="public-header-inner">
-      <Link prefetch={false} className="public-brand" href="/" aria-label="Garciloga · Inicio">Garciloga</Link>
+      <Link prefetch={false} className="public-brand" href="/" aria-label="Garciloga · Inicio"><BrandLogo/></Link>
       <nav className="public-nav public-desktop-nav" aria-label="Navegación pública">{navigation}</nav>
       <div className="public-auth">{authenticated ? <Link prefetch={false} className="btn" href="/dashboard">Ir a mi panel</Link> : <>
         <Link prefetch={false} href="/login">Entrar</Link><Link prefetch={false} className="btn" href="/login?modo=registro">Empezar gratis</Link>
