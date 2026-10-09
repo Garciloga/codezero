@@ -1,0 +1,267 @@
+/*
+ * Garciloga refresh · final visual layer.
+ * Loaded after every legacy sheet so one file states the current look:
+ * cool paper background, deep ink surfaces, squared controls and a single
+ * highlighter-yellow accent reserved for "the right answer" and the main call.
+ * Colours come from lib/vivo-design.ts; nothing here hardcodes a brand colour.
+ */
+html[data-design="vivo"] {
+  /* A custom palette's own border colours win over the derived hairlines. */
+  --linea: var(--vivo-border, color-mix(in srgb, var(--vivo-text) 14%, transparent));
+  --linea-fuerte: var(--vivo-border-strong, color-mix(in srgb, var(--vivo-text) 32%, transparent));
+  --marcador: var(--vivo-accent);
+  --ancho-publico: 1200px;
+}
+
+/* ── Type ─────────────────────────────────────────────────────────── */
+html[data-design="vivo"] :is(h1, h2, h3, h4, .stat, .vivo-logo, .public-brand) {
+  font-family: var(--fuente-titulo);
+  letter-spacing: -0.015em;
+}
+html[data-design="vivo"] h1 { font-weight: 800; letter-spacing: -0.03em; text-wrap: balance; }
+html[data-design="vivo"] h2 { font-weight: 700; text-wrap: balance; }
+html[data-design="vivo"] :is(.btn, .public-eyebrow, .vivo-position strong) { font-family: var(--fuente-cuerpo); }
+html[data-design="vivo"] .public-site :is(p, li) { max-width: 68ch; }
+html[data-design="vivo"] .public-site :is(.card, td, th, .public-dark, .public-close) :is(p, li) { max-width: none; }
+
+/* ── Controls ─────────────────────────────────────────────────────── */
+html[data-design="vivo"] .btn,
+html[data-design="vivo"] button.btn {
+  border-radius: var(--radio-control);
+  padding: 11px 18px;
+  transition: transform .12s;
+}
+html[data-design="vivo"] .btn:active { transform: translateY(1px); }
+html[data-design="vivo"] .btn.secondary { border-width: 1.5px; border-color: var(--linea-fuerte); }
+html[data-design="vivo"] .btn.secondary:hover { border-color: var(--vivo-text); }
+html[data-design="vivo"] :is(input, select, textarea) {
+  border: 1.5px solid var(--linea-fuerte);
+  border-radius: var(--radio-control) !important;
+}
+html[data-design="vivo"] :is(input[type="checkbox"], input[type="radio"], input[type="range"], input[type="color"], input[type="file"]) {
+  border: 0;
+  border-radius: 0 !important;
+  min-height: 0;
+}
+html[data-design="vivo"] :focus-visible { outline-offset: 3px; }
+
+/* ── Surfaces ─────────────────────────────────────────────────────── */
+html[data-design="vivo"] .card {
+  border: 1px solid var(--vivo-border, var(--linea));
+  box-shadow: none;
+}
+html[data-design="vivo"] .pill {
+  background: var(--vivo-soft);
+  font-weight: 600;
+}
+
+/* ── Public header: one row ───────────────────────────────────────── */
+html[data-design="vivo"] .public-header { background: var(--vivo-surface); border-bottom: 1px solid var(--linea); }
+/* Wraps instead of overflowing when a language has longer labels. */
+html[data-design="vivo"] .public-header-inner { flex-wrap: wrap; gap: 4px 12px; padding: 10px 24px; max-width: 1360px; }
+html[data-design="vivo"] .public-brand { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; white-space: nowrap; }
+html[data-design="vivo"] .public-desktop-nav { flex: 1 1 auto; min-width: 0; flex-wrap: wrap; gap: 2px; justify-content: center; }
+html[data-design="vivo"] .public-desktop-nav a { padding: 0 7px; font-size: .9rem; }
+html[data-design="vivo"] .public-nav a { border-radius: 8px; white-space: nowrap; }
+html[data-design="vivo"] .public-nav a[aria-current="page"] { background: var(--vivo-soft); font-weight: 600; }
+html[data-design="vivo"] .public-auth { flex-wrap: wrap; gap: 6px 14px; white-space: nowrap; order: 3; min-width: 0; margin-left: auto; }
+html[data-design="vivo"] .public-auth .btn { padding: 9px 16px; min-height: 44px; white-space: nowrap; }
+html[data-design="vivo"] .public-header-inner .language-selector { order: 2; padding: 0; margin: 0; flex-wrap: nowrap; }
+html[data-design="vivo"] .public-header-inner .language-selector label {
+  position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+html[data-design="vivo"] .public-header-inner .language-selector select { min-width: 0; width: auto; border-color: var(--linea-fuerte); }
+@media (max-width: 1263px) {
+  html[data-design="vivo"] .public-desktop-nav { display: none; }
+  html[data-design="vivo"] .public-mobile-menu { display: block; order: 4; }
+  html[data-design="vivo"] .public-header-inner { flex-wrap: wrap; }
+  html[data-design="vivo"] .public-brand { margin-right: auto; }
+}
+@media (min-width: 768px) and (max-width: 1263px) {
+  html[data-design="vivo"] .public-mobile-menu { position: relative; }
+  html[data-design="vivo"] .public-mobile-menu[open] .public-nav {
+    position: absolute; right: 0; top: calc(100% + 8px); z-index: 30; min-width: 240px;
+    background: var(--vivo-surface); border: 1px solid var(--linea); border-radius: var(--radio-tarjeta);
+  }
+}
+
+/* ── Hero: the one loud moment ────────────────────────────────────── */
+html[data-design="vivo"] .public-hero {
+  background: var(--vivo-sidebar);
+  color: var(--vivo-sidebar-text, #fff);
+  box-shadow: 0 0 0 100vmax var(--vivo-sidebar);
+  clip-path: inset(0 -100vmax);
+  margin-top: calc(var(--espacio-6) * -1);
+  padding-block: clamp(48px, 8vw, 104px);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: clamp(28px, 5vw, 72px);
+}
+html[data-design="vivo"] .public-hero h1 {
+  font-size: clamp(2.5rem, 6.2vw, 4.75rem);
+  line-height: .98;
+  margin: 0 0 24px;
+  color: inherit;
+}
+html[data-design="vivo"] .public-hero > div > p { font-size: 1.1875rem; line-height: 1.5; max-width: 52ch; color: var(--vivo-sidebar-muted); }
+html[data-design="vivo"] .public-hero > div > p.muted { font-size: 1rem; color: var(--vivo-sidebar-muted); }
+html[data-design="vivo"] .public-hero .btn.secondary { color: var(--vivo-sidebar-text, #fff); border-color: color-mix(in srgb, currentColor 55%, transparent); }
+html[data-design="vivo"] .public-hero .btn.secondary:hover { background: color-mix(in srgb, currentColor 12%, transparent); border-color: currentColor; }
+html[data-design="vivo"] .public-hero :focus-visible { outline-color: var(--marcador); }
+
+/* The answered exercise: a sheet of paper on the ink desk. */
+html[data-design="vivo"] .public-example {
+  background: var(--vivo-surface);
+  color: var(--vivo-text);
+  border: 0;
+  border-radius: var(--radio-bloque);
+  padding: clamp(20px, 3vw, 32px);
+  transform: rotate(1.2deg);
+}
+html[data-design="vivo"] .public-example h2 { font-size: 1.375rem; line-height: 1.25; margin: 14px 0 0; }
+html[data-design="vivo"] .public-example .public-eyebrow { color: var(--vivo-muted); letter-spacing: 0; margin-bottom: 10px; }
+html[data-design="vivo"] .example-options li { border: 1.5px solid var(--linea); color: var(--vivo-muted); }
+html[data-design="vivo"] .example-options .example-correct {
+  border-color: var(--vivo-text);
+  background: var(--vivo-surface);
+  color: var(--vivo-text);
+  font-weight: 500;
+}
+/* Highlighter stroke: marks the correct answer, here and inside the app. */
+html[data-design="vivo"] .example-options .example-correct b,
+html[data-design="vivo"] .marcador {
+  background: linear-gradient(transparent 12%, var(--marcador) 12%, var(--marcador) 88%, transparent 88%);
+  color: #12142B;
+  padding: 0 4px;
+  margin-left: -4px;
+  border-radius: 3px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+html[data-design="vivo"] .example-feedback { color: var(--vivo-positive); }
+@media (max-width: 767px) {
+  html[data-design="vivo"] .public-hero { grid-template-columns: minmax(0, 1fr); }
+  html[data-design="vivo"] .public-example { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { html[data-design="vivo"] .btn { transition: none; } }
+
+/* ── Public sections ──────────────────────────────────────────────── */
+html[data-design="vivo"] .public-section { margin-top: clamp(56px, 8vw, 104px); }
+html[data-design="vivo"] .public-section > h2 { font-size: clamp(1.875rem, 3.6vw, 2.75rem); line-height: 1.05; margin: 0 0 20px; }
+html[data-design="vivo"] .public-eyebrow { letter-spacing: 0; font-weight: 600; font-size: .9375rem; }
+
+/* Paths: three doors, ruled rather than boxed. */
+html[data-design="vivo"] .public-paths { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--vivo-text); }
+html[data-design="vivo"] .public-paths > article { padding: 24px 24px 28px 0; display: grid; gap: 10px; align-content: start; }
+html[data-design="vivo"] .public-paths > article + article { padding-left: 24px; border-left: 1px solid var(--linea); }
+html[data-design="vivo"] .public-paths h3 { font-size: 1.5rem; line-height: 1.15; margin: 0; }
+html[data-design="vivo"] .public-paths p { margin: 0; color: var(--vivo-muted); }
+html[data-design="vivo"] .public-paths .btn { justify-self: start; margin-top: 8px; }
+
+/* Job cases: a roster, one line per role. */
+html[data-design="vivo"] .job-cases { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--vivo-text); }
+html[data-design="vivo"] .job-cases li {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) auto; gap: 8px 24px; align-items: center;
+  padding: 16px 0; border-bottom: 1px solid var(--linea); max-width: none;
+}
+html[data-design="vivo"] .job-cases h3 { font-size: 1.1875rem; margin: 0; }
+html[data-design="vivo"] .job-cases p { margin: 0; color: var(--vivo-muted); }
+html[data-design="vivo"] .job-cases a { font-weight: 600; color: var(--vivo-primary); min-height: 44px; display: inline-flex; align-items: center; text-decoration: underline; text-underline-offset: 4px; }
+html[data-design="vivo"] .job-answer { margin-top: 28px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 20px; padding: 0; border: 0; background: none; }
+html[data-design="vivo"] .job-answer .pill { grid-column: 1 / -1; justify-self: start; }
+html[data-design="vivo"] .job-answer h3 { grid-column: 1 / -1; font-size: 1.375rem; margin: 6px 0 0; }
+html[data-design="vivo"] .job-answer p { grid-column: 1 / -1; margin: 0; }
+
+/* Steps are a real sequence, so they keep their numbers. */
+html[data-design="vivo"] .public-steps { gap: 0; border-top: 2px solid var(--vivo-text); }
+html[data-design="vivo"] .public-steps .card { background: none; border: 0; border-radius: 0; padding: 20px 24px 8px 0; }
+html[data-design="vivo"] .public-steps .card + .card { padding-left: 24px; border-left: 1px solid var(--linea); }
+html[data-design="vivo"] .public-step-number {
+  display: block; width: auto; height: auto; background: none; border-radius: 0; text-align: left;
+  font-family: var(--fuente-titulo); font-weight: 800; font-size: 2.75rem; line-height: 1; color: var(--vivo-primary);
+}
+html[data-design="vivo"] .public-steps h3 { margin: 14px 0 6px; }
+
+html[data-design="vivo"] .public-stats { background: var(--vivo-sidebar); border-radius: var(--radio-bloque); }
+html[data-design="vivo"] .public-dark { border-radius: var(--radio-bloque); }
+html[data-design="vivo"] .public-dark .public-eyebrow { color: var(--marcador); }
+
+html[data-design="vivo"] .public-faq details { border-bottom: 1px solid var(--linea); }
+html[data-design="vivo"] .public-faq summary { font-family: var(--fuente-titulo); font-size: 1.1875rem; }
+
+html[data-design="vivo"] .public-close {
+  background: var(--vivo-sidebar);
+  color: var(--vivo-sidebar-text, #fff);
+  border-radius: var(--radio-bloque);
+  text-align: left;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;
+  padding: clamp(28px, 5vw, 56px);
+}
+html[data-design="vivo"] .public-close h2 { margin: 0; color: inherit; font-size: clamp(1.75rem, 3.4vw, 2.5rem); }
+html[data-design="vivo"] .public-close .btn { margin: 0; }
+html[data-design="vivo"] .public-footer { background: transparent; border-top: 1px solid var(--linea); }
+html[data-design="vivo"] .public-footer nav { gap: 4px 24px; }
+html[data-design="vivo"] .public-footer a { color: var(--vivo-muted); }
+html[data-design="vivo"] .public-footer a:hover { color: var(--vivo-text); text-decoration: underline; }
+
+@media (max-width: 899px) {
+  html[data-design="vivo"] .public-paths,
+  html[data-design="vivo"] .public-steps { grid-template-columns: minmax(0, 1fr); }
+  html[data-design="vivo"] .public-paths > article,
+  html[data-design="vivo"] .public-paths > article + article,
+  html[data-design="vivo"] .public-steps .card,
+  html[data-design="vivo"] .public-steps .card + .card { padding: 20px 0; border-left: 0; border-bottom: 1px solid var(--linea); }
+  html[data-design="vivo"] .public-steps .card { display: grid; grid-template-columns: 3rem minmax(0, 1fr); column-gap: 12px; }
+  html[data-design="vivo"] .public-steps .card > :not(.public-step-number) { grid-column: 2; }
+  html[data-design="vivo"] .public-steps h3 { margin-top: 4px; }
+  html[data-design="vivo"] .public-step-number { grid-row: 1 / span 2; }
+  html[data-design="vivo"] .job-cases li { grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 14px 0; }
+}
+
+/* ── App shell ────────────────────────────────────────────────────── */
+html[data-design="vivo"] .vivo-logo { font-weight: 800; letter-spacing: -0.03em; }
+html[data-design="vivo"] .vivo-sidebar nav a { border-radius: var(--radio-control); }
+html[data-design="vivo"] .vivo-position { border-radius: var(--radio-tarjeta); }
+html[data-design="vivo"] .bar { height: 8px; }
+
+/* Wide tables scroll inside their own frame instead of widening the page. */
+html[data-design="vivo"] .vivo-table-scroll { overflow-x: auto; max-width: 100%; border: 1px solid var(--linea); border-radius: var(--radio-control); }
+html[data-design="vivo"] .card { min-width: 0; }
+
+/* Phone header: brand and account actions on top, menu and language below. */
+@media (max-width: 767px) {
+  html[data-design="vivo"] .public-header-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 12px; padding: 10px 16px; }
+  html[data-design="vivo"] .public-brand { grid-column: 1; grid-row: 1; align-self: center; }
+  html[data-design="vivo"] .public-auth { grid-column: 2; grid-row: 1; justify-content: flex-end; gap: 12px; }
+  html[data-design="vivo"] .public-mobile-menu { grid-column: 1; grid-row: 2; width: auto !important; }
+  html[data-design="vivo"] .public-mobile-menu[open] { grid-column: 1 / -1; }
+  html[data-design="vivo"] .public-header-inner .language-selector { grid-column: 2; grid-row: 2; }
+  html[data-design="vivo"] .public-header-inner:has(.public-mobile-menu[open]) .language-selector { grid-row: 3; grid-column: 1 / -1; justify-content: flex-start; }
+  html[data-design="vivo"] .public-mobile-menu summary { padding: 8px 12px; border: 1.5px solid var(--linea-fuerte); border-radius: var(--radio-control); }
+}
+
+/* Three-up utility used by view switches and summaries. */
+html[data-design="vivo"] .grid3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 700px) { html[data-design="vivo"] .grid3 { grid-template-columns: minmax(0, 1fr); } }
+html[data-design="vivo"] .btn.secondary[aria-pressed="true"] { background: var(--vivo-text); border-color: var(--vivo-text); color: var(--vivo-surface); }
+
+/* Home shows one sample person on phones; the full matrix lives in /companies. */
+@media (max-width: 767px) {
+  html[data-design="vivo"] .public-home .competency-mobile > .card:nth-child(n+2) { display: none; }
+}
+
+/* Page headers inside the app: title on the left, actions aligned on one line. */
+html[data-design="vivo"] .vivo-content .nav { align-items: flex-start; flex-wrap: wrap; }
+html[data-design="vivo"] .vivo-content .nav > div:last-child { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+html[data-design="vivo"] .vivo-content .nav form { margin: 0; display: inline-flex; }
+html[data-design="vivo"] .pill:empty { display: none; }
+html[data-design="vivo"] .stat { font-weight: 800; letter-spacing: -0.02em; }
+
+/* Very narrow phones: account actions take their own row so nothing is clipped. */
+@media (max-width: 380px) {
+  html[data-design="vivo"] .public-brand { grid-column: 1 / -1; }
+  html[data-design="vivo"] .public-auth { grid-column: 1 / -1; grid-row: 2; justify-content: space-between; }
+  html[data-design="vivo"] .public-mobile-menu { grid-row: 3; }
+  html[data-design="vivo"] .public-header-inner .language-selector { grid-row: 3; }
+  html[data-design="vivo"] .public-header-inner:has(.public-mobile-menu[open]) .language-selector { grid-row: 4; }
+  html[data-design="vivo"] .public-auth .btn { white-space: normal; }
+}

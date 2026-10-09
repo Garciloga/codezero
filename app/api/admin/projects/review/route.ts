@@ -7,6 +7,7 @@ import { getProjectLevel } from "../../../../../lib/access";
 import { maybeIssueWorkspaceDiploma } from "../../../../../lib/workspace-diploma-server";
 import { workspaceEnabled } from "../../../../../lib/workspace-sandbox";
 
+import { boundedForm, FORM_LIMIT_BYTES } from "../../../../../lib/bounded-form";
 export async function POST(req: Request) {
   if (!isTrustedBrowserRequest(req)) {
     return new Response("Invalid request origin", { status: 403 });
@@ -30,7 +31,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "FORBIDDEN" }, { status: 403 });
   }
 
-  const formData = await req.formData();
+  const formData = await boundedForm(req, FORM_LIMIT_BYTES).catch(() => null);
+
+  if (!formData) return new Response(null, { status: 413 });
   const submissionId = Number(formData.get("submission_id"));
   const score = Number(formData.get("score"));
   const feedback = String(formData.get("feedback") ?? "").trim();

@@ -4,6 +4,7 @@ import { createAdminSupabase } from "../../../../lib/admin";
 import { isTrustedBrowserRequest } from "../../../../lib/security";
 import { consumeRateLimit } from "../../../../lib/rate-limit";
 
+import { boundedForm, FORM_LIMIT_BYTES } from "../../../../lib/bounded-form";
 export async function POST(req: Request) {
   if (!isTrustedBrowserRequest(req)) {
     return new Response("Invalid request origin", { status: 403 });
@@ -21,7 +22,9 @@ export async function POST(req: Request) {
     );
   }
 
-  const form = await req.formData();
+  const form = await boundedForm(req, FORM_LIMIT_BYTES).catch(() => null);
+
+  if (!form) return new Response(null, { status: 413 });
   const faqId = Number(form.get("faq_id"));
   const helpful = String(form.get("helpful")) === "true";
   const queryText = String(form.get("query_text") ?? "").trim().slice(0, 500);
