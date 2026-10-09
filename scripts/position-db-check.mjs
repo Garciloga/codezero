@@ -2,7 +2,7 @@ import {PGlite} from '@electric-sql/pglite';
 import {readFileSync} from 'node:fs';
 import assert from 'node:assert/strict';
 import {trainingCatalogSeed} from './role-training-catalog.mjs';
-import {CS_CURRICULUM_LESSONS,CS_CURRICULUM_EXAMS,POSITION_ITEMS} from '../lib/position-curriculum.ts';
+import {CS_CURRICULUM_LESSONS,CS_CURRICULUM_EXAMS,POSITION_ITEMS,ONBOARDING_PROGRAM} from '../lib/position-curriculum.ts';
 const db=new PGlite(),id=n=>'00000000-0000-4000-8000-'+String(n).padStart(12,'0');
 try{
  await db.exec(`create role anon;create role authenticated;create role service_role bypassrls;
@@ -37,6 +37,7 @@ insert into public.test_quota select id,0,20 from public.profiles;
 create function public.consume_quota(p_user uuid,p_kind text,p_amount integer) returns jsonb language plpgsql security invoker as $$begin update public.test_quota set used=used+p_amount where user_id=p_user and used+p_amount<=quota;if not found then return '{"allowed":false}'::jsonb;end if;return '{"allowed":true}'::jsonb;end$$;
 grant all on public.test_quota to service_role;grant execute on function public.check_cs_course_access(uuid),public.consume_quota(uuid,text,integer) to service_role;`);
 const migration=readFileSync('supabase/migrations/20261008235031_position_curriculum.sql','utf8');await db.exec(migration);
+await db.exec(readFileSync('supabase/migrations/20261009051500_position_programs.sql','utf8'));
 let request=500;const submit=(user,key,org=id(10),answers=null,draft=null,req=null)=>{
  const item=POSITION_ITEMS.find(a=>a.key===key);return db.query('select submit_position_practice($1,$2,$3,$4,$5,$6,$7) result',[user,key,req??id(request++),org,draft??(['exam','diagnostic'].includes(item.type)?'':'Evidence, explicit constraints, owned decisions and next review with verifiable acceptance. '.repeat(4)),JSON.stringify(answers??item.decisions.map(d=>d.correct)),'guided']);
 };
@@ -68,6 +69,35 @@ assert.equal((await db.query(`select used from test_quota where user_id='${id(3)
 assert.equal((await db.query(`select count(*) n from learning_practice_submissions s join learning_activity_catalog a on a.id=s.activity_id where a.content_key like 'position-cs-l%'`)).rows[0].n,92);
 await db.exec('reset role');await db.exec(`update public.test_quota set quota=15 where user_id='${id(3)}'`);await db.exec('set role service_role');assert.equal((await submit(id(3),'position-cs-exam-15')).rows[0].result,'limit');
 await reject(()=>submit(id(3),'position-cs-l2-1',id(20)));
+// A second position: its own level gates, project gates, answer keys and certificate; Customer Success progress does not unlock it.
+await db.exec('reset role');await db.exec(`update public.test_quota set quota=60 where user_id='${id(3)}'`);await db.exec('set role service_role');
+const ob=ONBOARDING_PROGRAM,obExam=n=>ob.exams.find(a=>a.level===n).key;
+await reject(()=>submit(id(3),'position-onboarding-l2-1'));
+await reject(()=>submit(id(3),obExam(1)));
+for(const lesson of ob.lessons.filter(a=>a.level===1))await submit(id(3),lesson.key);
+const wrong=ob.exams[0].decisions.map(d=>(d.correct+1)%d.options.length);
+assert.equal((await submit(id(3),obExam(1),id(10),wrong)).rows[0].result,'failed');
+await reject(()=>submit(id(3),'position-onboarding-l2-1'));
+assert.equal((await submit(id(3),obExam(1))).rows[0].result,'passed');
+for(let n=2;n<=15;n++){
+ for(const lesson of ob.lessons.filter(a=>a.level===n))await submit(id(3),lesson.key);
+ const project=ob.projects.find(a=>a.level===n);
+ if(project){
+  await reject(()=>submit(id(3),obExam(n)));
+  const submission=id(request++);await submit(id(3),project.key,id(10),[],'Project rationale with source, scope, numeric formulas, alternatives and verification. '.repeat(5),submission);
+  await reject(()=>submit(id(3),obExam(n)));
+  const scores=Object.fromEntries(project.source.competencies.map(k=>[k,3]));
+  await db.query('select review_training_practice($1,$2,$3,$4,$5,null,$6)',[id(2),submission,JSON.stringify(scores),'Feedback with verifiable evidence and explicit acceptance criteria. ',[],'independent']);
+ }
+ assert.equal((await submit(id(3),obExam(n))).rows[0].result,'passed');
+}
+assert.equal(ob.projects.length,2);
+assert.deepEqual((await db.query(`select certificate_type,metadata->>'curriculum_version' v from certificates where user_id='${id(3)}' order by 1`)).rows,[{certificate_type:'customer-success-positions-v1',v:'position-cs-v1'},{certificate_type:'onboarding-positions-v1',v:'position-onboarding-v1'}]);
+assert.equal((await db.query(`select count(*) n from learning_practice_submissions s join learning_activity_catalog a on a.id=s.activity_id where a.content_key like 'position-onboarding-l%'`)).rows[0].n,92);
+assert.equal((await db.query(`select public.position_level_passed($1,$2,15) cs,public.position_level_passed($1,$2,15,'onboarding') ob,public.position_level_passed($1,$2,1,'account_manager') other`,[id(3),id(10)])).rows[0].cs,true);
+assert.deepEqual((await db.query(`select public.position_level_passed($1,$2,15,'onboarding') ob,public.position_level_passed($1,$2,1,'account_manager') other`,[id(3),id(10)])).rows[0],{ob:true,other:false});
+console.log('PASS second position (Onboarding): separate gates, failed attempt, project approval, 92 lessons and its own certificate');
+
 await db.exec('reset role');await db.exec(`set role authenticated;select set_config('request.jwt.claim.sub','${id(4)}',false)`);
 assert.equal((await db.query("select * from learning_practice_submissions where user_id=$1",[id(3)])).rows.length,0);
 await reject(()=>db.query('select * from codezero_private.position_assessments'));

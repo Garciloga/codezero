@@ -2,7 +2,7 @@ import {boundedForm} from '../../../lib/bounded-form';
 import {roleTrainingEnabled,roleTrainingSession} from '../../../lib/role-training-server';
 import {trustedWorkspaceMutation,isUuid} from '../../../lib/workspace-sandbox';
 import {createAdminSupabase} from '../../../lib/admin';
-import {positionItem,positionGrade} from '../../../lib/position-curriculum';
+import {positionItem,positionGrade,positionProgram} from '../../../lib/position-curriculum';
 import {consumeRateLimit} from '../../../lib/rate-limit';
 export async function POST(req:Request){
  if(!roleTrainingEnabled())return new Response(null,{status:404});
@@ -13,8 +13,8 @@ export async function POST(req:Request){
  const org=String(f.get('organization_id')??'')||null;if(org&&!isUuid(org))return new Response(null,{status:400});
  const admin=createAdminSupabase(),action=f.get('action');let result='saved',attempt='';
  if(action==='position'){
-  if(f.get('position')!=='customer_success')return new Response(null,{status:400});
-  const {error}=await admin.rpc('set_training_position',{p_actor:session.user.id,p_user:session.user.id,p_org:org,p_position:'customer_success'});if(error)result='blocked';
+  const program=positionProgram(String(f.get('position')??''));if(!program)return new Response(null,{status:400});
+  const {error}=await admin.rpc('set_training_position',{p_actor:session.user.id,p_user:session.user.id,p_org:org,p_position:program.key});if(error)result='blocked';
  }else if(action==='submit'){
   const item=positionItem(String(f.get('item')??'')),id=f.get('request_id');if(!item||!isUuid(id))return new Response(null,{status:400});
   const answers=item.decisions.map((_,i)=>{const v=f.get('q_'+i);return typeof v==='string'&&/^[0-9]$/.test(v)?Number(v):NaN;});
