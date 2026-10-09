@@ -58,3 +58,18 @@ test('sign-up offers exactly the connected position programs',async()=>{
  const {default:published}=await import('../lib/position-curricula/published.json',{with:{type:'json'}});
  assert.deepEqual(published.map(p=>[p.key,p.title]),Object.values(POSITION_PROGRAMS).map(p=>[p.key,p.title]));
 });
+test('Account Manager is a full, distinct program in four languages',async()=>{
+ const {ACCOUNT_MANAGER_PROGRAM:am}=await import('../lib/position-curriculum.ts');
+ assert.equal(positionProgram('account_manager'),am);assert.deepEqual(positionProgramTotals(am),positionProgramTotals(ONBOARDING_PROGRAM));
+ assert.equal(am.lessons.length,92);assert.equal(am.exams.length,15);assert.equal(am.projects.length,2);
+ for(const locale of ['es','en','pt','fr']){
+  assert.equal(new Set(am.lessons.map(l=>l.application[locale].case)).size,92,'every lesson has its own case in '+locale);
+  assert.equal(new Set(am.lessons.map(l=>l.title[locale])).size,92,'lesson titles do not repeat in '+locale);
+  for(const exam of am.exams)assert.equal(exam.application[locale].decisions.length,5);
+ }
+ const onboardingCases=new Set(ONBOARDING_PROGRAM.lessons.map(l=>l.application.es.case));
+ assert.ok(am.lessons.every(l=>!onboardingCases.has(l.application.es.case)),'no case is copied from Onboarding');
+ const seq=POSITION_ITEMS.filter(a=>a.position==='account_manager').flatMap(a=>a.decisions.map(q=>q.correct));
+ assert.equal(seq.length,167);for(const index of [0,1,2]){const share=seq.filter(v=>v===index).length/seq.length;assert.ok(share>0.2&&share<0.45);}
+ assert.ok(!JSON.stringify(am).includes('Factorial'));
+});

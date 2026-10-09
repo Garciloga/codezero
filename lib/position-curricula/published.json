@@ -6,5 +6,9 @@
  {
   "key": "onboarding",
   "title": "Onboarding Specialist"
+ },
+ {
+  "key": "account_manager",
+  "title": "Account Manager"
  }
 ]
