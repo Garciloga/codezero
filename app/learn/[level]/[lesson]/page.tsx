@@ -7,6 +7,7 @@ import { notFound, redirect } from "next/navigation";
 import { createServerSupabase, getServerUser } from "../../../../lib/supabase-server";
 import { getPassedLevelNumbers, isLevelIncludedInPlan, isLevelUnlocked } from "../../../../lib/learning";
 
+import { LESSON_STATE_LABELS, canCompleteLesson, isLessonUnlocked, lessonPercent, lessonState } from "../../../../lib/lesson-rules";
 import { workspaceSandboxEnabled } from "../../../../lib/workspace-sandbox";
 
 type PageProps = {
@@ -90,12 +91,21 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
       ? lessons[currentIndex + 1]
       : null;
 
-  const { data: progress } = await supabase
+  const { data: progressRows } = await supabase
     .from("lesson_progress")
-    .select("status, progress_percent, completed_at")
+    .select("lesson_id, status, verified_at")
     .eq("user_id", user.id)
-    .eq("lesson_id", currentLesson.id)
-    .maybeSingle();
+    .in("lesson_id", lessons.map((item: any) => item.id));
+
+  const completedLessons = new Set<number>(
+    (progressRows ?? []).filter((row: any) => row.status === "completed").map((row: any) => Number(row.lesson_id))
+  );
+  const progress = (progressRows ?? []).find((row: any) => Number(row.lesson_id) === Number(currentLesson.id));
+
+  // Same rule the server routes enforce: earlier lessons first; completed lessons stay open.
+  if (!isLessonUnlocked(lessons.map((item: any) => Number(item.id)), completedLessons, Number(currentLesson.id))) {
+    redirect(`/learn/${levelNumber}?locked=1`);
+  }
 
   const { data: exerciseRows } = await supabase
     .from("exercises")
@@ -130,6 +140,19 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
   }
 
   const isCompleted = progress?.status === "completed";
+  const passedExercises = new Set<number>(attempts.filter((item) => item.is_correct === true).map((item) => Number(item.exercise_id)));
+  const evidence = {
+    completed: isCompleted,
+    total: exercises.length,
+    attempted: latestAttemptByExercise.size,
+    passed: passedExercises.size,
+    viewing: true,
+  };
+  const state = lessonState(evidence);
+  const percent = lessonPercent(evidence);
+  const readyToComplete = canCompleteLesson(evidence);
+  const isHistorical = isCompleted && !progress?.verified_at;
+  const nextUnlocked = isCompleted;
 
   return (
     <LocalizedContent><main className="wrap">
@@ -151,8 +174,15 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
 
       {workspaceSandboxEnabled() && process.env.CODEZERO_TUTOR_PREVIEW === "1" && <p><Link className="btn secondary" href={`/tutor-preview?lesson=${currentLesson.id}`}>Revisar contexto del Tutor</Link></p>}
 
+      <ol className="lesson-phases" aria-label="Fases de la lección">
+        <li data-done="true"><b>A · Aprender</b><span className="muted">Estudia el contenido</span></li>
+        <li data-done={evidence.attempted > 0 ? "true" : "false"}><b>B · Practicar</b><span className="muted">Resuelve las actividades</span></li>
+        <li data-done={readyToComplete || isCompleted ? "true" : "false"}><b>C · Comprobar</b><span className="muted">Aprueba cada actividad</span></li>
+        <li data-done={isCompleted ? "true" : "false"}><b>D · Avanzar</b><span className="muted">Completa y continúa</span></li>
+      </ol>
+
       {completed === "1" && (
-        <div className="card" style={{ marginBottom: 20 }}>
+        <div className="card lesson-notice" role="status" style={{ marginBottom: 20 }}>
           <b>Lección completada.</b>
           <p className="muted" style={{ marginBottom: 0 }}>
             Tu progreso se guardó correctamente.
@@ -160,8 +190,17 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
         </div>
       )}
 
+      {completed === "blocked" && !isCompleted && (
+        <div className="card lesson-notice" role="alert" style={{ marginBottom: 20 }}>
+          <b>Todavía no puedes completar esta lección.</b>
+          <p className="muted" style={{ marginBottom: 0 }}>
+            Aprueba cada actividad de práctica para completarla. Puedes intentarlo las veces que necesites.
+          </p>
+        </div>
+      )}
+
       {exerciseResult === "correct" && (
-        <div className="card" style={{ marginBottom: 20 }}>
+        <div className="card lesson-notice" role="status" style={{ marginBottom: 20 }}>
           <b>Respuesta correcta.</b>
           <p className="muted" style={{ marginBottom: 0 }}>
             El intento se guardó en tu progreso.
@@ -170,7 +209,7 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
       )}
 
       {exerciseResult === "incorrect" && (
-        <div className="card" style={{ marginBottom: 20 }}>
+        <div className="card lesson-notice" role="status" style={{ marginBottom: 20 }}>
           <b>Respuesta incorrecta.</b>
           <p className="muted" style={{ marginBottom: 0 }}>
             Revisa la explicación y vuelve a intentarlo cuando quieras.
@@ -182,7 +221,7 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
         <div className="card" style={{ marginBottom: 20 }}>
           <b>Alcanzaste el límite mensual de ejercicios de tu plan.</b>
           <p className="muted" style={{ marginBottom: 0 }}>
-            Puedes continuar estudiando el contenido y revisar tus intentos anteriores.
+            La comprobación mínima de cada lección sigue disponible sin costo; el límite aplica solo a la práctica adicional.
           </p>
         </div>
       )}
@@ -203,28 +242,48 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
           <div style={{ marginTop: 28 }}>
             {isCompleted ? (
               <span className="pill">COMPLETADA</span>
-            ) : (
+            ) : readyToComplete ? (
               <form action="/api/lessons/complete" method="post">
                 <input type="hidden" name="lesson_id" value={currentLesson.id} />
                 <input type="hidden" name="level_number" value={currentLevel.level_number} />
                 <input type="hidden" name="lesson_slug" value={currentLesson.slug} />
                 <button className="btn" type="submit">
-                  Marcar como completada
+                  Completar lección
                 </button>
               </form>
+            ) : (
+              <>
+                <button className="btn" type="button" disabled aria-describedby="complete-requirement">
+                  Completar lección
+                </button>
+                <p className="muted" id="complete-requirement" style={{ marginBottom: 0 }}>
+                  Se habilita cuando apruebas cada actividad de práctica.{" "}
+                  <a href="#practica" style={{ textDecoration: "underline" }}>Ir a la práctica</a>
+                </p>
+              </>
             )}
           </div>
         </article>
 
         <aside className="card">
           <h3>Tu avance</h3>
+          <p>
+            <span className="pill" data-lesson-state={state}>{LESSON_STATE_LABELS[state]}</span>
+          </p>
           <p className="muted">
-            Estado: {isCompleted ? "Completada" : "Pendiente"}
+            Actividades aprobadas: {evidence.passed} de {evidence.total}
           </p>
 
-          <div className="bar" style={{ marginBottom: 24 }}>
-            <i style={{ width: isCompleted ? "100%" : "0%" }} />
+          <div className="bar" role="progressbar" aria-label="Avance verificado de la lección" aria-valuemin={0} aria-valuemax={100} aria-valuenow={percent} style={{ marginBottom: 8 }}>
+            <i style={{ width: `${percent}%` }} />
           </div>
+          <p className="muted" style={{ marginBottom: 24 }}>{percent}%</p>
+
+          {isHistorical && (
+            <p className="muted">
+              Avance registrado antes de la comprobación por actividades. Se conserva sin cambios.
+            </p>
+          )}
 
           <div style={{ display: "grid", gap: 10 }}>
             {previousLesson && (
@@ -237,12 +296,18 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
             )}
 
             {nextLesson ? (
-              <Link
-                className="btn secondary"
-                href={`/learn/${currentLevel.level_number}/${nextLesson.slug}`}
-              >
-                Siguiente lección →
-              </Link>
+              nextUnlocked ? (
+                <Link
+                  className="btn secondary"
+                  href={`/learn/${currentLevel.level_number}/${nextLesson.slug}`}
+                >
+                  Siguiente lección →
+                </Link>
+              ) : (
+                <p className="muted" style={{ margin: 0 }}>
+                  La siguiente lección se abre al completar esta.
+                </p>
+              )
             ) : (
               <Link className="btn secondary" href="/dashboard">
                 Volver a Mi Garciloga
@@ -253,22 +318,37 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
       </div>
 
       {exercises.length > 0 && (
-        <section style={{ marginTop: 32 }}>
+        <section id="practica" style={{ marginTop: 32 }}>
           <span className="pill">PRÁCTICA</span>
           <h2>Comprueba lo aprendido</h2>
+          <p className="muted">
+            Cada actividad se califica al enviarla. Si fallas, lee la explicación y vuelve a intentarlo; la comprobación de la lección no consume tu límite de ejercicios.
+          </p>
 
           <div style={{ display: "grid", gap: 18 }}>
             {exercises.map((exercise) => {
               const latestAttempt = latestAttemptByExercise.get(exercise.id);
               const labels = ["A", "B", "C", "D"];
+              const passed = passedExercises.has(exercise.id);
 
               return (
-                <div className="card" key={exercise.id}>
+                <div className="card" key={exercise.id} id={`exercise-${exercise.id}`}>
+                  <p style={{ marginTop: 0 }}>
+                    <span className="pill" data-activity-state={passed ? "passed" : latestAttempt ? "retry" : "pending"}>
+                      {passed ? "Aprobada" : latestAttempt ? "Vuelve a intentarlo" : "Sin intentar"}
+                    </span>
+                  </p>
                   <h3 style={{ marginTop: 0 }}>{exercise.prompt}</h3>
 
                   {latestAttempt && (
                     <p className="muted">
                       Último intento: {latestAttempt.is_correct ? "Correcto" : "Incorrecto"}
+                    </p>
+                  )}
+
+                  {passed && (
+                    <p className="muted">
+                      Ya aprobaste esta actividad. Repetirla cuenta como práctica adicional de tu plan.
                     </p>
                   )}
 
@@ -310,7 +390,7 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
                   </form>
 
                   {latestAttempt && exercise.explanation && (
-                    <div style={{ marginTop: 18 }}>
+                    <div style={{ marginTop: 18 }} role="note">
                       <b>Explicación</b>
                       <p className="muted" style={{ marginBottom: 0 }}>
                         {exercise.explanation}

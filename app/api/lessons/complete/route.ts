@@ -6,6 +6,8 @@ import { isTrustedBrowserRequest } from "../../../../lib/security";
 import { consumeRateLimit } from "../../../../lib/rate-limit";
 import { maybeIssueWorkspaceDiploma } from "../../../../lib/workspace-diploma-server";
 
+import { lessonGate } from "../../../../lib/lesson-gate";
+import { canCompleteLesson } from "../../../../lib/lesson-rules";
 import { boundedForm, FORM_LIMIT_BYTES } from "../../../../lib/bounded-form";
 export async function POST(req: Request) {
   if (!isTrustedBrowserRequest(req)) {
@@ -43,6 +45,14 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "FORBIDDEN" }, { status: 403 });
   }
 
+  const lessonUrl = (query: string) => new URL(`/learn/${levelNumber}/${lesson.slug}?${query}`, req.url);
+  // Evidence is read on the server; nothing the browser sends can declare a lesson passed.
+  const gate = await lessonGate(user.id, lessonId, Number(lesson.level_id));
+  // Idempotent: a completed lesson (historical or verified) is never rewritten.
+  if (gate.completed) return NextResponse.redirect(lessonUrl("completed=1"), 303);
+  if (!gate.unlocked) return NextResponse.redirect(new URL(`/learn/${levelNumber}?locked=1`, req.url), 303);
+  if (!canCompleteLesson(gate)) return NextResponse.redirect(lessonUrl("completed=blocked"), 303);
+
   const now = new Date().toISOString();
   const admin = createAdminSupabase();
   const { error } = await admin.from("lesson_progress").upsert(
@@ -53,6 +63,7 @@ export async function POST(req: Request) {
       progress_percent: 100,
       started_at: now,
       completed_at: now,
+      verified_at: now,
       updated_at: now,
     },
     { onConflict: "user_id,lesson_id" }
@@ -61,8 +72,5 @@ export async function POST(req: Request) {
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   await maybeIssueWorkspaceDiploma(user.id,levelNumber);
 
-  return NextResponse.redirect(
-    new URL(`/learn/${levelNumber}/${lesson.slug}?completed=1`, req.url),
-    303
-  );
+  return NextResponse.redirect(lessonUrl("completed=1"), 303);
 }

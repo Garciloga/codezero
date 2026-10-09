@@ -6,6 +6,8 @@ import { canAccessLevel, getExerciseLevel } from "../../../../lib/access";
 import { isTrustedBrowserRequest } from "../../../../lib/security";
 import { consumeRateLimit } from "../../../../lib/rate-limit";
 
+import { lessonGate } from "../../../../lib/lesson-gate";
+import { attemptCategory } from "../../../../lib/lesson-rules";
 import { boundedForm, FORM_LIMIT_BYTES } from "../../../../lib/bounded-form";
 export async function POST(req: Request) {
   if (!isTrustedBrowserRequest(req)) {
@@ -55,32 +57,47 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "SOLUTION_NOT_FOUND" }, { status: 500 });
   }
 
-  const quota = await consumeQuota(user.id, "exercises", 1);
-  if (!quota.allowed) {
-    return NextResponse.redirect(
-      new URL(`/learn/${levelNumber}/${lesson.slug}?exercise=limit`, req.url),
-      303
-    );
-  }
+  const back = (result: string) => NextResponse.redirect(
+    new URL(`/learn/${levelNumber}/${lesson.slug}?exercise=${result}#exercise-${exerciseId}`, req.url),
+    303
+  );
+
+  // Same rule as navigation: an activity of a locked lesson cannot be answered by calling the API directly.
+  const gate = await lessonGate(user.id, Number(lesson.id), Number(lesson.level_id));
+  if (!gate.unlocked) return NextResponse.redirect(new URL(`/learn/${levelNumber}?locked=1`, req.url), 303);
 
   const isCorrect = answer === solution.correct_answer;
+  const { data: previous } = await admin
+    .from("exercise_attempts")
+    .select("answer, is_correct, created_at")
+    .eq("user_id", user.id)
+    .eq("exercise_id", exerciseId);
+  const history = (previous ?? []) as { answer: string; is_correct: boolean; created_at?: string }[];
+
+  // A repeated request (double click, retry of the same form) is answered without a second record or charge.
+  const repeated = history.some(row => row.answer === answer && row.created_at && Date.now() - Date.parse(row.created_at) < 3000);
+  if (repeated) return back(isCorrect ? "correct" : "incorrect");
+
+  // The minimum check of a lesson is free. Once the activity is passed, further attempts are
+  // extra practice and use the plan's existing exercises quota, so limits cannot be bypassed.
+  const category = attemptCategory(history.some(row => row.is_correct === true));
+  if (category === "practice") {
+    const quota = await consumeQuota(user.id, "exercises", 1);
+    if (!quota.allowed) return back("limit");
+  }
+
   const { error: attemptError } = await admin.from("exercise_attempts").insert({
     user_id: user.id,
     exercise_id: exerciseId,
     answer,
     is_correct: isCorrect,
+    category,
   });
 
   if (attemptError) {
-    await releaseQuota(user.id, "exercises", 1);
+    if (category === "practice") await releaseQuota(user.id, "exercises", 1);
     return NextResponse.json({ error: attemptError.message }, { status: 500 });
   }
 
-  return NextResponse.redirect(
-    new URL(
-      `/learn/${levelNumber}/${lesson.slug}?exercise=${isCorrect ? "correct" : "incorrect"}`,
-      req.url
-    ),
-    303
-  );
+  return back(isCorrect ? "correct" : "incorrect");
 }

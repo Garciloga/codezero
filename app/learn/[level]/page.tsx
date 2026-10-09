@@ -5,9 +5,14 @@ import { notFound, redirect } from "next/navigation";
 import { createServerSupabase } from "../../../lib/supabase-server";
 import { getPassedLevelNumbers, isLevelUnlocked, isLevelIncludedInPlan } from "../../../lib/learning";
 
+import { LESSON_STATE_LABELS, isLessonUnlocked, lessonPercent, lessonState } from "../../../lib/lesson-rules";
+
 type PageProps = {
   params: Promise<{
     level: string;
+  }>;
+  searchParams: Promise<{
+    locked?: string;
   }>;
 };
 
@@ -21,8 +26,9 @@ type Lesson = {
   sort_order: number;
 };
 
-export default async function LevelPage({ params }: PageProps) {
+export default async function LevelPage({ params, searchParams }: PageProps) {
   const { level } = await params;
+  const { locked } = await searchParams;
   const levelNumber = Number(level);
 
   if (!Number.isInteger(levelNumber) || levelNumber < 1 || levelNumber > 15) {
@@ -92,6 +98,58 @@ export default async function LevelPage({ params }: PageProps) {
         .map((row: any) => Number(row.lesson_id))
     );
   }
+
+  // Evidence per lesson: published activities, attempted and passed (graded by the server).
+  const totalByLesson = new Map<number, number>();
+  const attemptedByLesson = new Map<number, Set<number>>();
+  const passedByLesson = new Map<number, Set<number>>();
+
+  if (lessonIds.length > 0) {
+    const { data: exerciseRows } = await supabase
+      .from("exercises")
+      .select("id, lesson_id")
+      .eq("status", "published")
+      .in("lesson_id", lessonIds);
+
+    const lessonByExercise = new Map<number, number>();
+    for (const row of exerciseRows ?? []) {
+      lessonByExercise.set(Number(row.id), Number(row.lesson_id));
+      totalByLesson.set(Number(row.lesson_id), (totalByLesson.get(Number(row.lesson_id)) ?? 0) + 1);
+    }
+
+    if (lessonByExercise.size > 0) {
+      const { data: attemptRows } = await supabase
+        .from("exercise_attempts")
+        .select("exercise_id, is_correct")
+        .eq("user_id", user.id)
+        .in("exercise_id", [...lessonByExercise.keys()]);
+
+      for (const row of attemptRows ?? []) {
+        const lessonId = lessonByExercise.get(Number(row.exercise_id));
+        if (!lessonId) continue;
+        if (!attemptedByLesson.has(lessonId)) attemptedByLesson.set(lessonId, new Set());
+        attemptedByLesson.get(lessonId)!.add(Number(row.exercise_id));
+        if (row.is_correct === true) {
+          if (!passedByLesson.has(lessonId)) passedByLesson.set(lessonId, new Set());
+          passedByLesson.get(lessonId)!.add(Number(row.exercise_id));
+        }
+      }
+    }
+  }
+
+  const evidenceFor = (lessonId: number) => ({
+    completed: completedLessonIds.has(lessonId),
+    total: totalByLesson.get(lessonId) ?? 0,
+    attempted: attemptedByLesson.get(lessonId)?.size ?? 0,
+    passed: passedByLesson.get(lessonId)?.size ?? 0,
+  });
+  const activitiesTotal = lessonList.reduce((sum, lesson) => sum + evidenceFor(lesson.id).total, 0);
+  const activitiesAttempted = lessonList.reduce((sum, lesson) => sum + evidenceFor(lesson.id).attempted, 0);
+  const activitiesPassed = lessonList.reduce((sum, lesson) => sum + evidenceFor(lesson.id).passed, 0);
+  const toReinforce = lessonList.filter((lesson) => {
+    const item = evidenceFor(lesson.id);
+    return item.attempted > item.passed;
+  });
 
   const completedCount = lessonList.filter((lesson) =>
     completedLessonIds.has(lesson.id)
@@ -189,6 +247,32 @@ export default async function LevelPage({ params }: PageProps) {
           <i style={{ width: `${progressPercent}%` }} />
         </div>
 
+        <p className="muted" style={{ marginBottom: 16 }}>
+          Actividades intentadas: {activitiesAttempted} de {activitiesTotal} · Actividades aprobadas: {activitiesPassed} de {activitiesTotal}
+        </p>
+
+        {locked === "1" && (
+          <div className="card" role="alert" style={{ marginBottom: 16 }}>
+            <b>Esa lección todavía está bloqueada.</b>
+            <p className="muted" style={{ marginBottom: 0 }}>
+              Completa las lecciones anteriores en orden. Las que ya completaste siguen abiertas para repasar.
+            </p>
+          </div>
+        )}
+
+        {toReinforce.length > 0 && (
+          <div className="card" style={{ marginBottom: 16 }}>
+            <b>Áreas por reforzar</b>
+            <ul style={{ marginBottom: 0 }}>
+              {toReinforce.map((lesson) => (
+                <li key={lesson.id}>
+                  <Link href={`/learn/${currentLevel.level_number}/${lesson.slug}#practica`} style={{ textDecoration: "underline" }}>{lesson.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {lessonsError && (
           <div className="card" style={{ marginBottom: 16 }}>
             <b>No se pudieron cargar las lecciones.</b>
@@ -199,6 +283,9 @@ export default async function LevelPage({ params }: PageProps) {
         <div style={{ display: "grid", gap: 14 }}>
           {lessonList.map((lesson, index) => {
             const completed = completedLessonIds.has(lesson.id);
+            const evidence = evidenceFor(lesson.id);
+            const state = lessonState(evidence);
+            const unlocked = isLessonUnlocked(lessonIds, completedLessonIds, lesson.id);
 
             return (
               <div className="card" key={lesson.id}>
@@ -214,13 +301,18 @@ export default async function LevelPage({ params }: PageProps) {
                   </div>
 
                   <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-                    <span className="pill">{completed ? "COMPLETADA" : "PENDIENTE"}</span>
-                    <Link
-                      className="btn secondary"
-                      href={`/learn/${currentLevel.level_number}/${lesson.slug}`}
-                    >
-                      {completed ? "Repasar" : "Abrir lección"}
-                    </Link>
+                    <span className="pill" data-lesson-state={unlocked ? state : "locked"}>{unlocked ? LESSON_STATE_LABELS[state] : "Bloqueada"}</span>
+                    <span className="muted">{lessonPercent(evidence)}%</span>
+                    {unlocked ? (
+                      <Link
+                        className="btn secondary"
+                        href={`/learn/${currentLevel.level_number}/${lesson.slug}`}
+                      >
+                        {completed ? "Repasar" : "Abrir lección"}
+                      </Link>
+                    ) : (
+                      <span className="muted">Completa la lección anterior</span>
+                    )}
                   </div>
                 </div>
               </div>
