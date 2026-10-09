@@ -14,11 +14,10 @@ export default async function Home() {
   return <LocalizedContent><main className="wrap public-home">
     <section className="public-hero">
       <div>
-        <p className="public-eyebrow">Formación por puesto · procesos, herramientas y decisiones</p>
         <h1>Construye habilidades para tu siguiente puesto.</h1>
         <p>Empieza por tu puesto y su diagnóstico. Practica procesos, herramientas y decisiones para crecer hacia supervisión, gerencia y dirección. Programación e integraciones son una ruta técnica opcional.</p>
         <p className="muted">Practica Customer Success, Onboarding, Soporte y gestión de cuentas con datos ficticios, decisiones y revisión humana según tu plan.</p>
-        <div className="public-actions"><Link className="btn" href="/login?modo=registro">Empezar gratis</Link><Link className="btn secondary" href="/positions">Ver la formación por puesto</Link></div>
+        <div className="public-actions"><Link className="btn accent" href="/login?modo=registro">Empezar gratis</Link><Link className="btn secondary" href="/positions">Ver la formación por puesto</Link></div>
         <p className="muted">Diagnóstico inicial disponible sin completar programación.</p>
       </div>
       <aside className="card public-example" aria-label="Ejemplo de un ejercicio respondido">
@@ -31,8 +30,8 @@ export default async function Home() {
         <p className="example-feedback"><b>Correcto.</b> Una observación con su fórmula permite decidir sin prometer resultados no demostrados.</p>
       </aside>
     </section>
-    <section className="public-section"><h2>Elige tu camino</h2><div className="public-feature-grid">{[["Quiero crecer en mi puesto","Casos de Customer Success, Soporte, Onboarding y liderazgo.","/role-training"],["Quiero aprender a programar","Python, SQL e integraciones con práctica ejecutable.","/practice"],["Quiero formar a mi equipo","Competencias, refuerzos y seguimiento dentro de cada compañía.","/companies"]].map(([title,text,href])=><article className="card" key={title}><h3>{title}</h3><p>{text}</p><Link className="btn secondary" href={href}>Explorar</Link></article>)}</div></section>
-    <section className="public-section"><h2>Practica tu trabajo</h2><div className="public-feature-grid">{PUBLIC_JOB_CASES.map(unit=><article className="card" key={unit.key}><h3>{unit.title}</h3><p>{unit.caseTitle}</p><Link href={'/role-training/mixed?unit='+unit.key}>Explorar el caso</Link></article>)}</div><aside className="card"><span className="pill">Decisión respondida · Cuenta Faro</span><h3>Dos usuarios no pueden exportar. ¿Qué confirmas primero?</h3><p>Respuesta: compara permisos, pasos y alcance con una cuenta que sí funciona. Un error aislado no demuestra una caída general.</p></aside></section>
+    <section className="public-section"><h2>Elige tu camino</h2><div className="public-paths">{[["Quiero crecer en mi puesto","Casos de Customer Success, Soporte, Onboarding y liderazgo.","/role-training"],["Quiero aprender a programar","Python, SQL e integraciones con práctica ejecutable.","/practice"],["Quiero formar a mi equipo","Competencias, refuerzos y seguimiento dentro de cada compañía.","/companies"]].map(([title,text,href])=><article key={title}><h3>{title}</h3><p>{text}</p><Link className="btn secondary" href={href}>Explorar</Link></article>)}</div></section>
+    <section className="public-section"><h2>Practica tu trabajo</h2><ul className="job-cases">{PUBLIC_JOB_CASES.map(unit=><li key={unit.key}><h3>{unit.title}</h3><p>{unit.caseTitle}</p><Link href={'/role-training/mixed?unit='+unit.key}>Explorar el caso</Link></li>)}</ul><aside className="job-answer"><span className="pill">Decisión respondida · Cuenta Faro</span><h3>Dos usuarios no pueden exportar. ¿Qué confirmas primero?</h3><p>Respuesta: compara permisos, pasos y alcance con una cuenta que sí funciona. Un error aislado no demuestra una caída general.</p></aside></section>
     {counts&&<section className="public-stats" aria-label="Catálogo publicado">{[[counts.levels,"niveles técnicos"],[counts.lessons,"lecciones publicadas"],[counts.technicalProjects,"proyectos técnicos"],[counts.roleProjects,"integradores por ruta"]].map(([n,label])=><div key={String(label)}><strong>{n}</strong><span>{label}</span></div>)}</section>}
     <section id="como-funciona" className="public-section">
       <h2>Así se avanza en Garciloga</h2><p className="muted">Lección, práctica, decisiones, proyecto revisado y evidencia. Cada recorrido conserva sus requisitos.</p>
