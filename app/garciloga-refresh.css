@@ -6,8 +6,9 @@
  * Colours come from lib/vivo-design.ts; nothing here hardcodes a brand colour.
  */
 html[data-design="vivo"] {
-  --linea: color-mix(in srgb, var(--vivo-text) 14%, transparent);
-  --linea-fuerte: color-mix(in srgb, var(--vivo-text) 32%, transparent);
+  /* A custom palette's own border colours win over the derived hairlines. */
+  --linea: var(--vivo-border, color-mix(in srgb, var(--vivo-text) 14%, transparent));
+  --linea-fuerte: var(--vivo-border-strong, color-mix(in srgb, var(--vivo-text) 32%, transparent));
   --marcador: var(--vivo-accent);
   --ancho-publico: 1200px;
 }
@@ -28,7 +29,7 @@ html[data-design="vivo"] .btn,
 html[data-design="vivo"] button.btn {
   border-radius: var(--radio-control);
   padding: 11px 18px;
-  transition: background-color .12s, border-color .12s, transform .12s;
+  transition: transform .12s;
 }
 html[data-design="vivo"] .btn:active { transform: translateY(1px); }
 html[data-design="vivo"] .btn.secondary { border-width: 1.5px; border-color: var(--linea-fuerte); }
@@ -46,24 +47,24 @@ html[data-design="vivo"] :focus-visible { outline-offset: 3px; }
 
 /* ── Surfaces ─────────────────────────────────────────────────────── */
 html[data-design="vivo"] .card {
-  border: 1px solid var(--linea);
+  border: 1px solid var(--vivo-border, var(--linea));
   box-shadow: none;
 }
 html[data-design="vivo"] .pill {
   background: var(--vivo-soft);
-  color: var(--vivo-text);
   font-weight: 600;
 }
 
 /* ── Public header: one row ───────────────────────────────────────── */
 html[data-design="vivo"] .public-header { background: var(--vivo-surface); border-bottom: 1px solid var(--linea); }
-html[data-design="vivo"] .public-header-inner { flex-wrap: nowrap; gap: 12px; padding: 10px 24px; max-width: 1360px; }
+/* Wraps instead of overflowing when a language has longer labels. */
+html[data-design="vivo"] .public-header-inner { flex-wrap: wrap; gap: 4px 12px; padding: 10px 24px; max-width: 1360px; }
 html[data-design="vivo"] .public-brand { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; white-space: nowrap; }
-html[data-design="vivo"] .public-desktop-nav { flex: 1; flex-wrap: nowrap; gap: 2px; justify-content: center; }
+html[data-design="vivo"] .public-desktop-nav { flex: 1 1 auto; min-width: 0; flex-wrap: wrap; gap: 2px; justify-content: center; }
 html[data-design="vivo"] .public-desktop-nav a { padding: 0 7px; font-size: .9rem; }
 html[data-design="vivo"] .public-nav a { border-radius: 8px; white-space: nowrap; }
 html[data-design="vivo"] .public-nav a[aria-current="page"] { background: var(--vivo-soft); font-weight: 600; }
-html[data-design="vivo"] .public-auth { flex-wrap: nowrap; gap: 14px; white-space: nowrap; order: 3; }
+html[data-design="vivo"] .public-auth { flex-wrap: wrap; gap: 6px 14px; white-space: nowrap; order: 3; min-width: 0; margin-left: auto; }
 html[data-design="vivo"] .public-auth .btn { padding: 9px 16px; min-height: 44px; white-space: nowrap; }
 html[data-design="vivo"] .public-header-inner .language-selector { order: 2; padding: 0; margin: 0; flex-wrap: nowrap; }
 html[data-design="vivo"] .public-header-inner .language-selector label {
@@ -254,3 +255,13 @@ html[data-design="vivo"] .vivo-content .nav > div:last-child { display: flex; fl
 html[data-design="vivo"] .vivo-content .nav form { margin: 0; display: inline-flex; }
 html[data-design="vivo"] .pill:empty { display: none; }
 html[data-design="vivo"] .stat { font-weight: 800; letter-spacing: -0.02em; }
+
+/* Very narrow phones: account actions take their own row so nothing is clipped. */
+@media (max-width: 380px) {
+  html[data-design="vivo"] .public-brand { grid-column: 1 / -1; }
+  html[data-design="vivo"] .public-auth { grid-column: 1 / -1; grid-row: 2; justify-content: space-between; }
+  html[data-design="vivo"] .public-mobile-menu { grid-row: 3; }
+  html[data-design="vivo"] .public-header-inner .language-selector { grid-row: 3; }
+  html[data-design="vivo"] .public-header-inner:has(.public-mobile-menu[open]) .language-selector { grid-row: 4; }
+  html[data-design="vivo"] .public-auth .btn { white-space: normal; }
+}
