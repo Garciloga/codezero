@@ -22,5 +22,5 @@ export async function trainingPerson(userId:string,org:string|null){
  const selected=position.data?.learning_position_key;
  const profile=(profiles.data??[]).find(p=>p.position_key===selected) as JobProfile|undefined;
  if(history.error||position.error||profiles.error)throw Error('TRAINING_DATA_UNAVAILABLE');
- return {session,evidence:history.data??[],profile:profile??null,summary:competencyProfile(history.data??[],profile??null),profiles:profiles.data as JobProfile[]};
+ return {session,evidence:history.data??[],profile:profile??null,summary:competencyProfile(history.data??[],profile??null),profiles:profiles.data as JobProfile[],position:(selected as string|null|undefined)??null};
 }

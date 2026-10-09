@@ -2,7 +2,7 @@ import 'server-only';
 import {cache} from 'react';
 import {roleTrainingSession,trainingPerson} from './role-training-server';
 import {readWorkspacePages} from './workspace-pages';
-import {POSITION_ITEMS,CS_CURRICULUM_LEVELS,positionProjectApproved} from './position-curriculum';
+import {POSITION_ITEMS,POSITION_PROGRAMS,positionProjectApproved} from './position-curriculum';
 import {isUuid} from './workspace-sandbox';
 export const positionState=cache(async (org:string|null)=>{
  const session=await roleTrainingSession();if(!session)return null;
@@ -16,9 +16,12 @@ export const positionState=cache(async (org:string|null)=>{
  const keyById=new Map((catalog??[]).map(a=>[a.id,a.content_key]));
  const submissions=(records.data??[]).map(a=>({...a,key:keyById.get(a.activity_id)}));
  const completed=new Set(submissions.map(s=>s.key));
- const passed=new Set<number>();
- for(const l of CS_CURRICULUM_LEVELS){const key='position-cs-exam-'+l.number;const ids=submissions.filter(s=>s.key===key).map(s=>s.id);if(ids.some(id=>person.evidence.filter(e=>e.activity_key===key&&(e as any).submission_id===id&&e.review_source==='auto'&&Object.values(e.competency_scores).some(v=>v===1)).length>=4))passed.add(l.number);}
- // Evidence query also includes submission_id; no client-supplied answer keys decide unlocks.
- const projects=new Set([8,15].filter(n=>positionProjectApproved(person.evidence,'position-cs-project-'+n,org)));
- return {session,person,submissions,completed,passed,projects};
+ // Progress is computed per position; no client-supplied answer keys decide unlocks.
+ const progress=Object.fromEntries(Object.values(POSITION_PROGRAMS).map(program=>{
+  const passed=new Set<number>();
+  for(const exam of program.exams){const ids=submissions.filter(s=>s.key===exam.key).map(s=>s.id);if(ids.some(id=>person.evidence.filter(e=>e.activity_key===exam.key&&(e as {submission_id?:string}).submission_id===id&&e.review_source==='auto'&&Object.values(e.competency_scores).some(v=>v===1)).length>=4))passed.add(exam.level);}
+  const projects=new Set(program.projects.filter(a=>positionProjectApproved(person.evidence,a.key,org)).map(a=>a.level));
+  return [program.key,{passed,projects}];
+ }));
+ return {session,person,submissions,completed,progress,position:person.position};
 });
