@@ -307,3 +307,8 @@ html[data-design="vivo"] .about-goals p { margin: 0; line-height: 1.6; }
   html[data-design="vivo"] :is(.about-columns, .about-values) { grid-template-columns: minmax(0, 1fr); }
   html[data-design="vivo"] .about-intro h1 { max-width: none; }
 }
+
+/* ── Logotipo ─────────────────────────────────────────────────────── */
+.brand-logo { display: block; height: 1.3em; width: auto; overflow: visible; }
+.brand-logo-leaf { fill: currentColor; }
+html[data-design="vivo"]:not([data-appearance="dark"]):not([data-custom-palette="true"]) .public-brand .brand-logo-leaf { fill: #09634D; }

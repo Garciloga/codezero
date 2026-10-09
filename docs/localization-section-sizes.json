@@ -1,29 +1,29 @@
 {
   "en": {
-    "before": 309436,
-    "common": 6449,
-    "public": 109019,
-    "learning": 176860,
-    "teams": 116902,
-    "admin": 177711,
-    "help": 172276
+    "before": 319501,
+    "common": 6431,
+    "public": 109257,
+    "learning": 176947,
+    "teams": 116884,
+    "admin": 177798,
+    "help": 172404
   },
   "pt": {
-    "before": 321126,
-    "common": 6782,
-    "public": 113467,
-    "learning": 182994,
-    "teams": 121049,
-    "admin": 183945,
-    "help": 178185
+    "before": 331774,
+    "common": 6764,
+    "public": 113723,
+    "learning": 183084,
+    "teams": 121031,
+    "admin": 184035,
+    "help": 178317
   },
   "fr": {
-    "before": 334838,
-    "common": 7031,
-    "public": 118105,
-    "learning": 190478,
-    "teams": 125727,
-    "admin": 191625,
-    "help": 185445
+    "before": 346036,
+    "common": 7013,
+    "public": 118349,
+    "learning": 190570,
+    "teams": 125709,
+    "admin": 191717,
+    "help": 185571
   }
 }
