@@ -10,5 +10,9 @@
  {
   "key": "account_manager",
   "title": "Account Manager"
+ },
+ {
+  "key": "customer_support",
+  "title": "Customer Support"
  }
 ]
