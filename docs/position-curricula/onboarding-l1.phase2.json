@@ -4,16 +4,17 @@
   "published": false,
   "editorialReview": "pending",
   "studentCalibration": "pending",
-  "version": 1,
+  "version": 2,
   "role": "onboarding",
   "level": 1,
   "coverage": {
     "lessons": 6,
     "formativeExercises": 12,
-    "assessments": 0,
-    "projects": 0
+    "assessments": 1,
+    "projects": 0,
+    "assessmentQuestions": 5
   },
-  "note": "First six applied lessons for editorial calibration. Not a complete level; no publication or progress unlock.",
+  "note": "Six applied lessons, 12 formative exercises, and a five-question assessment draft in four languages. Not wired to production; requires editorial review, student calibration, secure grading and QA before publication.",
   "lessons": [
     {
       "key": "position-onboarding-l1-1",
@@ -627,5 +628,220 @@
         }
       }
     }
-  ]
+  ],
+  "assessment": {
+    "level": 1,
+    "passingScore": 4,
+    "totalQuestions": 5,
+    "randomizedChoicesRequired": true,
+    "grading": "server-side only",
+    "status": "editorial-draft",
+    "questions": [
+      {
+        "key": "onboarding-l1-q1",
+        "localized": {
+          "es": {
+            "prompt": "¿Cuál es el siguiente paso ante una promesa comercial sin fecha técnica confirmada?",
+            "options": [
+              "Registrar la promesa, confirmar alcance con el equipo técnico y acordar un inicio condicionado con el cliente.",
+              "Asegurar la fecha solicitada"
+            ],
+            "correctIndex": 0,
+            "feedback": "Registrar la promesa, confirmar alcance con el equipo técnico y acordar un inicio condicionado con el cliente."
+          },
+          "en": {
+            "prompt": "What comes next after a sales promise with no confirmed technical date?",
+            "options": [
+              "Record the promise, validate scope with engineering, and agree a conditional start with the customer.",
+              "Promise the requested date"
+            ],
+            "correctIndex": 0,
+            "feedback": "Record the promise, validate scope with engineering, and agree a conditional start with the customer."
+          },
+          "pt": {
+            "prompt": "Qual é o próximo passo diante de uma promessa comercial sem data técnica confirmada?",
+            "options": [
+              "Registrar a promessa, validar o escopo com engenharia e acordar um início condicionado com o cliente.",
+              "Prometer a data solicitada"
+            ],
+            "correctIndex": 0,
+            "feedback": "Registrar a promessa, validar o escopo com engenharia e acordar um início condicionado com o cliente."
+          },
+          "fr": {
+            "prompt": "Quelle est la prochaine étape après une promesse commerciale sans date technique confirmée ?",
+            "options": [
+              "Consigner la promesse, valider le périmètre avec l’équipe technique et convenir d’un démarrage conditionnel avec le client.",
+              "Promettre la date demandée"
+            ],
+            "correctIndex": 0,
+            "feedback": "Consigner la promesse, valider le périmètre avec l’équipe technique et convenir d’un démarrage conditionnel avec le client."
+          }
+        }
+      },
+      {
+        "key": "onboarding-l1-q2",
+        "localized": {
+          "es": {
+            "prompt": "¿Cómo gestionas una importación que excede el alcance aprobado?",
+            "options": [
+              "Documentar la solicitud, evaluar impacto y tramitar una decisión de alcance antes de prometerla.",
+              "Implementarla sin registrar cambios"
+            ],
+            "correctIndex": 0,
+            "feedback": "Documentar la solicitud, evaluar impacto y tramitar una decisión de alcance antes de prometerla."
+          },
+          "en": {
+            "prompt": "How do you handle an import outside the approved scope?",
+            "options": [
+              "Document the request, assess impact and obtain a scope decision before committing.",
+              "Implement without a change record"
+            ],
+            "correctIndex": 0,
+            "feedback": "Document the request, assess impact and obtain a scope decision before committing."
+          },
+          "pt": {
+            "prompt": "Como tratar uma importação fora do escopo aprovado?",
+            "options": [
+              "Documentar o pedido, avaliar o impacto e obter uma decisão de escopo antes de prometer.",
+              "Implementar sem registrar mudanças"
+            ],
+            "correctIndex": 0,
+            "feedback": "Documentar o pedido, avaliar o impacto e obter uma decisão de escopo antes de prometer."
+          },
+          "fr": {
+            "prompt": "Comment traiter un import hors du périmètre approuvé ?",
+            "options": [
+              "Documenter la demande, évaluer l’impact et obtenir une décision de périmètre avant de s’engager.",
+              "L’implémenter sans suivre les changements"
+            ],
+            "correctIndex": 0,
+            "feedback": "Documenter la demande, évaluer l’impact et obtenir une décision de périmètre avant de s’engager."
+          }
+        }
+      },
+      {
+        "key": "onboarding-l1-q3",
+        "localized": {
+          "es": {
+            "prompt": "¿Qué demuestra que se alcanzó el primer valor?",
+            "options": [
+              "Definir una tarea observable realizada por el cliente y comprobarla con evidencia.",
+              "Número de sesiones de capacitación"
+            ],
+            "correctIndex": 0,
+            "feedback": "Definir una tarea observable realizada por el cliente y comprobarla con evidencia."
+          },
+          "en": {
+            "prompt": "What proves first value was achieved?",
+            "options": [
+              "Define one observable customer-completed task and verify it with evidence.",
+              "Number of training sessions"
+            ],
+            "correctIndex": 0,
+            "feedback": "Define one observable customer-completed task and verify it with evidence."
+          },
+          "pt": {
+            "prompt": "O que comprova que o primeiro valor foi alcançado?",
+            "options": [
+              "Definir uma tarefa observável realizada pelo cliente e verificá-la com evidências.",
+              "Número de sessões de treinamento"
+            ],
+            "correctIndex": 0,
+            "feedback": "Definir uma tarefa observável realizada pelo cliente e verificá-la com evidências."
+          },
+          "fr": {
+            "prompt": "Qu'est-ce qui prouve l'obtention de la première valeur ?",
+            "options": [
+              "Définir une tâche observable réalisée par le client et la vérifier avec des preuves.",
+              "Nombre de formations suivies"
+            ],
+            "correctIndex": 0,
+            "feedback": "Définir une tâche observable réalisée par le client et la vérifier avec des preuves."
+          }
+        }
+      },
+      {
+        "key": "onboarding-l1-q4",
+        "localized": {
+          "es": {
+            "prompt": "¿Qué haces si no estará presente quien debe aprobar el lanzamiento?",
+            "options": [
+              "Asignar suplente, fecha de decisión, riesgo y plan de escalación por escrito.",
+              "Continuar y asumir aprobación tácita"
+            ],
+            "correctIndex": 0,
+            "feedback": "Asignar suplente, fecha de decisión, riesgo y plan de escalación por escrito."
+          },
+          "en": {
+            "prompt": "What if the launch approver will be absent?",
+            "options": [
+              "Assign a delegate, decision date, risk and written escalation plan.",
+              "Continue and assume tacit approval"
+            ],
+            "correctIndex": 0,
+            "feedback": "Assign a delegate, decision date, risk and written escalation plan."
+          },
+          "pt": {
+            "prompt": "O que fazer se o responsável pela aprovação estiver ausente?",
+            "options": [
+              "Designar substituto, data de decisão, risco e plano de escalonamento por escrito.",
+              "Continuar e presumir aprovação tácita"
+            ],
+            "correctIndex": 0,
+            "feedback": "Designar substituto, data de decisão, risco e plano de escalonamento por escrito."
+          },
+          "fr": {
+            "prompt": "Que faire si le responsable de validation est absent ?",
+            "options": [
+              "Désigner un suppléant, une date de décision, le risque et un plan d’escalade écrit.",
+              "Continuer et supposer l'accord tacite"
+            ],
+            "correctIndex": 0,
+            "feedback": "Désigner un suppléant, une date de décision, le risque et un plan d’escalade écrit."
+          }
+        }
+      },
+      {
+        "key": "onboarding-l1-q5",
+        "localized": {
+          "es": {
+            "prompt": "¿Cómo cierras una implementación con incidencias menores abiertas?",
+            "options": [
+              "Validar aceptación con criterios acordados y trasladar incidencias con responsable y plazo.",
+              "Dar por cerrado el caso sin registro"
+            ],
+            "correctIndex": 0,
+            "feedback": "Validar aceptación con criterios acordados y trasladar incidencias con responsable y plazo."
+          },
+          "en": {
+            "prompt": "How do you close an implementation with minor open issues?",
+            "options": [
+              "Confirm acceptance against agreed criteria and hand off issues with owners and due dates.",
+              "Close the case without documenting it"
+            ],
+            "correctIndex": 0,
+            "feedback": "Confirm acceptance against agreed criteria and hand off issues with owners and due dates."
+          },
+          "pt": {
+            "prompt": "Como encerrar uma implementação com problemas menores em aberto?",
+            "options": [
+              "Validar a aceitação pelos critérios acordados e transferir falhas com responsáveis e prazos.",
+              "Encerrar sem documentar"
+            ],
+            "correctIndex": 0,
+            "feedback": "Validar a aceitação pelos critérios acordados e transferir falhas com responsáveis e prazos."
+          },
+          "fr": {
+            "prompt": "Comment clôturer un déploiement avec des incidents mineurs ouverts ?",
+            "options": [
+              "Valider l’acceptation selon les critères convenus et transférer les incidents avec responsables et échéances.",
+              "Clore sans documentation"
+            ],
+            "correctIndex": 0,
+            "feedback": "Valider l’acceptation selon les critères convenus et transférer les incidents avec responsables et échéances."
+          }
+        }
+      }
+    ]
+  }
 }
