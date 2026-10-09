@@ -1,0 +1,1345 @@
+{
+  "key": "customer_support",
+  "title": "Customer Support",
+  "status": "draft",
+  "editorial_review": "pending",
+  "calibration": "pending",
+  "published": false,
+  "role": {
+    "es": {
+      "process": "Entender solicitud → acordar seguimiento → resolver o derivar → confirmar → documentar",
+      "deliverable": "Conversación y artículo de ayuda",
+      "decision": "¿Prometer plazo sin evidencia o comprometer la próxima actualización?",
+      "quality": "Comunicación comprensible, promesas sostenibles y cierre confirmado."
+    },
+    "en": {
+      "process": "Understand request → agree monitoring → solve or derive → confirm → document",
+      "deliverable": "Conversation and aid article",
+      "decision": "Promises term without evidence or compromises the next update?",
+      "quality": "Inclear communication, sustainable promise and confirmed closure."
+    },
+    "pt": {
+      "process": "Entenda a solicitação → concordar com o monitoramento → resolver ou derivar → confirmar → documento",
+      "deliverable": "Artigo de conversação e de ajuda",
+      "decision": "Promessas termo sem evidência ou compromete a próxima atualização?",
+      "quality": "Comunicação clara, promessa sustentável e encerramento confirmado."
+    },
+    "fr": {
+      "process": "Comprendre la requête → accepter la surveillance → résoudre ou dériver → confirmer → document",
+      "deliverable": "Conversation et article d'aide",
+      "decision": "Promises terme sans preuve ou compromis la prochaine mise à jour?",
+      "quality": "Communication claire, promesse durable et clôture confirmée."
+    }
+  },
+  "competencies": {
+    "communication": "high",
+    "diagnosis": "medium",
+    "data": "medium",
+    "prioritization": "medium",
+    "documentation": "high",
+    "deescalation": "high",
+    "negotiation": "medium",
+    "planning": "medium",
+    "technical": "medium",
+    "collaboration": "medium"
+  },
+  "expectedByStage": {
+    "1": {
+      "communication": 1,
+      "diagnosis": 1,
+      "data": 1,
+      "prioritization": 1,
+      "documentation": 1,
+      "deescalation": 1,
+      "negotiation": 1,
+      "planning": 1,
+      "technical": 1,
+      "collaboration": 1
+    },
+    "2": {
+      "communication": 2,
+      "diagnosis": 2,
+      "data": 2,
+      "prioritization": 2,
+      "documentation": 2,
+      "deescalation": 2,
+      "negotiation": 2,
+      "planning": 2,
+      "technical": 2,
+      "collaboration": 2
+    },
+    "3": {
+      "communication": 3,
+      "diagnosis": 3,
+      "data": 3,
+      "prioritization": 3,
+      "documentation": 3,
+      "deescalation": 3,
+      "negotiation": 3,
+      "planning": 3,
+      "technical": 3,
+      "collaboration": 3
+    },
+    "4": {
+      "communication": 4,
+      "diagnosis": 3,
+      "data": 3,
+      "prioritization": 3,
+      "documentation": 4,
+      "deescalation": 4,
+      "negotiation": 3,
+      "planning": 3,
+      "technical": 3,
+      "collaboration": 3
+    },
+    "5": {
+      "communication": 4,
+      "diagnosis": 3,
+      "data": 3,
+      "prioritization": 3,
+      "documentation": 4,
+      "deescalation": 4,
+      "negotiation": 3,
+      "planning": 3,
+      "technical": 3,
+      "collaboration": 3
+    }
+  },
+  "levels": [
+    {
+      "number": 1,
+      "title": {
+        "es": "Customer Support · Fundamentos del puesto",
+        "en": "Customer Support · Role foundations",
+        "pt": "Customer Support · Fundamentos do cargo",
+        "fr": "Customer Support · Fondamentaux du poste"
+      },
+      "objective": {
+        "es": "Entender solicitud → acordar seguimiento → resolver o derivar → confirmar → documentar · Comunicación comprensible, promesas sostenibles y cierre confirmado.",
+        "en": "Understand request → agree monitoring → solve or derive → confirm → document · Inclear communication, sustainable promise and confirmed closure.",
+        "pt": "Entenda a solicitação → concordar com o monitoramento → resolver ou derivar → confirmar → documento · Comunicação clara, promessa sustentável e encerramento confirmado.",
+        "fr": "Comprendre la requête → accepter la surveillance → résoudre ou dériver → confirmer → document · Communication claire, promesse durable et clôture confirmée."
+      },
+      "lessons": [
+        {
+          "key": "position-customer_support-l1-1",
+          "title": {
+            "es": "Customer Support · Fundamentos del puesto · Contexto y alcance",
+            "en": "Customer Support · Role foundations · Context and scope",
+            "pt": "Customer Support · Fundamentos do cargo · Contexto e escopo",
+            "fr": "Customer Support · Fondamentaux du poste · Contexte et périmètre"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-customer_support-l1-2",
+          "title": {
+            "es": "Customer Support · Fundamentos del puesto · Datos y fuentes",
+            "en": "Customer Support · Role foundations · Data and sources",
+            "pt": "Customer Support · Fundamentos do cargo · Dados e fontes",
+            "fr": "Customer Support · Fondamentaux du poste · Données et sources"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-customer_support-l1-3",
+          "title": {
+            "es": "Customer Support · Fundamentos del puesto · Alternativas y criterio",
+            "en": "Customer Support · Role foundations · Alternatives and judgment",
+            "pt": "Customer Support · Fundamentos do cargo · Alternativas e critério",
+            "fr": "Customer Support · Fondamentaux du poste · Options et jugement"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-customer_support-l1-4",
+          "title": {
+            "es": "Customer Support · Fundamentos del puesto · Entregable del puesto",
+            "en": "Customer Support · Role foundations · Role deliverable",
+            "pt": "Customer Support · Fundamentos do cargo · Entrega do cargo",
+            "fr": "Customer Support · Fondamentaux du poste · Livrable du poste"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-customer_support-l1-5",
+          "title": {
+            "es": "Customer Support · Fundamentos del puesto · Verificación y aceptación",
+            "en": "Customer Support · Role foundations · Verification and acceptance",
+            "pt": "Customer Support · Fundamentos do cargo · Verificação e aceitação",
+            "fr": "Customer Support · Fondamentaux du poste · Vérification et acceptation"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-customer_support-l1-6",
+          "title": {
+            "es": "Customer Support · Fundamentos del puesto · Restricción nueva y transferencia",
+            "en": "Customer Support · Role foundations · New constraint and transfer",
+            "pt": "Customer Support · Fundamentos do cargo · Nova restrição e transferência",
+            "fr": "Customer Support · Fondamentaux du poste · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-roi"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": {
+        "es": "Customer Support · Ciclo de trabajo",
+        "en": "Customer Support · Work lifecycle",
+        "pt": "Customer Support · Ciclo de trabalho",
+        "fr": "Customer Support · Cycle de travail"
+      },
+      "objective": {
+        "es": "Entender solicitud → acordar seguimiento → resolver o derivar → confirmar → documentar · Comunicación comprensible, promesas sostenibles y cierre confirmado.",
+        "en": "Understand request → agree monitoring → solve or derive → confirm → document · Inclear communication, sustainable promise and confirmed closure.",
+        "pt": "Entenda a solicitação → concordar com o monitoramento → resolver ou derivar → confirmar → documento · Comunicação clara, promessa sustentável e encerramento confirmado.",
+        "fr": "Comprendre la requête → accepter la surveillance → résoudre ou dériver → confirmer → document · Communication claire, promesse durable et clôture confirmée."
+      },
+      "lessons": [
+        {
+          "key": "position-customer_support-l2-1",
+          "title": {
+            "es": "Customer Support · Ciclo de trabajo · Contexto y alcance",
+            "en": "Customer Support · Work lifecycle · Context and scope",
+            "pt": "Customer Support · Ciclo de trabalho · Contexto e escopo",
+            "fr": "Customer Support · Cycle de travail · Contexte et périmètre"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-customer_support-l2-2",
+          "title": {
+            "es": "Customer Support · Ciclo de trabajo · Datos y fuentes",
+            "en": "Customer Support · Work lifecycle · Data and sources",
+            "pt": "Customer Support · Ciclo de trabalho · Dados e fontes",
+            "fr": "Customer Support · Cycle de travail · Données et sources"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-customer_support-l2-3",
+          "title": {
+            "es": "Customer Support · Ciclo de trabajo · Alternativas y criterio",
+            "en": "Customer Support · Work lifecycle · Alternatives and judgment",
+            "pt": "Customer Support · Ciclo de trabalho · Alternativas e critério",
+            "fr": "Customer Support · Cycle de travail · Options et jugement"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-customer_support-l2-4",
+          "title": {
+            "es": "Customer Support · Ciclo de trabajo · Entregable del puesto",
+            "en": "Customer Support · Work lifecycle · Role deliverable",
+            "pt": "Customer Support · Ciclo de trabalho · Entrega do cargo",
+            "fr": "Customer Support · Cycle de travail · Livrable du poste"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-customer_support-l2-5",
+          "title": {
+            "es": "Customer Support · Ciclo de trabajo · Verificación y aceptación",
+            "en": "Customer Support · Work lifecycle · Verification and acceptance",
+            "pt": "Customer Support · Ciclo de trabalho · Verificação e aceitação",
+            "fr": "Customer Support · Cycle de travail · Vérification et acceptation"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-customer_support-l2-6",
+          "title": {
+            "es": "Customer Support · Ciclo de trabajo · Restricción nueva y transferencia",
+            "en": "Customer Support · Work lifecycle · New constraint and transfer",
+            "pt": "Customer Support · Ciclo de trabalho · Nova restrição e transferência",
+            "fr": "Customer Support · Cycle de travail · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-handoff"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": {
+        "es": "Customer Support · Inicio de un caso",
+        "en": "Customer Support · Starting a case",
+        "pt": "Customer Support · Início de um caso",
+        "fr": "Customer Support · Démarrage d’un cas"
+      },
+      "objective": {
+        "es": "Entender solicitud → acordar seguimiento → resolver o derivar → confirmar → documentar · Comunicación comprensible, promesas sostenibles y cierre confirmado.",
+        "en": "Understand request → agree monitoring → solve or derive → confirm → document · Inclear communication, sustainable promise and confirmed closure.",
+        "pt": "Entenda a solicitação → concordar com o monitoramento → resolver ou derivar → confirmar → documento · Comunicação clara, promessa sustentável e encerramento confirmado.",
+        "fr": "Comprendre la requête → accepter la surveillance → résoudre ou dériver → confirmer → document · Communication claire, promesse durable et clôture confirmée."
+      },
+      "lessons": [
+        {
+          "key": "position-customer_support-l3-1",
+          "title": {
+            "es": "Customer Support · Inicio de un caso · Contexto y alcance",
+            "en": "Customer Support · Starting a case · Context and scope",
+            "pt": "Customer Support · Início de um caso · Contexto e escopo",
+            "fr": "Customer Support · Démarrage d’un cas · Contexte et périmètre"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-customer_support-l3-2",
+          "title": {
+            "es": "Customer Support · Inicio de un caso · Datos y fuentes",
+            "en": "Customer Support · Starting a case · Data and sources",
+            "pt": "Customer Support · Início de um caso · Dados e fontes",
+            "fr": "Customer Support · Démarrage d’un cas · Données et sources"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-customer_support-l3-3",
+          "title": {
+            "es": "Customer Support · Inicio de un caso · Alternativas y criterio",
+            "en": "Customer Support · Starting a case · Alternatives and judgment",
+            "pt": "Customer Support · Início de um caso · Alternativas e critério",
+            "fr": "Customer Support · Démarrage d’un cas · Options et jugement"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-customer_support-l3-4",
+          "title": {
+            "es": "Customer Support · Inicio de un caso · Entregable del puesto",
+            "en": "Customer Support · Starting a case · Role deliverable",
+            "pt": "Customer Support · Início de um caso · Entrega do cargo",
+            "fr": "Customer Support · Démarrage d’un cas · Livrable du poste"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-customer_support-l3-5",
+          "title": {
+            "es": "Customer Support · Inicio de un caso · Verificación y aceptación",
+            "en": "Customer Support · Starting a case · Verification and acceptance",
+            "pt": "Customer Support · Início de um caso · Verificação e aceitação",
+            "fr": "Customer Support · Démarrage d’un cas · Vérification et acceptation"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-customer_support-l3-6",
+          "title": {
+            "es": "Customer Support · Inicio de un caso · Restricción nueva y transferencia",
+            "en": "Customer Support · Starting a case · New constraint and transfer",
+            "pt": "Customer Support · Início de um caso · Nova restrição e transferência",
+            "fr": "Customer Support · Démarrage d’un cas · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-kickoff"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": {
+        "es": "Customer Support · Comunicación",
+        "en": "Customer Support · Communication",
+        "pt": "Customer Support · Comunicação",
+        "fr": "Customer Support · Communication"
+      },
+      "objective": {
+        "es": "Entender solicitud → acordar seguimiento → resolver o derivar → confirmar → documentar · Comunicación comprensible, promesas sostenibles y cierre confirmado.",
+        "en": "Understand request → agree monitoring → solve or derive → confirm → document · Inclear communication, sustainable promise and confirmed closure.",
+        "pt": "Entenda a solicitação → concordar com o monitoramento → resolver ou derivar → confirmar → documento · Comunicação clara, promessa sustentável e encerramento confirmado.",
+        "fr": "Comprendre la requête → accepter la surveillance → résoudre ou dériver → confirmer → document · Communication claire, promesse durable et clôture confirmée."
+      },
+      "lessons": [
+        {
+          "key": "position-customer_support-l4-1",
+          "title": {
+            "es": "Customer Support · Comunicación · Contexto y alcance",
+            "en": "Customer Support · Communication · Context and scope",
+            "pt": "Customer Support · Comunicação · Contexto e escopo",
+            "fr": "Customer Support · Communication · Contexte et périmètre"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-customer_support-l4-2",
+          "title": {
+            "es": "Customer Support · Comunicación · Datos y fuentes",
+            "en": "Customer Support · Communication · Data and sources",
+            "pt": "Customer Support · Comunicação · Dados e fontes",
+            "fr": "Customer Support · Communication · Données et sources"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-customer_support-l4-3",
+          "title": {
+            "es": "Customer Support · Comunicación · Alternativas y criterio",
+            "en": "Customer Support · Communication · Alternatives and judgment",
+            "pt": "Customer Support · Comunicação · Alternativas e critério",
+            "fr": "Customer Support · Communication · Options et jugement"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-customer_support-l4-4",
+          "title": {
+            "es": "Customer Support · Comunicación · Entregable del puesto",
+            "en": "Customer Support · Communication · Role deliverable",
+            "pt": "Customer Support · Comunicação · Entrega do cargo",
+            "fr": "Customer Support · Communication · Livrable du poste"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-customer_support-l4-5",
+          "title": {
+            "es": "Customer Support · Comunicación · Verificación y aceptación",
+            "en": "Customer Support · Communication · Verification and acceptance",
+            "pt": "Customer Support · Comunicação · Verificação e aceitação",
+            "fr": "Customer Support · Communication · Vérification et acceptation"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-customer_support-l4-6",
+          "title": {
+            "es": "Customer Support · Comunicación · Restricción nueva y transferencia",
+            "en": "Customer Support · Communication · New constraint and transfer",
+            "pt": "Customer Support · Comunicação · Nova restrição e transferência",
+            "fr": "Customer Support · Communication · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "common-communication"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": {
+        "es": "Customer Support · Calidad y resultado",
+        "en": "Customer Support · Quality and outcome",
+        "pt": "Customer Support · Qualidade e resultado",
+        "fr": "Customer Support · Qualité et résultat"
+      },
+      "objective": {
+        "es": "Entender solicitud → acordar seguimiento → resolver o derivar → confirmar → documentar · Comunicación comprensible, promesas sostenibles y cierre confirmado.",
+        "en": "Understand request → agree monitoring → solve or derive → confirm → document · Inclear communication, sustainable promise and confirmed closure.",
+        "pt": "Entenda a solicitação → concordar com o monitoramento → resolver ou derivar → confirmar → documento · Comunicação clara, promessa sustentável e encerramento confirmado.",
+        "fr": "Comprendre la requête → accepter la surveillance → résoudre ou dériver → confirmer → document · Communication claire, promesse durable et clôture confirmée."
+      },
+      "lessons": [
+        {
+          "key": "position-customer_support-l5-1",
+          "title": {
+            "es": "Customer Support · Calidad y resultado · Contexto y alcance",
+            "en": "Customer Support · Quality and outcome · Context and scope",
+            "pt": "Customer Support · Qualidade e resultado · Contexto e escopo",
+            "fr": "Customer Support · Qualité et résultat · Contexte et périmètre"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-customer_support-l5-2",
+          "title": {
+            "es": "Customer Support · Calidad y resultado · Datos y fuentes",
+            "en": "Customer Support · Quality and outcome · Data and sources",
+            "pt": "Customer Support · Qualidade e resultado · Dados e fontes",
+            "fr": "Customer Support · Qualité et résultat · Données et sources"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-customer_support-l5-3",
+          "title": {
+            "es": "Customer Support · Calidad y resultado · Alternativas y criterio",
+            "en": "Customer Support · Quality and outcome · Alternatives and judgment",
+            "pt": "Customer Support · Qualidade e resultado · Alternativas e critério",
+            "fr": "Customer Support · Qualité et résultat · Options et jugement"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-customer_support-l5-4",
+          "title": {
+            "es": "Customer Support · Calidad y resultado · Entregable del puesto",
+            "en": "Customer Support · Quality and outcome · Role deliverable",
+            "pt": "Customer Support · Qualidade e resultado · Entrega do cargo",
+            "fr": "Customer Support · Qualité et résultat · Livrable du poste"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-customer_support-l5-5",
+          "title": {
+            "es": "Customer Support · Calidad y resultado · Verificación y aceptación",
+            "en": "Customer Support · Quality and outcome · Verification and acceptance",
+            "pt": "Customer Support · Qualidade e resultado · Verificação e aceitação",
+            "fr": "Customer Support · Qualité et résultat · Vérification et acceptation"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-customer_support-l5-6",
+          "title": {
+            "es": "Customer Support · Calidad y resultado · Restricción nueva y transferencia",
+            "en": "Customer Support · Quality and outcome · New constraint and transfer",
+            "pt": "Customer Support · Qualidade e resultado · Nova restrição e transferência",
+            "fr": "Customer Support · Qualité et résultat · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-health"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": {
+        "es": "Customer Support · Herramientas",
+        "en": "Customer Support · Tools",
+        "pt": "Customer Support · Ferramentas",
+        "fr": "Customer Support · Outils"
+      },
+      "objective": {
+        "es": "Entender solicitud → acordar seguimiento → resolver o derivar → confirmar → documentar · Comunicación comprensible, promesas sostenibles y cierre confirmado.",
+        "en": "Understand request → agree monitoring → solve or derive → confirm → document · Inclear communication, sustainable promise and confirmed closure.",
+        "pt": "Entenda a solicitação → concordar com o monitoramento → resolver ou derivar → confirmar → documento · Comunicação clara, promessa sustentável e encerramento confirmado.",
+        "fr": "Comprendre la requête → accepter la surveillance → résoudre ou dériver → confirmer → document · Communication claire, promesse durable et clôture confirmée."
+      },
+      "lessons": [
+        {
+          "key": "position-customer_support-l6-1",
+          "title": {
+            "es": "Customer Support · Herramientas · Contexto y alcance",
+            "en": "Customer Support · Tools · Context and scope",
+            "pt": "Customer Support · Ferramentas · Contexto e escopo",
+            "fr": "Customer Support · Outils · Contexte et périmètre"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-customer_support-l6-2",
+          "title": {
+            "es": "Customer Support · Herramientas · Datos y fuentes",
+            "en": "Customer Support · Tools · Data and sources",
+            "pt": "Customer Support · Ferramentas · Dados e fontes",
+            "fr": "Customer Support · Outils · Données et sources"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-customer_support-l6-3",
+          "title": {
+            "es": "Customer Support · Herramientas · Alternativas y criterio",
+            "en": "Customer Support · Tools · Alternatives and judgment",
+            "pt": "Customer Support · Ferramentas · Alternativas e critério",
+            "fr": "Customer Support · Outils · Options et jugement"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-customer_support-l6-4",
+          "title": {
+            "es": "Customer Support · Herramientas · Entregable del puesto",
+            "en": "Customer Support · Tools · Role deliverable",
+            "pt": "Customer Support · Ferramentas · Entrega do cargo",
+            "fr": "Customer Support · Outils · Livrable du poste"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-customer_support-l6-5",
+          "title": {
+            "es": "Customer Support · Herramientas · Verificación y aceptación",
+            "en": "Customer Support · Tools · Verification and acceptance",
+            "pt": "Customer Support · Ferramentas · Verificação e aceitação",
+            "fr": "Customer Support · Outils · Vérification et acceptation"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-customer_support-l6-6",
+          "title": {
+            "es": "Customer Support · Herramientas · Restricción nueva y transferencia",
+            "en": "Customer Support · Tools · New constraint and transfer",
+            "pt": "Customer Support · Ferramentas · Nova restrição e transferência",
+            "fr": "Customer Support · Outils · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "common-documentation"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": {
+        "es": "Customer Support · Priorización",
+        "en": "Customer Support · Prioritization",
+        "pt": "Customer Support · Priorização",
+        "fr": "Customer Support · Priorités"
+      },
+      "objective": {
+        "es": "Entender solicitud → acordar seguimiento → resolver o derivar → confirmar → documentar · Comunicación comprensible, promesas sostenibles y cierre confirmado.",
+        "en": "Understand request → agree monitoring → solve or derive → confirm → document · Inclear communication, sustainable promise and confirmed closure.",
+        "pt": "Entenda a solicitação → concordar com o monitoramento → resolver ou derivar → confirmar → documento · Comunicação clara, promessa sustentável e encerramento confirmado.",
+        "fr": "Comprendre la requête → accepter la surveillance → résoudre ou dériver → confirmer → document · Communication claire, promesse durable et clôture confirmée."
+      },
+      "lessons": [
+        {
+          "key": "position-customer_support-l7-1",
+          "title": {
+            "es": "Customer Support · Priorización · Contexto y alcance",
+            "en": "Customer Support · Prioritization · Context and scope",
+            "pt": "Customer Support · Priorização · Contexto e escopo",
+            "fr": "Customer Support · Priorités · Contexte et périmètre"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-customer_support-l7-2",
+          "title": {
+            "es": "Customer Support · Priorización · Datos y fuentes",
+            "en": "Customer Support · Prioritization · Data and sources",
+            "pt": "Customer Support · Priorização · Dados e fontes",
+            "fr": "Customer Support · Priorités · Données et sources"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-customer_support-l7-3",
+          "title": {
+            "es": "Customer Support · Priorización · Alternativas y criterio",
+            "en": "Customer Support · Prioritization · Alternatives and judgment",
+            "pt": "Customer Support · Priorização · Alternativas e critério",
+            "fr": "Customer Support · Priorités · Options et jugement"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-customer_support-l7-4",
+          "title": {
+            "es": "Customer Support · Priorización · Entregable del puesto",
+            "en": "Customer Support · Prioritization · Role deliverable",
+            "pt": "Customer Support · Priorização · Entrega do cargo",
+            "fr": "Customer Support · Priorités · Livrable du poste"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-customer_support-l7-5",
+          "title": {
+            "es": "Customer Support · Priorización · Verificación y aceptación",
+            "en": "Customer Support · Prioritization · Verification and acceptance",
+            "pt": "Customer Support · Priorização · Verificação e aceitação",
+            "fr": "Customer Support · Priorités · Vérification et acceptation"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-customer_support-l7-6",
+          "title": {
+            "es": "Customer Support · Priorización · Restricción nueva y transferencia",
+            "en": "Customer Support · Prioritization · New constraint and transfer",
+            "pt": "Customer Support · Priorização · Nova restrição e transferência",
+            "fr": "Customer Support · Priorités · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-portfolio"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": {
+        "es": "Customer Support · Plan y revisión",
+        "en": "Customer Support · Plan and review",
+        "pt": "Customer Support · Plano e revisão",
+        "fr": "Customer Support · Plan et revue"
+      },
+      "objective": {
+        "es": "Entender solicitud → acordar seguimiento → resolver o derivar → confirmar → documentar · Comunicación comprensible, promesas sostenibles y cierre confirmado.",
+        "en": "Understand request → agree monitoring → solve or derive → confirm → document · Inclear communication, sustainable promise and confirmed closure.",
+        "pt": "Entenda a solicitação → concordar com o monitoramento → resolver ou derivar → confirmar → documento · Comunicação clara, promessa sustentável e encerramento confirmado.",
+        "fr": "Comprendre la requête → accepter la surveillance → résoudre ou dériver → confirmer → document · Communication claire, promesse durable et clôture confirmée."
+      },
+      "lessons": [
+        {
+          "key": "position-customer_support-l8-1",
+          "title": {
+            "es": "Customer Support · Plan y revisión · Contexto y alcance",
+            "en": "Customer Support · Plan and review · Context and scope",
+            "pt": "Customer Support · Plano e revisão · Contexto e escopo",
+            "fr": "Customer Support · Plan et revue · Contexte et périmètre"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-customer_support-l8-2",
+          "title": {
+            "es": "Customer Support · Plan y revisión · Datos y fuentes",
+            "en": "Customer Support · Plan and review · Data and sources",
+            "pt": "Customer Support · Plano e revisão · Dados e fontes",
+            "fr": "Customer Support · Plan et revue · Données et sources"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-customer_support-l8-3",
+          "title": {
+            "es": "Customer Support · Plan y revisión · Alternativas y criterio",
+            "en": "Customer Support · Plan and review · Alternatives and judgment",
+            "pt": "Customer Support · Plano e revisão · Alternativas e critério",
+            "fr": "Customer Support · Plan et revue · Options et jugement"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-customer_support-l8-4",
+          "title": {
+            "es": "Customer Support · Plan y revisión · Entregable del puesto",
+            "en": "Customer Support · Plan and review · Role deliverable",
+            "pt": "Customer Support · Plano e revisão · Entrega do cargo",
+            "fr": "Customer Support · Plan et revue · Livrable du poste"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-customer_support-l8-5",
+          "title": {
+            "es": "Customer Support · Plan y revisión · Verificación y aceptación",
+            "en": "Customer Support · Plan and review · Verification and acceptance",
+            "pt": "Customer Support · Plano e revisão · Verificação e aceitação",
+            "fr": "Customer Support · Plan et revue · Vérification et acceptation"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-customer_support-l8-6",
+          "title": {
+            "es": "Customer Support · Plan y revisión · Restricción nueva y transferencia",
+            "en": "Customer Support · Plan and review · New constraint and transfer",
+            "pt": "Customer Support · Plano e revisão · Nova restrição e transferência",
+            "fr": "Customer Support · Plan et revue · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-qbr"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": {
+        "es": "Customer Support · Riesgos y escalaciones",
+        "en": "Customer Support · Risks and escalations",
+        "pt": "Customer Support · Riscos e escalações",
+        "fr": "Customer Support · Risques et escalades"
+      },
+      "objective": {
+        "es": "Entender solicitud → acordar seguimiento → resolver o derivar → confirmar → documentar · Comunicación comprensible, promesas sostenibles y cierre confirmado.",
+        "en": "Understand request → agree monitoring → solve or derive → confirm → document · Inclear communication, sustainable promise and confirmed closure.",
+        "pt": "Entenda a solicitação → concordar com o monitoramento → resolver ou derivar → confirmar → documento · Comunicação clara, promessa sustentável e encerramento confirmado.",
+        "fr": "Comprendre la requête → accepter la surveillance → résoudre ou dériver → confirmer → document · Communication claire, promesse durable et clôture confirmée."
+      },
+      "lessons": [
+        {
+          "key": "position-customer_support-l9-1",
+          "title": {
+            "es": "Customer Support · Riesgos y escalaciones · Contexto y alcance",
+            "en": "Customer Support · Risks and escalations · Context and scope",
+            "pt": "Customer Support · Riscos e escalações · Contexto e escopo",
+            "fr": "Customer Support · Risques et escalades · Contexte et périmètre"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-customer_support-l9-2",
+          "title": {
+            "es": "Customer Support · Riesgos y escalaciones · Datos y fuentes",
+            "en": "Customer Support · Risks and escalations · Data and sources",
+            "pt": "Customer Support · Riscos e escalações · Dados e fontes",
+            "fr": "Customer Support · Risques et escalades · Données et sources"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-customer_support-l9-3",
+          "title": {
+            "es": "Customer Support · Riesgos y escalaciones · Alternativas y criterio",
+            "en": "Customer Support · Risks and escalations · Alternatives and judgment",
+            "pt": "Customer Support · Riscos e escalações · Alternativas e critério",
+            "fr": "Customer Support · Risques et escalades · Options et jugement"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-customer_support-l9-4",
+          "title": {
+            "es": "Customer Support · Riesgos y escalaciones · Entregable del puesto",
+            "en": "Customer Support · Risks and escalations · Role deliverable",
+            "pt": "Customer Support · Riscos e escalações · Entrega do cargo",
+            "fr": "Customer Support · Risques et escalades · Livrable du poste"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-customer_support-l9-5",
+          "title": {
+            "es": "Customer Support · Riesgos y escalaciones · Verificación y aceptación",
+            "en": "Customer Support · Risks and escalations · Verification and acceptance",
+            "pt": "Customer Support · Riscos e escalações · Verificação e aceitação",
+            "fr": "Customer Support · Risques et escalades · Vérification et acceptation"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-customer_support-l9-6",
+          "title": {
+            "es": "Customer Support · Riesgos y escalaciones · Restricción nueva y transferencia",
+            "en": "Customer Support · Risks and escalations · New constraint and transfer",
+            "pt": "Customer Support · Riscos e escalações · Nova restrição e transferência",
+            "fr": "Customer Support · Risques et escalades · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-churn"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": {
+        "es": "Customer Support · Negociación",
+        "en": "Customer Support · Negotiation",
+        "pt": "Customer Support · Negociação",
+        "fr": "Customer Support · Négociation"
+      },
+      "objective": {
+        "es": "Entender solicitud → acordar seguimiento → resolver o derivar → confirmar → documentar · Comunicación comprensible, promesas sostenibles y cierre confirmado.",
+        "en": "Understand request → agree monitoring → solve or derive → confirm → document · Inclear communication, sustainable promise and confirmed closure.",
+        "pt": "Entenda a solicitação → concordar com o monitoramento → resolver ou derivar → confirmar → documento · Comunicação clara, promessa sustentável e encerramento confirmado.",
+        "fr": "Comprendre la requête → accepter la surveillance → résoudre ou dériver → confirmer → document · Communication claire, promesse durable et clôture confirmée."
+      },
+      "lessons": [
+        {
+          "key": "position-customer_support-l10-1",
+          "title": {
+            "es": "Customer Support · Negociación · Contexto y alcance",
+            "en": "Customer Support · Negotiation · Context and scope",
+            "pt": "Customer Support · Negociação · Contexto e escopo",
+            "fr": "Customer Support · Négociation · Contexte et périmètre"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-customer_support-l10-2",
+          "title": {
+            "es": "Customer Support · Negociación · Datos y fuentes",
+            "en": "Customer Support · Negotiation · Data and sources",
+            "pt": "Customer Support · Negociação · Dados e fontes",
+            "fr": "Customer Support · Négociation · Données et sources"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-customer_support-l10-3",
+          "title": {
+            "es": "Customer Support · Negociación · Alternativas y criterio",
+            "en": "Customer Support · Negotiation · Alternatives and judgment",
+            "pt": "Customer Support · Negociação · Alternativas e critério",
+            "fr": "Customer Support · Négociation · Options et jugement"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-customer_support-l10-4",
+          "title": {
+            "es": "Customer Support · Negociación · Entregable del puesto",
+            "en": "Customer Support · Negotiation · Role deliverable",
+            "pt": "Customer Support · Negociação · Entrega do cargo",
+            "fr": "Customer Support · Négociation · Livrable du poste"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-customer_support-l10-5",
+          "title": {
+            "es": "Customer Support · Negociación · Verificación y aceptación",
+            "en": "Customer Support · Negotiation · Verification and acceptance",
+            "pt": "Customer Support · Negociação · Verificação e aceitação",
+            "fr": "Customer Support · Négociation · Vérification et acceptation"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-customer_support-l10-6",
+          "title": {
+            "es": "Customer Support · Negociación · Restricción nueva y transferencia",
+            "en": "Customer Support · Negotiation · New constraint and transfer",
+            "pt": "Customer Support · Negociação · Nova restrição e transferência",
+            "fr": "Customer Support · Négociation · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-renewal"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": {
+        "es": "Customer Support · Mejora del servicio",
+        "en": "Customer Support · Service improvement",
+        "pt": "Customer Support · Melhoria do serviço",
+        "fr": "Customer Support · Amélioration du service"
+      },
+      "objective": {
+        "es": "Entender solicitud → acordar seguimiento → resolver o derivar → confirmar → documentar · Comunicación comprensible, promesas sostenibles y cierre confirmado.",
+        "en": "Understand request → agree monitoring → solve or derive → confirm → document · Inclear communication, sustainable promise and confirmed closure.",
+        "pt": "Entenda a solicitação → concordar com o monitoramento → resolver ou derivar → confirmar → documento · Comunicação clara, promessa sustentável e encerramento confirmado.",
+        "fr": "Comprendre la requête → accepter la surveillance → résoudre ou dériver → confirmer → document · Communication claire, promesse durable et clôture confirmée."
+      },
+      "lessons": [
+        {
+          "key": "position-customer_support-l11-1",
+          "title": {
+            "es": "Customer Support · Mejora del servicio · Contexto y alcance",
+            "en": "Customer Support · Service improvement · Context and scope",
+            "pt": "Customer Support · Melhoria do serviço · Contexto e escopo",
+            "fr": "Customer Support · Amélioration du service · Contexte et périmètre"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-customer_support-l11-2",
+          "title": {
+            "es": "Customer Support · Mejora del servicio · Datos y fuentes",
+            "en": "Customer Support · Service improvement · Data and sources",
+            "pt": "Customer Support · Melhoria do serviço · Dados e fontes",
+            "fr": "Customer Support · Amélioration du service · Données et sources"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-customer_support-l11-3",
+          "title": {
+            "es": "Customer Support · Mejora del servicio · Alternativas y criterio",
+            "en": "Customer Support · Service improvement · Alternatives and judgment",
+            "pt": "Customer Support · Melhoria do serviço · Alternativas e critério",
+            "fr": "Customer Support · Amélioration du service · Options et jugement"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-customer_support-l11-4",
+          "title": {
+            "es": "Customer Support · Mejora del servicio · Entregable del puesto",
+            "en": "Customer Support · Service improvement · Role deliverable",
+            "pt": "Customer Support · Melhoria do serviço · Entrega do cargo",
+            "fr": "Customer Support · Amélioration du service · Livrable du poste"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-customer_support-l11-5",
+          "title": {
+            "es": "Customer Support · Mejora del servicio · Verificación y aceptación",
+            "en": "Customer Support · Service improvement · Verification and acceptance",
+            "pt": "Customer Support · Melhoria do serviço · Verificação e aceitação",
+            "fr": "Customer Support · Amélioration du service · Vérification et acceptation"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-customer_support-l11-6",
+          "title": {
+            "es": "Customer Support · Mejora del servicio · Restricción nueva y transferencia",
+            "en": "Customer Support · Service improvement · New constraint and transfer",
+            "pt": "Customer Support · Melhoria do serviço · Nova restrição e transferência",
+            "fr": "Customer Support · Amélioration du service · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-expansion"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": {
+        "es": "Customer Support · Colaboración",
+        "en": "Customer Support · Collaboration",
+        "pt": "Customer Support · Colaboração",
+        "fr": "Customer Support · Collaboration"
+      },
+      "objective": {
+        "es": "Entender solicitud → acordar seguimiento → resolver o derivar → confirmar → documentar · Comunicación comprensible, promesas sostenibles y cierre confirmado.",
+        "en": "Understand request → agree monitoring → solve or derive → confirm → document · Inclear communication, sustainable promise and confirmed closure.",
+        "pt": "Entenda a solicitação → concordar com o monitoramento → resolver ou derivar → confirmar → documento · Comunicação clara, promessa sustentável e encerramento confirmado.",
+        "fr": "Comprendre la requête → accepter la surveillance → résoudre ou dériver → confirmer → document · Communication claire, promesse durable et clôture confirmée."
+      },
+      "lessons": [
+        {
+          "key": "position-customer_support-l12-1",
+          "title": {
+            "es": "Customer Support · Colaboración · Contexto y alcance",
+            "en": "Customer Support · Collaboration · Context and scope",
+            "pt": "Customer Support · Colaboração · Contexto e escopo",
+            "fr": "Customer Support · Collaboration · Contexte et périmètre"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-customer_support-l12-2",
+          "title": {
+            "es": "Customer Support · Colaboración · Datos y fuentes",
+            "en": "Customer Support · Collaboration · Data and sources",
+            "pt": "Customer Support · Colaboração · Dados e fontes",
+            "fr": "Customer Support · Collaboration · Données et sources"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-customer_support-l12-3",
+          "title": {
+            "es": "Customer Support · Colaboración · Alternativas y criterio",
+            "en": "Customer Support · Collaboration · Alternatives and judgment",
+            "pt": "Customer Support · Colaboração · Alternativas e critério",
+            "fr": "Customer Support · Collaboration · Options et jugement"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-customer_support-l12-4",
+          "title": {
+            "es": "Customer Support · Colaboración · Entregable del puesto",
+            "en": "Customer Support · Collaboration · Role deliverable",
+            "pt": "Customer Support · Colaboração · Entrega do cargo",
+            "fr": "Customer Support · Collaboration · Livrable du poste"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-customer_support-l12-5",
+          "title": {
+            "es": "Customer Support · Colaboración · Verificación y aceptación",
+            "en": "Customer Support · Collaboration · Verification and acceptance",
+            "pt": "Customer Support · Colaboração · Verificação e aceitação",
+            "fr": "Customer Support · Collaboration · Vérification et acceptation"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-customer_support-l12-6",
+          "title": {
+            "es": "Customer Support · Colaboración · Restricción nueva y transferencia",
+            "en": "Customer Support · Collaboration · New constraint and transfer",
+            "pt": "Customer Support · Colaboração · Nova restrição e transferência",
+            "fr": "Customer Support · Collaboration · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-voc"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": {
+        "es": "Customer Support · Supervisión",
+        "en": "Customer Support · Supervision",
+        "pt": "Customer Support · Supervisão",
+        "fr": "Customer Support · Supervision"
+      },
+      "objective": {
+        "es": "Entender solicitud → acordar seguimiento → resolver o derivar → confirmar → documentar · Comunicación comprensible, promesas sostenibles y cierre confirmado.",
+        "en": "Understand request → agree monitoring → solve or derive → confirm → document · Inclear communication, sustainable promise and confirmed closure.",
+        "pt": "Entenda a solicitação → concordar com o monitoramento → resolver ou derivar → confirmar → documento · Comunicação clara, promessa sustentável e encerramento confirmado.",
+        "fr": "Comprendre la requête → accepter la surveillance → résoudre ou dériver → confirmer → document · Communication claire, promesse durable et clôture confirmée."
+      },
+      "lessons": [
+        {
+          "key": "position-customer_support-l13-1",
+          "title": {
+            "es": "Customer Support · Supervisión · Contexto y alcance",
+            "en": "Customer Support · Supervision · Context and scope",
+            "pt": "Customer Support · Supervisão · Contexto e escopo",
+            "fr": "Customer Support · Supervision · Contexte et périmètre"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-customer_support-l13-2",
+          "title": {
+            "es": "Customer Support · Supervisión · Datos y fuentes",
+            "en": "Customer Support · Supervision · Data and sources",
+            "pt": "Customer Support · Supervisão · Dados e fontes",
+            "fr": "Customer Support · Supervision · Données et sources"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-customer_support-l13-3",
+          "title": {
+            "es": "Customer Support · Supervisión · Alternativas y criterio",
+            "en": "Customer Support · Supervision · Alternatives and judgment",
+            "pt": "Customer Support · Supervisão · Alternativas e critério",
+            "fr": "Customer Support · Supervision · Options et jugement"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-customer_support-l13-4",
+          "title": {
+            "es": "Customer Support · Supervisión · Entregable del puesto",
+            "en": "Customer Support · Supervision · Role deliverable",
+            "pt": "Customer Support · Supervisão · Entrega do cargo",
+            "fr": "Customer Support · Supervision · Livrable du poste"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-customer_support-l13-5",
+          "title": {
+            "es": "Customer Support · Supervisión · Verificación y aceptación",
+            "en": "Customer Support · Supervision · Verification and acceptance",
+            "pt": "Customer Support · Supervisão · Verificação e aceitação",
+            "fr": "Customer Support · Supervision · Vérification et acceptation"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-customer_support-l13-6",
+          "title": {
+            "es": "Customer Support · Supervisión · Restricción nueva y transferencia",
+            "en": "Customer Support · Supervision · New constraint and transfer",
+            "pt": "Customer Support · Supervisão · Nova restrição e transferência",
+            "fr": "Customer Support · Supervision · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-training"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": {
+        "es": "Customer Support · Gerencia",
+        "en": "Customer Support · Management",
+        "pt": "Customer Support · Gestão",
+        "fr": "Customer Support · Gestion"
+      },
+      "objective": {
+        "es": "Entender solicitud → acordar seguimiento → resolver o derivar → confirmar → documentar · Comunicación comprensible, promesas sostenibles y cierre confirmado.",
+        "en": "Understand request → agree monitoring → solve or derive → confirm → document · Inclear communication, sustainable promise and confirmed closure.",
+        "pt": "Entenda a solicitação → concordar com o monitoramento → resolver ou derivar → confirmar → documento · Comunicação clara, promessa sustentável e encerramento confirmado.",
+        "fr": "Comprendre la requête → accepter la surveillance → résoudre ou dériver → confirmer → document · Communication claire, promesse durable et clôture confirmée."
+      },
+      "lessons": [
+        {
+          "key": "position-customer_support-l14-1",
+          "title": {
+            "es": "Customer Support · Gerencia · Contexto y alcance",
+            "en": "Customer Support · Management · Context and scope",
+            "pt": "Customer Support · Gestão · Contexto e escopo",
+            "fr": "Customer Support · Gestion · Contexte et périmètre"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-customer_support-l14-2",
+          "title": {
+            "es": "Customer Support · Gerencia · Datos y fuentes",
+            "en": "Customer Support · Management · Data and sources",
+            "pt": "Customer Support · Gestão · Dados e fontes",
+            "fr": "Customer Support · Gestion · Données et sources"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-customer_support-l14-3",
+          "title": {
+            "es": "Customer Support · Gerencia · Alternativas y criterio",
+            "en": "Customer Support · Management · Alternatives and judgment",
+            "pt": "Customer Support · Gestão · Alternativas e critério",
+            "fr": "Customer Support · Gestion · Options et jugement"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-customer_support-l14-4",
+          "title": {
+            "es": "Customer Support · Gerencia · Entregable del puesto",
+            "en": "Customer Support · Management · Role deliverable",
+            "pt": "Customer Support · Gestão · Entrega do cargo",
+            "fr": "Customer Support · Gestion · Livrable du poste"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-customer_support-l14-5",
+          "title": {
+            "es": "Customer Support · Gerencia · Verificación y aceptación",
+            "en": "Customer Support · Management · Verification and acceptance",
+            "pt": "Customer Support · Gestão · Verificação e aceitação",
+            "fr": "Customer Support · Gestion · Vérification et acceptation"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-customer_support-l14-6",
+          "title": {
+            "es": "Customer Support · Gerencia · Restricción nueva y transferencia",
+            "en": "Customer Support · Management · New constraint and transfer",
+            "pt": "Customer Support · Gestão · Nova restrição e transferência",
+            "fr": "Customer Support · Gestion · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-customer_support-l14-7",
+          "title": {
+            "es": "Customer Support · Gerencia · Decisión de capacidad",
+            "en": "Customer Support · Management · Capacity decision",
+            "pt": "Customer Support · Gestão · Decisão de capacidade",
+            "fr": "Customer Support · Gestion · Décision de capacité"
+          },
+          "sharedSource": "cs-segmentation"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": {
+        "es": "Customer Support · Dirección",
+        "en": "Customer Support · Leadership",
+        "pt": "Customer Support · Direção",
+        "fr": "Customer Support · Direction"
+      },
+      "objective": {
+        "es": "Entender solicitud → acordar seguimiento → resolver o derivar → confirmar → documentar · Comunicación comprensible, promesas sostenibles y cierre confirmado.",
+        "en": "Understand request → agree monitoring → solve or derive → confirm → document · Inclear communication, sustainable promise and confirmed closure.",
+        "pt": "Entenda a solicitação → concordar com o monitoramento → resolver ou derivar → confirmar → documento · Comunicação clara, promessa sustentável e encerramento confirmado.",
+        "fr": "Comprendre la requête → accepter la surveillance → résoudre ou dériver → confirmer → document · Communication claire, promesse durable et clôture confirmée."
+      },
+      "lessons": [
+        {
+          "key": "position-customer_support-l15-1",
+          "title": {
+            "es": "Customer Support · Dirección · Contexto y alcance",
+            "en": "Customer Support · Leadership · Context and scope",
+            "pt": "Customer Support · Direção · Contexto e escopo",
+            "fr": "Customer Support · Direction · Contexte et périmètre"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-customer_support-l15-2",
+          "title": {
+            "es": "Customer Support · Dirección · Datos y fuentes",
+            "en": "Customer Support · Leadership · Data and sources",
+            "pt": "Customer Support · Direção · Dados e fontes",
+            "fr": "Customer Support · Direction · Données et sources"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-customer_support-l15-3",
+          "title": {
+            "es": "Customer Support · Dirección · Alternativas y criterio",
+            "en": "Customer Support · Leadership · Alternatives and judgment",
+            "pt": "Customer Support · Direção · Alternativas e critério",
+            "fr": "Customer Support · Direction · Options et jugement"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-customer_support-l15-4",
+          "title": {
+            "es": "Customer Support · Dirección · Entregable del puesto",
+            "en": "Customer Support · Leadership · Role deliverable",
+            "pt": "Customer Support · Direção · Entrega do cargo",
+            "fr": "Customer Support · Direction · Livrable du poste"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-customer_support-l15-5",
+          "title": {
+            "es": "Customer Support · Dirección · Verificación y aceptación",
+            "en": "Customer Support · Leadership · Verification and acceptance",
+            "pt": "Customer Support · Direção · Verificação e aceitação",
+            "fr": "Customer Support · Direction · Vérification et acceptation"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-customer_support-l15-6",
+          "title": {
+            "es": "Customer Support · Dirección · Restricción nueva y transferencia",
+            "en": "Customer Support · Leadership · New constraint and transfer",
+            "pt": "Customer Support · Direção · Nova restrição e transferência",
+            "fr": "Customer Support · Direction · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-customer_support-l15-7",
+          "title": {
+            "es": "Customer Support · Dirección · Decisión de capacidad",
+            "en": "Customer Support · Leadership · Capacity decision",
+            "pt": "Customer Support · Direção · Decisão de capacidade",
+            "fr": "Customer Support · Direction · Décision de capacité"
+          },
+          "sharedSource": "cs-ebr"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "level": 8,
+      "title": "Resolución documentada de una cola de casos",
+      "rubric": [
+        "scope",
+        "decision",
+        "evidence",
+        "verification"
+      ]
+    },
+    {
+      "level": 15,
+      "title": "Base de conocimiento para un producto",
+      "rubric": [
+        "scope",
+        "decision",
+        "evidence",
+        "verification"
+      ]
+    }
+  ],
+  "diagnostic": {
+    "type": "situations",
+    "source": "https://handbook.gitlab.com/handbook/support/workflows/ticket_lifecycle/",
+    "competencies": [
+      "communication",
+      "diagnosis",
+      "data",
+      "prioritization",
+      "documentation",
+      "deescalation",
+      "negotiation",
+      "planning",
+      "technical",
+      "collaboration"
+    ],
+    "blocking": false
+  },
+  "optionalTechnical": [
+    "data",
+    "spreadsheets",
+    "sql",
+    "automation",
+    "ai"
+  ],
+  "references": [
+    "https://handbook.gitlab.com/handbook/support/workflows/ticket_lifecycle/"
+  ],
+  "sharedUnits": [
+    "common-communication",
+    "common-diagnosis",
+    "common-data",
+    "common-priority",
+    "common-documentation",
+    "common-deescalation",
+    "common-commercial",
+    "common-planning",
+    "common-technical"
+  ]
+}

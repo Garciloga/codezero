@@ -1,0 +1,1345 @@
+{
+  "key": "manager_team_lead",
+  "title": "Managers y Team Leads",
+  "status": "draft",
+  "editorial_review": "pending",
+  "calibration": "pending",
+  "published": false,
+  "role": {
+    "es": {
+      "process": "Objetivos → capacidad → delegación → acompañamiento → revisión/mejora",
+      "deliverable": "Plan de equipo y guion de seguimiento",
+      "decision": "¿Asignar al más rápido o desarrollar capacidad sostenible?",
+      "quality": "Expectativas claras, autonomía proporcional y seguimiento concreto."
+    },
+    "en": {
+      "process": "Objectives → capacity → delegation → accompaniment → review / improvement",
+      "deliverable": "Monitoring equipment and script",
+      "decision": "To assign to the fastest or to develop sustainable capacity?",
+      "quality": "Clear expectations, proportional autonomy and concrete monitoring."
+    },
+    "pt": {
+      "process": "Objectivos → capacidade → delegação → acompanhamento → revisão / melhoria",
+      "deliverable": "Equipamento de monitorização e guião",
+      "decision": "Atribuir ao mais rápido ou desenvolver uma capacidade sustentável?",
+      "quality": "Expectativas claras, autonomia proporcional e monitoramento concreto."
+    },
+    "fr": {
+      "process": "Objectifs → capacité → délégation → accompagnement → revue / amélioration",
+      "deliverable": "Matériel de surveillance et scripts",
+      "decision": "Affecter au plus vite ou développer une capacité durable?",
+      "quality": "Des attentes claires, une autonomie proportionnelle et un suivi concret."
+    }
+  },
+  "competencies": {
+    "communication": "medium",
+    "diagnosis": "medium",
+    "data": "medium",
+    "prioritization": "high",
+    "documentation": "medium",
+    "deescalation": "medium",
+    "negotiation": "medium",
+    "planning": "high",
+    "technical": "medium",
+    "collaboration": "high"
+  },
+  "expectedByStage": {
+    "1": {
+      "communication": 1,
+      "diagnosis": 1,
+      "data": 1,
+      "prioritization": 1,
+      "documentation": 1,
+      "deescalation": 1,
+      "negotiation": 1,
+      "planning": 1,
+      "technical": 1,
+      "collaboration": 1
+    },
+    "2": {
+      "communication": 2,
+      "diagnosis": 2,
+      "data": 2,
+      "prioritization": 2,
+      "documentation": 2,
+      "deescalation": 2,
+      "negotiation": 2,
+      "planning": 2,
+      "technical": 2,
+      "collaboration": 2
+    },
+    "3": {
+      "communication": 3,
+      "diagnosis": 3,
+      "data": 3,
+      "prioritization": 3,
+      "documentation": 3,
+      "deescalation": 3,
+      "negotiation": 3,
+      "planning": 3,
+      "technical": 3,
+      "collaboration": 3
+    },
+    "4": {
+      "communication": 3,
+      "diagnosis": 3,
+      "data": 3,
+      "prioritization": 4,
+      "documentation": 3,
+      "deescalation": 3,
+      "negotiation": 3,
+      "planning": 4,
+      "technical": 3,
+      "collaboration": 4
+    },
+    "5": {
+      "communication": 3,
+      "diagnosis": 3,
+      "data": 3,
+      "prioritization": 4,
+      "documentation": 3,
+      "deescalation": 3,
+      "negotiation": 3,
+      "planning": 4,
+      "technical": 3,
+      "collaboration": 4
+    }
+  },
+  "levels": [
+    {
+      "number": 1,
+      "title": {
+        "es": "Managers y Team Leads · Fundamentos del puesto",
+        "en": "Managers y Team Leads · Role foundations",
+        "pt": "Managers y Team Leads · Fundamentos do cargo",
+        "fr": "Managers y Team Leads · Fondamentaux du poste"
+      },
+      "objective": {
+        "es": "Objetivos → capacidad → delegación → acompañamiento → revisión/mejora · Expectativas claras, autonomía proporcional y seguimiento concreto.",
+        "en": "Objectives → capacity → delegation → accompaniment → review / improvement · Clear expectations, proportional autonomy and concrete monitoring.",
+        "pt": "Objectivos → capacidade → delegação → acompanhamento → revisão / melhoria · Expectativas claras, autonomia proporcional e monitoramento concreto.",
+        "fr": "Objectifs → capacité → délégation → accompagnement → revue / amélioration · Des attentes claires, une autonomie proportionnelle et un suivi concret."
+      },
+      "lessons": [
+        {
+          "key": "position-manager_team_lead-l1-1",
+          "title": {
+            "es": "Managers y Team Leads · Fundamentos del puesto · Contexto y alcance",
+            "en": "Managers y Team Leads · Role foundations · Context and scope",
+            "pt": "Managers y Team Leads · Fundamentos do cargo · Contexto e escopo",
+            "fr": "Managers y Team Leads · Fondamentaux du poste · Contexte et périmètre"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-manager_team_lead-l1-2",
+          "title": {
+            "es": "Managers y Team Leads · Fundamentos del puesto · Datos y fuentes",
+            "en": "Managers y Team Leads · Role foundations · Data and sources",
+            "pt": "Managers y Team Leads · Fundamentos do cargo · Dados e fontes",
+            "fr": "Managers y Team Leads · Fondamentaux du poste · Données et sources"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-manager_team_lead-l1-3",
+          "title": {
+            "es": "Managers y Team Leads · Fundamentos del puesto · Alternativas y criterio",
+            "en": "Managers y Team Leads · Role foundations · Alternatives and judgment",
+            "pt": "Managers y Team Leads · Fundamentos do cargo · Alternativas e critério",
+            "fr": "Managers y Team Leads · Fondamentaux du poste · Options et jugement"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-manager_team_lead-l1-4",
+          "title": {
+            "es": "Managers y Team Leads · Fundamentos del puesto · Entregable del puesto",
+            "en": "Managers y Team Leads · Role foundations · Role deliverable",
+            "pt": "Managers y Team Leads · Fundamentos do cargo · Entrega do cargo",
+            "fr": "Managers y Team Leads · Fondamentaux du poste · Livrable du poste"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-manager_team_lead-l1-5",
+          "title": {
+            "es": "Managers y Team Leads · Fundamentos del puesto · Verificación y aceptación",
+            "en": "Managers y Team Leads · Role foundations · Verification and acceptance",
+            "pt": "Managers y Team Leads · Fundamentos do cargo · Verificação e aceitação",
+            "fr": "Managers y Team Leads · Fondamentaux du poste · Vérification et acceptation"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-manager_team_lead-l1-6",
+          "title": {
+            "es": "Managers y Team Leads · Fundamentos del puesto · Restricción nueva y transferencia",
+            "en": "Managers y Team Leads · Role foundations · New constraint and transfer",
+            "pt": "Managers y Team Leads · Fundamentos do cargo · Nova restrição e transferência",
+            "fr": "Managers y Team Leads · Fondamentaux du poste · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-roi"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": {
+        "es": "Managers y Team Leads · Ciclo de trabajo",
+        "en": "Managers y Team Leads · Work lifecycle",
+        "pt": "Managers y Team Leads · Ciclo de trabalho",
+        "fr": "Managers y Team Leads · Cycle de travail"
+      },
+      "objective": {
+        "es": "Objetivos → capacidad → delegación → acompañamiento → revisión/mejora · Expectativas claras, autonomía proporcional y seguimiento concreto.",
+        "en": "Objectives → capacity → delegation → accompaniment → review / improvement · Clear expectations, proportional autonomy and concrete monitoring.",
+        "pt": "Objectivos → capacidade → delegação → acompanhamento → revisão / melhoria · Expectativas claras, autonomia proporcional e monitoramento concreto.",
+        "fr": "Objectifs → capacité → délégation → accompagnement → revue / amélioration · Des attentes claires, une autonomie proportionnelle et un suivi concret."
+      },
+      "lessons": [
+        {
+          "key": "position-manager_team_lead-l2-1",
+          "title": {
+            "es": "Managers y Team Leads · Ciclo de trabajo · Contexto y alcance",
+            "en": "Managers y Team Leads · Work lifecycle · Context and scope",
+            "pt": "Managers y Team Leads · Ciclo de trabalho · Contexto e escopo",
+            "fr": "Managers y Team Leads · Cycle de travail · Contexte et périmètre"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-manager_team_lead-l2-2",
+          "title": {
+            "es": "Managers y Team Leads · Ciclo de trabajo · Datos y fuentes",
+            "en": "Managers y Team Leads · Work lifecycle · Data and sources",
+            "pt": "Managers y Team Leads · Ciclo de trabalho · Dados e fontes",
+            "fr": "Managers y Team Leads · Cycle de travail · Données et sources"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-manager_team_lead-l2-3",
+          "title": {
+            "es": "Managers y Team Leads · Ciclo de trabajo · Alternativas y criterio",
+            "en": "Managers y Team Leads · Work lifecycle · Alternatives and judgment",
+            "pt": "Managers y Team Leads · Ciclo de trabalho · Alternativas e critério",
+            "fr": "Managers y Team Leads · Cycle de travail · Options et jugement"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-manager_team_lead-l2-4",
+          "title": {
+            "es": "Managers y Team Leads · Ciclo de trabajo · Entregable del puesto",
+            "en": "Managers y Team Leads · Work lifecycle · Role deliverable",
+            "pt": "Managers y Team Leads · Ciclo de trabalho · Entrega do cargo",
+            "fr": "Managers y Team Leads · Cycle de travail · Livrable du poste"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-manager_team_lead-l2-5",
+          "title": {
+            "es": "Managers y Team Leads · Ciclo de trabajo · Verificación y aceptación",
+            "en": "Managers y Team Leads · Work lifecycle · Verification and acceptance",
+            "pt": "Managers y Team Leads · Ciclo de trabalho · Verificação e aceitação",
+            "fr": "Managers y Team Leads · Cycle de travail · Vérification et acceptation"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-manager_team_lead-l2-6",
+          "title": {
+            "es": "Managers y Team Leads · Ciclo de trabajo · Restricción nueva y transferencia",
+            "en": "Managers y Team Leads · Work lifecycle · New constraint and transfer",
+            "pt": "Managers y Team Leads · Ciclo de trabalho · Nova restrição e transferência",
+            "fr": "Managers y Team Leads · Cycle de travail · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-handoff"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": {
+        "es": "Managers y Team Leads · Inicio de un caso",
+        "en": "Managers y Team Leads · Starting a case",
+        "pt": "Managers y Team Leads · Início de um caso",
+        "fr": "Managers y Team Leads · Démarrage d’un cas"
+      },
+      "objective": {
+        "es": "Objetivos → capacidad → delegación → acompañamiento → revisión/mejora · Expectativas claras, autonomía proporcional y seguimiento concreto.",
+        "en": "Objectives → capacity → delegation → accompaniment → review / improvement · Clear expectations, proportional autonomy and concrete monitoring.",
+        "pt": "Objectivos → capacidade → delegação → acompanhamento → revisão / melhoria · Expectativas claras, autonomia proporcional e monitoramento concreto.",
+        "fr": "Objectifs → capacité → délégation → accompagnement → revue / amélioration · Des attentes claires, une autonomie proportionnelle et un suivi concret."
+      },
+      "lessons": [
+        {
+          "key": "position-manager_team_lead-l3-1",
+          "title": {
+            "es": "Managers y Team Leads · Inicio de un caso · Contexto y alcance",
+            "en": "Managers y Team Leads · Starting a case · Context and scope",
+            "pt": "Managers y Team Leads · Início de um caso · Contexto e escopo",
+            "fr": "Managers y Team Leads · Démarrage d’un cas · Contexte et périmètre"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-manager_team_lead-l3-2",
+          "title": {
+            "es": "Managers y Team Leads · Inicio de un caso · Datos y fuentes",
+            "en": "Managers y Team Leads · Starting a case · Data and sources",
+            "pt": "Managers y Team Leads · Início de um caso · Dados e fontes",
+            "fr": "Managers y Team Leads · Démarrage d’un cas · Données et sources"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-manager_team_lead-l3-3",
+          "title": {
+            "es": "Managers y Team Leads · Inicio de un caso · Alternativas y criterio",
+            "en": "Managers y Team Leads · Starting a case · Alternatives and judgment",
+            "pt": "Managers y Team Leads · Início de um caso · Alternativas e critério",
+            "fr": "Managers y Team Leads · Démarrage d’un cas · Options et jugement"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-manager_team_lead-l3-4",
+          "title": {
+            "es": "Managers y Team Leads · Inicio de un caso · Entregable del puesto",
+            "en": "Managers y Team Leads · Starting a case · Role deliverable",
+            "pt": "Managers y Team Leads · Início de um caso · Entrega do cargo",
+            "fr": "Managers y Team Leads · Démarrage d’un cas · Livrable du poste"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-manager_team_lead-l3-5",
+          "title": {
+            "es": "Managers y Team Leads · Inicio de un caso · Verificación y aceptación",
+            "en": "Managers y Team Leads · Starting a case · Verification and acceptance",
+            "pt": "Managers y Team Leads · Início de um caso · Verificação e aceitação",
+            "fr": "Managers y Team Leads · Démarrage d’un cas · Vérification et acceptation"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-manager_team_lead-l3-6",
+          "title": {
+            "es": "Managers y Team Leads · Inicio de un caso · Restricción nueva y transferencia",
+            "en": "Managers y Team Leads · Starting a case · New constraint and transfer",
+            "pt": "Managers y Team Leads · Início de um caso · Nova restrição e transferência",
+            "fr": "Managers y Team Leads · Démarrage d’un cas · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-kickoff"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": {
+        "es": "Managers y Team Leads · Comunicación",
+        "en": "Managers y Team Leads · Communication",
+        "pt": "Managers y Team Leads · Comunicação",
+        "fr": "Managers y Team Leads · Communication"
+      },
+      "objective": {
+        "es": "Objetivos → capacidad → delegación → acompañamiento → revisión/mejora · Expectativas claras, autonomía proporcional y seguimiento concreto.",
+        "en": "Objectives → capacity → delegation → accompaniment → review / improvement · Clear expectations, proportional autonomy and concrete monitoring.",
+        "pt": "Objectivos → capacidade → delegação → acompanhamento → revisão / melhoria · Expectativas claras, autonomia proporcional e monitoramento concreto.",
+        "fr": "Objectifs → capacité → délégation → accompagnement → revue / amélioration · Des attentes claires, une autonomie proportionnelle et un suivi concret."
+      },
+      "lessons": [
+        {
+          "key": "position-manager_team_lead-l4-1",
+          "title": {
+            "es": "Managers y Team Leads · Comunicación · Contexto y alcance",
+            "en": "Managers y Team Leads · Communication · Context and scope",
+            "pt": "Managers y Team Leads · Comunicação · Contexto e escopo",
+            "fr": "Managers y Team Leads · Communication · Contexte et périmètre"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-manager_team_lead-l4-2",
+          "title": {
+            "es": "Managers y Team Leads · Comunicación · Datos y fuentes",
+            "en": "Managers y Team Leads · Communication · Data and sources",
+            "pt": "Managers y Team Leads · Comunicação · Dados e fontes",
+            "fr": "Managers y Team Leads · Communication · Données et sources"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-manager_team_lead-l4-3",
+          "title": {
+            "es": "Managers y Team Leads · Comunicación · Alternativas y criterio",
+            "en": "Managers y Team Leads · Communication · Alternatives and judgment",
+            "pt": "Managers y Team Leads · Comunicação · Alternativas e critério",
+            "fr": "Managers y Team Leads · Communication · Options et jugement"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-manager_team_lead-l4-4",
+          "title": {
+            "es": "Managers y Team Leads · Comunicación · Entregable del puesto",
+            "en": "Managers y Team Leads · Communication · Role deliverable",
+            "pt": "Managers y Team Leads · Comunicação · Entrega do cargo",
+            "fr": "Managers y Team Leads · Communication · Livrable du poste"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-manager_team_lead-l4-5",
+          "title": {
+            "es": "Managers y Team Leads · Comunicación · Verificación y aceptación",
+            "en": "Managers y Team Leads · Communication · Verification and acceptance",
+            "pt": "Managers y Team Leads · Comunicação · Verificação e aceitação",
+            "fr": "Managers y Team Leads · Communication · Vérification et acceptation"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-manager_team_lead-l4-6",
+          "title": {
+            "es": "Managers y Team Leads · Comunicación · Restricción nueva y transferencia",
+            "en": "Managers y Team Leads · Communication · New constraint and transfer",
+            "pt": "Managers y Team Leads · Comunicação · Nova restrição e transferência",
+            "fr": "Managers y Team Leads · Communication · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "common-communication"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": {
+        "es": "Managers y Team Leads · Calidad y resultado",
+        "en": "Managers y Team Leads · Quality and outcome",
+        "pt": "Managers y Team Leads · Qualidade e resultado",
+        "fr": "Managers y Team Leads · Qualité et résultat"
+      },
+      "objective": {
+        "es": "Objetivos → capacidad → delegación → acompañamiento → revisión/mejora · Expectativas claras, autonomía proporcional y seguimiento concreto.",
+        "en": "Objectives → capacity → delegation → accompaniment → review / improvement · Clear expectations, proportional autonomy and concrete monitoring.",
+        "pt": "Objectivos → capacidade → delegação → acompanhamento → revisão / melhoria · Expectativas claras, autonomia proporcional e monitoramento concreto.",
+        "fr": "Objectifs → capacité → délégation → accompagnement → revue / amélioration · Des attentes claires, une autonomie proportionnelle et un suivi concret."
+      },
+      "lessons": [
+        {
+          "key": "position-manager_team_lead-l5-1",
+          "title": {
+            "es": "Managers y Team Leads · Calidad y resultado · Contexto y alcance",
+            "en": "Managers y Team Leads · Quality and outcome · Context and scope",
+            "pt": "Managers y Team Leads · Qualidade e resultado · Contexto e escopo",
+            "fr": "Managers y Team Leads · Qualité et résultat · Contexte et périmètre"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-manager_team_lead-l5-2",
+          "title": {
+            "es": "Managers y Team Leads · Calidad y resultado · Datos y fuentes",
+            "en": "Managers y Team Leads · Quality and outcome · Data and sources",
+            "pt": "Managers y Team Leads · Qualidade e resultado · Dados e fontes",
+            "fr": "Managers y Team Leads · Qualité et résultat · Données et sources"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-manager_team_lead-l5-3",
+          "title": {
+            "es": "Managers y Team Leads · Calidad y resultado · Alternativas y criterio",
+            "en": "Managers y Team Leads · Quality and outcome · Alternatives and judgment",
+            "pt": "Managers y Team Leads · Qualidade e resultado · Alternativas e critério",
+            "fr": "Managers y Team Leads · Qualité et résultat · Options et jugement"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-manager_team_lead-l5-4",
+          "title": {
+            "es": "Managers y Team Leads · Calidad y resultado · Entregable del puesto",
+            "en": "Managers y Team Leads · Quality and outcome · Role deliverable",
+            "pt": "Managers y Team Leads · Qualidade e resultado · Entrega do cargo",
+            "fr": "Managers y Team Leads · Qualité et résultat · Livrable du poste"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-manager_team_lead-l5-5",
+          "title": {
+            "es": "Managers y Team Leads · Calidad y resultado · Verificación y aceptación",
+            "en": "Managers y Team Leads · Quality and outcome · Verification and acceptance",
+            "pt": "Managers y Team Leads · Qualidade e resultado · Verificação e aceitação",
+            "fr": "Managers y Team Leads · Qualité et résultat · Vérification et acceptation"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-manager_team_lead-l5-6",
+          "title": {
+            "es": "Managers y Team Leads · Calidad y resultado · Restricción nueva y transferencia",
+            "en": "Managers y Team Leads · Quality and outcome · New constraint and transfer",
+            "pt": "Managers y Team Leads · Qualidade e resultado · Nova restrição e transferência",
+            "fr": "Managers y Team Leads · Qualité et résultat · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-health"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": {
+        "es": "Managers y Team Leads · Herramientas",
+        "en": "Managers y Team Leads · Tools",
+        "pt": "Managers y Team Leads · Ferramentas",
+        "fr": "Managers y Team Leads · Outils"
+      },
+      "objective": {
+        "es": "Objetivos → capacidad → delegación → acompañamiento → revisión/mejora · Expectativas claras, autonomía proporcional y seguimiento concreto.",
+        "en": "Objectives → capacity → delegation → accompaniment → review / improvement · Clear expectations, proportional autonomy and concrete monitoring.",
+        "pt": "Objectivos → capacidade → delegação → acompanhamento → revisão / melhoria · Expectativas claras, autonomia proporcional e monitoramento concreto.",
+        "fr": "Objectifs → capacité → délégation → accompagnement → revue / amélioration · Des attentes claires, une autonomie proportionnelle et un suivi concret."
+      },
+      "lessons": [
+        {
+          "key": "position-manager_team_lead-l6-1",
+          "title": {
+            "es": "Managers y Team Leads · Herramientas · Contexto y alcance",
+            "en": "Managers y Team Leads · Tools · Context and scope",
+            "pt": "Managers y Team Leads · Ferramentas · Contexto e escopo",
+            "fr": "Managers y Team Leads · Outils · Contexte et périmètre"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-manager_team_lead-l6-2",
+          "title": {
+            "es": "Managers y Team Leads · Herramientas · Datos y fuentes",
+            "en": "Managers y Team Leads · Tools · Data and sources",
+            "pt": "Managers y Team Leads · Ferramentas · Dados e fontes",
+            "fr": "Managers y Team Leads · Outils · Données et sources"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-manager_team_lead-l6-3",
+          "title": {
+            "es": "Managers y Team Leads · Herramientas · Alternativas y criterio",
+            "en": "Managers y Team Leads · Tools · Alternatives and judgment",
+            "pt": "Managers y Team Leads · Ferramentas · Alternativas e critério",
+            "fr": "Managers y Team Leads · Outils · Options et jugement"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-manager_team_lead-l6-4",
+          "title": {
+            "es": "Managers y Team Leads · Herramientas · Entregable del puesto",
+            "en": "Managers y Team Leads · Tools · Role deliverable",
+            "pt": "Managers y Team Leads · Ferramentas · Entrega do cargo",
+            "fr": "Managers y Team Leads · Outils · Livrable du poste"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-manager_team_lead-l6-5",
+          "title": {
+            "es": "Managers y Team Leads · Herramientas · Verificación y aceptación",
+            "en": "Managers y Team Leads · Tools · Verification and acceptance",
+            "pt": "Managers y Team Leads · Ferramentas · Verificação e aceitação",
+            "fr": "Managers y Team Leads · Outils · Vérification et acceptation"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-manager_team_lead-l6-6",
+          "title": {
+            "es": "Managers y Team Leads · Herramientas · Restricción nueva y transferencia",
+            "en": "Managers y Team Leads · Tools · New constraint and transfer",
+            "pt": "Managers y Team Leads · Ferramentas · Nova restrição e transferência",
+            "fr": "Managers y Team Leads · Outils · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "common-documentation"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": {
+        "es": "Managers y Team Leads · Priorización",
+        "en": "Managers y Team Leads · Prioritization",
+        "pt": "Managers y Team Leads · Priorização",
+        "fr": "Managers y Team Leads · Priorités"
+      },
+      "objective": {
+        "es": "Objetivos → capacidad → delegación → acompañamiento → revisión/mejora · Expectativas claras, autonomía proporcional y seguimiento concreto.",
+        "en": "Objectives → capacity → delegation → accompaniment → review / improvement · Clear expectations, proportional autonomy and concrete monitoring.",
+        "pt": "Objectivos → capacidade → delegação → acompanhamento → revisão / melhoria · Expectativas claras, autonomia proporcional e monitoramento concreto.",
+        "fr": "Objectifs → capacité → délégation → accompagnement → revue / amélioration · Des attentes claires, une autonomie proportionnelle et un suivi concret."
+      },
+      "lessons": [
+        {
+          "key": "position-manager_team_lead-l7-1",
+          "title": {
+            "es": "Managers y Team Leads · Priorización · Contexto y alcance",
+            "en": "Managers y Team Leads · Prioritization · Context and scope",
+            "pt": "Managers y Team Leads · Priorização · Contexto e escopo",
+            "fr": "Managers y Team Leads · Priorités · Contexte et périmètre"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-manager_team_lead-l7-2",
+          "title": {
+            "es": "Managers y Team Leads · Priorización · Datos y fuentes",
+            "en": "Managers y Team Leads · Prioritization · Data and sources",
+            "pt": "Managers y Team Leads · Priorização · Dados e fontes",
+            "fr": "Managers y Team Leads · Priorités · Données et sources"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-manager_team_lead-l7-3",
+          "title": {
+            "es": "Managers y Team Leads · Priorización · Alternativas y criterio",
+            "en": "Managers y Team Leads · Prioritization · Alternatives and judgment",
+            "pt": "Managers y Team Leads · Priorização · Alternativas e critério",
+            "fr": "Managers y Team Leads · Priorités · Options et jugement"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-manager_team_lead-l7-4",
+          "title": {
+            "es": "Managers y Team Leads · Priorización · Entregable del puesto",
+            "en": "Managers y Team Leads · Prioritization · Role deliverable",
+            "pt": "Managers y Team Leads · Priorização · Entrega do cargo",
+            "fr": "Managers y Team Leads · Priorités · Livrable du poste"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-manager_team_lead-l7-5",
+          "title": {
+            "es": "Managers y Team Leads · Priorización · Verificación y aceptación",
+            "en": "Managers y Team Leads · Prioritization · Verification and acceptance",
+            "pt": "Managers y Team Leads · Priorização · Verificação e aceitação",
+            "fr": "Managers y Team Leads · Priorités · Vérification et acceptation"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-manager_team_lead-l7-6",
+          "title": {
+            "es": "Managers y Team Leads · Priorización · Restricción nueva y transferencia",
+            "en": "Managers y Team Leads · Prioritization · New constraint and transfer",
+            "pt": "Managers y Team Leads · Priorização · Nova restrição e transferência",
+            "fr": "Managers y Team Leads · Priorités · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-portfolio"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": {
+        "es": "Managers y Team Leads · Plan y revisión",
+        "en": "Managers y Team Leads · Plan and review",
+        "pt": "Managers y Team Leads · Plano e revisão",
+        "fr": "Managers y Team Leads · Plan et revue"
+      },
+      "objective": {
+        "es": "Objetivos → capacidad → delegación → acompañamiento → revisión/mejora · Expectativas claras, autonomía proporcional y seguimiento concreto.",
+        "en": "Objectives → capacity → delegation → accompaniment → review / improvement · Clear expectations, proportional autonomy and concrete monitoring.",
+        "pt": "Objectivos → capacidade → delegação → acompanhamento → revisão / melhoria · Expectativas claras, autonomia proporcional e monitoramento concreto.",
+        "fr": "Objectifs → capacité → délégation → accompagnement → revue / amélioration · Des attentes claires, une autonomie proportionnelle et un suivi concret."
+      },
+      "lessons": [
+        {
+          "key": "position-manager_team_lead-l8-1",
+          "title": {
+            "es": "Managers y Team Leads · Plan y revisión · Contexto y alcance",
+            "en": "Managers y Team Leads · Plan and review · Context and scope",
+            "pt": "Managers y Team Leads · Plano e revisão · Contexto e escopo",
+            "fr": "Managers y Team Leads · Plan et revue · Contexte et périmètre"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-manager_team_lead-l8-2",
+          "title": {
+            "es": "Managers y Team Leads · Plan y revisión · Datos y fuentes",
+            "en": "Managers y Team Leads · Plan and review · Data and sources",
+            "pt": "Managers y Team Leads · Plano e revisão · Dados e fontes",
+            "fr": "Managers y Team Leads · Plan et revue · Données et sources"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-manager_team_lead-l8-3",
+          "title": {
+            "es": "Managers y Team Leads · Plan y revisión · Alternativas y criterio",
+            "en": "Managers y Team Leads · Plan and review · Alternatives and judgment",
+            "pt": "Managers y Team Leads · Plano e revisão · Alternativas e critério",
+            "fr": "Managers y Team Leads · Plan et revue · Options et jugement"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-manager_team_lead-l8-4",
+          "title": {
+            "es": "Managers y Team Leads · Plan y revisión · Entregable del puesto",
+            "en": "Managers y Team Leads · Plan and review · Role deliverable",
+            "pt": "Managers y Team Leads · Plano e revisão · Entrega do cargo",
+            "fr": "Managers y Team Leads · Plan et revue · Livrable du poste"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-manager_team_lead-l8-5",
+          "title": {
+            "es": "Managers y Team Leads · Plan y revisión · Verificación y aceptación",
+            "en": "Managers y Team Leads · Plan and review · Verification and acceptance",
+            "pt": "Managers y Team Leads · Plano e revisão · Verificação e aceitação",
+            "fr": "Managers y Team Leads · Plan et revue · Vérification et acceptation"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-manager_team_lead-l8-6",
+          "title": {
+            "es": "Managers y Team Leads · Plan y revisión · Restricción nueva y transferencia",
+            "en": "Managers y Team Leads · Plan and review · New constraint and transfer",
+            "pt": "Managers y Team Leads · Plano e revisão · Nova restrição e transferência",
+            "fr": "Managers y Team Leads · Plan et revue · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-qbr"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": {
+        "es": "Managers y Team Leads · Riesgos y escalaciones",
+        "en": "Managers y Team Leads · Risks and escalations",
+        "pt": "Managers y Team Leads · Riscos e escalações",
+        "fr": "Managers y Team Leads · Risques et escalades"
+      },
+      "objective": {
+        "es": "Objetivos → capacidad → delegación → acompañamiento → revisión/mejora · Expectativas claras, autonomía proporcional y seguimiento concreto.",
+        "en": "Objectives → capacity → delegation → accompaniment → review / improvement · Clear expectations, proportional autonomy and concrete monitoring.",
+        "pt": "Objectivos → capacidade → delegação → acompanhamento → revisão / melhoria · Expectativas claras, autonomia proporcional e monitoramento concreto.",
+        "fr": "Objectifs → capacité → délégation → accompagnement → revue / amélioration · Des attentes claires, une autonomie proportionnelle et un suivi concret."
+      },
+      "lessons": [
+        {
+          "key": "position-manager_team_lead-l9-1",
+          "title": {
+            "es": "Managers y Team Leads · Riesgos y escalaciones · Contexto y alcance",
+            "en": "Managers y Team Leads · Risks and escalations · Context and scope",
+            "pt": "Managers y Team Leads · Riscos e escalações · Contexto e escopo",
+            "fr": "Managers y Team Leads · Risques et escalades · Contexte et périmètre"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-manager_team_lead-l9-2",
+          "title": {
+            "es": "Managers y Team Leads · Riesgos y escalaciones · Datos y fuentes",
+            "en": "Managers y Team Leads · Risks and escalations · Data and sources",
+            "pt": "Managers y Team Leads · Riscos e escalações · Dados e fontes",
+            "fr": "Managers y Team Leads · Risques et escalades · Données et sources"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-manager_team_lead-l9-3",
+          "title": {
+            "es": "Managers y Team Leads · Riesgos y escalaciones · Alternativas y criterio",
+            "en": "Managers y Team Leads · Risks and escalations · Alternatives and judgment",
+            "pt": "Managers y Team Leads · Riscos e escalações · Alternativas e critério",
+            "fr": "Managers y Team Leads · Risques et escalades · Options et jugement"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-manager_team_lead-l9-4",
+          "title": {
+            "es": "Managers y Team Leads · Riesgos y escalaciones · Entregable del puesto",
+            "en": "Managers y Team Leads · Risks and escalations · Role deliverable",
+            "pt": "Managers y Team Leads · Riscos e escalações · Entrega do cargo",
+            "fr": "Managers y Team Leads · Risques et escalades · Livrable du poste"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-manager_team_lead-l9-5",
+          "title": {
+            "es": "Managers y Team Leads · Riesgos y escalaciones · Verificación y aceptación",
+            "en": "Managers y Team Leads · Risks and escalations · Verification and acceptance",
+            "pt": "Managers y Team Leads · Riscos e escalações · Verificação e aceitação",
+            "fr": "Managers y Team Leads · Risques et escalades · Vérification et acceptation"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-manager_team_lead-l9-6",
+          "title": {
+            "es": "Managers y Team Leads · Riesgos y escalaciones · Restricción nueva y transferencia",
+            "en": "Managers y Team Leads · Risks and escalations · New constraint and transfer",
+            "pt": "Managers y Team Leads · Riscos e escalações · Nova restrição e transferência",
+            "fr": "Managers y Team Leads · Risques et escalades · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-churn"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": {
+        "es": "Managers y Team Leads · Negociación",
+        "en": "Managers y Team Leads · Negotiation",
+        "pt": "Managers y Team Leads · Negociação",
+        "fr": "Managers y Team Leads · Négociation"
+      },
+      "objective": {
+        "es": "Objetivos → capacidad → delegación → acompañamiento → revisión/mejora · Expectativas claras, autonomía proporcional y seguimiento concreto.",
+        "en": "Objectives → capacity → delegation → accompaniment → review / improvement · Clear expectations, proportional autonomy and concrete monitoring.",
+        "pt": "Objectivos → capacidade → delegação → acompanhamento → revisão / melhoria · Expectativas claras, autonomia proporcional e monitoramento concreto.",
+        "fr": "Objectifs → capacité → délégation → accompagnement → revue / amélioration · Des attentes claires, une autonomie proportionnelle et un suivi concret."
+      },
+      "lessons": [
+        {
+          "key": "position-manager_team_lead-l10-1",
+          "title": {
+            "es": "Managers y Team Leads · Negociación · Contexto y alcance",
+            "en": "Managers y Team Leads · Negotiation · Context and scope",
+            "pt": "Managers y Team Leads · Negociação · Contexto e escopo",
+            "fr": "Managers y Team Leads · Négociation · Contexte et périmètre"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-manager_team_lead-l10-2",
+          "title": {
+            "es": "Managers y Team Leads · Negociación · Datos y fuentes",
+            "en": "Managers y Team Leads · Negotiation · Data and sources",
+            "pt": "Managers y Team Leads · Negociação · Dados e fontes",
+            "fr": "Managers y Team Leads · Négociation · Données et sources"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-manager_team_lead-l10-3",
+          "title": {
+            "es": "Managers y Team Leads · Negociación · Alternativas y criterio",
+            "en": "Managers y Team Leads · Negotiation · Alternatives and judgment",
+            "pt": "Managers y Team Leads · Negociação · Alternativas e critério",
+            "fr": "Managers y Team Leads · Négociation · Options et jugement"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-manager_team_lead-l10-4",
+          "title": {
+            "es": "Managers y Team Leads · Negociación · Entregable del puesto",
+            "en": "Managers y Team Leads · Negotiation · Role deliverable",
+            "pt": "Managers y Team Leads · Negociação · Entrega do cargo",
+            "fr": "Managers y Team Leads · Négociation · Livrable du poste"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-manager_team_lead-l10-5",
+          "title": {
+            "es": "Managers y Team Leads · Negociación · Verificación y aceptación",
+            "en": "Managers y Team Leads · Negotiation · Verification and acceptance",
+            "pt": "Managers y Team Leads · Negociação · Verificação e aceitação",
+            "fr": "Managers y Team Leads · Négociation · Vérification et acceptation"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-manager_team_lead-l10-6",
+          "title": {
+            "es": "Managers y Team Leads · Negociación · Restricción nueva y transferencia",
+            "en": "Managers y Team Leads · Negotiation · New constraint and transfer",
+            "pt": "Managers y Team Leads · Negociação · Nova restrição e transferência",
+            "fr": "Managers y Team Leads · Négociation · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-renewal"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": {
+        "es": "Managers y Team Leads · Mejora del servicio",
+        "en": "Managers y Team Leads · Service improvement",
+        "pt": "Managers y Team Leads · Melhoria do serviço",
+        "fr": "Managers y Team Leads · Amélioration du service"
+      },
+      "objective": {
+        "es": "Objetivos → capacidad → delegación → acompañamiento → revisión/mejora · Expectativas claras, autonomía proporcional y seguimiento concreto.",
+        "en": "Objectives → capacity → delegation → accompaniment → review / improvement · Clear expectations, proportional autonomy and concrete monitoring.",
+        "pt": "Objectivos → capacidade → delegação → acompanhamento → revisão / melhoria · Expectativas claras, autonomia proporcional e monitoramento concreto.",
+        "fr": "Objectifs → capacité → délégation → accompagnement → revue / amélioration · Des attentes claires, une autonomie proportionnelle et un suivi concret."
+      },
+      "lessons": [
+        {
+          "key": "position-manager_team_lead-l11-1",
+          "title": {
+            "es": "Managers y Team Leads · Mejora del servicio · Contexto y alcance",
+            "en": "Managers y Team Leads · Service improvement · Context and scope",
+            "pt": "Managers y Team Leads · Melhoria do serviço · Contexto e escopo",
+            "fr": "Managers y Team Leads · Amélioration du service · Contexte et périmètre"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-manager_team_lead-l11-2",
+          "title": {
+            "es": "Managers y Team Leads · Mejora del servicio · Datos y fuentes",
+            "en": "Managers y Team Leads · Service improvement · Data and sources",
+            "pt": "Managers y Team Leads · Melhoria do serviço · Dados e fontes",
+            "fr": "Managers y Team Leads · Amélioration du service · Données et sources"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-manager_team_lead-l11-3",
+          "title": {
+            "es": "Managers y Team Leads · Mejora del servicio · Alternativas y criterio",
+            "en": "Managers y Team Leads · Service improvement · Alternatives and judgment",
+            "pt": "Managers y Team Leads · Melhoria do serviço · Alternativas e critério",
+            "fr": "Managers y Team Leads · Amélioration du service · Options et jugement"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-manager_team_lead-l11-4",
+          "title": {
+            "es": "Managers y Team Leads · Mejora del servicio · Entregable del puesto",
+            "en": "Managers y Team Leads · Service improvement · Role deliverable",
+            "pt": "Managers y Team Leads · Melhoria do serviço · Entrega do cargo",
+            "fr": "Managers y Team Leads · Amélioration du service · Livrable du poste"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-manager_team_lead-l11-5",
+          "title": {
+            "es": "Managers y Team Leads · Mejora del servicio · Verificación y aceptación",
+            "en": "Managers y Team Leads · Service improvement · Verification and acceptance",
+            "pt": "Managers y Team Leads · Melhoria do serviço · Verificação e aceitação",
+            "fr": "Managers y Team Leads · Amélioration du service · Vérification et acceptation"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-manager_team_lead-l11-6",
+          "title": {
+            "es": "Managers y Team Leads · Mejora del servicio · Restricción nueva y transferencia",
+            "en": "Managers y Team Leads · Service improvement · New constraint and transfer",
+            "pt": "Managers y Team Leads · Melhoria do serviço · Nova restrição e transferência",
+            "fr": "Managers y Team Leads · Amélioration du service · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-expansion"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": {
+        "es": "Managers y Team Leads · Colaboración",
+        "en": "Managers y Team Leads · Collaboration",
+        "pt": "Managers y Team Leads · Colaboração",
+        "fr": "Managers y Team Leads · Collaboration"
+      },
+      "objective": {
+        "es": "Objetivos → capacidad → delegación → acompañamiento → revisión/mejora · Expectativas claras, autonomía proporcional y seguimiento concreto.",
+        "en": "Objectives → capacity → delegation → accompaniment → review / improvement · Clear expectations, proportional autonomy and concrete monitoring.",
+        "pt": "Objectivos → capacidade → delegação → acompanhamento → revisão / melhoria · Expectativas claras, autonomia proporcional e monitoramento concreto.",
+        "fr": "Objectifs → capacité → délégation → accompagnement → revue / amélioration · Des attentes claires, une autonomie proportionnelle et un suivi concret."
+      },
+      "lessons": [
+        {
+          "key": "position-manager_team_lead-l12-1",
+          "title": {
+            "es": "Managers y Team Leads · Colaboración · Contexto y alcance",
+            "en": "Managers y Team Leads · Collaboration · Context and scope",
+            "pt": "Managers y Team Leads · Colaboração · Contexto e escopo",
+            "fr": "Managers y Team Leads · Collaboration · Contexte et périmètre"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-manager_team_lead-l12-2",
+          "title": {
+            "es": "Managers y Team Leads · Colaboración · Datos y fuentes",
+            "en": "Managers y Team Leads · Collaboration · Data and sources",
+            "pt": "Managers y Team Leads · Colaboração · Dados e fontes",
+            "fr": "Managers y Team Leads · Collaboration · Données et sources"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-manager_team_lead-l12-3",
+          "title": {
+            "es": "Managers y Team Leads · Colaboración · Alternativas y criterio",
+            "en": "Managers y Team Leads · Collaboration · Alternatives and judgment",
+            "pt": "Managers y Team Leads · Colaboração · Alternativas e critério",
+            "fr": "Managers y Team Leads · Collaboration · Options et jugement"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-manager_team_lead-l12-4",
+          "title": {
+            "es": "Managers y Team Leads · Colaboración · Entregable del puesto",
+            "en": "Managers y Team Leads · Collaboration · Role deliverable",
+            "pt": "Managers y Team Leads · Colaboração · Entrega do cargo",
+            "fr": "Managers y Team Leads · Collaboration · Livrable du poste"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-manager_team_lead-l12-5",
+          "title": {
+            "es": "Managers y Team Leads · Colaboración · Verificación y aceptación",
+            "en": "Managers y Team Leads · Collaboration · Verification and acceptance",
+            "pt": "Managers y Team Leads · Colaboração · Verificação e aceitação",
+            "fr": "Managers y Team Leads · Collaboration · Vérification et acceptation"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-manager_team_lead-l12-6",
+          "title": {
+            "es": "Managers y Team Leads · Colaboración · Restricción nueva y transferencia",
+            "en": "Managers y Team Leads · Collaboration · New constraint and transfer",
+            "pt": "Managers y Team Leads · Colaboração · Nova restrição e transferência",
+            "fr": "Managers y Team Leads · Collaboration · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-voc"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": {
+        "es": "Managers y Team Leads · Supervisión",
+        "en": "Managers y Team Leads · Supervision",
+        "pt": "Managers y Team Leads · Supervisão",
+        "fr": "Managers y Team Leads · Supervision"
+      },
+      "objective": {
+        "es": "Objetivos → capacidad → delegación → acompañamiento → revisión/mejora · Expectativas claras, autonomía proporcional y seguimiento concreto.",
+        "en": "Objectives → capacity → delegation → accompaniment → review / improvement · Clear expectations, proportional autonomy and concrete monitoring.",
+        "pt": "Objectivos → capacidade → delegação → acompanhamento → revisão / melhoria · Expectativas claras, autonomia proporcional e monitoramento concreto.",
+        "fr": "Objectifs → capacité → délégation → accompagnement → revue / amélioration · Des attentes claires, une autonomie proportionnelle et un suivi concret."
+      },
+      "lessons": [
+        {
+          "key": "position-manager_team_lead-l13-1",
+          "title": {
+            "es": "Managers y Team Leads · Supervisión · Contexto y alcance",
+            "en": "Managers y Team Leads · Supervision · Context and scope",
+            "pt": "Managers y Team Leads · Supervisão · Contexto e escopo",
+            "fr": "Managers y Team Leads · Supervision · Contexte et périmètre"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-manager_team_lead-l13-2",
+          "title": {
+            "es": "Managers y Team Leads · Supervisión · Datos y fuentes",
+            "en": "Managers y Team Leads · Supervision · Data and sources",
+            "pt": "Managers y Team Leads · Supervisão · Dados e fontes",
+            "fr": "Managers y Team Leads · Supervision · Données et sources"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-manager_team_lead-l13-3",
+          "title": {
+            "es": "Managers y Team Leads · Supervisión · Alternativas y criterio",
+            "en": "Managers y Team Leads · Supervision · Alternatives and judgment",
+            "pt": "Managers y Team Leads · Supervisão · Alternativas e critério",
+            "fr": "Managers y Team Leads · Supervision · Options et jugement"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-manager_team_lead-l13-4",
+          "title": {
+            "es": "Managers y Team Leads · Supervisión · Entregable del puesto",
+            "en": "Managers y Team Leads · Supervision · Role deliverable",
+            "pt": "Managers y Team Leads · Supervisão · Entrega do cargo",
+            "fr": "Managers y Team Leads · Supervision · Livrable du poste"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-manager_team_lead-l13-5",
+          "title": {
+            "es": "Managers y Team Leads · Supervisión · Verificación y aceptación",
+            "en": "Managers y Team Leads · Supervision · Verification and acceptance",
+            "pt": "Managers y Team Leads · Supervisão · Verificação e aceitação",
+            "fr": "Managers y Team Leads · Supervision · Vérification et acceptation"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-manager_team_lead-l13-6",
+          "title": {
+            "es": "Managers y Team Leads · Supervisión · Restricción nueva y transferencia",
+            "en": "Managers y Team Leads · Supervision · New constraint and transfer",
+            "pt": "Managers y Team Leads · Supervisão · Nova restrição e transferência",
+            "fr": "Managers y Team Leads · Supervision · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-training"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": {
+        "es": "Managers y Team Leads · Gerencia",
+        "en": "Managers y Team Leads · Management",
+        "pt": "Managers y Team Leads · Gestão",
+        "fr": "Managers y Team Leads · Gestion"
+      },
+      "objective": {
+        "es": "Objetivos → capacidad → delegación → acompañamiento → revisión/mejora · Expectativas claras, autonomía proporcional y seguimiento concreto.",
+        "en": "Objectives → capacity → delegation → accompaniment → review / improvement · Clear expectations, proportional autonomy and concrete monitoring.",
+        "pt": "Objectivos → capacidade → delegação → acompanhamento → revisão / melhoria · Expectativas claras, autonomia proporcional e monitoramento concreto.",
+        "fr": "Objectifs → capacité → délégation → accompagnement → revue / amélioration · Des attentes claires, une autonomie proportionnelle et un suivi concret."
+      },
+      "lessons": [
+        {
+          "key": "position-manager_team_lead-l14-1",
+          "title": {
+            "es": "Managers y Team Leads · Gerencia · Contexto y alcance",
+            "en": "Managers y Team Leads · Management · Context and scope",
+            "pt": "Managers y Team Leads · Gestão · Contexto e escopo",
+            "fr": "Managers y Team Leads · Gestion · Contexte et périmètre"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-manager_team_lead-l14-2",
+          "title": {
+            "es": "Managers y Team Leads · Gerencia · Datos y fuentes",
+            "en": "Managers y Team Leads · Management · Data and sources",
+            "pt": "Managers y Team Leads · Gestão · Dados e fontes",
+            "fr": "Managers y Team Leads · Gestion · Données et sources"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-manager_team_lead-l14-3",
+          "title": {
+            "es": "Managers y Team Leads · Gerencia · Alternativas y criterio",
+            "en": "Managers y Team Leads · Management · Alternatives and judgment",
+            "pt": "Managers y Team Leads · Gestão · Alternativas e critério",
+            "fr": "Managers y Team Leads · Gestion · Options et jugement"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-manager_team_lead-l14-4",
+          "title": {
+            "es": "Managers y Team Leads · Gerencia · Entregable del puesto",
+            "en": "Managers y Team Leads · Management · Role deliverable",
+            "pt": "Managers y Team Leads · Gestão · Entrega do cargo",
+            "fr": "Managers y Team Leads · Gestion · Livrable du poste"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-manager_team_lead-l14-5",
+          "title": {
+            "es": "Managers y Team Leads · Gerencia · Verificación y aceptación",
+            "en": "Managers y Team Leads · Management · Verification and acceptance",
+            "pt": "Managers y Team Leads · Gestão · Verificação e aceitação",
+            "fr": "Managers y Team Leads · Gestion · Vérification et acceptation"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-manager_team_lead-l14-6",
+          "title": {
+            "es": "Managers y Team Leads · Gerencia · Restricción nueva y transferencia",
+            "en": "Managers y Team Leads · Management · New constraint and transfer",
+            "pt": "Managers y Team Leads · Gestão · Nova restrição e transferência",
+            "fr": "Managers y Team Leads · Gestion · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-manager_team_lead-l14-7",
+          "title": {
+            "es": "Managers y Team Leads · Gerencia · Decisión de capacidad",
+            "en": "Managers y Team Leads · Management · Capacity decision",
+            "pt": "Managers y Team Leads · Gestão · Decisão de capacidade",
+            "fr": "Managers y Team Leads · Gestion · Décision de capacité"
+          },
+          "sharedSource": "cs-segmentation"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": {
+        "es": "Managers y Team Leads · Dirección",
+        "en": "Managers y Team Leads · Leadership",
+        "pt": "Managers y Team Leads · Direção",
+        "fr": "Managers y Team Leads · Direction"
+      },
+      "objective": {
+        "es": "Objetivos → capacidad → delegación → acompañamiento → revisión/mejora · Expectativas claras, autonomía proporcional y seguimiento concreto.",
+        "en": "Objectives → capacity → delegation → accompaniment → review / improvement · Clear expectations, proportional autonomy and concrete monitoring.",
+        "pt": "Objectivos → capacidade → delegação → acompanhamento → revisão / melhoria · Expectativas claras, autonomia proporcional e monitoramento concreto.",
+        "fr": "Objectifs → capacité → délégation → accompagnement → revue / amélioration · Des attentes claires, une autonomie proportionnelle et un suivi concret."
+      },
+      "lessons": [
+        {
+          "key": "position-manager_team_lead-l15-1",
+          "title": {
+            "es": "Managers y Team Leads · Dirección · Contexto y alcance",
+            "en": "Managers y Team Leads · Leadership · Context and scope",
+            "pt": "Managers y Team Leads · Direção · Contexto e escopo",
+            "fr": "Managers y Team Leads · Direction · Contexte et périmètre"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-manager_team_lead-l15-2",
+          "title": {
+            "es": "Managers y Team Leads · Dirección · Datos y fuentes",
+            "en": "Managers y Team Leads · Leadership · Data and sources",
+            "pt": "Managers y Team Leads · Direção · Dados e fontes",
+            "fr": "Managers y Team Leads · Direction · Données et sources"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-manager_team_lead-l15-3",
+          "title": {
+            "es": "Managers y Team Leads · Dirección · Alternativas y criterio",
+            "en": "Managers y Team Leads · Leadership · Alternatives and judgment",
+            "pt": "Managers y Team Leads · Direção · Alternativas e critério",
+            "fr": "Managers y Team Leads · Direction · Options et jugement"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-manager_team_lead-l15-4",
+          "title": {
+            "es": "Managers y Team Leads · Dirección · Entregable del puesto",
+            "en": "Managers y Team Leads · Leadership · Role deliverable",
+            "pt": "Managers y Team Leads · Direção · Entrega do cargo",
+            "fr": "Managers y Team Leads · Direction · Livrable du poste"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-manager_team_lead-l15-5",
+          "title": {
+            "es": "Managers y Team Leads · Dirección · Verificación y aceptación",
+            "en": "Managers y Team Leads · Leadership · Verification and acceptance",
+            "pt": "Managers y Team Leads · Direção · Verificação e aceitação",
+            "fr": "Managers y Team Leads · Direction · Vérification et acceptation"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-manager_team_lead-l15-6",
+          "title": {
+            "es": "Managers y Team Leads · Dirección · Restricción nueva y transferencia",
+            "en": "Managers y Team Leads · Leadership · New constraint and transfer",
+            "pt": "Managers y Team Leads · Direção · Nova restrição e transferência",
+            "fr": "Managers y Team Leads · Direction · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-manager_team_lead-l15-7",
+          "title": {
+            "es": "Managers y Team Leads · Dirección · Decisión de capacidad",
+            "en": "Managers y Team Leads · Leadership · Capacity decision",
+            "pt": "Managers y Team Leads · Direção · Decisão de capacidade",
+            "fr": "Managers y Team Leads · Direction · Décision de capacité"
+          },
+          "sharedSource": "cs-ebr"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "level": 8,
+      "title": "Plan de desarrollo de un equipo usando la matriz",
+      "rubric": [
+        "scope",
+        "decision",
+        "evidence",
+        "verification"
+      ]
+    },
+    {
+      "level": 15,
+      "title": "Revisión trimestral con decisiones de capacidad",
+      "rubric": [
+        "scope",
+        "decision",
+        "evidence",
+        "verification"
+      ]
+    }
+  ],
+  "diagnostic": {
+    "type": "situations",
+    "source": "https://www.onetonline.org/link/details/11-1021.00",
+    "competencies": [
+      "communication",
+      "diagnosis",
+      "data",
+      "prioritization",
+      "documentation",
+      "deescalation",
+      "negotiation",
+      "planning",
+      "technical",
+      "collaboration"
+    ],
+    "blocking": false
+  },
+  "optionalTechnical": [
+    "data",
+    "spreadsheets",
+    "sql",
+    "automation",
+    "ai"
+  ],
+  "references": [
+    "https://www.onetonline.org/link/details/11-1021.00"
+  ],
+  "sharedUnits": [
+    "common-communication",
+    "common-diagnosis",
+    "common-data",
+    "common-priority",
+    "common-documentation",
+    "common-deescalation",
+    "common-commercial",
+    "common-planning",
+    "common-technical"
+  ]
+}

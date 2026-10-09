@@ -1,0 +1,1345 @@
+{
+  "key": "product_specialist",
+  "title": "Product Specialist",
+  "status": "draft",
+  "editorial_review": "pending",
+  "calibration": "pending",
+  "published": false,
+  "role": {
+    "es": {
+      "process": "Discovery técnica → diseño de demo → prueba de viabilidad → límites → traspaso",
+      "deliverable": "Guion de demo y reporte POC",
+      "decision": "¿Prometer escala por una demo pequeña o medir antes?",
+      "quality": "Capacidades demostradas; supuestos y exclusiones explícitos."
+    },
+    "en": {
+      "process": "Discovery technical → demo design → viability test → boundaries → handover",
+      "deliverable": "demo script and POC report",
+      "decision": "Promiser scale for a small demo or measure earlier?",
+      "quality": "Proven capabilities and explicit assumptions and exclusions."
+    },
+    "pt": {
+      "process": "Discovery technical → demo design → teste de viabilidade → limites → entrega",
+      "deliverable": "script demo e relatório POC",
+      "decision": "Promessor escala para uma pequena demonstração ou medida mais cedo?",
+      "quality": "Capacidades comprovadas e suposições e exclusões explícitas."
+    },
+    "fr": {
+      "process": "Découverte technique → conception de démonstration → test de viabilité → limites → transfert",
+      "deliverable": "script de démonstration et rapport POC",
+      "decision": "Une petite démo ou une petite mesure plus tôt ?",
+      "quality": "Capacités éprouvées et hypothèses et exclusions explicites."
+    }
+  },
+  "competencies": {
+    "communication": "high",
+    "diagnosis": "high",
+    "data": "medium",
+    "prioritization": "medium",
+    "documentation": "medium",
+    "deescalation": "medium",
+    "negotiation": "medium",
+    "planning": "medium",
+    "technical": "high",
+    "collaboration": "medium"
+  },
+  "expectedByStage": {
+    "1": {
+      "communication": 1,
+      "diagnosis": 1,
+      "data": 1,
+      "prioritization": 1,
+      "documentation": 1,
+      "deescalation": 1,
+      "negotiation": 1,
+      "planning": 1,
+      "technical": 1,
+      "collaboration": 1
+    },
+    "2": {
+      "communication": 2,
+      "diagnosis": 2,
+      "data": 2,
+      "prioritization": 2,
+      "documentation": 2,
+      "deescalation": 2,
+      "negotiation": 2,
+      "planning": 2,
+      "technical": 2,
+      "collaboration": 2
+    },
+    "3": {
+      "communication": 3,
+      "diagnosis": 3,
+      "data": 3,
+      "prioritization": 3,
+      "documentation": 3,
+      "deescalation": 3,
+      "negotiation": 3,
+      "planning": 3,
+      "technical": 3,
+      "collaboration": 3
+    },
+    "4": {
+      "communication": 4,
+      "diagnosis": 4,
+      "data": 3,
+      "prioritization": 3,
+      "documentation": 3,
+      "deescalation": 3,
+      "negotiation": 3,
+      "planning": 3,
+      "technical": 4,
+      "collaboration": 3
+    },
+    "5": {
+      "communication": 4,
+      "diagnosis": 4,
+      "data": 3,
+      "prioritization": 3,
+      "documentation": 3,
+      "deescalation": 3,
+      "negotiation": 3,
+      "planning": 3,
+      "technical": 4,
+      "collaboration": 3
+    }
+  },
+  "levels": [
+    {
+      "number": 1,
+      "title": {
+        "es": "Product Specialist · Fundamentos del puesto",
+        "en": "Product Specialist · Role foundations",
+        "pt": "Product Specialist · Fundamentos do cargo",
+        "fr": "Product Specialist · Fondamentaux du poste"
+      },
+      "objective": {
+        "es": "Discovery técnica → diseño de demo → prueba de viabilidad → límites → traspaso · Capacidades demostradas; supuestos y exclusiones explícitos.",
+        "en": "Discovery technical → demo design → viability test → boundaries → handover · Proven capabilities and explicit assumptions and exclusions.",
+        "pt": "Discovery technical → demo design → teste de viabilidade → limites → entrega · Capacidades comprovadas e suposições e exclusões explícitas.",
+        "fr": "Découverte technique → conception de démonstration → test de viabilité → limites → transfert · Capacités éprouvées et hypothèses et exclusions explicites."
+      },
+      "lessons": [
+        {
+          "key": "position-product_specialist-l1-1",
+          "title": {
+            "es": "Product Specialist · Fundamentos del puesto · Contexto y alcance",
+            "en": "Product Specialist · Role foundations · Context and scope",
+            "pt": "Product Specialist · Fundamentos do cargo · Contexto e escopo",
+            "fr": "Product Specialist · Fondamentaux du poste · Contexte et périmètre"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-product_specialist-l1-2",
+          "title": {
+            "es": "Product Specialist · Fundamentos del puesto · Datos y fuentes",
+            "en": "Product Specialist · Role foundations · Data and sources",
+            "pt": "Product Specialist · Fundamentos do cargo · Dados e fontes",
+            "fr": "Product Specialist · Fondamentaux du poste · Données et sources"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-product_specialist-l1-3",
+          "title": {
+            "es": "Product Specialist · Fundamentos del puesto · Alternativas y criterio",
+            "en": "Product Specialist · Role foundations · Alternatives and judgment",
+            "pt": "Product Specialist · Fundamentos do cargo · Alternativas e critério",
+            "fr": "Product Specialist · Fondamentaux du poste · Options et jugement"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-product_specialist-l1-4",
+          "title": {
+            "es": "Product Specialist · Fundamentos del puesto · Entregable del puesto",
+            "en": "Product Specialist · Role foundations · Role deliverable",
+            "pt": "Product Specialist · Fundamentos do cargo · Entrega do cargo",
+            "fr": "Product Specialist · Fondamentaux du poste · Livrable du poste"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-product_specialist-l1-5",
+          "title": {
+            "es": "Product Specialist · Fundamentos del puesto · Verificación y aceptación",
+            "en": "Product Specialist · Role foundations · Verification and acceptance",
+            "pt": "Product Specialist · Fundamentos do cargo · Verificação e aceitação",
+            "fr": "Product Specialist · Fondamentaux du poste · Vérification et acceptation"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-product_specialist-l1-6",
+          "title": {
+            "es": "Product Specialist · Fundamentos del puesto · Restricción nueva y transferencia",
+            "en": "Product Specialist · Role foundations · New constraint and transfer",
+            "pt": "Product Specialist · Fundamentos do cargo · Nova restrição e transferência",
+            "fr": "Product Specialist · Fondamentaux du poste · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-roi"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": {
+        "es": "Product Specialist · Ciclo de trabajo",
+        "en": "Product Specialist · Work lifecycle",
+        "pt": "Product Specialist · Ciclo de trabalho",
+        "fr": "Product Specialist · Cycle de travail"
+      },
+      "objective": {
+        "es": "Discovery técnica → diseño de demo → prueba de viabilidad → límites → traspaso · Capacidades demostradas; supuestos y exclusiones explícitos.",
+        "en": "Discovery technical → demo design → viability test → boundaries → handover · Proven capabilities and explicit assumptions and exclusions.",
+        "pt": "Discovery technical → demo design → teste de viabilidade → limites → entrega · Capacidades comprovadas e suposições e exclusões explícitas.",
+        "fr": "Découverte technique → conception de démonstration → test de viabilité → limites → transfert · Capacités éprouvées et hypothèses et exclusions explicites."
+      },
+      "lessons": [
+        {
+          "key": "position-product_specialist-l2-1",
+          "title": {
+            "es": "Product Specialist · Ciclo de trabajo · Contexto y alcance",
+            "en": "Product Specialist · Work lifecycle · Context and scope",
+            "pt": "Product Specialist · Ciclo de trabalho · Contexto e escopo",
+            "fr": "Product Specialist · Cycle de travail · Contexte et périmètre"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-product_specialist-l2-2",
+          "title": {
+            "es": "Product Specialist · Ciclo de trabajo · Datos y fuentes",
+            "en": "Product Specialist · Work lifecycle · Data and sources",
+            "pt": "Product Specialist · Ciclo de trabalho · Dados e fontes",
+            "fr": "Product Specialist · Cycle de travail · Données et sources"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-product_specialist-l2-3",
+          "title": {
+            "es": "Product Specialist · Ciclo de trabajo · Alternativas y criterio",
+            "en": "Product Specialist · Work lifecycle · Alternatives and judgment",
+            "pt": "Product Specialist · Ciclo de trabalho · Alternativas e critério",
+            "fr": "Product Specialist · Cycle de travail · Options et jugement"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-product_specialist-l2-4",
+          "title": {
+            "es": "Product Specialist · Ciclo de trabajo · Entregable del puesto",
+            "en": "Product Specialist · Work lifecycle · Role deliverable",
+            "pt": "Product Specialist · Ciclo de trabalho · Entrega do cargo",
+            "fr": "Product Specialist · Cycle de travail · Livrable du poste"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-product_specialist-l2-5",
+          "title": {
+            "es": "Product Specialist · Ciclo de trabajo · Verificación y aceptación",
+            "en": "Product Specialist · Work lifecycle · Verification and acceptance",
+            "pt": "Product Specialist · Ciclo de trabalho · Verificação e aceitação",
+            "fr": "Product Specialist · Cycle de travail · Vérification et acceptation"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-product_specialist-l2-6",
+          "title": {
+            "es": "Product Specialist · Ciclo de trabajo · Restricción nueva y transferencia",
+            "en": "Product Specialist · Work lifecycle · New constraint and transfer",
+            "pt": "Product Specialist · Ciclo de trabalho · Nova restrição e transferência",
+            "fr": "Product Specialist · Cycle de travail · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-handoff"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": {
+        "es": "Product Specialist · Inicio de un caso",
+        "en": "Product Specialist · Starting a case",
+        "pt": "Product Specialist · Início de um caso",
+        "fr": "Product Specialist · Démarrage d’un cas"
+      },
+      "objective": {
+        "es": "Discovery técnica → diseño de demo → prueba de viabilidad → límites → traspaso · Capacidades demostradas; supuestos y exclusiones explícitos.",
+        "en": "Discovery technical → demo design → viability test → boundaries → handover · Proven capabilities and explicit assumptions and exclusions.",
+        "pt": "Discovery technical → demo design → teste de viabilidade → limites → entrega · Capacidades comprovadas e suposições e exclusões explícitas.",
+        "fr": "Découverte technique → conception de démonstration → test de viabilité → limites → transfert · Capacités éprouvées et hypothèses et exclusions explicites."
+      },
+      "lessons": [
+        {
+          "key": "position-product_specialist-l3-1",
+          "title": {
+            "es": "Product Specialist · Inicio de un caso · Contexto y alcance",
+            "en": "Product Specialist · Starting a case · Context and scope",
+            "pt": "Product Specialist · Início de um caso · Contexto e escopo",
+            "fr": "Product Specialist · Démarrage d’un cas · Contexte et périmètre"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-product_specialist-l3-2",
+          "title": {
+            "es": "Product Specialist · Inicio de un caso · Datos y fuentes",
+            "en": "Product Specialist · Starting a case · Data and sources",
+            "pt": "Product Specialist · Início de um caso · Dados e fontes",
+            "fr": "Product Specialist · Démarrage d’un cas · Données et sources"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-product_specialist-l3-3",
+          "title": {
+            "es": "Product Specialist · Inicio de un caso · Alternativas y criterio",
+            "en": "Product Specialist · Starting a case · Alternatives and judgment",
+            "pt": "Product Specialist · Início de um caso · Alternativas e critério",
+            "fr": "Product Specialist · Démarrage d’un cas · Options et jugement"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-product_specialist-l3-4",
+          "title": {
+            "es": "Product Specialist · Inicio de un caso · Entregable del puesto",
+            "en": "Product Specialist · Starting a case · Role deliverable",
+            "pt": "Product Specialist · Início de um caso · Entrega do cargo",
+            "fr": "Product Specialist · Démarrage d’un cas · Livrable du poste"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-product_specialist-l3-5",
+          "title": {
+            "es": "Product Specialist · Inicio de un caso · Verificación y aceptación",
+            "en": "Product Specialist · Starting a case · Verification and acceptance",
+            "pt": "Product Specialist · Início de um caso · Verificação e aceitação",
+            "fr": "Product Specialist · Démarrage d’un cas · Vérification et acceptation"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-product_specialist-l3-6",
+          "title": {
+            "es": "Product Specialist · Inicio de un caso · Restricción nueva y transferencia",
+            "en": "Product Specialist · Starting a case · New constraint and transfer",
+            "pt": "Product Specialist · Início de um caso · Nova restrição e transferência",
+            "fr": "Product Specialist · Démarrage d’un cas · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-kickoff"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": {
+        "es": "Product Specialist · Comunicación",
+        "en": "Product Specialist · Communication",
+        "pt": "Product Specialist · Comunicação",
+        "fr": "Product Specialist · Communication"
+      },
+      "objective": {
+        "es": "Discovery técnica → diseño de demo → prueba de viabilidad → límites → traspaso · Capacidades demostradas; supuestos y exclusiones explícitos.",
+        "en": "Discovery technical → demo design → viability test → boundaries → handover · Proven capabilities and explicit assumptions and exclusions.",
+        "pt": "Discovery technical → demo design → teste de viabilidade → limites → entrega · Capacidades comprovadas e suposições e exclusões explícitas.",
+        "fr": "Découverte technique → conception de démonstration → test de viabilité → limites → transfert · Capacités éprouvées et hypothèses et exclusions explicites."
+      },
+      "lessons": [
+        {
+          "key": "position-product_specialist-l4-1",
+          "title": {
+            "es": "Product Specialist · Comunicación · Contexto y alcance",
+            "en": "Product Specialist · Communication · Context and scope",
+            "pt": "Product Specialist · Comunicação · Contexto e escopo",
+            "fr": "Product Specialist · Communication · Contexte et périmètre"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-product_specialist-l4-2",
+          "title": {
+            "es": "Product Specialist · Comunicación · Datos y fuentes",
+            "en": "Product Specialist · Communication · Data and sources",
+            "pt": "Product Specialist · Comunicação · Dados e fontes",
+            "fr": "Product Specialist · Communication · Données et sources"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-product_specialist-l4-3",
+          "title": {
+            "es": "Product Specialist · Comunicación · Alternativas y criterio",
+            "en": "Product Specialist · Communication · Alternatives and judgment",
+            "pt": "Product Specialist · Comunicação · Alternativas e critério",
+            "fr": "Product Specialist · Communication · Options et jugement"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-product_specialist-l4-4",
+          "title": {
+            "es": "Product Specialist · Comunicación · Entregable del puesto",
+            "en": "Product Specialist · Communication · Role deliverable",
+            "pt": "Product Specialist · Comunicação · Entrega do cargo",
+            "fr": "Product Specialist · Communication · Livrable du poste"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-product_specialist-l4-5",
+          "title": {
+            "es": "Product Specialist · Comunicación · Verificación y aceptación",
+            "en": "Product Specialist · Communication · Verification and acceptance",
+            "pt": "Product Specialist · Comunicação · Verificação e aceitação",
+            "fr": "Product Specialist · Communication · Vérification et acceptation"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-product_specialist-l4-6",
+          "title": {
+            "es": "Product Specialist · Comunicación · Restricción nueva y transferencia",
+            "en": "Product Specialist · Communication · New constraint and transfer",
+            "pt": "Product Specialist · Comunicação · Nova restrição e transferência",
+            "fr": "Product Specialist · Communication · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "common-communication"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": {
+        "es": "Product Specialist · Calidad y resultado",
+        "en": "Product Specialist · Quality and outcome",
+        "pt": "Product Specialist · Qualidade e resultado",
+        "fr": "Product Specialist · Qualité et résultat"
+      },
+      "objective": {
+        "es": "Discovery técnica → diseño de demo → prueba de viabilidad → límites → traspaso · Capacidades demostradas; supuestos y exclusiones explícitos.",
+        "en": "Discovery technical → demo design → viability test → boundaries → handover · Proven capabilities and explicit assumptions and exclusions.",
+        "pt": "Discovery technical → demo design → teste de viabilidade → limites → entrega · Capacidades comprovadas e suposições e exclusões explícitas.",
+        "fr": "Découverte technique → conception de démonstration → test de viabilité → limites → transfert · Capacités éprouvées et hypothèses et exclusions explicites."
+      },
+      "lessons": [
+        {
+          "key": "position-product_specialist-l5-1",
+          "title": {
+            "es": "Product Specialist · Calidad y resultado · Contexto y alcance",
+            "en": "Product Specialist · Quality and outcome · Context and scope",
+            "pt": "Product Specialist · Qualidade e resultado · Contexto e escopo",
+            "fr": "Product Specialist · Qualité et résultat · Contexte et périmètre"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-product_specialist-l5-2",
+          "title": {
+            "es": "Product Specialist · Calidad y resultado · Datos y fuentes",
+            "en": "Product Specialist · Quality and outcome · Data and sources",
+            "pt": "Product Specialist · Qualidade e resultado · Dados e fontes",
+            "fr": "Product Specialist · Qualité et résultat · Données et sources"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-product_specialist-l5-3",
+          "title": {
+            "es": "Product Specialist · Calidad y resultado · Alternativas y criterio",
+            "en": "Product Specialist · Quality and outcome · Alternatives and judgment",
+            "pt": "Product Specialist · Qualidade e resultado · Alternativas e critério",
+            "fr": "Product Specialist · Qualité et résultat · Options et jugement"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-product_specialist-l5-4",
+          "title": {
+            "es": "Product Specialist · Calidad y resultado · Entregable del puesto",
+            "en": "Product Specialist · Quality and outcome · Role deliverable",
+            "pt": "Product Specialist · Qualidade e resultado · Entrega do cargo",
+            "fr": "Product Specialist · Qualité et résultat · Livrable du poste"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-product_specialist-l5-5",
+          "title": {
+            "es": "Product Specialist · Calidad y resultado · Verificación y aceptación",
+            "en": "Product Specialist · Quality and outcome · Verification and acceptance",
+            "pt": "Product Specialist · Qualidade e resultado · Verificação e aceitação",
+            "fr": "Product Specialist · Qualité et résultat · Vérification et acceptation"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-product_specialist-l5-6",
+          "title": {
+            "es": "Product Specialist · Calidad y resultado · Restricción nueva y transferencia",
+            "en": "Product Specialist · Quality and outcome · New constraint and transfer",
+            "pt": "Product Specialist · Qualidade e resultado · Nova restrição e transferência",
+            "fr": "Product Specialist · Qualité et résultat · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-health"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": {
+        "es": "Product Specialist · Herramientas",
+        "en": "Product Specialist · Tools",
+        "pt": "Product Specialist · Ferramentas",
+        "fr": "Product Specialist · Outils"
+      },
+      "objective": {
+        "es": "Discovery técnica → diseño de demo → prueba de viabilidad → límites → traspaso · Capacidades demostradas; supuestos y exclusiones explícitos.",
+        "en": "Discovery technical → demo design → viability test → boundaries → handover · Proven capabilities and explicit assumptions and exclusions.",
+        "pt": "Discovery technical → demo design → teste de viabilidade → limites → entrega · Capacidades comprovadas e suposições e exclusões explícitas.",
+        "fr": "Découverte technique → conception de démonstration → test de viabilité → limites → transfert · Capacités éprouvées et hypothèses et exclusions explicites."
+      },
+      "lessons": [
+        {
+          "key": "position-product_specialist-l6-1",
+          "title": {
+            "es": "Product Specialist · Herramientas · Contexto y alcance",
+            "en": "Product Specialist · Tools · Context and scope",
+            "pt": "Product Specialist · Ferramentas · Contexto e escopo",
+            "fr": "Product Specialist · Outils · Contexte et périmètre"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-product_specialist-l6-2",
+          "title": {
+            "es": "Product Specialist · Herramientas · Datos y fuentes",
+            "en": "Product Specialist · Tools · Data and sources",
+            "pt": "Product Specialist · Ferramentas · Dados e fontes",
+            "fr": "Product Specialist · Outils · Données et sources"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-product_specialist-l6-3",
+          "title": {
+            "es": "Product Specialist · Herramientas · Alternativas y criterio",
+            "en": "Product Specialist · Tools · Alternatives and judgment",
+            "pt": "Product Specialist · Ferramentas · Alternativas e critério",
+            "fr": "Product Specialist · Outils · Options et jugement"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-product_specialist-l6-4",
+          "title": {
+            "es": "Product Specialist · Herramientas · Entregable del puesto",
+            "en": "Product Specialist · Tools · Role deliverable",
+            "pt": "Product Specialist · Ferramentas · Entrega do cargo",
+            "fr": "Product Specialist · Outils · Livrable du poste"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-product_specialist-l6-5",
+          "title": {
+            "es": "Product Specialist · Herramientas · Verificación y aceptación",
+            "en": "Product Specialist · Tools · Verification and acceptance",
+            "pt": "Product Specialist · Ferramentas · Verificação e aceitação",
+            "fr": "Product Specialist · Outils · Vérification et acceptation"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-product_specialist-l6-6",
+          "title": {
+            "es": "Product Specialist · Herramientas · Restricción nueva y transferencia",
+            "en": "Product Specialist · Tools · New constraint and transfer",
+            "pt": "Product Specialist · Ferramentas · Nova restrição e transferência",
+            "fr": "Product Specialist · Outils · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "common-documentation"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": {
+        "es": "Product Specialist · Priorización",
+        "en": "Product Specialist · Prioritization",
+        "pt": "Product Specialist · Priorização",
+        "fr": "Product Specialist · Priorités"
+      },
+      "objective": {
+        "es": "Discovery técnica → diseño de demo → prueba de viabilidad → límites → traspaso · Capacidades demostradas; supuestos y exclusiones explícitos.",
+        "en": "Discovery technical → demo design → viability test → boundaries → handover · Proven capabilities and explicit assumptions and exclusions.",
+        "pt": "Discovery technical → demo design → teste de viabilidade → limites → entrega · Capacidades comprovadas e suposições e exclusões explícitas.",
+        "fr": "Découverte technique → conception de démonstration → test de viabilité → limites → transfert · Capacités éprouvées et hypothèses et exclusions explicites."
+      },
+      "lessons": [
+        {
+          "key": "position-product_specialist-l7-1",
+          "title": {
+            "es": "Product Specialist · Priorización · Contexto y alcance",
+            "en": "Product Specialist · Prioritization · Context and scope",
+            "pt": "Product Specialist · Priorização · Contexto e escopo",
+            "fr": "Product Specialist · Priorités · Contexte et périmètre"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-product_specialist-l7-2",
+          "title": {
+            "es": "Product Specialist · Priorización · Datos y fuentes",
+            "en": "Product Specialist · Prioritization · Data and sources",
+            "pt": "Product Specialist · Priorização · Dados e fontes",
+            "fr": "Product Specialist · Priorités · Données et sources"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-product_specialist-l7-3",
+          "title": {
+            "es": "Product Specialist · Priorización · Alternativas y criterio",
+            "en": "Product Specialist · Prioritization · Alternatives and judgment",
+            "pt": "Product Specialist · Priorização · Alternativas e critério",
+            "fr": "Product Specialist · Priorités · Options et jugement"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-product_specialist-l7-4",
+          "title": {
+            "es": "Product Specialist · Priorización · Entregable del puesto",
+            "en": "Product Specialist · Prioritization · Role deliverable",
+            "pt": "Product Specialist · Priorização · Entrega do cargo",
+            "fr": "Product Specialist · Priorités · Livrable du poste"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-product_specialist-l7-5",
+          "title": {
+            "es": "Product Specialist · Priorización · Verificación y aceptación",
+            "en": "Product Specialist · Prioritization · Verification and acceptance",
+            "pt": "Product Specialist · Priorização · Verificação e aceitação",
+            "fr": "Product Specialist · Priorités · Vérification et acceptation"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-product_specialist-l7-6",
+          "title": {
+            "es": "Product Specialist · Priorización · Restricción nueva y transferencia",
+            "en": "Product Specialist · Prioritization · New constraint and transfer",
+            "pt": "Product Specialist · Priorização · Nova restrição e transferência",
+            "fr": "Product Specialist · Priorités · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-portfolio"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": {
+        "es": "Product Specialist · Plan y revisión",
+        "en": "Product Specialist · Plan and review",
+        "pt": "Product Specialist · Plano e revisão",
+        "fr": "Product Specialist · Plan et revue"
+      },
+      "objective": {
+        "es": "Discovery técnica → diseño de demo → prueba de viabilidad → límites → traspaso · Capacidades demostradas; supuestos y exclusiones explícitos.",
+        "en": "Discovery technical → demo design → viability test → boundaries → handover · Proven capabilities and explicit assumptions and exclusions.",
+        "pt": "Discovery technical → demo design → teste de viabilidade → limites → entrega · Capacidades comprovadas e suposições e exclusões explícitas.",
+        "fr": "Découverte technique → conception de démonstration → test de viabilité → limites → transfert · Capacités éprouvées et hypothèses et exclusions explicites."
+      },
+      "lessons": [
+        {
+          "key": "position-product_specialist-l8-1",
+          "title": {
+            "es": "Product Specialist · Plan y revisión · Contexto y alcance",
+            "en": "Product Specialist · Plan and review · Context and scope",
+            "pt": "Product Specialist · Plano e revisão · Contexto e escopo",
+            "fr": "Product Specialist · Plan et revue · Contexte et périmètre"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-product_specialist-l8-2",
+          "title": {
+            "es": "Product Specialist · Plan y revisión · Datos y fuentes",
+            "en": "Product Specialist · Plan and review · Data and sources",
+            "pt": "Product Specialist · Plano e revisão · Dados e fontes",
+            "fr": "Product Specialist · Plan et revue · Données et sources"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-product_specialist-l8-3",
+          "title": {
+            "es": "Product Specialist · Plan y revisión · Alternativas y criterio",
+            "en": "Product Specialist · Plan and review · Alternatives and judgment",
+            "pt": "Product Specialist · Plano e revisão · Alternativas e critério",
+            "fr": "Product Specialist · Plan et revue · Options et jugement"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-product_specialist-l8-4",
+          "title": {
+            "es": "Product Specialist · Plan y revisión · Entregable del puesto",
+            "en": "Product Specialist · Plan and review · Role deliverable",
+            "pt": "Product Specialist · Plano e revisão · Entrega do cargo",
+            "fr": "Product Specialist · Plan et revue · Livrable du poste"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-product_specialist-l8-5",
+          "title": {
+            "es": "Product Specialist · Plan y revisión · Verificación y aceptación",
+            "en": "Product Specialist · Plan and review · Verification and acceptance",
+            "pt": "Product Specialist · Plano e revisão · Verificação e aceitação",
+            "fr": "Product Specialist · Plan et revue · Vérification et acceptation"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-product_specialist-l8-6",
+          "title": {
+            "es": "Product Specialist · Plan y revisión · Restricción nueva y transferencia",
+            "en": "Product Specialist · Plan and review · New constraint and transfer",
+            "pt": "Product Specialist · Plano e revisão · Nova restrição e transferência",
+            "fr": "Product Specialist · Plan et revue · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-qbr"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": {
+        "es": "Product Specialist · Riesgos y escalaciones",
+        "en": "Product Specialist · Risks and escalations",
+        "pt": "Product Specialist · Riscos e escalações",
+        "fr": "Product Specialist · Risques et escalades"
+      },
+      "objective": {
+        "es": "Discovery técnica → diseño de demo → prueba de viabilidad → límites → traspaso · Capacidades demostradas; supuestos y exclusiones explícitos.",
+        "en": "Discovery technical → demo design → viability test → boundaries → handover · Proven capabilities and explicit assumptions and exclusions.",
+        "pt": "Discovery technical → demo design → teste de viabilidade → limites → entrega · Capacidades comprovadas e suposições e exclusões explícitas.",
+        "fr": "Découverte technique → conception de démonstration → test de viabilité → limites → transfert · Capacités éprouvées et hypothèses et exclusions explicites."
+      },
+      "lessons": [
+        {
+          "key": "position-product_specialist-l9-1",
+          "title": {
+            "es": "Product Specialist · Riesgos y escalaciones · Contexto y alcance",
+            "en": "Product Specialist · Risks and escalations · Context and scope",
+            "pt": "Product Specialist · Riscos e escalações · Contexto e escopo",
+            "fr": "Product Specialist · Risques et escalades · Contexte et périmètre"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-product_specialist-l9-2",
+          "title": {
+            "es": "Product Specialist · Riesgos y escalaciones · Datos y fuentes",
+            "en": "Product Specialist · Risks and escalations · Data and sources",
+            "pt": "Product Specialist · Riscos e escalações · Dados e fontes",
+            "fr": "Product Specialist · Risques et escalades · Données et sources"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-product_specialist-l9-3",
+          "title": {
+            "es": "Product Specialist · Riesgos y escalaciones · Alternativas y criterio",
+            "en": "Product Specialist · Risks and escalations · Alternatives and judgment",
+            "pt": "Product Specialist · Riscos e escalações · Alternativas e critério",
+            "fr": "Product Specialist · Risques et escalades · Options et jugement"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-product_specialist-l9-4",
+          "title": {
+            "es": "Product Specialist · Riesgos y escalaciones · Entregable del puesto",
+            "en": "Product Specialist · Risks and escalations · Role deliverable",
+            "pt": "Product Specialist · Riscos e escalações · Entrega do cargo",
+            "fr": "Product Specialist · Risques et escalades · Livrable du poste"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-product_specialist-l9-5",
+          "title": {
+            "es": "Product Specialist · Riesgos y escalaciones · Verificación y aceptación",
+            "en": "Product Specialist · Risks and escalations · Verification and acceptance",
+            "pt": "Product Specialist · Riscos e escalações · Verificação e aceitação",
+            "fr": "Product Specialist · Risques et escalades · Vérification et acceptation"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-product_specialist-l9-6",
+          "title": {
+            "es": "Product Specialist · Riesgos y escalaciones · Restricción nueva y transferencia",
+            "en": "Product Specialist · Risks and escalations · New constraint and transfer",
+            "pt": "Product Specialist · Riscos e escalações · Nova restrição e transferência",
+            "fr": "Product Specialist · Risques et escalades · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-churn"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": {
+        "es": "Product Specialist · Negociación",
+        "en": "Product Specialist · Negotiation",
+        "pt": "Product Specialist · Negociação",
+        "fr": "Product Specialist · Négociation"
+      },
+      "objective": {
+        "es": "Discovery técnica → diseño de demo → prueba de viabilidad → límites → traspaso · Capacidades demostradas; supuestos y exclusiones explícitos.",
+        "en": "Discovery technical → demo design → viability test → boundaries → handover · Proven capabilities and explicit assumptions and exclusions.",
+        "pt": "Discovery technical → demo design → teste de viabilidade → limites → entrega · Capacidades comprovadas e suposições e exclusões explícitas.",
+        "fr": "Découverte technique → conception de démonstration → test de viabilité → limites → transfert · Capacités éprouvées et hypothèses et exclusions explicites."
+      },
+      "lessons": [
+        {
+          "key": "position-product_specialist-l10-1",
+          "title": {
+            "es": "Product Specialist · Negociación · Contexto y alcance",
+            "en": "Product Specialist · Negotiation · Context and scope",
+            "pt": "Product Specialist · Negociação · Contexto e escopo",
+            "fr": "Product Specialist · Négociation · Contexte et périmètre"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-product_specialist-l10-2",
+          "title": {
+            "es": "Product Specialist · Negociación · Datos y fuentes",
+            "en": "Product Specialist · Negotiation · Data and sources",
+            "pt": "Product Specialist · Negociação · Dados e fontes",
+            "fr": "Product Specialist · Négociation · Données et sources"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-product_specialist-l10-3",
+          "title": {
+            "es": "Product Specialist · Negociación · Alternativas y criterio",
+            "en": "Product Specialist · Negotiation · Alternatives and judgment",
+            "pt": "Product Specialist · Negociação · Alternativas e critério",
+            "fr": "Product Specialist · Négociation · Options et jugement"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-product_specialist-l10-4",
+          "title": {
+            "es": "Product Specialist · Negociación · Entregable del puesto",
+            "en": "Product Specialist · Negotiation · Role deliverable",
+            "pt": "Product Specialist · Negociação · Entrega do cargo",
+            "fr": "Product Specialist · Négociation · Livrable du poste"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-product_specialist-l10-5",
+          "title": {
+            "es": "Product Specialist · Negociación · Verificación y aceptación",
+            "en": "Product Specialist · Negotiation · Verification and acceptance",
+            "pt": "Product Specialist · Negociação · Verificação e aceitação",
+            "fr": "Product Specialist · Négociation · Vérification et acceptation"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-product_specialist-l10-6",
+          "title": {
+            "es": "Product Specialist · Negociación · Restricción nueva y transferencia",
+            "en": "Product Specialist · Negotiation · New constraint and transfer",
+            "pt": "Product Specialist · Negociação · Nova restrição e transferência",
+            "fr": "Product Specialist · Négociation · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-renewal"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": {
+        "es": "Product Specialist · Mejora del servicio",
+        "en": "Product Specialist · Service improvement",
+        "pt": "Product Specialist · Melhoria do serviço",
+        "fr": "Product Specialist · Amélioration du service"
+      },
+      "objective": {
+        "es": "Discovery técnica → diseño de demo → prueba de viabilidad → límites → traspaso · Capacidades demostradas; supuestos y exclusiones explícitos.",
+        "en": "Discovery technical → demo design → viability test → boundaries → handover · Proven capabilities and explicit assumptions and exclusions.",
+        "pt": "Discovery technical → demo design → teste de viabilidade → limites → entrega · Capacidades comprovadas e suposições e exclusões explícitas.",
+        "fr": "Découverte technique → conception de démonstration → test de viabilité → limites → transfert · Capacités éprouvées et hypothèses et exclusions explicites."
+      },
+      "lessons": [
+        {
+          "key": "position-product_specialist-l11-1",
+          "title": {
+            "es": "Product Specialist · Mejora del servicio · Contexto y alcance",
+            "en": "Product Specialist · Service improvement · Context and scope",
+            "pt": "Product Specialist · Melhoria do serviço · Contexto e escopo",
+            "fr": "Product Specialist · Amélioration du service · Contexte et périmètre"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-product_specialist-l11-2",
+          "title": {
+            "es": "Product Specialist · Mejora del servicio · Datos y fuentes",
+            "en": "Product Specialist · Service improvement · Data and sources",
+            "pt": "Product Specialist · Melhoria do serviço · Dados e fontes",
+            "fr": "Product Specialist · Amélioration du service · Données et sources"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-product_specialist-l11-3",
+          "title": {
+            "es": "Product Specialist · Mejora del servicio · Alternativas y criterio",
+            "en": "Product Specialist · Service improvement · Alternatives and judgment",
+            "pt": "Product Specialist · Melhoria do serviço · Alternativas e critério",
+            "fr": "Product Specialist · Amélioration du service · Options et jugement"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-product_specialist-l11-4",
+          "title": {
+            "es": "Product Specialist · Mejora del servicio · Entregable del puesto",
+            "en": "Product Specialist · Service improvement · Role deliverable",
+            "pt": "Product Specialist · Melhoria do serviço · Entrega do cargo",
+            "fr": "Product Specialist · Amélioration du service · Livrable du poste"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-product_specialist-l11-5",
+          "title": {
+            "es": "Product Specialist · Mejora del servicio · Verificación y aceptación",
+            "en": "Product Specialist · Service improvement · Verification and acceptance",
+            "pt": "Product Specialist · Melhoria do serviço · Verificação e aceitação",
+            "fr": "Product Specialist · Amélioration du service · Vérification et acceptation"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-product_specialist-l11-6",
+          "title": {
+            "es": "Product Specialist · Mejora del servicio · Restricción nueva y transferencia",
+            "en": "Product Specialist · Service improvement · New constraint and transfer",
+            "pt": "Product Specialist · Melhoria do serviço · Nova restrição e transferência",
+            "fr": "Product Specialist · Amélioration du service · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-expansion"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": {
+        "es": "Product Specialist · Colaboración",
+        "en": "Product Specialist · Collaboration",
+        "pt": "Product Specialist · Colaboração",
+        "fr": "Product Specialist · Collaboration"
+      },
+      "objective": {
+        "es": "Discovery técnica → diseño de demo → prueba de viabilidad → límites → traspaso · Capacidades demostradas; supuestos y exclusiones explícitos.",
+        "en": "Discovery technical → demo design → viability test → boundaries → handover · Proven capabilities and explicit assumptions and exclusions.",
+        "pt": "Discovery technical → demo design → teste de viabilidade → limites → entrega · Capacidades comprovadas e suposições e exclusões explícitas.",
+        "fr": "Découverte technique → conception de démonstration → test de viabilité → limites → transfert · Capacités éprouvées et hypothèses et exclusions explicites."
+      },
+      "lessons": [
+        {
+          "key": "position-product_specialist-l12-1",
+          "title": {
+            "es": "Product Specialist · Colaboración · Contexto y alcance",
+            "en": "Product Specialist · Collaboration · Context and scope",
+            "pt": "Product Specialist · Colaboração · Contexto e escopo",
+            "fr": "Product Specialist · Collaboration · Contexte et périmètre"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-product_specialist-l12-2",
+          "title": {
+            "es": "Product Specialist · Colaboración · Datos y fuentes",
+            "en": "Product Specialist · Collaboration · Data and sources",
+            "pt": "Product Specialist · Colaboração · Dados e fontes",
+            "fr": "Product Specialist · Collaboration · Données et sources"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-product_specialist-l12-3",
+          "title": {
+            "es": "Product Specialist · Colaboración · Alternativas y criterio",
+            "en": "Product Specialist · Collaboration · Alternatives and judgment",
+            "pt": "Product Specialist · Colaboração · Alternativas e critério",
+            "fr": "Product Specialist · Collaboration · Options et jugement"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-product_specialist-l12-4",
+          "title": {
+            "es": "Product Specialist · Colaboración · Entregable del puesto",
+            "en": "Product Specialist · Collaboration · Role deliverable",
+            "pt": "Product Specialist · Colaboração · Entrega do cargo",
+            "fr": "Product Specialist · Collaboration · Livrable du poste"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-product_specialist-l12-5",
+          "title": {
+            "es": "Product Specialist · Colaboración · Verificación y aceptación",
+            "en": "Product Specialist · Collaboration · Verification and acceptance",
+            "pt": "Product Specialist · Colaboração · Verificação e aceitação",
+            "fr": "Product Specialist · Collaboration · Vérification et acceptation"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-product_specialist-l12-6",
+          "title": {
+            "es": "Product Specialist · Colaboración · Restricción nueva y transferencia",
+            "en": "Product Specialist · Collaboration · New constraint and transfer",
+            "pt": "Product Specialist · Colaboração · Nova restrição e transferência",
+            "fr": "Product Specialist · Collaboration · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-voc"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": {
+        "es": "Product Specialist · Supervisión",
+        "en": "Product Specialist · Supervision",
+        "pt": "Product Specialist · Supervisão",
+        "fr": "Product Specialist · Supervision"
+      },
+      "objective": {
+        "es": "Discovery técnica → diseño de demo → prueba de viabilidad → límites → traspaso · Capacidades demostradas; supuestos y exclusiones explícitos.",
+        "en": "Discovery technical → demo design → viability test → boundaries → handover · Proven capabilities and explicit assumptions and exclusions.",
+        "pt": "Discovery technical → demo design → teste de viabilidade → limites → entrega · Capacidades comprovadas e suposições e exclusões explícitas.",
+        "fr": "Découverte technique → conception de démonstration → test de viabilité → limites → transfert · Capacités éprouvées et hypothèses et exclusions explicites."
+      },
+      "lessons": [
+        {
+          "key": "position-product_specialist-l13-1",
+          "title": {
+            "es": "Product Specialist · Supervisión · Contexto y alcance",
+            "en": "Product Specialist · Supervision · Context and scope",
+            "pt": "Product Specialist · Supervisão · Contexto e escopo",
+            "fr": "Product Specialist · Supervision · Contexte et périmètre"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-product_specialist-l13-2",
+          "title": {
+            "es": "Product Specialist · Supervisión · Datos y fuentes",
+            "en": "Product Specialist · Supervision · Data and sources",
+            "pt": "Product Specialist · Supervisão · Dados e fontes",
+            "fr": "Product Specialist · Supervision · Données et sources"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-product_specialist-l13-3",
+          "title": {
+            "es": "Product Specialist · Supervisión · Alternativas y criterio",
+            "en": "Product Specialist · Supervision · Alternatives and judgment",
+            "pt": "Product Specialist · Supervisão · Alternativas e critério",
+            "fr": "Product Specialist · Supervision · Options et jugement"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-product_specialist-l13-4",
+          "title": {
+            "es": "Product Specialist · Supervisión · Entregable del puesto",
+            "en": "Product Specialist · Supervision · Role deliverable",
+            "pt": "Product Specialist · Supervisão · Entrega do cargo",
+            "fr": "Product Specialist · Supervision · Livrable du poste"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-product_specialist-l13-5",
+          "title": {
+            "es": "Product Specialist · Supervisión · Verificación y aceptación",
+            "en": "Product Specialist · Supervision · Verification and acceptance",
+            "pt": "Product Specialist · Supervisão · Verificação e aceitação",
+            "fr": "Product Specialist · Supervision · Vérification et acceptation"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-product_specialist-l13-6",
+          "title": {
+            "es": "Product Specialist · Supervisión · Restricción nueva y transferencia",
+            "en": "Product Specialist · Supervision · New constraint and transfer",
+            "pt": "Product Specialist · Supervisão · Nova restrição e transferência",
+            "fr": "Product Specialist · Supervision · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-training"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": {
+        "es": "Product Specialist · Gerencia",
+        "en": "Product Specialist · Management",
+        "pt": "Product Specialist · Gestão",
+        "fr": "Product Specialist · Gestion"
+      },
+      "objective": {
+        "es": "Discovery técnica → diseño de demo → prueba de viabilidad → límites → traspaso · Capacidades demostradas; supuestos y exclusiones explícitos.",
+        "en": "Discovery technical → demo design → viability test → boundaries → handover · Proven capabilities and explicit assumptions and exclusions.",
+        "pt": "Discovery technical → demo design → teste de viabilidade → limites → entrega · Capacidades comprovadas e suposições e exclusões explícitas.",
+        "fr": "Découverte technique → conception de démonstration → test de viabilité → limites → transfert · Capacités éprouvées et hypothèses et exclusions explicites."
+      },
+      "lessons": [
+        {
+          "key": "position-product_specialist-l14-1",
+          "title": {
+            "es": "Product Specialist · Gerencia · Contexto y alcance",
+            "en": "Product Specialist · Management · Context and scope",
+            "pt": "Product Specialist · Gestão · Contexto e escopo",
+            "fr": "Product Specialist · Gestion · Contexte et périmètre"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-product_specialist-l14-2",
+          "title": {
+            "es": "Product Specialist · Gerencia · Datos y fuentes",
+            "en": "Product Specialist · Management · Data and sources",
+            "pt": "Product Specialist · Gestão · Dados e fontes",
+            "fr": "Product Specialist · Gestion · Données et sources"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-product_specialist-l14-3",
+          "title": {
+            "es": "Product Specialist · Gerencia · Alternativas y criterio",
+            "en": "Product Specialist · Management · Alternatives and judgment",
+            "pt": "Product Specialist · Gestão · Alternativas e critério",
+            "fr": "Product Specialist · Gestion · Options et jugement"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-product_specialist-l14-4",
+          "title": {
+            "es": "Product Specialist · Gerencia · Entregable del puesto",
+            "en": "Product Specialist · Management · Role deliverable",
+            "pt": "Product Specialist · Gestão · Entrega do cargo",
+            "fr": "Product Specialist · Gestion · Livrable du poste"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-product_specialist-l14-5",
+          "title": {
+            "es": "Product Specialist · Gerencia · Verificación y aceptación",
+            "en": "Product Specialist · Management · Verification and acceptance",
+            "pt": "Product Specialist · Gestão · Verificação e aceitação",
+            "fr": "Product Specialist · Gestion · Vérification et acceptation"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-product_specialist-l14-6",
+          "title": {
+            "es": "Product Specialist · Gerencia · Restricción nueva y transferencia",
+            "en": "Product Specialist · Management · New constraint and transfer",
+            "pt": "Product Specialist · Gestão · Nova restrição e transferência",
+            "fr": "Product Specialist · Gestion · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-product_specialist-l14-7",
+          "title": {
+            "es": "Product Specialist · Gerencia · Decisión de capacidad",
+            "en": "Product Specialist · Management · Capacity decision",
+            "pt": "Product Specialist · Gestão · Decisão de capacidade",
+            "fr": "Product Specialist · Gestion · Décision de capacité"
+          },
+          "sharedSource": "cs-segmentation"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": {
+        "es": "Product Specialist · Dirección",
+        "en": "Product Specialist · Leadership",
+        "pt": "Product Specialist · Direção",
+        "fr": "Product Specialist · Direction"
+      },
+      "objective": {
+        "es": "Discovery técnica → diseño de demo → prueba de viabilidad → límites → traspaso · Capacidades demostradas; supuestos y exclusiones explícitos.",
+        "en": "Discovery technical → demo design → viability test → boundaries → handover · Proven capabilities and explicit assumptions and exclusions.",
+        "pt": "Discovery technical → demo design → teste de viabilidade → limites → entrega · Capacidades comprovadas e suposições e exclusões explícitas.",
+        "fr": "Découverte technique → conception de démonstration → test de viabilité → limites → transfert · Capacités éprouvées et hypothèses et exclusions explicites."
+      },
+      "lessons": [
+        {
+          "key": "position-product_specialist-l15-1",
+          "title": {
+            "es": "Product Specialist · Dirección · Contexto y alcance",
+            "en": "Product Specialist · Leadership · Context and scope",
+            "pt": "Product Specialist · Direção · Contexto e escopo",
+            "fr": "Product Specialist · Direction · Contexte et périmètre"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-product_specialist-l15-2",
+          "title": {
+            "es": "Product Specialist · Dirección · Datos y fuentes",
+            "en": "Product Specialist · Leadership · Data and sources",
+            "pt": "Product Specialist · Direção · Dados e fontes",
+            "fr": "Product Specialist · Direction · Données et sources"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-product_specialist-l15-3",
+          "title": {
+            "es": "Product Specialist · Dirección · Alternativas y criterio",
+            "en": "Product Specialist · Leadership · Alternatives and judgment",
+            "pt": "Product Specialist · Direção · Alternativas e critério",
+            "fr": "Product Specialist · Direction · Options et jugement"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-product_specialist-l15-4",
+          "title": {
+            "es": "Product Specialist · Dirección · Entregable del puesto",
+            "en": "Product Specialist · Leadership · Role deliverable",
+            "pt": "Product Specialist · Direção · Entrega do cargo",
+            "fr": "Product Specialist · Direction · Livrable du poste"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-product_specialist-l15-5",
+          "title": {
+            "es": "Product Specialist · Dirección · Verificación y aceptación",
+            "en": "Product Specialist · Leadership · Verification and acceptance",
+            "pt": "Product Specialist · Direção · Verificação e aceitação",
+            "fr": "Product Specialist · Direction · Vérification et acceptation"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-product_specialist-l15-6",
+          "title": {
+            "es": "Product Specialist · Dirección · Restricción nueva y transferencia",
+            "en": "Product Specialist · Leadership · New constraint and transfer",
+            "pt": "Product Specialist · Direção · Nova restrição e transferência",
+            "fr": "Product Specialist · Direction · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-product_specialist-l15-7",
+          "title": {
+            "es": "Product Specialist · Dirección · Decisión de capacidad",
+            "en": "Product Specialist · Leadership · Capacity decision",
+            "pt": "Product Specialist · Direção · Decisão de capacidade",
+            "fr": "Product Specialist · Direction · Décision de capacité"
+          },
+          "sharedSource": "cs-ebr"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "level": 8,
+      "title": "Demo guiada por caso de uso",
+      "rubric": [
+        "scope",
+        "decision",
+        "evidence",
+        "verification"
+      ]
+    },
+    {
+      "level": 15,
+      "title": "Documento de requerimientos desde la voz del cliente",
+      "rubric": [
+        "scope",
+        "decision",
+        "evidence",
+        "verification"
+      ]
+    }
+  ],
+  "diagnostic": {
+    "type": "situations",
+    "source": "https://handbook.gitlab.com/job-description-library/sales/solutions-architect/",
+    "competencies": [
+      "communication",
+      "diagnosis",
+      "data",
+      "prioritization",
+      "documentation",
+      "deescalation",
+      "negotiation",
+      "planning",
+      "technical",
+      "collaboration"
+    ],
+    "blocking": false
+  },
+  "optionalTechnical": [
+    "data",
+    "spreadsheets",
+    "sql",
+    "automation",
+    "ai"
+  ],
+  "references": [
+    "https://handbook.gitlab.com/job-description-library/sales/solutions-architect/"
+  ],
+  "sharedUnits": [
+    "common-communication",
+    "common-diagnosis",
+    "common-data",
+    "common-priority",
+    "common-documentation",
+    "common-deescalation",
+    "common-commercial",
+    "common-planning",
+    "common-technical"
+  ]
+}

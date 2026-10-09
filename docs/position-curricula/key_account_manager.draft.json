@@ -1,0 +1,1345 @@
+{
+  "key": "key_account_manager",
+  "title": "Key Account Manager",
+  "status": "draft",
+  "editorial_review": "pending",
+  "calibration": "pending",
+  "published": false,
+  "role": {
+    "es": {
+      "process": "Mapa de actores → plan de cuenta → gobierno → alineación ejecutiva → seguimiento",
+      "deliverable": "Plan de cuenta y agenda de gobierno",
+      "decision": "¿Escalar al sponsor o resolver primero el desacuerdo entre áreas?",
+      "quality": "Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables."
+    },
+    "en": {
+      "process": "Factors's map → account plan → government → executive alignment → monitoring",
+      "deliverable": "The account plan and government agenda",
+      "decision": "Do you escalate to the sponsor or first solve the disagreement between areas?",
+      "quality": "explicit relations and responsibilities and clear decisions and monitoring."
+    },
+    "pt": {
+      "process": "Mapa dos fatores → plano de conta → governo → alinhamento executivo → monitoramento",
+      "deliverable": "O plano de conta e a agenda do governo",
+      "decision": "Você aumenta para o patrocinador ou primeiro resolve o desacordo entre as áreas?",
+      "quality": "Relações e responsabilidades explícitas e decisões e acompanhamento claros."
+    },
+    "fr": {
+      "process": "Carte des facteurs → plan de compte → gouvernement → alignement exécutif → suivi",
+      "deliverable": "Le plan comptable et l'ordre du jour du gouvernement",
+      "decision": "Augmentez-vous le rôle de parrain ou résolvez-vous d'abord le désaccord entre les zones?",
+      "quality": "des relations et des responsabilités explicites, des décisions claires et un suivi."
+    }
+  },
+  "competencies": {
+    "communication": "medium",
+    "diagnosis": "medium",
+    "data": "medium",
+    "prioritization": "medium",
+    "documentation": "medium",
+    "deescalation": "medium",
+    "negotiation": "high",
+    "planning": "high",
+    "technical": "medium",
+    "collaboration": "high"
+  },
+  "expectedByStage": {
+    "1": {
+      "communication": 1,
+      "diagnosis": 1,
+      "data": 1,
+      "prioritization": 1,
+      "documentation": 1,
+      "deescalation": 1,
+      "negotiation": 1,
+      "planning": 1,
+      "technical": 1,
+      "collaboration": 1
+    },
+    "2": {
+      "communication": 2,
+      "diagnosis": 2,
+      "data": 2,
+      "prioritization": 2,
+      "documentation": 2,
+      "deescalation": 2,
+      "negotiation": 2,
+      "planning": 2,
+      "technical": 2,
+      "collaboration": 2
+    },
+    "3": {
+      "communication": 3,
+      "diagnosis": 3,
+      "data": 3,
+      "prioritization": 3,
+      "documentation": 3,
+      "deescalation": 3,
+      "negotiation": 3,
+      "planning": 3,
+      "technical": 3,
+      "collaboration": 3
+    },
+    "4": {
+      "communication": 3,
+      "diagnosis": 3,
+      "data": 3,
+      "prioritization": 3,
+      "documentation": 3,
+      "deescalation": 3,
+      "negotiation": 4,
+      "planning": 4,
+      "technical": 3,
+      "collaboration": 4
+    },
+    "5": {
+      "communication": 3,
+      "diagnosis": 3,
+      "data": 3,
+      "prioritization": 3,
+      "documentation": 3,
+      "deescalation": 3,
+      "negotiation": 4,
+      "planning": 4,
+      "technical": 3,
+      "collaboration": 4
+    }
+  },
+  "levels": [
+    {
+      "number": 1,
+      "title": {
+        "es": "Key Account Manager · Fundamentos del puesto",
+        "en": "Key Account Manager · Role foundations",
+        "pt": "Key Account Manager · Fundamentos do cargo",
+        "fr": "Key Account Manager · Fondamentaux du poste"
+      },
+      "objective": {
+        "es": "Mapa de actores → plan de cuenta → gobierno → alineación ejecutiva → seguimiento · Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables.",
+        "en": "Factors's map → account plan → government → executive alignment → monitoring · explicit relations and responsibilities and clear decisions and monitoring.",
+        "pt": "Mapa dos fatores → plano de conta → governo → alinhamento executivo → monitoramento · Relações e responsabilidades explícitas e decisões e acompanhamento claros.",
+        "fr": "Carte des facteurs → plan de compte → gouvernement → alignement exécutif → suivi · des relations et des responsabilités explicites, des décisions claires et un suivi."
+      },
+      "lessons": [
+        {
+          "key": "position-key_account_manager-l1-1",
+          "title": {
+            "es": "Key Account Manager · Fundamentos del puesto · Contexto y alcance",
+            "en": "Key Account Manager · Role foundations · Context and scope",
+            "pt": "Key Account Manager · Fundamentos do cargo · Contexto e escopo",
+            "fr": "Key Account Manager · Fondamentaux du poste · Contexte et périmètre"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-key_account_manager-l1-2",
+          "title": {
+            "es": "Key Account Manager · Fundamentos del puesto · Datos y fuentes",
+            "en": "Key Account Manager · Role foundations · Data and sources",
+            "pt": "Key Account Manager · Fundamentos do cargo · Dados e fontes",
+            "fr": "Key Account Manager · Fondamentaux du poste · Données et sources"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-key_account_manager-l1-3",
+          "title": {
+            "es": "Key Account Manager · Fundamentos del puesto · Alternativas y criterio",
+            "en": "Key Account Manager · Role foundations · Alternatives and judgment",
+            "pt": "Key Account Manager · Fundamentos do cargo · Alternativas e critério",
+            "fr": "Key Account Manager · Fondamentaux du poste · Options et jugement"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-key_account_manager-l1-4",
+          "title": {
+            "es": "Key Account Manager · Fundamentos del puesto · Entregable del puesto",
+            "en": "Key Account Manager · Role foundations · Role deliverable",
+            "pt": "Key Account Manager · Fundamentos do cargo · Entrega do cargo",
+            "fr": "Key Account Manager · Fondamentaux du poste · Livrable du poste"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-key_account_manager-l1-5",
+          "title": {
+            "es": "Key Account Manager · Fundamentos del puesto · Verificación y aceptación",
+            "en": "Key Account Manager · Role foundations · Verification and acceptance",
+            "pt": "Key Account Manager · Fundamentos do cargo · Verificação e aceitação",
+            "fr": "Key Account Manager · Fondamentaux du poste · Vérification et acceptation"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-key_account_manager-l1-6",
+          "title": {
+            "es": "Key Account Manager · Fundamentos del puesto · Restricción nueva y transferencia",
+            "en": "Key Account Manager · Role foundations · New constraint and transfer",
+            "pt": "Key Account Manager · Fundamentos do cargo · Nova restrição e transferência",
+            "fr": "Key Account Manager · Fondamentaux du poste · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-roi"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": {
+        "es": "Key Account Manager · Ciclo de trabajo",
+        "en": "Key Account Manager · Work lifecycle",
+        "pt": "Key Account Manager · Ciclo de trabalho",
+        "fr": "Key Account Manager · Cycle de travail"
+      },
+      "objective": {
+        "es": "Mapa de actores → plan de cuenta → gobierno → alineación ejecutiva → seguimiento · Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables.",
+        "en": "Factors's map → account plan → government → executive alignment → monitoring · explicit relations and responsibilities and clear decisions and monitoring.",
+        "pt": "Mapa dos fatores → plano de conta → governo → alinhamento executivo → monitoramento · Relações e responsabilidades explícitas e decisões e acompanhamento claros.",
+        "fr": "Carte des facteurs → plan de compte → gouvernement → alignement exécutif → suivi · des relations et des responsabilités explicites, des décisions claires et un suivi."
+      },
+      "lessons": [
+        {
+          "key": "position-key_account_manager-l2-1",
+          "title": {
+            "es": "Key Account Manager · Ciclo de trabajo · Contexto y alcance",
+            "en": "Key Account Manager · Work lifecycle · Context and scope",
+            "pt": "Key Account Manager · Ciclo de trabalho · Contexto e escopo",
+            "fr": "Key Account Manager · Cycle de travail · Contexte et périmètre"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-key_account_manager-l2-2",
+          "title": {
+            "es": "Key Account Manager · Ciclo de trabajo · Datos y fuentes",
+            "en": "Key Account Manager · Work lifecycle · Data and sources",
+            "pt": "Key Account Manager · Ciclo de trabalho · Dados e fontes",
+            "fr": "Key Account Manager · Cycle de travail · Données et sources"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-key_account_manager-l2-3",
+          "title": {
+            "es": "Key Account Manager · Ciclo de trabajo · Alternativas y criterio",
+            "en": "Key Account Manager · Work lifecycle · Alternatives and judgment",
+            "pt": "Key Account Manager · Ciclo de trabalho · Alternativas e critério",
+            "fr": "Key Account Manager · Cycle de travail · Options et jugement"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-key_account_manager-l2-4",
+          "title": {
+            "es": "Key Account Manager · Ciclo de trabajo · Entregable del puesto",
+            "en": "Key Account Manager · Work lifecycle · Role deliverable",
+            "pt": "Key Account Manager · Ciclo de trabalho · Entrega do cargo",
+            "fr": "Key Account Manager · Cycle de travail · Livrable du poste"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-key_account_manager-l2-5",
+          "title": {
+            "es": "Key Account Manager · Ciclo de trabajo · Verificación y aceptación",
+            "en": "Key Account Manager · Work lifecycle · Verification and acceptance",
+            "pt": "Key Account Manager · Ciclo de trabalho · Verificação e aceitação",
+            "fr": "Key Account Manager · Cycle de travail · Vérification et acceptation"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-key_account_manager-l2-6",
+          "title": {
+            "es": "Key Account Manager · Ciclo de trabajo · Restricción nueva y transferencia",
+            "en": "Key Account Manager · Work lifecycle · New constraint and transfer",
+            "pt": "Key Account Manager · Ciclo de trabalho · Nova restrição e transferência",
+            "fr": "Key Account Manager · Cycle de travail · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-handoff"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": {
+        "es": "Key Account Manager · Inicio de un caso",
+        "en": "Key Account Manager · Starting a case",
+        "pt": "Key Account Manager · Início de um caso",
+        "fr": "Key Account Manager · Démarrage d’un cas"
+      },
+      "objective": {
+        "es": "Mapa de actores → plan de cuenta → gobierno → alineación ejecutiva → seguimiento · Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables.",
+        "en": "Factors's map → account plan → government → executive alignment → monitoring · explicit relations and responsibilities and clear decisions and monitoring.",
+        "pt": "Mapa dos fatores → plano de conta → governo → alinhamento executivo → monitoramento · Relações e responsabilidades explícitas e decisões e acompanhamento claros.",
+        "fr": "Carte des facteurs → plan de compte → gouvernement → alignement exécutif → suivi · des relations et des responsabilités explicites, des décisions claires et un suivi."
+      },
+      "lessons": [
+        {
+          "key": "position-key_account_manager-l3-1",
+          "title": {
+            "es": "Key Account Manager · Inicio de un caso · Contexto y alcance",
+            "en": "Key Account Manager · Starting a case · Context and scope",
+            "pt": "Key Account Manager · Início de um caso · Contexto e escopo",
+            "fr": "Key Account Manager · Démarrage d’un cas · Contexte et périmètre"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-key_account_manager-l3-2",
+          "title": {
+            "es": "Key Account Manager · Inicio de un caso · Datos y fuentes",
+            "en": "Key Account Manager · Starting a case · Data and sources",
+            "pt": "Key Account Manager · Início de um caso · Dados e fontes",
+            "fr": "Key Account Manager · Démarrage d’un cas · Données et sources"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-key_account_manager-l3-3",
+          "title": {
+            "es": "Key Account Manager · Inicio de un caso · Alternativas y criterio",
+            "en": "Key Account Manager · Starting a case · Alternatives and judgment",
+            "pt": "Key Account Manager · Início de um caso · Alternativas e critério",
+            "fr": "Key Account Manager · Démarrage d’un cas · Options et jugement"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-key_account_manager-l3-4",
+          "title": {
+            "es": "Key Account Manager · Inicio de un caso · Entregable del puesto",
+            "en": "Key Account Manager · Starting a case · Role deliverable",
+            "pt": "Key Account Manager · Início de um caso · Entrega do cargo",
+            "fr": "Key Account Manager · Démarrage d’un cas · Livrable du poste"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-key_account_manager-l3-5",
+          "title": {
+            "es": "Key Account Manager · Inicio de un caso · Verificación y aceptación",
+            "en": "Key Account Manager · Starting a case · Verification and acceptance",
+            "pt": "Key Account Manager · Início de um caso · Verificação e aceitação",
+            "fr": "Key Account Manager · Démarrage d’un cas · Vérification et acceptation"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-key_account_manager-l3-6",
+          "title": {
+            "es": "Key Account Manager · Inicio de un caso · Restricción nueva y transferencia",
+            "en": "Key Account Manager · Starting a case · New constraint and transfer",
+            "pt": "Key Account Manager · Início de um caso · Nova restrição e transferência",
+            "fr": "Key Account Manager · Démarrage d’un cas · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-kickoff"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": {
+        "es": "Key Account Manager · Comunicación",
+        "en": "Key Account Manager · Communication",
+        "pt": "Key Account Manager · Comunicação",
+        "fr": "Key Account Manager · Communication"
+      },
+      "objective": {
+        "es": "Mapa de actores → plan de cuenta → gobierno → alineación ejecutiva → seguimiento · Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables.",
+        "en": "Factors's map → account plan → government → executive alignment → monitoring · explicit relations and responsibilities and clear decisions and monitoring.",
+        "pt": "Mapa dos fatores → plano de conta → governo → alinhamento executivo → monitoramento · Relações e responsabilidades explícitas e decisões e acompanhamento claros.",
+        "fr": "Carte des facteurs → plan de compte → gouvernement → alignement exécutif → suivi · des relations et des responsabilités explicites, des décisions claires et un suivi."
+      },
+      "lessons": [
+        {
+          "key": "position-key_account_manager-l4-1",
+          "title": {
+            "es": "Key Account Manager · Comunicación · Contexto y alcance",
+            "en": "Key Account Manager · Communication · Context and scope",
+            "pt": "Key Account Manager · Comunicação · Contexto e escopo",
+            "fr": "Key Account Manager · Communication · Contexte et périmètre"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-key_account_manager-l4-2",
+          "title": {
+            "es": "Key Account Manager · Comunicación · Datos y fuentes",
+            "en": "Key Account Manager · Communication · Data and sources",
+            "pt": "Key Account Manager · Comunicação · Dados e fontes",
+            "fr": "Key Account Manager · Communication · Données et sources"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-key_account_manager-l4-3",
+          "title": {
+            "es": "Key Account Manager · Comunicación · Alternativas y criterio",
+            "en": "Key Account Manager · Communication · Alternatives and judgment",
+            "pt": "Key Account Manager · Comunicação · Alternativas e critério",
+            "fr": "Key Account Manager · Communication · Options et jugement"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-key_account_manager-l4-4",
+          "title": {
+            "es": "Key Account Manager · Comunicación · Entregable del puesto",
+            "en": "Key Account Manager · Communication · Role deliverable",
+            "pt": "Key Account Manager · Comunicação · Entrega do cargo",
+            "fr": "Key Account Manager · Communication · Livrable du poste"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-key_account_manager-l4-5",
+          "title": {
+            "es": "Key Account Manager · Comunicación · Verificación y aceptación",
+            "en": "Key Account Manager · Communication · Verification and acceptance",
+            "pt": "Key Account Manager · Comunicação · Verificação e aceitação",
+            "fr": "Key Account Manager · Communication · Vérification et acceptation"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-key_account_manager-l4-6",
+          "title": {
+            "es": "Key Account Manager · Comunicación · Restricción nueva y transferencia",
+            "en": "Key Account Manager · Communication · New constraint and transfer",
+            "pt": "Key Account Manager · Comunicação · Nova restrição e transferência",
+            "fr": "Key Account Manager · Communication · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "common-communication"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": {
+        "es": "Key Account Manager · Calidad y resultado",
+        "en": "Key Account Manager · Quality and outcome",
+        "pt": "Key Account Manager · Qualidade e resultado",
+        "fr": "Key Account Manager · Qualité et résultat"
+      },
+      "objective": {
+        "es": "Mapa de actores → plan de cuenta → gobierno → alineación ejecutiva → seguimiento · Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables.",
+        "en": "Factors's map → account plan → government → executive alignment → monitoring · explicit relations and responsibilities and clear decisions and monitoring.",
+        "pt": "Mapa dos fatores → plano de conta → governo → alinhamento executivo → monitoramento · Relações e responsabilidades explícitas e decisões e acompanhamento claros.",
+        "fr": "Carte des facteurs → plan de compte → gouvernement → alignement exécutif → suivi · des relations et des responsabilités explicites, des décisions claires et un suivi."
+      },
+      "lessons": [
+        {
+          "key": "position-key_account_manager-l5-1",
+          "title": {
+            "es": "Key Account Manager · Calidad y resultado · Contexto y alcance",
+            "en": "Key Account Manager · Quality and outcome · Context and scope",
+            "pt": "Key Account Manager · Qualidade e resultado · Contexto e escopo",
+            "fr": "Key Account Manager · Qualité et résultat · Contexte et périmètre"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-key_account_manager-l5-2",
+          "title": {
+            "es": "Key Account Manager · Calidad y resultado · Datos y fuentes",
+            "en": "Key Account Manager · Quality and outcome · Data and sources",
+            "pt": "Key Account Manager · Qualidade e resultado · Dados e fontes",
+            "fr": "Key Account Manager · Qualité et résultat · Données et sources"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-key_account_manager-l5-3",
+          "title": {
+            "es": "Key Account Manager · Calidad y resultado · Alternativas y criterio",
+            "en": "Key Account Manager · Quality and outcome · Alternatives and judgment",
+            "pt": "Key Account Manager · Qualidade e resultado · Alternativas e critério",
+            "fr": "Key Account Manager · Qualité et résultat · Options et jugement"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-key_account_manager-l5-4",
+          "title": {
+            "es": "Key Account Manager · Calidad y resultado · Entregable del puesto",
+            "en": "Key Account Manager · Quality and outcome · Role deliverable",
+            "pt": "Key Account Manager · Qualidade e resultado · Entrega do cargo",
+            "fr": "Key Account Manager · Qualité et résultat · Livrable du poste"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-key_account_manager-l5-5",
+          "title": {
+            "es": "Key Account Manager · Calidad y resultado · Verificación y aceptación",
+            "en": "Key Account Manager · Quality and outcome · Verification and acceptance",
+            "pt": "Key Account Manager · Qualidade e resultado · Verificação e aceitação",
+            "fr": "Key Account Manager · Qualité et résultat · Vérification et acceptation"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-key_account_manager-l5-6",
+          "title": {
+            "es": "Key Account Manager · Calidad y resultado · Restricción nueva y transferencia",
+            "en": "Key Account Manager · Quality and outcome · New constraint and transfer",
+            "pt": "Key Account Manager · Qualidade e resultado · Nova restrição e transferência",
+            "fr": "Key Account Manager · Qualité et résultat · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-health"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": {
+        "es": "Key Account Manager · Herramientas",
+        "en": "Key Account Manager · Tools",
+        "pt": "Key Account Manager · Ferramentas",
+        "fr": "Key Account Manager · Outils"
+      },
+      "objective": {
+        "es": "Mapa de actores → plan de cuenta → gobierno → alineación ejecutiva → seguimiento · Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables.",
+        "en": "Factors's map → account plan → government → executive alignment → monitoring · explicit relations and responsibilities and clear decisions and monitoring.",
+        "pt": "Mapa dos fatores → plano de conta → governo → alinhamento executivo → monitoramento · Relações e responsabilidades explícitas e decisões e acompanhamento claros.",
+        "fr": "Carte des facteurs → plan de compte → gouvernement → alignement exécutif → suivi · des relations et des responsabilités explicites, des décisions claires et un suivi."
+      },
+      "lessons": [
+        {
+          "key": "position-key_account_manager-l6-1",
+          "title": {
+            "es": "Key Account Manager · Herramientas · Contexto y alcance",
+            "en": "Key Account Manager · Tools · Context and scope",
+            "pt": "Key Account Manager · Ferramentas · Contexto e escopo",
+            "fr": "Key Account Manager · Outils · Contexte et périmètre"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-key_account_manager-l6-2",
+          "title": {
+            "es": "Key Account Manager · Herramientas · Datos y fuentes",
+            "en": "Key Account Manager · Tools · Data and sources",
+            "pt": "Key Account Manager · Ferramentas · Dados e fontes",
+            "fr": "Key Account Manager · Outils · Données et sources"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-key_account_manager-l6-3",
+          "title": {
+            "es": "Key Account Manager · Herramientas · Alternativas y criterio",
+            "en": "Key Account Manager · Tools · Alternatives and judgment",
+            "pt": "Key Account Manager · Ferramentas · Alternativas e critério",
+            "fr": "Key Account Manager · Outils · Options et jugement"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-key_account_manager-l6-4",
+          "title": {
+            "es": "Key Account Manager · Herramientas · Entregable del puesto",
+            "en": "Key Account Manager · Tools · Role deliverable",
+            "pt": "Key Account Manager · Ferramentas · Entrega do cargo",
+            "fr": "Key Account Manager · Outils · Livrable du poste"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-key_account_manager-l6-5",
+          "title": {
+            "es": "Key Account Manager · Herramientas · Verificación y aceptación",
+            "en": "Key Account Manager · Tools · Verification and acceptance",
+            "pt": "Key Account Manager · Ferramentas · Verificação e aceitação",
+            "fr": "Key Account Manager · Outils · Vérification et acceptation"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-key_account_manager-l6-6",
+          "title": {
+            "es": "Key Account Manager · Herramientas · Restricción nueva y transferencia",
+            "en": "Key Account Manager · Tools · New constraint and transfer",
+            "pt": "Key Account Manager · Ferramentas · Nova restrição e transferência",
+            "fr": "Key Account Manager · Outils · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "common-documentation"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": {
+        "es": "Key Account Manager · Priorización",
+        "en": "Key Account Manager · Prioritization",
+        "pt": "Key Account Manager · Priorização",
+        "fr": "Key Account Manager · Priorités"
+      },
+      "objective": {
+        "es": "Mapa de actores → plan de cuenta → gobierno → alineación ejecutiva → seguimiento · Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables.",
+        "en": "Factors's map → account plan → government → executive alignment → monitoring · explicit relations and responsibilities and clear decisions and monitoring.",
+        "pt": "Mapa dos fatores → plano de conta → governo → alinhamento executivo → monitoramento · Relações e responsabilidades explícitas e decisões e acompanhamento claros.",
+        "fr": "Carte des facteurs → plan de compte → gouvernement → alignement exécutif → suivi · des relations et des responsabilités explicites, des décisions claires et un suivi."
+      },
+      "lessons": [
+        {
+          "key": "position-key_account_manager-l7-1",
+          "title": {
+            "es": "Key Account Manager · Priorización · Contexto y alcance",
+            "en": "Key Account Manager · Prioritization · Context and scope",
+            "pt": "Key Account Manager · Priorização · Contexto e escopo",
+            "fr": "Key Account Manager · Priorités · Contexte et périmètre"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-key_account_manager-l7-2",
+          "title": {
+            "es": "Key Account Manager · Priorización · Datos y fuentes",
+            "en": "Key Account Manager · Prioritization · Data and sources",
+            "pt": "Key Account Manager · Priorização · Dados e fontes",
+            "fr": "Key Account Manager · Priorités · Données et sources"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-key_account_manager-l7-3",
+          "title": {
+            "es": "Key Account Manager · Priorización · Alternativas y criterio",
+            "en": "Key Account Manager · Prioritization · Alternatives and judgment",
+            "pt": "Key Account Manager · Priorização · Alternativas e critério",
+            "fr": "Key Account Manager · Priorités · Options et jugement"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-key_account_manager-l7-4",
+          "title": {
+            "es": "Key Account Manager · Priorización · Entregable del puesto",
+            "en": "Key Account Manager · Prioritization · Role deliverable",
+            "pt": "Key Account Manager · Priorização · Entrega do cargo",
+            "fr": "Key Account Manager · Priorités · Livrable du poste"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-key_account_manager-l7-5",
+          "title": {
+            "es": "Key Account Manager · Priorización · Verificación y aceptación",
+            "en": "Key Account Manager · Prioritization · Verification and acceptance",
+            "pt": "Key Account Manager · Priorização · Verificação e aceitação",
+            "fr": "Key Account Manager · Priorités · Vérification et acceptation"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-key_account_manager-l7-6",
+          "title": {
+            "es": "Key Account Manager · Priorización · Restricción nueva y transferencia",
+            "en": "Key Account Manager · Prioritization · New constraint and transfer",
+            "pt": "Key Account Manager · Priorização · Nova restrição e transferência",
+            "fr": "Key Account Manager · Priorités · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-portfolio"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": {
+        "es": "Key Account Manager · Plan y revisión",
+        "en": "Key Account Manager · Plan and review",
+        "pt": "Key Account Manager · Plano e revisão",
+        "fr": "Key Account Manager · Plan et revue"
+      },
+      "objective": {
+        "es": "Mapa de actores → plan de cuenta → gobierno → alineación ejecutiva → seguimiento · Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables.",
+        "en": "Factors's map → account plan → government → executive alignment → monitoring · explicit relations and responsibilities and clear decisions and monitoring.",
+        "pt": "Mapa dos fatores → plano de conta → governo → alinhamento executivo → monitoramento · Relações e responsabilidades explícitas e decisões e acompanhamento claros.",
+        "fr": "Carte des facteurs → plan de compte → gouvernement → alignement exécutif → suivi · des relations et des responsabilités explicites, des décisions claires et un suivi."
+      },
+      "lessons": [
+        {
+          "key": "position-key_account_manager-l8-1",
+          "title": {
+            "es": "Key Account Manager · Plan y revisión · Contexto y alcance",
+            "en": "Key Account Manager · Plan and review · Context and scope",
+            "pt": "Key Account Manager · Plano e revisão · Contexto e escopo",
+            "fr": "Key Account Manager · Plan et revue · Contexte et périmètre"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-key_account_manager-l8-2",
+          "title": {
+            "es": "Key Account Manager · Plan y revisión · Datos y fuentes",
+            "en": "Key Account Manager · Plan and review · Data and sources",
+            "pt": "Key Account Manager · Plano e revisão · Dados e fontes",
+            "fr": "Key Account Manager · Plan et revue · Données et sources"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-key_account_manager-l8-3",
+          "title": {
+            "es": "Key Account Manager · Plan y revisión · Alternativas y criterio",
+            "en": "Key Account Manager · Plan and review · Alternatives and judgment",
+            "pt": "Key Account Manager · Plano e revisão · Alternativas e critério",
+            "fr": "Key Account Manager · Plan et revue · Options et jugement"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-key_account_manager-l8-4",
+          "title": {
+            "es": "Key Account Manager · Plan y revisión · Entregable del puesto",
+            "en": "Key Account Manager · Plan and review · Role deliverable",
+            "pt": "Key Account Manager · Plano e revisão · Entrega do cargo",
+            "fr": "Key Account Manager · Plan et revue · Livrable du poste"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-key_account_manager-l8-5",
+          "title": {
+            "es": "Key Account Manager · Plan y revisión · Verificación y aceptación",
+            "en": "Key Account Manager · Plan and review · Verification and acceptance",
+            "pt": "Key Account Manager · Plano e revisão · Verificação e aceitação",
+            "fr": "Key Account Manager · Plan et revue · Vérification et acceptation"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-key_account_manager-l8-6",
+          "title": {
+            "es": "Key Account Manager · Plan y revisión · Restricción nueva y transferencia",
+            "en": "Key Account Manager · Plan and review · New constraint and transfer",
+            "pt": "Key Account Manager · Plano e revisão · Nova restrição e transferência",
+            "fr": "Key Account Manager · Plan et revue · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-qbr"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": {
+        "es": "Key Account Manager · Riesgos y escalaciones",
+        "en": "Key Account Manager · Risks and escalations",
+        "pt": "Key Account Manager · Riscos e escalações",
+        "fr": "Key Account Manager · Risques et escalades"
+      },
+      "objective": {
+        "es": "Mapa de actores → plan de cuenta → gobierno → alineación ejecutiva → seguimiento · Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables.",
+        "en": "Factors's map → account plan → government → executive alignment → monitoring · explicit relations and responsibilities and clear decisions and monitoring.",
+        "pt": "Mapa dos fatores → plano de conta → governo → alinhamento executivo → monitoramento · Relações e responsabilidades explícitas e decisões e acompanhamento claros.",
+        "fr": "Carte des facteurs → plan de compte → gouvernement → alignement exécutif → suivi · des relations et des responsabilités explicites, des décisions claires et un suivi."
+      },
+      "lessons": [
+        {
+          "key": "position-key_account_manager-l9-1",
+          "title": {
+            "es": "Key Account Manager · Riesgos y escalaciones · Contexto y alcance",
+            "en": "Key Account Manager · Risks and escalations · Context and scope",
+            "pt": "Key Account Manager · Riscos e escalações · Contexto e escopo",
+            "fr": "Key Account Manager · Risques et escalades · Contexte et périmètre"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-key_account_manager-l9-2",
+          "title": {
+            "es": "Key Account Manager · Riesgos y escalaciones · Datos y fuentes",
+            "en": "Key Account Manager · Risks and escalations · Data and sources",
+            "pt": "Key Account Manager · Riscos e escalações · Dados e fontes",
+            "fr": "Key Account Manager · Risques et escalades · Données et sources"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-key_account_manager-l9-3",
+          "title": {
+            "es": "Key Account Manager · Riesgos y escalaciones · Alternativas y criterio",
+            "en": "Key Account Manager · Risks and escalations · Alternatives and judgment",
+            "pt": "Key Account Manager · Riscos e escalações · Alternativas e critério",
+            "fr": "Key Account Manager · Risques et escalades · Options et jugement"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-key_account_manager-l9-4",
+          "title": {
+            "es": "Key Account Manager · Riesgos y escalaciones · Entregable del puesto",
+            "en": "Key Account Manager · Risks and escalations · Role deliverable",
+            "pt": "Key Account Manager · Riscos e escalações · Entrega do cargo",
+            "fr": "Key Account Manager · Risques et escalades · Livrable du poste"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-key_account_manager-l9-5",
+          "title": {
+            "es": "Key Account Manager · Riesgos y escalaciones · Verificación y aceptación",
+            "en": "Key Account Manager · Risks and escalations · Verification and acceptance",
+            "pt": "Key Account Manager · Riscos e escalações · Verificação e aceitação",
+            "fr": "Key Account Manager · Risques et escalades · Vérification et acceptation"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-key_account_manager-l9-6",
+          "title": {
+            "es": "Key Account Manager · Riesgos y escalaciones · Restricción nueva y transferencia",
+            "en": "Key Account Manager · Risks and escalations · New constraint and transfer",
+            "pt": "Key Account Manager · Riscos e escalações · Nova restrição e transferência",
+            "fr": "Key Account Manager · Risques et escalades · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-churn"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": {
+        "es": "Key Account Manager · Negociación",
+        "en": "Key Account Manager · Negotiation",
+        "pt": "Key Account Manager · Negociação",
+        "fr": "Key Account Manager · Négociation"
+      },
+      "objective": {
+        "es": "Mapa de actores → plan de cuenta → gobierno → alineación ejecutiva → seguimiento · Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables.",
+        "en": "Factors's map → account plan → government → executive alignment → monitoring · explicit relations and responsibilities and clear decisions and monitoring.",
+        "pt": "Mapa dos fatores → plano de conta → governo → alinhamento executivo → monitoramento · Relações e responsabilidades explícitas e decisões e acompanhamento claros.",
+        "fr": "Carte des facteurs → plan de compte → gouvernement → alignement exécutif → suivi · des relations et des responsabilités explicites, des décisions claires et un suivi."
+      },
+      "lessons": [
+        {
+          "key": "position-key_account_manager-l10-1",
+          "title": {
+            "es": "Key Account Manager · Negociación · Contexto y alcance",
+            "en": "Key Account Manager · Negotiation · Context and scope",
+            "pt": "Key Account Manager · Negociação · Contexto e escopo",
+            "fr": "Key Account Manager · Négociation · Contexte et périmètre"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-key_account_manager-l10-2",
+          "title": {
+            "es": "Key Account Manager · Negociación · Datos y fuentes",
+            "en": "Key Account Manager · Negotiation · Data and sources",
+            "pt": "Key Account Manager · Negociação · Dados e fontes",
+            "fr": "Key Account Manager · Négociation · Données et sources"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-key_account_manager-l10-3",
+          "title": {
+            "es": "Key Account Manager · Negociación · Alternativas y criterio",
+            "en": "Key Account Manager · Negotiation · Alternatives and judgment",
+            "pt": "Key Account Manager · Negociação · Alternativas e critério",
+            "fr": "Key Account Manager · Négociation · Options et jugement"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-key_account_manager-l10-4",
+          "title": {
+            "es": "Key Account Manager · Negociación · Entregable del puesto",
+            "en": "Key Account Manager · Negotiation · Role deliverable",
+            "pt": "Key Account Manager · Negociação · Entrega do cargo",
+            "fr": "Key Account Manager · Négociation · Livrable du poste"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-key_account_manager-l10-5",
+          "title": {
+            "es": "Key Account Manager · Negociación · Verificación y aceptación",
+            "en": "Key Account Manager · Negotiation · Verification and acceptance",
+            "pt": "Key Account Manager · Negociação · Verificação e aceitação",
+            "fr": "Key Account Manager · Négociation · Vérification et acceptation"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-key_account_manager-l10-6",
+          "title": {
+            "es": "Key Account Manager · Negociación · Restricción nueva y transferencia",
+            "en": "Key Account Manager · Negotiation · New constraint and transfer",
+            "pt": "Key Account Manager · Negociação · Nova restrição e transferência",
+            "fr": "Key Account Manager · Négociation · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-renewal"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": {
+        "es": "Key Account Manager · Mejora del servicio",
+        "en": "Key Account Manager · Service improvement",
+        "pt": "Key Account Manager · Melhoria do serviço",
+        "fr": "Key Account Manager · Amélioration du service"
+      },
+      "objective": {
+        "es": "Mapa de actores → plan de cuenta → gobierno → alineación ejecutiva → seguimiento · Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables.",
+        "en": "Factors's map → account plan → government → executive alignment → monitoring · explicit relations and responsibilities and clear decisions and monitoring.",
+        "pt": "Mapa dos fatores → plano de conta → governo → alinhamento executivo → monitoramento · Relações e responsabilidades explícitas e decisões e acompanhamento claros.",
+        "fr": "Carte des facteurs → plan de compte → gouvernement → alignement exécutif → suivi · des relations et des responsabilités explicites, des décisions claires et un suivi."
+      },
+      "lessons": [
+        {
+          "key": "position-key_account_manager-l11-1",
+          "title": {
+            "es": "Key Account Manager · Mejora del servicio · Contexto y alcance",
+            "en": "Key Account Manager · Service improvement · Context and scope",
+            "pt": "Key Account Manager · Melhoria do serviço · Contexto e escopo",
+            "fr": "Key Account Manager · Amélioration du service · Contexte et périmètre"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-key_account_manager-l11-2",
+          "title": {
+            "es": "Key Account Manager · Mejora del servicio · Datos y fuentes",
+            "en": "Key Account Manager · Service improvement · Data and sources",
+            "pt": "Key Account Manager · Melhoria do serviço · Dados e fontes",
+            "fr": "Key Account Manager · Amélioration du service · Données et sources"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-key_account_manager-l11-3",
+          "title": {
+            "es": "Key Account Manager · Mejora del servicio · Alternativas y criterio",
+            "en": "Key Account Manager · Service improvement · Alternatives and judgment",
+            "pt": "Key Account Manager · Melhoria do serviço · Alternativas e critério",
+            "fr": "Key Account Manager · Amélioration du service · Options et jugement"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-key_account_manager-l11-4",
+          "title": {
+            "es": "Key Account Manager · Mejora del servicio · Entregable del puesto",
+            "en": "Key Account Manager · Service improvement · Role deliverable",
+            "pt": "Key Account Manager · Melhoria do serviço · Entrega do cargo",
+            "fr": "Key Account Manager · Amélioration du service · Livrable du poste"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-key_account_manager-l11-5",
+          "title": {
+            "es": "Key Account Manager · Mejora del servicio · Verificación y aceptación",
+            "en": "Key Account Manager · Service improvement · Verification and acceptance",
+            "pt": "Key Account Manager · Melhoria do serviço · Verificação e aceitação",
+            "fr": "Key Account Manager · Amélioration du service · Vérification et acceptation"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-key_account_manager-l11-6",
+          "title": {
+            "es": "Key Account Manager · Mejora del servicio · Restricción nueva y transferencia",
+            "en": "Key Account Manager · Service improvement · New constraint and transfer",
+            "pt": "Key Account Manager · Melhoria do serviço · Nova restrição e transferência",
+            "fr": "Key Account Manager · Amélioration du service · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-expansion"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": {
+        "es": "Key Account Manager · Colaboración",
+        "en": "Key Account Manager · Collaboration",
+        "pt": "Key Account Manager · Colaboração",
+        "fr": "Key Account Manager · Collaboration"
+      },
+      "objective": {
+        "es": "Mapa de actores → plan de cuenta → gobierno → alineación ejecutiva → seguimiento · Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables.",
+        "en": "Factors's map → account plan → government → executive alignment → monitoring · explicit relations and responsibilities and clear decisions and monitoring.",
+        "pt": "Mapa dos fatores → plano de conta → governo → alinhamento executivo → monitoramento · Relações e responsabilidades explícitas e decisões e acompanhamento claros.",
+        "fr": "Carte des facteurs → plan de compte → gouvernement → alignement exécutif → suivi · des relations et des responsabilités explicites, des décisions claires et un suivi."
+      },
+      "lessons": [
+        {
+          "key": "position-key_account_manager-l12-1",
+          "title": {
+            "es": "Key Account Manager · Colaboración · Contexto y alcance",
+            "en": "Key Account Manager · Collaboration · Context and scope",
+            "pt": "Key Account Manager · Colaboração · Contexto e escopo",
+            "fr": "Key Account Manager · Collaboration · Contexte et périmètre"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-key_account_manager-l12-2",
+          "title": {
+            "es": "Key Account Manager · Colaboración · Datos y fuentes",
+            "en": "Key Account Manager · Collaboration · Data and sources",
+            "pt": "Key Account Manager · Colaboração · Dados e fontes",
+            "fr": "Key Account Manager · Collaboration · Données et sources"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-key_account_manager-l12-3",
+          "title": {
+            "es": "Key Account Manager · Colaboración · Alternativas y criterio",
+            "en": "Key Account Manager · Collaboration · Alternatives and judgment",
+            "pt": "Key Account Manager · Colaboração · Alternativas e critério",
+            "fr": "Key Account Manager · Collaboration · Options et jugement"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-key_account_manager-l12-4",
+          "title": {
+            "es": "Key Account Manager · Colaboración · Entregable del puesto",
+            "en": "Key Account Manager · Collaboration · Role deliverable",
+            "pt": "Key Account Manager · Colaboração · Entrega do cargo",
+            "fr": "Key Account Manager · Collaboration · Livrable du poste"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-key_account_manager-l12-5",
+          "title": {
+            "es": "Key Account Manager · Colaboración · Verificación y aceptación",
+            "en": "Key Account Manager · Collaboration · Verification and acceptance",
+            "pt": "Key Account Manager · Colaboração · Verificação e aceitação",
+            "fr": "Key Account Manager · Collaboration · Vérification et acceptation"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-key_account_manager-l12-6",
+          "title": {
+            "es": "Key Account Manager · Colaboración · Restricción nueva y transferencia",
+            "en": "Key Account Manager · Collaboration · New constraint and transfer",
+            "pt": "Key Account Manager · Colaboração · Nova restrição e transferência",
+            "fr": "Key Account Manager · Collaboration · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-voc"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": {
+        "es": "Key Account Manager · Supervisión",
+        "en": "Key Account Manager · Supervision",
+        "pt": "Key Account Manager · Supervisão",
+        "fr": "Key Account Manager · Supervision"
+      },
+      "objective": {
+        "es": "Mapa de actores → plan de cuenta → gobierno → alineación ejecutiva → seguimiento · Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables.",
+        "en": "Factors's map → account plan → government → executive alignment → monitoring · explicit relations and responsibilities and clear decisions and monitoring.",
+        "pt": "Mapa dos fatores → plano de conta → governo → alinhamento executivo → monitoramento · Relações e responsabilidades explícitas e decisões e acompanhamento claros.",
+        "fr": "Carte des facteurs → plan de compte → gouvernement → alignement exécutif → suivi · des relations et des responsabilités explicites, des décisions claires et un suivi."
+      },
+      "lessons": [
+        {
+          "key": "position-key_account_manager-l13-1",
+          "title": {
+            "es": "Key Account Manager · Supervisión · Contexto y alcance",
+            "en": "Key Account Manager · Supervision · Context and scope",
+            "pt": "Key Account Manager · Supervisão · Contexto e escopo",
+            "fr": "Key Account Manager · Supervision · Contexte et périmètre"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-key_account_manager-l13-2",
+          "title": {
+            "es": "Key Account Manager · Supervisión · Datos y fuentes",
+            "en": "Key Account Manager · Supervision · Data and sources",
+            "pt": "Key Account Manager · Supervisão · Dados e fontes",
+            "fr": "Key Account Manager · Supervision · Données et sources"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-key_account_manager-l13-3",
+          "title": {
+            "es": "Key Account Manager · Supervisión · Alternativas y criterio",
+            "en": "Key Account Manager · Supervision · Alternatives and judgment",
+            "pt": "Key Account Manager · Supervisão · Alternativas e critério",
+            "fr": "Key Account Manager · Supervision · Options et jugement"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-key_account_manager-l13-4",
+          "title": {
+            "es": "Key Account Manager · Supervisión · Entregable del puesto",
+            "en": "Key Account Manager · Supervision · Role deliverable",
+            "pt": "Key Account Manager · Supervisão · Entrega do cargo",
+            "fr": "Key Account Manager · Supervision · Livrable du poste"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-key_account_manager-l13-5",
+          "title": {
+            "es": "Key Account Manager · Supervisión · Verificación y aceptación",
+            "en": "Key Account Manager · Supervision · Verification and acceptance",
+            "pt": "Key Account Manager · Supervisão · Verificação e aceitação",
+            "fr": "Key Account Manager · Supervision · Vérification et acceptation"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-key_account_manager-l13-6",
+          "title": {
+            "es": "Key Account Manager · Supervisión · Restricción nueva y transferencia",
+            "en": "Key Account Manager · Supervision · New constraint and transfer",
+            "pt": "Key Account Manager · Supervisão · Nova restrição e transferência",
+            "fr": "Key Account Manager · Supervision · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-training"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": {
+        "es": "Key Account Manager · Gerencia",
+        "en": "Key Account Manager · Management",
+        "pt": "Key Account Manager · Gestão",
+        "fr": "Key Account Manager · Gestion"
+      },
+      "objective": {
+        "es": "Mapa de actores → plan de cuenta → gobierno → alineación ejecutiva → seguimiento · Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables.",
+        "en": "Factors's map → account plan → government → executive alignment → monitoring · explicit relations and responsibilities and clear decisions and monitoring.",
+        "pt": "Mapa dos fatores → plano de conta → governo → alinhamento executivo → monitoramento · Relações e responsabilidades explícitas e decisões e acompanhamento claros.",
+        "fr": "Carte des facteurs → plan de compte → gouvernement → alignement exécutif → suivi · des relations et des responsabilités explicites, des décisions claires et un suivi."
+      },
+      "lessons": [
+        {
+          "key": "position-key_account_manager-l14-1",
+          "title": {
+            "es": "Key Account Manager · Gerencia · Contexto y alcance",
+            "en": "Key Account Manager · Management · Context and scope",
+            "pt": "Key Account Manager · Gestão · Contexto e escopo",
+            "fr": "Key Account Manager · Gestion · Contexte et périmètre"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-key_account_manager-l14-2",
+          "title": {
+            "es": "Key Account Manager · Gerencia · Datos y fuentes",
+            "en": "Key Account Manager · Management · Data and sources",
+            "pt": "Key Account Manager · Gestão · Dados e fontes",
+            "fr": "Key Account Manager · Gestion · Données et sources"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-key_account_manager-l14-3",
+          "title": {
+            "es": "Key Account Manager · Gerencia · Alternativas y criterio",
+            "en": "Key Account Manager · Management · Alternatives and judgment",
+            "pt": "Key Account Manager · Gestão · Alternativas e critério",
+            "fr": "Key Account Manager · Gestion · Options et jugement"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-key_account_manager-l14-4",
+          "title": {
+            "es": "Key Account Manager · Gerencia · Entregable del puesto",
+            "en": "Key Account Manager · Management · Role deliverable",
+            "pt": "Key Account Manager · Gestão · Entrega do cargo",
+            "fr": "Key Account Manager · Gestion · Livrable du poste"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-key_account_manager-l14-5",
+          "title": {
+            "es": "Key Account Manager · Gerencia · Verificación y aceptación",
+            "en": "Key Account Manager · Management · Verification and acceptance",
+            "pt": "Key Account Manager · Gestão · Verificação e aceitação",
+            "fr": "Key Account Manager · Gestion · Vérification et acceptation"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-key_account_manager-l14-6",
+          "title": {
+            "es": "Key Account Manager · Gerencia · Restricción nueva y transferencia",
+            "en": "Key Account Manager · Management · New constraint and transfer",
+            "pt": "Key Account Manager · Gestão · Nova restrição e transferência",
+            "fr": "Key Account Manager · Gestion · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-key_account_manager-l14-7",
+          "title": {
+            "es": "Key Account Manager · Gerencia · Decisión de capacidad",
+            "en": "Key Account Manager · Management · Capacity decision",
+            "pt": "Key Account Manager · Gestão · Decisão de capacidade",
+            "fr": "Key Account Manager · Gestion · Décision de capacité"
+          },
+          "sharedSource": "cs-segmentation"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": {
+        "es": "Key Account Manager · Dirección",
+        "en": "Key Account Manager · Leadership",
+        "pt": "Key Account Manager · Direção",
+        "fr": "Key Account Manager · Direction"
+      },
+      "objective": {
+        "es": "Mapa de actores → plan de cuenta → gobierno → alineación ejecutiva → seguimiento · Relaciones y responsabilidades explícitas; decisiones y seguimiento trazables.",
+        "en": "Factors's map → account plan → government → executive alignment → monitoring · explicit relations and responsibilities and clear decisions and monitoring.",
+        "pt": "Mapa dos fatores → plano de conta → governo → alinhamento executivo → monitoramento · Relações e responsabilidades explícitas e decisões e acompanhamento claros.",
+        "fr": "Carte des facteurs → plan de compte → gouvernement → alignement exécutif → suivi · des relations et des responsabilités explicites, des décisions claires et un suivi."
+      },
+      "lessons": [
+        {
+          "key": "position-key_account_manager-l15-1",
+          "title": {
+            "es": "Key Account Manager · Dirección · Contexto y alcance",
+            "en": "Key Account Manager · Leadership · Context and scope",
+            "pt": "Key Account Manager · Direção · Contexto e escopo",
+            "fr": "Key Account Manager · Direction · Contexte et périmètre"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-key_account_manager-l15-2",
+          "title": {
+            "es": "Key Account Manager · Dirección · Datos y fuentes",
+            "en": "Key Account Manager · Leadership · Data and sources",
+            "pt": "Key Account Manager · Direção · Dados e fontes",
+            "fr": "Key Account Manager · Direction · Données et sources"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-key_account_manager-l15-3",
+          "title": {
+            "es": "Key Account Manager · Dirección · Alternativas y criterio",
+            "en": "Key Account Manager · Leadership · Alternatives and judgment",
+            "pt": "Key Account Manager · Direção · Alternativas e critério",
+            "fr": "Key Account Manager · Direction · Options et jugement"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-key_account_manager-l15-4",
+          "title": {
+            "es": "Key Account Manager · Dirección · Entregable del puesto",
+            "en": "Key Account Manager · Leadership · Role deliverable",
+            "pt": "Key Account Manager · Direção · Entrega do cargo",
+            "fr": "Key Account Manager · Direction · Livrable du poste"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-key_account_manager-l15-5",
+          "title": {
+            "es": "Key Account Manager · Dirección · Verificación y aceptación",
+            "en": "Key Account Manager · Leadership · Verification and acceptance",
+            "pt": "Key Account Manager · Direção · Verificação e aceitação",
+            "fr": "Key Account Manager · Direction · Vérification et acceptation"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-key_account_manager-l15-6",
+          "title": {
+            "es": "Key Account Manager · Dirección · Restricción nueva y transferencia",
+            "en": "Key Account Manager · Leadership · New constraint and transfer",
+            "pt": "Key Account Manager · Direção · Nova restrição e transferência",
+            "fr": "Key Account Manager · Direction · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-key_account_manager-l15-7",
+          "title": {
+            "es": "Key Account Manager · Dirección · Decisión de capacidad",
+            "en": "Key Account Manager · Leadership · Capacity decision",
+            "pt": "Key Account Manager · Direção · Decisão de capacidade",
+            "fr": "Key Account Manager · Direction · Décision de capacité"
+          },
+          "sharedSource": "cs-ebr"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "level": 8,
+      "title": "Plan estratégico de una cuenta clave",
+      "rubric": [
+        "scope",
+        "decision",
+        "evidence",
+        "verification"
+      ]
+    },
+    {
+      "level": 15,
+      "title": "Propuesta de expansión ante comité",
+      "rubric": [
+        "scope",
+        "decision",
+        "evidence",
+        "verification"
+      ]
+    }
+  ],
+  "diagnostic": {
+    "type": "situations",
+    "source": "https://handbook.gitlab.com/handbook/customer-experience/account-team/",
+    "competencies": [
+      "communication",
+      "diagnosis",
+      "data",
+      "prioritization",
+      "documentation",
+      "deescalation",
+      "negotiation",
+      "planning",
+      "technical",
+      "collaboration"
+    ],
+    "blocking": false
+  },
+  "optionalTechnical": [
+    "data",
+    "spreadsheets",
+    "sql",
+    "automation",
+    "ai"
+  ],
+  "references": [
+    "https://handbook.gitlab.com/handbook/customer-experience/account-team/"
+  ],
+  "sharedUnits": [
+    "common-communication",
+    "common-diagnosis",
+    "common-data",
+    "common-priority",
+    "common-documentation",
+    "common-deescalation",
+    "common-commercial",
+    "common-planning",
+    "common-technical"
+  ]
+}

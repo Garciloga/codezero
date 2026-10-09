@@ -1,3 +1,4 @@
+import PositionOverview from '../components/position-overview';
 import DevelopmentPlans from '../components/development-plan';
 import {trainingPerson} from '../../lib/role-training-server';
 import ActivationReturn from "../components/activation-return";
@@ -176,6 +177,7 @@ export default async function Dashboard({ searchParams }: PageProps) {
         </div>
       )}
 
+      {roleTrainingEnabled()&&<PositionOverview org={account?.organization?.organization_id??null}/>}
       <NextStepCard routeLesson={nextLesson?{slug:nextLesson.slug,title:nextLesson.title,minutes:nextLesson.estimated_minutes}:null} userId={user.id} org={account?.organization?.organization_id??null} progress={overallProgress} nextLevel={nextRoute?.level_number??null}/>
       {training&&account?.organization&&<DevelopmentPlans org={account.organization.organization_id} userId={user.id} summary={training.summary}/>}
       <Link className="btn secondary" href="/role-training/career-map">Mapa de carrera</Link>
@@ -213,7 +215,7 @@ export default async function Dashboard({ searchParams }: PageProps) {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", gap: 16, marginBottom: 16 }}>
           <div>
             <span className="pill">RUTA DE APRENDIZAJE</span>
-            <h2 style={{ marginBottom: 6 }}>Tu camino en Garciloga</h2>
+            <h2 style={{ marginBottom: 6 }}>Tu ruta técnica opcional</h2>
             <p className="muted" style={{ margin: 0 }}>
               Completa cada nivel y aprueba su evaluación para desbloquear el siguiente.
             </p>

@@ -1,0 +1,1172 @@
+[
+  [
+    {
+      "es": {
+        "prompt": "Negocio SaaS · Un responsable quiere cerrar el entregable sin comprobar el resultado. ¿Qué exiges?",
+        "options": [
+          "Evidencia del criterio de aceptación y confirmación del responsable",
+          "La fecha del calendario basta para cerrar",
+          "El entusiasmo del cliente sustituye la evidencia"
+        ],
+        "feedback": "Cerrar exige evidencia verificable del resultado. Una fecha o una opinión no demuestra aceptación."
+      },
+      "en": {
+        "prompt": "SaaS business · An owner wants to close the deliverable without checking the outcome. What do you require?",
+        "options": [
+          "Evidence against acceptance criteria and confirmation by the owner",
+          "The calendar date is enough to close",
+          "Customer enthusiasm replaces evidence"
+        ],
+        "feedback": "Closure requires verifiable outcome evidence. A date or opinion does not demonstrate acceptance."
+      },
+      "pt": {
+        "prompt": "Negócio SaaS · Um responsável quer encerrar a entrega sem conferir o resultado. O que exige?",
+        "options": [
+          "Evidência do critério de aceitação e confirmação do responsável",
+          "A data do calendário basta para encerrar",
+          "O entusiasmo do cliente substitui a evidência"
+        ],
+        "feedback": "Encerrar exige evidência verificável do resultado. Uma data ou opinião não demonstra aceitação."
+      },
+      "fr": {
+        "prompt": "Activité SaaS · Un responsable veut clôturer le livrable sans vérifier le résultat. Que demandez-vous ?",
+        "options": [
+          "Preuves du critère d’acceptation et confirmation du responsable",
+          "La date du calendrier suffit pour clôturer",
+          "L’enthousiasme du client remplace les preuves"
+        ],
+        "feedback": "La clôture exige des preuves vérifiables du résultat. Une date ou opinion ne démontre pas l’acceptation."
+      }
+    },
+    {
+      "es": {
+        "prompt": "Negocio SaaS · Una nueva restricción invalida el supuesto del plan. ¿Qué cambias?",
+        "options": [
+          "Actualizo alternativas, impacto, responsable y próxima verificación",
+          "Conservo el plan aunque el supuesto sea falso",
+          "Oculto la restricción para no cambiar la promesa"
+        ],
+        "feedback": "Un cambio de supuesto puede cambiar la decisión. Conserva el historial y compara alternativas antes de comprometer una solución."
+      },
+      "en": {
+        "prompt": "SaaS business · A new constraint invalidates a plan assumption. What do you change?",
+        "options": [
+          "Update alternatives, impact, owner and next verification",
+          "Keep the plan even when the assumption is false",
+          "Hide the constraint to avoid changing the promise"
+        ],
+        "feedback": "An assumption change may change the decision. Keep the history and compare alternatives before committing to a solution."
+      },
+      "pt": {
+        "prompt": "Negócio SaaS · Uma nova restrição invalida uma premissa do plano. O que muda?",
+        "options": [
+          "Atualizo alternativas, impacto, responsável e próxima verificação",
+          "Mantenho o plano mesmo com a premissa falsa",
+          "Oculto a restrição para não alterar a promessa"
+        ],
+        "feedback": "Uma mudança de premissa pode mudar a decisão. Preserve o histórico e compare alternativas antes de comprometer uma solução."
+      },
+      "fr": {
+        "prompt": "Activité SaaS · Une nouvelle contrainte invalide une hypothèse du plan. Que modifiez-vous ?",
+        "options": [
+          "Actualiser options, impact, responsable et prochaine vérification",
+          "Conserver le plan même si l’hypothèse est fausse",
+          "Masquer la contrainte pour conserver la promesse"
+        ],
+        "feedback": "Un changement d’hypothèse peut modifier la décision. Gardez l’historique et comparez les options avant d’engager une solution."
+      }
+    }
+  ],
+  [
+    {
+      "es": {
+        "prompt": "Ciclo de vida y handoff · Un responsable quiere cerrar el entregable sin comprobar el resultado. ¿Qué exiges?",
+        "options": [
+          "Evidencia del criterio de aceptación y confirmación del responsable",
+          "La fecha del calendario basta para cerrar",
+          "El entusiasmo del cliente sustituye la evidencia"
+        ],
+        "feedback": "Cerrar exige evidencia verificable del resultado. Una fecha o una opinión no demuestra aceptación."
+      },
+      "en": {
+        "prompt": "Lifecycle and handoff · An owner wants to close the deliverable without checking the outcome. What do you require?",
+        "options": [
+          "Evidence against acceptance criteria and confirmation by the owner",
+          "The calendar date is enough to close",
+          "Customer enthusiasm replaces evidence"
+        ],
+        "feedback": "Closure requires verifiable outcome evidence. A date or opinion does not demonstrate acceptance."
+      },
+      "pt": {
+        "prompt": "Ciclo de vida e handoff · Um responsável quer encerrar a entrega sem conferir o resultado. O que exige?",
+        "options": [
+          "Evidência do critério de aceitação e confirmação do responsável",
+          "A data do calendário basta para encerrar",
+          "O entusiasmo do cliente substitui a evidência"
+        ],
+        "feedback": "Encerrar exige evidência verificável do resultado. Uma data ou opinião não demonstra aceitação."
+      },
+      "fr": {
+        "prompt": "Cycle de vie et transfert · Un responsable veut clôturer le livrable sans vérifier le résultat. Que demandez-vous ?",
+        "options": [
+          "Preuves du critère d’acceptation et confirmation du responsable",
+          "La date du calendrier suffit pour clôturer",
+          "L’enthousiasme du client remplace les preuves"
+        ],
+        "feedback": "La clôture exige des preuves vérifiables du résultat. Une date ou opinion ne démontre pas l’acceptation."
+      }
+    },
+    {
+      "es": {
+        "prompt": "Ciclo de vida y handoff · Una nueva restricción invalida el supuesto del plan. ¿Qué cambias?",
+        "options": [
+          "Actualizo alternativas, impacto, responsable y próxima verificación",
+          "Conservo el plan aunque el supuesto sea falso",
+          "Oculto la restricción para no cambiar la promesa"
+        ],
+        "feedback": "Un cambio de supuesto puede cambiar la decisión. Conserva el historial y compara alternativas antes de comprometer una solución."
+      },
+      "en": {
+        "prompt": "Lifecycle and handoff · A new constraint invalidates a plan assumption. What do you change?",
+        "options": [
+          "Update alternatives, impact, owner and next verification",
+          "Keep the plan even when the assumption is false",
+          "Hide the constraint to avoid changing the promise"
+        ],
+        "feedback": "An assumption change may change the decision. Keep the history and compare alternatives before committing to a solution."
+      },
+      "pt": {
+        "prompt": "Ciclo de vida e handoff · Uma nova restrição invalida uma premissa do plano. O que muda?",
+        "options": [
+          "Atualizo alternativas, impacto, responsável e próxima verificação",
+          "Mantenho o plano mesmo com a premissa falsa",
+          "Oculto a restrição para não alterar a promessa"
+        ],
+        "feedback": "Uma mudança de premissa pode mudar a decisão. Preserve o histórico e compare alternativas antes de comprometer uma solução."
+      },
+      "fr": {
+        "prompt": "Cycle de vie et transfert · Une nouvelle contrainte invalide une hypothèse du plan. Que modifiez-vous ?",
+        "options": [
+          "Actualiser options, impact, responsable et prochaine vérification",
+          "Conserver le plan même si l’hypothèse est fausse",
+          "Masquer la contrainte pour conserver la promesse"
+        ],
+        "feedback": "Un changement d’hypothèse peut modifier la décision. Gardez l’historique et comparez les options avant d’engager une solution."
+      }
+    }
+  ],
+  [
+    {
+      "es": {
+        "prompt": "Onboarding y primer valor · Un responsable quiere cerrar el entregable sin comprobar el resultado. ¿Qué exiges?",
+        "options": [
+          "Evidencia del criterio de aceptación y confirmación del responsable",
+          "La fecha del calendario basta para cerrar",
+          "El entusiasmo del cliente sustituye la evidencia"
+        ],
+        "feedback": "Cerrar exige evidencia verificable del resultado. Una fecha o una opinión no demuestra aceptación."
+      },
+      "en": {
+        "prompt": "Onboarding and first value · An owner wants to close the deliverable without checking the outcome. What do you require?",
+        "options": [
+          "Evidence against acceptance criteria and confirmation by the owner",
+          "The calendar date is enough to close",
+          "Customer enthusiasm replaces evidence"
+        ],
+        "feedback": "Closure requires verifiable outcome evidence. A date or opinion does not demonstrate acceptance."
+      },
+      "pt": {
+        "prompt": "Onboarding e primeiro valor · Um responsável quer encerrar a entrega sem conferir o resultado. O que exige?",
+        "options": [
+          "Evidência do critério de aceitação e confirmação do responsável",
+          "A data do calendário basta para encerrar",
+          "O entusiasmo do cliente substitui a evidência"
+        ],
+        "feedback": "Encerrar exige evidência verificável do resultado. Uma data ou opinião não demonstra aceitação."
+      },
+      "fr": {
+        "prompt": "Onboarding et première valeur · Un responsable veut clôturer le livrable sans vérifier le résultat. Que demandez-vous ?",
+        "options": [
+          "Preuves du critère d’acceptation et confirmation du responsable",
+          "La date du calendrier suffit pour clôturer",
+          "L’enthousiasme du client remplace les preuves"
+        ],
+        "feedback": "La clôture exige des preuves vérifiables du résultat. Une date ou opinion ne démontre pas l’acceptation."
+      }
+    },
+    {
+      "es": {
+        "prompt": "Onboarding y primer valor · Una nueva restricción invalida el supuesto del plan. ¿Qué cambias?",
+        "options": [
+          "Actualizo alternativas, impacto, responsable y próxima verificación",
+          "Conservo el plan aunque el supuesto sea falso",
+          "Oculto la restricción para no cambiar la promesa"
+        ],
+        "feedback": "Un cambio de supuesto puede cambiar la decisión. Conserva el historial y compara alternativas antes de comprometer una solución."
+      },
+      "en": {
+        "prompt": "Onboarding and first value · A new constraint invalidates a plan assumption. What do you change?",
+        "options": [
+          "Update alternatives, impact, owner and next verification",
+          "Keep the plan even when the assumption is false",
+          "Hide the constraint to avoid changing the promise"
+        ],
+        "feedback": "An assumption change may change the decision. Keep the history and compare alternatives before committing to a solution."
+      },
+      "pt": {
+        "prompt": "Onboarding e primeiro valor · Uma nova restrição invalida uma premissa do plano. O que muda?",
+        "options": [
+          "Atualizo alternativas, impacto, responsável e próxima verificação",
+          "Mantenho o plano mesmo com a premissa falsa",
+          "Oculto a restrição para não alterar a promessa"
+        ],
+        "feedback": "Uma mudança de premissa pode mudar a decisão. Preserve o histórico e compare alternativas antes de comprometer uma solução."
+      },
+      "fr": {
+        "prompt": "Onboarding et première valeur · Une nouvelle contrainte invalide une hypothèse du plan. Que modifiez-vous ?",
+        "options": [
+          "Actualiser options, impact, responsable et prochaine vérification",
+          "Conserver le plan même si l’hypothèse est fausse",
+          "Masquer la contrainte pour conserver la promesse"
+        ],
+        "feedback": "Un changement d’hypothèse peut modifier la décision. Gardez l’historique et comparez les options avant d’engager une solution."
+      }
+    }
+  ],
+  [
+    {
+      "es": {
+        "prompt": "Comunicación y expectativas · Un responsable quiere cerrar el entregable sin comprobar el resultado. ¿Qué exiges?",
+        "options": [
+          "Evidencia del criterio de aceptación y confirmación del responsable",
+          "La fecha del calendario basta para cerrar",
+          "El entusiasmo del cliente sustituye la evidencia"
+        ],
+        "feedback": "Cerrar exige evidencia verificable del resultado. Una fecha o una opinión no demuestra aceptación."
+      },
+      "en": {
+        "prompt": "Communication and expectations · An owner wants to close the deliverable without checking the outcome. What do you require?",
+        "options": [
+          "Evidence against acceptance criteria and confirmation by the owner",
+          "The calendar date is enough to close",
+          "Customer enthusiasm replaces evidence"
+        ],
+        "feedback": "Closure requires verifiable outcome evidence. A date or opinion does not demonstrate acceptance."
+      },
+      "pt": {
+        "prompt": "Comunicação e expectativas · Um responsável quer encerrar a entrega sem conferir o resultado. O que exige?",
+        "options": [
+          "Evidência do critério de aceitação e confirmação do responsável",
+          "A data do calendário basta para encerrar",
+          "O entusiasmo do cliente substitui a evidência"
+        ],
+        "feedback": "Encerrar exige evidência verificável do resultado. Uma data ou opinião não demonstra aceitação."
+      },
+      "fr": {
+        "prompt": "Communication et attentes · Un responsable veut clôturer le livrable sans vérifier le résultat. Que demandez-vous ?",
+        "options": [
+          "Preuves du critère d’acceptation et confirmation du responsable",
+          "La date du calendrier suffit pour clôturer",
+          "L’enthousiasme du client remplace les preuves"
+        ],
+        "feedback": "La clôture exige des preuves vérifiables du résultat. Une date ou opinion ne démontre pas l’acceptation."
+      }
+    },
+    {
+      "es": {
+        "prompt": "Comunicación y expectativas · Una nueva restricción invalida el supuesto del plan. ¿Qué cambias?",
+        "options": [
+          "Actualizo alternativas, impacto, responsable y próxima verificación",
+          "Conservo el plan aunque el supuesto sea falso",
+          "Oculto la restricción para no cambiar la promesa"
+        ],
+        "feedback": "Un cambio de supuesto puede cambiar la decisión. Conserva el historial y compara alternativas antes de comprometer una solución."
+      },
+      "en": {
+        "prompt": "Communication and expectations · A new constraint invalidates a plan assumption. What do you change?",
+        "options": [
+          "Update alternatives, impact, owner and next verification",
+          "Keep the plan even when the assumption is false",
+          "Hide the constraint to avoid changing the promise"
+        ],
+        "feedback": "An assumption change may change the decision. Keep the history and compare alternatives before committing to a solution."
+      },
+      "pt": {
+        "prompt": "Comunicação e expectativas · Uma nova restrição invalida uma premissa do plano. O que muda?",
+        "options": [
+          "Atualizo alternativas, impacto, responsável e próxima verificação",
+          "Mantenho o plano mesmo com a premissa falsa",
+          "Oculto a restrição para não alterar a promessa"
+        ],
+        "feedback": "Uma mudança de premissa pode mudar a decisão. Preserve o histórico e compare alternativas antes de comprometer uma solução."
+      },
+      "fr": {
+        "prompt": "Communication et attentes · Une nouvelle contrainte invalide une hypothèse du plan. Que modifiez-vous ?",
+        "options": [
+          "Actualiser options, impact, responsable et prochaine vérification",
+          "Conserver le plan même si l’hypothèse est fausse",
+          "Masquer la contrainte pour conserver la promesse"
+        ],
+        "feedback": "Un changement d’hypothèse peut modifier la décision. Gardez l’historique et comparez les options avant d’engager une solution."
+      }
+    }
+  ],
+  [
+    {
+      "es": {
+        "prompt": "Adopción y salud · Un responsable quiere cerrar el entregable sin comprobar el resultado. ¿Qué exiges?",
+        "options": [
+          "Evidencia del criterio de aceptación y confirmación del responsable",
+          "La fecha del calendario basta para cerrar",
+          "El entusiasmo del cliente sustituye la evidencia"
+        ],
+        "feedback": "Cerrar exige evidencia verificable del resultado. Una fecha o una opinión no demuestra aceptación."
+      },
+      "en": {
+        "prompt": "Adoption and health · An owner wants to close the deliverable without checking the outcome. What do you require?",
+        "options": [
+          "Evidence against acceptance criteria and confirmation by the owner",
+          "The calendar date is enough to close",
+          "Customer enthusiasm replaces evidence"
+        ],
+        "feedback": "Closure requires verifiable outcome evidence. A date or opinion does not demonstrate acceptance."
+      },
+      "pt": {
+        "prompt": "Adoção e saúde · Um responsável quer encerrar a entrega sem conferir o resultado. O que exige?",
+        "options": [
+          "Evidência do critério de aceitação e confirmação do responsável",
+          "A data do calendário basta para encerrar",
+          "O entusiasmo do cliente substitui a evidência"
+        ],
+        "feedback": "Encerrar exige evidência verificável do resultado. Uma data ou opinião não demonstra aceitação."
+      },
+      "fr": {
+        "prompt": "Adoption et santé · Un responsable veut clôturer le livrable sans vérifier le résultat. Que demandez-vous ?",
+        "options": [
+          "Preuves du critère d’acceptation et confirmation du responsable",
+          "La date du calendrier suffit pour clôturer",
+          "L’enthousiasme du client remplace les preuves"
+        ],
+        "feedback": "La clôture exige des preuves vérifiables du résultat. Une date ou opinion ne démontre pas l’acceptation."
+      }
+    },
+    {
+      "es": {
+        "prompt": "Adopción y salud · Una nueva restricción invalida el supuesto del plan. ¿Qué cambias?",
+        "options": [
+          "Actualizo alternativas, impacto, responsable y próxima verificación",
+          "Conservo el plan aunque el supuesto sea falso",
+          "Oculto la restricción para no cambiar la promesa"
+        ],
+        "feedback": "Un cambio de supuesto puede cambiar la decisión. Conserva el historial y compara alternativas antes de comprometer una solución."
+      },
+      "en": {
+        "prompt": "Adoption and health · A new constraint invalidates a plan assumption. What do you change?",
+        "options": [
+          "Update alternatives, impact, owner and next verification",
+          "Keep the plan even when the assumption is false",
+          "Hide the constraint to avoid changing the promise"
+        ],
+        "feedback": "An assumption change may change the decision. Keep the history and compare alternatives before committing to a solution."
+      },
+      "pt": {
+        "prompt": "Adoção e saúde · Uma nova restrição invalida uma premissa do plano. O que muda?",
+        "options": [
+          "Atualizo alternativas, impacto, responsável e próxima verificação",
+          "Mantenho o plano mesmo com a premissa falsa",
+          "Oculto a restrição para não alterar a promessa"
+        ],
+        "feedback": "Uma mudança de premissa pode mudar a decisão. Preserve o histórico e compare alternativas antes de comprometer uma solução."
+      },
+      "fr": {
+        "prompt": "Adoption et santé · Une nouvelle contrainte invalide une hypothèse du plan. Que modifiez-vous ?",
+        "options": [
+          "Actualiser options, impact, responsable et prochaine vérification",
+          "Conserver le plan même si l’hypothèse est fausse",
+          "Masquer la contrainte pour conserver la promesse"
+        ],
+        "feedback": "Un changement d’hypothèse peut modifier la décision. Gardez l’historique et comparez les options avant d’engager une solution."
+      }
+    }
+  ],
+  [
+    {
+      "es": {
+        "prompt": "Herramientas del puesto · Un responsable quiere cerrar el entregable sin comprobar el resultado. ¿Qué exiges?",
+        "options": [
+          "Evidencia del criterio de aceptación y confirmación del responsable",
+          "La fecha del calendario basta para cerrar",
+          "El entusiasmo del cliente sustituye la evidencia"
+        ],
+        "feedback": "Cerrar exige evidencia verificable del resultado. Una fecha o una opinión no demuestra aceptación."
+      },
+      "en": {
+        "prompt": "Workplace tools · An owner wants to close the deliverable without checking the outcome. What do you require?",
+        "options": [
+          "Evidence against acceptance criteria and confirmation by the owner",
+          "The calendar date is enough to close",
+          "Customer enthusiasm replaces evidence"
+        ],
+        "feedback": "Closure requires verifiable outcome evidence. A date or opinion does not demonstrate acceptance."
+      },
+      "pt": {
+        "prompt": "Ferramentas do cargo · Um responsável quer encerrar a entrega sem conferir o resultado. O que exige?",
+        "options": [
+          "Evidência do critério de aceitação e confirmação do responsável",
+          "A data do calendário basta para encerrar",
+          "O entusiasmo do cliente substitui a evidência"
+        ],
+        "feedback": "Encerrar exige evidência verificável do resultado. Uma data ou opinião não demonstra aceitação."
+      },
+      "fr": {
+        "prompt": "Outils du poste · Un responsable veut clôturer le livrable sans vérifier le résultat. Que demandez-vous ?",
+        "options": [
+          "Preuves du critère d’acceptation et confirmation du responsable",
+          "La date du calendrier suffit pour clôturer",
+          "L’enthousiasme du client remplace les preuves"
+        ],
+        "feedback": "La clôture exige des preuves vérifiables du résultat. Une date ou opinion ne démontre pas l’acceptation."
+      }
+    },
+    {
+      "es": {
+        "prompt": "Herramientas del puesto · Una nueva restricción invalida el supuesto del plan. ¿Qué cambias?",
+        "options": [
+          "Actualizo alternativas, impacto, responsable y próxima verificación",
+          "Conservo el plan aunque el supuesto sea falso",
+          "Oculto la restricción para no cambiar la promesa"
+        ],
+        "feedback": "Un cambio de supuesto puede cambiar la decisión. Conserva el historial y compara alternativas antes de comprometer una solución."
+      },
+      "en": {
+        "prompt": "Workplace tools · A new constraint invalidates a plan assumption. What do you change?",
+        "options": [
+          "Update alternatives, impact, owner and next verification",
+          "Keep the plan even when the assumption is false",
+          "Hide the constraint to avoid changing the promise"
+        ],
+        "feedback": "An assumption change may change the decision. Keep the history and compare alternatives before committing to a solution."
+      },
+      "pt": {
+        "prompt": "Ferramentas do cargo · Uma nova restrição invalida uma premissa do plano. O que muda?",
+        "options": [
+          "Atualizo alternativas, impacto, responsável e próxima verificação",
+          "Mantenho o plano mesmo com a premissa falsa",
+          "Oculto a restrição para não alterar a promessa"
+        ],
+        "feedback": "Uma mudança de premissa pode mudar a decisão. Preserve o histórico e compare alternativas antes de comprometer uma solução."
+      },
+      "fr": {
+        "prompt": "Outils du poste · Une nouvelle contrainte invalide une hypothèse du plan. Que modifiez-vous ?",
+        "options": [
+          "Actualiser options, impact, responsable et prochaine vérification",
+          "Conserver le plan même si l’hypothèse est fausse",
+          "Masquer la contrainte pour conserver la promesse"
+        ],
+        "feedback": "Un changement d’hypothèse peut modifier la décision. Gardez l’historique et comparez les options avant d’engager une solution."
+      }
+    }
+  ],
+  [
+    {
+      "es": {
+        "prompt": "Cartera y priorización · Un responsable quiere cerrar el entregable sin comprobar el resultado. ¿Qué exiges?",
+        "options": [
+          "Evidencia del criterio de aceptación y confirmación del responsable",
+          "La fecha del calendario basta para cerrar",
+          "El entusiasmo del cliente sustituye la evidencia"
+        ],
+        "feedback": "Cerrar exige evidencia verificable del resultado. Una fecha o una opinión no demuestra aceptación."
+      },
+      "en": {
+        "prompt": "Portfolio and prioritization · An owner wants to close the deliverable without checking the outcome. What do you require?",
+        "options": [
+          "Evidence against acceptance criteria and confirmation by the owner",
+          "The calendar date is enough to close",
+          "Customer enthusiasm replaces evidence"
+        ],
+        "feedback": "Closure requires verifiable outcome evidence. A date or opinion does not demonstrate acceptance."
+      },
+      "pt": {
+        "prompt": "Carteira e priorização · Um responsável quer encerrar a entrega sem conferir o resultado. O que exige?",
+        "options": [
+          "Evidência do critério de aceitação e confirmação do responsável",
+          "A data do calendário basta para encerrar",
+          "O entusiasmo do cliente substitui a evidência"
+        ],
+        "feedback": "Encerrar exige evidência verificável do resultado. Uma data ou opinião não demonstra aceitação."
+      },
+      "fr": {
+        "prompt": "Portefeuille et priorités · Un responsable veut clôturer le livrable sans vérifier le résultat. Que demandez-vous ?",
+        "options": [
+          "Preuves du critère d’acceptation et confirmation du responsable",
+          "La date du calendrier suffit pour clôturer",
+          "L’enthousiasme du client remplace les preuves"
+        ],
+        "feedback": "La clôture exige des preuves vérifiables du résultat. Une date ou opinion ne démontre pas l’acceptation."
+      }
+    },
+    {
+      "es": {
+        "prompt": "Cartera y priorización · Una nueva restricción invalida el supuesto del plan. ¿Qué cambias?",
+        "options": [
+          "Actualizo alternativas, impacto, responsable y próxima verificación",
+          "Conservo el plan aunque el supuesto sea falso",
+          "Oculto la restricción para no cambiar la promesa"
+        ],
+        "feedback": "Un cambio de supuesto puede cambiar la decisión. Conserva el historial y compara alternativas antes de comprometer una solución."
+      },
+      "en": {
+        "prompt": "Portfolio and prioritization · A new constraint invalidates a plan assumption. What do you change?",
+        "options": [
+          "Update alternatives, impact, owner and next verification",
+          "Keep the plan even when the assumption is false",
+          "Hide the constraint to avoid changing the promise"
+        ],
+        "feedback": "An assumption change may change the decision. Keep the history and compare alternatives before committing to a solution."
+      },
+      "pt": {
+        "prompt": "Carteira e priorização · Uma nova restrição invalida uma premissa do plano. O que muda?",
+        "options": [
+          "Atualizo alternativas, impacto, responsável e próxima verificação",
+          "Mantenho o plano mesmo com a premissa falsa",
+          "Oculto a restrição para não alterar a promessa"
+        ],
+        "feedback": "Uma mudança de premissa pode mudar a decisão. Preserve o histórico e compare alternativas antes de comprometer uma solução."
+      },
+      "fr": {
+        "prompt": "Portefeuille et priorités · Une nouvelle contrainte invalide une hypothèse du plan. Que modifiez-vous ?",
+        "options": [
+          "Actualiser options, impact, responsable et prochaine vérification",
+          "Conserver le plan même si l’hypothèse est fausse",
+          "Masquer la contrainte pour conserver la promesse"
+        ],
+        "feedback": "Un changement d’hypothèse peut modifier la décision. Gardez l’historique et comparez les options avant d’engager une solution."
+      }
+    }
+  ],
+  [
+    {
+      "es": {
+        "prompt": "Plan de éxito y QBR · Un responsable quiere cerrar el entregable sin comprobar el resultado. ¿Qué exiges?",
+        "options": [
+          "Evidencia del criterio de aceptación y confirmación del responsable",
+          "La fecha del calendario basta para cerrar",
+          "El entusiasmo del cliente sustituye la evidencia"
+        ],
+        "feedback": "Cerrar exige evidencia verificable del resultado. Una fecha o una opinión no demuestra aceptación."
+      },
+      "en": {
+        "prompt": "Success plan and QBR · An owner wants to close the deliverable without checking the outcome. What do you require?",
+        "options": [
+          "Evidence against acceptance criteria and confirmation by the owner",
+          "The calendar date is enough to close",
+          "Customer enthusiasm replaces evidence"
+        ],
+        "feedback": "Closure requires verifiable outcome evidence. A date or opinion does not demonstrate acceptance."
+      },
+      "pt": {
+        "prompt": "Plano de sucesso e QBR · Um responsável quer encerrar a entrega sem conferir o resultado. O que exige?",
+        "options": [
+          "Evidência do critério de aceitação e confirmação do responsável",
+          "A data do calendário basta para encerrar",
+          "O entusiasmo do cliente substitui a evidência"
+        ],
+        "feedback": "Encerrar exige evidência verificável do resultado. Uma data ou opinião não demonstra aceitação."
+      },
+      "fr": {
+        "prompt": "Plan de réussite et QBR · Un responsable veut clôturer le livrable sans vérifier le résultat. Que demandez-vous ?",
+        "options": [
+          "Preuves du critère d’acceptation et confirmation du responsable",
+          "La date du calendrier suffit pour clôturer",
+          "L’enthousiasme du client remplace les preuves"
+        ],
+        "feedback": "La clôture exige des preuves vérifiables du résultat. Une date ou opinion ne démontre pas l’acceptation."
+      }
+    },
+    {
+      "es": {
+        "prompt": "Plan de éxito y QBR · Una nueva restricción invalida el supuesto del plan. ¿Qué cambias?",
+        "options": [
+          "Actualizo alternativas, impacto, responsable y próxima verificación",
+          "Conservo el plan aunque el supuesto sea falso",
+          "Oculto la restricción para no cambiar la promesa"
+        ],
+        "feedback": "Un cambio de supuesto puede cambiar la decisión. Conserva el historial y compara alternativas antes de comprometer una solución."
+      },
+      "en": {
+        "prompt": "Success plan and QBR · A new constraint invalidates a plan assumption. What do you change?",
+        "options": [
+          "Update alternatives, impact, owner and next verification",
+          "Keep the plan even when the assumption is false",
+          "Hide the constraint to avoid changing the promise"
+        ],
+        "feedback": "An assumption change may change the decision. Keep the history and compare alternatives before committing to a solution."
+      },
+      "pt": {
+        "prompt": "Plano de sucesso e QBR · Uma nova restrição invalida uma premissa do plano. O que muda?",
+        "options": [
+          "Atualizo alternativas, impacto, responsável e próxima verificação",
+          "Mantenho o plano mesmo com a premissa falsa",
+          "Oculto a restrição para não alterar a promessa"
+        ],
+        "feedback": "Uma mudança de premissa pode mudar a decisão. Preserve o histórico e compare alternativas antes de comprometer uma solução."
+      },
+      "fr": {
+        "prompt": "Plan de réussite et QBR · Une nouvelle contrainte invalide une hypothèse du plan. Que modifiez-vous ?",
+        "options": [
+          "Actualiser options, impact, responsable et prochaine vérification",
+          "Conserver le plan même si l’hypothèse est fausse",
+          "Masquer la contrainte pour conserver la promesse"
+        ],
+        "feedback": "Un changement d’hypothèse peut modifier la décision. Gardez l’historique et comparez les options avant d’engager une solution."
+      }
+    }
+  ],
+  [
+    {
+      "es": {
+        "prompt": "Riesgo y rescate · Un responsable quiere cerrar el entregable sin comprobar el resultado. ¿Qué exiges?",
+        "options": [
+          "Evidencia del criterio de aceptación y confirmación del responsable",
+          "La fecha del calendario basta para cerrar",
+          "El entusiasmo del cliente sustituye la evidencia"
+        ],
+        "feedback": "Cerrar exige evidencia verificable del resultado. Una fecha o una opinión no demuestra aceptación."
+      },
+      "en": {
+        "prompt": "Risk and recovery · An owner wants to close the deliverable without checking the outcome. What do you require?",
+        "options": [
+          "Evidence against acceptance criteria and confirmation by the owner",
+          "The calendar date is enough to close",
+          "Customer enthusiasm replaces evidence"
+        ],
+        "feedback": "Closure requires verifiable outcome evidence. A date or opinion does not demonstrate acceptance."
+      },
+      "pt": {
+        "prompt": "Risco e recuperação · Um responsável quer encerrar a entrega sem conferir o resultado. O que exige?",
+        "options": [
+          "Evidência do critério de aceitação e confirmação do responsável",
+          "A data do calendário basta para encerrar",
+          "O entusiasmo do cliente substitui a evidência"
+        ],
+        "feedback": "Encerrar exige evidência verificável do resultado. Uma data ou opinião não demonstra aceitação."
+      },
+      "fr": {
+        "prompt": "Risque et redressement · Un responsable veut clôturer le livrable sans vérifier le résultat. Que demandez-vous ?",
+        "options": [
+          "Preuves du critère d’acceptation et confirmation du responsable",
+          "La date du calendrier suffit pour clôturer",
+          "L’enthousiasme du client remplace les preuves"
+        ],
+        "feedback": "La clôture exige des preuves vérifiables du résultat. Une date ou opinion ne démontre pas l’acceptation."
+      }
+    },
+    {
+      "es": {
+        "prompt": "Riesgo y rescate · Una nueva restricción invalida el supuesto del plan. ¿Qué cambias?",
+        "options": [
+          "Actualizo alternativas, impacto, responsable y próxima verificación",
+          "Conservo el plan aunque el supuesto sea falso",
+          "Oculto la restricción para no cambiar la promesa"
+        ],
+        "feedback": "Un cambio de supuesto puede cambiar la decisión. Conserva el historial y compara alternativas antes de comprometer una solución."
+      },
+      "en": {
+        "prompt": "Risk and recovery · A new constraint invalidates a plan assumption. What do you change?",
+        "options": [
+          "Update alternatives, impact, owner and next verification",
+          "Keep the plan even when the assumption is false",
+          "Hide the constraint to avoid changing the promise"
+        ],
+        "feedback": "An assumption change may change the decision. Keep the history and compare alternatives before committing to a solution."
+      },
+      "pt": {
+        "prompt": "Risco e recuperação · Uma nova restrição invalida uma premissa do plano. O que muda?",
+        "options": [
+          "Atualizo alternativas, impacto, responsável e próxima verificação",
+          "Mantenho o plano mesmo com a premissa falsa",
+          "Oculto a restrição para não alterar a promessa"
+        ],
+        "feedback": "Uma mudança de premissa pode mudar a decisão. Preserve o histórico e compare alternativas antes de comprometer uma solução."
+      },
+      "fr": {
+        "prompt": "Risque et redressement · Une nouvelle contrainte invalide une hypothèse du plan. Que modifiez-vous ?",
+        "options": [
+          "Actualiser options, impact, responsable et prochaine vérification",
+          "Conserver le plan même si l’hypothèse est fausse",
+          "Masquer la contrainte pour conserver la promesse"
+        ],
+        "feedback": "Un changement d’hypothèse peut modifier la décision. Gardez l’historique et comparez les options avant d’engager une solution."
+      }
+    }
+  ],
+  [
+    {
+      "es": {
+        "prompt": "Renovación y negociación · Un responsable quiere cerrar el entregable sin comprobar el resultado. ¿Qué exiges?",
+        "options": [
+          "Evidencia del criterio de aceptación y confirmación del responsable",
+          "La fecha del calendario basta para cerrar",
+          "El entusiasmo del cliente sustituye la evidencia"
+        ],
+        "feedback": "Cerrar exige evidencia verificable del resultado. Una fecha o una opinión no demuestra aceptación."
+      },
+      "en": {
+        "prompt": "Renewal and negotiation · An owner wants to close the deliverable without checking the outcome. What do you require?",
+        "options": [
+          "Evidence against acceptance criteria and confirmation by the owner",
+          "The calendar date is enough to close",
+          "Customer enthusiasm replaces evidence"
+        ],
+        "feedback": "Closure requires verifiable outcome evidence. A date or opinion does not demonstrate acceptance."
+      },
+      "pt": {
+        "prompt": "Renovação e negociação · Um responsável quer encerrar a entrega sem conferir o resultado. O que exige?",
+        "options": [
+          "Evidência do critério de aceitação e confirmação do responsável",
+          "A data do calendário basta para encerrar",
+          "O entusiasmo do cliente substitui a evidência"
+        ],
+        "feedback": "Encerrar exige evidência verificável do resultado. Uma data ou opinião não demonstra aceitação."
+      },
+      "fr": {
+        "prompt": "Renouvellement et négociation · Un responsable veut clôturer le livrable sans vérifier le résultat. Que demandez-vous ?",
+        "options": [
+          "Preuves du critère d’acceptation et confirmation du responsable",
+          "La date du calendrier suffit pour clôturer",
+          "L’enthousiasme du client remplace les preuves"
+        ],
+        "feedback": "La clôture exige des preuves vérifiables du résultat. Une date ou opinion ne démontre pas l’acceptation."
+      }
+    },
+    {
+      "es": {
+        "prompt": "Renovación y negociación · Una nueva restricción invalida el supuesto del plan. ¿Qué cambias?",
+        "options": [
+          "Actualizo alternativas, impacto, responsable y próxima verificación",
+          "Conservo el plan aunque el supuesto sea falso",
+          "Oculto la restricción para no cambiar la promesa"
+        ],
+        "feedback": "Un cambio de supuesto puede cambiar la decisión. Conserva el historial y compara alternativas antes de comprometer una solución."
+      },
+      "en": {
+        "prompt": "Renewal and negotiation · A new constraint invalidates a plan assumption. What do you change?",
+        "options": [
+          "Update alternatives, impact, owner and next verification",
+          "Keep the plan even when the assumption is false",
+          "Hide the constraint to avoid changing the promise"
+        ],
+        "feedback": "An assumption change may change the decision. Keep the history and compare alternatives before committing to a solution."
+      },
+      "pt": {
+        "prompt": "Renovação e negociação · Uma nova restrição invalida uma premissa do plano. O que muda?",
+        "options": [
+          "Atualizo alternativas, impacto, responsável e próxima verificação",
+          "Mantenho o plano mesmo com a premissa falsa",
+          "Oculto a restrição para não alterar a promessa"
+        ],
+        "feedback": "Uma mudança de premissa pode mudar a decisão. Preserve o histórico e compare alternativas antes de comprometer uma solução."
+      },
+      "fr": {
+        "prompt": "Renouvellement et négociation · Une nouvelle contrainte invalide une hypothèse du plan. Que modifiez-vous ?",
+        "options": [
+          "Actualiser options, impact, responsable et prochaine vérification",
+          "Conserver le plan même si l’hypothèse est fausse",
+          "Masquer la contrainte pour conserver la promesse"
+        ],
+        "feedback": "Un changement d’hypothèse peut modifier la décision. Gardez l’historique et comparez les options avant d’engager une solution."
+      }
+    }
+  ],
+  [
+    {
+      "es": {
+        "prompt": "Expansión y descubrimiento · Un responsable quiere cerrar el entregable sin comprobar el resultado. ¿Qué exiges?",
+        "options": [
+          "Evidencia del criterio de aceptación y confirmación del responsable",
+          "La fecha del calendario basta para cerrar",
+          "El entusiasmo del cliente sustituye la evidencia"
+        ],
+        "feedback": "Cerrar exige evidencia verificable del resultado. Una fecha o una opinión no demuestra aceptación."
+      },
+      "en": {
+        "prompt": "Expansion and discovery · An owner wants to close the deliverable without checking the outcome. What do you require?",
+        "options": [
+          "Evidence against acceptance criteria and confirmation by the owner",
+          "The calendar date is enough to close",
+          "Customer enthusiasm replaces evidence"
+        ],
+        "feedback": "Closure requires verifiable outcome evidence. A date or opinion does not demonstrate acceptance."
+      },
+      "pt": {
+        "prompt": "Expansão e descoberta · Um responsável quer encerrar a entrega sem conferir o resultado. O que exige?",
+        "options": [
+          "Evidência do critério de aceitação e confirmação do responsável",
+          "A data do calendário basta para encerrar",
+          "O entusiasmo do cliente substitui a evidência"
+        ],
+        "feedback": "Encerrar exige evidência verificável do resultado. Uma data ou opinião não demonstra aceitação."
+      },
+      "fr": {
+        "prompt": "Expansion et découverte · Un responsable veut clôturer le livrable sans vérifier le résultat. Que demandez-vous ?",
+        "options": [
+          "Preuves du critère d’acceptation et confirmation du responsable",
+          "La date du calendrier suffit pour clôturer",
+          "L’enthousiasme du client remplace les preuves"
+        ],
+        "feedback": "La clôture exige des preuves vérifiables du résultat. Une date ou opinion ne démontre pas l’acceptation."
+      }
+    },
+    {
+      "es": {
+        "prompt": "Expansión y descubrimiento · Una nueva restricción invalida el supuesto del plan. ¿Qué cambias?",
+        "options": [
+          "Actualizo alternativas, impacto, responsable y próxima verificación",
+          "Conservo el plan aunque el supuesto sea falso",
+          "Oculto la restricción para no cambiar la promesa"
+        ],
+        "feedback": "Un cambio de supuesto puede cambiar la decisión. Conserva el historial y compara alternativas antes de comprometer una solución."
+      },
+      "en": {
+        "prompt": "Expansion and discovery · A new constraint invalidates a plan assumption. What do you change?",
+        "options": [
+          "Update alternatives, impact, owner and next verification",
+          "Keep the plan even when the assumption is false",
+          "Hide the constraint to avoid changing the promise"
+        ],
+        "feedback": "An assumption change may change the decision. Keep the history and compare alternatives before committing to a solution."
+      },
+      "pt": {
+        "prompt": "Expansão e descoberta · Uma nova restrição invalida uma premissa do plano. O que muda?",
+        "options": [
+          "Atualizo alternativas, impacto, responsável e próxima verificação",
+          "Mantenho o plano mesmo com a premissa falsa",
+          "Oculto a restrição para não alterar a promessa"
+        ],
+        "feedback": "Uma mudança de premissa pode mudar a decisão. Preserve o histórico e compare alternativas antes de comprometer uma solução."
+      },
+      "fr": {
+        "prompt": "Expansion et découverte · Une nouvelle contrainte invalide une hypothèse du plan. Que modifiez-vous ?",
+        "options": [
+          "Actualiser options, impact, responsable et prochaine vérification",
+          "Conserver le plan même si l’hypothèse est fausse",
+          "Masquer la contrainte pour conserver la promesse"
+        ],
+        "feedback": "Un changement d’hypothèse peut modifier la décision. Gardez l’historique et comparez les options avant d’engager une solution."
+      }
+    }
+  ],
+  [
+    {
+      "es": {
+        "prompt": "Voz del cliente y colaboración · Un responsable quiere cerrar el entregable sin comprobar el resultado. ¿Qué exiges?",
+        "options": [
+          "Evidencia del criterio de aceptación y confirmación del responsable",
+          "La fecha del calendario basta para cerrar",
+          "El entusiasmo del cliente sustituye la evidencia"
+        ],
+        "feedback": "Cerrar exige evidencia verificable del resultado. Una fecha o una opinión no demuestra aceptación."
+      },
+      "en": {
+        "prompt": "Customer voice and collaboration · An owner wants to close the deliverable without checking the outcome. What do you require?",
+        "options": [
+          "Evidence against acceptance criteria and confirmation by the owner",
+          "The calendar date is enough to close",
+          "Customer enthusiasm replaces evidence"
+        ],
+        "feedback": "Closure requires verifiable outcome evidence. A date or opinion does not demonstrate acceptance."
+      },
+      "pt": {
+        "prompt": "Voz do cliente e colaboração · Um responsável quer encerrar a entrega sem conferir o resultado. O que exige?",
+        "options": [
+          "Evidência do critério de aceitação e confirmação do responsável",
+          "A data do calendário basta para encerrar",
+          "O entusiasmo do cliente substitui a evidência"
+        ],
+        "feedback": "Encerrar exige evidência verificável do resultado. Uma data ou opinião não demonstra aceitação."
+      },
+      "fr": {
+        "prompt": "Voix du client et collaboration · Un responsable veut clôturer le livrable sans vérifier le résultat. Que demandez-vous ?",
+        "options": [
+          "Preuves du critère d’acceptation et confirmation du responsable",
+          "La date du calendrier suffit pour clôturer",
+          "L’enthousiasme du client remplace les preuves"
+        ],
+        "feedback": "La clôture exige des preuves vérifiables du résultat. Une date ou opinion ne démontre pas l’acceptation."
+      }
+    },
+    {
+      "es": {
+        "prompt": "Voz del cliente y colaboración · Una nueva restricción invalida el supuesto del plan. ¿Qué cambias?",
+        "options": [
+          "Actualizo alternativas, impacto, responsable y próxima verificación",
+          "Conservo el plan aunque el supuesto sea falso",
+          "Oculto la restricción para no cambiar la promesa"
+        ],
+        "feedback": "Un cambio de supuesto puede cambiar la decisión. Conserva el historial y compara alternativas antes de comprometer una solución."
+      },
+      "en": {
+        "prompt": "Customer voice and collaboration · A new constraint invalidates a plan assumption. What do you change?",
+        "options": [
+          "Update alternatives, impact, owner and next verification",
+          "Keep the plan even when the assumption is false",
+          "Hide the constraint to avoid changing the promise"
+        ],
+        "feedback": "An assumption change may change the decision. Keep the history and compare alternatives before committing to a solution."
+      },
+      "pt": {
+        "prompt": "Voz do cliente e colaboração · Uma nova restrição invalida uma premissa do plano. O que muda?",
+        "options": [
+          "Atualizo alternativas, impacto, responsável e próxima verificação",
+          "Mantenho o plano mesmo com a premissa falsa",
+          "Oculto a restrição para não alterar a promessa"
+        ],
+        "feedback": "Uma mudança de premissa pode mudar a decisão. Preserve o histórico e compare alternativas antes de comprometer uma solução."
+      },
+      "fr": {
+        "prompt": "Voix du client et collaboration · Une nouvelle contrainte invalide une hypothèse du plan. Que modifiez-vous ?",
+        "options": [
+          "Actualiser options, impact, responsable et prochaine vérification",
+          "Conserver le plan même si l’hypothèse est fausse",
+          "Masquer la contrainte pour conserver la promesse"
+        ],
+        "feedback": "Un changement d’hypothèse peut modifier la décision. Gardez l’historique et comparez les options avant d’engager une solution."
+      }
+    }
+  ],
+  [
+    {
+      "es": {
+        "prompt": "Supervisión y coaching · Un responsable quiere cerrar el entregable sin comprobar el resultado. ¿Qué exiges?",
+        "options": [
+          "Evidencia del criterio de aceptación y confirmación del responsable",
+          "La fecha del calendario basta para cerrar",
+          "El entusiasmo del cliente sustituye la evidencia"
+        ],
+        "feedback": "Cerrar exige evidencia verificable del resultado. Una fecha o una opinión no demuestra aceptación."
+      },
+      "en": {
+        "prompt": "Supervision and coaching · An owner wants to close the deliverable without checking the outcome. What do you require?",
+        "options": [
+          "Evidence against acceptance criteria and confirmation by the owner",
+          "The calendar date is enough to close",
+          "Customer enthusiasm replaces evidence"
+        ],
+        "feedback": "Closure requires verifiable outcome evidence. A date or opinion does not demonstrate acceptance."
+      },
+      "pt": {
+        "prompt": "Supervisão e coaching · Um responsável quer encerrar a entrega sem conferir o resultado. O que exige?",
+        "options": [
+          "Evidência do critério de aceitação e confirmação do responsável",
+          "A data do calendário basta para encerrar",
+          "O entusiasmo do cliente substitui a evidência"
+        ],
+        "feedback": "Encerrar exige evidência verificável do resultado. Uma data ou opinião não demonstra aceitação."
+      },
+      "fr": {
+        "prompt": "Supervision et coaching · Un responsable veut clôturer le livrable sans vérifier le résultat. Que demandez-vous ?",
+        "options": [
+          "Preuves du critère d’acceptation et confirmation du responsable",
+          "La date du calendrier suffit pour clôturer",
+          "L’enthousiasme du client remplace les preuves"
+        ],
+        "feedback": "La clôture exige des preuves vérifiables du résultat. Une date ou opinion ne démontre pas l’acceptation."
+      }
+    },
+    {
+      "es": {
+        "prompt": "Supervisión y coaching · Una nueva restricción invalida el supuesto del plan. ¿Qué cambias?",
+        "options": [
+          "Actualizo alternativas, impacto, responsable y próxima verificación",
+          "Conservo el plan aunque el supuesto sea falso",
+          "Oculto la restricción para no cambiar la promesa"
+        ],
+        "feedback": "Un cambio de supuesto puede cambiar la decisión. Conserva el historial y compara alternativas antes de comprometer una solución."
+      },
+      "en": {
+        "prompt": "Supervision and coaching · A new constraint invalidates a plan assumption. What do you change?",
+        "options": [
+          "Update alternatives, impact, owner and next verification",
+          "Keep the plan even when the assumption is false",
+          "Hide the constraint to avoid changing the promise"
+        ],
+        "feedback": "An assumption change may change the decision. Keep the history and compare alternatives before committing to a solution."
+      },
+      "pt": {
+        "prompt": "Supervisão e coaching · Uma nova restrição invalida uma premissa do plano. O que muda?",
+        "options": [
+          "Atualizo alternativas, impacto, responsável e próxima verificação",
+          "Mantenho o plano mesmo com a premissa falsa",
+          "Oculto a restrição para não alterar a promessa"
+        ],
+        "feedback": "Uma mudança de premissa pode mudar a decisão. Preserve o histórico e compare alternativas antes de comprometer uma solução."
+      },
+      "fr": {
+        "prompt": "Supervision et coaching · Une nouvelle contrainte invalide une hypothèse du plan. Que modifiez-vous ?",
+        "options": [
+          "Actualiser options, impact, responsable et prochaine vérification",
+          "Conserver le plan même si l’hypothèse est fausse",
+          "Masquer la contrainte pour conserver la promesse"
+        ],
+        "feedback": "Un changement d’hypothèse peut modifier la décision. Gardez l’historique et comparez les options avant d’engager une solution."
+      }
+    }
+  ],
+  [
+    {
+      "es": {
+        "prompt": "Gerencia de CS · Un responsable quiere cerrar el entregable sin comprobar el resultado. ¿Qué exiges?",
+        "options": [
+          "Evidencia del criterio de aceptación y confirmación del responsable",
+          "La fecha del calendario basta para cerrar",
+          "El entusiasmo del cliente sustituye la evidencia"
+        ],
+        "feedback": "Cerrar exige evidencia verificable del resultado. Una fecha o una opinión no demuestra aceptación."
+      },
+      "en": {
+        "prompt": "CS management · An owner wants to close the deliverable without checking the outcome. What do you require?",
+        "options": [
+          "Evidence against acceptance criteria and confirmation by the owner",
+          "The calendar date is enough to close",
+          "Customer enthusiasm replaces evidence"
+        ],
+        "feedback": "Closure requires verifiable outcome evidence. A date or opinion does not demonstrate acceptance."
+      },
+      "pt": {
+        "prompt": "Gestão de CS · Um responsável quer encerrar a entrega sem conferir o resultado. O que exige?",
+        "options": [
+          "Evidência do critério de aceitação e confirmação do responsável",
+          "A data do calendário basta para encerrar",
+          "O entusiasmo do cliente substitui a evidência"
+        ],
+        "feedback": "Encerrar exige evidência verificável do resultado. Uma data ou opinião não demonstra aceitação."
+      },
+      "fr": {
+        "prompt": "Gestion CS · Un responsable veut clôturer le livrable sans vérifier le résultat. Que demandez-vous ?",
+        "options": [
+          "Preuves du critère d’acceptation et confirmation du responsable",
+          "La date du calendrier suffit pour clôturer",
+          "L’enthousiasme du client remplace les preuves"
+        ],
+        "feedback": "La clôture exige des preuves vérifiables du résultat. Une date ou opinion ne démontre pas l’acceptation."
+      }
+    },
+    {
+      "es": {
+        "prompt": "Gerencia de CS · Una nueva restricción invalida el supuesto del plan. ¿Qué cambias?",
+        "options": [
+          "Actualizo alternativas, impacto, responsable y próxima verificación",
+          "Conservo el plan aunque el supuesto sea falso",
+          "Oculto la restricción para no cambiar la promesa"
+        ],
+        "feedback": "Un cambio de supuesto puede cambiar la decisión. Conserva el historial y compara alternativas antes de comprometer una solución."
+      },
+      "en": {
+        "prompt": "CS management · A new constraint invalidates a plan assumption. What do you change?",
+        "options": [
+          "Update alternatives, impact, owner and next verification",
+          "Keep the plan even when the assumption is false",
+          "Hide the constraint to avoid changing the promise"
+        ],
+        "feedback": "An assumption change may change the decision. Keep the history and compare alternatives before committing to a solution."
+      },
+      "pt": {
+        "prompt": "Gestão de CS · Uma nova restrição invalida uma premissa do plano. O que muda?",
+        "options": [
+          "Atualizo alternativas, impacto, responsável e próxima verificação",
+          "Mantenho o plano mesmo com a premissa falsa",
+          "Oculto a restrição para não alterar a promessa"
+        ],
+        "feedback": "Uma mudança de premissa pode mudar a decisão. Preserve o histórico e compare alternativas antes de comprometer uma solução."
+      },
+      "fr": {
+        "prompt": "Gestion CS · Une nouvelle contrainte invalide une hypothèse du plan. Que modifiez-vous ?",
+        "options": [
+          "Actualiser options, impact, responsable et prochaine vérification",
+          "Conserver le plan même si l’hypothèse est fausse",
+          "Masquer la contrainte pour conserver la promesse"
+        ],
+        "feedback": "Un changement d’hypothèse peut modifier la décision. Gardez l’historique et comparez les options avant d’engager une solution."
+      }
+    }
+  ],
+  [
+    {
+      "es": {
+        "prompt": "Dirección de CS · Un responsable quiere cerrar el entregable sin comprobar el resultado. ¿Qué exiges?",
+        "options": [
+          "Evidencia del criterio de aceptación y confirmación del responsable",
+          "La fecha del calendario basta para cerrar",
+          "El entusiasmo del cliente sustituye la evidencia"
+        ],
+        "feedback": "Cerrar exige evidencia verificable del resultado. Una fecha o una opinión no demuestra aceptación."
+      },
+      "en": {
+        "prompt": "CS leadership · An owner wants to close the deliverable without checking the outcome. What do you require?",
+        "options": [
+          "Evidence against acceptance criteria and confirmation by the owner",
+          "The calendar date is enough to close",
+          "Customer enthusiasm replaces evidence"
+        ],
+        "feedback": "Closure requires verifiable outcome evidence. A date or opinion does not demonstrate acceptance."
+      },
+      "pt": {
+        "prompt": "Direção de CS · Um responsável quer encerrar a entrega sem conferir o resultado. O que exige?",
+        "options": [
+          "Evidência do critério de aceitação e confirmação do responsável",
+          "A data do calendário basta para encerrar",
+          "O entusiasmo do cliente substitui a evidência"
+        ],
+        "feedback": "Encerrar exige evidência verificável do resultado. Uma data ou opinião não demonstra aceitação."
+      },
+      "fr": {
+        "prompt": "Direction CS · Un responsable veut clôturer le livrable sans vérifier le résultat. Que demandez-vous ?",
+        "options": [
+          "Preuves du critère d’acceptation et confirmation du responsable",
+          "La date du calendrier suffit pour clôturer",
+          "L’enthousiasme du client remplace les preuves"
+        ],
+        "feedback": "La clôture exige des preuves vérifiables du résultat. Une date ou opinion ne démontre pas l’acceptation."
+      }
+    },
+    {
+      "es": {
+        "prompt": "Dirección de CS · Una nueva restricción invalida el supuesto del plan. ¿Qué cambias?",
+        "options": [
+          "Actualizo alternativas, impacto, responsable y próxima verificación",
+          "Conservo el plan aunque el supuesto sea falso",
+          "Oculto la restricción para no cambiar la promesa"
+        ],
+        "feedback": "Un cambio de supuesto puede cambiar la decisión. Conserva el historial y compara alternativas antes de comprometer una solución."
+      },
+      "en": {
+        "prompt": "CS leadership · A new constraint invalidates a plan assumption. What do you change?",
+        "options": [
+          "Update alternatives, impact, owner and next verification",
+          "Keep the plan even when the assumption is false",
+          "Hide the constraint to avoid changing the promise"
+        ],
+        "feedback": "An assumption change may change the decision. Keep the history and compare alternatives before committing to a solution."
+      },
+      "pt": {
+        "prompt": "Direção de CS · Uma nova restrição invalida uma premissa do plano. O que muda?",
+        "options": [
+          "Atualizo alternativas, impacto, responsável e próxima verificação",
+          "Mantenho o plano mesmo com a premissa falsa",
+          "Oculto a restrição para não alterar a promessa"
+        ],
+        "feedback": "Uma mudança de premissa pode mudar a decisão. Preserve o histórico e compare alternativas antes de comprometer uma solução."
+      },
+      "fr": {
+        "prompt": "Direction CS · Une nouvelle contrainte invalide une hypothèse du plan. Que modifiez-vous ?",
+        "options": [
+          "Actualiser options, impact, responsable et prochaine vérification",
+          "Conserver le plan même si l’hypothèse est fausse",
+          "Masquer la contrainte pour conserver la promesse"
+        ],
+        "feedback": "Un changement d’hypothèse peut modifier la décision. Gardez l’historique et comparez les options avant d’engager une solution."
+      }
+    }
+  ]
+]

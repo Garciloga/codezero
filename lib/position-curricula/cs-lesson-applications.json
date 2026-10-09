@@ -1,0 +1,1382 @@
+[
+  {
+    "key": "position-cs-l1-1",
+    "rule": {
+      "es": "MRR suma contratos recurrentes; ARR = MRR × 12",
+      "en": "MRR sums recurring contracts; ARR = MRR × 12",
+      "pt": "MRR soma contratos recorrentes; ARR = MRR × 12",
+      "fr": "Le MRR additionne les contrats récurrents ; ARR = MRR × 12"
+    },
+    "evidence": {
+      "es": "Tabla de contratos, exclusiones y cálculo reproducible",
+      "en": "Contract table, exclusions and reproducible calculation",
+      "pt": "Tabela de contratos, exclusões e cálculo reproduzível",
+      "fr": "Table des contrats, exclusions et calcul reproductible"
+    }
+  },
+  {
+    "key": "position-cs-l1-2",
+    "rule": {
+      "es": "Churn de clientes = clientes perdidos / clientes iniciales",
+      "en": "Customer churn = lost customers / starting customers",
+      "pt": "Churn de clientes = clientes perdidos / clientes iniciais",
+      "fr": "Attrition clients = clients perdus / clients initiaux"
+    },
+    "evidence": {
+      "es": "Cohorte inicial y bajas del mismo periodo",
+      "en": "Starting cohort and losses in the same period",
+      "pt": "Coorte inicial e perdas no mesmo período",
+      "fr": "Cohorte initiale et départs sur la même période"
+    }
+  },
+  {
+    "key": "position-cs-l1-3",
+    "rule": {
+      "es": "Churn de ingresos usa ingreso perdido, no número de clientes",
+      "en": "Revenue churn uses lost revenue, not customer count",
+      "pt": "Churn de receita usa receita perdida, não quantidade de clientes",
+      "fr": "L’attrition de revenus utilise le revenu perdu, pas le nombre de clients"
+    },
+    "evidence": {
+      "es": "Ingreso inicial, cancelaciones y contracción separadas",
+      "en": "Starting revenue, cancellations and contraction separately",
+      "pt": "Receita inicial, cancelamentos e contração separados",
+      "fr": "Revenu initial, annulations et contraction séparés"
+    }
+  },
+  {
+    "key": "position-cs-l1-4",
+    "rule": {
+      "es": "NRR = (ingreso inicial − bajas − contracción + expansión) / ingreso inicial",
+      "en": "NRR = (starting revenue − churn − contraction + expansion) / starting revenue",
+      "pt": "NRR = (receita inicial − perdas − contração + expansão) / receita inicial",
+      "fr": "NRR = (revenu initial − départs − contraction + expansion) / revenu initial"
+    },
+    "evidence": {
+      "es": "Cohorte constante; nuevos clientes excluidos de la retención",
+      "en": "Constant cohort; new customers excluded from retention",
+      "pt": "Coorte constante; novos clientes excluídos da retenção",
+      "fr": "Cohorte constante ; nouveaux clients exclus de la rétention"
+    }
+  },
+  {
+    "key": "position-cs-l1-5",
+    "rule": {
+      "es": "Actividad y resultado de negocio se miden por separado",
+      "en": "Activity and business outcome are measured separately",
+      "pt": "Atividade e resultado de negócio são medidos separadamente",
+      "fr": "L’activité et le résultat métier se mesurent séparément"
+    },
+    "evidence": {
+      "es": "Uso por tarea y cambio observable del resultado",
+      "en": "Task usage and observable change in outcome",
+      "pt": "Uso por tarefa e mudança observável no resultado",
+      "fr": "Usage par tâche et évolution observable du résultat"
+    }
+  },
+  {
+    "key": "position-cs-l1-6",
+    "rule": {
+      "es": "CS coordina valor y riesgos; no promete capacidades sin validar",
+      "en": "CS coordinates value and risk; it verifies capabilities before promising",
+      "pt": "CS coordena valor e riscos; valida capacidades antes de prometer",
+      "fr": "Le CS coordonne valeur et risques ; il vérifie les capacités avant de promettre"
+    },
+    "evidence": {
+      "es": "Responsable por resultado, límite de autoridad y escalación",
+      "en": "Outcome owner, authority boundary and escalation",
+      "pt": "Responsável pelo resultado, limite de autoridade e escalação",
+      "fr": "Responsable du résultat, limite d’autorité et escalade"
+    }
+  },
+  {
+    "key": "position-cs-l2-1",
+    "rule": {
+      "es": "La etapa depende de evidencia de avance, no antigüedad",
+      "en": "Stage depends on progress evidence, not account age",
+      "pt": "A etapa depende de evidências de avanço, não da idade da conta",
+      "fr": "L’étape dépend des preuves d’avancement, pas de l’ancienneté"
+    },
+    "evidence": {
+      "es": "Criterio de entrada, salida y siguiente responsable",
+      "en": "Entry and exit criteria and next owner",
+      "pt": "Critérios de entrada, saída e próximo responsável",
+      "fr": "Critères d’entrée, de sortie et prochain responsable"
+    }
+  },
+  {
+    "key": "position-cs-l2-2",
+    "rule": {
+      "es": "Clasifica promesas como confirmadas, pendientes o fuera de alcance",
+      "en": "Classify promises as confirmed, pending or out of scope",
+      "pt": "Classifique promessas como confirmadas, pendentes ou fora do escopo",
+      "fr": "Classez les promesses : confirmées, en attente ou hors périmètre"
+    },
+    "evidence": {
+      "es": "Promesa, fuente contractual y dueño de validación",
+      "en": "Promise, contractual source and validation owner",
+      "pt": "Promessa, fonte contratual e responsável pela validação",
+      "fr": "Promesse, source contractuelle et responsable de validation"
+    }
+  },
+  {
+    "key": "position-cs-l2-3",
+    "rule": {
+      "es": "Cambiar alcance exige evaluar impacto y obtener aprobación",
+      "en": "Changing scope requires impact assessment and approval",
+      "pt": "Mudar o escopo exige avaliar impacto e obter aprovação",
+      "fr": "Modifier le périmètre exige une analyse d’impact et une approbation"
+    },
+    "evidence": {
+      "es": "Incluido, excluido, impacto y aprobador identificado",
+      "en": "Inclusions, exclusions, impact and named approver",
+      "pt": "Itens incluídos, excluídos, impacto e aprovador identificado",
+      "fr": "Inclusions, exclusions, impact et approbateur identifié"
+    }
+  },
+  {
+    "key": "position-cs-l2-4",
+    "rule": {
+      "es": "Una dependencia pendiente necesita dueño, fecha y alternativa",
+      "en": "A pending dependency needs an owner, date and alternative",
+      "pt": "Uma dependência pendente precisa de responsável, data e alternativa",
+      "fr": "Une dépendance en attente nécessite responsable, date et alternative"
+    },
+    "evidence": {
+      "es": "Registro de bloqueos con condición de escalación",
+      "en": "Blocker register with escalation condition",
+      "pt": "Registro de bloqueios com condição de escalação",
+      "fr": "Registre des blocages avec condition d’escalade"
+    }
+  },
+  {
+    "key": "position-cs-l2-5",
+    "rule": {
+      "es": "El handoff conserva decisiones, fuentes y vacíos explícitos",
+      "en": "The handoff preserves decisions, sources and explicit gaps",
+      "pt": "O handoff preserva decisões, fontes e lacunas explícitas",
+      "fr": "La passation conserve décisions, sources et lacunes explicites"
+    },
+    "evidence": {
+      "es": "Checklist con fuentes y preguntas aún abiertas",
+      "en": "Checklist with sources and unresolved questions",
+      "pt": "Checklist com fontes e perguntas ainda abertas",
+      "fr": "Checklist avec sources et questions encore ouvertes"
+    }
+  },
+  {
+    "key": "position-cs-l2-6",
+    "rule": {
+      "es": "Enviar información no demuestra aceptación del traspaso",
+      "en": "Sending information does not prove handoff acceptance",
+      "pt": "Enviar informações não comprova a aceitação do handoff",
+      "fr": "L’envoi d’informations ne prouve pas l’acceptation de la passation"
+    },
+    "evidence": {
+      "es": "Confirmación del receptor y pendientes aceptados",
+      "en": "Recipient confirmation and acknowledged open items",
+      "pt": "Confirmação do destinatário e pendências reconhecidas",
+      "fr": "Confirmation du destinataire et points ouverts reconnus"
+    }
+  },
+  {
+    "key": "position-cs-l3-1",
+    "rule": {
+      "es": "La agenda de kickoff cierra decisiones y asigna responsables",
+      "en": "The kickoff agenda closes decisions and assigns owners",
+      "pt": "A agenda de kickoff fecha decisões e atribui responsáveis",
+      "fr": "L’ordre du jour de lancement clôt les décisions et désigne les responsables"
+    },
+    "evidence": {
+      "es": "Agenda con resultado esperado por punto",
+      "en": "Agenda with expected outcome for each item",
+      "pt": "Agenda com resultado esperado por item",
+      "fr": "Ordre du jour avec résultat attendu pour chaque point"
+    }
+  },
+  {
+    "key": "position-cs-l3-2",
+    "rule": {
+      "es": "Permisos mínimos por tarea; nunca compartir credenciales",
+      "en": "Minimum permissions per task; never share credentials",
+      "pt": "Permissões mínimas por tarefa; nunca compartilhe credenciais",
+      "fr": "Droits minimaux par tâche ; ne partagez jamais les identifiants"
+    },
+    "evidence": {
+      "es": "Matriz tarea-permiso y prueba de acceso permitido y denegado",
+      "en": "Task-permission matrix and allowed and denied access tests",
+      "pt": "Matriz tarefa-permissão e testes de acesso permitido e negado",
+      "fr": "Matrice tâche-droit et tests d’accès autorisé et refusé"
+    }
+  },
+  {
+    "key": "position-cs-l3-3",
+    "rule": {
+      "es": "Conciliar filas, claves y errores antes de aceptar importación",
+      "en": "Reconcile rows, keys and errors before accepting an import",
+      "pt": "Concilie linhas, chaves e erros antes de aceitar a importação",
+      "fr": "Rapprochez lignes, clés et erreurs avant d’accepter l’import"
+    },
+    "evidence": {
+      "es": "Conteos antes y después, duplicados y rechazos trazables",
+      "en": "Before and after counts, duplicates and traceable rejects",
+      "pt": "Contagens antes e depois, duplicatas e rejeições rastreáveis",
+      "fr": "Comptages avant et après, doublons et rejets traçables"
+    }
+  },
+  {
+    "key": "position-cs-l3-4",
+    "rule": {
+      "es": "La capacitación verifica una tarea, no asistencia solamente",
+      "en": "Training verifies task completion, not attendance alone",
+      "pt": "A capacitação verifica uma tarefa, não apenas presença",
+      "fr": "La formation vérifie une tâche, pas seulement la présence"
+    },
+    "evidence": {
+      "es": "Guion de tarea y demostración del usuario sin ayuda",
+      "en": "Task script and unaided user demonstration",
+      "pt": "Roteiro da tarefa e demonstração do usuário sem ajuda",
+      "fr": "Guide de tâche et démonstration autonome de l’utilisateur"
+    }
+  },
+  {
+    "key": "position-cs-l3-5",
+    "rule": {
+      "es": "Primer valor exige resultado, fuente y aceptación del cliente",
+      "en": "First value requires an outcome, source and customer acceptance",
+      "pt": "Primeiro valor exige resultado, fonte e aceitação do cliente",
+      "fr": "La première valeur exige résultat, source et acceptation client"
+    },
+    "evidence": {
+      "es": "Criterio observable y registro de aceptación",
+      "en": "Observable criterion and acceptance record",
+      "pt": "Critério observável e registro de aceitação",
+      "fr": "Critère observable et trace d’acceptation"
+    }
+  },
+  {
+    "key": "position-cs-l3-6",
+    "rule": {
+      "es": "El onboarding termina con aceptación y continuidad asignada",
+      "en": "Onboarding ends with acceptance and assigned continuity",
+      "pt": "O onboarding termina com aceitação e continuidade atribuída",
+      "fr": "L’intégration se termine par l’acceptation et une continuité attribuée"
+    },
+    "evidence": {
+      "es": "Acta de cierre, pendientes y receptor de operación",
+      "en": "Closure record, open items and operations recipient",
+      "pt": "Ata de encerramento, pendências e destinatário da operação",
+      "fr": "Compte rendu de clôture, points ouverts et relais opérationnel"
+    }
+  },
+  {
+    "key": "position-cs-l4-1",
+    "rule": {
+      "es": "Comunica impacto, incertidumbre y próxima actualización controlable",
+      "en": "Communicate impact, uncertainty and the next controllable update",
+      "pt": "Comunique impacto, incerteza e próxima atualização controlável",
+      "fr": "Communiquez impact, incertitude et prochaine mise à jour maîtrisable"
+    },
+    "evidence": {
+      "es": "Correo con evidencia, responsable y hora de actualización",
+      "en": "Email with evidence, owner and update time",
+      "pt": "E-mail com evidência, responsável e horário de atualização",
+      "fr": "Courriel avec preuve, responsable et heure de mise à jour"
+    }
+  },
+  {
+    "key": "position-cs-l4-2",
+    "rule": {
+      "es": "Una llamada de seguimiento debe terminar en acuerdos verificables",
+      "en": "A follow-up call must end in verifiable agreements",
+      "pt": "Uma chamada de acompanhamento deve terminar em acordos verificáveis",
+      "fr": "Un appel de suivi doit aboutir à des accords vérifiables"
+    },
+    "evidence": {
+      "es": "Acta con decisión, dueño y siguiente comprobación",
+      "en": "Minutes with decision, owner and next check",
+      "pt": "Ata com decisão, responsável e próxima verificação",
+      "fr": "Compte rendu avec décision, responsable et prochaine vérification"
+    }
+  },
+  {
+    "key": "position-cs-l4-3",
+    "rule": {
+      "es": "Confirma comprensión con el receptor antes de asumir acuerdo",
+      "en": "Confirm understanding with the recipient before assuming agreement",
+      "pt": "Confirme o entendimento com o destinatário antes de presumir acordo",
+      "fr": "Confirmez la compréhension du destinataire avant de supposer un accord"
+    },
+    "evidence": {
+      "es": "Paráfrasis confirmada y diferencias registradas",
+      "en": "Confirmed paraphrase and recorded differences",
+      "pt": "Paráfrase confirmada e diferenças registradas",
+      "fr": "Reformulation confirmée et divergences consignées"
+    }
+  },
+  {
+    "key": "position-cs-l4-4",
+    "rule": {
+      "es": "En conflicto separa hechos, intereses y límites de autoridad",
+      "en": "In conflict separate facts, interests and authority boundaries",
+      "pt": "No conflito separe fatos, interesses e limites de autoridade",
+      "fr": "En conflit, séparez faits, intérêts et limites d’autorité"
+    },
+    "evidence": {
+      "es": "Guion de conversación con opciones y límites explícitos",
+      "en": "Conversation script with options and explicit boundaries",
+      "pt": "Roteiro de conversa com opções e limites explícitos",
+      "fr": "Guide d’entretien avec options et limites explicites"
+    }
+  },
+  {
+    "key": "position-cs-l4-5",
+    "rule": {
+      "es": "Promete solo acciones bajo tu control; distingue actualización de solución",
+      "en": "Promise only controlled actions; distinguish update from resolution",
+      "pt": "Prometa apenas ações sob seu controle; diferencie atualização de solução",
+      "fr": "Promettez uniquement des actions maîtrisées ; distinguez mise à jour et résolution"
+    },
+    "evidence": {
+      "es": "Lista de compromisos confirmados y pendientes",
+      "en": "List of confirmed and pending commitments",
+      "pt": "Lista de compromissos confirmados e pendentes",
+      "fr": "Liste des engagements confirmés et en attente"
+    }
+  },
+  {
+    "key": "position-cs-l4-6",
+    "rule": {
+      "es": "El resumen ejecutivo permite decidir sin ocultar límites",
+      "en": "An executive summary enables a decision without hiding limitations",
+      "pt": "O resumo executivo permite decidir sem ocultar limites",
+      "fr": "Une synthèse de direction permet de décider sans masquer les limites"
+    },
+    "evidence": {
+      "es": "Impacto, alternativas, recomendación y decisión solicitada",
+      "en": "Impact, alternatives, recommendation and requested decision",
+      "pt": "Impacto, alternativas, recomendação e decisão solicitada",
+      "fr": "Impact, alternatives, recommandation et décision demandée"
+    }
+  },
+  {
+    "key": "position-cs-l5-1",
+    "rule": {
+      "es": "Usuarios activos se cuentan sobre habilitados en igual ventana",
+      "en": "Active users are counted against enabled users in the same window",
+      "pt": "Usuários ativos são contados sobre habilitados na mesma janela",
+      "fr": "Les utilisateurs actifs se rapportent aux utilisateurs habilités sur la même période"
+    },
+    "evidence": {
+      "es": "Usuarios únicos, denominador y ventana explícitos",
+      "en": "Unique users, explicit denominator and window",
+      "pt": "Usuários únicos, denominador e janela explícitos",
+      "fr": "Utilisateurs uniques, dénominateur et période explicites"
+    }
+  },
+  {
+    "key": "position-cs-l5-2",
+    "rule": {
+      "es": "El flujo de valor conecta uso con un resultado verificable",
+      "en": "A value workflow connects usage with a verifiable outcome",
+      "pt": "O fluxo de valor conecta uso a um resultado verificável",
+      "fr": "Le flux de valeur relie l’usage à un résultat vérifiable"
+    },
+    "evidence": {
+      "es": "Mapa de tarea, resultado y fuente de verificación",
+      "en": "Task, outcome and verification-source map",
+      "pt": "Mapa de tarefa, resultado e fonte de verificação",
+      "fr": "Carte de la tâche, du résultat et de la source de vérification"
+    }
+  },
+  {
+    "key": "position-cs-l5-3",
+    "rule": {
+      "es": "Investiga barreras antes de prescribir más capacitación",
+      "en": "Investigate barriers before prescribing more training",
+      "pt": "Investigue barreiras antes de prescrever mais capacitação",
+      "fr": "Étudiez les obstacles avant de prescrire davantage de formation"
+    },
+    "evidence": {
+      "es": "Barrera, hipótesis, prueba controlada y resultado",
+      "en": "Barrier, hypothesis, controlled test and result",
+      "pt": "Barreira, hipótese, teste controlado e resultado",
+      "fr": "Obstacle, hypothèse, test contrôlé et résultat"
+    }
+  },
+  {
+    "key": "position-cs-l5-4",
+    "rule": {
+      "es": "Salud combina señales definidas; no sustituye diagnóstico",
+      "en": "Health combines defined signals; it does not replace diagnosis",
+      "pt": "Saúde combina sinais definidos; não substitui diagnóstico",
+      "fr": "La santé combine des signaux définis ; elle ne remplace pas le diagnostic"
+    },
+    "evidence": {
+      "es": "Definiciones, límites y acciones por señal",
+      "en": "Definitions, limitations and actions for each signal",
+      "pt": "Definições, limites e ações por sinal",
+      "fr": "Définitions, limites et actions par signal"
+    }
+  },
+  {
+    "key": "position-cs-l5-5",
+    "rule": {
+      "es": "Compara ventanas y poblaciones equivalentes antes de atribuir mejora",
+      "en": "Compare equivalent windows and populations before attributing improvement",
+      "pt": "Compare janelas e populações equivalentes antes de atribuir melhoria",
+      "fr": "Comparez périodes et populations équivalentes avant d’attribuer une amélioration"
+    },
+    "evidence": {
+      "es": "Inicio, fin, población, faltantes y límites de comparación",
+      "en": "Start, end, population, missing data and comparison limits",
+      "pt": "Início, fim, população, dados ausentes e limites da comparação",
+      "fr": "Début, fin, population, données manquantes et limites de comparaison"
+    }
+  },
+  {
+    "key": "position-cs-l5-6",
+    "rule": {
+      "es": "Una intervención necesita línea base, prueba y criterio de abandono",
+      "en": "An intervention needs a baseline, test and stop criterion",
+      "pt": "Uma intervenção precisa de linha de base, teste e critério de interrupção",
+      "fr": "Une intervention nécessite référence, test et critère d’arrêt"
+    },
+    "evidence": {
+      "es": "Experimento con responsable, fecha y resultado esperado",
+      "en": "Experiment with owner, date and expected outcome",
+      "pt": "Experimento com responsável, data e resultado esperado",
+      "fr": "Expérience avec responsable, date et résultat attendu"
+    }
+  },
+  {
+    "key": "position-cs-l6-1",
+    "rule": {
+      "es": "El CRM conserva fuente, dueño y estado de cada compromiso",
+      "en": "The CRM retains source, owner and status for each commitment",
+      "pt": "O CRM conserva fonte, responsável e estado de cada compromisso",
+      "fr": "Le CRM conserve source, responsable et état de chaque engagement"
+    },
+    "evidence": {
+      "es": "Ficha actualizable sin duplicar datos personales innecesarios",
+      "en": "Maintainable record without unnecessary personal-data duplication",
+      "pt": "Ficha atualizável sem duplicar dados pessoais desnecessários",
+      "fr": "Fiche actualisable sans duplication inutile de données personnelles"
+    }
+  },
+  {
+    "key": "position-cs-l6-2",
+    "rule": {
+      "es": "Un ticket permite reproducir el problema sin exponer secretos",
+      "en": "A ticket enables reproduction without exposing secrets",
+      "pt": "Um ticket permite reproduzir o problema sem expor segredos",
+      "fr": "Un ticket permet de reproduire le problème sans exposer de secrets"
+    },
+    "evidence": {
+      "es": "Pasos, ambiente, impacto y registros redactados",
+      "en": "Steps, environment, impact and redacted logs",
+      "pt": "Passos, ambiente, impacto e registros sanitizados",
+      "fr": "Étapes, environnement, impact et journaux expurgés"
+    }
+  },
+  {
+    "key": "position-cs-l6-3",
+    "rule": {
+      "es": "El tablero muestra decisiones pendientes, responsables y riesgo",
+      "en": "The dashboard shows pending decisions, owners and risk",
+      "pt": "O painel mostra decisões pendentes, responsáveis e risco",
+      "fr": "Le tableau montre décisions en attente, responsables et risques"
+    },
+    "evidence": {
+      "es": "Vista de cartera con fechas, fuentes y estado de acción",
+      "en": "Portfolio view with dates, sources and action status",
+      "pt": "Visão da carteira com datas, fontes e estado da ação",
+      "fr": "Vue de portefeuille avec dates, sources et état des actions"
+    }
+  },
+  {
+    "key": "position-cs-l6-4",
+    "rule": {
+      "es": "Cada métrica define fórmula, unidad, población y ventana",
+      "en": "Each metric defines formula, unit, population and window",
+      "pt": "Cada métrica define fórmula, unidade, população e janela",
+      "fr": "Chaque métrique définit formule, unité, population et période"
+    },
+    "evidence": {
+      "es": "Diccionario con cálculo manual de un ejemplo",
+      "en": "Dictionary with a manually calculated example",
+      "pt": "Dicionário com cálculo manual de um exemplo",
+      "fr": "Dictionnaire avec calcul manuel d’un exemple"
+    }
+  },
+  {
+    "key": "position-cs-l6-5",
+    "rule": {
+      "es": "Duplicados y faltantes requieren reglas explícitas; faltante no es cero",
+      "en": "Duplicates and missing values require explicit rules; missing is not zero",
+      "pt": "Duplicatas e ausências exigem regras explícitas; ausente não é zero",
+      "fr": "Doublons et valeurs manquantes exigent des règles explicites ; absent n’est pas zéro"
+    },
+    "evidence": {
+      "es": "Informe antes y después de cada regla de limpieza",
+      "en": "Before and after report for each cleaning rule",
+      "pt": "Relatório antes e depois de cada regra de limpeza",
+      "fr": "Rapport avant et après chaque règle de nettoyage"
+    }
+  },
+  {
+    "key": "position-cs-l6-6",
+    "rule": {
+      "es": "El traspaso entre sistemas preserva identificador y conciliación",
+      "en": "A handoff between systems preserves identifiers and reconciliation",
+      "pt": "A transferência entre sistemas preserva identificador e conciliação",
+      "fr": "Le transfert entre systèmes préserve identifiants et rapprochement"
+    },
+    "evidence": {
+      "es": "Mapa de campos, dueño y prueba de conciliación",
+      "en": "Field map, owner and reconciliation test",
+      "pt": "Mapa de campos, responsável e teste de conciliação",
+      "fr": "Correspondance des champs, responsable et test de rapprochement"
+    }
+  },
+  {
+    "key": "position-cs-l7-1",
+    "rule": {
+      "es": "La segmentación combina necesidad, complejidad y capacidad",
+      "en": "Segmentation combines need, complexity and capacity",
+      "pt": "A segmentação combina necessidade, complexidade e capacidade",
+      "fr": "La segmentation combine besoin, complexité et capacité"
+    },
+    "evidence": {
+      "es": "Reglas de cobertura y excepciones justificadas",
+      "en": "Coverage rules and justified exceptions",
+      "pt": "Regras de cobertura e exceções justificadas",
+      "fr": "Règles de couverture et exceptions justifiées"
+    }
+  },
+  {
+    "key": "position-cs-l7-2",
+    "rule": {
+      "es": "Prioridad combina impacto, urgencia, alternativa y dependencia",
+      "en": "Priority combines impact, urgency, workaround and dependency",
+      "pt": "Prioridade combina impacto, urgência, alternativa e dependência",
+      "fr": "La priorité combine impact, urgence, solution temporaire et dépendance"
+    },
+    "evidence": {
+      "es": "Orden de trabajo con argumentos y revisión",
+      "en": "Work order with rationale and review",
+      "pt": "Ordem de trabalho com justificativa e revisão",
+      "fr": "Ordre de travail argumenté et révisable"
+    }
+  },
+  {
+    "key": "position-cs-l7-3",
+    "rule": {
+      "es": "Capacidad y demanda deben usar la misma unidad y periodo",
+      "en": "Capacity and demand must use the same unit and period",
+      "pt": "Capacidade e demanda devem usar a mesma unidade e período",
+      "fr": "Capacité et demande utilisent la même unité et période"
+    },
+    "evidence": {
+      "es": "Horas disponibles, esfuerzo estimado y trabajo desplazado",
+      "en": "Available hours, estimated effort and displaced work",
+      "pt": "Horas disponíveis, esforço estimado e trabalho deslocado",
+      "fr": "Heures disponibles, effort estimé et travail reporté"
+    }
+  },
+  {
+    "key": "position-cs-l7-4",
+    "rule": {
+      "es": "Una dependencia de cartera requiere dueño y señal de desbloqueo",
+      "en": "A portfolio dependency needs an owner and an unblock signal",
+      "pt": "Uma dependência da carteira precisa de responsável e sinal de desbloqueio",
+      "fr": "Une dépendance de portefeuille nécessite responsable et signal de déblocage"
+    },
+    "evidence": {
+      "es": "Mapa de dependencias y alternativa si falla",
+      "en": "Dependency map and fallback if it fails",
+      "pt": "Mapa de dependências e alternativa em caso de falha",
+      "fr": "Carte des dépendances et solution de repli"
+    }
+  },
+  {
+    "key": "position-cs-l7-5",
+    "rule": {
+      "es": "Los contactos se priorizan por decisión necesaria y riesgo",
+      "en": "Contacts are prioritized by needed decision and risk",
+      "pt": "Contatos são priorizados pela decisão necessária e risco",
+      "fr": "Les contacts sont priorisés selon la décision nécessaire et le risque"
+    },
+    "evidence": {
+      "es": "Plan de contacto con propósito, actor y siguiente paso",
+      "en": "Contact plan with purpose, stakeholder and next step",
+      "pt": "Plano de contato com propósito, ator e próximo passo",
+      "fr": "Plan de contact avec objectif, interlocuteur et prochaine étape"
+    }
+  },
+  {
+    "key": "position-cs-l7-6",
+    "rule": {
+      "es": "Revisa carga antes de incorporar un compromiso nuevo",
+      "en": "Review workload before accepting a new commitment",
+      "pt": "Revise a carga antes de incorporar um novo compromisso",
+      "fr": "Examinez la charge avant d’accepter un nouvel engagement"
+    },
+    "evidence": {
+      "es": "Compromisos, límites de trabajo y replanificación",
+      "en": "Commitments, work limits and replanning",
+      "pt": "Compromissos, limites de trabalho e replanejamento",
+      "fr": "Engagements, limites de travail et replanification"
+    }
+  },
+  {
+    "key": "position-cs-l8-1",
+    "rule": {
+      "es": "El objetivo describe un resultado acordado, no una función",
+      "en": "The goal describes an agreed outcome, not a feature",
+      "pt": "O objetivo descreve um resultado acordado, não uma funcionalidade",
+      "fr": "L’objectif décrit un résultat convenu, pas une fonctionnalité"
+    },
+    "evidence": {
+      "es": "Objetivo y aceptación explícita del sponsor",
+      "en": "Goal and explicit sponsor acceptance",
+      "pt": "Objetivo e aceitação explícita do sponsor",
+      "fr": "Objectif et acceptation explicite du sponsor"
+    }
+  },
+  {
+    "key": "position-cs-l8-2",
+    "rule": {
+      "es": "Distingue línea base observada de meta todavía propuesta",
+      "en": "Distinguish observed baseline from a still-proposed target",
+      "pt": "Diferencie linha de base observada de meta ainda proposta",
+      "fr": "Distinguez référence observée et cible encore proposée"
+    },
+    "evidence": {
+      "es": "Tabla de base, meta, fuente y estado de acuerdo",
+      "en": "Baseline, target, source and agreement-status table",
+      "pt": "Tabela de base, meta, fonte e estado do acordo",
+      "fr": "Table de référence, cible, source et état de l’accord"
+    }
+  },
+  {
+    "key": "position-cs-l8-3",
+    "rule": {
+      "es": "Un plan conecta resultado, acción, responsable y verificación",
+      "en": "A plan connects outcome, action, owner and verification",
+      "pt": "Um plano conecta resultado, ação, responsável e verificação",
+      "fr": "Un plan relie résultat, action, responsable et vérification"
+    },
+    "evidence": {
+      "es": "Plan de éxito con dependencias y revisión",
+      "en": "Success plan with dependencies and review",
+      "pt": "Plano de sucesso com dependências e revisão",
+      "fr": "Plan de réussite avec dépendances et revue"
+    }
+  },
+  {
+    "key": "position-cs-l8-4",
+    "rule": {
+      "es": "La QBR se organiza por resultados y decisiones del cliente",
+      "en": "A QBR is organized around customer outcomes and decisions",
+      "pt": "A QBR se organiza por resultados e decisões do cliente",
+      "fr": "Une QBR s’organise autour des résultats et décisions du client"
+    },
+    "evidence": {
+      "es": "Agenda con evidencia, brechas y decisiones solicitadas",
+      "en": "Agenda with evidence, gaps and requested decisions",
+      "pt": "Agenda com evidências, lacunas e decisões solicitadas",
+      "fr": "Ordre du jour avec preuves, écarts et décisions demandées"
+    }
+  },
+  {
+    "key": "position-cs-l8-5",
+    "rule": {
+      "es": "Una brecha necesita alternativas comparables y límites explícitos",
+      "en": "A gap needs comparable alternatives and explicit limitations",
+      "pt": "Uma lacuna exige alternativas comparáveis e limites explícitos",
+      "fr": "Un écart nécessite alternatives comparables et limites explicites"
+    },
+    "evidence": {
+      "es": "Dos alternativas con esfuerzo, riesgo y aceptación",
+      "en": "Two alternatives with effort, risk and acceptance",
+      "pt": "Duas alternativas com esforço, risco e aceitação",
+      "fr": "Deux alternatives avec effort, risque et acceptation"
+    }
+  },
+  {
+    "key": "position-cs-l8-6",
+    "rule": {
+      "es": "Una decisión queda abierta hasta confirmar dueño y seguimiento",
+      "en": "A decision stays open until owner and follow-up are confirmed",
+      "pt": "Uma decisão permanece aberta até confirmar responsável e acompanhamento",
+      "fr": "Une décision reste ouverte jusqu’à confirmation du responsable et du suivi"
+    },
+    "evidence": {
+      "es": "Acta de decisiones, responsables y próxima verificación",
+      "en": "Decision record, owners and next verification",
+      "pt": "Ata de decisões, responsáveis e próxima verificação",
+      "fr": "Registre des décisions, responsables et prochaine vérification"
+    }
+  },
+  {
+    "key": "position-cs-l9-1",
+    "rule": {
+      "es": "Una señal de riesgo no prueba intención de abandono",
+      "en": "A risk signal does not prove intent to leave",
+      "pt": "Um sinal de risco não comprova intenção de abandonar",
+      "fr": "Un signal de risque ne prouve pas l’intention de partir"
+    },
+    "evidence": {
+      "es": "Señal, hipótesis, fuente y prueba pendiente",
+      "en": "Signal, hypothesis, source and pending test",
+      "pt": "Sinal, hipótese, fonte e teste pendente",
+      "fr": "Signal, hypothèse, source et test en attente"
+    }
+  },
+  {
+    "key": "position-cs-l9-2",
+    "rule": {
+      "es": "Un sponsor nuevo requiere validar objetivos y autoridad",
+      "en": "A new sponsor requires revalidation of goals and authority",
+      "pt": "Um novo sponsor exige validar objetivos e autoridade",
+      "fr": "Un nouveau sponsor nécessite la validation des objectifs et de l’autorité"
+    },
+    "evidence": {
+      "es": "Mapa de actores actualizado y preguntas abiertas",
+      "en": "Updated stakeholder map and open questions",
+      "pt": "Mapa de atores atualizado e perguntas abertas",
+      "fr": "Carte des acteurs actualisée et questions ouvertes"
+    }
+  },
+  {
+    "key": "position-cs-l9-3",
+    "rule": {
+      "es": "Contrasta hipótesis de abandono con evidencia que pueda refutarlas",
+      "en": "Test churn hypotheses against evidence that can refute them",
+      "pt": "Confronte hipóteses de abandono com evidências que possam refutá-las",
+      "fr": "Confrontez les hypothèses de départ à des preuves pouvant les réfuter"
+    },
+    "evidence": {
+      "es": "Hipótesis, prueba, resultado y diagnóstico revisado",
+      "en": "Hypothesis, test, result and revised diagnosis",
+      "pt": "Hipótese, teste, resultado e diagnóstico revisado",
+      "fr": "Hypothèse, test, résultat et diagnostic révisé"
+    }
+  },
+  {
+    "key": "position-cs-l9-4",
+    "rule": {
+      "es": "Un rescate necesita acción acotada, aceptación y fecha de revisión",
+      "en": "A rescue needs bounded action, acceptance and a review date",
+      "pt": "Um resgate precisa de ação limitada, aceitação e data de revisão",
+      "fr": "Un redressement nécessite action délimitée, acceptation et date de revue"
+    },
+    "evidence": {
+      "es": "Plan de rescate con dueño y alternativa reversible",
+      "en": "Rescue plan with owner and reversible alternative",
+      "pt": "Plano de resgate com responsável e alternativa reversível",
+      "fr": "Plan de redressement avec responsable et alternative réversible"
+    }
+  },
+  {
+    "key": "position-cs-l9-5",
+    "rule": {
+      "es": "Escalar pide una decisión concreta y transmite pruebas realizadas",
+      "en": "Escalation requests a specific decision and passes completed tests",
+      "pt": "Escalar solicita uma decisão concreta e transmite testes realizados",
+      "fr": "Une escalade demande une décision précise et transmet les tests effectués"
+    },
+    "evidence": {
+      "es": "Paquete de escalación con impacto, evidencia y petición",
+      "en": "Escalation packet with impact, evidence and request",
+      "pt": "Pacote de escalação com impacto, evidências e solicitação",
+      "fr": "Dossier d’escalade avec impact, preuves et demande"
+    }
+  },
+  {
+    "key": "position-cs-l9-6",
+    "rule": {
+      "es": "Recuperación exige repetir la tarea y confirmar aceptación",
+      "en": "Recovery requires repeating the task and confirming acceptance",
+      "pt": "Recuperação exige repetir a tarefa e confirmar aceitação",
+      "fr": "La reprise exige de répéter la tâche et de confirmer l’acceptation"
+    },
+    "evidence": {
+      "es": "Prueba posterior, resultado del usuario y riesgos residuales",
+      "en": "Post-change test, user outcome and residual risks",
+      "pt": "Teste posterior, resultado do usuário e riscos residuais",
+      "fr": "Test après changement, résultat utilisateur et risques résiduels"
+    }
+  },
+  {
+    "key": "position-cs-l10-1",
+    "rule": {
+      "es": "La renovación se prepara desde fechas y condiciones documentadas",
+      "en": "Renewal is prepared from documented dates and conditions",
+      "pt": "A renovação se prepara a partir de datas e condições documentadas",
+      "fr": "Le renouvellement se prépare à partir des dates et conditions documentées"
+    },
+    "evidence": {
+      "es": "Calendario con hitos, aviso y responsables",
+      "en": "Calendar with milestones, notice and owners",
+      "pt": "Calendário com marcos, aviso e responsáveis",
+      "fr": "Calendrier avec jalons, préavis et responsables"
+    }
+  },
+  {
+    "key": "position-cs-l10-2",
+    "rule": {
+      "es": "El decisor económico y el proceso de compras deben verificarse",
+      "en": "The economic decision maker and procurement process must be verified",
+      "pt": "O decisor econômico e o processo de compras devem ser verificados",
+      "fr": "Le décideur économique et le processus d’achat doivent être vérifiés"
+    },
+    "evidence": {
+      "es": "Autoridad, presupuesto y pasos de aprobación confirmados",
+      "en": "Confirmed authority, budget and approval steps",
+      "pt": "Autoridade, orçamento e etapas de aprovação confirmados",
+      "fr": "Autorité, budget et étapes d’approbation confirmés"
+    }
+  },
+  {
+    "key": "position-cs-l10-3",
+    "rule": {
+      "es": "El valor se defiende con resultado verificable y sus límites",
+      "en": "Value is defended with a verifiable outcome and its limits",
+      "pt": "O valor é defendido com resultado verificável e seus limites",
+      "fr": "La valeur se défend avec un résultat vérifiable et ses limites"
+    },
+    "evidence": {
+      "es": "Línea base, resultado, fuente y límite causal",
+      "en": "Baseline, result, source and causal limitation",
+      "pt": "Linha de base, resultado, fonte e limite causal",
+      "fr": "Référence, résultat, source et limite causale"
+    }
+  },
+  {
+    "key": "position-cs-l10-4",
+    "rule": {
+      "es": "Una objeción requiere descubrir interés antes de ofrecer descuento",
+      "en": "An objection requires discovering interests before offering a discount",
+      "pt": "Uma objeção exige descobrir interesses antes de oferecer desconto",
+      "fr": "Une objection exige d’identifier l’intérêt avant d’offrir une remise"
+    },
+    "evidence": {
+      "es": "Objeción, pregunta de descubrimiento y respuesta respaldada",
+      "en": "Objection, discovery question and supported response",
+      "pt": "Objeção, pergunta de descoberta e resposta sustentada",
+      "fr": "Objection, question de découverte et réponse étayée"
+    }
+  },
+  {
+    "key": "position-cs-l10-5",
+    "rule": {
+      "es": "Negocia opciones y contrapartidas dentro de tu autorización",
+      "en": "Negotiate options and trade-offs within your authority",
+      "pt": "Negocie opções e contrapartidas dentro da sua autorização",
+      "fr": "Négociez options et contreparties dans les limites de votre autorité"
+    },
+    "evidence": {
+      "es": "Matriz de opciones, límites y aprobación requerida",
+      "en": "Options matrix, boundaries and required approval",
+      "pt": "Matriz de opções, limites e aprovação necessária",
+      "fr": "Matrice des options, limites et approbation nécessaire"
+    }
+  },
+  {
+    "key": "position-cs-l10-6",
+    "rule": {
+      "es": "La renovación no está cerrada hasta documentar aceptación autorizada",
+      "en": "Renewal is not closed until authorized acceptance is documented",
+      "pt": "A renovação não está fechada até documentar aceitação autorizada",
+      "fr": "Le renouvellement n’est pas conclu sans acceptation autorisée documentée"
+    },
+    "evidence": {
+      "es": "Acuerdo escrito, autoridad y condiciones pendientes",
+      "en": "Written agreement, authority and pending conditions",
+      "pt": "Acordo escrito, autoridade e condições pendentes",
+      "fr": "Accord écrit, autorité et conditions en attente"
+    }
+  },
+  {
+    "key": "position-cs-l11-1",
+    "rule": {
+      "es": "Descubre la tarea y el resultado antes de proponer expansión",
+      "en": "Discover the task and outcome before proposing expansion",
+      "pt": "Descubra a tarefa e o resultado antes de propor expansão",
+      "fr": "Identifiez tâche et résultat avant de proposer une extension"
+    },
+    "evidence": {
+      "es": "Necesidad, impacto y solución actual documentados",
+      "en": "Documented need, impact and current solution",
+      "pt": "Necessidade, impacto e solução atual documentados",
+      "fr": "Besoin, impact et solution actuelle documentés"
+    }
+  },
+  {
+    "key": "position-cs-l11-2",
+    "rule": {
+      "es": "Las preguntas de descubrimiento no deben inducir la respuesta",
+      "en": "Discovery questions must not lead the answer",
+      "pt": "Perguntas de descoberta não devem induzir a resposta",
+      "fr": "Les questions de découverte ne doivent pas orienter la réponse"
+    },
+    "evidence": {
+      "es": "Preguntas abiertas y evidencia que cambie la hipótesis",
+      "en": "Open questions and evidence that changes the hypothesis",
+      "pt": "Perguntas abertas e evidências que mudem a hipótese",
+      "fr": "Questions ouvertes et preuves modifiant l’hypothèse"
+    }
+  },
+  {
+    "key": "position-cs-l11-3",
+    "rule": {
+      "es": "Encaje compara necesidad con capacidad y restricciones comprobadas",
+      "en": "Fit compares need with verified capability and constraints",
+      "pt": "O encaixe compara necessidade com capacidade e restrições comprovadas",
+      "fr": "L’adéquation compare le besoin aux capacités et contraintes vérifiées"
+    },
+    "evidence": {
+      "es": "Matriz de necesidad, capacidad, límite y alternativa",
+      "en": "Need, capability, limitation and alternative matrix",
+      "pt": "Matriz de necessidade, capacidade, limite e alternativa",
+      "fr": "Matrice besoin, capacité, limite et alternative"
+    }
+  },
+  {
+    "key": "position-cs-l11-4",
+    "rule": {
+      "es": "Una demo pequeña no demuestra capacidad general del producto",
+      "en": "A small demo does not prove general product capability",
+      "pt": "Uma pequena demo não comprova a capacidade geral do produto",
+      "fr": "Une petite démo ne prouve pas la capacité générale du produit"
+    },
+    "evidence": {
+      "es": "Prueba de alcance definido y capacidad aún pendiente",
+      "en": "Bounded test and still-unverified capability",
+      "pt": "Teste de escopo definido e capacidade ainda pendente",
+      "fr": "Test délimité et capacité encore non vérifiée"
+    }
+  },
+  {
+    "key": "position-cs-l11-5",
+    "rule": {
+      "es": "La oportunidad registra valor, actor, siguiente paso y riesgos",
+      "en": "An opportunity records value, stakeholder, next step and risks",
+      "pt": "A oportunidade registra valor, ator, próximo passo e riscos",
+      "fr": "Une opportunité consigne valeur, acteur, prochaine étape et risques"
+    },
+    "evidence": {
+      "es": "Ficha de oportunidad con estado respaldado por evidencia",
+      "en": "Opportunity record with evidence-supported status",
+      "pt": "Ficha de oportunidade com estado sustentado por evidências",
+      "fr": "Fiche d’opportunité avec état étayé par des preuves"
+    }
+  },
+  {
+    "key": "position-cs-l11-6",
+    "rule": {
+      "es": "Separa decisión de renovar de decisión de comprar expansión",
+      "en": "Separate the renewal decision from the expansion purchase decision",
+      "pt": "Separe a decisão de renovar da decisão de comprar expansão",
+      "fr": "Séparez la décision de renouveler de l’achat d’une extension"
+    },
+    "evidence": {
+      "es": "Dos decisiones con condiciones y responsables propios",
+      "en": "Two decisions with their own conditions and owners",
+      "pt": "Duas decisões com condições e responsáveis próprios",
+      "fr": "Deux décisions avec conditions et responsables distincts"
+    }
+  },
+  {
+    "key": "position-cs-l12-1",
+    "rule": {
+      "es": "Documenta problema y tarea antes de pedir una funcionalidad",
+      "en": "Document problem and task before requesting a feature",
+      "pt": "Documente problema e tarefa antes de pedir uma funcionalidade",
+      "fr": "Documentez problème et tâche avant de demander une fonctionnalité"
+    },
+    "evidence": {
+      "es": "Problema, usuario, impacto y alternativa actual",
+      "en": "Problem, user, impact and current workaround",
+      "pt": "Problema, usuário, impacto e alternativa atual",
+      "fr": "Problème, utilisateur, impact et solution actuelle"
+    }
+  },
+  {
+    "key": "position-cs-l12-2",
+    "rule": {
+      "es": "Frecuencia e impacto requieren población, ventana y fuente",
+      "en": "Frequency and impact require population, window and source",
+      "pt": "Frequência e impacto exigem população, janela e fonte",
+      "fr": "Fréquence et impact exigent population, période et source"
+    },
+    "evidence": {
+      "es": "Casos únicos, población afectada y límites de medición",
+      "en": "Unique cases, affected population and measurement limits",
+      "pt": "Casos únicos, população afetada e limites da medição",
+      "fr": "Cas uniques, population touchée et limites de mesure"
+    }
+  },
+  {
+    "key": "position-cs-l12-3",
+    "rule": {
+      "es": "Feedback útil a producto incluye evidencia y necesidad, no promesas",
+      "en": "Useful product feedback includes evidence and need, not promises",
+      "pt": "Feedback útil ao produto inclui evidência e necessidade, não promessas",
+      "fr": "Un retour produit utile contient preuve et besoin, pas de promesses"
+    },
+    "evidence": {
+      "es": "Informe de problema con reproducción y criterio de resultado",
+      "en": "Problem report with reproduction and outcome criterion",
+      "pt": "Relatório do problema com reprodução e critério de resultado",
+      "fr": "Rapport de problème avec reproduction et critère de résultat"
+    }
+  },
+  {
+    "key": "position-cs-l12-4",
+    "rule": {
+      "es": "Coordina con soporte usando un ticket trazable y dueño claro",
+      "en": "Coordinate with support using a traceable ticket and clear owner",
+      "pt": "Coordene com suporte usando ticket rastreável e responsável claro",
+      "fr": "Coordonnez le support avec un ticket traçable et un responsable clair"
+    },
+    "evidence": {
+      "es": "Ticket enlazado, acción requerida y actualización acordada",
+      "en": "Linked ticket, required action and agreed update",
+      "pt": "Ticket vinculado, ação necessária e atualização acordada",
+      "fr": "Ticket lié, action requise et mise à jour convenue"
+    }
+  },
+  {
+    "key": "position-cs-l12-5",
+    "rule": {
+      "es": "Coordina con ventas sin convertir una posibilidad en promesa",
+      "en": "Coordinate with sales without turning a possibility into a promise",
+      "pt": "Coordene com vendas sem transformar possibilidade em promessa",
+      "fr": "Coordonnez les ventes sans transformer possibilité en promesse"
+    },
+    "evidence": {
+      "es": "Registro de oportunidad con capacidades pendientes explícitas",
+      "en": "Opportunity record with explicitly pending capabilities",
+      "pt": "Registro de oportunidade com capacidades pendentes explícitas",
+      "fr": "Fiche d’opportunité avec capacités en attente explicites"
+    }
+  },
+  {
+    "key": "position-cs-l12-6",
+    "rule": {
+      "es": "Cerrar feedback exige comunicar decisión y comprobar comprensión",
+      "en": "Closing feedback requires communicating the decision and checking understanding",
+      "pt": "Fechar feedback exige comunicar a decisão e verificar entendimento",
+      "fr": "Clore un retour exige de communiquer la décision et vérifier la compréhension"
+    },
+    "evidence": {
+      "es": "Respuesta al cliente, decisión y siguiente seguimiento",
+      "en": "Customer response, decision and next follow-up",
+      "pt": "Resposta ao cliente, decisão e próximo acompanhamento",
+      "fr": "Réponse client, décision et prochain suivi"
+    }
+  },
+  {
+    "key": "position-cs-l13-1",
+    "rule": {
+      "es": "Observar práctica describe conducta y evidencia sin atribuir motivos",
+      "en": "Observing practice describes behavior and evidence without assigning motives",
+      "pt": "Observar prática descreve conduta e evidência sem atribuir motivos",
+      "fr": "Observer la pratique décrit conduite et preuve sans attribuer d’intention"
+    },
+    "evidence": {
+      "es": "Registro de tarea, conducta observable e impacto",
+      "en": "Record of task, observable behavior and impact",
+      "pt": "Registro de tarefa, conduta observável e impacto",
+      "fr": "Registre de tâche, conduite observable et impact"
+    }
+  },
+  {
+    "key": "position-cs-l13-2",
+    "rule": {
+      "es": "Feedback conecta observación, criterio y siguiente intento",
+      "en": "Feedback connects observation, criterion and the next attempt",
+      "pt": "Feedback conecta observação, critério e próxima tentativa",
+      "fr": "Le feedback relie observation, critère et prochain essai"
+    },
+    "evidence": {
+      "es": "Conversación con evidencia y acción verificable",
+      "en": "Conversation with evidence and verifiable action",
+      "pt": "Conversa com evidência e ação verificável",
+      "fr": "Entretien avec preuve et action vérifiable"
+    }
+  },
+  {
+    "key": "position-cs-l13-3",
+    "rule": {
+      "es": "Refuerzo se asigna a una brecha concreta y se reevalúa",
+      "en": "Reinforcement targets a specific gap and is reassessed",
+      "pt": "Reforço é atribuído a uma lacuna específica e reavaliado",
+      "fr": "Le renforcement cible un écart précis et fait l’objet d’une réévaluation"
+    },
+    "evidence": {
+      "es": "Brecha, práctica, apoyo y reevaluación a 30 días",
+      "en": "Gap, practice, support and reassessment after 30 days",
+      "pt": "Lacuna, prática, apoio e reavaliação em 30 dias",
+      "fr": "Écart, pratique, accompagnement et réévaluation à 30 jours"
+    }
+  },
+  {
+    "key": "position-cs-l13-4",
+    "rule": {
+      "es": "La revisión de cuenta comprueba resultados, riesgos y compromisos",
+      "en": "Account review checks outcomes, risks and commitments",
+      "pt": "A revisão de conta verifica resultados, riscos e compromissos",
+      "fr": "La revue de compte vérifie résultats, risques et engagements"
+    },
+    "evidence": {
+      "es": "Checklist con fuentes y decisiones pendientes",
+      "en": "Checklist with sources and pending decisions",
+      "pt": "Checklist com fontes e decisões pendentes",
+      "fr": "Checklist avec sources et décisions en attente"
+    }
+  },
+  {
+    "key": "position-cs-l13-5",
+    "rule": {
+      "es": "Calidad de entrega exige trazabilidad, criterio y verificación",
+      "en": "Deliverable quality requires traceability, criteria and verification",
+      "pt": "Qualidade da entrega exige rastreabilidade, critério e verificação",
+      "fr": "La qualité d’une livraison exige traçabilité, critère et vérification"
+    },
+    "evidence": {
+      "es": "Rúbrica aplicada con comentarios basados en evidencia",
+      "en": "Applied rubric with evidence-based comments",
+      "pt": "Rubrica aplicada com comentários baseados em evidências",
+      "fr": "Grille appliquée avec commentaires fondés sur des preuves"
+    }
+  },
+  {
+    "key": "position-cs-l13-6",
+    "rule": {
+      "es": "El coaching se sigue con nuevo intento, no solo conversación",
+      "en": "Coaching is followed through with another attempt, not conversation alone",
+      "pt": "O coaching se acompanha com nova tentativa, não apenas conversa",
+      "fr": "Le coaching se poursuit par un nouvel essai, pas seulement un entretien"
+    },
+    "evidence": {
+      "es": "Intento inicial, intervención y evidencia posterior",
+      "en": "Initial attempt, intervention and subsequent evidence",
+      "pt": "Tentativa inicial, intervenção e evidência posterior",
+      "fr": "Essai initial, intervention et preuves ultérieures"
+    }
+  },
+  {
+    "key": "position-cs-l14-1",
+    "rule": {
+      "es": "El modelo de segmentación debe producir cobertura viable",
+      "en": "The segmentation model must produce viable coverage",
+      "pt": "O modelo de segmentação deve produzir cobertura viável",
+      "fr": "Le modèle de segmentation doit produire une couverture viable"
+    },
+    "evidence": {
+      "es": "Segmentos, demanda y reglas de excepción",
+      "en": "Segments, demand and exception rules",
+      "pt": "Segmentos, demanda e regras de exceção",
+      "fr": "Segments, demande et règles d’exception"
+    }
+  },
+  {
+    "key": "position-cs-l14-2",
+    "rule": {
+      "es": "La capacidad del equipo excluye ausencias y trabajo ya comprometido",
+      "en": "Team capacity excludes absences and already-committed work",
+      "pt": "A capacidade da equipe exclui ausências e trabalho já comprometido",
+      "fr": "La capacité de l’équipe exclut absences et travail déjà engagé"
+    },
+    "evidence": {
+      "es": "Horas disponibles netas y demanda comparable",
+      "en": "Net available hours and comparable demand",
+      "pt": "Horas disponíveis líquidas e demanda comparável",
+      "fr": "Heures nettes disponibles et demande comparable"
+    }
+  },
+  {
+    "key": "position-cs-l14-3",
+    "rule": {
+      "es": "Distribuye cartera considerando complejidad y carga, no solo cantidad",
+      "en": "Distribute accounts by complexity and workload, not count alone",
+      "pt": "Distribua a carteira por complexidade e carga, não apenas quantidade",
+      "fr": "Répartissez les comptes selon complexité et charge, pas seulement quantité"
+    },
+    "evidence": {
+      "es": "Asignación con esfuerzo, capacidad y revisión",
+      "en": "Assignment with effort, capacity and review",
+      "pt": "Atribuição com esforço, capacidade e revisão",
+      "fr": "Affectation avec effort, capacité et revue"
+    }
+  },
+  {
+    "key": "position-cs-l14-4",
+    "rule": {
+      "es": "Las métricas del equipo no equivalen a desempeño individual",
+      "en": "Team metrics do not equal individual performance",
+      "pt": "As métricas da equipe não equivalem a desempenho individual",
+      "fr": "Les métriques d’équipe ne sont pas la performance individuelle"
+    },
+    "evidence": {
+      "es": "Definiciones, contexto y límites de interpretación",
+      "en": "Definitions, context and interpretation limits",
+      "pt": "Definições, contexto e limites de interpretação",
+      "fr": "Définitions, contexte et limites d’interprétation"
+    }
+  },
+  {
+    "key": "position-cs-l14-5",
+    "rule": {
+      "es": "Un playbook define excepciones, autoridad y escalación",
+      "en": "A playbook defines exceptions, authority and escalation",
+      "pt": "Um playbook define exceções, autoridade e escalação",
+      "fr": "Un playbook définit exceptions, autorité et escalade"
+    },
+    "evidence": {
+      "es": "Regla operativa, excepción y aprobador",
+      "en": "Operating rule, exception and approver",
+      "pt": "Regra operacional, exceção e aprovador",
+      "fr": "Règle opérationnelle, exception et approbateur"
+    }
+  },
+  {
+    "key": "position-cs-l14-6",
+    "rule": {
+      "es": "La revisión de desempeño contrasta evidencia y contexto sin rankings",
+      "en": "Performance review considers evidence and context without rankings",
+      "pt": "A revisão de desempenho considera evidência e contexto sem rankings",
+      "fr": "La revue de performance examine preuves et contexte sans classement"
+    },
+    "evidence": {
+      "es": "Conducta, criterio, contexto y plan acordado",
+      "en": "Behavior, criterion, context and agreed plan",
+      "pt": "Conduta, critério, contexto e plano acordado",
+      "fr": "Conduite, critère, contexte et plan convenu"
+    }
+  },
+  {
+    "key": "position-cs-l14-7",
+    "rule": {
+      "es": "Contratar requiere demostrar brecha de capacidad y alternativas",
+      "en": "Hiring requires demonstrating a capacity gap and alternatives",
+      "pt": "Contratar exige demonstrar lacuna de capacidade e alternativas",
+      "fr": "Recruter exige de démontrer un déficit de capacité et les alternatives"
+    },
+    "evidence": {
+      "es": "Demanda, capacidad, opciones y coste estimado",
+      "en": "Demand, capacity, options and estimated cost",
+      "pt": "Demanda, capacidade, opções e custo estimado",
+      "fr": "Demande, capacité, options et coût estimé"
+    }
+  },
+  {
+    "key": "position-cs-l15-1",
+    "rule": {
+      "es": "La estrategia de retención explicita segmentos, valor y riesgos",
+      "en": "Retention strategy specifies segments, value and risks",
+      "pt": "A estratégia de retenção explicita segmentos, valor e riscos",
+      "fr": "La stratégie de rétention précise segments, valeur et risques"
+    },
+    "evidence": {
+      "es": "Opciones estratégicas, supuestos y señales de revisión",
+      "en": "Strategic options, assumptions and review signals",
+      "pt": "Opções estratégicas, premissas e sinais de revisão",
+      "fr": "Options stratégiques, hypothèses et signaux de révision"
+    }
+  },
+  {
+    "key": "position-cs-l15-2",
+    "rule": {
+      "es": "El presupuesto separa escenario base, adverso y favorable",
+      "en": "The budget separates base, adverse and favorable scenarios",
+      "pt": "O orçamento separa cenários base, adverso e favorável",
+      "fr": "Le budget sépare scénarios de référence, défavorable et favorable"
+    },
+    "evidence": {
+      "es": "Supuestos, costes, rango y sensibilidad por escenario",
+      "en": "Assumptions, costs, range and sensitivity per scenario",
+      "pt": "Premissas, custos, faixa e sensibilidade por cenário",
+      "fr": "Hypothèses, coûts, plage et sensibilité par scénario"
+    }
+  },
+  {
+    "key": "position-cs-l15-3",
+    "rule": {
+      "es": "El pronóstico distingue confirmado, probable y riesgo con evidencia",
+      "en": "The forecast distinguishes confirmed, likely and at risk with evidence",
+      "pt": "A previsão distingue confirmado, provável e em risco com evidências",
+      "fr": "La prévision distingue confirmé, probable et à risque avec preuves"
+    },
+    "evidence": {
+      "es": "Cartera, criterios de estado y rango de ingreso",
+      "en": "Portfolio, status criteria and revenue range",
+      "pt": "Carteira, critérios de estado e faixa de receita",
+      "fr": "Portefeuille, critères d’état et plage de revenus"
+    }
+  },
+  {
+    "key": "position-cs-l15-4",
+    "rule": {
+      "es": "Los riesgos estratégicos necesitan dueño, señal y respuesta",
+      "en": "Strategic risks need an owner, signal and response",
+      "pt": "Riscos estratégicos precisam de responsável, sinal e resposta",
+      "fr": "Les risques stratégiques nécessitent responsable, signal et réponse"
+    },
+    "evidence": {
+      "es": "Registro de riesgo con impacto y alternativa",
+      "en": "Risk register with impact and alternative",
+      "pt": "Registro de risco com impacto e alternativa",
+      "fr": "Registre des risques avec impact et alternative"
+    }
+  },
+  {
+    "key": "position-cs-l15-5",
+    "rule": {
+      "es": "El reporte a dirección conecta datos con decisiones necesarias",
+      "en": "The executive report connects data with needed decisions",
+      "pt": "O relatório à direção conecta dados a decisões necessárias",
+      "fr": "Le rapport de direction relie données et décisions nécessaires"
+    },
+    "evidence": {
+      "es": "Resumen de resultados, límites y decisiones solicitadas",
+      "en": "Summary of outcomes, limitations and requested decisions",
+      "pt": "Resumo de resultados, limites e decisões solicitadas",
+      "fr": "Synthèse des résultats, limites et décisions demandées"
+    }
+  },
+  {
+    "key": "position-cs-l15-6",
+    "rule": {
+      "es": "Invierte comparando valor esperado, coste, riesgo y capacidad",
+      "en": "Invest by comparing expected value, cost, risk and capacity",
+      "pt": "Invista comparando valor esperado, custo, risco e capacidade",
+      "fr": "Investissez en comparant valeur attendue, coût, risque et capacité"
+    },
+    "evidence": {
+      "es": "Alternativas, supuestos, presupuesto y criterio de revisión",
+      "en": "Alternatives, assumptions, budget and review criterion",
+      "pt": "Alternativas, premissas, orçamento e critério de revisão",
+      "fr": "Alternatives, hypothèses, budget et critère de revue"
+    }
+  },
+  {
+    "key": "position-cs-l15-7",
+    "rule": {
+      "es": "El gobierno identifica quién propone, aprueba, ejecuta y revisa",
+      "en": "Governance identifies who proposes, approves, executes and reviews",
+      "pt": "A governança identifica quem propõe, aprova, executa e revisa",
+      "fr": "La gouvernance identifie qui propose, approuve, exécute et révise"
+    },
+    "evidence": {
+      "es": "Registro de decisión, autoridad, riesgos y seguimiento",
+      "en": "Decision record, authority, risks and follow-up",
+      "pt": "Registro de decisão, autoridade, riscos e acompanhamento",
+      "fr": "Registre de décision, autorité, risques et suivi"
+    }
+  }
+]

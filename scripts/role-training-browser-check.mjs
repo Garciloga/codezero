@@ -1,3 +1,4 @@
+import {POSITION_ITEMS,positionItem,positionGrade} from '../lib/position-curriculum.ts';
 // Real Next handlers and browser rendering; Auth and REST use synthetic fixtures.
 // Database permissions/transactions are checked separately against PostgreSQL.
 import assert from 'node:assert/strict';
@@ -15,6 +16,7 @@ const users=[1,2,3,4].map(n=>({id:id(n),email:`synthetic${n}@codezero.example.te
 const sessions=users.map(user=>{const claims={sub:user.id,aud:'authenticated',role:'authenticated',exp:Math.floor(Date.now()/1000)+3600,iat:Math.floor(Date.now()/1000)};const access_token=[{alg:'HS256',typ:'JWT'},claims].map(v=>Buffer.from(JSON.stringify(v)).toString('base64url')).join('.')+'.synthetic-fixture-signature';return {access_token,refresh_token:'synthetic-refresh',token_type:'bearer',expires_in:3600,expires_at:claims.exp,user};});
 const members=[{organization_id:org,user_id:id(1),display_name:'Manager ficticio',role:'manager',active:true,reports_to:null,job_title:'Customer Success',learning_position_key:'customer_success'}, {organization_id:org,user_id:id(2),display_name:'Colaborador ficticio',role:'learner',active:true,reports_to:id(1),job_title:'Customer Success',learning_position_key:'customer_success'}];
 const tables={profiles:users.map((u,i)=>({...u,full_name:u.user_metadata.full_name,status:'active',role:i===2?'owner':'student',plan_name:'enterprise',learning_position_key:'customer_success',deleted_at:null})),organizations:[{id:org,name:'Sandbox ficticio',active:true}],organization_memberships:members,learning_activity_catalog:TRAINING_ACTIVITIES.map((a,i)=>({id:i+1,content_key:a.key,title:a.title,kind:a.kind,competencies:a.competencies,route_key:a.route,active:true})),learning_job_profiles:DEFAULT_JOB_PROFILES,learning_evidence_history:[],learning_practice_submissions:[],learning_assignments:[],learning_evidence:[],learning_errors:[],learning_project_review_flows:[],learning_project_review_runs:[],learning_project_review_votes:[]};
+tables.learning_activity_catalog.push(...POSITION_ITEMS.map((a,i)=>({id:10000+i,content_key:a.key,title:a.title.es,kind:['exam','diagnostic'].includes(a.type)?'exercise':a.type==='project'?'project':'deliverable',competencies:a.source.competencies,route_key:a.position,active:true})));
 tables.platform_usage_start=[{singleton:true,started_at:new Date().toISOString()}];
 const rpcCalls=[];let sequence=0;
 const history=(s,a,props)=>({id:id(2000+sequence++),submission_id:s.id,user_id:s.user_id,organization_id:s.organization_id,activity_key:a.content_key,independent_key:a.content_key,kind:a.kind,competency_scores:s.self_scores,assistance:s.assistance,review_source:'self',observed_at:new Date().toISOString(),reevaluation_of:null,critical_errors:[],feedback:null,...props});
@@ -31,6 +33,11 @@ const database=http.createServer(async(req,res)=>{
   if(table==='platform_usage_report')return res.end(JSON.stringify(tables.profiles.filter(u=>u.role!=='owner'&&u.status==='active').map((u,i)=>({user_id:u.id,email:u.email,full_name:u.full_name,clicks:i*3,visits:i,active_days:i,last_seen:i?new Date().toISOString():null,total_users:3}))));
   if(table==='workspace_directory')return res.end(JSON.stringify(members));
   if(table==='workspace_current_levels')return res.end(JSON.stringify(members.map(m=>({user_id:m.user_id,current_level:1}))));
+  if(table==='submit_position_practice'){
+   const a=tables.learning_activity_catalog.find(a=>a.content_key===p.p_activity_key),item=positionItem(p.p_activity_key),prior=tables.learning_practice_submissions.find(s=>s.id===p.p_request);
+   if(!prior){const r={id:p.p_request,user_id:p.p_actor,organization_id:p.p_org,activity_id:a.id,answers:p.p_answers,draft:p.p_draft,self_scores:Object.fromEntries(a.competencies.map(k=>[k,1])),assistance:a.kind==='exercise'?'recognition':p.p_assistance,created_at:new Date().toISOString()};tables.learning_practice_submissions.push(r);positionGrade(item,p.p_answers).forEach((v,i)=>tables.learning_evidence_history.push(history(r,a,{independent_key:a.content_key+':decision:'+(i+1),kind:'exercise',competency_scores:{[a.competencies[i%a.competencies.length]]:v},review_source:'auto',assistance:'recognition'})));if(a.kind!=='exercise')tables.learning_evidence_history.push(history(r,a,{}));}
+   return res.end(JSON.stringify('saved'));
+  }
   if(table==='submit_training_practice'){
    const a=tables.learning_activity_catalog.find(a=>a.id===p.p_activity),prior=tables.learning_practice_submissions.find(s=>s.id===p.p_request);
    if(!prior){const s={id:p.p_request,user_id:p.p_actor,organization_id:p.p_org,activity_id:p.p_activity,draft:p.p_draft,self_scores:p.p_scores,assistance:p.p_assistance,created_at:new Date().toISOString()};tables.learning_practice_submissions.push(s);
@@ -158,6 +165,14 @@ try{
  if(process.env.CODEZERO_BROWSER_ENGINE==='chromium')await page.screenshot({path:'/tmp/codezero-admin-usage-layout.png',fullPage:true});
  await go('/admin/usage');for(const width of [390,1280,1920]){await page.setViewportSize({width,height:900});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'usage reflow '+width);}
  await page.addScriptTag({path:'sandbox-runtime/node_modules/axe-core/axe.min.js'});assert.deepEqual(await page.evaluate(async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})).violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}))),[]);assert.deepEqual(errors,[]);
+ await signIn(2);await page.setViewportSize({width:390,height:900});await go('/positions?organization_id='+org);
+ assert.equal(await page.locator('main h1').textContent(),'Formación por puesto');assert.equal(await page.locator('main a[href*="item=position-cs-l"]').count(),92);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+ await go('/positions?organization_id='+org+'&item=position-cs-l1-1');const lessonForm=page.locator('main form[action="/api/positions"]').last();
+ for(let i=0;i<2;i++)await lessonForm.locator(`[name="q_${i}"][value="${positionItem('position-cs-l1-1').decisions[i].correct}"]`).check();
+ await lessonForm.locator('textarea').fill('A fictional account deliverable with baseline, calculation, owner, scope, alternatives, review date and acceptance criteria. '.repeat(2));await lessonForm.locator('button').click();await page.waitForURL(/result=saved/);assert.ok(await page.getByRole('heading',{name:'Retroalimentación del intento'}).count());
+ await go('/positions?organization_id='+org+'&diagnostic=1');assert.equal(await page.locator('main fieldset').count(),30);
+ await page.addScriptTag({path:'sandbox-runtime/node_modules/axe-core/axe.min.js'});assert.deepEqual(await page.evaluate(async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})).violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}))),[]);
+ console.log('PASS position browser: role entry, 92 lesson links, formative submission, feedback, 30 diagnostic decisions, mobile reflow and WCAG');
  console.log('PASS usage browser: trusted click → bounded API batch, full-width admin at 390/1280/1920, separated user controls, owner ranking and WCAG checks');
  finished=true;await context.close();
  }

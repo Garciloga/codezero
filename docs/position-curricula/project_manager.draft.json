@@ -1,0 +1,1345 @@
+{
+  "key": "project_manager",
+  "title": "Project Manager",
+  "status": "draft",
+  "editorial_review": "pending",
+  "calibration": "pending",
+  "published": false,
+  "role": {
+    "es": {
+      "process": "Alcance → planificación → dependencias/riesgos → ejecución/cambios → aceptación/cierre",
+      "deliverable": "Plan, registro de riesgos y acta de cierre",
+      "decision": "¿Reducir alcance, cambiar fecha o aceptar riesgo?",
+      "quality": "Cambio aprobado y efecto visible; aceptación verificable."
+    },
+    "en": {
+      "process": "Scope → planning → dependencies / risks → performance / changes → acceptance / closure",
+      "deliverable": "Plan, risk registration and closure report",
+      "decision": "To reduce range, change date or accept risk?",
+      "quality": "Approved change and visible effect and verifiable acceptance."
+    },
+    "pt": {
+      "process": "Escopo → planejamento → dependências / riscos → desempenho / mudanças → aceitação / fechamento",
+      "deliverable": "Plano, registo de risco e relatório de encerramento",
+      "decision": "Para reduzir o intervalo, alterar a data ou aceitar o risco?",
+      "quality": "Alteração aprovada e efeito visível e aceitação verificável."
+    },
+    "fr": {
+      "process": "Portée → planification → dépendances / risques → performance / changements → acceptation / fermeture",
+      "deliverable": "Plan, enregistrement des risques et rapport de clôture",
+      "decision": "Pour réduire la portée, modifier la date ou accepter le risque?",
+      "quality": "Changement approuvé, effet visible et acceptation vérifiable."
+    }
+  },
+  "competencies": {
+    "communication": "medium",
+    "diagnosis": "medium",
+    "data": "medium",
+    "prioritization": "high",
+    "documentation": "medium",
+    "deescalation": "medium",
+    "negotiation": "medium",
+    "planning": "high",
+    "technical": "medium",
+    "collaboration": "high"
+  },
+  "expectedByStage": {
+    "1": {
+      "communication": 1,
+      "diagnosis": 1,
+      "data": 1,
+      "prioritization": 1,
+      "documentation": 1,
+      "deescalation": 1,
+      "negotiation": 1,
+      "planning": 1,
+      "technical": 1,
+      "collaboration": 1
+    },
+    "2": {
+      "communication": 2,
+      "diagnosis": 2,
+      "data": 2,
+      "prioritization": 2,
+      "documentation": 2,
+      "deescalation": 2,
+      "negotiation": 2,
+      "planning": 2,
+      "technical": 2,
+      "collaboration": 2
+    },
+    "3": {
+      "communication": 3,
+      "diagnosis": 3,
+      "data": 3,
+      "prioritization": 3,
+      "documentation": 3,
+      "deescalation": 3,
+      "negotiation": 3,
+      "planning": 3,
+      "technical": 3,
+      "collaboration": 3
+    },
+    "4": {
+      "communication": 3,
+      "diagnosis": 3,
+      "data": 3,
+      "prioritization": 4,
+      "documentation": 3,
+      "deescalation": 3,
+      "negotiation": 3,
+      "planning": 4,
+      "technical": 3,
+      "collaboration": 4
+    },
+    "5": {
+      "communication": 3,
+      "diagnosis": 3,
+      "data": 3,
+      "prioritization": 4,
+      "documentation": 3,
+      "deescalation": 3,
+      "negotiation": 3,
+      "planning": 4,
+      "technical": 3,
+      "collaboration": 4
+    }
+  },
+  "levels": [
+    {
+      "number": 1,
+      "title": {
+        "es": "Project Manager · Fundamentos del puesto",
+        "en": "Project Manager · Role foundations",
+        "pt": "Project Manager · Fundamentos do cargo",
+        "fr": "Project Manager · Fondamentaux du poste"
+      },
+      "objective": {
+        "es": "Alcance → planificación → dependencias/riesgos → ejecución/cambios → aceptación/cierre · Cambio aprobado y efecto visible; aceptación verificable.",
+        "en": "Scope → planning → dependencies / risks → performance / changes → acceptance / closure · Approved change and visible effect and verifiable acceptance.",
+        "pt": "Escopo → planejamento → dependências / riscos → desempenho / mudanças → aceitação / fechamento · Alteração aprovada e efeito visível e aceitação verificável.",
+        "fr": "Portée → planification → dépendances / risques → performance / changements → acceptation / fermeture · Changement approuvé, effet visible et acceptation vérifiable."
+      },
+      "lessons": [
+        {
+          "key": "position-project_manager-l1-1",
+          "title": {
+            "es": "Project Manager · Fundamentos del puesto · Contexto y alcance",
+            "en": "Project Manager · Role foundations · Context and scope",
+            "pt": "Project Manager · Fundamentos do cargo · Contexto e escopo",
+            "fr": "Project Manager · Fondamentaux du poste · Contexte et périmètre"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-project_manager-l1-2",
+          "title": {
+            "es": "Project Manager · Fundamentos del puesto · Datos y fuentes",
+            "en": "Project Manager · Role foundations · Data and sources",
+            "pt": "Project Manager · Fundamentos do cargo · Dados e fontes",
+            "fr": "Project Manager · Fondamentaux du poste · Données et sources"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-project_manager-l1-3",
+          "title": {
+            "es": "Project Manager · Fundamentos del puesto · Alternativas y criterio",
+            "en": "Project Manager · Role foundations · Alternatives and judgment",
+            "pt": "Project Manager · Fundamentos do cargo · Alternativas e critério",
+            "fr": "Project Manager · Fondamentaux du poste · Options et jugement"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-project_manager-l1-4",
+          "title": {
+            "es": "Project Manager · Fundamentos del puesto · Entregable del puesto",
+            "en": "Project Manager · Role foundations · Role deliverable",
+            "pt": "Project Manager · Fundamentos do cargo · Entrega do cargo",
+            "fr": "Project Manager · Fondamentaux du poste · Livrable du poste"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-project_manager-l1-5",
+          "title": {
+            "es": "Project Manager · Fundamentos del puesto · Verificación y aceptación",
+            "en": "Project Manager · Role foundations · Verification and acceptance",
+            "pt": "Project Manager · Fundamentos do cargo · Verificação e aceitação",
+            "fr": "Project Manager · Fondamentaux du poste · Vérification et acceptation"
+          },
+          "sharedSource": "cs-roi"
+        },
+        {
+          "key": "position-project_manager-l1-6",
+          "title": {
+            "es": "Project Manager · Fundamentos del puesto · Restricción nueva y transferencia",
+            "en": "Project Manager · Role foundations · New constraint and transfer",
+            "pt": "Project Manager · Fundamentos do cargo · Nova restrição e transferência",
+            "fr": "Project Manager · Fondamentaux du poste · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-roi"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": {
+        "es": "Project Manager · Ciclo de trabajo",
+        "en": "Project Manager · Work lifecycle",
+        "pt": "Project Manager · Ciclo de trabalho",
+        "fr": "Project Manager · Cycle de travail"
+      },
+      "objective": {
+        "es": "Alcance → planificación → dependencias/riesgos → ejecución/cambios → aceptación/cierre · Cambio aprobado y efecto visible; aceptación verificable.",
+        "en": "Scope → planning → dependencies / risks → performance / changes → acceptance / closure · Approved change and visible effect and verifiable acceptance.",
+        "pt": "Escopo → planejamento → dependências / riscos → desempenho / mudanças → aceitação / fechamento · Alteração aprovada e efeito visível e aceitação verificável.",
+        "fr": "Portée → planification → dépendances / risques → performance / changements → acceptation / fermeture · Changement approuvé, effet visible et acceptation vérifiable."
+      },
+      "lessons": [
+        {
+          "key": "position-project_manager-l2-1",
+          "title": {
+            "es": "Project Manager · Ciclo de trabajo · Contexto y alcance",
+            "en": "Project Manager · Work lifecycle · Context and scope",
+            "pt": "Project Manager · Ciclo de trabalho · Contexto e escopo",
+            "fr": "Project Manager · Cycle de travail · Contexte et périmètre"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-project_manager-l2-2",
+          "title": {
+            "es": "Project Manager · Ciclo de trabajo · Datos y fuentes",
+            "en": "Project Manager · Work lifecycle · Data and sources",
+            "pt": "Project Manager · Ciclo de trabalho · Dados e fontes",
+            "fr": "Project Manager · Cycle de travail · Données et sources"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-project_manager-l2-3",
+          "title": {
+            "es": "Project Manager · Ciclo de trabajo · Alternativas y criterio",
+            "en": "Project Manager · Work lifecycle · Alternatives and judgment",
+            "pt": "Project Manager · Ciclo de trabalho · Alternativas e critério",
+            "fr": "Project Manager · Cycle de travail · Options et jugement"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-project_manager-l2-4",
+          "title": {
+            "es": "Project Manager · Ciclo de trabajo · Entregable del puesto",
+            "en": "Project Manager · Work lifecycle · Role deliverable",
+            "pt": "Project Manager · Ciclo de trabalho · Entrega do cargo",
+            "fr": "Project Manager · Cycle de travail · Livrable du poste"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-project_manager-l2-5",
+          "title": {
+            "es": "Project Manager · Ciclo de trabajo · Verificación y aceptación",
+            "en": "Project Manager · Work lifecycle · Verification and acceptance",
+            "pt": "Project Manager · Ciclo de trabalho · Verificação e aceitação",
+            "fr": "Project Manager · Cycle de travail · Vérification et acceptation"
+          },
+          "sharedSource": "cs-handoff"
+        },
+        {
+          "key": "position-project_manager-l2-6",
+          "title": {
+            "es": "Project Manager · Ciclo de trabajo · Restricción nueva y transferencia",
+            "en": "Project Manager · Work lifecycle · New constraint and transfer",
+            "pt": "Project Manager · Ciclo de trabalho · Nova restrição e transferência",
+            "fr": "Project Manager · Cycle de travail · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-handoff"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": {
+        "es": "Project Manager · Inicio de un caso",
+        "en": "Project Manager · Starting a case",
+        "pt": "Project Manager · Início de um caso",
+        "fr": "Project Manager · Démarrage d’un cas"
+      },
+      "objective": {
+        "es": "Alcance → planificación → dependencias/riesgos → ejecución/cambios → aceptación/cierre · Cambio aprobado y efecto visible; aceptación verificable.",
+        "en": "Scope → planning → dependencies / risks → performance / changes → acceptance / closure · Approved change and visible effect and verifiable acceptance.",
+        "pt": "Escopo → planejamento → dependências / riscos → desempenho / mudanças → aceitação / fechamento · Alteração aprovada e efeito visível e aceitação verificável.",
+        "fr": "Portée → planification → dépendances / risques → performance / changements → acceptation / fermeture · Changement approuvé, effet visible et acceptation vérifiable."
+      },
+      "lessons": [
+        {
+          "key": "position-project_manager-l3-1",
+          "title": {
+            "es": "Project Manager · Inicio de un caso · Contexto y alcance",
+            "en": "Project Manager · Starting a case · Context and scope",
+            "pt": "Project Manager · Início de um caso · Contexto e escopo",
+            "fr": "Project Manager · Démarrage d’un cas · Contexte et périmètre"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-project_manager-l3-2",
+          "title": {
+            "es": "Project Manager · Inicio de un caso · Datos y fuentes",
+            "en": "Project Manager · Starting a case · Data and sources",
+            "pt": "Project Manager · Início de um caso · Dados e fontes",
+            "fr": "Project Manager · Démarrage d’un cas · Données et sources"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-project_manager-l3-3",
+          "title": {
+            "es": "Project Manager · Inicio de un caso · Alternativas y criterio",
+            "en": "Project Manager · Starting a case · Alternatives and judgment",
+            "pt": "Project Manager · Início de um caso · Alternativas e critério",
+            "fr": "Project Manager · Démarrage d’un cas · Options et jugement"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-project_manager-l3-4",
+          "title": {
+            "es": "Project Manager · Inicio de un caso · Entregable del puesto",
+            "en": "Project Manager · Starting a case · Role deliverable",
+            "pt": "Project Manager · Início de um caso · Entrega do cargo",
+            "fr": "Project Manager · Démarrage d’un cas · Livrable du poste"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-project_manager-l3-5",
+          "title": {
+            "es": "Project Manager · Inicio de un caso · Verificación y aceptación",
+            "en": "Project Manager · Starting a case · Verification and acceptance",
+            "pt": "Project Manager · Início de um caso · Verificação e aceitação",
+            "fr": "Project Manager · Démarrage d’un cas · Vérification et acceptation"
+          },
+          "sharedSource": "cs-kickoff"
+        },
+        {
+          "key": "position-project_manager-l3-6",
+          "title": {
+            "es": "Project Manager · Inicio de un caso · Restricción nueva y transferencia",
+            "en": "Project Manager · Starting a case · New constraint and transfer",
+            "pt": "Project Manager · Início de um caso · Nova restrição e transferência",
+            "fr": "Project Manager · Démarrage d’un cas · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-kickoff"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": {
+        "es": "Project Manager · Comunicación",
+        "en": "Project Manager · Communication",
+        "pt": "Project Manager · Comunicação",
+        "fr": "Project Manager · Communication"
+      },
+      "objective": {
+        "es": "Alcance → planificación → dependencias/riesgos → ejecución/cambios → aceptación/cierre · Cambio aprobado y efecto visible; aceptación verificable.",
+        "en": "Scope → planning → dependencies / risks → performance / changes → acceptance / closure · Approved change and visible effect and verifiable acceptance.",
+        "pt": "Escopo → planejamento → dependências / riscos → desempenho / mudanças → aceitação / fechamento · Alteração aprovada e efeito visível e aceitação verificável.",
+        "fr": "Portée → planification → dépendances / risques → performance / changements → acceptation / fermeture · Changement approuvé, effet visible et acceptation vérifiable."
+      },
+      "lessons": [
+        {
+          "key": "position-project_manager-l4-1",
+          "title": {
+            "es": "Project Manager · Comunicación · Contexto y alcance",
+            "en": "Project Manager · Communication · Context and scope",
+            "pt": "Project Manager · Comunicação · Contexto e escopo",
+            "fr": "Project Manager · Communication · Contexte et périmètre"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-project_manager-l4-2",
+          "title": {
+            "es": "Project Manager · Comunicación · Datos y fuentes",
+            "en": "Project Manager · Communication · Data and sources",
+            "pt": "Project Manager · Comunicação · Dados e fontes",
+            "fr": "Project Manager · Communication · Données et sources"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-project_manager-l4-3",
+          "title": {
+            "es": "Project Manager · Comunicación · Alternativas y criterio",
+            "en": "Project Manager · Communication · Alternatives and judgment",
+            "pt": "Project Manager · Comunicação · Alternativas e critério",
+            "fr": "Project Manager · Communication · Options et jugement"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-project_manager-l4-4",
+          "title": {
+            "es": "Project Manager · Comunicación · Entregable del puesto",
+            "en": "Project Manager · Communication · Role deliverable",
+            "pt": "Project Manager · Comunicação · Entrega do cargo",
+            "fr": "Project Manager · Communication · Livrable du poste"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-project_manager-l4-5",
+          "title": {
+            "es": "Project Manager · Comunicación · Verificación y aceptación",
+            "en": "Project Manager · Communication · Verification and acceptance",
+            "pt": "Project Manager · Comunicação · Verificação e aceitação",
+            "fr": "Project Manager · Communication · Vérification et acceptation"
+          },
+          "sharedSource": "common-communication"
+        },
+        {
+          "key": "position-project_manager-l4-6",
+          "title": {
+            "es": "Project Manager · Comunicación · Restricción nueva y transferencia",
+            "en": "Project Manager · Communication · New constraint and transfer",
+            "pt": "Project Manager · Comunicação · Nova restrição e transferência",
+            "fr": "Project Manager · Communication · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "common-communication"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": {
+        "es": "Project Manager · Calidad y resultado",
+        "en": "Project Manager · Quality and outcome",
+        "pt": "Project Manager · Qualidade e resultado",
+        "fr": "Project Manager · Qualité et résultat"
+      },
+      "objective": {
+        "es": "Alcance → planificación → dependencias/riesgos → ejecución/cambios → aceptación/cierre · Cambio aprobado y efecto visible; aceptación verificable.",
+        "en": "Scope → planning → dependencies / risks → performance / changes → acceptance / closure · Approved change and visible effect and verifiable acceptance.",
+        "pt": "Escopo → planejamento → dependências / riscos → desempenho / mudanças → aceitação / fechamento · Alteração aprovada e efeito visível e aceitação verificável.",
+        "fr": "Portée → planification → dépendances / risques → performance / changements → acceptation / fermeture · Changement approuvé, effet visible et acceptation vérifiable."
+      },
+      "lessons": [
+        {
+          "key": "position-project_manager-l5-1",
+          "title": {
+            "es": "Project Manager · Calidad y resultado · Contexto y alcance",
+            "en": "Project Manager · Quality and outcome · Context and scope",
+            "pt": "Project Manager · Qualidade e resultado · Contexto e escopo",
+            "fr": "Project Manager · Qualité et résultat · Contexte et périmètre"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-project_manager-l5-2",
+          "title": {
+            "es": "Project Manager · Calidad y resultado · Datos y fuentes",
+            "en": "Project Manager · Quality and outcome · Data and sources",
+            "pt": "Project Manager · Qualidade e resultado · Dados e fontes",
+            "fr": "Project Manager · Qualité et résultat · Données et sources"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-project_manager-l5-3",
+          "title": {
+            "es": "Project Manager · Calidad y resultado · Alternativas y criterio",
+            "en": "Project Manager · Quality and outcome · Alternatives and judgment",
+            "pt": "Project Manager · Qualidade e resultado · Alternativas e critério",
+            "fr": "Project Manager · Qualité et résultat · Options et jugement"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-project_manager-l5-4",
+          "title": {
+            "es": "Project Manager · Calidad y resultado · Entregable del puesto",
+            "en": "Project Manager · Quality and outcome · Role deliverable",
+            "pt": "Project Manager · Qualidade e resultado · Entrega do cargo",
+            "fr": "Project Manager · Qualité et résultat · Livrable du poste"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-project_manager-l5-5",
+          "title": {
+            "es": "Project Manager · Calidad y resultado · Verificación y aceptación",
+            "en": "Project Manager · Quality and outcome · Verification and acceptance",
+            "pt": "Project Manager · Qualidade e resultado · Verificação e aceitação",
+            "fr": "Project Manager · Qualité et résultat · Vérification et acceptation"
+          },
+          "sharedSource": "cs-health"
+        },
+        {
+          "key": "position-project_manager-l5-6",
+          "title": {
+            "es": "Project Manager · Calidad y resultado · Restricción nueva y transferencia",
+            "en": "Project Manager · Quality and outcome · New constraint and transfer",
+            "pt": "Project Manager · Qualidade e resultado · Nova restrição e transferência",
+            "fr": "Project Manager · Qualité et résultat · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-health"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": {
+        "es": "Project Manager · Herramientas",
+        "en": "Project Manager · Tools",
+        "pt": "Project Manager · Ferramentas",
+        "fr": "Project Manager · Outils"
+      },
+      "objective": {
+        "es": "Alcance → planificación → dependencias/riesgos → ejecución/cambios → aceptación/cierre · Cambio aprobado y efecto visible; aceptación verificable.",
+        "en": "Scope → planning → dependencies / risks → performance / changes → acceptance / closure · Approved change and visible effect and verifiable acceptance.",
+        "pt": "Escopo → planejamento → dependências / riscos → desempenho / mudanças → aceitação / fechamento · Alteração aprovada e efeito visível e aceitação verificável.",
+        "fr": "Portée → planification → dépendances / risques → performance / changements → acceptation / fermeture · Changement approuvé, effet visible et acceptation vérifiable."
+      },
+      "lessons": [
+        {
+          "key": "position-project_manager-l6-1",
+          "title": {
+            "es": "Project Manager · Herramientas · Contexto y alcance",
+            "en": "Project Manager · Tools · Context and scope",
+            "pt": "Project Manager · Ferramentas · Contexto e escopo",
+            "fr": "Project Manager · Outils · Contexte et périmètre"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-project_manager-l6-2",
+          "title": {
+            "es": "Project Manager · Herramientas · Datos y fuentes",
+            "en": "Project Manager · Tools · Data and sources",
+            "pt": "Project Manager · Ferramentas · Dados e fontes",
+            "fr": "Project Manager · Outils · Données et sources"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-project_manager-l6-3",
+          "title": {
+            "es": "Project Manager · Herramientas · Alternativas y criterio",
+            "en": "Project Manager · Tools · Alternatives and judgment",
+            "pt": "Project Manager · Ferramentas · Alternativas e critério",
+            "fr": "Project Manager · Outils · Options et jugement"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-project_manager-l6-4",
+          "title": {
+            "es": "Project Manager · Herramientas · Entregable del puesto",
+            "en": "Project Manager · Tools · Role deliverable",
+            "pt": "Project Manager · Ferramentas · Entrega do cargo",
+            "fr": "Project Manager · Outils · Livrable du poste"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-project_manager-l6-5",
+          "title": {
+            "es": "Project Manager · Herramientas · Verificación y aceptación",
+            "en": "Project Manager · Tools · Verification and acceptance",
+            "pt": "Project Manager · Ferramentas · Verificação e aceitação",
+            "fr": "Project Manager · Outils · Vérification et acceptation"
+          },
+          "sharedSource": "common-documentation"
+        },
+        {
+          "key": "position-project_manager-l6-6",
+          "title": {
+            "es": "Project Manager · Herramientas · Restricción nueva y transferencia",
+            "en": "Project Manager · Tools · New constraint and transfer",
+            "pt": "Project Manager · Ferramentas · Nova restrição e transferência",
+            "fr": "Project Manager · Outils · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "common-documentation"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": {
+        "es": "Project Manager · Priorización",
+        "en": "Project Manager · Prioritization",
+        "pt": "Project Manager · Priorização",
+        "fr": "Project Manager · Priorités"
+      },
+      "objective": {
+        "es": "Alcance → planificación → dependencias/riesgos → ejecución/cambios → aceptación/cierre · Cambio aprobado y efecto visible; aceptación verificable.",
+        "en": "Scope → planning → dependencies / risks → performance / changes → acceptance / closure · Approved change and visible effect and verifiable acceptance.",
+        "pt": "Escopo → planejamento → dependências / riscos → desempenho / mudanças → aceitação / fechamento · Alteração aprovada e efeito visível e aceitação verificável.",
+        "fr": "Portée → planification → dépendances / risques → performance / changements → acceptation / fermeture · Changement approuvé, effet visible et acceptation vérifiable."
+      },
+      "lessons": [
+        {
+          "key": "position-project_manager-l7-1",
+          "title": {
+            "es": "Project Manager · Priorización · Contexto y alcance",
+            "en": "Project Manager · Prioritization · Context and scope",
+            "pt": "Project Manager · Priorização · Contexto e escopo",
+            "fr": "Project Manager · Priorités · Contexte et périmètre"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-project_manager-l7-2",
+          "title": {
+            "es": "Project Manager · Priorización · Datos y fuentes",
+            "en": "Project Manager · Prioritization · Data and sources",
+            "pt": "Project Manager · Priorização · Dados e fontes",
+            "fr": "Project Manager · Priorités · Données et sources"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-project_manager-l7-3",
+          "title": {
+            "es": "Project Manager · Priorización · Alternativas y criterio",
+            "en": "Project Manager · Prioritization · Alternatives and judgment",
+            "pt": "Project Manager · Priorização · Alternativas e critério",
+            "fr": "Project Manager · Priorités · Options et jugement"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-project_manager-l7-4",
+          "title": {
+            "es": "Project Manager · Priorización · Entregable del puesto",
+            "en": "Project Manager · Prioritization · Role deliverable",
+            "pt": "Project Manager · Priorização · Entrega do cargo",
+            "fr": "Project Manager · Priorités · Livrable du poste"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-project_manager-l7-5",
+          "title": {
+            "es": "Project Manager · Priorización · Verificación y aceptación",
+            "en": "Project Manager · Prioritization · Verification and acceptance",
+            "pt": "Project Manager · Priorização · Verificação e aceitação",
+            "fr": "Project Manager · Priorités · Vérification et acceptation"
+          },
+          "sharedSource": "cs-portfolio"
+        },
+        {
+          "key": "position-project_manager-l7-6",
+          "title": {
+            "es": "Project Manager · Priorización · Restricción nueva y transferencia",
+            "en": "Project Manager · Prioritization · New constraint and transfer",
+            "pt": "Project Manager · Priorização · Nova restrição e transferência",
+            "fr": "Project Manager · Priorités · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-portfolio"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": {
+        "es": "Project Manager · Plan y revisión",
+        "en": "Project Manager · Plan and review",
+        "pt": "Project Manager · Plano e revisão",
+        "fr": "Project Manager · Plan et revue"
+      },
+      "objective": {
+        "es": "Alcance → planificación → dependencias/riesgos → ejecución/cambios → aceptación/cierre · Cambio aprobado y efecto visible; aceptación verificable.",
+        "en": "Scope → planning → dependencies / risks → performance / changes → acceptance / closure · Approved change and visible effect and verifiable acceptance.",
+        "pt": "Escopo → planejamento → dependências / riscos → desempenho / mudanças → aceitação / fechamento · Alteração aprovada e efeito visível e aceitação verificável.",
+        "fr": "Portée → planification → dépendances / risques → performance / changements → acceptation / fermeture · Changement approuvé, effet visible et acceptation vérifiable."
+      },
+      "lessons": [
+        {
+          "key": "position-project_manager-l8-1",
+          "title": {
+            "es": "Project Manager · Plan y revisión · Contexto y alcance",
+            "en": "Project Manager · Plan and review · Context and scope",
+            "pt": "Project Manager · Plano e revisão · Contexto e escopo",
+            "fr": "Project Manager · Plan et revue · Contexte et périmètre"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-project_manager-l8-2",
+          "title": {
+            "es": "Project Manager · Plan y revisión · Datos y fuentes",
+            "en": "Project Manager · Plan and review · Data and sources",
+            "pt": "Project Manager · Plano e revisão · Dados e fontes",
+            "fr": "Project Manager · Plan et revue · Données et sources"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-project_manager-l8-3",
+          "title": {
+            "es": "Project Manager · Plan y revisión · Alternativas y criterio",
+            "en": "Project Manager · Plan and review · Alternatives and judgment",
+            "pt": "Project Manager · Plano e revisão · Alternativas e critério",
+            "fr": "Project Manager · Plan et revue · Options et jugement"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-project_manager-l8-4",
+          "title": {
+            "es": "Project Manager · Plan y revisión · Entregable del puesto",
+            "en": "Project Manager · Plan and review · Role deliverable",
+            "pt": "Project Manager · Plano e revisão · Entrega do cargo",
+            "fr": "Project Manager · Plan et revue · Livrable du poste"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-project_manager-l8-5",
+          "title": {
+            "es": "Project Manager · Plan y revisión · Verificación y aceptación",
+            "en": "Project Manager · Plan and review · Verification and acceptance",
+            "pt": "Project Manager · Plano e revisão · Verificação e aceitação",
+            "fr": "Project Manager · Plan et revue · Vérification et acceptation"
+          },
+          "sharedSource": "cs-qbr"
+        },
+        {
+          "key": "position-project_manager-l8-6",
+          "title": {
+            "es": "Project Manager · Plan y revisión · Restricción nueva y transferencia",
+            "en": "Project Manager · Plan and review · New constraint and transfer",
+            "pt": "Project Manager · Plano e revisão · Nova restrição e transferência",
+            "fr": "Project Manager · Plan et revue · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-qbr"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": {
+        "es": "Project Manager · Riesgos y escalaciones",
+        "en": "Project Manager · Risks and escalations",
+        "pt": "Project Manager · Riscos e escalações",
+        "fr": "Project Manager · Risques et escalades"
+      },
+      "objective": {
+        "es": "Alcance → planificación → dependencias/riesgos → ejecución/cambios → aceptación/cierre · Cambio aprobado y efecto visible; aceptación verificable.",
+        "en": "Scope → planning → dependencies / risks → performance / changes → acceptance / closure · Approved change and visible effect and verifiable acceptance.",
+        "pt": "Escopo → planejamento → dependências / riscos → desempenho / mudanças → aceitação / fechamento · Alteração aprovada e efeito visível e aceitação verificável.",
+        "fr": "Portée → planification → dépendances / risques → performance / changements → acceptation / fermeture · Changement approuvé, effet visible et acceptation vérifiable."
+      },
+      "lessons": [
+        {
+          "key": "position-project_manager-l9-1",
+          "title": {
+            "es": "Project Manager · Riesgos y escalaciones · Contexto y alcance",
+            "en": "Project Manager · Risks and escalations · Context and scope",
+            "pt": "Project Manager · Riscos e escalações · Contexto e escopo",
+            "fr": "Project Manager · Risques et escalades · Contexte et périmètre"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-project_manager-l9-2",
+          "title": {
+            "es": "Project Manager · Riesgos y escalaciones · Datos y fuentes",
+            "en": "Project Manager · Risks and escalations · Data and sources",
+            "pt": "Project Manager · Riscos e escalações · Dados e fontes",
+            "fr": "Project Manager · Risques et escalades · Données et sources"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-project_manager-l9-3",
+          "title": {
+            "es": "Project Manager · Riesgos y escalaciones · Alternativas y criterio",
+            "en": "Project Manager · Risks and escalations · Alternatives and judgment",
+            "pt": "Project Manager · Riscos e escalações · Alternativas e critério",
+            "fr": "Project Manager · Risques et escalades · Options et jugement"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-project_manager-l9-4",
+          "title": {
+            "es": "Project Manager · Riesgos y escalaciones · Entregable del puesto",
+            "en": "Project Manager · Risks and escalations · Role deliverable",
+            "pt": "Project Manager · Riscos e escalações · Entrega do cargo",
+            "fr": "Project Manager · Risques et escalades · Livrable du poste"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-project_manager-l9-5",
+          "title": {
+            "es": "Project Manager · Riesgos y escalaciones · Verificación y aceptación",
+            "en": "Project Manager · Risks and escalations · Verification and acceptance",
+            "pt": "Project Manager · Riscos e escalações · Verificação e aceitação",
+            "fr": "Project Manager · Risques et escalades · Vérification et acceptation"
+          },
+          "sharedSource": "cs-churn"
+        },
+        {
+          "key": "position-project_manager-l9-6",
+          "title": {
+            "es": "Project Manager · Riesgos y escalaciones · Restricción nueva y transferencia",
+            "en": "Project Manager · Risks and escalations · New constraint and transfer",
+            "pt": "Project Manager · Riscos e escalações · Nova restrição e transferência",
+            "fr": "Project Manager · Risques et escalades · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-churn"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": {
+        "es": "Project Manager · Negociación",
+        "en": "Project Manager · Negotiation",
+        "pt": "Project Manager · Negociação",
+        "fr": "Project Manager · Négociation"
+      },
+      "objective": {
+        "es": "Alcance → planificación → dependencias/riesgos → ejecución/cambios → aceptación/cierre · Cambio aprobado y efecto visible; aceptación verificable.",
+        "en": "Scope → planning → dependencies / risks → performance / changes → acceptance / closure · Approved change and visible effect and verifiable acceptance.",
+        "pt": "Escopo → planejamento → dependências / riscos → desempenho / mudanças → aceitação / fechamento · Alteração aprovada e efeito visível e aceitação verificável.",
+        "fr": "Portée → planification → dépendances / risques → performance / changements → acceptation / fermeture · Changement approuvé, effet visible et acceptation vérifiable."
+      },
+      "lessons": [
+        {
+          "key": "position-project_manager-l10-1",
+          "title": {
+            "es": "Project Manager · Negociación · Contexto y alcance",
+            "en": "Project Manager · Negotiation · Context and scope",
+            "pt": "Project Manager · Negociação · Contexto e escopo",
+            "fr": "Project Manager · Négociation · Contexte et périmètre"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-project_manager-l10-2",
+          "title": {
+            "es": "Project Manager · Negociación · Datos y fuentes",
+            "en": "Project Manager · Negotiation · Data and sources",
+            "pt": "Project Manager · Negociação · Dados e fontes",
+            "fr": "Project Manager · Négociation · Données et sources"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-project_manager-l10-3",
+          "title": {
+            "es": "Project Manager · Negociación · Alternativas y criterio",
+            "en": "Project Manager · Negotiation · Alternatives and judgment",
+            "pt": "Project Manager · Negociação · Alternativas e critério",
+            "fr": "Project Manager · Négociation · Options et jugement"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-project_manager-l10-4",
+          "title": {
+            "es": "Project Manager · Negociación · Entregable del puesto",
+            "en": "Project Manager · Negotiation · Role deliverable",
+            "pt": "Project Manager · Negociação · Entrega do cargo",
+            "fr": "Project Manager · Négociation · Livrable du poste"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-project_manager-l10-5",
+          "title": {
+            "es": "Project Manager · Negociación · Verificación y aceptación",
+            "en": "Project Manager · Negotiation · Verification and acceptance",
+            "pt": "Project Manager · Negociação · Verificação e aceitação",
+            "fr": "Project Manager · Négociation · Vérification et acceptation"
+          },
+          "sharedSource": "cs-renewal"
+        },
+        {
+          "key": "position-project_manager-l10-6",
+          "title": {
+            "es": "Project Manager · Negociación · Restricción nueva y transferencia",
+            "en": "Project Manager · Negotiation · New constraint and transfer",
+            "pt": "Project Manager · Negociação · Nova restrição e transferência",
+            "fr": "Project Manager · Négociation · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-renewal"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": {
+        "es": "Project Manager · Mejora del servicio",
+        "en": "Project Manager · Service improvement",
+        "pt": "Project Manager · Melhoria do serviço",
+        "fr": "Project Manager · Amélioration du service"
+      },
+      "objective": {
+        "es": "Alcance → planificación → dependencias/riesgos → ejecución/cambios → aceptación/cierre · Cambio aprobado y efecto visible; aceptación verificable.",
+        "en": "Scope → planning → dependencies / risks → performance / changes → acceptance / closure · Approved change and visible effect and verifiable acceptance.",
+        "pt": "Escopo → planejamento → dependências / riscos → desempenho / mudanças → aceitação / fechamento · Alteração aprovada e efeito visível e aceitação verificável.",
+        "fr": "Portée → planification → dépendances / risques → performance / changements → acceptation / fermeture · Changement approuvé, effet visible et acceptation vérifiable."
+      },
+      "lessons": [
+        {
+          "key": "position-project_manager-l11-1",
+          "title": {
+            "es": "Project Manager · Mejora del servicio · Contexto y alcance",
+            "en": "Project Manager · Service improvement · Context and scope",
+            "pt": "Project Manager · Melhoria do serviço · Contexto e escopo",
+            "fr": "Project Manager · Amélioration du service · Contexte et périmètre"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-project_manager-l11-2",
+          "title": {
+            "es": "Project Manager · Mejora del servicio · Datos y fuentes",
+            "en": "Project Manager · Service improvement · Data and sources",
+            "pt": "Project Manager · Melhoria do serviço · Dados e fontes",
+            "fr": "Project Manager · Amélioration du service · Données et sources"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-project_manager-l11-3",
+          "title": {
+            "es": "Project Manager · Mejora del servicio · Alternativas y criterio",
+            "en": "Project Manager · Service improvement · Alternatives and judgment",
+            "pt": "Project Manager · Melhoria do serviço · Alternativas e critério",
+            "fr": "Project Manager · Amélioration du service · Options et jugement"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-project_manager-l11-4",
+          "title": {
+            "es": "Project Manager · Mejora del servicio · Entregable del puesto",
+            "en": "Project Manager · Service improvement · Role deliverable",
+            "pt": "Project Manager · Melhoria do serviço · Entrega do cargo",
+            "fr": "Project Manager · Amélioration du service · Livrable du poste"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-project_manager-l11-5",
+          "title": {
+            "es": "Project Manager · Mejora del servicio · Verificación y aceptación",
+            "en": "Project Manager · Service improvement · Verification and acceptance",
+            "pt": "Project Manager · Melhoria do serviço · Verificação e aceitação",
+            "fr": "Project Manager · Amélioration du service · Vérification et acceptation"
+          },
+          "sharedSource": "cs-expansion"
+        },
+        {
+          "key": "position-project_manager-l11-6",
+          "title": {
+            "es": "Project Manager · Mejora del servicio · Restricción nueva y transferencia",
+            "en": "Project Manager · Service improvement · New constraint and transfer",
+            "pt": "Project Manager · Melhoria do serviço · Nova restrição e transferência",
+            "fr": "Project Manager · Amélioration du service · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-expansion"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": {
+        "es": "Project Manager · Colaboración",
+        "en": "Project Manager · Collaboration",
+        "pt": "Project Manager · Colaboração",
+        "fr": "Project Manager · Collaboration"
+      },
+      "objective": {
+        "es": "Alcance → planificación → dependencias/riesgos → ejecución/cambios → aceptación/cierre · Cambio aprobado y efecto visible; aceptación verificable.",
+        "en": "Scope → planning → dependencies / risks → performance / changes → acceptance / closure · Approved change and visible effect and verifiable acceptance.",
+        "pt": "Escopo → planejamento → dependências / riscos → desempenho / mudanças → aceitação / fechamento · Alteração aprovada e efeito visível e aceitação verificável.",
+        "fr": "Portée → planification → dépendances / risques → performance / changements → acceptation / fermeture · Changement approuvé, effet visible et acceptation vérifiable."
+      },
+      "lessons": [
+        {
+          "key": "position-project_manager-l12-1",
+          "title": {
+            "es": "Project Manager · Colaboración · Contexto y alcance",
+            "en": "Project Manager · Collaboration · Context and scope",
+            "pt": "Project Manager · Colaboração · Contexto e escopo",
+            "fr": "Project Manager · Collaboration · Contexte et périmètre"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-project_manager-l12-2",
+          "title": {
+            "es": "Project Manager · Colaboración · Datos y fuentes",
+            "en": "Project Manager · Collaboration · Data and sources",
+            "pt": "Project Manager · Colaboração · Dados e fontes",
+            "fr": "Project Manager · Collaboration · Données et sources"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-project_manager-l12-3",
+          "title": {
+            "es": "Project Manager · Colaboración · Alternativas y criterio",
+            "en": "Project Manager · Collaboration · Alternatives and judgment",
+            "pt": "Project Manager · Colaboração · Alternativas e critério",
+            "fr": "Project Manager · Collaboration · Options et jugement"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-project_manager-l12-4",
+          "title": {
+            "es": "Project Manager · Colaboración · Entregable del puesto",
+            "en": "Project Manager · Collaboration · Role deliverable",
+            "pt": "Project Manager · Colaboração · Entrega do cargo",
+            "fr": "Project Manager · Collaboration · Livrable du poste"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-project_manager-l12-5",
+          "title": {
+            "es": "Project Manager · Colaboración · Verificación y aceptación",
+            "en": "Project Manager · Collaboration · Verification and acceptance",
+            "pt": "Project Manager · Colaboração · Verificação e aceitação",
+            "fr": "Project Manager · Collaboration · Vérification et acceptation"
+          },
+          "sharedSource": "cs-voc"
+        },
+        {
+          "key": "position-project_manager-l12-6",
+          "title": {
+            "es": "Project Manager · Colaboración · Restricción nueva y transferencia",
+            "en": "Project Manager · Collaboration · New constraint and transfer",
+            "pt": "Project Manager · Colaboração · Nova restrição e transferência",
+            "fr": "Project Manager · Collaboration · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-voc"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": {
+        "es": "Project Manager · Supervisión",
+        "en": "Project Manager · Supervision",
+        "pt": "Project Manager · Supervisão",
+        "fr": "Project Manager · Supervision"
+      },
+      "objective": {
+        "es": "Alcance → planificación → dependencias/riesgos → ejecución/cambios → aceptación/cierre · Cambio aprobado y efecto visible; aceptación verificable.",
+        "en": "Scope → planning → dependencies / risks → performance / changes → acceptance / closure · Approved change and visible effect and verifiable acceptance.",
+        "pt": "Escopo → planejamento → dependências / riscos → desempenho / mudanças → aceitação / fechamento · Alteração aprovada e efeito visível e aceitação verificável.",
+        "fr": "Portée → planification → dépendances / risques → performance / changements → acceptation / fermeture · Changement approuvé, effet visible et acceptation vérifiable."
+      },
+      "lessons": [
+        {
+          "key": "position-project_manager-l13-1",
+          "title": {
+            "es": "Project Manager · Supervisión · Contexto y alcance",
+            "en": "Project Manager · Supervision · Context and scope",
+            "pt": "Project Manager · Supervisão · Contexto e escopo",
+            "fr": "Project Manager · Supervision · Contexte et périmètre"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-project_manager-l13-2",
+          "title": {
+            "es": "Project Manager · Supervisión · Datos y fuentes",
+            "en": "Project Manager · Supervision · Data and sources",
+            "pt": "Project Manager · Supervisão · Dados e fontes",
+            "fr": "Project Manager · Supervision · Données et sources"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-project_manager-l13-3",
+          "title": {
+            "es": "Project Manager · Supervisión · Alternativas y criterio",
+            "en": "Project Manager · Supervision · Alternatives and judgment",
+            "pt": "Project Manager · Supervisão · Alternativas e critério",
+            "fr": "Project Manager · Supervision · Options et jugement"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-project_manager-l13-4",
+          "title": {
+            "es": "Project Manager · Supervisión · Entregable del puesto",
+            "en": "Project Manager · Supervision · Role deliverable",
+            "pt": "Project Manager · Supervisão · Entrega do cargo",
+            "fr": "Project Manager · Supervision · Livrable du poste"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-project_manager-l13-5",
+          "title": {
+            "es": "Project Manager · Supervisión · Verificación y aceptación",
+            "en": "Project Manager · Supervision · Verification and acceptance",
+            "pt": "Project Manager · Supervisão · Verificação e aceitação",
+            "fr": "Project Manager · Supervision · Vérification et acceptation"
+          },
+          "sharedSource": "cs-training"
+        },
+        {
+          "key": "position-project_manager-l13-6",
+          "title": {
+            "es": "Project Manager · Supervisión · Restricción nueva y transferencia",
+            "en": "Project Manager · Supervision · New constraint and transfer",
+            "pt": "Project Manager · Supervisão · Nova restrição e transferência",
+            "fr": "Project Manager · Supervision · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-training"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": {
+        "es": "Project Manager · Gerencia",
+        "en": "Project Manager · Management",
+        "pt": "Project Manager · Gestão",
+        "fr": "Project Manager · Gestion"
+      },
+      "objective": {
+        "es": "Alcance → planificación → dependencias/riesgos → ejecución/cambios → aceptación/cierre · Cambio aprobado y efecto visible; aceptación verificable.",
+        "en": "Scope → planning → dependencies / risks → performance / changes → acceptance / closure · Approved change and visible effect and verifiable acceptance.",
+        "pt": "Escopo → planejamento → dependências / riscos → desempenho / mudanças → aceitação / fechamento · Alteração aprovada e efeito visível e aceitação verificável.",
+        "fr": "Portée → planification → dépendances / risques → performance / changements → acceptation / fermeture · Changement approuvé, effet visible et acceptation vérifiable."
+      },
+      "lessons": [
+        {
+          "key": "position-project_manager-l14-1",
+          "title": {
+            "es": "Project Manager · Gerencia · Contexto y alcance",
+            "en": "Project Manager · Management · Context and scope",
+            "pt": "Project Manager · Gestão · Contexto e escopo",
+            "fr": "Project Manager · Gestion · Contexte et périmètre"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-project_manager-l14-2",
+          "title": {
+            "es": "Project Manager · Gerencia · Datos y fuentes",
+            "en": "Project Manager · Management · Data and sources",
+            "pt": "Project Manager · Gestão · Dados e fontes",
+            "fr": "Project Manager · Gestion · Données et sources"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-project_manager-l14-3",
+          "title": {
+            "es": "Project Manager · Gerencia · Alternativas y criterio",
+            "en": "Project Manager · Management · Alternatives and judgment",
+            "pt": "Project Manager · Gestão · Alternativas e critério",
+            "fr": "Project Manager · Gestion · Options et jugement"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-project_manager-l14-4",
+          "title": {
+            "es": "Project Manager · Gerencia · Entregable del puesto",
+            "en": "Project Manager · Management · Role deliverable",
+            "pt": "Project Manager · Gestão · Entrega do cargo",
+            "fr": "Project Manager · Gestion · Livrable du poste"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-project_manager-l14-5",
+          "title": {
+            "es": "Project Manager · Gerencia · Verificación y aceptación",
+            "en": "Project Manager · Management · Verification and acceptance",
+            "pt": "Project Manager · Gestão · Verificação e aceitação",
+            "fr": "Project Manager · Gestion · Vérification et acceptation"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-project_manager-l14-6",
+          "title": {
+            "es": "Project Manager · Gerencia · Restricción nueva y transferencia",
+            "en": "Project Manager · Management · New constraint and transfer",
+            "pt": "Project Manager · Gestão · Nova restrição e transferência",
+            "fr": "Project Manager · Gestion · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-segmentation"
+        },
+        {
+          "key": "position-project_manager-l14-7",
+          "title": {
+            "es": "Project Manager · Gerencia · Decisión de capacidad",
+            "en": "Project Manager · Management · Capacity decision",
+            "pt": "Project Manager · Gestão · Decisão de capacidade",
+            "fr": "Project Manager · Gestion · Décision de capacité"
+          },
+          "sharedSource": "cs-segmentation"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": {
+        "es": "Project Manager · Dirección",
+        "en": "Project Manager · Leadership",
+        "pt": "Project Manager · Direção",
+        "fr": "Project Manager · Direction"
+      },
+      "objective": {
+        "es": "Alcance → planificación → dependencias/riesgos → ejecución/cambios → aceptación/cierre · Cambio aprobado y efecto visible; aceptación verificable.",
+        "en": "Scope → planning → dependencies / risks → performance / changes → acceptance / closure · Approved change and visible effect and verifiable acceptance.",
+        "pt": "Escopo → planejamento → dependências / riscos → desempenho / mudanças → aceitação / fechamento · Alteração aprovada e efeito visível e aceitação verificável.",
+        "fr": "Portée → planification → dépendances / risques → performance / changements → acceptation / fermeture · Changement approuvé, effet visible et acceptation vérifiable."
+      },
+      "lessons": [
+        {
+          "key": "position-project_manager-l15-1",
+          "title": {
+            "es": "Project Manager · Dirección · Contexto y alcance",
+            "en": "Project Manager · Leadership · Context and scope",
+            "pt": "Project Manager · Direção · Contexto e escopo",
+            "fr": "Project Manager · Direction · Contexte et périmètre"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-project_manager-l15-2",
+          "title": {
+            "es": "Project Manager · Dirección · Datos y fuentes",
+            "en": "Project Manager · Leadership · Data and sources",
+            "pt": "Project Manager · Direção · Dados e fontes",
+            "fr": "Project Manager · Direction · Données et sources"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-project_manager-l15-3",
+          "title": {
+            "es": "Project Manager · Dirección · Alternativas y criterio",
+            "en": "Project Manager · Leadership · Alternatives and judgment",
+            "pt": "Project Manager · Direção · Alternativas e critério",
+            "fr": "Project Manager · Direction · Options et jugement"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-project_manager-l15-4",
+          "title": {
+            "es": "Project Manager · Dirección · Entregable del puesto",
+            "en": "Project Manager · Leadership · Role deliverable",
+            "pt": "Project Manager · Direção · Entrega do cargo",
+            "fr": "Project Manager · Direction · Livrable du poste"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-project_manager-l15-5",
+          "title": {
+            "es": "Project Manager · Dirección · Verificación y aceptación",
+            "en": "Project Manager · Leadership · Verification and acceptance",
+            "pt": "Project Manager · Direção · Verificação e aceitação",
+            "fr": "Project Manager · Direction · Vérification et acceptation"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-project_manager-l15-6",
+          "title": {
+            "es": "Project Manager · Dirección · Restricción nueva y transferencia",
+            "en": "Project Manager · Leadership · New constraint and transfer",
+            "pt": "Project Manager · Direção · Nova restrição e transferência",
+            "fr": "Project Manager · Direction · Nouvelle contrainte et transfert"
+          },
+          "sharedSource": "cs-ebr"
+        },
+        {
+          "key": "position-project_manager-l15-7",
+          "title": {
+            "es": "Project Manager · Dirección · Decisión de capacidad",
+            "en": "Project Manager · Leadership · Capacity decision",
+            "pt": "Project Manager · Direção · Decisão de capacidade",
+            "fr": "Project Manager · Direction · Décision de capacité"
+          },
+          "sharedSource": "cs-ebr"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "level": 8,
+      "title": "Plan de proyecto completo",
+      "rubric": [
+        "scope",
+        "decision",
+        "evidence",
+        "verification"
+      ]
+    },
+    {
+      "level": 15,
+      "title": "Recuperación de un proyecto en riesgo",
+      "rubric": [
+        "scope",
+        "decision",
+        "evidence",
+        "verification"
+      ]
+    }
+  ],
+  "diagnostic": {
+    "type": "situations",
+    "source": "https://www.onetonline.org/link/details/13-1082.00",
+    "competencies": [
+      "communication",
+      "diagnosis",
+      "data",
+      "prioritization",
+      "documentation",
+      "deescalation",
+      "negotiation",
+      "planning",
+      "technical",
+      "collaboration"
+    ],
+    "blocking": false
+  },
+  "optionalTechnical": [
+    "data",
+    "spreadsheets",
+    "sql",
+    "automation",
+    "ai"
+  ],
+  "references": [
+    "https://www.onetonline.org/link/details/13-1082.00"
+  ],
+  "sharedUnits": [
+    "common-communication",
+    "common-diagnosis",
+    "common-data",
+    "common-priority",
+    "common-documentation",
+    "common-deescalation",
+    "common-commercial",
+    "common-planning",
+    "common-technical"
+  ]
+}
