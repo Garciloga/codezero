@@ -4,6 +4,7 @@ import { createAdminSupabase } from "../../../../lib/admin";
 import { isTrustedBrowserRequest } from "../../../../lib/security";
 import { consumeRateLimit } from "../../../../lib/rate-limit";
 
+import { boundedForm, FORM_LIMIT_BYTES } from "../../../../lib/bounded-form";
 const categories = new Set(["producto","contenido","faq","experiencia","otro"]);
 
 export async function POST(req: Request) {
@@ -23,7 +24,9 @@ export async function POST(req: Request) {
     );
   }
 
-  const form = await req.formData();
+  const form = await boundedForm(req, FORM_LIMIT_BYTES).catch(() => null);
+
+  if (!form) return new Response(null, { status: 413 });
   const title = String(form.get("title") ?? "").trim();
   const detail = String(form.get("detail") ?? "").trim();
   const categoryRaw = String(form.get("category") ?? "otro");

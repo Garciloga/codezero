@@ -6,6 +6,7 @@ import { isTrustedBrowserRequest } from "../../../../lib/security";
 import { consumeRateLimit } from "../../../../lib/rate-limit";
 import { maybeIssueWorkspaceDiploma } from "../../../../lib/workspace-diploma-server";
 
+import { boundedForm, FORM_LIMIT_BYTES } from "../../../../lib/bounded-form";
 export async function POST(req: Request) {
   if (!isTrustedBrowserRequest(req)) {
     return new Response("Invalid request origin", { status: 403 });
@@ -23,7 +24,9 @@ export async function POST(req: Request) {
     );
   }
 
-  const formData = await req.formData();
+  const formData = await boundedForm(req, FORM_LIMIT_BYTES).catch(() => null);
+
+  if (!formData) return new Response(null, { status: 413 });
   const lessonId = Number(formData.get("lesson_id"));
 
   if (!Number.isInteger(lessonId)) {

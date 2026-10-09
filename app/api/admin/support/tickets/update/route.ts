@@ -4,6 +4,7 @@ import { createAdminSupabase, requireAdmin } from "../../../../../../lib/admin";
 import { isTrustedBrowserRequest } from "../../../../../../lib/security";
 import { consumeRateLimit } from "../../../../../../lib/rate-limit";
 
+import { boundedForm, FORM_LIMIT_BYTES } from "../../../../../../lib/bounded-form";
 const statuses = new Set(["open","in_progress","waiting_user","resolved","closed"]);
 const priorities = new Set(["low","normal","high","urgent"]);
 
@@ -30,7 +31,9 @@ export async function POST(req: Request) {
     );
   }
 
-  const form = await req.formData();
+  const form = await boundedForm(req, FORM_LIMIT_BYTES).catch(() => null);
+
+  if (!form) return new Response(null, { status: 413 });
   const ticketId = Number(form.get("ticket_id"));
   const statusRaw = String(form.get("status") ?? "");
   const priorityRaw = String(form.get("priority") ?? "");

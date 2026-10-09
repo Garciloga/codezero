@@ -4,6 +4,7 @@ import { createAdminSupabase } from "../../../../../../lib/admin";
 import { isTrustedBrowserRequest } from "../../../../../../lib/security";
 import { consumeRateLimit } from "../../../../../../lib/rate-limit";
 
+import { boundedForm, FORM_LIMIT_BYTES } from "../../../../../../lib/bounded-form";
 type Context = { params: Promise<{ id: string }> };
 
 export async function POST(req: Request, { params }: Context) {
@@ -29,7 +30,9 @@ export async function POST(req: Request, { params }: Context) {
     );
   }
 
-  const form = await req.formData();
+  const form = await boundedForm(req, FORM_LIMIT_BYTES).catch(() => null);
+
+  if (!form) return new Response(null, { status: 413 });
   const body = String(form.get("body") ?? "").trim();
   if (body.length < 1 || body.length > 8000) {
     return NextResponse.redirect(new URL(`/help/tickets/${ticketId}?reply=invalid`, req.url), 303);

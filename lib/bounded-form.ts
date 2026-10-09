@@ -1,3 +1,5 @@
+/** Default ceiling for text-only browser forms; routes with larger needs pass their own. */
+export const FORM_LIMIT_BYTES = 256_000;
 /** Bound actual streamed bytes before parsing a browser form. Content-Length is not trusted. */
 export async function boundedForm(req:Request,maxBytes:number):Promise<FormData>{
  const reader=req.body?.getReader();if(!reader)throw Error('INVALID_FORM');const chunks:Uint8Array[]=[];let bytes=0;

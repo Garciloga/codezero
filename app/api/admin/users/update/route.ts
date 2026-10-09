@@ -4,6 +4,7 @@ import { createAdminSupabase, requireAdmin } from "../../../../../lib/admin";
 import { isTrustedBrowserRequest } from "../../../../../lib/security";
 import { consumeRateLimit } from "../../../../../lib/rate-limit";
 
+import { boundedForm, FORM_LIMIT_BYTES } from "../../../../../lib/bounded-form";
 export async function POST(req: Request) {
   if (!isTrustedBrowserRequest(req)) {
     return new Response("Invalid request origin", { status: 403 });
@@ -27,7 +28,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "FORBIDDEN" }, { status: 403 });
   }
 
-  const formData = await req.formData();
+  const formData = await boundedForm(req, FORM_LIMIT_BYTES).catch(() => null);
+
+  if (!formData) return new Response(null, { status: 413 });
   const targetUserId = String(formData.get("user_id") ?? "");
   const planName = String(formData.get("plan_name") ?? "");
   const status = String(formData.get("status") ?? "");

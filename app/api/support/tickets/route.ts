@@ -4,6 +4,7 @@ import { createAdminSupabase } from "../../../../lib/admin";
 import { isTrustedBrowserRequest } from "../../../../lib/security";
 import { consumeRateLimit } from "../../../../lib/rate-limit";
 
+import { boundedForm, FORM_LIMIT_BYTES } from "../../../../lib/bounded-form";
 const categories = new Set([
   "cuenta","aprendizaje","facturacion","tutor_ia","certificado","privacidad","tecnico","otro",
 ]);
@@ -25,7 +26,9 @@ export async function POST(req: Request) {
     );
   }
 
-  const form = await req.formData();
+  const form = await boundedForm(req, FORM_LIMIT_BYTES).catch(() => null);
+
+  if (!form) return new Response(null, { status: 413 });
   const subject = String(form.get("subject") ?? "").trim();
   const description = String(form.get("description") ?? "").trim();
   const originalQuery = String(form.get("original_query") ?? "").trim().slice(0, 500);
