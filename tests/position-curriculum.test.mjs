@@ -58,7 +58,7 @@ test('sign-up offers exactly the connected position programs',async()=>{
  const {default:published}=await import('../lib/position-curricula/published.json',{with:{type:'json'}});
  assert.deepEqual(published.map(p=>[p.key,p.title]),Object.values(POSITION_PROGRAMS).map(p=>[p.key,p.title]));
 });
-for(const [role,label] of [['account_manager','Account Manager'],['customer_support','Customer Support'],['tech_support_l3','Tech Support'],['key_account_manager','Key Account Manager']])test(label+' is a full, distinct program in four languages',async()=>{
+for(const [role,label] of [['account_manager','Account Manager'],['customer_support','Customer Support'],['tech_support_l3','Tech Support'],['key_account_manager','Key Account Manager'],['product_specialist','Product Specialist']])test(label+' is a full, distinct program in four languages',async()=>{
  const am=POSITION_PROGRAMS[role];assert.equal(am.title,label);
  assert.equal(positionProgram(role),am);assert.deepEqual(positionProgramTotals(am),positionProgramTotals(ONBOARDING_PROGRAM));
  assert.equal(am.lessons.length,92);assert.equal(am.exams.length,15);assert.equal(am.projects.length,2);
