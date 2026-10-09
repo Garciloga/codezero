@@ -82,3 +82,12 @@ button,.btn,summary { min-height: 44px; }
 
 .support-session-banner{position:sticky;top:0;z-index:1000;padding:12px 20px;background:#fff0c2;color:#332909;border-bottom:2px solid #b8860b;display:flex;align-items:center;flex-wrap:wrap;gap:12px}.support-session-banner p{margin:0;font-size:14px}
 
+/* Lesson phases: A Aprender · B Practicar · C Comprobar · D Avanzar */
+.lesson-phases{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0 0 20px;padding:0}
+.lesson-phases li{display:grid;gap:2px;padding:12px 14px;border:1px solid var(--user-border,#e5e9f0);border-radius:14px;background:var(--user-surface,#fff);border-top:4px solid var(--user-border,#cbd5e1);transition:border-color .2s ease}
+.lesson-phases li[data-done=true]{border-top-color:var(--user-accent,#2346d8)}
+.lesson-phases li span{font-size:13px}
+.lesson-notice{transition:opacity .2s ease}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+@media(max-width:800px){.lesson-phases{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.lesson-phases li,.lesson-notice{transition:none}}
