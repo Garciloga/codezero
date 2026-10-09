@@ -4,9 +4,9 @@
   "published": false,
   "scope": "levels 2-5",
   "editorialWarnings": [
-    "Questions within each level intentionally share a scenario; diversify before release.",
-    "Exercises reuse one case per level; editorial review required.",
-    "No production wiring, secure grading or learner calibration."
+    "Spanish scenarios and assessment questions are differentiated by competency; EN/PT/FR retain initial generic drafts requiring native translations.",
+    "All answers must be graded server-side; this file is not connected to production.",
+    "Human editorial review and learner calibration required before publication."
   ],
   "levels": [
     {
@@ -31,21 +31,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Ciclo de trabajo · Contexto y alcance",
-              "case": "El cliente pide iniciar capacitación antes de confirmar responsables y datos.",
-              "learningObjective": "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones.",
+              "case": "La persona de ventas no entregó el contrato firmado.",
+              "learningObjective": "Pedir el contrato y validar el alcance firmado.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "El cliente pide iniciar capacitación antes de confirmar responsables y datos.",
+                "prompt": "La persona de ventas no entregó el contrato firmado.",
                 "options": [
-                  "Reservar sesiones sin revisar bloqueos.",
-                  "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones."
+                  "Avanzar como si el documento existiera.",
+                  "Pedir el contrato y validar el alcance firmado."
                 ],
                 "correctIndex": 1,
-                "feedback": "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones."
+                "feedback": "Pedir el contrato y validar el alcance firmado."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: La persona de ventas no entregó el contrato firmado. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -133,21 +133,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Ciclo de trabajo · Datos y fuentes",
-              "case": "El cliente pide iniciar capacitación antes de confirmar responsables y datos.",
-              "learningObjective": "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones.",
+              "case": "El cliente aún no entregó el inventario de usuarios.",
+              "learningObjective": "Registrar el inventario faltante como dependencia con responsable.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "El cliente pide iniciar capacitación antes de confirmar responsables y datos.",
+                "prompt": "El cliente aún no entregó el inventario de usuarios.",
                 "options": [
-                  "Reservar sesiones sin revisar bloqueos.",
-                  "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones."
+                  "Suponer que el cliente enviará todo a tiempo.",
+                  "Registrar el inventario faltante como dependencia con responsable."
                 ],
                 "correctIndex": 1,
-                "feedback": "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones."
+                "feedback": "Registrar el inventario faltante como dependencia con responsable."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: El cliente aún no entregó el inventario de usuarios. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -235,21 +235,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Ciclo de trabajo · Alternativas y criterio",
-              "case": "El cliente pide iniciar capacitación antes de confirmar responsables y datos.",
-              "learningObjective": "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones.",
+              "case": "El equipo técnico requiere una autorización de integración.",
+              "learningObjective": "Solicitar aprobación formal antes de iniciar la conexión.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "El cliente pide iniciar capacitación antes de confirmar responsables y datos.",
+                "prompt": "El equipo técnico requiere una autorización de integración.",
                 "options": [
-                  "Reservar sesiones sin revisar bloqueos.",
-                  "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones."
+                  "Usar credenciales personales mientras llega el permiso.",
+                  "Solicitar aprobación formal antes de iniciar la conexión."
                 ],
                 "correctIndex": 1,
-                "feedback": "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones."
+                "feedback": "Solicitar aprobación formal antes de iniciar la conexión."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: El equipo técnico requiere una autorización de integración. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -337,21 +337,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Ciclo de trabajo · Entregable del puesto",
-              "case": "El cliente pide iniciar capacitación antes de confirmar responsables y datos.",
-              "learningObjective": "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones.",
+              "case": "El proveedor externo cambió la fecha de disponibilidad.",
+              "learningObjective": "Actualizar el camino crítico y confirmar la nueva fecha.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "El cliente pide iniciar capacitación antes de confirmar responsables y datos.",
+                "prompt": "El proveedor externo cambió la fecha de disponibilidad.",
                 "options": [
-                  "Reservar sesiones sin revisar bloqueos.",
-                  "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones."
+                  "Mantener la fecha sin comunicar el cambio.",
+                  "Actualizar el camino crítico y confirmar la nueva fecha."
                 ],
                 "correctIndex": 1,
-                "feedback": "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones."
+                "feedback": "Actualizar el camino crítico y confirmar la nueva fecha."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: El proveedor externo cambió la fecha de disponibilidad. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -439,21 +439,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Ciclo de trabajo · Verificación y aceptación",
-              "case": "El cliente pide iniciar capacitación antes de confirmar responsables y datos.",
-              "learningObjective": "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones.",
+              "case": "Dos responsables discrepan sobre el alcance de capacitación.",
+              "learningObjective": "Resolver el desacuerdo con el patrocinador y registrar la decisión.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "El cliente pide iniciar capacitación antes de confirmar responsables y datos.",
+                "prompt": "Dos responsables discrepan sobre el alcance de capacitación.",
                 "options": [
-                  "Reservar sesiones sin revisar bloqueos.",
-                  "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones."
+                  "Dejar que cada área siga su propio alcance.",
+                  "Resolver el desacuerdo con el patrocinador y registrar la decisión."
                 ],
                 "correctIndex": 1,
-                "feedback": "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones."
+                "feedback": "Resolver el desacuerdo con el patrocinador y registrar la decisión."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: Dos responsables discrepan sobre el alcance de capacitación. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -541,21 +541,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Ciclo de trabajo · Restricción nueva y transferencia",
-              "case": "El cliente pide iniciar capacitación antes de confirmar responsables y datos.",
-              "learningObjective": "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones.",
+              "case": "La fase de inicio terminó sin evidencia de aceptación.",
+              "learningObjective": "Solicitar aceptación basada en resultados y evidencias.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "El cliente pide iniciar capacitación antes de confirmar responsables y datos.",
+                "prompt": "La fase de inicio terminó sin evidencia de aceptación.",
                 "options": [
-                  "Reservar sesiones sin revisar bloqueos.",
-                  "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones."
+                  "Cerrar la fase porque ya hubo reuniones.",
+                  "Solicitar aceptación basada en resultados y evidencias."
                 ],
                 "correctIndex": 1,
-                "feedback": "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones."
+                "feedback": "Solicitar aceptación basada en resultados y evidencias."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: La fase de inicio terminó sin evidencia de aceptación. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -648,13 +648,13 @@
             "key": "onboarding-l2-q1",
             "localized": {
               "es": {
-                "prompt": "El cliente pide iniciar capacitación antes de confirmar responsables y datos.",
+                "prompt": "Onboarding Specialist · Ciclo de trabajo · Contexto y alcance: La persona de ventas no entregó el contrato firmado. ¿Qué acción corresponde?",
                 "options": [
-                  "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones.",
-                  "Reservar sesiones sin revisar bloqueos."
+                  "Pedir el contrato y validar el alcance firmado.",
+                  "Avanzar como si el documento existiera."
                 ],
                 "correctIndex": 0,
-                "feedback": "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones."
+                "feedback": "Pedir el contrato y validar el alcance firmado."
               },
               "en": {
                 "prompt": "The customer asks to begin training before owners and data are confirmed.",
@@ -689,13 +689,13 @@
             "key": "onboarding-l2-q2",
             "localized": {
               "es": {
-                "prompt": "El cliente pide iniciar capacitación antes de confirmar responsables y datos.",
+                "prompt": "Onboarding Specialist · Ciclo de trabajo · Datos y fuentes: El cliente aún no entregó el inventario de usuarios. ¿Qué acción corresponde?",
                 "options": [
-                  "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones.",
-                  "Reservar sesiones sin revisar bloqueos."
+                  "Registrar el inventario faltante como dependencia con responsable.",
+                  "Suponer que el cliente enviará todo a tiempo."
                 ],
                 "correctIndex": 0,
-                "feedback": "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones."
+                "feedback": "Registrar el inventario faltante como dependencia con responsable."
               },
               "en": {
                 "prompt": "The customer asks to begin training before owners and data are confirmed.",
@@ -730,13 +730,13 @@
             "key": "onboarding-l2-q3",
             "localized": {
               "es": {
-                "prompt": "El cliente pide iniciar capacitación antes de confirmar responsables y datos.",
+                "prompt": "Onboarding Specialist · Ciclo de trabajo · Alternativas y criterio: El equipo técnico requiere una autorización de integración. ¿Qué acción corresponde?",
                 "options": [
-                  "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones.",
-                  "Reservar sesiones sin revisar bloqueos."
+                  "Solicitar aprobación formal antes de iniciar la conexión.",
+                  "Usar credenciales personales mientras llega el permiso."
                 ],
                 "correctIndex": 0,
-                "feedback": "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones."
+                "feedback": "Solicitar aprobación formal antes de iniciar la conexión."
               },
               "en": {
                 "prompt": "The customer asks to begin training before owners and data are confirmed.",
@@ -771,13 +771,13 @@
             "key": "onboarding-l2-q4",
             "localized": {
               "es": {
-                "prompt": "El cliente pide iniciar capacitación antes de confirmar responsables y datos.",
+                "prompt": "Onboarding Specialist · Ciclo de trabajo · Entregable del puesto: El proveedor externo cambió la fecha de disponibilidad. ¿Qué acción corresponde?",
                 "options": [
-                  "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones.",
-                  "Reservar sesiones sin revisar bloqueos."
+                  "Actualizar el camino crítico y confirmar la nueva fecha.",
+                  "Mantener la fecha sin comunicar el cambio."
                 ],
                 "correctIndex": 0,
-                "feedback": "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones."
+                "feedback": "Actualizar el camino crítico y confirmar la nueva fecha."
               },
               "en": {
                 "prompt": "The customer asks to begin training before owners and data are confirmed.",
@@ -812,13 +812,13 @@
             "key": "onboarding-l2-q5",
             "localized": {
               "es": {
-                "prompt": "El cliente pide iniciar capacitación antes de confirmar responsables y datos.",
+                "prompt": "Onboarding Specialist · Ciclo de trabajo · Verificación y aceptación: Dos responsables discrepan sobre el alcance de capacitación. ¿Qué acción corresponde?",
                 "options": [
-                  "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones.",
-                  "Reservar sesiones sin revisar bloqueos."
+                  "Resolver el desacuerdo con el patrocinador y registrar la decisión.",
+                  "Dejar que cada área siga su propio alcance."
                 ],
                 "correctIndex": 0,
-                "feedback": "Acordar dependencias, dueños y criterios de entrada antes de fijar sesiones."
+                "feedback": "Resolver el desacuerdo con el patrocinador y registrar la decisión."
               },
               "en": {
                 "prompt": "The customer asks to begin training before owners and data are confirmed.",
@@ -875,21 +875,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Inicio de un caso · Contexto y alcance",
-              "case": "Al inicio del proyecto, tres equipos creen que otro equipo aprobará los datos.",
-              "learningObjective": "Definir una matriz de responsables y registrar una persona aprobadora y plazo.",
+              "case": "El patrocinador no participó en la reunión inicial.",
+              "learningObjective": "Definir representante con capacidad de decisión y reagendar acuerdos pendientes.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "Al inicio del proyecto, tres equipos creen que otro equipo aprobará los datos.",
+                "prompt": "El patrocinador no participó en la reunión inicial.",
                 "options": [
-                  "Dejar la aprobación implícita.",
-                  "Definir una matriz de responsables y registrar una persona aprobadora y plazo."
+                  "Tratar el silencio como aprobación.",
+                  "Definir representante con capacidad de decisión y reagendar acuerdos pendientes."
                 ],
                 "correctIndex": 1,
-                "feedback": "Definir una matriz de responsables y registrar una persona aprobadora y plazo."
+                "feedback": "Definir representante con capacidad de decisión y reagendar acuerdos pendientes."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: El patrocinador no participó en la reunión inicial. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -977,21 +977,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Inicio de un caso · Datos y fuentes",
-              "case": "Al inicio del proyecto, tres equipos creen que otro equipo aprobará los datos.",
-              "learningObjective": "Definir una matriz de responsables y registrar una persona aprobadora y plazo.",
+              "case": "El kickoff no tiene agenda aprobada.",
+              "learningObjective": "Distribuir y confirmar agenda, objetivos y decisiones esperadas.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "Al inicio del proyecto, tres equipos creen que otro equipo aprobará los datos.",
+                "prompt": "El kickoff no tiene agenda aprobada.",
                 "options": [
-                  "Dejar la aprobación implícita.",
-                  "Definir una matriz de responsables y registrar una persona aprobadora y plazo."
+                  "Improvisar sin registrar acuerdos.",
+                  "Distribuir y confirmar agenda, objetivos y decisiones esperadas."
                 ],
                 "correctIndex": 1,
-                "feedback": "Definir una matriz de responsables y registrar una persona aprobadora y plazo."
+                "feedback": "Distribuir y confirmar agenda, objetivos y decisiones esperadas."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: El kickoff no tiene agenda aprobada. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -1079,21 +1079,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Inicio de un caso · Alternativas y criterio",
-              "case": "Al inicio del proyecto, tres equipos creen que otro equipo aprobará los datos.",
-              "learningObjective": "Definir una matriz de responsables y registrar una persona aprobadora y plazo.",
+              "case": "El cliente asignó un responsable sin facultades de decisión.",
+              "learningObjective": "Establecer quién aprueba cada entregable.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "Al inicio del proyecto, tres equipos creen que otro equipo aprobará los datos.",
+                "prompt": "El cliente asignó un responsable sin facultades de decisión.",
                 "options": [
-                  "Dejar la aprobación implícita.",
-                  "Definir una matriz de responsables y registrar una persona aprobadora y plazo."
+                  "Dar por válida cualquier firma.",
+                  "Establecer quién aprueba cada entregable."
                 ],
                 "correctIndex": 1,
-                "feedback": "Definir una matriz de responsables y registrar una persona aprobadora y plazo."
+                "feedback": "Establecer quién aprueba cada entregable."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: El cliente asignó un responsable sin facultades de decisión. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -1181,21 +1181,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Inicio de un caso · Entregable del puesto",
-              "case": "Al inicio del proyecto, tres equipos creen que otro equipo aprobará los datos.",
-              "learningObjective": "Definir una matriz de responsables y registrar una persona aprobadora y plazo.",
+              "case": "Los objetivos del cliente no incluyen indicadores medibles.",
+              "learningObjective": "Traducir los objetivos a indicadores observables.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "Al inicio del proyecto, tres equipos creen que otro equipo aprobará los datos.",
+                "prompt": "Los objetivos del cliente no incluyen indicadores medibles.",
                 "options": [
-                  "Dejar la aprobación implícita.",
-                  "Definir una matriz de responsables y registrar una persona aprobadora y plazo."
+                  "Medir solo cantidad de reuniones.",
+                  "Traducir los objetivos a indicadores observables."
                 ],
                 "correctIndex": 1,
-                "feedback": "Definir una matriz de responsables y registrar una persona aprobadora y plazo."
+                "feedback": "Traducir los objetivos a indicadores observables."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: Los objetivos del cliente no incluyen indicadores medibles. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -1283,21 +1283,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Inicio de un caso · Verificación y aceptación",
-              "case": "Al inicio del proyecto, tres equipos creen que otro equipo aprobará los datos.",
-              "learningObjective": "Definir una matriz de responsables y registrar una persona aprobadora y plazo.",
+              "case": "Una dependencia técnica aparece durante el kickoff.",
+              "learningObjective": "Anotar el bloqueo, dueño y fecha de revisión.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "Al inicio del proyecto, tres equipos creen que otro equipo aprobará los datos.",
+                "prompt": "Una dependencia técnica aparece durante el kickoff.",
                 "options": [
-                  "Dejar la aprobación implícita.",
-                  "Definir una matriz de responsables y registrar una persona aprobadora y plazo."
+                  "Posponerlo sin dejar responsables.",
+                  "Anotar el bloqueo, dueño y fecha de revisión."
                 ],
                 "correctIndex": 1,
-                "feedback": "Definir una matriz de responsables y registrar una persona aprobadora y plazo."
+                "feedback": "Anotar el bloqueo, dueño y fecha de revisión."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: Una dependencia técnica aparece durante el kickoff. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -1385,21 +1385,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Inicio de un caso · Restricción nueva y transferencia",
-              "case": "Al inicio del proyecto, tres equipos creen que otro equipo aprobará los datos.",
-              "learningObjective": "Definir una matriz de responsables y registrar una persona aprobadora y plazo.",
+              "case": "El resumen del kickoff omite acuerdos y propietarios.",
+              "learningObjective": "Enviar acta con decisiones, responsables y próximos pasos.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "Al inicio del proyecto, tres equipos creen que otro equipo aprobará los datos.",
+                "prompt": "El resumen del kickoff omite acuerdos y propietarios.",
                 "options": [
-                  "Dejar la aprobación implícita.",
-                  "Definir una matriz de responsables y registrar una persona aprobadora y plazo."
+                  "Guardar las notas únicamente en el chat personal.",
+                  "Enviar acta con decisiones, responsables y próximos pasos."
                 ],
                 "correctIndex": 1,
-                "feedback": "Definir una matriz de responsables y registrar una persona aprobadora y plazo."
+                "feedback": "Enviar acta con decisiones, responsables y próximos pasos."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: El resumen del kickoff omite acuerdos y propietarios. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -1492,13 +1492,13 @@
             "key": "onboarding-l3-q1",
             "localized": {
               "es": {
-                "prompt": "Al inicio del proyecto, tres equipos creen que otro equipo aprobará los datos.",
+                "prompt": "Onboarding Specialist · Inicio de un caso · Contexto y alcance: El patrocinador no participó en la reunión inicial. ¿Qué acción corresponde?",
                 "options": [
-                  "Definir una matriz de responsables y registrar una persona aprobadora y plazo.",
-                  "Dejar la aprobación implícita."
+                  "Definir representante con capacidad de decisión y reagendar acuerdos pendientes.",
+                  "Tratar el silencio como aprobación."
                 ],
                 "correctIndex": 0,
-                "feedback": "Definir una matriz de responsables y registrar una persona aprobadora y plazo."
+                "feedback": "Definir representante con capacidad de decisión y reagendar acuerdos pendientes."
               },
               "en": {
                 "prompt": "At kickoff, three teams each assume another team will approve the data.",
@@ -1533,13 +1533,13 @@
             "key": "onboarding-l3-q2",
             "localized": {
               "es": {
-                "prompt": "Al inicio del proyecto, tres equipos creen que otro equipo aprobará los datos.",
+                "prompt": "Onboarding Specialist · Inicio de un caso · Datos y fuentes: El kickoff no tiene agenda aprobada. ¿Qué acción corresponde?",
                 "options": [
-                  "Definir una matriz de responsables y registrar una persona aprobadora y plazo.",
-                  "Dejar la aprobación implícita."
+                  "Distribuir y confirmar agenda, objetivos y decisiones esperadas.",
+                  "Improvisar sin registrar acuerdos."
                 ],
                 "correctIndex": 0,
-                "feedback": "Definir una matriz de responsables y registrar una persona aprobadora y plazo."
+                "feedback": "Distribuir y confirmar agenda, objetivos y decisiones esperadas."
               },
               "en": {
                 "prompt": "At kickoff, three teams each assume another team will approve the data.",
@@ -1574,13 +1574,13 @@
             "key": "onboarding-l3-q3",
             "localized": {
               "es": {
-                "prompt": "Al inicio del proyecto, tres equipos creen que otro equipo aprobará los datos.",
+                "prompt": "Onboarding Specialist · Inicio de un caso · Alternativas y criterio: El cliente asignó un responsable sin facultades de decisión. ¿Qué acción corresponde?",
                 "options": [
-                  "Definir una matriz de responsables y registrar una persona aprobadora y plazo.",
-                  "Dejar la aprobación implícita."
+                  "Establecer quién aprueba cada entregable.",
+                  "Dar por válida cualquier firma."
                 ],
                 "correctIndex": 0,
-                "feedback": "Definir una matriz de responsables y registrar una persona aprobadora y plazo."
+                "feedback": "Establecer quién aprueba cada entregable."
               },
               "en": {
                 "prompt": "At kickoff, three teams each assume another team will approve the data.",
@@ -1615,13 +1615,13 @@
             "key": "onboarding-l3-q4",
             "localized": {
               "es": {
-                "prompt": "Al inicio del proyecto, tres equipos creen que otro equipo aprobará los datos.",
+                "prompt": "Onboarding Specialist · Inicio de un caso · Entregable del puesto: Los objetivos del cliente no incluyen indicadores medibles. ¿Qué acción corresponde?",
                 "options": [
-                  "Definir una matriz de responsables y registrar una persona aprobadora y plazo.",
-                  "Dejar la aprobación implícita."
+                  "Traducir los objetivos a indicadores observables.",
+                  "Medir solo cantidad de reuniones."
                 ],
                 "correctIndex": 0,
-                "feedback": "Definir una matriz de responsables y registrar una persona aprobadora y plazo."
+                "feedback": "Traducir los objetivos a indicadores observables."
               },
               "en": {
                 "prompt": "At kickoff, three teams each assume another team will approve the data.",
@@ -1656,13 +1656,13 @@
             "key": "onboarding-l3-q5",
             "localized": {
               "es": {
-                "prompt": "Al inicio del proyecto, tres equipos creen que otro equipo aprobará los datos.",
+                "prompt": "Onboarding Specialist · Inicio de un caso · Verificación y aceptación: Una dependencia técnica aparece durante el kickoff. ¿Qué acción corresponde?",
                 "options": [
-                  "Definir una matriz de responsables y registrar una persona aprobadora y plazo.",
-                  "Dejar la aprobación implícita."
+                  "Anotar el bloqueo, dueño y fecha de revisión.",
+                  "Posponerlo sin dejar responsables."
                 ],
                 "correctIndex": 0,
-                "feedback": "Definir una matriz de responsables y registrar una persona aprobadora y plazo."
+                "feedback": "Anotar el bloqueo, dueño y fecha de revisión."
               },
               "en": {
                 "prompt": "At kickoff, three teams each assume another team will approve the data.",
@@ -1719,21 +1719,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Comunicación · Contexto y alcance",
-              "case": "La fecha objetivo cambia y el cliente no recibió explicación.",
-              "learningObjective": "Comunicar motivo, impacto, acciones y próximo punto de control.",
+              "case": "El cliente reporta una demora sin recibir actualización.",
+              "learningObjective": "Enviar actualización con impacto, mitigación y próximo control.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "La fecha objetivo cambia y el cliente no recibió explicación.",
+                "prompt": "El cliente reporta una demora sin recibir actualización.",
                 "options": [
-                  "Esperar hasta el siguiente comité mensual.",
-                  "Comunicar motivo, impacto, acciones y próximo punto de control."
+                  "Responder cuando exista una queja nueva.",
+                  "Enviar actualización con impacto, mitigación y próximo control."
                 ],
                 "correctIndex": 1,
-                "feedback": "Comunicar motivo, impacto, acciones y próximo punto de control."
+                "feedback": "Enviar actualización con impacto, mitigación y próximo control."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: El cliente reporta una demora sin recibir actualización. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -1821,21 +1821,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Comunicación · Datos y fuentes",
-              "case": "La fecha objetivo cambia y el cliente no recibió explicación.",
-              "learningObjective": "Comunicar motivo, impacto, acciones y próximo punto de control.",
+              "case": "La gerencia pide ocultar un riesgo hasta la siguiente reunión.",
+              "learningObjective": "Escalar el riesgo con datos verificables y sin ocultarlo.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "La fecha objetivo cambia y el cliente no recibió explicación.",
+                "prompt": "La gerencia pide ocultar un riesgo hasta la siguiente reunión.",
                 "options": [
-                  "Esperar hasta el siguiente comité mensual.",
-                  "Comunicar motivo, impacto, acciones y próximo punto de control."
+                  "Ocultarlo para mantener un estado verde.",
+                  "Escalar el riesgo con datos verificables y sin ocultarlo."
                 ],
                 "correctIndex": 1,
-                "feedback": "Comunicar motivo, impacto, acciones y próximo punto de control."
+                "feedback": "Escalar el riesgo con datos verificables y sin ocultarlo."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: La gerencia pide ocultar un riesgo hasta la siguiente reunión. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -1923,21 +1923,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Comunicación · Alternativas y criterio",
-              "case": "La fecha objetivo cambia y el cliente no recibió explicación.",
-              "learningObjective": "Comunicar motivo, impacto, acciones y próximo punto de control.",
+              "case": "Dos áreas reciben versiones contradictorias del cronograma.",
+              "learningObjective": "Publicar una versión única del plan con fecha de actualización.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "La fecha objetivo cambia y el cliente no recibió explicación.",
+                "prompt": "Dos áreas reciben versiones contradictorias del cronograma.",
                 "options": [
-                  "Esperar hasta el siguiente comité mensual.",
-                  "Comunicar motivo, impacto, acciones y próximo punto de control."
+                  "Dejar coexistir planes contradictorios.",
+                  "Publicar una versión única del plan con fecha de actualización."
                 ],
                 "correctIndex": 1,
-                "feedback": "Comunicar motivo, impacto, acciones y próximo punto de control."
+                "feedback": "Publicar una versión única del plan con fecha de actualización."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: Dos áreas reciben versiones contradictorias del cronograma. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -2025,21 +2025,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Comunicación · Entregable del puesto",
-              "case": "La fecha objetivo cambia y el cliente no recibió explicación.",
-              "learningObjective": "Comunicar motivo, impacto, acciones y próximo punto de control.",
+              "case": "Un usuario interpreta una fecha tentativa como compromiso.",
+              "learningObjective": "Identificar fechas tentativas y condiciones explícitas.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "La fecha objetivo cambia y el cliente no recibió explicación.",
+                "prompt": "Un usuario interpreta una fecha tentativa como compromiso.",
                 "options": [
-                  "Esperar hasta el siguiente comité mensual.",
-                  "Comunicar motivo, impacto, acciones y próximo punto de control."
+                  "Prometer la fecha tentativa como definitiva.",
+                  "Identificar fechas tentativas y condiciones explícitas."
                 ],
                 "correctIndex": 1,
-                "feedback": "Comunicar motivo, impacto, acciones y próximo punto de control."
+                "feedback": "Identificar fechas tentativas y condiciones explícitas."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: Un usuario interpreta una fecha tentativa como compromiso. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -2127,21 +2127,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Comunicación · Verificación y aceptación",
-              "case": "La fecha objetivo cambia y el cliente no recibió explicación.",
-              "learningObjective": "Comunicar motivo, impacto, acciones y próximo punto de control.",
+              "case": "La persona clave deja de responder por una semana.",
+              "learningObjective": "Escalar por el canal acordado y documentar intentos.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "La fecha objetivo cambia y el cliente no recibió explicación.",
+                "prompt": "La persona clave deja de responder por una semana.",
                 "options": [
-                  "Esperar hasta el siguiente comité mensual.",
-                  "Comunicar motivo, impacto, acciones y próximo punto de control."
+                  "Esperar indefinidamente sin escalar.",
+                  "Escalar por el canal acordado y documentar intentos."
                 ],
                 "correctIndex": 1,
-                "feedback": "Comunicar motivo, impacto, acciones y próximo punto de control."
+                "feedback": "Escalar por el canal acordado y documentar intentos."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: La persona clave deja de responder por una semana. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -2229,21 +2229,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Comunicación · Restricción nueva y transferencia",
-              "case": "La fecha objetivo cambia y el cliente no recibió explicación.",
-              "learningObjective": "Comunicar motivo, impacto, acciones y próximo punto de control.",
+              "case": "El idioma del material de capacitación no coincide con el del equipo.",
+              "learningObjective": "Ajustar idioma y comprobar comprensión con una tarea.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "La fecha objetivo cambia y el cliente no recibió explicación.",
+                "prompt": "El idioma del material de capacitación no coincide con el del equipo.",
                 "options": [
-                  "Esperar hasta el siguiente comité mensual.",
-                  "Comunicar motivo, impacto, acciones y próximo punto de control."
+                  "Enviar materiales sin validar comprensión.",
+                  "Ajustar idioma y comprobar comprensión con una tarea."
                 ],
                 "correctIndex": 1,
-                "feedback": "Comunicar motivo, impacto, acciones y próximo punto de control."
+                "feedback": "Ajustar idioma y comprobar comprensión con una tarea."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: El idioma del material de capacitación no coincide con el del equipo. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -2336,13 +2336,13 @@
             "key": "onboarding-l4-q1",
             "localized": {
               "es": {
-                "prompt": "La fecha objetivo cambia y el cliente no recibió explicación.",
+                "prompt": "Onboarding Specialist · Comunicación · Contexto y alcance: El cliente reporta una demora sin recibir actualización. ¿Qué acción corresponde?",
                 "options": [
-                  "Comunicar motivo, impacto, acciones y próximo punto de control.",
-                  "Esperar hasta el siguiente comité mensual."
+                  "Enviar actualización con impacto, mitigación y próximo control.",
+                  "Responder cuando exista una queja nueva."
                 ],
                 "correctIndex": 0,
-                "feedback": "Comunicar motivo, impacto, acciones y próximo punto de control."
+                "feedback": "Enviar actualización con impacto, mitigación y próximo control."
               },
               "en": {
                 "prompt": "The target date changes and the customer has received no explanation.",
@@ -2377,13 +2377,13 @@
             "key": "onboarding-l4-q2",
             "localized": {
               "es": {
-                "prompt": "La fecha objetivo cambia y el cliente no recibió explicación.",
+                "prompt": "Onboarding Specialist · Comunicación · Datos y fuentes: La gerencia pide ocultar un riesgo hasta la siguiente reunión. ¿Qué acción corresponde?",
                 "options": [
-                  "Comunicar motivo, impacto, acciones y próximo punto de control.",
-                  "Esperar hasta el siguiente comité mensual."
+                  "Escalar el riesgo con datos verificables y sin ocultarlo.",
+                  "Ocultarlo para mantener un estado verde."
                 ],
                 "correctIndex": 0,
-                "feedback": "Comunicar motivo, impacto, acciones y próximo punto de control."
+                "feedback": "Escalar el riesgo con datos verificables y sin ocultarlo."
               },
               "en": {
                 "prompt": "The target date changes and the customer has received no explanation.",
@@ -2418,13 +2418,13 @@
             "key": "onboarding-l4-q3",
             "localized": {
               "es": {
-                "prompt": "La fecha objetivo cambia y el cliente no recibió explicación.",
+                "prompt": "Onboarding Specialist · Comunicación · Alternativas y criterio: Dos áreas reciben versiones contradictorias del cronograma. ¿Qué acción corresponde?",
                 "options": [
-                  "Comunicar motivo, impacto, acciones y próximo punto de control.",
-                  "Esperar hasta el siguiente comité mensual."
+                  "Publicar una versión única del plan con fecha de actualización.",
+                  "Dejar coexistir planes contradictorios."
                 ],
                 "correctIndex": 0,
-                "feedback": "Comunicar motivo, impacto, acciones y próximo punto de control."
+                "feedback": "Publicar una versión única del plan con fecha de actualización."
               },
               "en": {
                 "prompt": "The target date changes and the customer has received no explanation.",
@@ -2459,13 +2459,13 @@
             "key": "onboarding-l4-q4",
             "localized": {
               "es": {
-                "prompt": "La fecha objetivo cambia y el cliente no recibió explicación.",
+                "prompt": "Onboarding Specialist · Comunicación · Entregable del puesto: Un usuario interpreta una fecha tentativa como compromiso. ¿Qué acción corresponde?",
                 "options": [
-                  "Comunicar motivo, impacto, acciones y próximo punto de control.",
-                  "Esperar hasta el siguiente comité mensual."
+                  "Identificar fechas tentativas y condiciones explícitas.",
+                  "Prometer la fecha tentativa como definitiva."
                 ],
                 "correctIndex": 0,
-                "feedback": "Comunicar motivo, impacto, acciones y próximo punto de control."
+                "feedback": "Identificar fechas tentativas y condiciones explícitas."
               },
               "en": {
                 "prompt": "The target date changes and the customer has received no explanation.",
@@ -2500,13 +2500,13 @@
             "key": "onboarding-l4-q5",
             "localized": {
               "es": {
-                "prompt": "La fecha objetivo cambia y el cliente no recibió explicación.",
+                "prompt": "Onboarding Specialist · Comunicación · Verificación y aceptación: La persona clave deja de responder por una semana. ¿Qué acción corresponde?",
                 "options": [
-                  "Comunicar motivo, impacto, acciones y próximo punto de control.",
-                  "Esperar hasta el siguiente comité mensual."
+                  "Escalar por el canal acordado y documentar intentos.",
+                  "Esperar indefinidamente sin escalar."
                 ],
                 "correctIndex": 0,
-                "feedback": "Comunicar motivo, impacto, acciones y próximo punto de control."
+                "feedback": "Escalar por el canal acordado y documentar intentos."
               },
               "en": {
                 "prompt": "The target date changes and the customer has received no explanation.",
@@ -2563,21 +2563,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Calidad y resultado · Contexto y alcance",
-              "case": "Un flujo funciona con datos de prueba pero falla con el archivo real.",
-              "learningObjective": "Registrar discrepancia y repetir aceptación con datos representativos y autorizados.",
+              "case": "Los permisos de prueba son superiores a los permisos reales.",
+              "learningObjective": "Repetir el flujo bajo los permisos finales del usuario.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "Un flujo funciona con datos de prueba pero falla con el archivo real.",
+                "prompt": "Los permisos de prueba son superiores a los permisos reales.",
                 "options": [
-                  "Declarar aceptado con base solo en datos de prueba.",
-                  "Registrar discrepancia y repetir aceptación con datos representativos y autorizados."
+                  "Aceptar usando una cuenta administradora.",
+                  "Repetir el flujo bajo los permisos finales del usuario."
                 ],
                 "correctIndex": 1,
-                "feedback": "Registrar discrepancia y repetir aceptación con datos representativos y autorizados."
+                "feedback": "Repetir el flujo bajo los permisos finales del usuario."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: Los permisos de prueba son superiores a los permisos reales. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -2665,21 +2665,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Calidad y resultado · Datos y fuentes",
-              "case": "Un flujo funciona con datos de prueba pero falla con el archivo real.",
-              "learningObjective": "Registrar discrepancia y repetir aceptación con datos representativos y autorizados.",
+              "case": "La migración final contiene registros duplicados.",
+              "learningObjective": "Conciliar cantidades, detectar duplicados y repetir prueba de aceptación.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "Un flujo funciona con datos de prueba pero falla con el archivo real.",
+                "prompt": "La migración final contiene registros duplicados.",
                 "options": [
-                  "Declarar aceptado con base solo en datos de prueba.",
-                  "Registrar discrepancia y repetir aceptación con datos representativos y autorizados."
+                  "Ignorar diferencias si la importación termina.",
+                  "Conciliar cantidades, detectar duplicados y repetir prueba de aceptación."
                 ],
                 "correctIndex": 1,
-                "feedback": "Registrar discrepancia y repetir aceptación con datos representativos y autorizados."
+                "feedback": "Conciliar cantidades, detectar duplicados y repetir prueba de aceptación."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: La migración final contiene registros duplicados. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -2767,21 +2767,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Calidad y resultado · Alternativas y criterio",
-              "case": "Un flujo funciona con datos de prueba pero falla con el archivo real.",
-              "learningObjective": "Registrar discrepancia y repetir aceptación con datos representativos y autorizados.",
+              "case": "La formación fue completada, pero el usuario no ejecuta la tarea.",
+              "learningObjective": "Evaluar un resultado ejecutado por el usuario sin ayuda.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "Un flujo funciona con datos de prueba pero falla con el archivo real.",
+                "prompt": "La formación fue completada, pero el usuario no ejecuta la tarea.",
                 "options": [
-                  "Declarar aceptado con base solo en datos de prueba.",
-                  "Registrar discrepancia y repetir aceptación con datos representativos y autorizados."
+                  "Medir únicamente asistencia a formación.",
+                  "Evaluar un resultado ejecutado por el usuario sin ayuda."
                 ],
                 "correctIndex": 1,
-                "feedback": "Registrar discrepancia y repetir aceptación con datos representativos y autorizados."
+                "feedback": "Evaluar un resultado ejecutado por el usuario sin ayuda."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: La formación fue completada, pero el usuario no ejecuta la tarea. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -2869,21 +2869,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Calidad y resultado · Entregable del puesto",
-              "case": "Un flujo funciona con datos de prueba pero falla con el archivo real.",
-              "learningObjective": "Registrar discrepancia y repetir aceptación con datos representativos y autorizados.",
+              "case": "La aceptación no define una tolerancia de error.",
+              "learningObjective": "Acordar tolerancia verificable antes de cerrar el hito.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "Un flujo funciona con datos de prueba pero falla con el archivo real.",
+                "prompt": "La aceptación no define una tolerancia de error.",
                 "options": [
-                  "Declarar aceptado con base solo en datos de prueba.",
-                  "Registrar discrepancia y repetir aceptación con datos representativos y autorizados."
+                  "Cerrar sin acordar el nivel de error.",
+                  "Acordar tolerancia verificable antes de cerrar el hito."
                 ],
                 "correctIndex": 1,
-                "feedback": "Registrar discrepancia y repetir aceptación con datos representativos y autorizados."
+                "feedback": "Acordar tolerancia verificable antes de cerrar el hito."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: La aceptación no define una tolerancia de error. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -2971,21 +2971,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Calidad y resultado · Verificación y aceptación",
-              "case": "Un flujo funciona con datos de prueba pero falla con el archivo real.",
-              "learningObjective": "Registrar discrepancia y repetir aceptación con datos representativos y autorizados.",
+              "case": "Una incidencia crítica no tiene caso de reproducción.",
+              "learningObjective": "Documentar pasos, ambiente, registros y severidad.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "Un flujo funciona con datos de prueba pero falla con el archivo real.",
+                "prompt": "Una incidencia crítica no tiene caso de reproducción.",
                 "options": [
-                  "Declarar aceptado con base solo en datos de prueba.",
-                  "Registrar discrepancia y repetir aceptación con datos representativos y autorizados."
+                  "Reproducir sin guardar evidencia.",
+                  "Documentar pasos, ambiente, registros y severidad."
                 ],
                 "correctIndex": 1,
-                "feedback": "Registrar discrepancia y repetir aceptación con datos representativos y autorizados."
+                "feedback": "Documentar pasos, ambiente, registros y severidad."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: Una incidencia crítica no tiene caso de reproducción. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -3073,21 +3073,21 @@
           "localized": {
             "es": {
               "title": "Onboarding Specialist · Calidad y resultado · Restricción nueva y transferencia",
-              "case": "Un flujo funciona con datos de prueba pero falla con el archivo real.",
-              "learningObjective": "Registrar discrepancia y repetir aceptación con datos representativos y autorizados.",
+              "case": "El cliente rechaza el entregable porque no se acordó un criterio observable.",
+              "learningObjective": "Definir criterios medibles y obtener aprobación antes de repetir aceptación.",
               "exercise1": {
                 "type": "decision",
-                "prompt": "Un flujo funciona con datos de prueba pero falla con el archivo real.",
+                "prompt": "El cliente rechaza el entregable porque no se acordó un criterio observable.",
                 "options": [
-                  "Declarar aceptado con base solo en datos de prueba.",
-                  "Registrar discrepancia y repetir aceptación con datos representativos y autorizados."
+                  "Rechazar la objeción sin criterios acordados.",
+                  "Definir criterios medibles y obtener aprobación antes de repetir aceptación."
                 ],
                 "correctIndex": 1,
-                "feedback": "Registrar discrepancia y repetir aceptación con datos representativos y autorizados."
+                "feedback": "Definir criterios medibles y obtener aprobación antes de repetir aceptación."
               },
               "exercise2": {
                 "type": "deliverable",
-                "prompt": "Documenta una evidencia, responsable y próximo paso para este caso.",
+                "prompt": "Para este caso, produce un registro verificable de: El cliente rechaza el entregable porque no se acordó un criterio observable. Incluye evidencia, responsable y fecha de seguimiento.",
                 "rubric": [
                   "evidence",
                   "owner",
@@ -3180,13 +3180,13 @@
             "key": "onboarding-l5-q1",
             "localized": {
               "es": {
-                "prompt": "Un flujo funciona con datos de prueba pero falla con el archivo real.",
+                "prompt": "Onboarding Specialist · Calidad y resultado · Contexto y alcance: Los permisos de prueba son superiores a los permisos reales. ¿Qué acción corresponde?",
                 "options": [
-                  "Registrar discrepancia y repetir aceptación con datos representativos y autorizados.",
-                  "Declarar aceptado con base solo en datos de prueba."
+                  "Repetir el flujo bajo los permisos finales del usuario.",
+                  "Aceptar usando una cuenta administradora."
                 ],
                 "correctIndex": 0,
-                "feedback": "Registrar discrepancia y repetir aceptación con datos representativos y autorizados."
+                "feedback": "Repetir el flujo bajo los permisos finales del usuario."
               },
               "en": {
                 "prompt": "A workflow passes with test data but fails on the actual file.",
@@ -3221,13 +3221,13 @@
             "key": "onboarding-l5-q2",
             "localized": {
               "es": {
-                "prompt": "Un flujo funciona con datos de prueba pero falla con el archivo real.",
+                "prompt": "Onboarding Specialist · Calidad y resultado · Datos y fuentes: La migración final contiene registros duplicados. ¿Qué acción corresponde?",
                 "options": [
-                  "Registrar discrepancia y repetir aceptación con datos representativos y autorizados.",
-                  "Declarar aceptado con base solo en datos de prueba."
+                  "Conciliar cantidades, detectar duplicados y repetir prueba de aceptación.",
+                  "Ignorar diferencias si la importación termina."
                 ],
                 "correctIndex": 0,
-                "feedback": "Registrar discrepancia y repetir aceptación con datos representativos y autorizados."
+                "feedback": "Conciliar cantidades, detectar duplicados y repetir prueba de aceptación."
               },
               "en": {
                 "prompt": "A workflow passes with test data but fails on the actual file.",
@@ -3262,13 +3262,13 @@
             "key": "onboarding-l5-q3",
             "localized": {
               "es": {
-                "prompt": "Un flujo funciona con datos de prueba pero falla con el archivo real.",
+                "prompt": "Onboarding Specialist · Calidad y resultado · Alternativas y criterio: La formación fue completada, pero el usuario no ejecuta la tarea. ¿Qué acción corresponde?",
                 "options": [
-                  "Registrar discrepancia y repetir aceptación con datos representativos y autorizados.",
-                  "Declarar aceptado con base solo en datos de prueba."
+                  "Evaluar un resultado ejecutado por el usuario sin ayuda.",
+                  "Medir únicamente asistencia a formación."
                 ],
                 "correctIndex": 0,
-                "feedback": "Registrar discrepancia y repetir aceptación con datos representativos y autorizados."
+                "feedback": "Evaluar un resultado ejecutado por el usuario sin ayuda."
               },
               "en": {
                 "prompt": "A workflow passes with test data but fails on the actual file.",
@@ -3303,13 +3303,13 @@
             "key": "onboarding-l5-q4",
             "localized": {
               "es": {
-                "prompt": "Un flujo funciona con datos de prueba pero falla con el archivo real.",
+                "prompt": "Onboarding Specialist · Calidad y resultado · Entregable del puesto: La aceptación no define una tolerancia de error. ¿Qué acción corresponde?",
                 "options": [
-                  "Registrar discrepancia y repetir aceptación con datos representativos y autorizados.",
-                  "Declarar aceptado con base solo en datos de prueba."
+                  "Acordar tolerancia verificable antes de cerrar el hito.",
+                  "Cerrar sin acordar el nivel de error."
                 ],
                 "correctIndex": 0,
-                "feedback": "Registrar discrepancia y repetir aceptación con datos representativos y autorizados."
+                "feedback": "Acordar tolerancia verificable antes de cerrar el hito."
               },
               "en": {
                 "prompt": "A workflow passes with test data but fails on the actual file.",
@@ -3344,13 +3344,13 @@
             "key": "onboarding-l5-q5",
             "localized": {
               "es": {
-                "prompt": "Un flujo funciona con datos de prueba pero falla con el archivo real.",
+                "prompt": "Onboarding Specialist · Calidad y resultado · Verificación y aceptación: Una incidencia crítica no tiene caso de reproducción. ¿Qué acción corresponde?",
                 "options": [
-                  "Registrar discrepancia y repetir aceptación con datos representativos y autorizados.",
-                  "Declarar aceptado con base solo en datos de prueba."
+                  "Documentar pasos, ambiente, registros y severidad.",
+                  "Reproducir sin guardar evidencia."
                 ],
                 "correctIndex": 0,
-                "feedback": "Registrar discrepancia y repetir aceptación con datos representativos y autorizados."
+                "feedback": "Documentar pasos, ambiente, registros y severidad."
               },
               "en": {
                 "prompt": "A workflow passes with test data but fails on the actual file.",
