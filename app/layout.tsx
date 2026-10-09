@@ -61,10 +61,10 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     ? (await supabase.from("user_preferences").select("mode,accent,colors,news_read").eq("user_id",user.id).maybeSingle()).data : null;
   const serverMode: "system"|"light"|"dark" = preference?.mode==="dark"||preference?.mode==="light" ? preference.mode : "system";
   return (
-    <html lang={LANGUAGE_TAGS[locale]} data-design="vivo" data-appearance={serverMode==="system"?undefined:serverMode} style={VIVO_CSS_VARIABLES as CSSProperties} suppressHydrationWarning>
+    <html lang={LANGUAGE_TAGS[locale]} data-design="vivo" data-appearance={serverMode==="system"?undefined:serverMode} data-appearance-key={appearanceStorageKey(user?.id ?? null)} style={VIVO_CSS_VARIABLES as CSSProperties} suppressHydrationWarning>
       <head><style>{VIVO_THEME_CSS}</style>
       {/* Sets the theme before first paint so dark mode never flashes light; colours follow in AppearanceProvider. */}
-      <script dangerouslySetInnerHTML={{__html:`(function(){try{var s=${JSON.stringify(serverMode)},p=JSON.parse(localStorage.getItem(${JSON.stringify(appearanceStorageKey(user?.id ?? null)).replace(/</g,"\\u003c")})||"null"),m=s!=="system"?s:(p&&p.mode)||"system";document.documentElement.dataset.appearance=m==="dark"||(m==="system"&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}catch(e){}})();`}}/>
+      <script src="/theme-init.js"/>
       </head>
       <body>
         <SiteVisit/>
