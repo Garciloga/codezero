@@ -26,5 +26,13 @@
  {
   "key": "product_specialist",
   "title": "Product Specialist"
+ },
+ {
+  "key": "project_manager",
+  "title": "Project Manager"
+ },
+ {
+  "key": "manager_team_lead",
+  "title": "Managers y Team Leads"
  }
 ]
