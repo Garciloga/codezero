@@ -12,6 +12,7 @@ import accountManagerRole from './position-curricula/roles/account_manager.json'
 import customerSupportRole from './position-curricula/roles/customer_support.json' with {type:'json'};
 import techSupportRole from './position-curricula/roles/tech_support_l3.json' with {type:'json'};
 import keyAccountManagerRole from './position-curricula/roles/key_account_manager.json' with {type:'json'};
+import productSpecialistRole from './position-curricula/roles/product_specialist.json' with {type:'json'};
 export type {PositionApplication} from './position-application.ts';
 export type PositionItem={key:string;position:string;level:number;lesson:number|null;type:'lesson'|'exam'|'project'|'diagnostic'|'optional';source:TrainingActivity;title:Record<string,string>;decisions:TrainingActivity['decisions'];application?:Record<string,PositionApplication>;brief?:Record<string,string>;required:boolean;hours:number};
 const sources=[...TRAINING_UNITS,...TRAINING_EXTRAS];
@@ -71,6 +72,7 @@ export const ACCOUNT_MANAGER_PROGRAM=roleProgram(accountManagerRole as RoleData,
 export const CUSTOMER_SUPPORT_PROGRAM=roleProgram(customerSupportRole as RoleData,'customer-support-positions-v1',['cs-project-adoption','cs-project-continuity']);
 export const TECH_SUPPORT_PROGRAM=roleProgram(techSupportRole as RoleData,'tech-support-positions-v1',['cs-project-adoption','cs-project-continuity']);
 export const KEY_ACCOUNT_MANAGER_PROGRAM=roleProgram(keyAccountManagerRole as RoleData,'key-account-manager-positions-v1',['cs-project-adoption','cs-project-continuity']);
+export const PRODUCT_SPECIALIST_PROGRAM=roleProgram(productSpecialistRole as RoleData,'product-specialist-positions-v1',['cs-project-adoption','cs-project-continuity']);
 export const POSITION_PROGRAMS:Record<string,PositionProgram>={
  customer_success:{key:'customer_success',title:'Customer Success',levels:CS_CURRICULUM_LEVELS,lessons:CS_CURRICULUM_LESSONS,exams:CS_CURRICULUM_EXAMS,projects:CS_CURRICULUM_PROJECTS,optional:CS_CURRICULUM_OPTIONAL,certificateType:'customer-success-positions-v1',editorialReview:'pending'},
  onboarding:ONBOARDING_PROGRAM,
@@ -78,6 +80,7 @@ export const POSITION_PROGRAMS:Record<string,PositionProgram>={
  customer_support:CUSTOMER_SUPPORT_PROGRAM,
  tech_support_l3:TECH_SUPPORT_PROGRAM,
  key_account_manager:KEY_ACCOUNT_MANAGER_PROGRAM,
+ product_specialist:PRODUCT_SPECIALIST_PROGRAM,
 };
 export const DEFAULT_POSITION='customer_success';
 export function positionProgram(key:string|null|undefined){return key&&Object.hasOwn(POSITION_PROGRAMS,key)?POSITION_PROGRAMS[key]:null;}
@@ -87,7 +90,7 @@ export function positionProgramTotals(program:PositionProgram){
  const required=[...program.lessons,...program.exams,...program.projects];
  return {levels:program.levels.length,lessons:program.lessons.length,exercises:program.lessons.length*2,questions:program.exams.reduce((n,a)=>n+a.decisions.length,0),projects:program.projects.length,hours:required.reduce((n,a)=>n+a.hours,0)};
 }
-export const POSITION_ITEMS=[...CS_CURRICULUM_LESSONS,...CS_CURRICULUM_EXAMS,...CS_CURRICULUM_PROJECTS,...POSITION_DIAGNOSTICS,...CS_CURRICULUM_OPTIONAL,...ONBOARDING_PROGRAM.lessons,...ONBOARDING_PROGRAM.exams,...ONBOARDING_PROGRAM.projects,...ACCOUNT_MANAGER_PROGRAM.lessons,...ACCOUNT_MANAGER_PROGRAM.exams,...ACCOUNT_MANAGER_PROGRAM.projects,...CUSTOMER_SUPPORT_PROGRAM.lessons,...CUSTOMER_SUPPORT_PROGRAM.exams,...CUSTOMER_SUPPORT_PROGRAM.projects,...TECH_SUPPORT_PROGRAM.lessons,...TECH_SUPPORT_PROGRAM.exams,...TECH_SUPPORT_PROGRAM.projects,...KEY_ACCOUNT_MANAGER_PROGRAM.lessons,...KEY_ACCOUNT_MANAGER_PROGRAM.exams,...KEY_ACCOUNT_MANAGER_PROGRAM.projects];
+export const POSITION_ITEMS=[...CS_CURRICULUM_LESSONS,...CS_CURRICULUM_EXAMS,...CS_CURRICULUM_PROJECTS,...POSITION_DIAGNOSTICS,...CS_CURRICULUM_OPTIONAL,...ONBOARDING_PROGRAM.lessons,...ONBOARDING_PROGRAM.exams,...ONBOARDING_PROGRAM.projects,...ACCOUNT_MANAGER_PROGRAM.lessons,...ACCOUNT_MANAGER_PROGRAM.exams,...ACCOUNT_MANAGER_PROGRAM.projects,...CUSTOMER_SUPPORT_PROGRAM.lessons,...CUSTOMER_SUPPORT_PROGRAM.exams,...CUSTOMER_SUPPORT_PROGRAM.projects,...TECH_SUPPORT_PROGRAM.lessons,...TECH_SUPPORT_PROGRAM.exams,...TECH_SUPPORT_PROGRAM.projects,...KEY_ACCOUNT_MANAGER_PROGRAM.lessons,...KEY_ACCOUNT_MANAGER_PROGRAM.exams,...KEY_ACCOUNT_MANAGER_PROGRAM.projects,...PRODUCT_SPECIALIST_PROGRAM.lessons,...PRODUCT_SPECIALIST_PROGRAM.exams,...PRODUCT_SPECIALIST_PROGRAM.projects];
 export function positionItem(key:string){return POSITION_ITEMS.find(a=>a.key===key);}
 export function positionProjectApproved(evidence:CompetencyEvidence[],key:string,org:string|null){
  const human=evidence.filter(e=>e.organization_id===org&&e.activity_key===key&&['manager','admin'].includes(e.review_source)).sort((a,b)=>Date.parse(b.observed_at)-Date.parse(a.observed_at)||b.id.localeCompare(a.id));

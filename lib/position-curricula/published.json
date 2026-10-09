@@ -22,5 +22,9 @@
  {
   "key": "key_account_manager",
   "title": "Key Account Manager"
+ },
+ {
+  "key": "product_specialist",
+  "title": "Product Specialist"
  }
 ]
