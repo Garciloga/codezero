@@ -8,6 +8,7 @@ import optionalTechnical from './position-curricula/optional-technical.json' wit
 import {TRAINING_UNITS,TRAINING_EXTRAS,type TrainingActivity} from './role-training-content.ts';
 import type {CompetencyKey,CompetencyEvidence} from './competency-matrix.ts';
 import onboardingRole from './position-curricula/roles/onboarding.json' with {type:'json'};
+import accountManagerRole from './position-curricula/roles/account_manager.json' with {type:'json'};
 export type {PositionApplication} from './position-application.ts';
 export type PositionItem={key:string;position:string;level:number;lesson:number|null;type:'lesson'|'exam'|'project'|'diagnostic'|'optional';source:TrainingActivity;title:Record<string,string>;decisions:TrainingActivity['decisions'];application?:Record<string,PositionApplication>;brief?:Record<string,string>;required:boolean;hours:number};
 const sources=[...TRAINING_UNITS,...TRAINING_EXTRAS];
@@ -63,9 +64,11 @@ function roleProgram(data:RoleData,certificateType:string,projectSources:[string
  return {key:data.role,title:data.title,levels:data.levels.map(l=>({number:l.number,title:l.title})),lessons,exams,projects,optional:[],certificateType,editorialReview:'pending'};
 }
 export const ONBOARDING_PROGRAM=roleProgram(onboardingRole as RoleData,'onboarding-positions-v1',['cs-project-adoption','cs-project-continuity']);
+export const ACCOUNT_MANAGER_PROGRAM=roleProgram(accountManagerRole as RoleData,'account-manager-positions-v1',['cs-project-adoption','cs-project-continuity']);
 export const POSITION_PROGRAMS:Record<string,PositionProgram>={
  customer_success:{key:'customer_success',title:'Customer Success',levels:CS_CURRICULUM_LEVELS,lessons:CS_CURRICULUM_LESSONS,exams:CS_CURRICULUM_EXAMS,projects:CS_CURRICULUM_PROJECTS,optional:CS_CURRICULUM_OPTIONAL,certificateType:'customer-success-positions-v1',editorialReview:'pending'},
  onboarding:ONBOARDING_PROGRAM,
+ account_manager:ACCOUNT_MANAGER_PROGRAM,
 };
 export const DEFAULT_POSITION='customer_success';
 export function positionProgram(key:string|null|undefined){return key&&Object.hasOwn(POSITION_PROGRAMS,key)?POSITION_PROGRAMS[key]:null;}
@@ -75,7 +78,7 @@ export function positionProgramTotals(program:PositionProgram){
  const required=[...program.lessons,...program.exams,...program.projects];
  return {levels:program.levels.length,lessons:program.lessons.length,exercises:program.lessons.length*2,questions:program.exams.reduce((n,a)=>n+a.decisions.length,0),projects:program.projects.length,hours:required.reduce((n,a)=>n+a.hours,0)};
 }
-export const POSITION_ITEMS=[...CS_CURRICULUM_LESSONS,...CS_CURRICULUM_EXAMS,...CS_CURRICULUM_PROJECTS,...POSITION_DIAGNOSTICS,...CS_CURRICULUM_OPTIONAL,...ONBOARDING_PROGRAM.lessons,...ONBOARDING_PROGRAM.exams,...ONBOARDING_PROGRAM.projects];
+export const POSITION_ITEMS=[...CS_CURRICULUM_LESSONS,...CS_CURRICULUM_EXAMS,...CS_CURRICULUM_PROJECTS,...POSITION_DIAGNOSTICS,...CS_CURRICULUM_OPTIONAL,...ONBOARDING_PROGRAM.lessons,...ONBOARDING_PROGRAM.exams,...ONBOARDING_PROGRAM.projects,...ACCOUNT_MANAGER_PROGRAM.lessons,...ACCOUNT_MANAGER_PROGRAM.exams,...ACCOUNT_MANAGER_PROGRAM.projects];
 export function positionItem(key:string){return POSITION_ITEMS.find(a=>a.key===key);}
 export function positionProjectApproved(evidence:CompetencyEvidence[],key:string,org:string|null){
  const human=evidence.filter(e=>e.organization_id===org&&e.activity_key===key&&['manager','admin'].includes(e.review_source)).sort((a,b)=>Date.parse(b.observed_at)-Date.parse(a.observed_at)||b.id.localeCompare(a.id));
