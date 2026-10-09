@@ -1,5 +1,4 @@
 "use client";
-import positionUi from '../../../lib/position-curricula/ui.json';
 import LocalizedContent from "../../components/localization/client";
 
 
@@ -99,7 +98,6 @@ function LoginForm() {
 
   return <LocalizedContent><main className="wrap">
     <div className="card public-login">
-      {mode==="signup"&&<section><h2>{positionUi[locale].choose}</h2><label>{positionUi[locale].choose}<select name="learning_position_key"><option value="customer_success">Customer Success</option></select></label><p>{positionUi[locale].diagnosticNote}</p></section>}
       {confirmationEmail ? <section aria-labelledby="confirmation-title">
         <h1 id="confirmation-title">Revisa tu correo</h1>
         <p role="status">Revisa <b>{confirmationEmail}</b> y sigue las instrucciones de confirmación para continuar.</p>
@@ -121,6 +119,7 @@ function LoginForm() {
         <div id="account-panel" role="tabpanel" aria-labelledby={mode + "-tab"}>
           <h1>{mode === "login" ? "Iniciar sesión" : "Crear cuenta"}</h1>
           <p className="muted">{mode === "login" ? "Continúa tu ruta de aprendizaje." : "Empieza gratis con el Nivel 1. Puedes cambiar de plan después."}</p>
+          {mode === "signup" && <p className="public-field-help">Al entrar eliges tu puesto y haces el diagnóstico inicial. Es una recomendación: no bloquea ninguna ruta.</p>}
           <form onSubmit={submit} className="grid" noValidate aria-busy={busy}>
             {mode === "signup" && <>
               <div><label htmlFor="full_name"><b>Nombre</b></label>

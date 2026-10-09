@@ -231,16 +231,20 @@ html[data-design="vivo"] .bar { height: 8px; }
 html[data-design="vivo"] .vivo-table-scroll { overflow-x: auto; max-width: 100%; border: 1px solid var(--linea); border-radius: 16px; }
 html[data-design="vivo"] .card { min-width: 0; }
 
-/* Phone header: brand and account actions on top, menu and language below. */
+/* Phone header: brand and account actions on one row, menu and language on the next. */
 @media (max-width: 767px) {
-  html[data-design="vivo"] .public-header-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 12px; padding: 10px 16px; }
-  html[data-design="vivo"] .public-brand { grid-column: 1; grid-row: 1; align-self: center; }
-  html[data-design="vivo"] .public-auth { grid-column: 2; grid-row: 1; justify-content: flex-end; gap: 12px; }
-  html[data-design="vivo"] .public-mobile-menu { grid-column: 1; grid-row: 2; width: auto !important; }
+  html[data-design="vivo"] .public-header-inner { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 8px 12px; padding: 10px 16px; }
+  html[data-design="vivo"] .public-brand { grid-column: 1; grid-row: 1; }
+  /* Longer languages wrap the account actions instead of widening the page. */
+  html[data-design="vivo"] .public-auth { grid-column: 2 / -1; grid-row: 1; justify-content: flex-end; gap: 6px 12px; min-width: 0; flex-wrap: wrap; }
+  html[data-design="vivo"] .public-auth > * { min-width: 0; }
+  html[data-design="vivo"] .public-auth .btn { white-space: normal; text-align: center; max-width: 100%; }
+  html[data-design="vivo"] .public-mobile-menu summary { overflow: hidden; }
+  html[data-design="vivo"] .public-mobile-menu { grid-column: 1 / 3; grid-row: 2; min-width: 0; width: auto !important; }
   html[data-design="vivo"] .public-mobile-menu[open] { grid-column: 1 / -1; }
-  html[data-design="vivo"] .public-header-inner .language-selector { grid-column: 2; grid-row: 2; }
+  html[data-design="vivo"] .public-header-inner .language-selector { grid-column: 3; grid-row: 2; margin: 0; padding: 0; }
   html[data-design="vivo"] .public-header-inner:has(.public-mobile-menu[open]) .language-selector { grid-row: 3; grid-column: 1 / -1; justify-content: flex-start; }
-  html[data-design="vivo"] .public-mobile-menu summary { padding: 8px 16px; border: 1.5px solid var(--linea-fuerte); border-radius: var(--radio-control); }
+  html[data-design="vivo"] .public-mobile-menu summary { padding: 8px 16px; border: 1.5px solid var(--linea-fuerte); border-radius: var(--radio-control); white-space: nowrap; }
   html[data-design="vivo"] .public-mobile-menu[open] summary { border-radius: 16px; }
 }
 
@@ -263,11 +267,16 @@ html[data-design="vivo"] .stat { font-weight: 800; letter-spacing: -0.02em; }
 
 /* Very narrow phones: account actions take their own row so nothing is clipped. */
 @media (max-width: 380px) {
+  html[data-design="vivo"] .public-auth { gap: 8px; }
+  html[data-design="vivo"] .public-auth .btn { padding: 9px 12px; font-size: .9375rem; white-space: normal; text-align: center; max-width: 100%; }
+  html[data-design="vivo"] .public-header-inner .language-selector select { min-width: 0; width: 104px; }
+}
+@media (max-width: 339px) {
   html[data-design="vivo"] .public-brand { grid-column: 1 / -1; }
   html[data-design="vivo"] .public-auth { grid-column: 1 / -1; grid-row: 2; justify-content: space-between; }
-  html[data-design="vivo"] .public-mobile-menu { grid-row: 3; }
-  html[data-design="vivo"] .public-header-inner .language-selector { grid-row: 3; }
-  html[data-design="vivo"] .public-header-inner:has(.public-mobile-menu[open]) .language-selector { grid-row: 4; }
+  html[data-design="vivo"] .public-mobile-menu { grid-column: 1 / -1; grid-row: 3; }
+  html[data-design="vivo"] .public-header-inner .language-selector,
+  html[data-design="vivo"] .public-header-inner:has(.public-mobile-menu[open]) .language-selector { grid-column: 1 / -1; grid-row: 4; justify-content: flex-start; }
   html[data-design="vivo"] .public-auth .btn { white-space: normal; }
 }
 
