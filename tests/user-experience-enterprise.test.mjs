@@ -5,8 +5,8 @@ import { canIssueBlockDiploma } from "../lib/block-diplomas.ts";
 import { validOrganizationRoster, canViewEmployeeLearning, canManageOrganization, assignedProgress } from "../lib/enterprise-learning.ts";
 test("appearance rejects unsupported colors and separates signed-in accounts", () => {
   assert.deepEqual(parseAppearance({mode:"dark",accent:"purple"}), {mode:"dark",accent:"purple"});
-  for (const accent of ["__proto__", "constructor", "url(javascript:alert(1))"]) assert.equal(parseAppearance({accent}).accent, "blue");
-  assert.deepEqual(parseAppearance({mode:"invalid"}), {mode:"system",accent:"blue"});
+  for (const accent of ["__proto__", "constructor", "url(javascript:alert(1))"]) assert.equal(parseAppearance({accent}).accent, "green");
+  assert.deepEqual(parseAppearance({mode:"invalid"}), {mode:"system",accent:"green"});
   assert.notEqual(appearanceStorageKey("a"), appearanceStorageKey("b"));
   assert.notEqual(appearanceStorageKey("visitor"), appearanceStorageKey(null));
 });
