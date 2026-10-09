@@ -1,29 +1,61 @@
+import Link from 'next/link';
 import PublicHeader from '../components/public-header';
 import LocalizedContent from '../components/localization/server';
 import {getServerUser} from '../../lib/supabase-server';
 import {translatedMetadata} from '../../lib/localization/metadata';
 import {publicMetadata} from '../../lib/public-metadata';
-export async function generateMetadata(){return translatedMetadata(publicMetadata('Sobre Garciloga','Nuestra misión, visión, valores e historia.','/about'));}
+export async function generateMetadata(){return translatedMetadata(publicMetadata('Sobre Garciloga','Misión, visión, historia, valores y objetivos de Garciloga: formación práctica para el trabajo real.','/about'));}
+// Approved institutional copy (Notion · Identidad, 9 Oct 2026). No dates, figures or claims beyond the record.
 const values=[
- ['Tú decides','Recomendamos, no imponemos; ninguna sugerencia bloquea tu camino.'],
- ['Transparencia','Explicamos el porqué de cada recomendación y no prometemos lo que aún no existe.'],
- ['Evidencia, no pseudociencia','Nos basamos en lo que haces, no en etiquetas ni tests de personalidad.'],
- ['Empleabilidad real','Cada ruta termina en proyectos y evidencia que sirven para conseguir o crecer en un puesto.'],
- ['Privacidad y consentimiento','Tus datos son tuyos y usamos solo los necesarios.'],
- ['Crecimiento sin techo','Nadie queda limitado a una sola posición.'],
+ ['Libertad para elegir el propio camino','Cada persona puede construir más de un camino profesional; una recomendación nunca impone límites.'],
+ ['Transparencia y confianza','Explicamos el motivo de cada recomendación y no exageramos capacidades ni resultados.'],
+ ['Crecimiento profesional sin límites','Acompañamos el aprendizaje desde el nivel inicial hasta el liderazgo.'],
+ ['Aprendizaje práctico y verificable','Escenarios, proyectos y decisiones reales. Un clic no es una competencia.'],
+ ['Empatía y acompañamiento','Enseñamos con claridad y con retroalimentación constructiva.'],
+ ['Innovación y mejora continua','Mejoramos la experiencia con evidencia, sin perseguir novedades por sí mismas.'],
+ ['Inclusión y oportunidades','Diseño accesible para distintas edades y niveles de experiencia.'],
+ ['Privacidad y respeto','Usamos solo los datos necesarios y respetamos los permisos de cada persona y cada compañía.'],
+ ['Orientación hacia el trabajo real','Lo que se aprende aquí debe servir en un puesto, no solo en un examen.'],
+];
+const goals=[
+ ['Preparar para el mundo laboral','Ofrecer formación alineada con las responsabilidades, procesos y decisiones que se enfrentan en diferentes puestos.'],
+ ['Convertir el aprendizaje en experiencia','Desarrollar actividades prácticas, simulaciones y proyectos que permitan aplicar los conocimientos adquiridos.'],
+ ['Impulsar el crecimiento profesional','Facilitar rutas de aprendizaje desde niveles iniciales hasta responsabilidades de supervisión, gerencia y dirección.'],
+ ['Fortalecer a los equipos','Ayudar a las organizaciones a identificar competencias, necesidades de capacitación y oportunidades de desarrollo de sus colaboradores.'],
+ ['Personalizar el aprendizaje','Ofrecer recomendaciones basadas en habilidades, intereses profesionales, evidencia y objetivos individuales, sin limitar las decisiones de cada persona.'],
+ ['Promover el aprendizaje continuo','Mantener una experiencia educativa que evolucione con nuevas herramientas, competencias y necesidades del entorno profesional.'],
+ ['Acercar la tecnología a todos','Integrar programación, datos, automatización, inteligencia artificial e integraciones como habilidades complementarias aplicables al trabajo.'],
 ];
 export default async function About(){
  const {data:{user}}=await getServerUser();
- return <div className="public-site"><PublicHeader authenticated={Boolean(user)}/><LocalizedContent><main className="wrap">
- <section className="public-section"><p className="public-eyebrow">Nuestra identidad</p><h1>Sobre Garciloga</h1></section>
- <div className="grid grid2"><section className="card"><h2>Misión</h2><p>Ayudar a cada persona a desarrollar habilidades reales para el trabajo, desde cero hasta supervisión, gerencia y dirección, combinando programación, cursos, procesos y toma de decisiones, con práctica y evidencia de lo aprendido.</p></section>
- <section className="card"><h2>Visión</h2><p>Ser la plataforma de referencia en Latinoamérica donde personas y equipos descubren y construyen más de una ruta profesional, sin encasillarse, y donde los líderes ven con claridad las fortalezas y áreas de mejora de su gente.</p></section></div>
- <section className="public-section"><h2>Valores</h2><div className="grid grid2">{values.map(([title,body])=><article className="card" key={title}><h3>{title}</h3><p>{body}</p></article>)}</div></section>
- <section className="public-section card brand-story"><h2>Nuestra historia</h2>
- <p>Garciloga nació en octubre de 2026 en Ciudad de México, fundada por Isaac López García, después de años trabajando en Customer Success, Onboarding y Account Management en empresas de tecnología y SaaS.</p>
- <p>Empezó con el nombre CodeZero, como una plataforma para aprender a programar desde cero: 15 niveles, 92 lecciones, ejercicios, exámenes y proyectos Capstone. Muy pronto quedó claro que programar era solo una parte: la gente también necesita aprender procesos, tomar decisiones y prepararse para puestos como Customer Success, Soporte, Onboarding, Account Management, Project Management y liderazgo.</p>
- <p>El 7 de octubre de 2026 la plataforma tomó su nombre definitivo, Garciloga, y amplió su rumbo. Hoy está disponible en español, inglés, portugués y francés, con un espacio para empresas donde cada líder da seguimiento al avance de su equipo.</p></section>
- <section className="public-section card brand-story"><h2>Lo que queremos lograr</h2><ul><li>Que cualquier persona pueda empezar desde cero y llegar hasta dirigir equipos.</li><li>Orientar a cada usuario hacia las rutas que mejor van con su forma de trabajar.</li><li>Dar a las empresas una forma clara de formar y reforzar a sus equipos.</li><li>Sumar cursos completos de liderazgo, mentorías, comunidad y práctica ejecutable.</li></ul></section>
+ return <div className="public-site"><PublicHeader authenticated={Boolean(user)}/><LocalizedContent><main className="wrap about">
+ <section className="about-intro"><p className="public-eyebrow">Sobre Garciloga</p><h1>Aprende para el trabajo real. Crece hacia lo que sigue.</h1>
+ <p className="about-lead">Garciloga es una plataforma de formación profesional por puesto: procesos, casos, herramientas y decisiones, desde los primeros pasos hasta supervisión, gerencia y dirección.</p></section>
+ <section className="about-mission" aria-labelledby="about-mission"><h2 id="about-mission" className="public-eyebrow">Nuestra misión</h2>
+ <p className="about-statement">Impulsar el crecimiento profesional de las personas mediante una formación práctica, accesible y enfocada en el mundo laboral real.</p>
+ <div className="about-columns"><p>En Garciloga ayudamos a desarrollar conocimientos, habilidades y competencias para desempeñarse con confianza en distintos puestos de trabajo, desde los primeros pasos profesionales hasta posiciones de liderazgo y dirección.</p>
+ <p>Combinamos aprendizaje estructurado, situaciones reales, toma de decisiones, herramientas y proyectos aplicados para transformar el conocimiento en capacidades que puedan demostrarse.</p></div></section>
+ <section className="public-dark about-vision" aria-labelledby="about-vision"><h2 id="about-vision" className="public-eyebrow">Nuestra visión</h2>
+ <p className="about-statement">Construir una plataforma educativa donde cualquier persona pueda descubrir su potencial, desarrollar nuevas habilidades y avanzar profesionalmente sin límites impuestos por su experiencia inicial.</p>
+ <div className="about-columns"><p>Aspiramos a transformar la manera en que las personas y las organizaciones desarrollan talento, conectando el aprendizaje con los desafíos reales del trabajo y ofreciendo rutas de crecimiento claras, flexibles y basadas en competencias.</p>
+ <p>Queremos que aprender, mejorar y prepararse para nuevas responsabilidades sea una oportunidad continua.</p></div></section>
+ <section className="public-section about-story" aria-labelledby="about-story"><h2 id="about-story">Nuestra historia</h2>
+ <div className="brand-story">
+ <p className="about-story-lead">Garciloga nació de una idea sencilla: aprender debería prepararnos para enfrentar situaciones reales, no únicamente para aprobar exámenes.</p>
+ <h3>De dónde viene</h3>
+ <p>El proyecto fue creado en Ciudad de México por Isaac López García, a partir de su experiencia profesional en empresas de tecnología, Customer Success, Onboarding, Account Management y atención a clientes.</p>
+ <p>Inicialmente comenzó como CodeZero, una plataforma diseñada para enseñar programación desde cero.</p>
+ <h3>Por qué cambió</h3>
+ <p>Durante su evolución surgió una visión más amplia: las personas no solo necesitan aprender herramientas técnicas, sino también comprender procesos, resolver problemas, comunicarse, tomar decisiones y desarrollar las competencias necesarias para crecer profesionalmente.</p>
+ <p>Así nació Garciloga como una propuesta de formación laboral integral.</p>
+ <h3>Dónde está hoy</h3>
+ <p>Hoy, el proyecto busca conectar el conocimiento con la práctica mediante rutas profesionales, ejercicios, escenarios de trabajo, proyectos y herramientas para que las personas y los equipos identifiquen sus fortalezas y oportunidades de mejora.</p>
+ <p className="about-story-lead">Nuestra historia está comenzando y queremos construir una plataforma que evolucione junto con las personas que aprenden en ella.</p>
+ </div></section>
+ <section className="public-section" aria-labelledby="about-values"><h2 id="about-values">Valores</h2>
+ <dl className="about-values">{values.map(([title,body])=><div key={title}><dt>{title}</dt><dd>{body}</dd></div>)}</dl></section>
+ <section className="public-section" aria-labelledby="about-goals"><h2 id="about-goals">Nuestros objetivos</h2>
+ <div className="about-goals">{goals.map(([title,body])=><article className="card" key={title}><h3>{title}</h3><p>{body}</p></article>)}</div></section>
+ <section className="public-close"><h2>Explora la formación por puesto y elige por dónde empezar.</h2><Link className="btn accent" href="/positions">Ver la formación por puesto</Link></section>
  </main></LocalizedContent></div>;
 }
-
