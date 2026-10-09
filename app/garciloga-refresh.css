@@ -321,3 +321,34 @@ html[data-design="vivo"] .about-goals p { margin: 0; line-height: 1.6; }
 .brand-logo { display: block; height: 1.3em; width: auto; overflow: visible; }
 .brand-logo-leaf { fill: currentColor; }
 html[data-design="vivo"]:not([data-appearance="dark"]):not([data-custom-palette="true"]) .public-brand .brand-logo-leaf { fill: #09634D; }
+
+/* ── Alignment ────────────────────────────────────────────────────── */
+/* The stacked-card gap must not push the second card down inside a grid row. */
+:is(.grid, .notice-list, .about-goals, .public-plans, .public-steps, .public-audience, .vivo-kpis, .vivo-person-grid) > .card + .card,
+[style*="grid"] > .card + .card { margin-top: 0; }
+html[data-design="vivo"] .admin-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 24px; }
+html[data-design="vivo"] .admin-links .btn { margin: 0; }
+.document-brand { margin: 0 0 20px; display: flex; justify-content: center; color: var(--vivo-text); }
+.document-brand .brand-logo { height: 40px; }
+html[data-design="vivo"]:not([data-appearance="dark"]):not([data-custom-palette="true"]) .document-brand .brand-logo-leaf { fill: #09634D; }
+.public-login .document-brand { justify-content: flex-start; }
+.public-login .document-brand .brand-logo { height: 32px; }
+@media print { .document-brand { color: #0E2A22; } .document-brand .brand-logo-leaf { fill: #09634D !important; } }
+
+/* ── Type scale inside the app ────────────────────────────────────── */
+/* Help and News reuse public templates; signed in they follow the app scale (32 / 24 / 16). */
+html[data-design="vivo"] .vivo-content .public-site h1 { font-size: 2rem; line-height: 1.15; }
+html[data-design="vivo"] .vivo-content .public-site h2 { font-size: 1.5rem; line-height: 1.2; }
+html[data-design="vivo"] .vivo-content .public-site { font-size: 1rem; }
+/* Native buttons do not inherit type; every action reads at the same size and weight. */
+html[data-design="vivo"] :is(button, input, select, textarea) { font-family: inherit; }
+html[data-design="vivo"] .vivo-content :is(.btn, button.btn) { font-size: 1rem; font-weight: 600; line-height: 1.25; }
+/* Body copy: comfortable measure and leading for long reading, tighter leading for headings. */
+html[data-design="vivo"] .vivo-content :where(p, li, dd) { line-height: 1.6; }
+html[data-design="vivo"] .vivo-content :where(h1, h2, h3) { line-height: 1.2; }
+html[data-design="vivo"] .vivo-content h3 { font-size: 1.125rem; font-weight: 700; }
+html[data-design="vivo"] .vivo-content :where(.card) > :where(p, ul, ol):last-child { margin-bottom: 0; }
+/* A short choice does not need a field as wide as the page. */
+html[data-design="vivo"] .vivo-content select { max-width: min(28rem, 100%); }
+html[data-design="vivo"] .vivo-content .pill { letter-spacing: .02em; }
+html[data-design="vivo"] .notice-error { border-color: var(--vivo-reinforce); background: var(--vivo-alert-bg); color: var(--vivo-alert-text); }

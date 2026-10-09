@@ -94,16 +94,22 @@ export default async function Admin({ searchParams }: PageProps) {
     <LocalizedContent><main className="wrap admin-workspace">
       <div className="nav">
         <div>
-          <span className="pill">OWNER / ADMIN</span>
-          <p><a className="btn secondary" href="/admin/social">Administrar comunidad y mentorías</a></p><h1>Garciloga Control Center</h1><p><a className="btn secondary" href="/admin/activation">Activación por cohortes</a></p><p><a className="btn secondary" href="/customer-success/review">Revisar proyectos Customer Success</a></p>
-          {roleTrainingEnabled()&&<p><a className="btn secondary" href="/role-training/review">Revisar proyectos y capstones · piloto por puesto</a>{operatorRole==='owner'&&<> · <a href="/role-training/profiles">Configurar perfiles de competencia</a></>}</p>}
+          <span className="pill">Propietario y administración</span>
+          <h1>Panel de control</h1>
           <p className="muted">Usuarios, planes, acceso y actividad académica.</p>
         </div>
         <a className="btn secondary" href="/dashboard">Mi cuenta</a>
       </div>
-
-      {operatorRole==='owner'&&<p><a className="btn" href="/admin/usage">Uso por persona · más y menos actividad</a></p>}
-      {workspaceEnabled()&&<p><a className="btn" href="/admin/companies">Compañías, contratos e invitaciones</a> · <a href="/admin/metrics">Analítica de visitas</a></p>}
+      <nav className="admin-links" aria-label="Secciones de administración">
+        {operatorRole==='owner'&&<a className="btn" href="/admin/usage">Uso por persona</a>}
+        {workspaceEnabled()&&<a className="btn" href="/admin/companies">Compañías, contratos e invitaciones</a>}
+        <a className="btn secondary" href="/admin/social">Comunidad y mentorías</a>
+        <a className="btn secondary" href="/admin/activation">Activación por cohortes</a>
+        <a className="btn secondary" href="/customer-success/review">Revisar proyectos Customer Success</a>
+        {roleTrainingEnabled()&&<a className="btn secondary" href="/role-training/review">Revisar proyectos por puesto</a>}
+        {roleTrainingEnabled()&&operatorRole==='owner'&&<a className="btn secondary" href="/role-training/profiles">Perfiles de competencia</a>}
+        {workspaceEnabled()&&<a className="btn secondary" href="/admin/metrics">Analítica de visitas</a>}
+      </nav>
 
       {operatorRole === "owner" && <details className="card admin-create"><summary>Crear usuario</summary><OwnerUserCreate /></details>}
       {support&&<p role="alert">No pudimos abrir la revisión. La cuenta debe estar activa y tener el correo verificado. Si ya estás en una revisión, vuelve primero a tu cuenta.</p>}

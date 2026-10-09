@@ -54,3 +54,7 @@ test('onboarding answer positions are not a fixed rotation and stay aligned acro
  assert.ok(next<0.5,'the correct option must not simply advance one position each question');
  for(const index of [0,1,2]){const share=seq.filter(v=>v===index).length/seq.length;assert.ok(share>0.2&&share<0.45,'each position is used a reasonable share of the time');}
 });
+test('sign-up offers exactly the connected position programs',async()=>{
+ const {default:published}=await import('../lib/position-curricula/published.json',{with:{type:'json'}});
+ assert.deepEqual(published.map(p=>[p.key,p.title]),Object.values(POSITION_PROGRAMS).map(p=>[p.key,p.title]));
+});

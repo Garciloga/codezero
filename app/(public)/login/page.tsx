@@ -1,5 +1,7 @@
 "use client";
 import LocalizedContent from "../../components/localization/client";
+import BrandLogo from "../../components/brand-logo";
+import publishedPositions from "../../../lib/position-curricula/published.json";
 
 
 import Link from "next/link";
@@ -28,6 +30,7 @@ function LoginForm() {
   const [confirmationEmail, setConfirmationEmail] = useState<string | null>(null);
   const [eligibilityConfirmed, setEligibilityConfirmed] = useState(false);
   const [legalAccepted, setLegalAccepted] = useState(false);
+  const [position, setPosition] = useState(publishedPositions[0].key);
 
   function changeMode(next: "login" | "signup") {
     setMode(next); setMsg(""); setErrors({}); setShowPassword(false); setConfirmationEmail(null);
@@ -71,6 +74,7 @@ function LoginForm() {
         options: { data: {
           ...registrationDetails(fullName, age),
           locale,
+          learning_position_key: position,
           signup_terms_version: "2026-10-06",
           signup_terms_accepted_at: new Date().toISOString(),
           age_or_guardian_authorization_confirmed: true,
@@ -80,7 +84,9 @@ function LoginForm() {
       if (!result.data.session) {
         setPassword(""); setShowPassword(false); setConfirmationEmail(email); return;
       }
-      router.push("/positions?diagnostic=1"); router.refresh();
+      // Save the chosen position now that a session exists; the page still lets them change it.
+      try { const form = new FormData(); form.set("action", "position"); form.set("position", position); await fetch("/api/positions", { method: "POST", body: form, redirect: "manual" }); } catch {}
+      router.push("/positions?diagnostic=1&position=" + encodeURIComponent(position)); router.refresh();
     } catch {
       setMsg("No pudimos conectar. Intenta de nuevo en unos momentos.");
     } finally { setBusy(false); }
@@ -98,6 +104,7 @@ function LoginForm() {
 
   return <LocalizedContent><main className="wrap">
     <div className="card public-login">
+      <p className="document-brand"><BrandLogo /></p>
       {confirmationEmail ? <section aria-labelledby="confirmation-title">
         <h1 id="confirmation-title">Revisa tu correo</h1>
         <p role="status">Revisa <b>{confirmationEmail}</b> y sigue las instrucciones de confirmación para continuar.</p>
@@ -119,12 +126,16 @@ function LoginForm() {
         <div id="account-panel" role="tabpanel" aria-labelledby={mode + "-tab"}>
           <h1>{mode === "login" ? "Iniciar sesión" : "Crear cuenta"}</h1>
           <p className="muted">{mode === "login" ? "Continúa tu ruta de aprendizaje." : "Empieza gratis con el Nivel 1. Puedes cambiar de plan después."}</p>
-          {mode === "signup" && <p className="public-field-help">Al entrar eliges tu puesto y haces el diagnóstico inicial. Es una recomendación: no bloquea ninguna ruta.</p>}
+
           <form onSubmit={submit} className="grid" noValidate aria-busy={busy}>
             {mode === "signup" && <>
               <div><label htmlFor="full_name"><b>Nombre</b></label>
                 <input id="full_name" name="full_name" autoComplete="name" value={fullName} onChange={e => { setFullName(e.target.value); clearError("full_name"); }} required minLength={2} maxLength={100} disabled={busy} aria-invalid={!!errors.full_name} aria-describedby={errors.full_name ? "full_name-error" : undefined} />
                 {fieldError("full_name")}
+              </div>
+              <div><label htmlFor="learning_position_key"><b>Puesto con el que quieres empezar</b></label>
+                <select id="learning_position_key" name="learning_position_key" value={position} onChange={e => setPosition(e.target.value)} disabled={busy} aria-describedby="position-help">{publishedPositions.map(p => <option key={p.key} value={p.key} translate="no">{p.title}</option>)}</select>
+                <p id="position-help" className="public-field-help">Empiezas con su diagnóstico inicial. Puedes cambiar de puesto cuando quieras; ninguna ruta se bloquea.</p>
               </div>
               <div><label htmlFor="age"><b>Edad en años (opcional)</b></label>
                 <input id="age" name="age" type="text" inputMode="numeric" value={age} onChange={e => { setAge(e.target.value); clearError("age"); }} disabled={busy} aria-invalid={!!errors.age} aria-describedby={errors.age ? "age-help age-error" : "age-help"} />
