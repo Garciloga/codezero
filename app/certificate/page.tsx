@@ -1,3 +1,4 @@
+import BrandLogo from "../components/brand-logo";
 import LocalizedDate from '../components/localization/date';
 import LocalizedContent from "../components/localization/server";
 import Link from "next/link";
@@ -41,6 +42,7 @@ export default async function CertificatePage() {
       </div>
 
       <div className="card" style={{ textAlign: "center", padding: 48 }}>
+        <p className="document-brand"><BrandLogo label="Garciloga"/></p>
         <p className="muted">Se certifica que</p>
         <h2 style={{ fontSize: 36, marginBottom: 8 }}>
           <span translate="no">{profile?.full_name || profile?.email || "Estudiante Garciloga"}</span>

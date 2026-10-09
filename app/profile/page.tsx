@@ -87,7 +87,7 @@ export default async function ProfilePage({ searchParams }: PageProps) {
         <section className="card">
           <h2>Suscripción</h2>
           {profile?.role !== 'owner' && <p><Link prefetch={false} className="btn secondary" href="/teams/seats">Contratar o administrar seats · mínimo 5 usuarios</Link></p>}
-          <p><b>Plan:</b> {profile?.plan_name}</p>
+          <p><b>Plan:</b> <span translate="no" style={{textTransform:"capitalize"}}>{profile?.plan_name}</span></p>
           <p><b>Estado de cuenta:</b> {profile?.status}</p>
           {profile?.plan_name !== "free" && (
             <p><b>Estado de facturación:</b> {profile?.billing_status ?? "pendiente"}</p>

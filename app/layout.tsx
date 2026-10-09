@@ -33,6 +33,7 @@ import LocalizedServer from "./components/localization/server";
 import { localeContext, uiMessages } from "../lib/localization/server";
 import { LANGUAGE_TAGS } from "../lib/localization/shared";
 import { workspaceEnabled } from "../lib/workspace-sandbox";
+import { appearanceStorageKey } from "../lib/user-appearance";
 
 export async function generateMetadata() { return translatedMetadata({
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "https://codezero-nine.vercel.app"),
@@ -58,9 +59,13 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const navigation = user ? await accountNavigation() : null;
   const preference = user && workspaceEnabled()
     ? (await supabase.from("user_preferences").select("mode,accent,colors,news_read").eq("user_id",user.id).maybeSingle()).data : null;
+  const serverMode: "system"|"light"|"dark" = preference?.mode==="dark"||preference?.mode==="light" ? preference.mode : "system";
   return (
-    <html lang={LANGUAGE_TAGS[locale]} data-design="vivo" style={VIVO_CSS_VARIABLES as CSSProperties}>
-      <head><style>{VIVO_THEME_CSS}</style></head>
+    <html lang={LANGUAGE_TAGS[locale]} data-design="vivo" data-appearance={serverMode==="system"?undefined:serverMode} data-appearance-key={appearanceStorageKey(user?.id ?? null)} style={VIVO_CSS_VARIABLES as CSSProperties} suppressHydrationWarning>
+      <head><style>{VIVO_THEME_CSS}</style>
+      {/* Sets the theme before first paint so dark mode never flashes light; colours follow in AppearanceProvider. */}
+      <script src="/theme-init.js"/>
+      </head>
       <body>
         <SiteVisit/>
         <PlatformUsage userId={user?.id??null} enabled={Boolean(user)&&workspaceEnabled()&&!support&&navigation?.profile?.role!=='owner'}/>

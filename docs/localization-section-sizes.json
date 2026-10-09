@@ -1,29 +1,29 @@
 {
   "en": {
-    "before": 319735,
+    "before": 320101,
     "common": 6431,
-    "public": 109453,
+    "public": 109491,
     "learning": 176947,
     "teams": 116884,
-    "admin": 177798,
-    "help": 172404
+    "admin": 177976,
+    "help": 172377
   },
   "pt": {
-    "before": 332002,
+    "before": 332416,
     "common": 6764,
-    "public": 113913,
+    "public": 113979,
     "learning": 183084,
     "teams": 121031,
-    "admin": 184035,
-    "help": 178317
+    "admin": 184235,
+    "help": 178288
   },
   "fr": {
-    "before": 346287,
+    "before": 346696,
     "common": 7013,
-    "public": 118562,
+    "public": 118619,
     "learning": 190570,
     "teams": 125709,
-    "admin": 191717,
-    "help": 185571
+    "admin": 191893,
+    "help": 185542
   }
 }

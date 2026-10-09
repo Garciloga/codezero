@@ -18,7 +18,8 @@ export default async function Positions({searchParams}:{searchParams:Promise<{or
  const entitled=hasCustomerSuccessCourse(state.session.profile),item=params.item?positionItem(params.item):null;if(params.item&&!item)notFound();
  // The route shown is the one in the address, else the item's, else the saved position, else Customer Success.
  if(params.position&&!positionProgram(params.position))notFound();
- const program=positionProgram(params.position)??positionProgram(item?.position)??positionProgram(state.position)??POSITION_PROGRAMS[DEFAULT_POSITION];
+ // A position chosen at sign-up (kept in the account metadata when e-mail confirmation delays the first session) is the fallback before Customer Success.
+ const program=positionProgram(params.position)??positionProgram(item?.position)??positionProgram(state.position)??positionProgram(state.session.user.user_metadata?.learning_position_key as string|undefined)??POSITION_PROGRAMS[DEFAULT_POSITION];
  const totals=positionProgramTotals(program),passed=state.progress[program.key].passed,projects=state.progress[program.key].projects;
  const routeBase=base+(program.key===DEFAULT_POSITION&&!params.position?'':(org?'&':'?')+'position='+program.key);
  const latest=params.attempt?state.submissions.find(a=>a.id===params.attempt):null;

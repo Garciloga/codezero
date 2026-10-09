@@ -27,6 +27,7 @@ export default function ErrorPage({
         <div style={{display:"flex",gap:10,justifyContent:"center",flexWrap:"wrap"}}>
           <button className="btn" type="button" onClick={() => reset()}>Reintentar</button>
           <Link className="btn secondary" href="/dashboard">Mi Garciloga</Link>
+          <Link className="btn secondary" href="/help">Centro de ayuda</Link>
         </div>
       </div>
     </main></LocalizedContent>

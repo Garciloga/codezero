@@ -88,10 +88,11 @@ export default async function HelpPage({ searchParams }: PageProps) {
           <div className="grid grid4">
             {categories.map((category) => {
               const count = byCategory.get(category)?.length ?? 0;
+              if (!count) return null;
               return (
                 <a className="card" key={category} href={"#"+category.toLowerCase().replaceAll(" ","-")}>
                   <b>{category}</b>
-                  <p className="muted" style={{marginBottom:0}}>{count} respuesta(s)</p>
+                  <p className="muted" style={{marginBottom:0}}>{count===1?"1 respuesta":`${count} respuestas`}</p>
                 </a>
               );
             })}

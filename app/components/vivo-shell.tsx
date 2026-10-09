@@ -209,7 +209,9 @@ export default function VivoShell({
                 <section key={g.title}>
                   <h2>{g.title}</h2>
                   {g.items.map(([label, href, icon]) => {
-                    const active = !href.includes("#") && path === href;
+                    // A sub-page keeps its section highlighted unless another menu entry matches the address more closely.
+                    const nested = (h: string) => !h.includes("#") && h !== "/" && path.startsWith(h + "/");
+                    const active = !href.includes("#") && (path === href || (nested(href) && !groups.some(group => group.items.some(([, other]) => other !== href && (other === path || (nested(other) && other.length > href.length))))));
                     return (
                       <Link
                         prefetch={false}

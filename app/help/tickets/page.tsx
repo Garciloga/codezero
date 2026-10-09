@@ -29,8 +29,8 @@ export default async function TicketsPage({ searchParams }: PageProps) {
         <Link prefetch={false} className="btn secondary" href="/help">Centro de ayuda</Link>
       </div>
 
-      {created === "invalid" && <div className="card"><b>Revisa el asunto y la descripción del caso.</b></div>}
-      {created === "error" && <div className="card"><b>No pudimos crear el ticket. Intenta de nuevo.</b></div>}
+      {created === "invalid" && <div className="card notice-error" role="alert"><b>Revisa el asunto y la descripción del caso.</b></div>}
+      {created === "error" && <div className="card notice-error" role="alert"><b>No pudimos crear el ticket. Intenta de nuevo.</b></div>}
 
       <section className="card" style={{marginTop:18}}>
         <h2>Abrir un ticket</h2>
