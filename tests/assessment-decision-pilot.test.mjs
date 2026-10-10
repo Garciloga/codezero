@@ -69,11 +69,12 @@ test("every stage and alternative is localized in Spanish, English, Portuguese a
     }
   }
 });
-test("owner-only pilot is isolated from progress, billing and certificates",()=>{
-  const page=readFileSync(new URL("../app/admin/assessments-pilot/page.tsx",import.meta.url),"utf8");
-  const client=readFileSync(new URL("../app/admin/assessments-pilot/assessment-pilot.tsx",import.meta.url),"utf8");
-  assert.ok(page.indexOf("await requireOwner(user.id)")<page.indexOf("return <AssessmentDecisionPilot"));
-  assert.match(page,/robots:\{index:false,follow:false\}/);
-  assert.doesNotMatch(page+client,/\.rpc\(|\.insert\(|\.upsert\(|\.update\(|\.delete\(|fetch\(|localStorage|sessionStorage|award.*certificate|finish_exam_sitting/);
-  assert.match(client,/useState\(initialPilot\)/);
+test("owner-only advanced pilot remains guarded and cannot write directly to learner records",()=>{
+ const page=readFileSync(new URL("../app/admin/assessments-pilot/page.tsx",import.meta.url),"utf8");
+ const client=readFileSync(new URL("../app/components/advanced-assessment-player.tsx",import.meta.url),"utf8");
+ assert.ok(page.indexOf("await requireOwner(user.id)")<page.indexOf("return <AdvancedAssessmentPlayer"));
+ assert.match(page,/robots:\{index:false,follow:false\}/);
+ assert.match(page,/canSave=\{false\}/);
+ assert.doesNotMatch(client,/\.rpc\(|\.insert\(|\.upsert\(|\.update\(|\.delete\(|localStorage|sessionStorage|finish_exam_sitting/);
+ assert.match(client,/\/api\/decisions\/step/);
 });
