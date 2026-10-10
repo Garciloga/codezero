@@ -40,21 +40,58 @@ jobs:
       - name: Dump application data
         if: steps.gate.outputs.configured == 'true'
         run: |
-          docker run --rm --network host -e DB_URL="$SUPABASE_DB_URL" -v "$PWD:/out" postgres:17 \
+          docker run --rm --user "$(id -u):$(id -g)" --network host -e DB_URL="$SUPABASE_DB_URL" -v "$PWD:/out" postgres:17 \
             sh -c 'pg_dump "$DB_URL" --format=custom --no-owner --no-privileges --schema=public --schema=codezero_private --schema=account_security --file=/out/backup.dump'
           test -s backup.dump
-          docker run --rm --network host -v "$PWD:/out" postgres:17 pg_restore --list /out/backup.dump > backup-contents.txt
+          docker run --rm --user "$(id -u):$(id -g)" --network host -v "$PWD:/out" postgres:17 pg_restore --list /out/backup.dump > backup-contents.txt
           grep -q 'TABLE DATA' backup-contents.txt
+          # Restore validation needs only UUIDs from Supabase Auth, not passwords or emails.
+          # This temporary file is NOT included in the encrypted application archive.
+          docker run --rm --user "$(id -u):$(id -g)" --network host -e DB_URL="$SUPABASE_DB_URL" -v "$PWD:/out" postgres:17 \
+            sh -ec 'umask 077; psql "$DB_URL" -X -v ON_ERROR_STOP=1 -At -c "select id from auth.users order by id" > /out/restore-auth-ids.txt'
       - name: Verify the dump restores
         if: steps.gate.outputs.configured == 'true'
         run: |
-          docker run --rm --network host -v "$PWD:/out" postgres:17 \
-            sh -c 'psql -h 127.0.0.1 -U postgres -v ON_ERROR_STOP=1 -c "create schema if not exists auth; create schema if not exists extensions;" \
-              && pg_restore -h 127.0.0.1 -U postgres -d postgres --exit-on-error --single-transaction --no-owner --no-privileges /out/backup.dump \
-              && psql -h 127.0.0.1 -U postgres -At -c "select count(*) from information_schema.tables where table_schema in (\$\$public\$\$,\$\$codezero_private\$\$)"' | tee restored-tables.txt
+          # Disposable local PostgreSQL is not Supabase. Bootstrap Auth *identities only*
+          # so the archive's foreign keys can be validated without disabling constraints.
+          cat > restore-bootstrap.sql <<'SQL'
+          DROP SCHEMA IF EXISTS public CASCADE;
+          CREATE SCHEMA IF NOT EXISTS auth;
+          CREATE SCHEMA IF NOT EXISTS extensions;
+          CREATE TABLE auth.users (id uuid PRIMARY KEY);
+          DO $roles$
+          BEGIN
+            IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'anon') THEN
+              CREATE ROLE anon NOLOGIN;
+            END IF;
+            IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'authenticated') THEN
+              CREATE ROLE authenticated NOLOGIN;
+            END IF;
+            IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'service_role') THEN
+              CREATE ROLE service_role NOLOGIN;
+            END IF;
+          END $roles$;
+          CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql STABLE AS 'SELECT NULL::uuid';
+          CREATE FUNCTION auth.role() RETURNS text LANGUAGE sql STABLE AS 'SELECT NULL::text';
+          CREATE FUNCTION auth.email() RETURNS text LANGUAGE sql STABLE AS 'SELECT NULL::text';
+          CREATE FUNCTION auth.jwt() RETURNS jsonb LANGUAGE sql STABLE AS 'SELECT NULL::jsonb';
+          SQL
+          cat > restore-check.sh <<'SH'
+          #!/bin/sh
+          set -eu
+          psql -h 127.0.0.1 -U postgres -v ON_ERROR_STOP=1 -f /out/restore-bootstrap.sql
+          psql -h 127.0.0.1 -U postgres -v ON_ERROR_STOP=1 -c "\copy auth.users(id) FROM '/out/restore-auth-ids.txt'"
+          pg_restore -h 127.0.0.1 -U postgres -d postgres --exit-on-error --single-transaction --no-owner --no-privileges /out/backup.dump
+          psql -h 127.0.0.1 -U postgres -At -v ON_ERROR_STOP=1 -c "select count(*) from information_schema.tables where table_schema in ('public','codezero_private','account_security')"
+          SH
+          docker run --rm --user "$(id -u):$(id -g)" --network host -v "$PWD:/out" postgres:17 sh /out/restore-check.sh > restored-tables.txt
           test "$(tail -1 restored-tables.txt)" -gt 20
-          # A failed pg_restore must never produce a backup labeled verified.
-          # This isolated test does not include Supabase Auth, Storage or external services.
+          # A passing local restore is NOT a complete Auth/Storage recovery test.
+      - name: Remove temporary Auth UUIDs
+        if: always()
+        run: |
+          if [ -f restore-auth-ids.txt ]; then shred -u restore-auth-ids.txt; fi
+          rm -f restore-bootstrap.sql restore-check.sh
       - name: Encrypt
         if: steps.gate.outputs.configured == 'true'
         run: |
