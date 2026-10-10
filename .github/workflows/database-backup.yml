@@ -20,7 +20,7 @@ jobs:
       restore:
         image: postgres:17
         env:
-          POSTGRES_PASSWORD: restore-check
+          POSTGRES_HOST_AUTH_METHOD: trust
         ports: ["5432:5432"]
         options: >-
           --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
@@ -46,7 +46,7 @@ jobs:
       - name: Verify the dump restores
         if: steps.gate.outputs.configured == 'true'
         run: |
-          docker run --rm --network host -e PGPASSWORD=restore-check -v "$PWD:/out" postgres:17 \
+          docker run --rm --network host -v "$PWD:/out" postgres:17 \
             sh -c 'psql -h 127.0.0.1 -U postgres -v ON_ERROR_STOP=1 -c "create schema if not exists auth; create schema if not exists extensions;" \
               && (pg_restore -h 127.0.0.1 -U postgres -d postgres --no-owner --no-privileges /out/backup.dump || true) \
               && psql -h 127.0.0.1 -U postgres -At -c "select count(*) from information_schema.tables where table_schema in (\$\$public\$\$,\$\$codezero_private\$\$)"' | tee restored-tables.txt
