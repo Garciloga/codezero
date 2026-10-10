@@ -1,5 +1,6 @@
 import {effectiveLearningPlan} from "../../../../lib/company-learning-server";
 import LocalizedContent from "../../../components/localization/server";
+import AssessmentProtection from "../../../components/assessment-protection";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createServerSupabase } from "../../../../lib/supabase-server";
@@ -155,7 +156,7 @@ export default async function ExamPage({ params, searchParams }: PageProps) {
         </div>
       )}
 
-      <form action="/api/exams/submit" method="post">
+      <AssessmentProtection><form action="/api/exams/submit" method="post">
         <input type="hidden" name="exam_id" value={exam.id} />
         <input type="hidden" name="sitting_id" value={sittingId} />
         <p>Las preguntas y opciones cambian de orden en cada intento. Este formulario es válido por dos horas. Resuelve la evaluación por tu cuenta.</p>
@@ -185,7 +186,7 @@ export default async function ExamPage({ params, searchParams }: PageProps) {
         <div style={{ marginTop: 20 }}>
           <button className="btn" type="submit">Enviar evaluación</button>
         </div>
-      </form>
+      </form></AssessmentProtection>
     </main></LocalizedContent>
   );
 }

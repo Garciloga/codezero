@@ -26,7 +26,7 @@ export default async function PricingPlans({ plans, currentPlan, annual = null }
           </Link>}
         {annual && plan.name !== "free" && currentPlan !== plan.name && <p className="public-annual"><span>Pago anual:</span> <strong>{planPrice(annual[plan.name], LANGUAGE_TAGS[locale])}</strong> <span>MXN al año</span> <Link prefetch={false} href={"/checkout?plan=" + plan.name + "&interval=year"}>Elegir pago anual</Link></p>}
         <ul>
-          <li>{plan.name === "free" ? "Nivel 1 completo" : "Ruta completa: niveles 1 a 15"}</li>
+          <li>{plan.name === "free" ? "Ruta técnica complementaria: nivel 1" : "Complemento técnico actualmente incluido: niveles 1 a 15"}</li>
           <li>{planLimit(plan.exercise_limit, LANGUAGE_TAGS[locale])} ejercicios al mes</li>
           <li>{planLimit(plan.exam_limit, LANGUAGE_TAGS[locale])} exámenes incluidos al mes, sin cobro por intento</li>
           <li>{plan.project_limit === 0 ? "Sin entregas de proyectos" : planLimit(plan.project_limit, LANGUAGE_TAGS[locale]) + " entregas de proyectos al mes"}</li>
@@ -46,7 +46,7 @@ export default async function PricingPlans({ plans, currentPlan, annual = null }
             <tr><th colSpan={4} scope="colgroup">Demostrar</th></tr>
             <tr><th scope="row">Portafolio público voluntario</th>{plans.map(p=><td key={p.name}>Evidencia personal aprobada</td>)}</tr>
             <tr><th scope="row">Revisión humana de proyectos</th>{plans.map(p=><td key={p.name}>{p.project_limit===0?'Sin entregas técnicas; casos semanales disponibles':'Según entregas y acceso del plan'}</td>)}</tr>
-            <tr><th scope="row">Niveles disponibles</th>{plans.map(p => <td key={p.name}>{p.name === "free" ? "Nivel 1" : "Ruta completa e Integraciones"}</td>)}</tr>
+            <tr><th scope="row">Programación (complemento técnico, acceso actual)</th>{plans.map(p => <td key={p.name}>{p.name === "free" ? "Nivel 1" : "15 niveles e integraciones"}</td>)}</tr>
             <tr><th scope="row">Ejercicios al mes</th>{plans.map(p => <td key={p.name}>{planLimit(p.exercise_limit, LANGUAGE_TAGS[locale])}</td>)}</tr>
             <tr><th scope="row">Exámenes al mes</th>{plans.map(p => <td key={p.name}>{planLimit(p.exam_limit, LANGUAGE_TAGS[locale])}</td>)}</tr>
             <tr><th scope="row">Entregas de proyectos al mes</th>{plans.map(p => <td key={p.name}>{planLimit(p.project_limit, LANGUAGE_TAGS[locale])}</td>)}</tr>

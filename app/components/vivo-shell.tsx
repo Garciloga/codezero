@@ -116,6 +116,7 @@ export default function VivoShell({
         ["Mentorías", "/mentoring", "people"],
       ],
     },
+    {title:"COMPLEMENTOS",items:[["Programación · ruta técnica","/technical-addon","learning"],["Módulos opcionales","/modules","learning"]]},
     ...(team
       ? [
           {

@@ -1,6 +1,7 @@
 "use client";
 
 import {useState} from "react";
+import AssessmentProtection from "./assessment-protection";
 import {ADVANCED_OPTION_IDS,type AdvancedSceneKey} from "../../lib/advanced-assessment-public";
 import {advancedCopyFor,advancedScenarioText} from "../../lib/localization/advanced-assessment";
 import type {AdvancedInput,AdvancedMetrics} from "../../lib/advanced-assessment";
@@ -68,7 +69,7 @@ export default function AdvancedAssessmentPlayer({locale,org,canSave}:{locale:st
    </div>
    <p className="muted">{t.privacy}</p>
   </section>
-  {!progress.complete&&text&&<section className="card">
+  {!progress.complete&&text&&<AssessmentProtection><section className="card">
    <span className="pill">{t.stage} {progress.step+1} {t.of} 8 · {t.level} {[1,3,5,7,9,11,13,15][progress.step]}</span>
    <progress max={8} value={progress.step} aria-label={t.stage}/>
    <h2>{text.title}</h2><p>{text.context}</p>
@@ -88,7 +89,7 @@ export default function AdvancedAssessmentPlayer({locale,org,canSave}:{locale:st
     <label><b>{t.verification}</b><textarea value={verification} onChange={e=>setVerification(e.target.value)} minLength={50} maxLength={650} rows={4} required/></label>
     <button className="btn" type="submit" disabled={!acceptable||busy}>{t.next}</button>
    </form>}
-  </section>}
+  </section></AssessmentProtection>}
   {progress.complete&&<section className="card">
    <h2>{t.result}</h2>
    {feedback&&<p role="status">{t.sceneConsequence} {metrics.map(k=>t.metric[k]+": "+progress.metrics[k]).join(" · ")}</p>}
