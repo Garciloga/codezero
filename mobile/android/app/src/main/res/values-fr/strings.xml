@@ -10,4 +10,6 @@
     <string name="file_not_supported">Impossible d’ouvrir le fichier sélectionné</string>
     <string name="blocked_insecure">Ce lien est bloqué pour des raisons de sécurité</string>
     <string name="blocked_http">Seules les connexions HTTPS sont autorisées</string>
+    <string name="share_app_title">Partager Garciloga</string>
+    <string name="share_app_message">Découvrez Garciloga : %1$s</string>
 </resources>

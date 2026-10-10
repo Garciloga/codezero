@@ -134,6 +134,8 @@ class MainActivity : Activity() {
 
         settings.apply {
             javaScriptEnabled = true  // Requisito de Next.js/React; solo navegación de origen propio.
+            // Identificador de presentación, NO control de acceso ni autorización.
+            userAgentString = userAgentString + " GarcilogaAndroid/1.0.1"
             domStorageEnabled = true  // Preferencias y funcionamiento de frontend.
             databaseEnabled = false
             allowFileAccess = false
@@ -275,6 +277,12 @@ class MainActivity : Activity() {
         !uri.encodedAuthority.orEmpty().contains('@')
 
     private fun routeNavigation(uri: Uri): Boolean {
+        // Acción nativa de bajo riesgo, sólo desde la URL HTTPS del propio sitio.
+        if (isTrustedOrigin(uri) && uri.path == "/dashboard" &&
+            uri.getQueryParameter("garciloga_native_action") == "share") {
+            shareGarciloga()
+            return true
+        }
         val scheme = uri.scheme?.lowercase(Locale.ROOT) ?: return true
         if (scheme == "about" && uri.toString() == "about:blank") return false
         if (isTrustedOrigin(uri)) return false
@@ -293,6 +301,18 @@ class MainActivity : Activity() {
             toast(if (scheme == "http") R.string.blocked_http else R.string.blocked_insecure)
         }
         return true
+    }
+
+    private fun shareGarciloga() {
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, getString(R.string.share_app_message, homeUrl))
+        }
+        try {
+            startActivity(Intent.createChooser(intent, getString(R.string.share_app_title)))
+        } catch (_: ActivityNotFoundException) {
+            toast(R.string.cannot_open_link)
+        }
     }
 
     private fun downloadFile(

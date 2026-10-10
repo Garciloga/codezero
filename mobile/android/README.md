@@ -94,3 +94,12 @@ Solo cambia a un dominio HTTPS bajo tu control; la política de navegación se r
 - Roadmap en Notion: `Aplicación Garciloga para Android` (Coming soon, 10 octubre 2026).
 
 **Esta entrega no desarrolla ni modifica los módulos futuros:** solo enlaza la aplicación Android con el catálogo real de la web. Las evaluaciones, competencias, datos humanos, facturación y roles siguen bajo control del backend existente.
+
+## Experiencia móvil adaptada (borrador de lanzamiento 1.0.1)
+
+- La web incorpora barra de navegación inferior de cinco destinos, tarjetas móviles basadas en progreso real, acceso a retos publicados, habilidades y tareas; aplica en pantallas pequeñas, también en navegador móvil.
+- La app Kotlin añade la marca de agente de usuario `GarcilogaAndroid/1.0.1` **solo para mostrar funciones de interfaz**. Este identificador **se puede falsificar** y nunca debe usarse en autorización, planes, pagos o RLS.
+- Exclusivo en APK 1.0.1: botón «Compartir con Android» del panel, que invoca el selector de aplicaciones del sistema sin puente JavaScript. En web móvil común el botón no se muestra.
+- Al ejecutar un nuevo despliegue web compatible, la interfaz web se refleja al abrir la app sin instalar un APK. El botón exclusivo de Android necesita APK **1.0.1**; la versión instalada 1.0.0 sigue siendo funcional pero no añade acciones Kotlin nuevas.
+- Seguimos sin push, aprendizaje offline o biometría: necesitan consentimiento/notificaciones y servicio servidor, cifrado/sincronización y evaluación de amenazas. No solicitar permisos que aún no se usan ni simular características.
+- Verificación mínima: permisos/organizaciones, rutas reales, progreso de lecciones, sesión/MFA, accesibilidad, lector de pantalla, modo oscuro, idiomas ES/EN/FR/PT y Android físico. Compilar debug y validar antes de compartir; no automatizar publicación comercial.

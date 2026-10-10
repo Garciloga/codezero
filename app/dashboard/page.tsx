@@ -16,6 +16,7 @@ import {workspaceEnabled} from '../../lib/workspace-sandbox';
 import {accountNavigation,organizationView} from '../../lib/organization-server';
 import {SkillBars} from '../components/enterprise/person-card';
 import Organigram from '../components/enterprise/organigram';
+import MobileLearningHome from '../components/mobile-learning-home';
 
 type Level = {
   id: number;
@@ -127,6 +128,10 @@ export default async function Dashboard({ searchParams }: PageProps) {
 
   return (
     <LocalizedContent><main className="wrap"><ActivationReturn userId={user.id}/>
+      <MobileLearningHome progress={overallProgress}
+        nextTitle={nextLesson?.title??nextRoute?.title??"Tu ruta de aprendizaje"}
+        nextHref={nextRoute?(nextLesson?"/learn/"+nextRoute.level_number+"/"+nextLesson.slug:"/learn/"+nextRoute.level_number):"/dashboard?view=learning#my-learning-path"}
+        orgId={account?.organization?.organization_id??null} />
       <div className="nav">
         <div>
           <span className="pill">{ent.plan_name}</span>
