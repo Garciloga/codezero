@@ -3,17 +3,12 @@ import Link from "next/link";
 import {usePathname} from "next/navigation";
 import {useLanguage} from "./localization/provider";
 import LineIcon from "./line-icon";
+import {mobileTabLabels,mobileNavigationLabels} from "../../lib/localization/mobile-experience";
 
-const labels = {
-  es: ["Inicio","Mi ruta","Retos","Progreso","Perfil"],
-  en: ["Home","My path","Challenges","Progress","Profile"],
-  fr: ["Accueil","Parcours","Défis","Progrès","Profil"],
-  pt: ["Início","Minha rota","Desafios","Progresso","Perfil"]
-};
 export default function MobileTabs({orgId,roleTrainingActive}:{orgId:string|null;roleTrainingActive:boolean}) {
   const pathname=usePathname();
   const {locale}=useLanguage();
-  const words=labels[locale]??labels.es;
+  const words=mobileTabLabels[locale]??mobileTabLabels.es;
   const paths=[
     "/dashboard?view=learning",
     roleTrainingActive?"/positions"+(orgId?"?organization_id="+encodeURIComponent(orgId):""):"/dashboard?view=learning#my-learning-path",
@@ -28,7 +23,7 @@ export default function MobileTabs({orgId,roleTrainingActive}:{orgId:string|null
     if(index===3)return pathname.startsWith("/competencies")||pathname.startsWith("/certificates");
     return pathname.startsWith("/profile");
   };
-  return <nav className="garciloga-mobile-tabs" aria-label={locale==="en"?"Mobile navigation":locale==="fr"?"Navigation mobile":locale==="pt"?"Navegação móvel":"Navegación móvil"}>
+  return <nav className="garciloga-mobile-tabs" aria-label={mobileNavigationLabels[locale]}>
     {paths.map((href,i)=><Link prefetch={false} key={i} href={href} aria-current={active(i)?"page":undefined}>
       <LineIcon kind={["home","learning","task","certificate","settings"][i]}/>
       <span>{words[i]}</span>

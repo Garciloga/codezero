@@ -129,7 +129,7 @@ export default async function Dashboard({ searchParams }: PageProps) {
   return (
     <LocalizedContent><main className="wrap"><ActivationReturn userId={user.id}/>
       <MobileLearningHome progress={overallProgress}
-        nextTitle={nextLesson?.title??nextRoute?.title??"Tu ruta de aprendizaje"}
+        nextTitle={nextLesson?.title??nextRoute?.title??""}
         nextHref={nextRoute?(nextLesson?"/learn/"+nextRoute.level_number+"/"+nextLesson.slug:"/learn/"+nextRoute.level_number):"/dashboard?view=learning#my-learning-path"}
         orgId={account?.organization?.organization_id??null} />
       <div className="nav">
