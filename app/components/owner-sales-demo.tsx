@@ -3,17 +3,8 @@ import {useMemo,useState} from "react";
 import CompetencyMap from "./enterprise/competency-map";
 import {COMPETENCIES,competencyProfile,type CompetencyEvidence,type CompetencyKey} from "../../lib/competency-matrix";
 import {ownerDemoCopy} from "../../lib/localization/owner-demo";
+import {salesDemoPeople} from "../../lib/owner-sales-fixture";
 
-const demoPeople=[
- {id:"synthetic-1",name:"Ana · Dirección",role:"manager_team_lead",team:"Customer Success"},
- {id:"synthetic-2",name:"Luis · Gerencia CS",role:"manager_team_lead",team:"Customer Success"},
- {id:"synthetic-3",name:"Elena · Customer Success",role:"customer_success",team:"Customer Success"},
- {id:"synthetic-4",name:"Julián",role:"account_manager",team:"Customer Success"},
- {id:"synthetic-5",name:"Sofía · Onboarding",role:"onboarding",team:"Customer Success"},
- {id:"synthetic-6",name:"María",role:"manager_team_lead",team:"Soporte"},
- {id:"synthetic-7",name:"Diego · Tech Support",role:"tech_support_l2",team:"Soporte"},
- {id:"synthetic-8",name:"Paula · Customer Support",role:"customer_support",team:"Soporte"}
-] as const;
 const addDays=(d:Date,days:number)=>new Date(d.getTime()+days*86400000).toISOString();
 
 function perfectEvidence(personId:string,date:Date):CompetencyEvidence[]{
@@ -29,7 +20,7 @@ function perfectEvidence(personId:string,date:Date):CompetencyEvidence[]{
  });
 }
 export function perfectSalesDemo(date:Date){
- return demoPeople.map(p=>{
+ return salesDemoPeople.map(p=>{
   const evidence=perfectEvidence(p.id,date);
   return {user_id:p.id,display_name:p.name,job_title:p.name,position:p.role,
    teams:[{id:p.team==="Customer Success"?"cs":"support",name:p.team}],
