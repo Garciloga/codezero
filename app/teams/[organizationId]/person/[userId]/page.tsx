@@ -31,7 +31,7 @@ export default async function PersonPage({
   const isAdmin=['owner','admin'].includes(d.own.role);
   const teamAccess=!isAdmin&&person.reports_to!==d.user.id?await d.supabase.from('organization_team_members').select('team_id').eq('organization_id',organizationId).eq('user_id',userId):null;
   const grants=teamAccess?.data?.length?await d.supabase.from('organization_team_grants').select('team_id').eq('organization_id',organizationId).eq('user_id',d.user.id).eq('can_view',true):null;
-  const permitted=isAdmin||person.reports_to===d.user.id||Boolean(teamAccess?.data?.some(m=>grants?.data?.some(g=>g.team_id===m.team_id)));
+  const permitted=isAdmin||userId===d.user.id||person.reports_to===d.user.id||Boolean(teamAccess?.data?.some(m=>grants?.data?.some(g=>g.team_id===m.team_id)));
   if(!permitted)redirect('/dashboard');
   const preview=draftCourseAssignmentsEnabled()&&workspaceSandboxEnabled();
   const availableTeams=preview?await d.supabase.from('organization_teams').select('id,name').eq('organization_id',organizationId):null;

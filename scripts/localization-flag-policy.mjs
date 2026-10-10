@@ -7,6 +7,7 @@ export function translationGate(file,env=process.env){
   'lib/draft-expanded-curriculum.ts',
   'lib/company-help-content.ts',
   'lib/draft-course-assignment-policy.ts',
+  'app/admin/curriculum/drafts/expanded/page.tsx',
   'app/components/enterprise/draft-course-assignment.tsx'
  ].includes(file);
  return authoredSpanishOnly?'warning':mixed&&env.CODEZERO_MIXED_ROUTES==='0'?'warning':'error';
