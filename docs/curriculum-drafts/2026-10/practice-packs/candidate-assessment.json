@@ -1,0 +1,2497 @@
+{
+  "key": "candidate_assessment",
+  "title": "Evaluación de candidatos por casos profesionales",
+  "kind": "product-workflow-and-learning",
+  "status": "draft",
+  "language": "es",
+  "localeStates": {
+    "es": "es",
+    "en": "beta-pending",
+    "pt": "beta-pending",
+    "fr": "beta-pending"
+  },
+  "edition": "2026-10-10 practical v2",
+  "nonnegotiable": "No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+  "reviewerOnly": true,
+  "levels": [
+    {
+      "id": "candidate_assessment-p1",
+      "number": 1,
+      "title": "Diseño del proceso y consentimiento",
+      "difficulty": "introductoria",
+      "caseFacts": "Empresa ficticia contrata cinco agentes remotos y plantea exigir que candidatos registren datos familiares y graben video para resolver un caso que sólo requiere lectura y respuesta escrita.",
+      "caseConflict": "Reclutamiento quiere guardar todas las grabaciones indefinidamente.",
+      "metric": "candidatos informados y datos minimizados",
+      "units": [
+        {
+          "id": "candidate_assessment-p1-u1",
+          "title": "Finalidad y uso informado",
+          "objective": "Aplicar finalidad y uso informado al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para reclutadores y responsables autorizados, dominar «Finalidad y uso informado» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una simulación de trabajo solamente es defendible si evalúa competencias relevantes, con consentimiento, acceso y finalidad claros. En el capítulo «Diseño del proceso y consentimiento», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Empresa ficticia contrata cinco agentes remotos y plantea exigir que candidatos registren datos familiares y graben video para resolver un caso que sólo requiere lectura y respuesta escrita. La presión es: Reclutamiento quiere guardar todas las grabaciones indefinidamente. El alumno debe transformar «Finalidad y uso informado» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «candidatos informados y datos minimizados».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"casos_revisados\":24,\"casos_comparables_con_consentimiento\":19,\"casos_no_validos_para_comparacion\":5}. Calcula «% de cobertura metodológica» con 100 × casos comparables con consentimiento / casos revisados. Valor para revisión: 79.17. Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Finalidad y uso informado»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara aviso, rubrica de trabajo y esquema de permisos para el aspecto «finalidad y uso informado». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: atribuir aptitud laboral definitiva por una puntuación no calibrada. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+            "prerequisites": [
+              "Unidad 1: Finalidad y uso informado",
+              "Objetivo: Aplicar finalidad y uso informado al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: candidatos informados y datos minimizados"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "casos_revisados": 24,
+              "casos_comparables_con_consentimiento": 19,
+              "casos_no_validos_para_comparacion": 5
+            },
+            "formula": "100 × casos comparables con consentimiento / casos revisados",
+            "expected": 79.17,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "candidate_assessment-p1-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Evaluación responsable de candidatos. Empresa ficticia contrata cinco agentes remotos y plantea exigir que candidatos registren datos familiares y graben video para resolver un caso que sólo requiere lectura y respuesta escrita. Conflicto: Reclutamiento quiere guardar todas las grabaciones indefinidamente. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Finalidad y uso informado». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p1-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"casos_revisados\":24,\"casos_comparables_con_consentimiento\":19,\"casos_no_validos_para_comparacion\":5}, calcula % de cobertura metodológica mediante 100 × casos comparables con consentimiento / casos revisados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p1-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Evaluación responsable de candidatos. Empresa ficticia contrata cinco agentes remotos y plantea exigir que candidatos registren datos familiares y graben video para resolver un caso que sólo requiere lectura y respuesta escrita. Conflicto: Reclutamiento quiere guardar todas las grabaciones indefinidamente. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «candidatos informados y datos minimizados». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p1-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara aviso, rubrica de trabajo y esquema de permisos para el aspecto «Finalidad y uso informado». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Finalidad y uso informado» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p1-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Diseño del proceso y consentimiento», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 79.17,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "commonFailure": "atribuir aptitud laboral definitiva por una puntuación no calibrada",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "candidate_assessment-p1-u2",
+          "title": "Criterios relacionados con funciones del puesto",
+          "objective": "Aplicar criterios relacionados con funciones del puesto al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para reclutadores y responsables autorizados, dominar «Criterios relacionados con funciones del puesto» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Versiones de casos deben calibrarse por dificultad y accesibilidad antes de comparar puntuaciones. En el capítulo «Diseño del proceso y consentimiento», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Empresa ficticia contrata cinco agentes remotos y plantea exigir que candidatos registren datos familiares y graben video para resolver un caso que sólo requiere lectura y respuesta escrita. La presión es: Reclutamiento quiere guardar todas las grabaciones indefinidamente. El alumno debe transformar «Criterios relacionados con funciones del puesto» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «candidatos informados y datos minimizados».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"casos_revisados\":24,\"casos_comparables_con_consentimiento\":19,\"casos_no_validos_para_comparacion\":5}. Calcula «% de cobertura metodológica» con 100 × casos comparables con consentimiento / casos revisados. Valor para revisión: 79.17. Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Criterios relacionados con funciones del puesto»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara aviso, rubrica de trabajo y esquema de permisos para el aspecto «criterios relacionados con funciones del puesto». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: atribuir aptitud laboral definitiva por una puntuación no calibrada. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+            "prerequisites": [
+              "Unidad 1: Criterios relacionados con funciones del puesto",
+              "Objetivo: Aplicar criterios relacionados con funciones del puesto al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: candidatos informados y datos minimizados"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "casos_revisados": 24,
+              "casos_comparables_con_consentimiento": 19,
+              "casos_no_validos_para_comparacion": 5
+            },
+            "formula": "100 × casos comparables con consentimiento / casos revisados",
+            "expected": 79.17,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "candidate_assessment-p1-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Evaluación responsable de candidatos. Empresa ficticia contrata cinco agentes remotos y plantea exigir que candidatos registren datos familiares y graben video para resolver un caso que sólo requiere lectura y respuesta escrita. Conflicto: Reclutamiento quiere guardar todas las grabaciones indefinidamente. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Criterios relacionados con funciones del puesto». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p1-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"casos_revisados\":24,\"casos_comparables_con_consentimiento\":19,\"casos_no_validos_para_comparacion\":5}, calcula % de cobertura metodológica mediante 100 × casos comparables con consentimiento / casos revisados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p1-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Evaluación responsable de candidatos. Empresa ficticia contrata cinco agentes remotos y plantea exigir que candidatos registren datos familiares y graben video para resolver un caso que sólo requiere lectura y respuesta escrita. Conflicto: Reclutamiento quiere guardar todas las grabaciones indefinidamente. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «candidatos informados y datos minimizados». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p1-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara aviso, rubrica de trabajo y esquema de permisos para el aspecto «Criterios relacionados con funciones del puesto». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Criterios relacionados con funciones del puesto» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p1-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Diseño del proceso y consentimiento», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 79.17,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "commonFailure": "atribuir aptitud laboral definitiva por una puntuación no calibrada",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "candidate_assessment-p1-u3",
+          "title": "Conservación, acceso y retiro",
+          "objective": "Aplicar conservación, acceso y retiro al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para reclutadores y responsables autorizados, dominar «Conservación, acceso y retiro» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La nota es una evidencia parcial para revisión humana; nunca una orden automática de contratar, despedir o rechazar. En el capítulo «Diseño del proceso y consentimiento», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Empresa ficticia contrata cinco agentes remotos y plantea exigir que candidatos registren datos familiares y graben video para resolver un caso que sólo requiere lectura y respuesta escrita. La presión es: Reclutamiento quiere guardar todas las grabaciones indefinidamente. El alumno debe transformar «Conservación, acceso y retiro» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «candidatos informados y datos minimizados».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"casos_revisados\":24,\"casos_comparables_con_consentimiento\":19,\"casos_no_validos_para_comparacion\":5}. Calcula «% de cobertura metodológica» con 100 × casos comparables con consentimiento / casos revisados. Valor para revisión: 79.17. Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Conservación, acceso y retiro»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara aviso, rubrica de trabajo y esquema de permisos para el aspecto «conservación, acceso y retiro». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: atribuir aptitud laboral definitiva por una puntuación no calibrada. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+            "prerequisites": [
+              "Unidad 1: Conservación, acceso y retiro",
+              "Objetivo: Aplicar conservación, acceso y retiro al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: candidatos informados y datos minimizados"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "casos_revisados": 24,
+              "casos_comparables_con_consentimiento": 19,
+              "casos_no_validos_para_comparacion": 5
+            },
+            "formula": "100 × casos comparables con consentimiento / casos revisados",
+            "expected": 79.17,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "candidate_assessment-p1-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Evaluación responsable de candidatos. Empresa ficticia contrata cinco agentes remotos y plantea exigir que candidatos registren datos familiares y graben video para resolver un caso que sólo requiere lectura y respuesta escrita. Conflicto: Reclutamiento quiere guardar todas las grabaciones indefinidamente. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Conservación, acceso y retiro». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p1-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"casos_revisados\":24,\"casos_comparables_con_consentimiento\":19,\"casos_no_validos_para_comparacion\":5}, calcula % de cobertura metodológica mediante 100 × casos comparables con consentimiento / casos revisados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p1-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Evaluación responsable de candidatos. Empresa ficticia contrata cinco agentes remotos y plantea exigir que candidatos registren datos familiares y graben video para resolver un caso que sólo requiere lectura y respuesta escrita. Conflicto: Reclutamiento quiere guardar todas las grabaciones indefinidamente. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «candidatos informados y datos minimizados». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p1-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara aviso, rubrica de trabajo y esquema de permisos para el aspecto «Conservación, acceso y retiro». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Conservación, acceso y retiro» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p1-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Diseño del proceso y consentimiento», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 79.17,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "commonFailure": "atribuir aptitud laboral definitiva por una puntuación no calibrada",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «candidatos informados y datos minimizados».",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 1 y 2.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "candidate_assessment-p2",
+      "number": 2,
+      "title": "Casos equivalentes y protección de identidad",
+      "difficulty": "operativa",
+      "caseFacts": "Dos versiones para el mismo puesto: una pide contestar un ticket sencillo, otra resolver un conflicto contractual con datos faltantes. Los resultados no pueden compararse con una sola nota porcentual.",
+      "caseConflict": "Empresa quiere un ranking global sin calibrar dificultad.",
+      "metric": "comparabilidad y fiabilidad del instrumento",
+      "units": [
+        {
+          "id": "candidate_assessment-p2-u1",
+          "title": "Diseño de variantes comparables",
+          "objective": "Aplicar diseño de variantes comparables al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para reclutadores y responsables autorizados, dominar «Diseño de variantes comparables» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una simulación de trabajo solamente es defendible si evalúa competencias relevantes, con consentimiento, acceso y finalidad claros. En el capítulo «Casos equivalentes y protección de identidad», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Dos versiones para el mismo puesto: una pide contestar un ticket sencillo, otra resolver un conflicto contractual con datos faltantes. Los resultados no pueden compararse con una sola nota porcentual. La presión es: Empresa quiere un ranking global sin calibrar dificultad. El alumno debe transformar «Diseño de variantes comparables» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"casos_revisados\":28,\"casos_comparables_con_consentimiento\":22,\"casos_no_validos_para_comparacion\":6}. Calcula «% de cobertura metodológica» con 100 × casos comparables con consentimiento / casos revisados. Valor para revisión: 78.57. Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Diseño de variantes comparables»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara matriz de equivalencia de casos para el aspecto «diseño de variantes comparables». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: atribuir aptitud laboral definitiva por una puntuación no calibrada. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+            "prerequisites": [
+              "Unidad 2: Diseño de variantes comparables",
+              "Objetivo: Aplicar diseño de variantes comparables al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: comparabilidad y fiabilidad del instrumento"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "casos_revisados": 28,
+              "casos_comparables_con_consentimiento": 22,
+              "casos_no_validos_para_comparacion": 6
+            },
+            "formula": "100 × casos comparables con consentimiento / casos revisados",
+            "expected": 78.57,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "candidate_assessment-p2-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Evaluación responsable de candidatos. Dos versiones para el mismo puesto: una pide contestar un ticket sencillo, otra resolver un conflicto contractual con datos faltantes. Los resultados no pueden compararse con una sola nota porcentual. Conflicto: Empresa quiere un ranking global sin calibrar dificultad. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Diseño de variantes comparables». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p2-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"casos_revisados\":28,\"casos_comparables_con_consentimiento\":22,\"casos_no_validos_para_comparacion\":6}, calcula % de cobertura metodológica mediante 100 × casos comparables con consentimiento / casos revisados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p2-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Evaluación responsable de candidatos. Dos versiones para el mismo puesto: una pide contestar un ticket sencillo, otra resolver un conflicto contractual con datos faltantes. Los resultados no pueden compararse con una sola nota porcentual. Conflicto: Empresa quiere un ranking global sin calibrar dificultad. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p2-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara matriz de equivalencia de casos para el aspecto «Diseño de variantes comparables». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Diseño de variantes comparables» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p2-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Casos equivalentes y protección de identidad», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 78.57,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "commonFailure": "atribuir aptitud laboral definitiva por una puntuación no calibrada",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "candidate_assessment-p2-u2",
+          "title": "Pruebas adversariales de dificultad",
+          "objective": "Aplicar pruebas adversariales de dificultad al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para reclutadores y responsables autorizados, dominar «Pruebas adversariales de dificultad» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Versiones de casos deben calibrarse por dificultad y accesibilidad antes de comparar puntuaciones. En el capítulo «Casos equivalentes y protección de identidad», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Dos versiones para el mismo puesto: una pide contestar un ticket sencillo, otra resolver un conflicto contractual con datos faltantes. Los resultados no pueden compararse con una sola nota porcentual. La presión es: Empresa quiere un ranking global sin calibrar dificultad. El alumno debe transformar «Pruebas adversariales de dificultad» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"casos_revisados\":28,\"casos_comparables_con_consentimiento\":22,\"casos_no_validos_para_comparacion\":6}. Calcula «% de cobertura metodológica» con 100 × casos comparables con consentimiento / casos revisados. Valor para revisión: 78.57. Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Pruebas adversariales de dificultad»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara matriz de equivalencia de casos para el aspecto «pruebas adversariales de dificultad». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: atribuir aptitud laboral definitiva por una puntuación no calibrada. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+            "prerequisites": [
+              "Unidad 2: Pruebas adversariales de dificultad",
+              "Objetivo: Aplicar pruebas adversariales de dificultad al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: comparabilidad y fiabilidad del instrumento"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "casos_revisados": 28,
+              "casos_comparables_con_consentimiento": 22,
+              "casos_no_validos_para_comparacion": 6
+            },
+            "formula": "100 × casos comparables con consentimiento / casos revisados",
+            "expected": 78.57,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "candidate_assessment-p2-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Evaluación responsable de candidatos. Dos versiones para el mismo puesto: una pide contestar un ticket sencillo, otra resolver un conflicto contractual con datos faltantes. Los resultados no pueden compararse con una sola nota porcentual. Conflicto: Empresa quiere un ranking global sin calibrar dificultad. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Pruebas adversariales de dificultad». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p2-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"casos_revisados\":28,\"casos_comparables_con_consentimiento\":22,\"casos_no_validos_para_comparacion\":6}, calcula % de cobertura metodológica mediante 100 × casos comparables con consentimiento / casos revisados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p2-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Evaluación responsable de candidatos. Dos versiones para el mismo puesto: una pide contestar un ticket sencillo, otra resolver un conflicto contractual con datos faltantes. Los resultados no pueden compararse con una sola nota porcentual. Conflicto: Empresa quiere un ranking global sin calibrar dificultad. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p2-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara matriz de equivalencia de casos para el aspecto «Pruebas adversariales de dificultad». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Pruebas adversariales de dificultad» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p2-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Casos equivalentes y protección de identidad», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 78.57,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "commonFailure": "atribuir aptitud laboral definitiva por una puntuación no calibrada",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "candidate_assessment-p2-u3",
+          "title": "Separación de identidad al calificar",
+          "objective": "Aplicar separación de identidad al calificar al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para reclutadores y responsables autorizados, dominar «Separación de identidad al calificar» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La nota es una evidencia parcial para revisión humana; nunca una orden automática de contratar, despedir o rechazar. En el capítulo «Casos equivalentes y protección de identidad», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Dos versiones para el mismo puesto: una pide contestar un ticket sencillo, otra resolver un conflicto contractual con datos faltantes. Los resultados no pueden compararse con una sola nota porcentual. La presión es: Empresa quiere un ranking global sin calibrar dificultad. El alumno debe transformar «Separación de identidad al calificar» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"casos_revisados\":28,\"casos_comparables_con_consentimiento\":22,\"casos_no_validos_para_comparacion\":6}. Calcula «% de cobertura metodológica» con 100 × casos comparables con consentimiento / casos revisados. Valor para revisión: 78.57. Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Separación de identidad al calificar»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara matriz de equivalencia de casos para el aspecto «separación de identidad al calificar». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: atribuir aptitud laboral definitiva por una puntuación no calibrada. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+            "prerequisites": [
+              "Unidad 2: Separación de identidad al calificar",
+              "Objetivo: Aplicar separación de identidad al calificar al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: comparabilidad y fiabilidad del instrumento"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "casos_revisados": 28,
+              "casos_comparables_con_consentimiento": 22,
+              "casos_no_validos_para_comparacion": 6
+            },
+            "formula": "100 × casos comparables con consentimiento / casos revisados",
+            "expected": 78.57,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "candidate_assessment-p2-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Evaluación responsable de candidatos. Dos versiones para el mismo puesto: una pide contestar un ticket sencillo, otra resolver un conflicto contractual con datos faltantes. Los resultados no pueden compararse con una sola nota porcentual. Conflicto: Empresa quiere un ranking global sin calibrar dificultad. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Separación de identidad al calificar». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p2-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"casos_revisados\":28,\"casos_comparables_con_consentimiento\":22,\"casos_no_validos_para_comparacion\":6}, calcula % de cobertura metodológica mediante 100 × casos comparables con consentimiento / casos revisados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p2-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Evaluación responsable de candidatos. Dos versiones para el mismo puesto: una pide contestar un ticket sencillo, otra resolver un conflicto contractual con datos faltantes. Los resultados no pueden compararse con una sola nota porcentual. Conflicto: Empresa quiere un ranking global sin calibrar dificultad. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p2-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara matriz de equivalencia de casos para el aspecto «Separación de identidad al calificar». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Separación de identidad al calificar» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p2-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Casos equivalentes y protección de identidad», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 78.57,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "commonFailure": "atribuir aptitud laboral definitiva por una puntuación no calibrada",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 2 y 3.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "candidate_assessment-p3",
+      "number": 3,
+      "title": "Revisión humana y discrepancias",
+      "difficulty": "intermedia",
+      "caseFacts": "Tres evaluadores puntúan la misma respuesta 2/4, 4/4 y 3/4. La empresa quiere resolver por promedio sin mirar criterios, aunque uno penalizó un error ortográfico irrelevante.",
+      "caseConflict": "El supervisor quiere aceptar el 4/4 porque la persona le fue recomendada.",
+      "metric": "consistencia de rúbrica y motivos trazables",
+      "units": [
+        {
+          "id": "candidate_assessment-p3-u1",
+          "title": "Rúbrica conductual de evidencia",
+          "objective": "Aplicar rúbrica conductual de evidencia al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para reclutadores y responsables autorizados, dominar «Rúbrica conductual de evidencia» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una simulación de trabajo solamente es defendible si evalúa competencias relevantes, con consentimiento, acceso y finalidad claros. En el capítulo «Revisión humana y discrepancias», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Tres evaluadores puntúan la misma respuesta 2/4, 4/4 y 3/4. La empresa quiere resolver por promedio sin mirar criterios, aunque uno penalizó un error ortográfico irrelevante. La presión es: El supervisor quiere aceptar el 4/4 porque la persona le fue recomendada. El alumno debe transformar «Rúbrica conductual de evidencia» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"casos_revisados\":32,\"casos_comparables_con_consentimiento\":25,\"casos_no_validos_para_comparacion\":7}. Calcula «% de cobertura metodológica» con 100 × casos comparables con consentimiento / casos revisados. Valor para revisión: 78.13. Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Rúbrica conductual de evidencia»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara acta de moderación con prueba de cambios para el aspecto «rúbrica conductual de evidencia». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: atribuir aptitud laboral definitiva por una puntuación no calibrada. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+            "prerequisites": [
+              "Unidad 3: Rúbrica conductual de evidencia",
+              "Objetivo: Aplicar rúbrica conductual de evidencia al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: consistencia de rúbrica y motivos trazables"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "casos_revisados": 32,
+              "casos_comparables_con_consentimiento": 25,
+              "casos_no_validos_para_comparacion": 7
+            },
+            "formula": "100 × casos comparables con consentimiento / casos revisados",
+            "expected": 78.13,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "candidate_assessment-p3-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Evaluación responsable de candidatos. Tres evaluadores puntúan la misma respuesta 2/4, 4/4 y 3/4. La empresa quiere resolver por promedio sin mirar criterios, aunque uno penalizó un error ortográfico irrelevante. Conflicto: El supervisor quiere aceptar el 4/4 porque la persona le fue recomendada. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Rúbrica conductual de evidencia». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p3-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"casos_revisados\":32,\"casos_comparables_con_consentimiento\":25,\"casos_no_validos_para_comparacion\":7}, calcula % de cobertura metodológica mediante 100 × casos comparables con consentimiento / casos revisados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p3-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Evaluación responsable de candidatos. Tres evaluadores puntúan la misma respuesta 2/4, 4/4 y 3/4. La empresa quiere resolver por promedio sin mirar criterios, aunque uno penalizó un error ortográfico irrelevante. Conflicto: El supervisor quiere aceptar el 4/4 porque la persona le fue recomendada. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p3-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara acta de moderación con prueba de cambios para el aspecto «Rúbrica conductual de evidencia». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Rúbrica conductual de evidencia» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p3-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Revisión humana y discrepancias», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 78.13,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "commonFailure": "atribuir aptitud laboral definitiva por una puntuación no calibrada",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "candidate_assessment-p3-u2",
+          "title": "Doble lectura y discrepancias",
+          "objective": "Aplicar doble lectura y discrepancias al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para reclutadores y responsables autorizados, dominar «Doble lectura y discrepancias» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Versiones de casos deben calibrarse por dificultad y accesibilidad antes de comparar puntuaciones. En el capítulo «Revisión humana y discrepancias», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Tres evaluadores puntúan la misma respuesta 2/4, 4/4 y 3/4. La empresa quiere resolver por promedio sin mirar criterios, aunque uno penalizó un error ortográfico irrelevante. La presión es: El supervisor quiere aceptar el 4/4 porque la persona le fue recomendada. El alumno debe transformar «Doble lectura y discrepancias» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"casos_revisados\":32,\"casos_comparables_con_consentimiento\":25,\"casos_no_validos_para_comparacion\":7}. Calcula «% de cobertura metodológica» con 100 × casos comparables con consentimiento / casos revisados. Valor para revisión: 78.13. Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Doble lectura y discrepancias»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara acta de moderación con prueba de cambios para el aspecto «doble lectura y discrepancias». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: atribuir aptitud laboral definitiva por una puntuación no calibrada. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+            "prerequisites": [
+              "Unidad 3: Doble lectura y discrepancias",
+              "Objetivo: Aplicar doble lectura y discrepancias al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: consistencia de rúbrica y motivos trazables"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "casos_revisados": 32,
+              "casos_comparables_con_consentimiento": 25,
+              "casos_no_validos_para_comparacion": 7
+            },
+            "formula": "100 × casos comparables con consentimiento / casos revisados",
+            "expected": 78.13,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "candidate_assessment-p3-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Evaluación responsable de candidatos. Tres evaluadores puntúan la misma respuesta 2/4, 4/4 y 3/4. La empresa quiere resolver por promedio sin mirar criterios, aunque uno penalizó un error ortográfico irrelevante. Conflicto: El supervisor quiere aceptar el 4/4 porque la persona le fue recomendada. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Doble lectura y discrepancias». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p3-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"casos_revisados\":32,\"casos_comparables_con_consentimiento\":25,\"casos_no_validos_para_comparacion\":7}, calcula % de cobertura metodológica mediante 100 × casos comparables con consentimiento / casos revisados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p3-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Evaluación responsable de candidatos. Tres evaluadores puntúan la misma respuesta 2/4, 4/4 y 3/4. La empresa quiere resolver por promedio sin mirar criterios, aunque uno penalizó un error ortográfico irrelevante. Conflicto: El supervisor quiere aceptar el 4/4 porque la persona le fue recomendada. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p3-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara acta de moderación con prueba de cambios para el aspecto «Doble lectura y discrepancias». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Doble lectura y discrepancias» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p3-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Revisión humana y discrepancias», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 78.13,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "commonFailure": "atribuir aptitud laboral definitiva por una puntuación no calibrada",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "candidate_assessment-p3-u3",
+          "title": "Retroalimentación y auditoría",
+          "objective": "Aplicar retroalimentación y auditoría al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para reclutadores y responsables autorizados, dominar «Retroalimentación y auditoría» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La nota es una evidencia parcial para revisión humana; nunca una orden automática de contratar, despedir o rechazar. En el capítulo «Revisión humana y discrepancias», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Tres evaluadores puntúan la misma respuesta 2/4, 4/4 y 3/4. La empresa quiere resolver por promedio sin mirar criterios, aunque uno penalizó un error ortográfico irrelevante. La presión es: El supervisor quiere aceptar el 4/4 porque la persona le fue recomendada. El alumno debe transformar «Retroalimentación y auditoría» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"casos_revisados\":32,\"casos_comparables_con_consentimiento\":25,\"casos_no_validos_para_comparacion\":7}. Calcula «% de cobertura metodológica» con 100 × casos comparables con consentimiento / casos revisados. Valor para revisión: 78.13. Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Retroalimentación y auditoría»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara acta de moderación con prueba de cambios para el aspecto «retroalimentación y auditoría». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: atribuir aptitud laboral definitiva por una puntuación no calibrada. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+            "prerequisites": [
+              "Unidad 3: Retroalimentación y auditoría",
+              "Objetivo: Aplicar retroalimentación y auditoría al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: consistencia de rúbrica y motivos trazables"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "casos_revisados": 32,
+              "casos_comparables_con_consentimiento": 25,
+              "casos_no_validos_para_comparacion": 7
+            },
+            "formula": "100 × casos comparables con consentimiento / casos revisados",
+            "expected": 78.13,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "candidate_assessment-p3-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Evaluación responsable de candidatos. Tres evaluadores puntúan la misma respuesta 2/4, 4/4 y 3/4. La empresa quiere resolver por promedio sin mirar criterios, aunque uno penalizó un error ortográfico irrelevante. Conflicto: El supervisor quiere aceptar el 4/4 porque la persona le fue recomendada. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Retroalimentación y auditoría». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p3-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"casos_revisados\":32,\"casos_comparables_con_consentimiento\":25,\"casos_no_validos_para_comparacion\":7}, calcula % de cobertura metodológica mediante 100 × casos comparables con consentimiento / casos revisados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p3-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Evaluación responsable de candidatos. Tres evaluadores puntúan la misma respuesta 2/4, 4/4 y 3/4. La empresa quiere resolver por promedio sin mirar criterios, aunque uno penalizó un error ortográfico irrelevante. Conflicto: El supervisor quiere aceptar el 4/4 porque la persona le fue recomendada. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p3-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara acta de moderación con prueba de cambios para el aspecto «Retroalimentación y auditoría». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Retroalimentación y auditoría» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p3-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Revisión humana y discrepancias», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 78.13,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "commonFailure": "atribuir aptitud laboral definitiva por una puntuación no calibrada",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 3 y 4.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "candidate_assessment-p4",
+      "number": 4,
+      "title": "Equidad, accesibilidad y derecho de respuesta",
+      "difficulty": "especialista",
+      "caseFacts": "El cuestionario penaliza a aspirantes con lector de pantalla por depender de un gráfico sin descripción; 7 de 12 no pueden completar una sección, pero el administrador etiqueta a todos como no aptos.",
+      "caseConflict": "Reclutamiento quiere mantener el test sin alternativa accesible.",
+      "metric": "participación accesible y resultados comparables",
+      "units": [
+        {
+          "id": "candidate_assessment-p4-u1",
+          "title": "Adaptaciones razonables",
+          "objective": "Aplicar adaptaciones razonables al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para reclutadores y responsables autorizados, dominar «Adaptaciones razonables» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una simulación de trabajo solamente es defendible si evalúa competencias relevantes, con consentimiento, acceso y finalidad claros. En el capítulo «Equidad, accesibilidad y derecho de respuesta», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: El cuestionario penaliza a aspirantes con lector de pantalla por depender de un gráfico sin descripción; 7 de 12 no pueden completar una sección, pero el administrador etiqueta a todos como no aptos. La presión es: Reclutamiento quiere mantener el test sin alternativa accesible. El alumno debe transformar «Adaptaciones razonables» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"casos_revisados\":36,\"casos_comparables_con_consentimiento\":28,\"casos_no_validos_para_comparacion\":8}. Calcula «% de cobertura metodológica» con 100 × casos comparables con consentimiento / casos revisados. Valor para revisión: 77.78. Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Adaptaciones razonables»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara matriz de accesibilidad y rectificación para el aspecto «adaptaciones razonables». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: atribuir aptitud laboral definitiva por una puntuación no calibrada. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+            "prerequisites": [
+              "Unidad 4: Adaptaciones razonables",
+              "Objetivo: Aplicar adaptaciones razonables al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: participación accesible y resultados comparables"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "casos_revisados": 36,
+              "casos_comparables_con_consentimiento": 28,
+              "casos_no_validos_para_comparacion": 8
+            },
+            "formula": "100 × casos comparables con consentimiento / casos revisados",
+            "expected": 77.78,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "candidate_assessment-p4-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Evaluación responsable de candidatos. El cuestionario penaliza a aspirantes con lector de pantalla por depender de un gráfico sin descripción; 7 de 12 no pueden completar una sección, pero el administrador etiqueta a todos como no aptos. Conflicto: Reclutamiento quiere mantener el test sin alternativa accesible. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Adaptaciones razonables». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p4-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"casos_revisados\":36,\"casos_comparables_con_consentimiento\":28,\"casos_no_validos_para_comparacion\":8}, calcula % de cobertura metodológica mediante 100 × casos comparables con consentimiento / casos revisados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p4-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Evaluación responsable de candidatos. El cuestionario penaliza a aspirantes con lector de pantalla por depender de un gráfico sin descripción; 7 de 12 no pueden completar una sección, pero el administrador etiqueta a todos como no aptos. Conflicto: Reclutamiento quiere mantener el test sin alternativa accesible. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p4-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara matriz de accesibilidad y rectificación para el aspecto «Adaptaciones razonables». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Adaptaciones razonables» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p4-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Equidad, accesibilidad y derecho de respuesta», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 77.78,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "commonFailure": "atribuir aptitud laboral definitiva por una puntuación no calibrada",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "candidate_assessment-p4-u2",
+          "title": "Evaluación adversarial por grupos",
+          "objective": "Aplicar evaluación adversarial por grupos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para reclutadores y responsables autorizados, dominar «Evaluación adversarial por grupos» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Versiones de casos deben calibrarse por dificultad y accesibilidad antes de comparar puntuaciones. En el capítulo «Equidad, accesibilidad y derecho de respuesta», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: El cuestionario penaliza a aspirantes con lector de pantalla por depender de un gráfico sin descripción; 7 de 12 no pueden completar una sección, pero el administrador etiqueta a todos como no aptos. La presión es: Reclutamiento quiere mantener el test sin alternativa accesible. El alumno debe transformar «Evaluación adversarial por grupos» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"casos_revisados\":36,\"casos_comparables_con_consentimiento\":28,\"casos_no_validos_para_comparacion\":8}. Calcula «% de cobertura metodológica» con 100 × casos comparables con consentimiento / casos revisados. Valor para revisión: 77.78. Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Evaluación adversarial por grupos»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara matriz de accesibilidad y rectificación para el aspecto «evaluación adversarial por grupos». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: atribuir aptitud laboral definitiva por una puntuación no calibrada. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+            "prerequisites": [
+              "Unidad 4: Evaluación adversarial por grupos",
+              "Objetivo: Aplicar evaluación adversarial por grupos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: participación accesible y resultados comparables"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "casos_revisados": 36,
+              "casos_comparables_con_consentimiento": 28,
+              "casos_no_validos_para_comparacion": 8
+            },
+            "formula": "100 × casos comparables con consentimiento / casos revisados",
+            "expected": 77.78,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "candidate_assessment-p4-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Evaluación responsable de candidatos. El cuestionario penaliza a aspirantes con lector de pantalla por depender de un gráfico sin descripción; 7 de 12 no pueden completar una sección, pero el administrador etiqueta a todos como no aptos. Conflicto: Reclutamiento quiere mantener el test sin alternativa accesible. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Evaluación adversarial por grupos». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p4-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"casos_revisados\":36,\"casos_comparables_con_consentimiento\":28,\"casos_no_validos_para_comparacion\":8}, calcula % de cobertura metodológica mediante 100 × casos comparables con consentimiento / casos revisados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p4-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Evaluación responsable de candidatos. El cuestionario penaliza a aspirantes con lector de pantalla por depender de un gráfico sin descripción; 7 de 12 no pueden completar una sección, pero el administrador etiqueta a todos como no aptos. Conflicto: Reclutamiento quiere mantener el test sin alternativa accesible. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p4-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara matriz de accesibilidad y rectificación para el aspecto «Evaluación adversarial por grupos». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Evaluación adversarial por grupos» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p4-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Equidad, accesibilidad y derecho de respuesta», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 77.78,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "commonFailure": "atribuir aptitud laboral definitiva por una puntuación no calibrada",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "candidate_assessment-p4-u3",
+          "title": "Explicación y revisión de resultados",
+          "objective": "Aplicar explicación y revisión de resultados al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para reclutadores y responsables autorizados, dominar «Explicación y revisión de resultados» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La nota es una evidencia parcial para revisión humana; nunca una orden automática de contratar, despedir o rechazar. En el capítulo «Equidad, accesibilidad y derecho de respuesta», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: El cuestionario penaliza a aspirantes con lector de pantalla por depender de un gráfico sin descripción; 7 de 12 no pueden completar una sección, pero el administrador etiqueta a todos como no aptos. La presión es: Reclutamiento quiere mantener el test sin alternativa accesible. El alumno debe transformar «Explicación y revisión de resultados» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"casos_revisados\":36,\"casos_comparables_con_consentimiento\":28,\"casos_no_validos_para_comparacion\":8}. Calcula «% de cobertura metodológica» con 100 × casos comparables con consentimiento / casos revisados. Valor para revisión: 77.78. Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Explicación y revisión de resultados»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara matriz de accesibilidad y rectificación para el aspecto «explicación y revisión de resultados». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: atribuir aptitud laboral definitiva por una puntuación no calibrada. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+            "prerequisites": [
+              "Unidad 4: Explicación y revisión de resultados",
+              "Objetivo: Aplicar explicación y revisión de resultados al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: participación accesible y resultados comparables"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "casos_revisados": 36,
+              "casos_comparables_con_consentimiento": 28,
+              "casos_no_validos_para_comparacion": 8
+            },
+            "formula": "100 × casos comparables con consentimiento / casos revisados",
+            "expected": 77.78,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "candidate_assessment-p4-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Evaluación responsable de candidatos. El cuestionario penaliza a aspirantes con lector de pantalla por depender de un gráfico sin descripción; 7 de 12 no pueden completar una sección, pero el administrador etiqueta a todos como no aptos. Conflicto: Reclutamiento quiere mantener el test sin alternativa accesible. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Explicación y revisión de resultados». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p4-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"casos_revisados\":36,\"casos_comparables_con_consentimiento\":28,\"casos_no_validos_para_comparacion\":8}, calcula % de cobertura metodológica mediante 100 × casos comparables con consentimiento / casos revisados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p4-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Evaluación responsable de candidatos. El cuestionario penaliza a aspirantes con lector de pantalla por depender de un gráfico sin descripción; 7 de 12 no pueden completar una sección, pero el administrador etiqueta a todos como no aptos. Conflicto: Reclutamiento quiere mantener el test sin alternativa accesible. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p4-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara matriz de accesibilidad y rectificación para el aspecto «Explicación y revisión de resultados». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Explicación y revisión de resultados» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p4-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Equidad, accesibilidad y derecho de respuesta», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 77.78,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "commonFailure": "atribuir aptitud laboral definitiva por una puntuación no calibrada",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 4 y 5.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "candidate_assessment-p5",
+      "number": 5,
+      "title": "Capstone: piloto de evaluación responsable",
+      "difficulty": "directiva y proyecto",
+      "caseFacts": "Una organización ensaya 24 casos con una muestra pequeña de candidatos ficticios. Los puntajes cambian 30 % según evaluador y los tiempos de lectura varían por adaptación del contenido.",
+      "caseConflict": "Dirección quiere activar bloqueo automático de contrataciones a partir de 75/100.",
+      "metric": "acuerdo entre revisores y resolución de reclamaciones",
+      "units": [
+        {
+          "id": "candidate_assessment-p5-u1",
+          "title": "Calibración de varios escenarios",
+          "objective": "Aplicar calibración de varios escenarios al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para reclutadores y responsables autorizados, dominar «Calibración de varios escenarios» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una simulación de trabajo solamente es defendible si evalúa competencias relevantes, con consentimiento, acceso y finalidad claros. En el capítulo «Capstone: piloto de evaluación responsable», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una organización ensaya 24 casos con una muestra pequeña de candidatos ficticios. Los puntajes cambian 30 % según evaluador y los tiempos de lectura varían por adaptación del contenido. La presión es: Dirección quiere activar bloqueo automático de contrataciones a partir de 75/100. El alumno debe transformar «Calibración de varios escenarios» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"casos_revisados\":40,\"casos_comparables_con_consentimiento\":31,\"casos_no_validos_para_comparacion\":9}. Calcula «% de cobertura metodológica» con 100 × casos comparables con consentimiento / casos revisados. Valor para revisión: 77.5. Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Calibración de varios escenarios»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara plan de piloto, matriz de equidad y política de revisión para el aspecto «calibración de varios escenarios». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: atribuir aptitud laboral definitiva por una puntuación no calibrada. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+            "prerequisites": [
+              "Unidad 5: Calibración de varios escenarios",
+              "Objetivo: Aplicar calibración de varios escenarios al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: acuerdo entre revisores y resolución de reclamaciones"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "casos_revisados": 40,
+              "casos_comparables_con_consentimiento": 31,
+              "casos_no_validos_para_comparacion": 9
+            },
+            "formula": "100 × casos comparables con consentimiento / casos revisados",
+            "expected": 77.5,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "candidate_assessment-p5-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Evaluación responsable de candidatos. Una organización ensaya 24 casos con una muestra pequeña de candidatos ficticios. Los puntajes cambian 30 % según evaluador y los tiempos de lectura varían por adaptación del contenido. Conflicto: Dirección quiere activar bloqueo automático de contrataciones a partir de 75/100. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Calibración de varios escenarios». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p5-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"casos_revisados\":40,\"casos_comparables_con_consentimiento\":31,\"casos_no_validos_para_comparacion\":9}, calcula % de cobertura metodológica mediante 100 × casos comparables con consentimiento / casos revisados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p5-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Evaluación responsable de candidatos. Una organización ensaya 24 casos con una muestra pequeña de candidatos ficticios. Los puntajes cambian 30 % según evaluador y los tiempos de lectura varían por adaptación del contenido. Conflicto: Dirección quiere activar bloqueo automático de contrataciones a partir de 75/100. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p5-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara plan de piloto, matriz de equidad y política de revisión para el aspecto «Calibración de varios escenarios». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Calibración de varios escenarios» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p5-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone: piloto de evaluación responsable», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 77.5,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "commonFailure": "atribuir aptitud laboral definitiva por una puntuación no calibrada",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "candidate_assessment-p5-u2",
+          "title": "Controles de consentimiento y acceso",
+          "objective": "Aplicar controles de consentimiento y acceso al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para reclutadores y responsables autorizados, dominar «Controles de consentimiento y acceso» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Versiones de casos deben calibrarse por dificultad y accesibilidad antes de comparar puntuaciones. En el capítulo «Capstone: piloto de evaluación responsable», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una organización ensaya 24 casos con una muestra pequeña de candidatos ficticios. Los puntajes cambian 30 % según evaluador y los tiempos de lectura varían por adaptación del contenido. La presión es: Dirección quiere activar bloqueo automático de contrataciones a partir de 75/100. El alumno debe transformar «Controles de consentimiento y acceso» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"casos_revisados\":40,\"casos_comparables_con_consentimiento\":31,\"casos_no_validos_para_comparacion\":9}. Calcula «% de cobertura metodológica» con 100 × casos comparables con consentimiento / casos revisados. Valor para revisión: 77.5. Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Controles de consentimiento y acceso»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara plan de piloto, matriz de equidad y política de revisión para el aspecto «controles de consentimiento y acceso». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: atribuir aptitud laboral definitiva por una puntuación no calibrada. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+            "prerequisites": [
+              "Unidad 5: Controles de consentimiento y acceso",
+              "Objetivo: Aplicar controles de consentimiento y acceso al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: acuerdo entre revisores y resolución de reclamaciones"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "casos_revisados": 40,
+              "casos_comparables_con_consentimiento": 31,
+              "casos_no_validos_para_comparacion": 9
+            },
+            "formula": "100 × casos comparables con consentimiento / casos revisados",
+            "expected": 77.5,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "candidate_assessment-p5-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Evaluación responsable de candidatos. Una organización ensaya 24 casos con una muestra pequeña de candidatos ficticios. Los puntajes cambian 30 % según evaluador y los tiempos de lectura varían por adaptación del contenido. Conflicto: Dirección quiere activar bloqueo automático de contrataciones a partir de 75/100. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Controles de consentimiento y acceso». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p5-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"casos_revisados\":40,\"casos_comparables_con_consentimiento\":31,\"casos_no_validos_para_comparacion\":9}, calcula % de cobertura metodológica mediante 100 × casos comparables con consentimiento / casos revisados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p5-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Evaluación responsable de candidatos. Una organización ensaya 24 casos con una muestra pequeña de candidatos ficticios. Los puntajes cambian 30 % según evaluador y los tiempos de lectura varían por adaptación del contenido. Conflicto: Dirección quiere activar bloqueo automático de contrataciones a partir de 75/100. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p5-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara plan de piloto, matriz de equidad y política de revisión para el aspecto «Controles de consentimiento y acceso». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Controles de consentimiento y acceso» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p5-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone: piloto de evaluación responsable», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 77.5,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "commonFailure": "atribuir aptitud laboral definitiva por una puntuación no calibrada",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "candidate_assessment-p5-u3",
+          "title": "Gobierno de contratación con supervisión",
+          "objective": "Aplicar gobierno de contratación con supervisión al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para reclutadores y responsables autorizados, dominar «Gobierno de contratación con supervisión» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La nota es una evidencia parcial para revisión humana; nunca una orden automática de contratar, despedir o rechazar. En el capítulo «Capstone: piloto de evaluación responsable», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una organización ensaya 24 casos con una muestra pequeña de candidatos ficticios. Los puntajes cambian 30 % según evaluador y los tiempos de lectura varían por adaptación del contenido. La presión es: Dirección quiere activar bloqueo automático de contrataciones a partir de 75/100. El alumno debe transformar «Gobierno de contratación con supervisión» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"casos_revisados\":40,\"casos_comparables_con_consentimiento\":31,\"casos_no_validos_para_comparacion\":9}. Calcula «% de cobertura metodológica» con 100 × casos comparables con consentimiento / casos revisados. Valor para revisión: 77.5. Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Gobierno de contratación con supervisión»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara plan de piloto, matriz de equidad y política de revisión para el aspecto «gobierno de contratación con supervisión». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: atribuir aptitud laboral definitiva por una puntuación no calibrada. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+            "prerequisites": [
+              "Unidad 5: Gobierno de contratación con supervisión",
+              "Objetivo: Aplicar gobierno de contratación con supervisión al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: acuerdo entre revisores y resolución de reclamaciones"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "casos_revisados": 40,
+              "casos_comparables_con_consentimiento": 31,
+              "casos_no_validos_para_comparacion": 9
+            },
+            "formula": "100 × casos comparables con consentimiento / casos revisados",
+            "expected": 77.5,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "candidate_assessment-p5-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Evaluación responsable de candidatos. Una organización ensaya 24 casos con una muestra pequeña de candidatos ficticios. Los puntajes cambian 30 % según evaluador y los tiempos de lectura varían por adaptación del contenido. Conflicto: Dirección quiere activar bloqueo automático de contrataciones a partir de 75/100. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Gobierno de contratación con supervisión». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p5-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"casos_revisados\":40,\"casos_comparables_con_consentimiento\":31,\"casos_no_validos_para_comparacion\":9}, calcula % de cobertura metodológica mediante 100 × casos comparables con consentimiento / casos revisados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p5-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Evaluación responsable de candidatos. Una organización ensaya 24 casos con una muestra pequeña de candidatos ficticios. Los puntajes cambian 30 % según evaluador y los tiempos de lectura varían por adaptación del contenido. Conflicto: Dirección quiere activar bloqueo automático de contrataciones a partir de 75/100. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p5-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara plan de piloto, matriz de equidad y política de revisión para el aspecto «Gobierno de contratación con supervisión». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Gobierno de contratación con supervisión» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "candidate_assessment-p5-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone: piloto de evaluación responsable», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 77.5,
+            "unit": "% de cobertura metodológica",
+            "limitations": "Una cobertura alta no mide desempeño, aptitud para el trabajo ni equidad por sí sola",
+            "commonFailure": "atribuir aptitud laboral definitiva por una puntuación no calibrada",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No perfilar personalidad ni inferir atributos protegidos; ofrecer rectificación y adaptaciones accesibles.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 5 y 6.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": true
+      }
+    }
+  ],
+  "unitsCount": 15,
+  "practicesCount": 75,
+  "gradingPolicy": {
+    "minScore100": 80,
+    "eachDimensionAtLeast4Scale": 3,
+    "criticalErrorsAllowed": 0,
+    "manualApproval": true,
+    "submissionAloneNeverUnlocks": true
+  },
+  "publicationGate": {
+    "enabled": false,
+    "requiresBackendAssessment": true,
+    "requiresEditorialAndPrivacyReview": true
+  }
+}

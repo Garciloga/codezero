@@ -1,0 +1,2482 @@
+{
+  "key": "professional_languages",
+  "title": "Idioma profesional por puesto · EN/PT",
+  "kind": "curriculum",
+  "status": "draft",
+  "language": "es",
+  "localeStates": {
+    "es": "es",
+    "en": "beta-pending",
+    "pt": "beta-pending",
+    "fr": "beta-pending"
+  },
+  "edition": "2026-10-10 practical v2",
+  "nonnegotiable": "Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+  "reviewerOnly": true,
+  "levels": [
+    {
+      "id": "professional_languages-p1",
+      "number": 1,
+      "title": "Escritura de soporte y correo profesional",
+      "difficulty": "introductoria",
+      "caseFacts": "Una respuesta inglesa escrita por un agente promete 'will fix by 2 pm', aunque el equipo técnico sólo comprometió actualización a las 2 pm, no solución. Un correo portugués usa un falso cognado que cambia el sentido de reembolso.",
+      "caseConflict": "La gerencia insiste en enviarlos sin revisión nativa.",
+      "metric": "precisión factual y compromisos correctos",
+      "units": [
+        {
+          "id": "professional_languages-p1-u1",
+          "title": "Asunto, petición y compromiso",
+          "objective": "Aplicar asunto, petición y compromiso al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para profesionales B2B multilingües, dominar «Asunto, petición y compromiso» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La precisión de una comunicación incluye significado, destinatario y grado de compromiso, no solamente corrección gramatical. En el capítulo «Escritura de soporte y correo profesional», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una respuesta inglesa escrita por un agente promete 'will fix by 2 pm', aunque el equipo técnico sólo comprometió actualización a las 2 pm, no solución. Un correo portugués usa un falso cognado que cambia el sentido de reembolso. La presión es: La gerencia insiste en enviarlos sin revisión nativa. El alumno debe transformar «Asunto, petición y compromiso» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «precisión factual y compromisos correctos».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"adopcion_inicial_porcentaje\":19,\"adopcion_final_porcentaje\":28}. Calcula «% de variación relativa» con 100 × (adopción final − adopción inicial) / adopción inicial. Valor para revisión: 47.37. En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Asunto, petición y compromiso»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara dos correos en/pt con doble revisión para el aspecto «asunto, petición y compromiso». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: traducir una actualización prevista como una garantía contractual. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+            "prerequisites": [
+              "Unidad 1: Asunto, petición y compromiso",
+              "Objetivo: Aplicar asunto, petición y compromiso al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: precisión factual y compromisos correctos"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "adopcion_inicial_porcentaje": 19,
+              "adopcion_final_porcentaje": 28
+            },
+            "formula": "100 × (adopción final − adopción inicial) / adopción inicial",
+            "expected": 47.37,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "professional_languages-p1-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Idioma profesional EN/PT. Una respuesta inglesa escrita por un agente promete 'will fix by 2 pm', aunque el equipo técnico sólo comprometió actualización a las 2 pm, no solución. Un correo portugués usa un falso cognado que cambia el sentido de reembolso. Conflicto: La gerencia insiste en enviarlos sin revisión nativa. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Asunto, petición y compromiso». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p1-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"adopcion_inicial_porcentaje\":19,\"adopcion_final_porcentaje\":28}, calcula % de variación relativa mediante 100 × (adopción final − adopción inicial) / adopción inicial; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p1-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Idioma profesional EN/PT. Una respuesta inglesa escrita por un agente promete 'will fix by 2 pm', aunque el equipo técnico sólo comprometió actualización a las 2 pm, no solución. Un correo portugués usa un falso cognado que cambia el sentido de reembolso. Conflicto: La gerencia insiste en enviarlos sin revisión nativa. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «precisión factual y compromisos correctos». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p1-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara dos correos EN/PT con doble revisión para el aspecto «Asunto, petición y compromiso». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Asunto, petición y compromiso» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p1-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Escritura de soporte y correo profesional», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 47.37,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "commonFailure": "traducir una actualización prevista como una garantía contractual",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "professional_languages-p1-u2",
+          "title": "Manejo de registro profesional",
+          "objective": "Aplicar manejo de registro profesional al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para profesionales B2B multilingües, dominar «Manejo de registro profesional» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La retroalimentación debe distinguir vocabulario, comprensión, tono, autorización y claridad; no evaluar nacionalidad ni acento. En el capítulo «Escritura de soporte y correo profesional», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una respuesta inglesa escrita por un agente promete 'will fix by 2 pm', aunque el equipo técnico sólo comprometió actualización a las 2 pm, no solución. Un correo portugués usa un falso cognado que cambia el sentido de reembolso. La presión es: La gerencia insiste en enviarlos sin revisión nativa. El alumno debe transformar «Manejo de registro profesional» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «precisión factual y compromisos correctos».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"adopcion_inicial_porcentaje\":19,\"adopcion_final_porcentaje\":28}. Calcula «% de variación relativa» con 100 × (adopción final − adopción inicial) / adopción inicial. Valor para revisión: 47.37. En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Manejo de registro profesional»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara dos correos en/pt con doble revisión para el aspecto «manejo de registro profesional». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: traducir una actualización prevista como una garantía contractual. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+            "prerequisites": [
+              "Unidad 1: Manejo de registro profesional",
+              "Objetivo: Aplicar manejo de registro profesional al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: precisión factual y compromisos correctos"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "adopcion_inicial_porcentaje": 19,
+              "adopcion_final_porcentaje": 28
+            },
+            "formula": "100 × (adopción final − adopción inicial) / adopción inicial",
+            "expected": 47.37,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "professional_languages-p1-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Idioma profesional EN/PT. Una respuesta inglesa escrita por un agente promete 'will fix by 2 pm', aunque el equipo técnico sólo comprometió actualización a las 2 pm, no solución. Un correo portugués usa un falso cognado que cambia el sentido de reembolso. Conflicto: La gerencia insiste en enviarlos sin revisión nativa. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Manejo de registro profesional». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p1-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"adopcion_inicial_porcentaje\":19,\"adopcion_final_porcentaje\":28}, calcula % de variación relativa mediante 100 × (adopción final − adopción inicial) / adopción inicial; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p1-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Idioma profesional EN/PT. Una respuesta inglesa escrita por un agente promete 'will fix by 2 pm', aunque el equipo técnico sólo comprometió actualización a las 2 pm, no solución. Un correo portugués usa un falso cognado que cambia el sentido de reembolso. Conflicto: La gerencia insiste en enviarlos sin revisión nativa. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «precisión factual y compromisos correctos». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p1-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara dos correos EN/PT con doble revisión para el aspecto «Manejo de registro profesional». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Manejo de registro profesional» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p1-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Escritura de soporte y correo profesional», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 47.37,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "commonFailure": "traducir una actualización prevista como una garantía contractual",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "professional_languages-p1-u3",
+          "title": "Ambigüedades y traducción por intención",
+          "objective": "Aplicar ambigüedades y traducción por intención al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para profesionales B2B multilingües, dominar «Ambigüedades y traducción por intención» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Las cifras comerciales y fechas traducidas requieren denominadores, contexto y revisión bilingüe antes de enviarse. En el capítulo «Escritura de soporte y correo profesional», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una respuesta inglesa escrita por un agente promete 'will fix by 2 pm', aunque el equipo técnico sólo comprometió actualización a las 2 pm, no solución. Un correo portugués usa un falso cognado que cambia el sentido de reembolso. La presión es: La gerencia insiste en enviarlos sin revisión nativa. El alumno debe transformar «Ambigüedades y traducción por intención» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «precisión factual y compromisos correctos».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"adopcion_inicial_porcentaje\":19,\"adopcion_final_porcentaje\":28}. Calcula «% de variación relativa» con 100 × (adopción final − adopción inicial) / adopción inicial. Valor para revisión: 47.37. En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Ambigüedades y traducción por intención»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara dos correos en/pt con doble revisión para el aspecto «ambigüedades y traducción por intención». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: traducir una actualización prevista como una garantía contractual. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+            "prerequisites": [
+              "Unidad 1: Ambigüedades y traducción por intención",
+              "Objetivo: Aplicar ambigüedades y traducción por intención al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: precisión factual y compromisos correctos"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "adopcion_inicial_porcentaje": 19,
+              "adopcion_final_porcentaje": 28
+            },
+            "formula": "100 × (adopción final − adopción inicial) / adopción inicial",
+            "expected": 47.37,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "professional_languages-p1-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Idioma profesional EN/PT. Una respuesta inglesa escrita por un agente promete 'will fix by 2 pm', aunque el equipo técnico sólo comprometió actualización a las 2 pm, no solución. Un correo portugués usa un falso cognado que cambia el sentido de reembolso. Conflicto: La gerencia insiste en enviarlos sin revisión nativa. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Ambigüedades y traducción por intención». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p1-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"adopcion_inicial_porcentaje\":19,\"adopcion_final_porcentaje\":28}, calcula % de variación relativa mediante 100 × (adopción final − adopción inicial) / adopción inicial; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p1-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Idioma profesional EN/PT. Una respuesta inglesa escrita por un agente promete 'will fix by 2 pm', aunque el equipo técnico sólo comprometió actualización a las 2 pm, no solución. Un correo portugués usa un falso cognado que cambia el sentido de reembolso. Conflicto: La gerencia insiste en enviarlos sin revisión nativa. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «precisión factual y compromisos correctos». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p1-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara dos correos EN/PT con doble revisión para el aspecto «Ambigüedades y traducción por intención». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Ambigüedades y traducción por intención» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p1-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Escritura de soporte y correo profesional», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 47.37,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "commonFailure": "traducir una actualización prevista como una garantía contractual",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «precisión factual y compromisos correctos».",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 1 y 2.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "professional_languages-p2",
+      "number": 2,
+      "title": "Llamadas y escucha activa en situaciones difíciles",
+      "difficulty": "operativa",
+      "caseFacts": "En una llamada simulada el cliente dice 'we may consider leaving' y el agente lo documenta como cancelación definitiva. El comprador portugués dice que necesita consulta a compras, no rechaza el producto.",
+      "caseConflict": "CS propone cerrar la oportunidad como perdida sin confirmar intención.",
+      "metric": "confirmaciones de intención y seguimiento",
+      "units": [
+        {
+          "id": "professional_languages-p2-u1",
+          "title": "Confirmación y paráfrasis",
+          "objective": "Aplicar confirmación y paráfrasis al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para profesionales B2B multilingües, dominar «Confirmación y paráfrasis» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La precisión de una comunicación incluye significado, destinatario y grado de compromiso, no solamente corrección gramatical. En el capítulo «Llamadas y escucha activa en situaciones difíciles», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: En una llamada simulada el cliente dice 'we may consider leaving' y el agente lo documenta como cancelación definitiva. El comprador portugués dice que necesita consulta a compras, no rechaza el producto. La presión es: CS propone cerrar la oportunidad como perdida sin confirmar intención. El alumno debe transformar «Confirmación y paráfrasis» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"adopcion_inicial_porcentaje\":20,\"adopcion_final_porcentaje\":29}. Calcula «% de variación relativa» con 100 × (adopción final − adopción inicial) / adopción inicial. Valor para revisión: 45. En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Confirmación y paráfrasis»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara guion de llamada bilingüe con alternativas para el aspecto «confirmación y paráfrasis». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: traducir una actualización prevista como una garantía contractual. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+            "prerequisites": [
+              "Unidad 2: Confirmación y paráfrasis",
+              "Objetivo: Aplicar confirmación y paráfrasis al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: confirmaciones de intención y seguimiento"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "adopcion_inicial_porcentaje": 20,
+              "adopcion_final_porcentaje": 29
+            },
+            "formula": "100 × (adopción final − adopción inicial) / adopción inicial",
+            "expected": 45,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "professional_languages-p2-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Idioma profesional EN/PT. En una llamada simulada el cliente dice 'we may consider leaving' y el agente lo documenta como cancelación definitiva. El comprador portugués dice que necesita consulta a compras, no rechaza el producto. Conflicto: CS propone cerrar la oportunidad como perdida sin confirmar intención. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Confirmación y paráfrasis». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p2-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"adopcion_inicial_porcentaje\":20,\"adopcion_final_porcentaje\":29}, calcula % de variación relativa mediante 100 × (adopción final − adopción inicial) / adopción inicial; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p2-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Idioma profesional EN/PT. En una llamada simulada el cliente dice 'we may consider leaving' y el agente lo documenta como cancelación definitiva. El comprador portugués dice que necesita consulta a compras, no rechaza el producto. Conflicto: CS propone cerrar la oportunidad como perdida sin confirmar intención. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p2-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara guion de llamada bilingüe con alternativas para el aspecto «Confirmación y paráfrasis». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Confirmación y paráfrasis» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p2-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Llamadas y escucha activa en situaciones difíciles», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 45,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "commonFailure": "traducir una actualización prevista como una garantía contractual",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "professional_languages-p2-u2",
+          "title": "Escalaciones y límites sin confrontar",
+          "objective": "Aplicar escalaciones y límites sin confrontar al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para profesionales B2B multilingües, dominar «Escalaciones y límites sin confrontar» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La retroalimentación debe distinguir vocabulario, comprensión, tono, autorización y claridad; no evaluar nacionalidad ni acento. En el capítulo «Llamadas y escucha activa en situaciones difíciles», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: En una llamada simulada el cliente dice 'we may consider leaving' y el agente lo documenta como cancelación definitiva. El comprador portugués dice que necesita consulta a compras, no rechaza el producto. La presión es: CS propone cerrar la oportunidad como perdida sin confirmar intención. El alumno debe transformar «Escalaciones y límites sin confrontar» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"adopcion_inicial_porcentaje\":20,\"adopcion_final_porcentaje\":29}. Calcula «% de variación relativa» con 100 × (adopción final − adopción inicial) / adopción inicial. Valor para revisión: 45. En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Escalaciones y límites sin confrontar»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara guion de llamada bilingüe con alternativas para el aspecto «escalaciones y límites sin confrontar». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: traducir una actualización prevista como una garantía contractual. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+            "prerequisites": [
+              "Unidad 2: Escalaciones y límites sin confrontar",
+              "Objetivo: Aplicar escalaciones y límites sin confrontar al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: confirmaciones de intención y seguimiento"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "adopcion_inicial_porcentaje": 20,
+              "adopcion_final_porcentaje": 29
+            },
+            "formula": "100 × (adopción final − adopción inicial) / adopción inicial",
+            "expected": 45,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "professional_languages-p2-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Idioma profesional EN/PT. En una llamada simulada el cliente dice 'we may consider leaving' y el agente lo documenta como cancelación definitiva. El comprador portugués dice que necesita consulta a compras, no rechaza el producto. Conflicto: CS propone cerrar la oportunidad como perdida sin confirmar intención. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Escalaciones y límites sin confrontar». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p2-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"adopcion_inicial_porcentaje\":20,\"adopcion_final_porcentaje\":29}, calcula % de variación relativa mediante 100 × (adopción final − adopción inicial) / adopción inicial; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p2-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Idioma profesional EN/PT. En una llamada simulada el cliente dice 'we may consider leaving' y el agente lo documenta como cancelación definitiva. El comprador portugués dice que necesita consulta a compras, no rechaza el producto. Conflicto: CS propone cerrar la oportunidad como perdida sin confirmar intención. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p2-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara guion de llamada bilingüe con alternativas para el aspecto «Escalaciones y límites sin confrontar». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Escalaciones y límites sin confrontar» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p2-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Llamadas y escucha activa en situaciones difíciles», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 45,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "commonFailure": "traducir una actualización prevista como una garantía contractual",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "professional_languages-p2-u3",
+          "title": "Interpretación de matices regionales",
+          "objective": "Aplicar interpretación de matices regionales al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para profesionales B2B multilingües, dominar «Interpretación de matices regionales» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Las cifras comerciales y fechas traducidas requieren denominadores, contexto y revisión bilingüe antes de enviarse. En el capítulo «Llamadas y escucha activa en situaciones difíciles», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: En una llamada simulada el cliente dice 'we may consider leaving' y el agente lo documenta como cancelación definitiva. El comprador portugués dice que necesita consulta a compras, no rechaza el producto. La presión es: CS propone cerrar la oportunidad como perdida sin confirmar intención. El alumno debe transformar «Interpretación de matices regionales» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"adopcion_inicial_porcentaje\":20,\"adopcion_final_porcentaje\":29}. Calcula «% de variación relativa» con 100 × (adopción final − adopción inicial) / adopción inicial. Valor para revisión: 45. En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Interpretación de matices regionales»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara guion de llamada bilingüe con alternativas para el aspecto «interpretación de matices regionales». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: traducir una actualización prevista como una garantía contractual. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+            "prerequisites": [
+              "Unidad 2: Interpretación de matices regionales",
+              "Objetivo: Aplicar interpretación de matices regionales al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: confirmaciones de intención y seguimiento"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "adopcion_inicial_porcentaje": 20,
+              "adopcion_final_porcentaje": 29
+            },
+            "formula": "100 × (adopción final − adopción inicial) / adopción inicial",
+            "expected": 45,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "professional_languages-p2-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Idioma profesional EN/PT. En una llamada simulada el cliente dice 'we may consider leaving' y el agente lo documenta como cancelación definitiva. El comprador portugués dice que necesita consulta a compras, no rechaza el producto. Conflicto: CS propone cerrar la oportunidad como perdida sin confirmar intención. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Interpretación de matices regionales». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p2-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"adopcion_inicial_porcentaje\":20,\"adopcion_final_porcentaje\":29}, calcula % de variación relativa mediante 100 × (adopción final − adopción inicial) / adopción inicial; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p2-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Idioma profesional EN/PT. En una llamada simulada el cliente dice 'we may consider leaving' y el agente lo documenta como cancelación definitiva. El comprador portugués dice que necesita consulta a compras, no rechaza el producto. Conflicto: CS propone cerrar la oportunidad como perdida sin confirmar intención. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p2-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara guion de llamada bilingüe con alternativas para el aspecto «Interpretación de matices regionales». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Interpretación de matices regionales» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p2-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Llamadas y escucha activa en situaciones difíciles», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 45,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "commonFailure": "traducir una actualización prevista como una garantía contractual",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 2 y 3.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "professional_languages-p3",
+      "number": 3,
+      "title": "QBR, explicaciones numéricas y objeciones",
+      "difficulty": "intermedia",
+      "caseFacts": "En QBR inglés una frase dice que la adopción 'doubled', pero pasa de 18 % a 27 %; la variación real es +9 puntos y +50 % relativa. En portugués el gerente confunde GRR con NRR.",
+      "caseConflict": "Marketing quiere simplificar afirmando 100 % de mejora.",
+      "metric": "claridad cuantitativa y manejo de objeciones",
+      "units": [
+        {
+          "id": "professional_languages-p3-u1",
+          "title": "Léxico de métricas con base",
+          "objective": "Aplicar léxico de métricas con base al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para profesionales B2B multilingües, dominar «Léxico de métricas con base» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La precisión de una comunicación incluye significado, destinatario y grado de compromiso, no solamente corrección gramatical. En el capítulo «QBR, explicaciones numéricas y objeciones», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: En QBR inglés una frase dice que la adopción 'doubled', pero pasa de 18 % a 27 %; la variación real es +9 puntos y +50 % relativa. En portugués el gerente confunde GRR con NRR. La presión es: Marketing quiere simplificar afirmando 100 % de mejora. El alumno debe transformar «Léxico de métricas con base» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"adopcion_inicial_porcentaje\":21,\"adopcion_final_porcentaje\":30}. Calcula «% de variación relativa» con 100 × (adopción final − adopción inicial) / adopción inicial. Valor para revisión: 42.86. En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Léxico de métricas con base»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara presentación qbr en/pt con cálculo correcto para el aspecto «léxico de métricas con base». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: traducir una actualización prevista como una garantía contractual. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+            "prerequisites": [
+              "Unidad 3: Léxico de métricas con base",
+              "Objetivo: Aplicar léxico de métricas con base al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: claridad cuantitativa y manejo de objeciones"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "adopcion_inicial_porcentaje": 21,
+              "adopcion_final_porcentaje": 30
+            },
+            "formula": "100 × (adopción final − adopción inicial) / adopción inicial",
+            "expected": 42.86,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "professional_languages-p3-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Idioma profesional EN/PT. En QBR inglés una frase dice que la adopción 'doubled', pero pasa de 18 % a 27 %; la variación real es +9 puntos y +50 % relativa. En portugués el gerente confunde GRR con NRR. Conflicto: Marketing quiere simplificar afirmando 100 % de mejora. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Léxico de métricas con base». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p3-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"adopcion_inicial_porcentaje\":21,\"adopcion_final_porcentaje\":30}, calcula % de variación relativa mediante 100 × (adopción final − adopción inicial) / adopción inicial; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p3-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Idioma profesional EN/PT. En QBR inglés una frase dice que la adopción 'doubled', pero pasa de 18 % a 27 %; la variación real es +9 puntos y +50 % relativa. En portugués el gerente confunde GRR con NRR. Conflicto: Marketing quiere simplificar afirmando 100 % de mejora. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p3-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara presentación QBR EN/PT con cálculo correcto para el aspecto «Léxico de métricas con base». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Léxico de métricas con base» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p3-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «QBR, explicaciones numéricas y objeciones», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 42.86,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "commonFailure": "traducir una actualización prevista como una garantía contractual",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "professional_languages-p3-u2",
+          "title": "Narrativa ejecutiva transparente",
+          "objective": "Aplicar narrativa ejecutiva transparente al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para profesionales B2B multilingües, dominar «Narrativa ejecutiva transparente» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La retroalimentación debe distinguir vocabulario, comprensión, tono, autorización y claridad; no evaluar nacionalidad ni acento. En el capítulo «QBR, explicaciones numéricas y objeciones», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: En QBR inglés una frase dice que la adopción 'doubled', pero pasa de 18 % a 27 %; la variación real es +9 puntos y +50 % relativa. En portugués el gerente confunde GRR con NRR. La presión es: Marketing quiere simplificar afirmando 100 % de mejora. El alumno debe transformar «Narrativa ejecutiva transparente» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"adopcion_inicial_porcentaje\":21,\"adopcion_final_porcentaje\":30}. Calcula «% de variación relativa» con 100 × (adopción final − adopción inicial) / adopción inicial. Valor para revisión: 42.86. En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Narrativa ejecutiva transparente»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara presentación qbr en/pt con cálculo correcto para el aspecto «narrativa ejecutiva transparente». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: traducir una actualización prevista como una garantía contractual. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+            "prerequisites": [
+              "Unidad 3: Narrativa ejecutiva transparente",
+              "Objetivo: Aplicar narrativa ejecutiva transparente al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: claridad cuantitativa y manejo de objeciones"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "adopcion_inicial_porcentaje": 21,
+              "adopcion_final_porcentaje": 30
+            },
+            "formula": "100 × (adopción final − adopción inicial) / adopción inicial",
+            "expected": 42.86,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "professional_languages-p3-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Idioma profesional EN/PT. En QBR inglés una frase dice que la adopción 'doubled', pero pasa de 18 % a 27 %; la variación real es +9 puntos y +50 % relativa. En portugués el gerente confunde GRR con NRR. Conflicto: Marketing quiere simplificar afirmando 100 % de mejora. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Narrativa ejecutiva transparente». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p3-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"adopcion_inicial_porcentaje\":21,\"adopcion_final_porcentaje\":30}, calcula % de variación relativa mediante 100 × (adopción final − adopción inicial) / adopción inicial; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p3-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Idioma profesional EN/PT. En QBR inglés una frase dice que la adopción 'doubled', pero pasa de 18 % a 27 %; la variación real es +9 puntos y +50 % relativa. En portugués el gerente confunde GRR con NRR. Conflicto: Marketing quiere simplificar afirmando 100 % de mejora. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p3-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara presentación QBR EN/PT con cálculo correcto para el aspecto «Narrativa ejecutiva transparente». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Narrativa ejecutiva transparente» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p3-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «QBR, explicaciones numéricas y objeciones», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 42.86,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "commonFailure": "traducir una actualización prevista como una garantía contractual",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "professional_languages-p3-u3",
+          "title": "Pedir evidencia y reconocer incertidumbre",
+          "objective": "Aplicar pedir evidencia y reconocer incertidumbre al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para profesionales B2B multilingües, dominar «Pedir evidencia y reconocer incertidumbre» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Las cifras comerciales y fechas traducidas requieren denominadores, contexto y revisión bilingüe antes de enviarse. En el capítulo «QBR, explicaciones numéricas y objeciones», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: En QBR inglés una frase dice que la adopción 'doubled', pero pasa de 18 % a 27 %; la variación real es +9 puntos y +50 % relativa. En portugués el gerente confunde GRR con NRR. La presión es: Marketing quiere simplificar afirmando 100 % de mejora. El alumno debe transformar «Pedir evidencia y reconocer incertidumbre» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"adopcion_inicial_porcentaje\":21,\"adopcion_final_porcentaje\":30}. Calcula «% de variación relativa» con 100 × (adopción final − adopción inicial) / adopción inicial. Valor para revisión: 42.86. En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Pedir evidencia y reconocer incertidumbre»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara presentación qbr en/pt con cálculo correcto para el aspecto «pedir evidencia y reconocer incertidumbre». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: traducir una actualización prevista como una garantía contractual. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+            "prerequisites": [
+              "Unidad 3: Pedir evidencia y reconocer incertidumbre",
+              "Objetivo: Aplicar pedir evidencia y reconocer incertidumbre al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: claridad cuantitativa y manejo de objeciones"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "adopcion_inicial_porcentaje": 21,
+              "adopcion_final_porcentaje": 30
+            },
+            "formula": "100 × (adopción final − adopción inicial) / adopción inicial",
+            "expected": 42.86,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "professional_languages-p3-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Idioma profesional EN/PT. En QBR inglés una frase dice que la adopción 'doubled', pero pasa de 18 % a 27 %; la variación real es +9 puntos y +50 % relativa. En portugués el gerente confunde GRR con NRR. Conflicto: Marketing quiere simplificar afirmando 100 % de mejora. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Pedir evidencia y reconocer incertidumbre». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p3-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"adopcion_inicial_porcentaje\":21,\"adopcion_final_porcentaje\":30}, calcula % de variación relativa mediante 100 × (adopción final − adopción inicial) / adopción inicial; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p3-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Idioma profesional EN/PT. En QBR inglés una frase dice que la adopción 'doubled', pero pasa de 18 % a 27 %; la variación real es +9 puntos y +50 % relativa. En portugués el gerente confunde GRR con NRR. Conflicto: Marketing quiere simplificar afirmando 100 % de mejora. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p3-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara presentación QBR EN/PT con cálculo correcto para el aspecto «Pedir evidencia y reconocer incertidumbre». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Pedir evidencia y reconocer incertidumbre» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p3-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «QBR, explicaciones numéricas y objeciones», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 42.86,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "commonFailure": "traducir una actualización prevista como una garantía contractual",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 3 y 4.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "professional_languages-p4",
+      "number": 4,
+      "title": "Renovaciones, contratos y negociación",
+      "difficulty": "especialista",
+      "caseFacts": "Un AM ofrece en un correo francés tomado como plantilla un SLA que no existe y su traducción inglesa sugiere renovación automática irrevocable. La contraparte pidió explorar opciones.",
+      "caseConflict": "El equipo confunde traducción elegante con asesoría jurídica.",
+      "metric": "claridad de obligaciones y ausencia de promesas inventadas",
+      "units": [
+        {
+          "id": "professional_languages-p4-u1",
+          "title": "Distinción de propuesta versus contrato",
+          "objective": "Aplicar distinción de propuesta versus contrato al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para profesionales B2B multilingües, dominar «Distinción de propuesta versus contrato» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La precisión de una comunicación incluye significado, destinatario y grado de compromiso, no solamente corrección gramatical. En el capítulo «Renovaciones, contratos y negociación», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Un AM ofrece en un correo francés tomado como plantilla un SLA que no existe y su traducción inglesa sugiere renovación automática irrevocable. La contraparte pidió explorar opciones. La presión es: El equipo confunde traducción elegante con asesoría jurídica. El alumno debe transformar «Distinción de propuesta versus contrato» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"adopcion_inicial_porcentaje\":22,\"adopcion_final_porcentaje\":31}. Calcula «% de variación relativa» con 100 × (adopción final − adopción inicial) / adopción inicial. Valor para revisión: 40.91. En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Distinción de propuesta versus contrato»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara borrador de renovación y respuesta a negociación para el aspecto «distinción de propuesta versus contrato». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: traducir una actualización prevista como una garantía contractual. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+            "prerequisites": [
+              "Unidad 4: Distinción de propuesta versus contrato",
+              "Objetivo: Aplicar distinción de propuesta versus contrato al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: claridad de obligaciones y ausencia de promesas inventadas"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "adopcion_inicial_porcentaje": 22,
+              "adopcion_final_porcentaje": 31
+            },
+            "formula": "100 × (adopción final − adopción inicial) / adopción inicial",
+            "expected": 40.91,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "professional_languages-p4-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Idioma profesional EN/PT. Un AM ofrece en un correo francés tomado como plantilla un SLA que no existe y su traducción inglesa sugiere renovación automática irrevocable. La contraparte pidió explorar opciones. Conflicto: El equipo confunde traducción elegante con asesoría jurídica. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Distinción de propuesta versus contrato». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p4-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"adopcion_inicial_porcentaje\":22,\"adopcion_final_porcentaje\":31}, calcula % de variación relativa mediante 100 × (adopción final − adopción inicial) / adopción inicial; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p4-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Idioma profesional EN/PT. Un AM ofrece en un correo francés tomado como plantilla un SLA que no existe y su traducción inglesa sugiere renovación automática irrevocable. La contraparte pidió explorar opciones. Conflicto: El equipo confunde traducción elegante con asesoría jurídica. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p4-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara borrador de renovación y respuesta a negociación para el aspecto «Distinción de propuesta versus contrato». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Distinción de propuesta versus contrato» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p4-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Renovaciones, contratos y negociación», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 40.91,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "commonFailure": "traducir una actualización prevista como una garantía contractual",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "professional_languages-p4-u2",
+          "title": "Solicitudes de claridad y autorización",
+          "objective": "Aplicar solicitudes de claridad y autorización al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para profesionales B2B multilingües, dominar «Solicitudes de claridad y autorización» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La retroalimentación debe distinguir vocabulario, comprensión, tono, autorización y claridad; no evaluar nacionalidad ni acento. En el capítulo «Renovaciones, contratos y negociación», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Un AM ofrece en un correo francés tomado como plantilla un SLA que no existe y su traducción inglesa sugiere renovación automática irrevocable. La contraparte pidió explorar opciones. La presión es: El equipo confunde traducción elegante con asesoría jurídica. El alumno debe transformar «Solicitudes de claridad y autorización» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"adopcion_inicial_porcentaje\":22,\"adopcion_final_porcentaje\":31}. Calcula «% de variación relativa» con 100 × (adopción final − adopción inicial) / adopción inicial. Valor para revisión: 40.91. En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Solicitudes de claridad y autorización»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara borrador de renovación y respuesta a negociación para el aspecto «solicitudes de claridad y autorización». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: traducir una actualización prevista como una garantía contractual. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+            "prerequisites": [
+              "Unidad 4: Solicitudes de claridad y autorización",
+              "Objetivo: Aplicar solicitudes de claridad y autorización al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: claridad de obligaciones y ausencia de promesas inventadas"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "adopcion_inicial_porcentaje": 22,
+              "adopcion_final_porcentaje": 31
+            },
+            "formula": "100 × (adopción final − adopción inicial) / adopción inicial",
+            "expected": 40.91,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "professional_languages-p4-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Idioma profesional EN/PT. Un AM ofrece en un correo francés tomado como plantilla un SLA que no existe y su traducción inglesa sugiere renovación automática irrevocable. La contraparte pidió explorar opciones. Conflicto: El equipo confunde traducción elegante con asesoría jurídica. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Solicitudes de claridad y autorización». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p4-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"adopcion_inicial_porcentaje\":22,\"adopcion_final_porcentaje\":31}, calcula % de variación relativa mediante 100 × (adopción final − adopción inicial) / adopción inicial; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p4-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Idioma profesional EN/PT. Un AM ofrece en un correo francés tomado como plantilla un SLA que no existe y su traducción inglesa sugiere renovación automática irrevocable. La contraparte pidió explorar opciones. Conflicto: El equipo confunde traducción elegante con asesoría jurídica. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p4-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara borrador de renovación y respuesta a negociación para el aspecto «Solicitudes de claridad y autorización». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Solicitudes de claridad y autorización» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p4-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Renovaciones, contratos y negociación», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 40.91,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "commonFailure": "traducir una actualización prevista como una garantía contractual",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "professional_languages-p4-u3",
+          "title": "Seguimiento por escrito",
+          "objective": "Aplicar seguimiento por escrito al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para profesionales B2B multilingües, dominar «Seguimiento por escrito» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Las cifras comerciales y fechas traducidas requieren denominadores, contexto y revisión bilingüe antes de enviarse. En el capítulo «Renovaciones, contratos y negociación», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Un AM ofrece en un correo francés tomado como plantilla un SLA que no existe y su traducción inglesa sugiere renovación automática irrevocable. La contraparte pidió explorar opciones. La presión es: El equipo confunde traducción elegante con asesoría jurídica. El alumno debe transformar «Seguimiento por escrito» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"adopcion_inicial_porcentaje\":22,\"adopcion_final_porcentaje\":31}. Calcula «% de variación relativa» con 100 × (adopción final − adopción inicial) / adopción inicial. Valor para revisión: 40.91. En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Seguimiento por escrito»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara borrador de renovación y respuesta a negociación para el aspecto «seguimiento por escrito». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: traducir una actualización prevista como una garantía contractual. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+            "prerequisites": [
+              "Unidad 4: Seguimiento por escrito",
+              "Objetivo: Aplicar seguimiento por escrito al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: claridad de obligaciones y ausencia de promesas inventadas"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "adopcion_inicial_porcentaje": 22,
+              "adopcion_final_porcentaje": 31
+            },
+            "formula": "100 × (adopción final − adopción inicial) / adopción inicial",
+            "expected": 40.91,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "professional_languages-p4-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Idioma profesional EN/PT. Un AM ofrece en un correo francés tomado como plantilla un SLA que no existe y su traducción inglesa sugiere renovación automática irrevocable. La contraparte pidió explorar opciones. Conflicto: El equipo confunde traducción elegante con asesoría jurídica. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Seguimiento por escrito». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p4-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"adopcion_inicial_porcentaje\":22,\"adopcion_final_porcentaje\":31}, calcula % de variación relativa mediante 100 × (adopción final − adopción inicial) / adopción inicial; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p4-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Idioma profesional EN/PT. Un AM ofrece en un correo francés tomado como plantilla un SLA que no existe y su traducción inglesa sugiere renovación automática irrevocable. La contraparte pidió explorar opciones. Conflicto: El equipo confunde traducción elegante con asesoría jurídica. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p4-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara borrador de renovación y respuesta a negociación para el aspecto «Seguimiento por escrito». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Seguimiento por escrito» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p4-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Renovaciones, contratos y negociación», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 40.91,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "commonFailure": "traducir una actualización prevista como una garantía contractual",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 4 y 5.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "professional_languages-p5",
+      "number": 5,
+      "title": "Capstone multicanal por puesto",
+      "difficulty": "directiva y proyecto",
+      "caseFacts": "Se simula una crisis SaaS con cinco mensajes, dos idiomas y un reporte de métricas confuso. El alumno debe responder en EN/PT sin inventar fecha ni vulnerar información reservada; se evalúa contenido y tono por separado.",
+      "caseConflict": "Recursos Humanos pide ranking automático por acento sin evaluación del contenido.",
+      "metric": "precisión comunicativa y devolución del interlocutor",
+      "units": [
+        {
+          "id": "professional_languages-p5-u1",
+          "title": "Correo y llamada",
+          "objective": "Aplicar correo y llamada al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para profesionales B2B multilingües, dominar «Correo y llamada» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La precisión de una comunicación incluye significado, destinatario y grado de compromiso, no solamente corrección gramatical. En el capítulo «Capstone multicanal por puesto», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Se simula una crisis SaaS con cinco mensajes, dos idiomas y un reporte de métricas confuso. El alumno debe responder en EN/PT sin inventar fecha ni vulnerar información reservada; se evalúa contenido y tono por separado. La presión es: Recursos Humanos pide ranking automático por acento sin evaluación del contenido. El alumno debe transformar «Correo y llamada» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"adopcion_inicial_porcentaje\":23,\"adopcion_final_porcentaje\":32}. Calcula «% de variación relativa» con 100 × (adopción final − adopción inicial) / adopción inicial. Valor para revisión: 39.13. En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Correo y llamada»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara expediente bilingüe con audio opcional solo si existe consentimiento para el aspecto «correo y llamada». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: traducir una actualización prevista como una garantía contractual. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+            "prerequisites": [
+              "Unidad 5: Correo y llamada",
+              "Objetivo: Aplicar correo y llamada al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: precisión comunicativa y devolución del interlocutor"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "adopcion_inicial_porcentaje": 23,
+              "adopcion_final_porcentaje": 32
+            },
+            "formula": "100 × (adopción final − adopción inicial) / adopción inicial",
+            "expected": 39.13,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "professional_languages-p5-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Idioma profesional EN/PT. Se simula una crisis SaaS con cinco mensajes, dos idiomas y un reporte de métricas confuso. El alumno debe responder en EN/PT sin inventar fecha ni vulnerar información reservada; se evalúa contenido y tono por separado. Conflicto: Recursos Humanos pide ranking automático por acento sin evaluación del contenido. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Correo y llamada». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p5-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"adopcion_inicial_porcentaje\":23,\"adopcion_final_porcentaje\":32}, calcula % de variación relativa mediante 100 × (adopción final − adopción inicial) / adopción inicial; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p5-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Idioma profesional EN/PT. Se simula una crisis SaaS con cinco mensajes, dos idiomas y un reporte de métricas confuso. El alumno debe responder en EN/PT sin inventar fecha ni vulnerar información reservada; se evalúa contenido y tono por separado. Conflicto: Recursos Humanos pide ranking automático por acento sin evaluación del contenido. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p5-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara expediente bilingüe con audio opcional solo si existe consentimiento para el aspecto «Correo y llamada». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Correo y llamada» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p5-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone multicanal por puesto», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 39.13,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "commonFailure": "traducir una actualización prevista como una garantía contractual",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "professional_languages-p5-u2",
+          "title": "QBR y revisión de traducción",
+          "objective": "Aplicar qbr y revisión de traducción al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para profesionales B2B multilingües, dominar «QBR y revisión de traducción» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La retroalimentación debe distinguir vocabulario, comprensión, tono, autorización y claridad; no evaluar nacionalidad ni acento. En el capítulo «Capstone multicanal por puesto», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Se simula una crisis SaaS con cinco mensajes, dos idiomas y un reporte de métricas confuso. El alumno debe responder en EN/PT sin inventar fecha ni vulnerar información reservada; se evalúa contenido y tono por separado. La presión es: Recursos Humanos pide ranking automático por acento sin evaluación del contenido. El alumno debe transformar «QBR y revisión de traducción» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"adopcion_inicial_porcentaje\":23,\"adopcion_final_porcentaje\":32}. Calcula «% de variación relativa» con 100 × (adopción final − adopción inicial) / adopción inicial. Valor para revisión: 39.13. En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «QBR y revisión de traducción»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara expediente bilingüe con audio opcional solo si existe consentimiento para el aspecto «qbr y revisión de traducción». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: traducir una actualización prevista como una garantía contractual. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+            "prerequisites": [
+              "Unidad 5: QBR y revisión de traducción",
+              "Objetivo: Aplicar qbr y revisión de traducción al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: precisión comunicativa y devolución del interlocutor"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "adopcion_inicial_porcentaje": 23,
+              "adopcion_final_porcentaje": 32
+            },
+            "formula": "100 × (adopción final − adopción inicial) / adopción inicial",
+            "expected": 39.13,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "professional_languages-p5-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Idioma profesional EN/PT. Se simula una crisis SaaS con cinco mensajes, dos idiomas y un reporte de métricas confuso. El alumno debe responder en EN/PT sin inventar fecha ni vulnerar información reservada; se evalúa contenido y tono por separado. Conflicto: Recursos Humanos pide ranking automático por acento sin evaluación del contenido. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «QBR y revisión de traducción». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p5-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"adopcion_inicial_porcentaje\":23,\"adopcion_final_porcentaje\":32}, calcula % de variación relativa mediante 100 × (adopción final − adopción inicial) / adopción inicial; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p5-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Idioma profesional EN/PT. Se simula una crisis SaaS con cinco mensajes, dos idiomas y un reporte de métricas confuso. El alumno debe responder en EN/PT sin inventar fecha ni vulnerar información reservada; se evalúa contenido y tono por separado. Conflicto: Recursos Humanos pide ranking automático por acento sin evaluación del contenido. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p5-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara expediente bilingüe con audio opcional solo si existe consentimiento para el aspecto «QBR y revisión de traducción». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «QBR y revisión de traducción» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p5-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone multicanal por puesto», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 39.13,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "commonFailure": "traducir una actualización prevista como una garantía contractual",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "professional_languages-p5-u3",
+          "title": "Defensa de decisiones comunicativas",
+          "objective": "Aplicar defensa de decisiones comunicativas al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para profesionales B2B multilingües, dominar «Defensa de decisiones comunicativas» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Las cifras comerciales y fechas traducidas requieren denominadores, contexto y revisión bilingüe antes de enviarse. En el capítulo «Capstone multicanal por puesto», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Se simula una crisis SaaS con cinco mensajes, dos idiomas y un reporte de métricas confuso. El alumno debe responder en EN/PT sin inventar fecha ni vulnerar información reservada; se evalúa contenido y tono por separado. La presión es: Recursos Humanos pide ranking automático por acento sin evaluación del contenido. El alumno debe transformar «Defensa de decisiones comunicativas» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"adopcion_inicial_porcentaje\":23,\"adopcion_final_porcentaje\":32}. Calcula «% de variación relativa» con 100 × (adopción final − adopción inicial) / adopción inicial. Valor para revisión: 39.13. En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Defensa de decisiones comunicativas»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara expediente bilingüe con audio opcional solo si existe consentimiento para el aspecto «defensa de decisiones comunicativas». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: traducir una actualización prevista como una garantía contractual. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+            "prerequisites": [
+              "Unidad 5: Defensa de decisiones comunicativas",
+              "Objetivo: Aplicar defensa de decisiones comunicativas al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: precisión comunicativa y devolución del interlocutor"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "adopcion_inicial_porcentaje": 23,
+              "adopcion_final_porcentaje": 32
+            },
+            "formula": "100 × (adopción final − adopción inicial) / adopción inicial",
+            "expected": 39.13,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "professional_languages-p5-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Idioma profesional EN/PT. Se simula una crisis SaaS con cinco mensajes, dos idiomas y un reporte de métricas confuso. El alumno debe responder en EN/PT sin inventar fecha ni vulnerar información reservada; se evalúa contenido y tono por separado. Conflicto: Recursos Humanos pide ranking automático por acento sin evaluación del contenido. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Defensa de decisiones comunicativas». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p5-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"adopcion_inicial_porcentaje\":23,\"adopcion_final_porcentaje\":32}, calcula % de variación relativa mediante 100 × (adopción final − adopción inicial) / adopción inicial; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p5-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Idioma profesional EN/PT. Se simula una crisis SaaS con cinco mensajes, dos idiomas y un reporte de métricas confuso. El alumno debe responder en EN/PT sin inventar fecha ni vulnerar información reservada; se evalúa contenido y tono por separado. Conflicto: Recursos Humanos pide ranking automático por acento sin evaluación del contenido. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p5-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara expediente bilingüe con audio opcional solo si existe consentimiento para el aspecto «Defensa de decisiones comunicativas». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Defensa de decisiones comunicativas» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "professional_languages-p5-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone multicanal por puesto», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 39.13,
+            "unit": "% de variación relativa",
+            "limitations": "En puntos porcentuales la variación es 9; expresar variación relativa como puntos sería engañoso",
+            "commonFailure": "traducir una actualización prevista como una garantía contractual",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Las revisiones de lengua deben ser humanas, accesibles, no discriminatorias y no simular traducciones nativas validadas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 5 y 6.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": true
+      }
+    }
+  ],
+  "unitsCount": 15,
+  "practicesCount": 75,
+  "gradingPolicy": {
+    "minScore100": 80,
+    "eachDimensionAtLeast4Scale": 3,
+    "criticalErrorsAllowed": 0,
+    "manualApproval": true,
+    "submissionAloneNeverUnlocks": true
+  },
+  "publicationGate": {
+    "enabled": false,
+    "requiresBackendAssessment": true,
+    "requiresEditorialAndPrivacyReview": true
+  }
+}

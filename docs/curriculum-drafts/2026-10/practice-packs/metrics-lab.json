@@ -1,0 +1,2497 @@
+{
+  "key": "metrics_lab",
+  "title": "Laboratorio de métricas del trabajo",
+  "kind": "curriculum",
+  "status": "draft",
+  "language": "es",
+  "localeStates": {
+    "es": "es",
+    "en": "beta-pending",
+    "pt": "beta-pending",
+    "fr": "beta-pending"
+  },
+  "edition": "2026-10-10 practical v2",
+  "nonnegotiable": "Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+  "reviewerOnly": true,
+  "levels": [
+    {
+      "id": "metrics_lab-p1",
+      "number": 1,
+      "title": "Cohortes y retención recurrente",
+      "difficulty": "introductoria",
+      "caseFacts": "Una cohorte SaaS inicia con 100.000 MXN de MRR, pierde 5.000 por churn y 2.000 por contracción, y añade 8.000 por expansión; los nuevos clientes aportan 30.000 MXN fuera de la cohorte.",
+      "caseConflict": "Un reporte incluye los 30.000 nuevos y anuncia NRR de 131 %.",
+      "metric": "tasa calculada y trazabilidad del denominador",
+      "units": [
+        {
+          "id": "metrics_lab-p1-u1",
+          "title": "MRR inicial y miembros de cohorte",
+          "objective": "Aplicar mrr inicial y miembros de cohorte al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para analistas, CSM y responsables comerciales, dominar «MRR inicial y miembros de cohorte» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Un indicador necesita población, fecha inicial, periodo y criterio de exclusión documentados. En el capítulo «Cohortes y retención recurrente», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una cohorte SaaS inicia con 100.000 MXN de MRR, pierde 5.000 por churn y 2.000 por contracción, y añade 8.000 por expansión; los nuevos clientes aportan 30.000 MXN fuera de la cohorte. La presión es: Un reporte incluye los 30.000 nuevos y anuncia NRR de 131 %. El alumno debe transformar «MRR inicial y miembros de cohorte» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «tasa calculada y trazabilidad del denominador».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"MRR_inicio\":162000,\"churn\":9500,\"contraccion\":6300,\"expansion\":11800,\"MRR_clientes_nuevos\":26600}. Calcula «% de NRR» con 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio. Valor para revisión: 97.53. undefined Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «MRR inicial y miembros de cohorte»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara hoja de cálculo con fórmulas y tres escenarios para el aspecto «mrr inicial y miembros de cohorte». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: agregar nuevas ventas al NRR de la cohorte inicial. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+            "prerequisites": [
+              "Unidad 1: MRR inicial y miembros de cohorte",
+              "Objetivo: Aplicar mrr inicial y miembros de cohorte al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: tasa calculada y trazabilidad del denominador"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "MRR_inicio": 162000,
+              "churn": 9500,
+              "contraccion": 6300,
+              "expansion": 11800,
+              "MRR_clientes_nuevos": 26600
+            },
+            "formula": "100 × (MRR inicio − churn − contracción + expansión) / MRR inicio",
+            "expected": 97.53,
+            "unit": "% de NRR",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "metrics_lab-p1-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Laboratorio de métricas B2B. Una cohorte SaaS inicia con 100.000 MXN de MRR, pierde 5.000 por churn y 2.000 por contracción, y añade 8.000 por expansión; los nuevos clientes aportan 30.000 MXN fuera de la cohorte. Conflicto: Un reporte incluye los 30.000 nuevos y anuncia NRR de 131 %. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «MRR inicial y miembros de cohorte». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p1-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"MRR_inicio\":162000,\"churn\":9500,\"contraccion\":6300,\"expansion\":11800,\"MRR_clientes_nuevos\":26600}, calcula % de NRR mediante 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: undefined",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p1-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Laboratorio de métricas B2B. Una cohorte SaaS inicia con 100.000 MXN de MRR, pierde 5.000 por churn y 2.000 por contracción, y añade 8.000 por expansión; los nuevos clientes aportan 30.000 MXN fuera de la cohorte. Conflicto: Un reporte incluye los 30.000 nuevos y anuncia NRR de 131 %. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «tasa calculada y trazabilidad del denominador». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p1-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara hoja de cálculo con fórmulas y tres escenarios para el aspecto «MRR inicial y miembros de cohorte». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «MRR inicial y miembros de cohorte» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p1-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Cohortes y retención recurrente», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 97.53,
+            "unit": "% de NRR",
+            "commonFailure": "agregar nuevas ventas al NRR de la cohorte inicial",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "metrics_lab-p1-u2",
+          "title": "GRR, NRR y churn neto",
+          "objective": "Aplicar grr, nrr y churn neto al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para analistas, CSM y responsables comerciales, dominar «GRR, NRR y churn neto» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La media de una muestra no representa necesariamente la población; sesgos de no respuesta pueden dominar una métrica. En el capítulo «Cohortes y retención recurrente», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una cohorte SaaS inicia con 100.000 MXN de MRR, pierde 5.000 por churn y 2.000 por contracción, y añade 8.000 por expansión; los nuevos clientes aportan 30.000 MXN fuera de la cohorte. La presión es: Un reporte incluye los 30.000 nuevos y anuncia NRR de 131 %. El alumno debe transformar «GRR, NRR y churn neto» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «tasa calculada y trazabilidad del denominador».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"MRR_inicio\":162000,\"churn\":9500,\"contraccion\":6300,\"expansion\":11800,\"MRR_clientes_nuevos\":26600}. Calcula «% de NRR» con 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio. Valor para revisión: 97.53. undefined Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «GRR, NRR y churn neto»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara hoja de cálculo con fórmulas y tres escenarios para el aspecto «grr, nrr y churn neto». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: agregar nuevas ventas al NRR de la cohorte inicial. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+            "prerequisites": [
+              "Unidad 1: GRR, NRR y churn neto",
+              "Objetivo: Aplicar grr, nrr y churn neto al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: tasa calculada y trazabilidad del denominador"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "MRR_inicio": 162000,
+              "churn": 9500,
+              "contraccion": 6300,
+              "expansion": 11800,
+              "MRR_clientes_nuevos": 26600
+            },
+            "formula": "100 × (MRR inicio − churn − contracción + expansión) / MRR inicio",
+            "expected": 97.53,
+            "unit": "% de NRR",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "metrics_lab-p1-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Laboratorio de métricas B2B. Una cohorte SaaS inicia con 100.000 MXN de MRR, pierde 5.000 por churn y 2.000 por contracción, y añade 8.000 por expansión; los nuevos clientes aportan 30.000 MXN fuera de la cohorte. Conflicto: Un reporte incluye los 30.000 nuevos y anuncia NRR de 131 %. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «GRR, NRR y churn neto». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p1-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"MRR_inicio\":162000,\"churn\":9500,\"contraccion\":6300,\"expansion\":11800,\"MRR_clientes_nuevos\":26600}, calcula % de NRR mediante 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: undefined",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p1-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Laboratorio de métricas B2B. Una cohorte SaaS inicia con 100.000 MXN de MRR, pierde 5.000 por churn y 2.000 por contracción, y añade 8.000 por expansión; los nuevos clientes aportan 30.000 MXN fuera de la cohorte. Conflicto: Un reporte incluye los 30.000 nuevos y anuncia NRR de 131 %. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «tasa calculada y trazabilidad del denominador». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p1-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara hoja de cálculo con fórmulas y tres escenarios para el aspecto «GRR, NRR y churn neto». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «GRR, NRR y churn neto» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p1-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Cohortes y retención recurrente», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 97.53,
+            "unit": "% de NRR",
+            "commonFailure": "agregar nuevas ventas al NRR de la cohorte inicial",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "metrics_lab-p1-u3",
+          "title": "Tratamiento de contratos nuevos",
+          "objective": "Aplicar tratamiento de contratos nuevos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para analistas, CSM y responsables comerciales, dominar «Tratamiento de contratos nuevos» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una correlación temporal no demuestra efecto causal de una intervención sin contraste y controles. En el capítulo «Cohortes y retención recurrente», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una cohorte SaaS inicia con 100.000 MXN de MRR, pierde 5.000 por churn y 2.000 por contracción, y añade 8.000 por expansión; los nuevos clientes aportan 30.000 MXN fuera de la cohorte. La presión es: Un reporte incluye los 30.000 nuevos y anuncia NRR de 131 %. El alumno debe transformar «Tratamiento de contratos nuevos» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «tasa calculada y trazabilidad del denominador».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"MRR_inicio\":162000,\"churn\":9500,\"contraccion\":6300,\"expansion\":11800,\"MRR_clientes_nuevos\":26600}. Calcula «% de NRR» con 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio. Valor para revisión: 97.53. undefined Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Tratamiento de contratos nuevos»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara hoja de cálculo con fórmulas y tres escenarios para el aspecto «tratamiento de contratos nuevos». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: agregar nuevas ventas al NRR de la cohorte inicial. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+            "prerequisites": [
+              "Unidad 1: Tratamiento de contratos nuevos",
+              "Objetivo: Aplicar tratamiento de contratos nuevos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: tasa calculada y trazabilidad del denominador"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "MRR_inicio": 162000,
+              "churn": 9500,
+              "contraccion": 6300,
+              "expansion": 11800,
+              "MRR_clientes_nuevos": 26600
+            },
+            "formula": "100 × (MRR inicio − churn − contracción + expansión) / MRR inicio",
+            "expected": 97.53,
+            "unit": "% de NRR",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "metrics_lab-p1-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Laboratorio de métricas B2B. Una cohorte SaaS inicia con 100.000 MXN de MRR, pierde 5.000 por churn y 2.000 por contracción, y añade 8.000 por expansión; los nuevos clientes aportan 30.000 MXN fuera de la cohorte. Conflicto: Un reporte incluye los 30.000 nuevos y anuncia NRR de 131 %. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Tratamiento de contratos nuevos». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p1-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"MRR_inicio\":162000,\"churn\":9500,\"contraccion\":6300,\"expansion\":11800,\"MRR_clientes_nuevos\":26600}, calcula % de NRR mediante 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: undefined",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p1-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Laboratorio de métricas B2B. Una cohorte SaaS inicia con 100.000 MXN de MRR, pierde 5.000 por churn y 2.000 por contracción, y añade 8.000 por expansión; los nuevos clientes aportan 30.000 MXN fuera de la cohorte. Conflicto: Un reporte incluye los 30.000 nuevos y anuncia NRR de 131 %. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «tasa calculada y trazabilidad del denominador». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p1-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara hoja de cálculo con fórmulas y tres escenarios para el aspecto «Tratamiento de contratos nuevos». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Tratamiento de contratos nuevos» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p1-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Cohortes y retención recurrente», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 97.53,
+            "unit": "% de NRR",
+            "commonFailure": "agregar nuevas ventas al NRR de la cohorte inicial",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «tasa calculada y trazabilidad del denominador».",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 1 y 2.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "metrics_lab-p2",
+      "number": 2,
+      "title": "CSAT, respuesta y sesgo de muestra",
+      "difficulty": "operativa",
+      "caseFacts": "Soporte resuelve 1.600 tickets; 40 responden encuesta, 34 satisfechos. El 85 % de CSAT describe a quienes contestaron, pero seis encuestas pertenecen al mismo cliente y 120 tickets críticos no tenían invitación.",
+      "caseConflict": "La empresa quiere presentar 85 % como satisfacción de todos los clientes.",
+      "metric": "cobertura y CSAT verificable",
+      "units": [
+        {
+          "id": "metrics_lab-p2-u1",
+          "title": "CSAT y tamaño muestral",
+          "objective": "Aplicar csat y tamaño muestral al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para analistas, CSM y responsables comerciales, dominar «CSAT y tamaño muestral» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Un indicador necesita población, fecha inicial, periodo y criterio de exclusión documentados. En el capítulo «CSAT, respuesta y sesgo de muestra», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Soporte resuelve 1.600 tickets; 40 responden encuesta, 34 satisfechos. El 85 % de CSAT describe a quienes contestaron, pero seis encuestas pertenecen al mismo cliente y 120 tickets críticos no tenían invitación. La presión es: La empresa quiere presentar 85 % como satisfacción de todos los clientes. El alumno debe transformar «CSAT y tamaño muestral» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"MRR_inicio\":174000,\"churn\":10000,\"contraccion\":6600,\"expansion\":12600,\"MRR_clientes_nuevos\":28200}. Calcula «% de NRR» con 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio. Valor para revisión: 97.7. undefined Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «CSAT y tamaño muestral»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara reporte segmentado con limitaciones para el aspecto «csat y tamaño muestral». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: agregar nuevas ventas al NRR de la cohorte inicial. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+            "prerequisites": [
+              "Unidad 2: CSAT y tamaño muestral",
+              "Objetivo: Aplicar csat y tamaño muestral al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: cobertura y CSAT verificable"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "MRR_inicio": 174000,
+              "churn": 10000,
+              "contraccion": 6600,
+              "expansion": 12600,
+              "MRR_clientes_nuevos": 28200
+            },
+            "formula": "100 × (MRR inicio − churn − contracción + expansión) / MRR inicio",
+            "expected": 97.7,
+            "unit": "% de NRR",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "metrics_lab-p2-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Laboratorio de métricas B2B. Soporte resuelve 1.600 tickets; 40 responden encuesta, 34 satisfechos. El 85 % de CSAT describe a quienes contestaron, pero seis encuestas pertenecen al mismo cliente y 120 tickets críticos no tenían invitación. Conflicto: La empresa quiere presentar 85 % como satisfacción de todos los clientes. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «CSAT y tamaño muestral». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p2-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"MRR_inicio\":174000,\"churn\":10000,\"contraccion\":6600,\"expansion\":12600,\"MRR_clientes_nuevos\":28200}, calcula % de NRR mediante 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: undefined",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p2-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Laboratorio de métricas B2B. Soporte resuelve 1.600 tickets; 40 responden encuesta, 34 satisfechos. El 85 % de CSAT describe a quienes contestaron, pero seis encuestas pertenecen al mismo cliente y 120 tickets críticos no tenían invitación. Conflicto: La empresa quiere presentar 85 % como satisfacción de todos los clientes. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p2-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara reporte segmentado con limitaciones para el aspecto «CSAT y tamaño muestral». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «CSAT y tamaño muestral» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p2-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «CSAT, respuesta y sesgo de muestra», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 97.7,
+            "unit": "% de NRR",
+            "commonFailure": "agregar nuevas ventas al NRR de la cohorte inicial",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "metrics_lab-p2-u2",
+          "title": "Segmentación de respuestas",
+          "objective": "Aplicar segmentación de respuestas al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para analistas, CSM y responsables comerciales, dominar «Segmentación de respuestas» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La media de una muestra no representa necesariamente la población; sesgos de no respuesta pueden dominar una métrica. En el capítulo «CSAT, respuesta y sesgo de muestra», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Soporte resuelve 1.600 tickets; 40 responden encuesta, 34 satisfechos. El 85 % de CSAT describe a quienes contestaron, pero seis encuestas pertenecen al mismo cliente y 120 tickets críticos no tenían invitación. La presión es: La empresa quiere presentar 85 % como satisfacción de todos los clientes. El alumno debe transformar «Segmentación de respuestas» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"MRR_inicio\":174000,\"churn\":10000,\"contraccion\":6600,\"expansion\":12600,\"MRR_clientes_nuevos\":28200}. Calcula «% de NRR» con 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio. Valor para revisión: 97.7. undefined Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Segmentación de respuestas»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara reporte segmentado con limitaciones para el aspecto «segmentación de respuestas». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: agregar nuevas ventas al NRR de la cohorte inicial. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+            "prerequisites": [
+              "Unidad 2: Segmentación de respuestas",
+              "Objetivo: Aplicar segmentación de respuestas al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: cobertura y CSAT verificable"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "MRR_inicio": 174000,
+              "churn": 10000,
+              "contraccion": 6600,
+              "expansion": 12600,
+              "MRR_clientes_nuevos": 28200
+            },
+            "formula": "100 × (MRR inicio − churn − contracción + expansión) / MRR inicio",
+            "expected": 97.7,
+            "unit": "% de NRR",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "metrics_lab-p2-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Laboratorio de métricas B2B. Soporte resuelve 1.600 tickets; 40 responden encuesta, 34 satisfechos. El 85 % de CSAT describe a quienes contestaron, pero seis encuestas pertenecen al mismo cliente y 120 tickets críticos no tenían invitación. Conflicto: La empresa quiere presentar 85 % como satisfacción de todos los clientes. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Segmentación de respuestas». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p2-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"MRR_inicio\":174000,\"churn\":10000,\"contraccion\":6600,\"expansion\":12600,\"MRR_clientes_nuevos\":28200}, calcula % de NRR mediante 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: undefined",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p2-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Laboratorio de métricas B2B. Soporte resuelve 1.600 tickets; 40 responden encuesta, 34 satisfechos. El 85 % de CSAT describe a quienes contestaron, pero seis encuestas pertenecen al mismo cliente y 120 tickets críticos no tenían invitación. Conflicto: La empresa quiere presentar 85 % como satisfacción de todos los clientes. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p2-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara reporte segmentado con limitaciones para el aspecto «Segmentación de respuestas». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Segmentación de respuestas» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p2-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «CSAT, respuesta y sesgo de muestra», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 97.7,
+            "unit": "% de NRR",
+            "commonFailure": "agregar nuevas ventas al NRR de la cohorte inicial",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "metrics_lab-p2-u3",
+          "title": "No respuesta y sesgo de selección",
+          "objective": "Aplicar no respuesta y sesgo de selección al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para analistas, CSM y responsables comerciales, dominar «No respuesta y sesgo de selección» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una correlación temporal no demuestra efecto causal de una intervención sin contraste y controles. En el capítulo «CSAT, respuesta y sesgo de muestra», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Soporte resuelve 1.600 tickets; 40 responden encuesta, 34 satisfechos. El 85 % de CSAT describe a quienes contestaron, pero seis encuestas pertenecen al mismo cliente y 120 tickets críticos no tenían invitación. La presión es: La empresa quiere presentar 85 % como satisfacción de todos los clientes. El alumno debe transformar «No respuesta y sesgo de selección» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"MRR_inicio\":174000,\"churn\":10000,\"contraccion\":6600,\"expansion\":12600,\"MRR_clientes_nuevos\":28200}. Calcula «% de NRR» con 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio. Valor para revisión: 97.7. undefined Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «No respuesta y sesgo de selección»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara reporte segmentado con limitaciones para el aspecto «no respuesta y sesgo de selección». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: agregar nuevas ventas al NRR de la cohorte inicial. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+            "prerequisites": [
+              "Unidad 2: No respuesta y sesgo de selección",
+              "Objetivo: Aplicar no respuesta y sesgo de selección al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: cobertura y CSAT verificable"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "MRR_inicio": 174000,
+              "churn": 10000,
+              "contraccion": 6600,
+              "expansion": 12600,
+              "MRR_clientes_nuevos": 28200
+            },
+            "formula": "100 × (MRR inicio − churn − contracción + expansión) / MRR inicio",
+            "expected": 97.7,
+            "unit": "% de NRR",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "metrics_lab-p2-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Laboratorio de métricas B2B. Soporte resuelve 1.600 tickets; 40 responden encuesta, 34 satisfechos. El 85 % de CSAT describe a quienes contestaron, pero seis encuestas pertenecen al mismo cliente y 120 tickets críticos no tenían invitación. Conflicto: La empresa quiere presentar 85 % como satisfacción de todos los clientes. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «No respuesta y sesgo de selección». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p2-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"MRR_inicio\":174000,\"churn\":10000,\"contraccion\":6600,\"expansion\":12600,\"MRR_clientes_nuevos\":28200}, calcula % de NRR mediante 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: undefined",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p2-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Laboratorio de métricas B2B. Soporte resuelve 1.600 tickets; 40 responden encuesta, 34 satisfechos. El 85 % de CSAT describe a quienes contestaron, pero seis encuestas pertenecen al mismo cliente y 120 tickets críticos no tenían invitación. Conflicto: La empresa quiere presentar 85 % como satisfacción de todos los clientes. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p2-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara reporte segmentado con limitaciones para el aspecto «No respuesta y sesgo de selección». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «No respuesta y sesgo de selección» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p2-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «CSAT, respuesta y sesgo de muestra», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 97.7,
+            "unit": "% de NRR",
+            "commonFailure": "agregar nuevas ventas al NRR de la cohorte inicial",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 2 y 3.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "metrics_lab-p3",
+      "number": 3,
+      "title": "Health score y señales adelantadas",
+      "difficulty": "intermedia",
+      "caseFacts": "Una cuenta tiene 95/100 puntos de uso, pero su sponsor cambió y lleva 30 días sin plan de renovación. Otra marca 55/100 por vacaciones; ninguna ha manifestado intención de baja.",
+      "caseConflict": "Marketing quiere automatizar renovaciones según un solo score.",
+      "metric": "valor predictivo, false positives y decisión humana",
+      "units": [
+        {
+          "id": "metrics_lab-p3-u1",
+          "title": "Escalas y pesos",
+          "objective": "Aplicar escalas y pesos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para analistas, CSM y responsables comerciales, dominar «Escalas y pesos» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Un indicador necesita población, fecha inicial, periodo y criterio de exclusión documentados. En el capítulo «Health score y señales adelantadas», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una cuenta tiene 95/100 puntos de uso, pero su sponsor cambió y lleva 30 días sin plan de renovación. Otra marca 55/100 por vacaciones; ninguna ha manifestado intención de baja. La presión es: Marketing quiere automatizar renovaciones según un solo score. El alumno debe transformar «Escalas y pesos» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"MRR_inicio\":186000,\"churn\":10500,\"contraccion\":6900,\"expansion\":13400,\"MRR_clientes_nuevos\":29800}. Calcula «% de NRR» con 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio. Valor para revisión: 97.85. undefined Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Escalas y pesos»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara diccionario de señales con prueba de sensibilidad para el aspecto «escalas y pesos». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: agregar nuevas ventas al NRR de la cohorte inicial. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+            "prerequisites": [
+              "Unidad 3: Escalas y pesos",
+              "Objetivo: Aplicar escalas y pesos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: valor predictivo, false positives y decisión humana"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "MRR_inicio": 186000,
+              "churn": 10500,
+              "contraccion": 6900,
+              "expansion": 13400,
+              "MRR_clientes_nuevos": 29800
+            },
+            "formula": "100 × (MRR inicio − churn − contracción + expansión) / MRR inicio",
+            "expected": 97.85,
+            "unit": "% de NRR",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "metrics_lab-p3-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Laboratorio de métricas B2B. Una cuenta tiene 95/100 puntos de uso, pero su sponsor cambió y lleva 30 días sin plan de renovación. Otra marca 55/100 por vacaciones; ninguna ha manifestado intención de baja. Conflicto: Marketing quiere automatizar renovaciones según un solo score. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Escalas y pesos». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p3-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"MRR_inicio\":186000,\"churn\":10500,\"contraccion\":6900,\"expansion\":13400,\"MRR_clientes_nuevos\":29800}, calcula % de NRR mediante 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: undefined",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p3-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Laboratorio de métricas B2B. Una cuenta tiene 95/100 puntos de uso, pero su sponsor cambió y lleva 30 días sin plan de renovación. Otra marca 55/100 por vacaciones; ninguna ha manifestado intención de baja. Conflicto: Marketing quiere automatizar renovaciones según un solo score. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p3-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara diccionario de señales con prueba de sensibilidad para el aspecto «Escalas y pesos». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Escalas y pesos» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p3-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Health score y señales adelantadas», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 97.85,
+            "unit": "% de NRR",
+            "commonFailure": "agregar nuevas ventas al NRR de la cohorte inicial",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "metrics_lab-p3-u2",
+          "title": "Correlación vs causalidad",
+          "objective": "Aplicar correlación vs causalidad al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para analistas, CSM y responsables comerciales, dominar «Correlación vs causalidad» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La media de una muestra no representa necesariamente la población; sesgos de no respuesta pueden dominar una métrica. En el capítulo «Health score y señales adelantadas», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una cuenta tiene 95/100 puntos de uso, pero su sponsor cambió y lleva 30 días sin plan de renovación. Otra marca 55/100 por vacaciones; ninguna ha manifestado intención de baja. La presión es: Marketing quiere automatizar renovaciones según un solo score. El alumno debe transformar «Correlación vs causalidad» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"MRR_inicio\":186000,\"churn\":10500,\"contraccion\":6900,\"expansion\":13400,\"MRR_clientes_nuevos\":29800}. Calcula «% de NRR» con 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio. Valor para revisión: 97.85. undefined Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Correlación vs causalidad»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara diccionario de señales con prueba de sensibilidad para el aspecto «correlación vs causalidad». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: agregar nuevas ventas al NRR de la cohorte inicial. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+            "prerequisites": [
+              "Unidad 3: Correlación vs causalidad",
+              "Objetivo: Aplicar correlación vs causalidad al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: valor predictivo, false positives y decisión humana"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "MRR_inicio": 186000,
+              "churn": 10500,
+              "contraccion": 6900,
+              "expansion": 13400,
+              "MRR_clientes_nuevos": 29800
+            },
+            "formula": "100 × (MRR inicio − churn − contracción + expansión) / MRR inicio",
+            "expected": 97.85,
+            "unit": "% de NRR",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "metrics_lab-p3-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Laboratorio de métricas B2B. Una cuenta tiene 95/100 puntos de uso, pero su sponsor cambió y lleva 30 días sin plan de renovación. Otra marca 55/100 por vacaciones; ninguna ha manifestado intención de baja. Conflicto: Marketing quiere automatizar renovaciones según un solo score. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Correlación vs causalidad». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p3-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"MRR_inicio\":186000,\"churn\":10500,\"contraccion\":6900,\"expansion\":13400,\"MRR_clientes_nuevos\":29800}, calcula % de NRR mediante 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: undefined",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p3-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Laboratorio de métricas B2B. Una cuenta tiene 95/100 puntos de uso, pero su sponsor cambió y lleva 30 días sin plan de renovación. Otra marca 55/100 por vacaciones; ninguna ha manifestado intención de baja. Conflicto: Marketing quiere automatizar renovaciones según un solo score. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p3-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara diccionario de señales con prueba de sensibilidad para el aspecto «Correlación vs causalidad». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Correlación vs causalidad» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p3-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Health score y señales adelantadas», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 97.85,
+            "unit": "% de NRR",
+            "commonFailure": "agregar nuevas ventas al NRR de la cohorte inicial",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "metrics_lab-p3-u3",
+          "title": "Validación por cohorte",
+          "objective": "Aplicar validación por cohorte al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para analistas, CSM y responsables comerciales, dominar «Validación por cohorte» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una correlación temporal no demuestra efecto causal de una intervención sin contraste y controles. En el capítulo «Health score y señales adelantadas», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una cuenta tiene 95/100 puntos de uso, pero su sponsor cambió y lleva 30 días sin plan de renovación. Otra marca 55/100 por vacaciones; ninguna ha manifestado intención de baja. La presión es: Marketing quiere automatizar renovaciones según un solo score. El alumno debe transformar «Validación por cohorte» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"MRR_inicio\":186000,\"churn\":10500,\"contraccion\":6900,\"expansion\":13400,\"MRR_clientes_nuevos\":29800}. Calcula «% de NRR» con 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio. Valor para revisión: 97.85. undefined Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Validación por cohorte»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara diccionario de señales con prueba de sensibilidad para el aspecto «validación por cohorte». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: agregar nuevas ventas al NRR de la cohorte inicial. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+            "prerequisites": [
+              "Unidad 3: Validación por cohorte",
+              "Objetivo: Aplicar validación por cohorte al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: valor predictivo, false positives y decisión humana"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "MRR_inicio": 186000,
+              "churn": 10500,
+              "contraccion": 6900,
+              "expansion": 13400,
+              "MRR_clientes_nuevos": 29800
+            },
+            "formula": "100 × (MRR inicio − churn − contracción + expansión) / MRR inicio",
+            "expected": 97.85,
+            "unit": "% de NRR",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "metrics_lab-p3-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Laboratorio de métricas B2B. Una cuenta tiene 95/100 puntos de uso, pero su sponsor cambió y lleva 30 días sin plan de renovación. Otra marca 55/100 por vacaciones; ninguna ha manifestado intención de baja. Conflicto: Marketing quiere automatizar renovaciones según un solo score. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Validación por cohorte». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p3-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"MRR_inicio\":186000,\"churn\":10500,\"contraccion\":6900,\"expansion\":13400,\"MRR_clientes_nuevos\":29800}, calcula % de NRR mediante 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: undefined",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p3-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Laboratorio de métricas B2B. Una cuenta tiene 95/100 puntos de uso, pero su sponsor cambió y lleva 30 días sin plan de renovación. Otra marca 55/100 por vacaciones; ninguna ha manifestado intención de baja. Conflicto: Marketing quiere automatizar renovaciones según un solo score. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p3-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara diccionario de señales con prueba de sensibilidad para el aspecto «Validación por cohorte». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Validación por cohorte» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p3-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Health score y señales adelantadas», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 97.85,
+            "unit": "% de NRR",
+            "commonFailure": "agregar nuevas ventas al NRR de la cohorte inicial",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 3 y 4.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "metrics_lab-p4",
+      "number": 4,
+      "title": "Forecast y escenarios con restricciones",
+      "difficulty": "especialista",
+      "caseFacts": "Tres renovaciones por 40.000, 80.000 y 180.000 MXN tienen riesgos distintos. Sólo una tiene orden de compra firmada; la cartera tiene ocho horas de AM libre esta semana.",
+      "caseConflict": "Finanzas exige forecast cerrado al 100 % sin contratos de respaldo.",
+      "metric": "error de forecast y explicación del escenario",
+      "units": [
+        {
+          "id": "metrics_lab-p4-u1",
+          "title": "Intervalos y estimaciones",
+          "objective": "Aplicar intervalos y estimaciones al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para analistas, CSM y responsables comerciales, dominar «Intervalos y estimaciones» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Un indicador necesita población, fecha inicial, periodo y criterio de exclusión documentados. En el capítulo «Forecast y escenarios con restricciones», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Tres renovaciones por 40.000, 80.000 y 180.000 MXN tienen riesgos distintos. Sólo una tiene orden de compra firmada; la cartera tiene ocho horas de AM libre esta semana. La presión es: Finanzas exige forecast cerrado al 100 % sin contratos de respaldo. El alumno debe transformar «Intervalos y estimaciones» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"MRR_inicio\":198000,\"churn\":11000,\"contraccion\":7200,\"expansion\":14200,\"MRR_clientes_nuevos\":31400}. Calcula «% de NRR» con 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio. Valor para revisión: 97.98. undefined Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Intervalos y estimaciones»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara modelo reproducible con matriz de riesgos para el aspecto «intervalos y estimaciones». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: agregar nuevas ventas al NRR de la cohorte inicial. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+            "prerequisites": [
+              "Unidad 4: Intervalos y estimaciones",
+              "Objetivo: Aplicar intervalos y estimaciones al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: error de forecast y explicación del escenario"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "MRR_inicio": 198000,
+              "churn": 11000,
+              "contraccion": 7200,
+              "expansion": 14200,
+              "MRR_clientes_nuevos": 31400
+            },
+            "formula": "100 × (MRR inicio − churn − contracción + expansión) / MRR inicio",
+            "expected": 97.98,
+            "unit": "% de NRR",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "metrics_lab-p4-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Laboratorio de métricas B2B. Tres renovaciones por 40.000, 80.000 y 180.000 MXN tienen riesgos distintos. Sólo una tiene orden de compra firmada; la cartera tiene ocho horas de AM libre esta semana. Conflicto: Finanzas exige forecast cerrado al 100 % sin contratos de respaldo. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Intervalos y estimaciones». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p4-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"MRR_inicio\":198000,\"churn\":11000,\"contraccion\":7200,\"expansion\":14200,\"MRR_clientes_nuevos\":31400}, calcula % de NRR mediante 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: undefined",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p4-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Laboratorio de métricas B2B. Tres renovaciones por 40.000, 80.000 y 180.000 MXN tienen riesgos distintos. Sólo una tiene orden de compra firmada; la cartera tiene ocho horas de AM libre esta semana. Conflicto: Finanzas exige forecast cerrado al 100 % sin contratos de respaldo. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p4-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara modelo reproducible con matriz de riesgos para el aspecto «Intervalos y estimaciones». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Intervalos y estimaciones» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p4-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Forecast y escenarios con restricciones», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 97.98,
+            "unit": "% de NRR",
+            "commonFailure": "agregar nuevas ventas al NRR de la cohorte inicial",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "metrics_lab-p4-u2",
+          "title": "Escenarios pesimista-base-optimista",
+          "objective": "Aplicar escenarios pesimista-base-optimista al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para analistas, CSM y responsables comerciales, dominar «Escenarios pesimista-base-optimista» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La media de una muestra no representa necesariamente la población; sesgos de no respuesta pueden dominar una métrica. En el capítulo «Forecast y escenarios con restricciones», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Tres renovaciones por 40.000, 80.000 y 180.000 MXN tienen riesgos distintos. Sólo una tiene orden de compra firmada; la cartera tiene ocho horas de AM libre esta semana. La presión es: Finanzas exige forecast cerrado al 100 % sin contratos de respaldo. El alumno debe transformar «Escenarios pesimista-base-optimista» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"MRR_inicio\":198000,\"churn\":11000,\"contraccion\":7200,\"expansion\":14200,\"MRR_clientes_nuevos\":31400}. Calcula «% de NRR» con 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio. Valor para revisión: 97.98. undefined Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Escenarios pesimista-base-optimista»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara modelo reproducible con matriz de riesgos para el aspecto «escenarios pesimista-base-optimista». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: agregar nuevas ventas al NRR de la cohorte inicial. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+            "prerequisites": [
+              "Unidad 4: Escenarios pesimista-base-optimista",
+              "Objetivo: Aplicar escenarios pesimista-base-optimista al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: error de forecast y explicación del escenario"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "MRR_inicio": 198000,
+              "churn": 11000,
+              "contraccion": 7200,
+              "expansion": 14200,
+              "MRR_clientes_nuevos": 31400
+            },
+            "formula": "100 × (MRR inicio − churn − contracción + expansión) / MRR inicio",
+            "expected": 97.98,
+            "unit": "% de NRR",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "metrics_lab-p4-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Laboratorio de métricas B2B. Tres renovaciones por 40.000, 80.000 y 180.000 MXN tienen riesgos distintos. Sólo una tiene orden de compra firmada; la cartera tiene ocho horas de AM libre esta semana. Conflicto: Finanzas exige forecast cerrado al 100 % sin contratos de respaldo. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Escenarios pesimista-base-optimista». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p4-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"MRR_inicio\":198000,\"churn\":11000,\"contraccion\":7200,\"expansion\":14200,\"MRR_clientes_nuevos\":31400}, calcula % de NRR mediante 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: undefined",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p4-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Laboratorio de métricas B2B. Tres renovaciones por 40.000, 80.000 y 180.000 MXN tienen riesgos distintos. Sólo una tiene orden de compra firmada; la cartera tiene ocho horas de AM libre esta semana. Conflicto: Finanzas exige forecast cerrado al 100 % sin contratos de respaldo. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p4-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara modelo reproducible con matriz de riesgos para el aspecto «Escenarios pesimista-base-optimista». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Escenarios pesimista-base-optimista» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p4-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Forecast y escenarios con restricciones», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 97.98,
+            "unit": "% de NRR",
+            "commonFailure": "agregar nuevas ventas al NRR de la cohorte inicial",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "metrics_lab-p4-u3",
+          "title": "Capacidad y coste de intervención",
+          "objective": "Aplicar capacidad y coste de intervención al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para analistas, CSM y responsables comerciales, dominar «Capacidad y coste de intervención» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una correlación temporal no demuestra efecto causal de una intervención sin contraste y controles. En el capítulo «Forecast y escenarios con restricciones», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Tres renovaciones por 40.000, 80.000 y 180.000 MXN tienen riesgos distintos. Sólo una tiene orden de compra firmada; la cartera tiene ocho horas de AM libre esta semana. La presión es: Finanzas exige forecast cerrado al 100 % sin contratos de respaldo. El alumno debe transformar «Capacidad y coste de intervención» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"MRR_inicio\":198000,\"churn\":11000,\"contraccion\":7200,\"expansion\":14200,\"MRR_clientes_nuevos\":31400}. Calcula «% de NRR» con 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio. Valor para revisión: 97.98. undefined Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Capacidad y coste de intervención»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara modelo reproducible con matriz de riesgos para el aspecto «capacidad y coste de intervención». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: agregar nuevas ventas al NRR de la cohorte inicial. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+            "prerequisites": [
+              "Unidad 4: Capacidad y coste de intervención",
+              "Objetivo: Aplicar capacidad y coste de intervención al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: error de forecast y explicación del escenario"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "MRR_inicio": 198000,
+              "churn": 11000,
+              "contraccion": 7200,
+              "expansion": 14200,
+              "MRR_clientes_nuevos": 31400
+            },
+            "formula": "100 × (MRR inicio − churn − contracción + expansión) / MRR inicio",
+            "expected": 97.98,
+            "unit": "% de NRR",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "metrics_lab-p4-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Laboratorio de métricas B2B. Tres renovaciones por 40.000, 80.000 y 180.000 MXN tienen riesgos distintos. Sólo una tiene orden de compra firmada; la cartera tiene ocho horas de AM libre esta semana. Conflicto: Finanzas exige forecast cerrado al 100 % sin contratos de respaldo. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Capacidad y coste de intervención». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p4-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"MRR_inicio\":198000,\"churn\":11000,\"contraccion\":7200,\"expansion\":14200,\"MRR_clientes_nuevos\":31400}, calcula % de NRR mediante 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: undefined",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p4-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Laboratorio de métricas B2B. Tres renovaciones por 40.000, 80.000 y 180.000 MXN tienen riesgos distintos. Sólo una tiene orden de compra firmada; la cartera tiene ocho horas de AM libre esta semana. Conflicto: Finanzas exige forecast cerrado al 100 % sin contratos de respaldo. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p4-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara modelo reproducible con matriz de riesgos para el aspecto «Capacidad y coste de intervención». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Capacidad y coste de intervención» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p4-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Forecast y escenarios con restricciones», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 97.98,
+            "unit": "% de NRR",
+            "commonFailure": "agregar nuevas ventas al NRR de la cohorte inicial",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 4 y 5.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "metrics_lab-p5",
+      "number": 5,
+      "title": "Capstone: decisiones con datos incompletos",
+      "difficulty": "directiva y proyecto",
+      "caseFacts": "Una empresa registra 150.000 de MRR inicial, 9.000 de churn, 6.000 de contracción, 11.000 de expansión y 25.000 de altas nuevas. Sólo 3 % de tickets responden encuesta y el forecast incluye contratos sin firma.",
+      "caseConflict": "CEO quiere comparar NRR y CSAT con otros segmentos sin igualar denominadores.",
+      "metric": "NRR real, sesgo y recomendaciones sostenibles",
+      "units": [
+        {
+          "id": "metrics_lab-p5-u1",
+          "title": "Consolidación de métricas",
+          "objective": "Aplicar consolidación de métricas al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para analistas, CSM y responsables comerciales, dominar «Consolidación de métricas» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Un indicador necesita población, fecha inicial, periodo y criterio de exclusión documentados. En el capítulo «Capstone: decisiones con datos incompletos», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una empresa registra 150.000 de MRR inicial, 9.000 de churn, 6.000 de contracción, 11.000 de expansión y 25.000 de altas nuevas. Sólo 3 % de tickets responden encuesta y el forecast incluye contratos sin firma. La presión es: CEO quiere comparar NRR y CSAT con otros segmentos sin igualar denominadores. El alumno debe transformar «Consolidación de métricas» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"MRR_inicio\":210000,\"churn\":11500,\"contraccion\":7500,\"expansion\":15000,\"MRR_clientes_nuevos\":33000}. Calcula «% de NRR» con 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio. Valor para revisión: 98.1. undefined Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Consolidación de métricas»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara dashboard y memorando ejecutivo auditado para el aspecto «consolidación de métricas». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: agregar nuevas ventas al NRR de la cohorte inicial. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+            "prerequisites": [
+              "Unidad 5: Consolidación de métricas",
+              "Objetivo: Aplicar consolidación de métricas al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: NRR real, sesgo y recomendaciones sostenibles"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "MRR_inicio": 210000,
+              "churn": 11500,
+              "contraccion": 7500,
+              "expansion": 15000,
+              "MRR_clientes_nuevos": 33000
+            },
+            "formula": "100 × (MRR inicio − churn − contracción + expansión) / MRR inicio",
+            "expected": 98.1,
+            "unit": "% de NRR",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "metrics_lab-p5-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Laboratorio de métricas B2B. Una empresa registra 150.000 de MRR inicial, 9.000 de churn, 6.000 de contracción, 11.000 de expansión y 25.000 de altas nuevas. Sólo 3 % de tickets responden encuesta y el forecast incluye contratos sin firma. Conflicto: CEO quiere comparar NRR y CSAT con otros segmentos sin igualar denominadores. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Consolidación de métricas». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p5-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"MRR_inicio\":210000,\"churn\":11500,\"contraccion\":7500,\"expansion\":15000,\"MRR_clientes_nuevos\":33000}, calcula % de NRR mediante 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: undefined",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p5-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Laboratorio de métricas B2B. Una empresa registra 150.000 de MRR inicial, 9.000 de churn, 6.000 de contracción, 11.000 de expansión y 25.000 de altas nuevas. Sólo 3 % de tickets responden encuesta y el forecast incluye contratos sin firma. Conflicto: CEO quiere comparar NRR y CSAT con otros segmentos sin igualar denominadores. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p5-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara dashboard y memorando ejecutivo auditado para el aspecto «Consolidación de métricas». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Consolidación de métricas» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p5-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone: decisiones con datos incompletos», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 98.1,
+            "unit": "% de NRR",
+            "commonFailure": "agregar nuevas ventas al NRR de la cohorte inicial",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "metrics_lab-p5-u2",
+          "title": "Análisis de sensibilidad",
+          "objective": "Aplicar análisis de sensibilidad al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para analistas, CSM y responsables comerciales, dominar «Análisis de sensibilidad» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La media de una muestra no representa necesariamente la población; sesgos de no respuesta pueden dominar una métrica. En el capítulo «Capstone: decisiones con datos incompletos», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una empresa registra 150.000 de MRR inicial, 9.000 de churn, 6.000 de contracción, 11.000 de expansión y 25.000 de altas nuevas. Sólo 3 % de tickets responden encuesta y el forecast incluye contratos sin firma. La presión es: CEO quiere comparar NRR y CSAT con otros segmentos sin igualar denominadores. El alumno debe transformar «Análisis de sensibilidad» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"MRR_inicio\":210000,\"churn\":11500,\"contraccion\":7500,\"expansion\":15000,\"MRR_clientes_nuevos\":33000}. Calcula «% de NRR» con 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio. Valor para revisión: 98.1. undefined Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Análisis de sensibilidad»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara dashboard y memorando ejecutivo auditado para el aspecto «análisis de sensibilidad». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: agregar nuevas ventas al NRR de la cohorte inicial. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+            "prerequisites": [
+              "Unidad 5: Análisis de sensibilidad",
+              "Objetivo: Aplicar análisis de sensibilidad al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: NRR real, sesgo y recomendaciones sostenibles"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "MRR_inicio": 210000,
+              "churn": 11500,
+              "contraccion": 7500,
+              "expansion": 15000,
+              "MRR_clientes_nuevos": 33000
+            },
+            "formula": "100 × (MRR inicio − churn − contracción + expansión) / MRR inicio",
+            "expected": 98.1,
+            "unit": "% de NRR",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "metrics_lab-p5-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Laboratorio de métricas B2B. Una empresa registra 150.000 de MRR inicial, 9.000 de churn, 6.000 de contracción, 11.000 de expansión y 25.000 de altas nuevas. Sólo 3 % de tickets responden encuesta y el forecast incluye contratos sin firma. Conflicto: CEO quiere comparar NRR y CSAT con otros segmentos sin igualar denominadores. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Análisis de sensibilidad». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p5-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"MRR_inicio\":210000,\"churn\":11500,\"contraccion\":7500,\"expansion\":15000,\"MRR_clientes_nuevos\":33000}, calcula % de NRR mediante 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: undefined",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p5-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Laboratorio de métricas B2B. Una empresa registra 150.000 de MRR inicial, 9.000 de churn, 6.000 de contracción, 11.000 de expansión y 25.000 de altas nuevas. Sólo 3 % de tickets responden encuesta y el forecast incluye contratos sin firma. Conflicto: CEO quiere comparar NRR y CSAT con otros segmentos sin igualar denominadores. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p5-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara dashboard y memorando ejecutivo auditado para el aspecto «Análisis de sensibilidad». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Análisis de sensibilidad» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p5-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone: decisiones con datos incompletos», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 98.1,
+            "unit": "% de NRR",
+            "commonFailure": "agregar nuevas ventas al NRR de la cohorte inicial",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "metrics_lab-p5-u3",
+          "title": "Defensa ante la dirección",
+          "objective": "Aplicar defensa ante la dirección al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para analistas, CSM y responsables comerciales, dominar «Defensa ante la dirección» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una correlación temporal no demuestra efecto causal de una intervención sin contraste y controles. En el capítulo «Capstone: decisiones con datos incompletos», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una empresa registra 150.000 de MRR inicial, 9.000 de churn, 6.000 de contracción, 11.000 de expansión y 25.000 de altas nuevas. Sólo 3 % de tickets responden encuesta y el forecast incluye contratos sin firma. La presión es: CEO quiere comparar NRR y CSAT con otros segmentos sin igualar denominadores. El alumno debe transformar «Defensa ante la dirección» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"MRR_inicio\":210000,\"churn\":11500,\"contraccion\":7500,\"expansion\":15000,\"MRR_clientes_nuevos\":33000}. Calcula «% de NRR» con 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio. Valor para revisión: 98.1. undefined Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Defensa ante la dirección»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara dashboard y memorando ejecutivo auditado para el aspecto «defensa ante la dirección». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: agregar nuevas ventas al NRR de la cohorte inicial. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+            "prerequisites": [
+              "Unidad 5: Defensa ante la dirección",
+              "Objetivo: Aplicar defensa ante la dirección al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: NRR real, sesgo y recomendaciones sostenibles"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "MRR_inicio": 210000,
+              "churn": 11500,
+              "contraccion": 7500,
+              "expansion": 15000,
+              "MRR_clientes_nuevos": 33000
+            },
+            "formula": "100 × (MRR inicio − churn − contracción + expansión) / MRR inicio",
+            "expected": 98.1,
+            "unit": "% de NRR",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "metrics_lab-p5-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Laboratorio de métricas B2B. Una empresa registra 150.000 de MRR inicial, 9.000 de churn, 6.000 de contracción, 11.000 de expansión y 25.000 de altas nuevas. Sólo 3 % de tickets responden encuesta y el forecast incluye contratos sin firma. Conflicto: CEO quiere comparar NRR y CSAT con otros segmentos sin igualar denominadores. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Defensa ante la dirección». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p5-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"MRR_inicio\":210000,\"churn\":11500,\"contraccion\":7500,\"expansion\":15000,\"MRR_clientes_nuevos\":33000}, calcula % de NRR mediante 100 × (MRR inicio − churn − contracción + expansión) / MRR inicio; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: undefined",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p5-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Laboratorio de métricas B2B. Una empresa registra 150.000 de MRR inicial, 9.000 de churn, 6.000 de contracción, 11.000 de expansión y 25.000 de altas nuevas. Sólo 3 % de tickets responden encuesta y el forecast incluye contratos sin firma. Conflicto: CEO quiere comparar NRR y CSAT con otros segmentos sin igualar denominadores. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p5-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara dashboard y memorando ejecutivo auditado para el aspecto «Defensa ante la dirección». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Defensa ante la dirección» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "metrics_lab-p5-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone: decisiones con datos incompletos», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 98.1,
+            "unit": "% de NRR",
+            "commonFailure": "agregar nuevas ventas al NRR de la cohorte inicial",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca inventar cifras, manipular una cohorte a posteriori ni compartir datos personales reales.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 5 y 6.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": true
+      }
+    }
+  ],
+  "unitsCount": 15,
+  "practicesCount": 75,
+  "gradingPolicy": {
+    "minScore100": 80,
+    "eachDimensionAtLeast4Scale": 3,
+    "criticalErrorsAllowed": 0,
+    "manualApproval": true,
+    "submissionAloneNeverUnlocks": true
+  },
+  "publicationGate": {
+    "enabled": false,
+    "requiresBackendAssessment": true,
+    "requiresEditorialAndPrivacyReview": true
+  }
+}
