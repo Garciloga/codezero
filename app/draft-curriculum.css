@@ -1,0 +1,11 @@
+.academic-draft-inspector{padding-block:24px 60px;}
+.academic-draft-inspector>.card,.academic-draft-inspector>section>.card{margin-block:18px;}
+.academic-draft-levels{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:10px;margin-top:20px;}
+.academic-draft-levels>.btn{text-align:start;justify-content:flex-start;white-space:normal;line-height:1.35;}
+.academic-draft-units{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+.academic-draft-units .card{margin:0;}
+.academic-draft-case{border-inline-start:4px solid var(--vivo-primary);}
+.academic-draft-decision{border-top:1px solid var(--vivo-border);margin-top:20px;padding-top:14px;}
+.academic-draft-decision li{margin-top:8px;}
+@media(max-width:1100px){.academic-draft-units{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:700px){.academic-draft-units{grid-template-columns:1fr;}.academic-draft-levels{grid-template-columns:1fr;}}

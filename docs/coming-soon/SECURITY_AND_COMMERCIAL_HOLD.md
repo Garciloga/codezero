@@ -1,0 +1,7 @@
+# Bloqueos ajenos a contenido académico · no implementar con cargo ni sin consentimiento
+
+## Protección contra contraseñas filtradas
+Situación documentada en Notion: Supabase `Leaked Password Protection` necesita función de un plan superior en la cuenta actual. **No cambiar plan, no activar coste** y no declarar protección equivalente sin revisar la opción. Defender en lo posible con requisitos de contraseña, rate limiting, intentos auditables, restablecimiento seguro, 2FA, sesiones y revocación, todos verificados sobre stack real antes de publicar. No enviar contraseñas ni hashes identificables a terceros de forma ad hoc. Decisión: reevaluar con presupuesto autorizado; mantenerse como «bloqueado por plan/servicio» en roadmap.
+
+## Planes anuales y precio fundador
+El usuario **no ha autorizado** precios anuales nuevos ni activar checkout real. El modo anual ya tiene código desactivado por configuración de precios; no habilitarlo sin catálogo Stripe Test y aprobación comercial explícita. Precio fundador se descartó en conversación previa; mantenerlo como decisión histórica y no presentarlo como oferta futura activa. Pendiente: elección de precio anual, términos de renovación, impuestos por jurisdicción, política de cancelación y pruebas completas en Stripe Test; sin cambios en suscripciones reales. La misma rama de borrador agrupa documentación, pero no debe cambiar `lib/billing-interval.ts` ni claves en `main`.
