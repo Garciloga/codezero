@@ -51,3 +51,20 @@ Priorizar una experiencia móvil web adaptable; antes de elegir PWA o app nativa
 6. Solo con estas puertas verdes, hacer **un único merge y despliegue** tras verificar disponibilidad de Vercel; comprobar SHA y realizar smoke tests. Cambiar Notion de Borrador a Hecho únicamente después de éxito verificado.
 
 **NO activar** nuevas compras, protección de contraseñas con cambio de nivel, producto de evaluación automática de candidatos ni aplicaciones móviles sin decisiones y validaciones externas. No tocar Stripe, suscripciones ni datos productivos para preparar este lote.
+## Iteración autorizada: secuencia de decisiones y revisión persistente (sandbox)
+
+Se incorpora en el mismo PR de borrador una primera cadena funcional de decisiones para las 12 rutas. **Es un piloto ejecutable en sandbox**, no la integración final de matrícula y examen del catálogo publicado.
+
+- La migración *aún no aplicada a ninguna base externa* `supabase/sandbox/migrations/20261011110000_course_assignment_drafts.sql` añade registros separados de decisiones y revisiones, con `assignment_id`, compañía, alumno, nivel (1–15), unidad (1–6), fase (1–3), evidencia referenciada, alternativa elegida, razonamiento, fecha, versión y estado.
+- La función de entrega `submit_draft_course_decision` requiere una asignación de prueba activa del mismo alumno, un texto de razonamiento sustentado (220–6.000 caracteres), referencia de evidencia y secuencia estricta de fases previamente aprobadas. Las decisiones aprobadas no pueden sobrescribirse.
+- `review_draft_course_decision` requiere persona distinta del alumno, activa en la misma compañía, rol de propietario/administrador o jefatura directa, cinco puntuaciones de 0–4, feedback y verificación de errores críticos. La revisión queda registrada por revisión; el umbral sube de 80 a 84, 88 y 90/100 en los niveles avanzados.
+- `organization_course_decision_drafts` y `organization_course_decision_reviews_drafts` exponen lectura únicamente al alumno autorizado con membresía activa; las escrituras se ejecutan a través de RPC privadas, accesibles solo al servidor `service_role` y validadas de nuevo contra la organización. Ningún permiso `can_view` de equipo equivale a permiso de revisión.
+- Se añade `/learn/draft-progress` para entregar y consultar fases solo en sandbox, y un formulario de revisión al perfil del empleado autorizado. Ambos desaparecen en producción por el gate exacto de sandbox y `CODEZERO_DRAFT_COURSE_ASSIGNMENTS=1`.
+- Los POST `/api/learn/draft-decision` y `/api/teams/course-decision-review` validan origen, autenticación, límites de tamaño y solicitudes, y obtienen el actor real desde sesión. Los tests PostgreSQL descartables cubren secuencia, RBAC, cruces de compañía, revisiones, resubmisiones y RLS.
+
+### Restricciones de salida
+
+- La aprobación de **una fase** no constituye aprobación de unidad, nivel ni curso. Siguen siendo obligatorias las cinco prácticas por unidad, el capstone cuando aplique, la revisión pedagógica, entitlements y la integración con tablas de progreso/certificados productivas.
+- No se utilizan identidades reales de empleados para crear perfiles psicométricos ni para contratar, despedir o sancionar de forma automática. Las referencias aportadas por el alumno deben corroborarse antes de valorar una competencia.
+- Es necesaria una instancia Supabase sandbox realmente aislada antes de una prueba con sesiones reales y migración. El proyecto Supabase conectado sigue siendo únicamente producción, por lo que se prohíbe aplicar estos cambios ahí.
+- Tras aprobar CI, completar el banco académico de 1.080 unidades propuestas, traducción profesional, políticas de persistencia inmutable de evidencias, QA humano, accesibilidad y smoke tests del mismo SHA antes de considerar despliegue productivo.

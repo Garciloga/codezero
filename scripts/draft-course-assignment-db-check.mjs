@@ -88,5 +88,72 @@ try {
  await check("course draft has no effect on real learning assignment records",async()=>{
    assert.equal((await db.query("select count(*)::integer as n from public.learning_assignments")).rows[0].n,0);
  });
+
+ // Persistent, server-reviewed decision chain: still only sandbox-draft progress.
+ await check("draft decision RPCs cannot be called by authenticated clients",async()=>{
+   for(const sig of [
+     "public.submit_draft_course_decision(uuid,uuid,int,int,int,text,text,text)",
+     "public.review_draft_course_decision(uuid,uuid,int,int,int,int,int,boolean,text)"
+   ]){
+     const r=await db.query("select has_function_privilege('authenticated',$1,'EXECUTE') as allowed",[sig]);
+     assert.equal(r.rows[0].allowed,false,sig);
+   }
+   const table=await db.query("select has_table_privilege('authenticated','public.organization_course_decision_drafts','INSERT') as allowed");
+   assert.equal(table.rows[0].allowed,false);
+ });
+ const a=(await db.query("select id from public.organization_course_assignment_drafts where user_id=$1 and organization_id=$2 limit 1",[id(3),id(10)])).rows[0].id;
+ const learner4=(await db.query("select id from public.organization_course_assignment_drafts where user_id=$1 and organization_id=$2 limit 1",[id(4),id(10)])).rows[0].id;
+ const essay="He verificado que los datos disponibles no distinguen correlación de causalidad. Comparo las alternativas según el impacto, la autorización del responsable, los riesgos de privacidad y la evidencia faltante. Propondría una prueba acotada y reversible, con métricas y seguimiento documentados.";
+ const submit=(actor,assignment,level,unit,phase,reason=essay)=>withRole("service_role",id(actor),()=>db.query(
+   "select public.submit_draft_course_decision($1,$2,$3,$4,$5,$6,$7,$8) as decision",
+   [id(actor),assignment,level,unit,phase,"b",reason,"registro-caso-sintetico-"+level+"-"+unit+"-"+phase]));
+ const review=(actor,decision,scores=[4,4,3,3,3],critical=false)=>withRole("service_role",id(actor),()=>db.query(
+   "select public.review_draft_course_decision($1,$2,$3,$4,$5,$6,$7,$8,$9) as result",
+   [id(actor),decision,...scores,critical,"He cotejado la evidencia contra el caso sintético, el cálculo, las alternativas, las restricciones de autorización y la defensa de la decisión."]));
+ let first,second;
+ await check("learner submits only own assigned case and cannot skip a pending phase",async()=>{
+   await denied(()=>submit(3,learner4,1,1,1));
+   await denied(()=>submit(4,a,1,1,1));
+   await denied(()=>submit(3,a,1,1,2));
+   await denied(()=>submit(3,a,2,1,1));
+   await denied(()=>submit(3,a,1,2,1));
+   await denied(()=>submit(3,a,1,1,1,"Terminé"));
+   first=(await submit(3,a,1,1,1)).rows[0].decision;
+   await denied(()=>submit(3,a,1,1,1));
+ });
+ await check("review requires active independent supervisor within own reporting scope",async()=>{
+   await denied(()=>review(3,first));
+   await denied(()=>review(6,first));
+   await denied(()=>review(9,first));
+   assert.equal((await review(2,first)).rows[0].result,"approved");
+   await denied(()=>review(2,first));
+ });
+ await check("phase 2 opens only after phase 1 approved; low scores request changes",async()=>{
+   second=(await submit(3,a,1,1,2)).rows[0].decision;
+   assert.equal((await review(2,second,[3,3,3,3,3])).rows[0].result,"needs_changes");
+   await denied(()=>submit(3,a,1,1,3));
+   const retry=(await submit(3,a,1,1,2)).rows[0].decision;
+   assert.equal(retry,second);
+   const state=await db.query("select revision,status from public.organization_course_decision_drafts where id=$1",[second]);
+   assert.equal(state.rows[0].revision,2);
+   assert.equal(state.rows[0].status,"submitted");
+   assert.equal((await review(2,second,[4,4,4,4,4])).rows[0].result,"approved");
+   const reviews=await db.query("select decision_revision,decision_status from public.organization_course_decision_reviews_drafts where decision_id=$1 order by decision_revision",[second]);
+   assert.deepEqual(reviews.rows.map(x=>x.decision_revision),[1,2]);
+   assert.deepEqual(reviews.rows.map(x=>x.decision_status),["needs_changes","approved"]);
+ });
+ await check("immutable approved decisions, revocations, RLS and production progress isolation",async()=>{
+   await denied(()=>submit(3,a,1,1,2));
+   const self=await withRole("authenticated",id(3),()=>db.query("select id from public.organization_course_decision_drafts"));
+   const elsewhere=await withRole("authenticated",id(4),()=>db.query("select id from public.organization_course_decision_drafts"));
+   const ownReviews=await withRole("authenticated",id(3),()=>db.query("select id from public.organization_course_decision_reviews_drafts"));
+   assert.equal(self.rows.length,2);
+   assert.equal(elsewhere.rows.length,0);
+   assert.equal(ownReviews.rows.length,3);
+   await db.query("update public.organization_course_assignment_drafts set status='revoked' where id=$1",[a]);
+   await denied(()=>submit(3,a,1,1,3));
+   assert.equal((await db.query("select count(*)::int as n from public.learning_assignments")).rows[0].n,0);
+ });
+
  console.log("Course assignment isolated database checks:",checks,"passed");
 }finally{await db.close();}
