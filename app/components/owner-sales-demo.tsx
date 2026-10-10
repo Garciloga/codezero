@@ -35,7 +35,7 @@ export default function OwnerSalesDemo({locale}:{locale:string}){
  const rows=useMemo(()=>generation>0?perfectSalesDemo(generationAt??new Date()):[],[generation,generationAt]);
  const generate=()=>{setGeneration(n=>n+1);setGenerationAt(new Date());setView("map");};
  const reset=()=>{setGeneration(0);setGenerationAt(null);setView("map");};
- return <section className="card">
+ return <section className="card owner-sales-demo">
   <h2>{t.demoTitle}</h2><p>{t.demoIntro}</p><p className="muted">{t.noStorage}</p>
   <div className="public-actions" style={{display:"flex",flexWrap:"wrap",gap:10}}>
    <button type="button" className="btn" onClick={generate}>{generation>0?t.regenerate:t.generate}</button>

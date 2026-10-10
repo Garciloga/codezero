@@ -46,3 +46,54 @@
   .owner-user-actions>form .btn { width:100%; }
   .usage-table { border-radius:12px; }
 }
+
+/* Competency matrix: readable names and skill columns without widening the document.
+   Shared by the owner's synthetic sales laboratory and enterprise dashboards. */
+.vivo-content .owner-demo-page { width:100%; max-width:none; }
+.owner-sales-demo,.owner-sales-demo > div,.competency-map { min-width:0; max-width:100%; }
+.competency-map .competency-matrix-scroll {
+  width:100%; max-width:100%; overflow-x:auto; overscroll-behavior-inline:contain;
+  scrollbar-gutter:stable; margin:12px 0 20px;
+}
+html[data-design="vivo"] .competency-matrix-scroll table {
+  table-layout:fixed; min-width:1880px; width:max(100%,1880px);
+}
+html[data-design="vivo"] .competency-matrix-scroll th,
+html[data-design="vivo"] .competency-matrix-scroll td {
+  vertical-align:middle; overflow-wrap:normal; word-break:normal; hyphens:none;
+  padding:12px; line-height:1.4;
+}
+html[data-design="vivo"] .competency-matrix-scroll caption {
+  caption-side:top; text-align:left; padding:14px 16px;
+  font-weight:700; color:var(--vivo-text);
+}
+html[data-design="vivo"] .competency-matrix-scroll :is(thead th:first-child,tbody th) {
+  position:sticky; left:0; width:230px; min-width:230px;
+  z-index:2; background:var(--vivo-surface);
+  box-shadow:8px 0 12px -14px var(--vivo-text);
+}
+html[data-design="vivo"] .competency-matrix-scroll thead th:first-child { z-index:3; }
+html[data-design="vivo"] .competency-matrix-scroll thead th {
+  white-space:normal; font-weight:700; vertical-align:bottom;
+}
+html[data-design="vivo"] .competency-matrix-scroll tbody th { font-weight:600; }
+html[data-design="vivo"] .competency-matrix-scroll .competency-cell {
+  display:block; width:100%; min-width:0; padding:10px 7px;
+  font-size:.875rem; line-height:1.3; white-space:normal;
+  overflow-wrap:normal; word-break:normal;
+}
+.competency-map .competency-scroll-hint { margin:14px 0 6px; font-size:.875rem; }
+@media (max-width:700px) {
+  .competency-map .competency-scroll-hint { display:none; }
+  .competency-map .competency-mobile { display:grid; gap:14px; }
+  .competency-map .competency-person-card { margin:0; }
+  .competency-map .competency-mobile-skill {
+    display:grid; grid-template-columns:minmax(0,1fr) minmax(0,150px);
+    align-items:center; gap:12px; padding:12px 0;
+    border-top:1px solid var(--vivo-soft);
+  }
+  .competency-map .competency-mobile-skill .competency-cell { min-width:0; width:100%; }
+}
+@media (max-width:430px) {
+  .competency-map .competency-mobile-skill { grid-template-columns:minmax(0,1fr); gap:6px; }
+}
