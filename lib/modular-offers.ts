@@ -62,7 +62,7 @@ export function quoteModularPlan(plan: BasePlan, keys: readonly string[], ready:
       if (offer.cents < 9900) throw new Error("Cargo único menor a 99 MXN");
       oneTimeCents += offer.cents;
     } else {
-      firstMonthCents += "introductoryCents" in offer ? offer.introductoryCents : offer.cents;
+      firstMonthCents += "introductoryCents" in offer && typeof offer.introductoryCents === "number" ? offer.introductoryCents : offer.cents;
       renewalCents += offer.cents;
     }
   }

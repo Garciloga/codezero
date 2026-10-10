@@ -14,15 +14,15 @@ export const localeContext = cache(async () => {
 export const uiMessages = cache(async (locale: Locale) => {
   if (locale === 'es') return (await import('./es-ui.json')).default;
   switch (locale) {
-    case 'en': return {...(await import('./en-ui.json')).default,...(await import('./en-client-extension.json')).default,...(await import('./en-social.json')).default,...(await import('./en-mixed.json')).default,...(await import('./en-suggestions.json')).default};
-    case 'pt': return {...(await import('./pt-ui.json')).default,...(await import('./pt-client-extension.json')).default,...(await import('./pt-social.json')).default,...(await import('./pt-mixed.json')).default,...(await import('./pt-suggestions.json')).default};
-    case 'fr': return {...(await import('./fr-ui.json')).default,...(await import('./fr-client-extension.json')).default,...(await import('./fr-social.json')).default,...(await import('./fr-mixed.json')).default,...(await import('./fr-suggestions.json')).default};
+    case 'en': return {...(await import('./en-ui.json')).default,...(await import('./en-technical.json')).default,...(await import('./en-client-extension.json')).default,...(await import('./en-social.json')).default,...(await import('./en-mixed.json')).default,...(await import('./en-suggestions.json')).default};
+    case 'pt': return {...(await import('./pt-ui.json')).default,...(await import('./pt-technical.json')).default,...(await import('./pt-client-extension.json')).default,...(await import('./pt-social.json')).default,...(await import('./pt-mixed.json')).default,...(await import('./pt-suggestions.json')).default};
+    case 'fr': return {...(await import('./fr-ui.json')).default,...(await import('./fr-technical.json')).default,...(await import('./fr-client-extension.json')).default,...(await import('./fr-social.json')).default,...(await import('./fr-mixed.json')).default,...(await import('./fr-suggestions.json')).default};
   }
 });
 export const serverMessages = cache(async (locale: Locale) => {
   if (locale === 'es') return await uiMessages(locale);
-  return locale === 'en' ? {...(await import('./en-server.json')).default,...(await import('./en-social.json')).default,...(await import('./en-mixed.json')).default,...(await import('./en-suggestions.json')).default}
-    : locale === 'pt' ? {...(await import('./pt-server.json')).default,...(await import('./pt-social.json')).default,...(await import('./pt-mixed.json')).default,...(await import('./pt-suggestions.json')).default} : {...(await import('./fr-server.json')).default,...(await import('./fr-social.json')).default,...(await import('./fr-mixed.json')).default,...(await import('./fr-suggestions.json')).default};
+  return locale === 'en' ? {...(await import('./en-server.json')).default,...(await import('./en-technical.json')).default,...(await import('./en-social.json')).default,...(await import('./en-mixed.json')).default,...(await import('./en-suggestions.json')).default}
+    : locale === 'pt' ? {...(await import('./pt-server.json')).default,...(await import('./pt-technical.json')).default,...(await import('./pt-social.json')).default,...(await import('./pt-mixed.json')).default,...(await import('./pt-suggestions.json')).default} : {...(await import('./fr-server.json')).default,...(await import('./fr-technical.json')).default,...(await import('./fr-social.json')).default,...(await import('./fr-mixed.json')).default,...(await import('./fr-suggestions.json')).default};
 });
 // Only immutable authored dictionaries are shared between requests, at most four entries.
 const compiled = new Map<Locale, Promise<ReturnType<typeof translator>>>();
