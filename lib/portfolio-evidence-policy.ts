@@ -1,9 +1,9 @@
 import type {CompetencyEvidence} from "./competency-matrix";
 /** Only reviewed, sufficiently scored personal projects are safe for opt-in publication.
  * Organization evidence remains private to that organization. */
-export function eligiblePersonalProject(e:CompetencyEvidence,userId:string){
+export function eligiblePersonalProject(e:CompetencyEvidence & {reviewed_by?:string|null},userId:string){
  return e.user_id===userId&&e.organization_id===null&&
- ["admin","manager"].includes(e.review_source)&&e.reviewed_by!==userId&&
+ ["admin","manager"].includes(e.review_source)&&typeof e.reviewed_by==="string"&&e.reviewed_by!==userId&&
  ["project","capstone"].includes(e.kind)&&
  Array.isArray(e.critical_errors)&&e.critical_errors.length===0&&
  e.competency_scores!=null&&
