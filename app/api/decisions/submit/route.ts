@@ -26,14 +26,14 @@ export async function POST(req:Request){
  // Prose is for an independent human to audit; no automated passing level
  // or inferred personality score is written to competency evidence.
  const draft=[
-  "RÚBRICA: revisar hechos, alternativas, justificación y verificación de ocho decisiones.",
-  "Versión: cs-decision-evidence-v2.0; resultado objetivo provisional: "+summary.objective+"/100",
-  "Errores críticos detectados en opciones: "+summary.critical,
+  "REVIEW RUBRIC: confirm evidence, alternatives, trade-offs, and verifiability across all eight choices.",
+  "Model: cs-decision-evidence-v2.0; provisional choice result: "+summary.objective+"/100",
+  "Critical options selected: "+summary.critical,
   ...state.events.map((e,i)=>[
-   "DECISIÓN "+(i+1)+" / ESCENARIO "+e.scene+" / OPCIÓN "+e.choice,
-   "Hechos e incertidumbre: "+e.facts,
-   "Alternativa y costo: "+e.tradeoff,
-   "Verificación propuesta: "+e.verification
+   "DECISION "+(i+1)+" / SCENARIO "+e.scene+" / OPTION "+e.choice,
+   "Facts and uncertainty: "+e.facts,
+   "Alternative and opportunity cost: "+e.tradeoff,
+   "Verification method: "+e.verification
   ].join("\n"))
  ].join("\n\n");
  if(draft.length>23000)return Response.json({error:"DELIVERABLE_TOO_LONG"},{status:413});
