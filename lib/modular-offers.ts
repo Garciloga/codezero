@@ -1,3 +1,4 @@
+import { TECHNICAL_ADDON_OFFERS } from "./technical-addon-offers.ts";
 /** Approved v2 offers. No Stripe IDs or secrets; not an authorization source. */
 export type BasePlan = "free" | "starter" | "pro";
 export type Readiness = { tutor: boolean; customerSuccess: boolean; certificate: boolean };
@@ -18,6 +19,7 @@ export const ROUTE_DISCOVERY_POLICY = {
   buildBasedOn: "verified_waitlist_interest", excluded: ["ux_ui", "human_resources", "finance"],
 } as const;
 export const ADDON_OFFERS = [
+  ...TECHNICAL_ADDON_OFFERS.map(o=>({key:o.key,label:o.label,kind:"monthly" as const,cents:o.priceCents,detail:o.detail,includedInPro:false})),
   { key: "ai_tutor", label: "Tutor IA", kind: "monthly", cents: 10000, introductoryCents: 5000, readiness: "tutor", includedInPro: true, detail: "100 consultas al mes" },
   { key: "route_customer_success", label: "Ruta de Customer Success", kind: "monthly", cents: 14900, readiness: "customerSuccess", includedInPro: true, detail: "La ruta elegida está incluida en Pro" },
   ...FUTURE_ROUTES.map(route => ({ ...route, kind: "monthly" as const, cents: 14900, includedInPro: true })),

@@ -1,4 +1,15 @@
-# CodeZero · planes con exámenes y certificados incluidos
+# Garciloga · planes con exámenes y certificados incluidos
+
+## Nuevos complementos técnicos aprobados · 10 octubre 2026
+
+| Producto | Precio MXN / mes | Condición | Estado |
+|---|---:|---|---|
+| Programación esencial | 149 por persona | Ruta inicial, temario exacto pendiente de validación | Stripe inactivo; solo interés |
+| Programación + Integraciones | 249 por persona | 15 niveles e integraciones, límites de uso según oferta | Stripe inactivo; solo interés |
+| Programación para equipos | 129 por asiento | Mínimo cinco plazas; add-on sobre plan base | Stripe inactivo; solo interés |
+
+Estas cifras no alteran Starter/Pro/Enterprise ni crean cobros. Se conservarán los accesos pagados actuales hasta probar la transición. Existen productos y precios inactivos en Stripe Live, sin checkout ni cambios a suscripciones. Pendiente: banco de Stripe Test, validación de webhooks, asiento por compañía, impuestos y controles server-side antes de activar Stripe Live. La colección de lista de espera no otorga acceso académico.
+
 
 Actualización: 7 de octubre de 2026. Importes actuales comprobados en Supabase y Stripe Live. Esta entrega no cambia Price IDs ni precios contratados y no habilita Tutor IA.
 
