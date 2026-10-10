@@ -1,0 +1,66 @@
+name: Database backup
+
+# Free, opt-in backup of production data. It does nothing until the repository owner adds two
+# secrets: SUPABASE_DB_URL (session pooler connection string) and BACKUP_PASSPHRASE (long, random).
+# The dump is encrypted before upload because artifacts of a public repository can be downloaded
+# by any signed-in GitHub user. Never commit a dump. See DISASTER_RECOVERY.md.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 9 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      restore:
+        image: postgres:17
+        env:
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+      BACKUP_PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
+    steps:
+      - name: Skip when the backup is not configured
+        id: gate
+        run: |
+          if [ -z "$SUPABASE_DB_URL" ] || [ ${#BACKUP_PASSPHRASE} -lt 24 ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Backup not configured (needs SUPABASE_DB_URL and a BACKUP_PASSPHRASE of 24+ characters)."
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Dump application data
+        if: steps.gate.outputs.configured == 'true'
+        run: |
+          docker run --rm --network host -e DB_URL="$SUPABASE_DB_URL" -v "$PWD:/out" postgres:17 \
+            sh -c 'pg_dump "$DB_URL" --format=custom --no-owner --no-privileges --schema=public --schema=codezero_private --schema=account_security --file=/out/backup.dump'
+          test -s backup.dump
+      - name: Verify the dump restores
+        if: steps.gate.outputs.configured == 'true'
+        run: |
+          docker run --rm --network host -v "$PWD:/out" postgres:17 \
+            sh -c 'psql -h 127.0.0.1 -U postgres -v ON_ERROR_STOP=1 -c "create schema if not exists auth; create schema if not exists extensions;" \
+              && (pg_restore -h 127.0.0.1 -U postgres -d postgres --no-owner --no-privileges /out/backup.dump || true) \
+              && psql -h 127.0.0.1 -U postgres -At -c "select count(*) from information_schema.tables where table_schema in (\$\$public\$\$,\$\$codezero_private\$\$)"' | tee restored-tables.txt
+          test "$(tail -1 restored-tables.txt)" -gt 20
+      - name: Encrypt
+        if: steps.gate.outputs.configured == 'true'
+        run: |
+          gpg --batch --yes --symmetric --cipher-algo AES256 --passphrase "$BACKUP_PASSPHRASE" --output "garciloga-$(date -u +%Y%m%d).dump.gpg" backup.dump
+          shred -u backup.dump
+      - name: Upload encrypted backup
+        if: steps.gate.outputs.configured == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: garciloga-database-backup
+          path: garciloga-*.dump.gpg
+          retention-days: 30
+          if-no-files-found: error

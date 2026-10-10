@@ -57,3 +57,30 @@ export const LESSON_STATE_LABELS: Record<LessonState, string> = {
   check_passed: "Comprobación aprobada",
   completed: "Lección completada",
 };
+
+export const ACTIVITY_KIND_LABELS: Record<string, string> = {
+  multiple_choice: "Opción múltiple",
+  order_steps: "Ordena los pasos",
+  fill_blank: "Completa el espacio",
+  find_error: "Identifica el error",
+};
+
+const LETTERS = ["A", "B", "C", "D"] as const;
+
+/**
+ * Normalises a submitted answer. Choice kinds send one letter. Ordering sends a position (1-4)
+ * for each step and becomes the sequence of step letters; repeated or missing positions are invalid.
+ */
+export function readAnswer(kind: string | null | undefined, form: { get(name: string): unknown }): string | null {
+  if (kind === "order_steps") {
+    const sequence: string[] = [];
+    for (const letter of LETTERS) {
+      const position = Number(form.get(`position_${letter}`));
+      if (!Number.isInteger(position) || position < 1 || position > 4 || sequence[position - 1]) return null;
+      sequence[position - 1] = letter;
+    }
+    return sequence.join("");
+  }
+  const answer = String(form.get("answer") ?? "");
+  return (LETTERS as readonly string[]).includes(answer) ? answer : null;
+}

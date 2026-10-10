@@ -1886,5 +1886,22 @@
   "Elegir pago anual": "Escolher pagamento anual",
   "Pago anual.": "Pagamento anual.",
   "Se cobra una vez al año y se renueva cada año hasta que canceles. Verás el importe exacto en Stripe antes de pagar.": "A cobrança é feita uma vez por ano e renova a cada ano até você cancelar. Você verá o valor exato na Stripe antes de pagar.",
-  "El pago anual no está disponible por ahora. Puedes elegir el pago mensual.": "O pagamento anual não está disponível no momento. Você pode escolher o pagamento mensal."
+  "El pago anual no está disponible por ahora. Puedes elegir el pago mensual.": "O pagamento anual não está disponível no momento. Você pode escolher o pagamento mensal.",
+  "Reiniciar avance": "Reiniciar avanço",
+  "El correo no coincide con el de la cuenta.": "O e-mail não coincide com o da conta.",
+  "Confirma el registro del cobro para continuar.": "Confirme o registro da cobrança para continuar.",
+  "No se pudo reiniciar el avance. Inténtalo de nuevo.": "Não foi possível reiniciar o avanço. Tente de novo.",
+  "No pudimos confirmar el reinicio. Actualiza la tabla antes de repetirlo.": "Não conseguimos confirmar o reinício. Atualize a tabela antes de repetir.",
+  "El reinicio borra el avance del alumno y no se puede deshacer. Se conservan certificados, diplomas, plan y límites de uso.": "O reinício apaga o avanço do aluno e não pode ser desfeito. Certificados, diplomas, plano e limites de uso são mantidos.",
+  "Qué se reinicia": "O que é reiniciado",
+  "Programa principal": "Programa principal",
+  "Programas por puesto": "Programas por cargo",
+  "Programa principal y programas por puesto": "Programa principal e programas por cargo",
+  "Costo del reinicio:": "Custo do reinício:",
+  ". La plataforma no realiza el cobro; solo queda registrado.": ". A plataforma não realiza a cobrança; ela só fica registrada.",
+  "Referencia del cobro (opcional)": "Referência da cobrança (opcional)",
+  "Confirmo que el cobro quedó acordado con el alumno": "Confirmo que a cobrança foi combinada com o aluno",
+  "Reiniciando…": "Reiniciando…",
+  "Confirmar reinicio": "Confirmar reinício",
+  "Avance reiniciado. Los certificados y diplomas emitidos se conservan.": "Avanço reiniciado. Os certificados e diplomas emitidos são mantidos."
 }

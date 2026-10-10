@@ -7,7 +7,7 @@ import { notFound, redirect } from "next/navigation";
 import { createServerSupabase, getServerUser } from "../../../../lib/supabase-server";
 import { getPassedLevelNumbers, isLevelIncludedInPlan, isLevelUnlocked } from "../../../../lib/learning";
 
-import { LESSON_STATE_LABELS, canCompleteLesson, isLessonUnlocked, lessonPercent, lessonState } from "../../../../lib/lesson-rules";
+import { ACTIVITY_KIND_LABELS, LESSON_STATE_LABELS, canCompleteLesson, isLessonUnlocked, lessonPercent, lessonState } from "../../../../lib/lesson-rules";
 import { workspaceSandboxEnabled } from "../../../../lib/workspace-sandbox";
 
 type PageProps = {
@@ -26,6 +26,7 @@ type Exercise = {
   prompt: string;
   options: string[];
   explanation: string | null;
+  kind: string | null;
 };
 
 export default async function LessonPage({ params, searchParams }: PageProps) {
@@ -109,7 +110,7 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
 
   const { data: exerciseRows } = await supabase
     .from("exercises")
-    .select("id, prompt, options, explanation")
+    .select("id, prompt, options, explanation, kind")
     .eq("lesson_id", currentLesson.id)
     .eq("status", "published")
     .order("sort_order", { ascending: true });
@@ -213,6 +214,15 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
           <b>Respuesta incorrecta.</b>
           <p className="muted" style={{ marginBottom: 0 }}>
             Revisa la explicación y vuelve a intentarlo cuando quieras.
+          </p>
+        </div>
+      )}
+
+      {exerciseResult === "invalid" && (
+        <div className="card lesson-notice" role="alert" style={{ marginBottom: 20 }}>
+          <b>Respuesta incompleta.</b>
+          <p className="muted" style={{ marginBottom: 0 }}>
+            Asigna una posición distinta a cada paso y vuelve a enviarla.
           </p>
         </div>
       )}
@@ -336,7 +346,8 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
                   <p style={{ marginTop: 0 }}>
                     <span className="pill" data-activity-state={passed ? "passed" : latestAttempt ? "retry" : "pending"}>
                       {passed ? "Aprobada" : latestAttempt ? "Vuelve a intentarlo" : "Sin intentar"}
-                    </span>
+                    </span>{" "}
+                    <span className="muted">{ACTIVITY_KIND_LABELS[exercise.kind ?? "multiple_choice"] ?? ACTIVITY_KIND_LABELS.multiple_choice}</span>
                   </p>
                   <h3 style={{ marginTop: 0 }}>{exercise.prompt}</h3>
 
@@ -357,6 +368,22 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
                     <input type="hidden" name="level_number" value={currentLevel.level_number} />
                     <input type="hidden" name="lesson_slug" value={currentLesson.slug} />
 
+                    {exercise.kind === "order_steps" ? (
+                      <fieldset style={{ display: "grid", gap: 10, margin: "18px 0", border: 0, padding: 0 }}>
+                        <legend className="muted">Indica la posición de cada paso, del 1 al 4.</legend>
+                        {exercise.options.map((option, index) => (
+                          <label key={`${exercise.id}-${index}`} className="activity-step">
+                            <select name={`position_${labels[index]}`} required defaultValue="">
+                              <option value="" disabled>—</option>
+                              {[1, 2, 3, 4].map((position) => (
+                                <option key={position} value={position}>{position}</option>
+                              ))}
+                            </select>
+                            <span>{option}</span>
+                          </label>
+                        ))}
+                      </fieldset>
+                    ) : (
                     <div style={{ display: "grid", gap: 10, margin: "18px 0" }}>
                       {exercise.options.map((option, index) => (
                         <label
@@ -366,7 +393,7 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
                             gap: 10,
                             alignItems: "flex-start",
                             padding: 12,
-                            border: "1px solid #e5e9f0",
+                            border: "1px solid var(--user-border,#e5e9f0)",
                             borderRadius: 12,
                             cursor: "pointer",
                           }}
@@ -383,6 +410,7 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
                         </label>
                       ))}
                     </div>
+                    )}
 
                     <button className="btn" type="submit">
                       Enviar respuesta
