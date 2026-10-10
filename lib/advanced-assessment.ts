@@ -99,7 +99,7 @@ export function advancedSummary(s:AdvancedState){
   const rows=s.events.filter(e=>e.tradeoffCategory===key);
   return [key,{count:rows.length,indicative:rows.length>=2?Math.round(rows.reduce((a,b)=>a+b.rating,0)/rows.length*10)/10:null}];
  }));
- const limitations=["La opción elegida puede verificarse, pero la calidad de las justificaciones no se califica automáticamente.", "El perfil no es una certificación y requiere revisión humana."];
+ const limitations=["The selected option can be scored, but the quality of written reasoning is not automatically graded.", "This profile is not a certificate and requires human review."];
  return {objective,critical,metrics:s.metrics,signals,limitations,readyForHumanReview:critical===0&&objective>=70};
 }
 export function recommendAdvanced(s:AdvancedState){
