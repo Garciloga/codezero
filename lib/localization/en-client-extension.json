@@ -193,5 +193,9 @@
   "No hay lecciones para este filtro.": "No lessons match this filter.",
   "Avance por nivel": "Progress by level",
   "Exportar observaciones (CSV)": "Export observations (CSV)",
-  "con observación": "with observations"
+  "con observación": "with observations",
+  "Error de traducción ·": "Translation issue ·",
+  "Lección:": "Lesson:",
+  "Título:": "Title:",
+  "Texto incorrecto y propuesta de corrección:": "Incorrect text and proposed correction:"
 }
