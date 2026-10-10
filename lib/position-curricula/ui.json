@@ -61,7 +61,9 @@
     "finalPending": "Proyecto final pendiente de aprobación humana",
     "finalPassed": "Proyecto final aprobado por revisión humana",
     "finalPortfolio": "Tu evidencia final aprobada puede incluirse voluntariamente en el portafolio personal; las evidencias de una compañía no se publican fuera de ella.",
-    "finalReviewHeading": "Criterios adicionales del proyecto final"
+    "finalReviewHeading": "Criterios adicionales del proyecto final",
+    "reportTranslation": "Reportar un error de traducción",
+    "portfolioLink": "Abrir mi portafolio"
   },
   "en": {
     "title": "Learning by role",
@@ -125,7 +127,9 @@
     "finalPending": "Final project awaiting human approval",
     "finalPassed": "Final project approved after human review",
     "finalPortfolio": "You may voluntarily include approved personal final evidence in your portfolio; company evidence remains private to that company.",
-    "finalReviewHeading": "Additional final project criteria"
+    "finalReviewHeading": "Additional final project criteria",
+    "reportTranslation": "Report a translation issue",
+    "portfolioLink": "Open my portfolio"
   },
   "pt": {
     "title": "Formação por cargo",
@@ -189,7 +193,9 @@
     "finalPending": "Projeto final aguardando revisão humana",
     "finalPassed": "Projeto final aprovado por revisão humana",
     "finalPortfolio": "Você pode incluir voluntariamente evidências finais pessoais aprovadas no portfólio; evidências empresariais permanecem privadas.",
-    "finalReviewHeading": "Critérios adicionais do projeto final"
+    "finalReviewHeading": "Critérios adicionais do projeto final",
+    "reportTranslation": "Relatar um erro de tradução",
+    "portfolioLink": "Abrir meu portfólio"
   },
   "fr": {
     "title": "Formation par poste",
@@ -253,6 +259,8 @@
     "finalPending": "Projet final en attente de validation humaine",
     "finalPassed": "Projet final validé après évaluation humaine",
     "finalPortfolio": "Vous pouvez inclure volontairement des preuves personnelles finales approuvées dans le portfolio ; les preuves d’entreprise restent privées.",
-    "finalReviewHeading": "Critères supplémentaires du projet final"
+    "finalReviewHeading": "Critères supplémentaires du projet final",
+    "reportTranslation": "Signaler une erreur de traduction",
+    "portfolioLink": "Ouvrir mon portfolio"
   }
 }

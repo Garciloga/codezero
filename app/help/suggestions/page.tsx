@@ -3,11 +3,15 @@ import LocalizedContent from "../../components/localization/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../../lib/supabase-server";
+import {positionItem} from "../../../lib/position-curriculum";
+import {validLocale} from "../../../lib/localization/shared";
 
-type PageProps = { searchParams: Promise<{ submitted?: string }> };
+type PageProps = { searchParams: Promise<{ submitted?: string; item?: string; lang?: string }> };
 
 export default async function SuggestionsPage({ searchParams }: PageProps) {
-  const { submitted } = await searchParams;
+  const { submitted, item:requestedItem, lang:requestedLocale } = await searchParams;
+  const lesson=typeof requestedItem==="string"&&requestedItem.length<=150?positionItem(requestedItem):null;
+  const translation=lesson&&validLocale(requestedLocale)&&requestedLocale!=="es"?{lesson,locale:requestedLocale}:null;
   const supabase = await createServerSupabase();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect("/login");
@@ -37,9 +41,9 @@ export default async function SuggestionsPage({ searchParams }: PageProps) {
       <section className="card" style={{marginTop:18}}>
         <form action="/api/support/suggestions" method="post" style={{display:"grid",gap:12,maxWidth:760}}>
           <label htmlFor="suggestion-title"><b>Título</b></label>
-          <input id="suggestion-title" name="title" minLength={3} maxLength={160} required style={{padding:11,borderRadius:10,border:"1px solid #d8dee8"}} />
+          <input id="suggestion-title" name="title" defaultValue={translation?"Error de traducción · "+translation.locale+" · "+translation.lesson.key:""} minLength={3} maxLength={160} required style={{padding:11,borderRadius:10,border:"1px solid #d8dee8"}} />
           <label htmlFor="suggestion-category"><b>Categoría</b></label>
-          <select id="suggestion-category" name="category" defaultValue="producto" style={{padding:11,borderRadius:10,border:"1px solid #d8dee8"}}>
+          <select id="suggestion-category" name="category" defaultValue={translation?"contenido":"producto"} style={{padding:11,borderRadius:10,border:"1px solid #d8dee8"}}>
             <option value="producto">Producto</option>
             <option value="contenido">Contenido</option>
             <option value="faq">Nueva FAQ</option>
@@ -47,7 +51,7 @@ export default async function SuggestionsPage({ searchParams }: PageProps) {
             <option value="otro">Otro</option>
           </select>
           <label htmlFor="suggestion-detail"><b>Detalle</b></label>
-          <textarea id="suggestion-detail" name="detail" rows={7} minLength={10} maxLength={5000} required style={{padding:11,borderRadius:10,border:"1px solid #d8dee8"}} />
+          <textarea id="suggestion-detail" name="detail" defaultValue={translation?"Idioma: "+translation.locale+"\nLección: "+translation.lesson.key+"\nTítulo: "+translation.lesson.title[translation.locale]+"\nTexto incorrecto y propuesta de corrección:\n":""} rows={7} minLength={10} maxLength={5000} required style={{padding:11,borderRadius:10,border:"1px solid #d8dee8"}} />
           <button className="btn" type="submit">Enviar sugerencia</button>
         </form>
       </section>
