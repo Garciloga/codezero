@@ -33,3 +33,10 @@
 
 ## Reversión
 Si fallan los recorridos de producción, volver a una versión Vercel previamente verificada sin activar Stripe Live ni tocar datos de usuarios. Documentar incidencia y SHA.
+
+## Refuerzo de controles de borrador · 10 octubre 2026
+- La comprobación de asignaciones reutiliza el bloqueo estricto de sandbox, incluido el identificador exacto de proyecto Supabase.
+- Las fechas inexistentes del calendario se rechazan sin normalización silenciosa.
+- CI ejecuta una migración de borrador en PostgreSQL descartable con verificaciones de permisos separados de visualización, RLS, revocación, perfiles suspendidos y aislamiento multiempresa.
+- No se ha aplicado ninguna migración a Supabase producción: solo hay un proyecto conectado, de producción.
+- Conservar el lote en Draft hasta CI del nuevo SHA, revisión humana y piloto con cuentas/sandbox aislados.
