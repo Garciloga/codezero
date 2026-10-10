@@ -46,10 +46,12 @@ jobs:
           docker run --rm --network host -v "$PWD:/out" postgres:17 pg_restore --list /out/backup.dump > backup-contents.txt
           grep -q 'TABLE DATA' backup-contents.txt
       - name: Verify the dump restores
+        # Vanilla PostgreSQL initializes public by default; Supabase pg_dump includes
+        # CREATE SCHEMA public. Drop it ONLY in the disposable restore service.
         if: steps.gate.outputs.configured == 'true'
         run: |
           docker run --rm --network host -v "$PWD:/out" postgres:17 \
-            sh -c 'psql -h 127.0.0.1 -U postgres -v ON_ERROR_STOP=1 -c "create schema if not exists auth; create schema if not exists extensions;" \
+            sh -c 'psql -h 127.0.0.1 -U postgres -v ON_ERROR_STOP=1 -c "drop schema if exists public cascade; create schema if not exists auth; create schema if not exists extensions;" \
               && pg_restore -h 127.0.0.1 -U postgres -d postgres --exit-on-error --single-transaction --no-owner --no-privileges /out/backup.dump \
               && psql -h 127.0.0.1 -U postgres -At -c "select count(*) from information_schema.tables where table_schema in (\$\$public\$\$,\$\$codezero_private\$\$)"' | tee restored-tables.txt
           test "$(tail -1 restored-tables.txt)" -gt 20
