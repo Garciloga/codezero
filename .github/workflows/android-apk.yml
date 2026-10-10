@@ -34,14 +34,19 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
+      # GitHub ubuntu-latest already includes Android command-line SDK tools.
+      # Avoid android-actions/setup-android@v3: its legacy 'tools' package is gone.
       - name: Install Android SDK 36
-        run: sdkmanager --install "platforms;android-36" "build-tools;36.0.0"
+        shell: bash
+        run: |
+          if command -v sdkmanager >/dev/null 2>&1; then
+            SDKMANAGER="$(command -v sdkmanager)"
+          else
+            SDKMANAGER="$(find "${ANDROID_HOME:-/usr/local/lib/android/sdk}/cmdline-tools" -name sdkmanager -type f | sort -V | tail -n 1)"
+          fi
+          test -n "$SDKMANAGER" || { echo "Android SDK manager not available"; exit 1; }
+          "$SDKMANAGER" --install "platforms;android-36" "build-tools;36.0.0"
 
-      # Source package deliberately has no gradle-wrapper.jar; use an
-      # independently managed Gradle 8.13 installation in the runner.
       - name: Set up Gradle 8.13
         uses: gradle/actions/setup-gradle@v4
         with:
