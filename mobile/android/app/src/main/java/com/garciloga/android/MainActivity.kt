@@ -166,12 +166,12 @@ class MainActivity : Activity() {
             override fun onPageStarted(view: WebView, url: String, favicon: android.graphics.Bitmap?) {
                 isMainFrameUnavailable = false
                 errorPanel.visibility = View.GONE
-                progress.visibility = View.VISIBLE
-                progress.progress = 5
+                this@MainActivity.progress.visibility = View.VISIBLE
+                this@MainActivity.progress.progress = 5
             }
 
             override fun onPageFinished(view: WebView, url: String) {
-                progress.visibility = View.GONE
+                this@MainActivity.progress.visibility = View.GONE
                 if (!isMainFrameUnavailable) errorPanel.visibility = View.GONE
                 CookieManager.getInstance().flush()
             }
@@ -192,8 +192,8 @@ class MainActivity : Activity() {
 
         webChromeClient = object : WebChromeClient() {
             override fun onProgressChanged(view: WebView, value: Int) {
-                progress.progress = value
-                progress.visibility = if (value < 100 && !isMainFrameUnavailable) View.VISIBLE else View.GONE
+                this@MainActivity.progress.progress = value
+                this@MainActivity.progress.visibility = if (value < 100 && !isMainFrameUnavailable) View.VISIBLE else View.GONE
             }
 
             override fun onPermissionRequest(request: PermissionRequest) {
