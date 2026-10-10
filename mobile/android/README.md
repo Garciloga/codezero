@@ -1,6 +1,6 @@
 # Garciloga Android · Código fuente
 
-**Tipo de proyecto:** aplicación Android en Kotlin + WebView segura, compilable con Android Studio. **No incluye un APK ni una clave de firma.** Es un proyecto independiente del repositorio web `Garciloga/codezero`; no cambia Vercel, Stripe, Supabase ni Notion.
+**Tipo de proyecto:** aplicación Android en Kotlin + WebView segura, ubicada en `mobile/android/` del repositorio `Garciloga/codezero`. Se compiló un **APK debug 1.0.0** con GitHub Actions (10-10-2026); el código no incluye llaves de firma comercial. Esta app no modifica por sí sola Vercel, Stripe ni Supabase.
 
 ## Estrategia
 
@@ -23,7 +23,25 @@ La aplicación incorpora la **web real de Garciloga**, con URL de origen inicial
 3. Inicio de sesión por correo/contraseña dentro de la web puede funcionar como en escritorio, pero **OAuth social, SSO, MFA y enlaces mágicos deben probarse** con un proveedor real; los proveedores externos abren el navegador y sus cookies no se comparten automáticamente con WebView. Requeriría callback/deep link y ajustes server-side para completar el flujo nativamente.
 4. `blob:` / descargas generadas únicamente en el navegador no funcionan con Android DownloadManager. Para exportaciones de ese tipo, desarrollar un endpoint HTTPS autenticado o un flujo de compartición seguro.
 5. Stripe externo abre el navegador. La distribución por Google Play requiere revisar políticas de facturación de contenidos digitales y las obligaciones de privacidad de Google Play; no se presupone su aprobación.
-6. Un APK instalable manualmente es distinto de una app aprobada para Play Store. **No se realizó un build, instalación física, test de autenticación, revisión de accesibilidad ni prueba E2E.**
+6. Un APK instalable manualmente es distinto de una app aprobada para Play Store. **El build debug sí pasó en GitHub Actions** (run 38082653308), pero no se verificó aún un conjunto completo de pruebas reales de autenticación, accesibilidad ni E2E. El propietario confirmó que instaló el APK y dio una impresión positiva inicial; esto no sustituye un ciclo de QA.
+
+## Regla permanente: sincronización de despliegues web y Android
+
+**Solicitud del propietario (10 octubre 2026):** cuando se prepare o ejecute un nuevo despliegue de Garciloga, incluir revisión y mantenimiento de su app Android en el mismo lote y documentar ambos en Notion. **No anunciar APK nuevo ni decir «Android actualizado» sin comprobarlo**.
+
+### Matriz de decisión por despliegue
+
+1. **Cambios solo en web (UI, rutas, cursos, permisos, evaluaciones o backend):** esta versión Android usa WebView apuntando a la web HTTPS oficial; el contenido publicado se carga al abrir/actualizar la app, sin reinstalar el APK. Revisar en Android al menos inicio de sesión, navegación, rol/organización, subida de archivos y acciones afectadas. Si todo es compatible, dejar constancia del SHA/URL del despliegue web y estado **«Android: compatible, sin APK nuevo»**. No reconstruir por rutina ni consumir cuota de CI innecesariamente.
+2. **Cambio nativo (Kotlin, permisos, WebView, dominio permitido, descarga de archivos, recursos de marca, SDK, deep links):** actualizar código dentro de `mobile/android/`, incrementar `versionCode` y ajustar `versionName`, ejecutar `Garciloga Android APK (test)` y conservar el APK como artefacto; probar instalación y regresión antes de compartir una actualización con usuarios.
+3. **Cambio de dominio, acceso/SSO, política de cookies o API:** comprobar si el host de `gradle.properties`, la lista permitida de WebView o los flujos OAuth requieren cambio nativo; si sí, aplicar el paso 2. Nunca cambiar el dominio sin verificar control HTTPS y sesiones.
+4. **Versión comercial Google Play:** distinta de un APK debug. Requiere revisión legal y privacidad, firma de distribución y pruebas humanas; no publicar de forma automática.
+5. **Cierre del lote:** registrar en la ficha Android de Notion qué desplegó la web, qué se comprobó en Android, si hubo APK (versión, SHA y enlace a Actions), y los pendientes. Conservar `PR #42` en borrador mientras no se hayan cumplido las puertas de lanzamiento.
+
+### Estado actual
+
+- Primera compilación **debug 1.0.0** aprobada: [GitHub Actions run 38082653308](https://github.com/Garciloga/codezero/actions/runs/38082653308).
+- El propietario confirmó instalación y satisfacción inicial; faltan pruebas funcionales sistemáticas y accesibilidad.
+- Los cambios web posteriores se reflejarán a través del sitio cuando sean compatibles con WebView; **Google Play no entrega actualizaciones automáticas de código nativo para este APK instalado manualmente**.
 
 ## Compilar en Windows (Android Studio)
 
