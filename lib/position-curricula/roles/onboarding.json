@@ -958,7 +958,7 @@
      "sharedSource": "cs-handoff",
      "localized": {
       "es": {
-       "title": "Contexto y alcance",
+       "title": "Ciclo de trabajo · Contexto y alcance",
        "learningObjective": "Ubicar en qué etapa del ciclo está una cuenta y qué documento la respalda.",
        "case": "Recibes a Óptica Lumen para iniciar. Ventas dice que el contrato está firmado, pero no lo encuentras en el expediente.",
        "exercise1": {
@@ -984,7 +984,7 @@
        }
       },
       "en": {
-       "title": "Context and scope",
+       "title": "Work lifecycle · Context and scope",
        "learningObjective": "Locate which lifecycle stage an account is in and which document backs it.",
        "case": "You receive Lumen Opticians to get started. Sales says the contract is signed, but you cannot find it in the file.",
        "exercise1": {
@@ -1010,7 +1010,7 @@
        }
       },
       "pt": {
-       "title": "Contexto e escopo",
+       "title": "Ciclo de trabalho · Contexto e escopo",
        "learningObjective": "Localizar em que etapa do ciclo está uma conta e que documento a respalda.",
        "case": "Você recebe a Ótica Lumen para iniciar. Vendas diz que o contrato está assinado, mas você não o encontra no dossiê.",
        "exercise1": {
@@ -1036,7 +1036,7 @@
        }
       },
       "fr": {
-       "title": "Contexte et périmètre",
+       "title": "Cycle de travail · Contexte et périmètre",
        "learningObjective": "Situer l'étape du cycle où se trouve un compte et le document qui l'atteste.",
        "case": "Vous recevez Optique Lumen pour démarrer. Les ventes affirment que le contrat est signé, mais vous ne le trouvez pas dans le dossier.",
        "exercise1": {
@@ -1068,7 +1068,7 @@
      "sharedSource": "cs-handoff",
      "localized": {
       "es": {
-       "title": "Datos y fuentes",
+       "title": "Ciclo de trabajo · Datos y fuentes",
        "learningObjective": "Tratar la información que falta como una dependencia con responsable y fecha.",
        "case": "Para crear las cuentas de Lumen necesitas la lista de empleados por sucursal. El cliente quedó de enviarla hace una semana.",
        "exercise1": {
@@ -1094,7 +1094,7 @@
        }
       },
       "en": {
-       "title": "Data and sources",
+       "title": "Work lifecycle · Data and sources",
        "learningObjective": "Treat missing information as a dependency with an owner and a date.",
        "case": "To create Lumen's accounts you need the list of employees per branch. The customer said they would send it a week ago.",
        "exercise1": {
@@ -1120,7 +1120,7 @@
        }
       },
       "pt": {
-       "title": "Dados e fontes",
+       "title": "Ciclo de trabalho · Dados e fontes",
        "learningObjective": "Tratar a informação que falta como uma dependência com responsável e data.",
        "case": "Para criar as contas da Lumen você precisa da lista de funcionários por filial. O cliente ficou de enviá-la há uma semana.",
        "exercise1": {
@@ -1146,7 +1146,7 @@
        }
       },
       "fr": {
-       "title": "Données et sources",
+       "title": "Cycle de travail · Données et sources",
        "learningObjective": "Traiter l'information manquante comme une dépendance avec un responsable et une date.",
        "case": "Pour créer les comptes de Lumen, il vous faut la liste des employés par magasin. Le client devait l'envoyer il y a une semaine.",
        "exercise1": {
@@ -1178,7 +1178,7 @@
      "sharedSource": "cs-handoff",
      "localized": {
       "es": {
-       "title": "Alternativas y criterio",
+       "title": "Ciclo de trabajo · Alternativas y criterio",
        "learningObjective": "Decidir el orden de las etapas cuando una autorización aún no llega.",
        "case": "La integración de Lumen con su sistema de citas requiere una autorización de su área de TI que tarda cinco días.",
        "exercise1": {
@@ -1204,7 +1204,7 @@
        }
       },
       "en": {
-       "title": "Alternatives and judgment",
+       "title": "Work lifecycle · Alternatives and judgment",
        "learningObjective": "Decide the order of the stages when an authorization has not arrived yet.",
        "case": "Lumen's integration with its appointment system requires an authorization from its IT area that takes five days.",
        "exercise1": {
@@ -1230,7 +1230,7 @@
        }
       },
       "pt": {
-       "title": "Alternativas e critério",
+       "title": "Ciclo de trabalho · Alternativas e critério",
        "learningObjective": "Decidir a ordem das etapas quando uma autorização ainda não chegou.",
        "case": "A integração da Lumen com o sistema de agendamentos exige uma autorização da área de TI que leva cinco dias.",
        "exercise1": {
@@ -1256,7 +1256,7 @@
        }
       },
       "fr": {
-       "title": "Options et jugement",
+       "title": "Cycle de travail · Options et jugement",
        "learningObjective": "Décider de l'ordre des étapes lorsqu'une autorisation n'est pas encore arrivée.",
        "case": "L'intégration de Lumen avec son système de rendez-vous exige une autorisation de sa DSI, qui prend cinq jours.",
        "exercise1": {
@@ -1288,7 +1288,7 @@
      "sharedSource": "cs-handoff",
      "localized": {
       "es": {
-       "title": "Entregable del puesto",
+       "title": "Ciclo de trabajo · Entregable del puesto",
        "learningObjective": "Mantener un plan de etapas actualizado cuando cambia una fecha externa.",
        "case": "El proveedor de lectores de tarjeta de Lumen avisa que entregará dos semanas después de lo previsto.",
        "exercise1": {
@@ -1314,7 +1314,7 @@
        }
       },
       "en": {
-       "title": "Role deliverable",
+       "title": "Work lifecycle · Role deliverable",
        "learningObjective": "Keep a stage plan up to date when an external date changes.",
        "case": "Lumen's card-reader supplier says it will deliver two weeks later than planned.",
        "exercise1": {
@@ -1340,7 +1340,7 @@
        }
       },
       "pt": {
-       "title": "Entrega do cargo",
+       "title": "Ciclo de trabalho · Entrega do cargo",
        "learningObjective": "Manter um plano de etapas atualizado quando muda uma data externa.",
        "case": "O fornecedor de leitores de cartão da Lumen avisa que entregará duas semanas depois do previsto.",
        "exercise1": {
@@ -1366,7 +1366,7 @@
        }
       },
       "fr": {
-       "title": "Livrable du poste",
+       "title": "Cycle de travail · Livrable du poste",
        "learningObjective": "Tenir à jour un plan d'étapes lorsqu'une date externe change.",
        "case": "Le fournisseur de lecteurs de carte de Lumen annonce une livraison deux semaines plus tard que prévu.",
        "exercise1": {
@@ -1398,7 +1398,7 @@
      "sharedSource": "cs-handoff",
      "localized": {
       "es": {
-       "title": "Verificación y aceptación",
+       "title": "Ciclo de trabajo · Verificación y aceptación",
        "learningObjective": "Verificar que una etapa terminó con evidencia y no con actividad.",
        "case": "La etapa de configuración de Lumen se marcó como terminada porque ya hubo cuatro reuniones. Nadie probó una venta de principio a fin.",
        "exercise1": {
@@ -1424,7 +1424,7 @@
        }
       },
       "en": {
-       "title": "Verification and acceptance",
+       "title": "Work lifecycle · Verification and acceptance",
        "learningObjective": "Verify that a stage ended with evidence rather than activity.",
        "case": "Lumen's configuration stage was marked as done because four meetings were held. Nobody tested a sale from start to finish.",
        "exercise1": {
@@ -1450,7 +1450,7 @@
        }
       },
       "pt": {
-       "title": "Verificação e aceitação",
+       "title": "Ciclo de trabalho · Verificação e aceitação",
        "learningObjective": "Verificar que uma etapa terminou com evidência e não com atividade.",
        "case": "A etapa de configuração da Lumen foi marcada como concluída porque já houve quatro reuniões. Ninguém testou uma venda do início ao fim.",
        "exercise1": {
@@ -1476,7 +1476,7 @@
        }
       },
       "fr": {
-       "title": "Vérification et acceptation",
+       "title": "Cycle de travail · Vérification et acceptation",
        "learningObjective": "Vérifier qu'une étape s'est achevée sur des preuves et non sur de l'activité.",
        "case": "L'étape de configuration de Lumen a été marquée terminée parce que quatre réunions ont eu lieu. Personne n'a testé une vente de bout en bout.",
        "exercise1": {
@@ -1508,7 +1508,7 @@
      "sharedSource": "cs-handoff",
      "localized": {
       "es": {
-       "title": "Restricción nueva y transferencia",
+       "title": "Ciclo de trabajo · Restricción nueva y transferencia",
        "learningObjective": "Retomar el ciclo cuando el cliente cambia de prioridad a mitad del proceso.",
        "case": "A mitad de la implementación, Lumen decide abrir dos sucursales nuevas y quiere que entren en el mismo lanzamiento.",
        "exercise1": {
@@ -1534,7 +1534,7 @@
        }
       },
       "en": {
-       "title": "New constraint and transfer",
+       "title": "Work lifecycle · New constraint and transfer",
        "learningObjective": "Pick the lifecycle back up when the customer changes priority midway.",
        "case": "Halfway through the implementation, Lumen decides to open two new branches and wants them included in the same launch.",
        "exercise1": {
@@ -1560,7 +1560,7 @@
        }
       },
       "pt": {
-       "title": "Nova restrição e transferência",
+       "title": "Ciclo de trabalho · Nova restrição e transferência",
        "learningObjective": "Retomar o ciclo quando o cliente muda de prioridade no meio do processo.",
        "case": "No meio da implementação, a Lumen decide abrir duas filiais novas e quer que entrem no mesmo lançamento.",
        "exercise1": {
@@ -1586,7 +1586,7 @@
        }
       },
       "fr": {
-       "title": "Nouvelle contrainte et transfert",
+       "title": "Cycle de travail · Nouvelle contrainte et transfert",
        "learningObjective": "Reprendre le cycle quand le client change de priorité en cours de route.",
        "case": "À mi-parcours, Lumen décide d'ouvrir deux nouveaux magasins et veut les inclure dans le même lancement.",
        "exercise1": {
@@ -1863,7 +1863,7 @@
      "sharedSource": "cs-kickoff",
      "localized": {
       "es": {
-       "title": "Contexto y alcance",
+       "title": "Inicio de un caso · Contexto y alcance",
        "learningObjective": "Asegurar que el kickoff tenga a quien puede decidir.",
        "case": "Kickoff con Veterinaria Trébol: asisten tres personas operativas. La directora, que firma y aprueba, no se presentó.",
        "exercise1": {
@@ -1889,7 +1889,7 @@
        }
       },
       "en": {
-       "title": "Context and scope",
+       "title": "Starting a case · Context and scope",
        "learningObjective": "Make sure the kickoff includes someone who can decide.",
        "case": "Kickoff with Trébol Veterinary: three operational people attend. The director, who signs and approves, did not show up.",
        "exercise1": {
@@ -1915,7 +1915,7 @@
        }
       },
       "pt": {
-       "title": "Contexto e escopo",
+       "title": "Início de um caso · Contexto e escopo",
        "learningObjective": "Garantir que o kickoff tenha quem pode decidir.",
        "case": "Kickoff com a Veterinária Trébol: participam três pessoas operacionais. A diretora, que assina e aprova, não compareceu.",
        "exercise1": {
@@ -1941,7 +1941,7 @@
        }
       },
       "fr": {
-       "title": "Contexte et périmètre",
+       "title": "Démarrage d’un cas · Contexte et périmètre",
        "learningObjective": "S'assurer que le lancement réunit une personne habilitée à décider.",
        "case": "Lancement avec Vétérinaire Trébol : trois personnes opérationnelles sont présentes. La directrice, qui signe et approuve, n'est pas venue.",
        "exercise1": {
@@ -1973,7 +1973,7 @@
      "sharedSource": "cs-kickoff",
      "localized": {
       "es": {
-       "title": "Datos y fuentes",
+       "title": "Inicio de un caso · Datos y fuentes",
        "learningObjective": "Preparar el kickoff con agenda, objetivos y decisiones esperadas enviados de antemano.",
        "case": "Faltan dos días para el kickoff de Trébol y no hay agenda. El cliente no sabe qué información debe llevar.",
        "exercise1": {
@@ -1999,7 +1999,7 @@
        }
       },
       "en": {
-       "title": "Data and sources",
+       "title": "Starting a case · Data and sources",
        "learningObjective": "Prepare the kickoff with an agenda, objectives and expected decisions sent in advance.",
        "case": "Trébol's kickoff is two days away and there is no agenda. The customer does not know what information to bring.",
        "exercise1": {
@@ -2025,7 +2025,7 @@
        }
       },
       "pt": {
-       "title": "Dados e fontes",
+       "title": "Início de um caso · Dados e fontes",
        "learningObjective": "Preparar o kickoff com pauta, objetivos e decisões esperadas enviados com antecedência.",
        "case": "Faltam dois dias para o kickoff da Trébol e não há pauta. O cliente não sabe que informação deve levar.",
        "exercise1": {
@@ -2051,7 +2051,7 @@
        }
       },
       "fr": {
-       "title": "Données et sources",
+       "title": "Démarrage d’un cas · Données et sources",
        "learningObjective": "Préparer le lancement avec un ordre du jour, des objectifs et les décisions attendues, envoyés à l'avance.",
        "case": "Le lancement de Trébol a lieu dans deux jours et il n'y a pas d'ordre du jour. Le client ignore quelles informations apporter.",
        "exercise1": {
@@ -2083,7 +2083,7 @@
      "sharedSource": "cs-kickoff",
      "localized": {
       "es": {
-       "title": "Alternativas y criterio",
+       "title": "Inicio de un caso · Alternativas y criterio",
        "learningObjective": "Definir quién aprueba cada entregable antes de producirlo.",
        "case": "Trébol nombra como responsable del proyecto a la recepcionista. Es muy capaz, pero no puede aprobar cambios de precios ni de procesos.",
        "exercise1": {
@@ -2109,7 +2109,7 @@
        }
       },
       "en": {
-       "title": "Alternatives and judgment",
+       "title": "Starting a case · Alternatives and judgment",
        "learningObjective": "Define who approves each deliverable before producing it.",
        "case": "Trébol names the receptionist as project owner. She is very capable, but cannot approve changes to prices or processes.",
        "exercise1": {
@@ -2135,7 +2135,7 @@
        }
       },
       "pt": {
-       "title": "Alternativas e critério",
+       "title": "Início de um caso · Alternativas e critério",
        "learningObjective": "Definir quem aprova cada entregável antes de produzi-lo.",
        "case": "A Trébol nomeia a recepcionista como responsável pelo projeto. Ela é muito capaz, mas não pode aprovar mudanças de preços nem de processos.",
        "exercise1": {
@@ -2161,7 +2161,7 @@
        }
       },
       "fr": {
-       "title": "Options et jugement",
+       "title": "Démarrage d’un cas · Options et jugement",
        "learningObjective": "Définir qui approuve chaque livrable avant de le produire.",
        "case": "Trébol désigne la réceptionniste comme responsable du projet. Elle est très compétente, mais ne peut approuver ni les changements de prix ni ceux de processus.",
        "exercise1": {
@@ -2193,7 +2193,7 @@
      "sharedSource": "cs-kickoff",
      "localized": {
       "es": {
-       "title": "Entregable del puesto",
+       "title": "Inicio de un caso · Entregable del puesto",
        "learningObjective": "Traducir los objetivos del cliente en indicadores observables.",
        "case": "La directora de Trébol dice que quiere atender mejor y perder menos citas. No hay cifras.",
        "exercise1": {
@@ -2219,7 +2219,7 @@
        }
       },
       "en": {
-       "title": "Role deliverable",
+       "title": "Starting a case · Role deliverable",
        "learningObjective": "Turn the customer's goals into observable indicators.",
        "case": "Trébol's director says she wants to serve customers better and lose fewer appointments. There are no figures.",
        "exercise1": {
@@ -2245,7 +2245,7 @@
        }
       },
       "pt": {
-       "title": "Entrega do cargo",
+       "title": "Início de um caso · Entrega do cargo",
        "learningObjective": "Traduzir os objetivos do cliente em indicadores observáveis.",
        "case": "A diretora da Trébol diz que quer atender melhor e perder menos consultas. Não há números.",
        "exercise1": {
@@ -2271,7 +2271,7 @@
        }
       },
       "fr": {
-       "title": "Livrable du poste",
+       "title": "Démarrage d’un cas · Livrable du poste",
        "learningObjective": "Traduire les objectifs du client en indicateurs observables.",
        "case": "La directrice de Trébol dit vouloir mieux accueillir et perdre moins de rendez-vous. Il n'y a aucun chiffre.",
        "exercise1": {
@@ -2303,7 +2303,7 @@
      "sharedSource": "cs-kickoff",
      "localized": {
       "es": {
-       "title": "Verificación y aceptación",
+       "title": "Inicio de un caso · Verificación y aceptación",
        "learningObjective": "Registrar en el kickoff los bloqueos detectados con dueño y fecha de revisión.",
        "case": "Durante el kickoff descubren que el internet de la clínica se cae varias veces al día. Todos lo comentan y pasan al siguiente tema.",
        "exercise1": {
@@ -2329,7 +2329,7 @@
        }
       },
       "en": {
-       "title": "Verification and acceptance",
+       "title": "Starting a case · Verification and acceptance",
        "learningObjective": "Record at the kickoff the blockers found, with an owner and a review date.",
        "case": "During the kickoff they discover the clinic's internet drops several times a day. Everyone comments on it and moves to the next topic.",
        "exercise1": {
@@ -2355,7 +2355,7 @@
        }
       },
       "pt": {
-       "title": "Verificação e aceitação",
+       "title": "Início de um caso · Verificação e aceitação",
        "learningObjective": "Registrar no kickoff os bloqueios detectados com dono e data de revisão.",
        "case": "Durante o kickoff descobrem que a internet da clínica cai várias vezes por dia. Todos comentam e passam ao tema seguinte.",
        "exercise1": {
@@ -2381,7 +2381,7 @@
        }
       },
       "fr": {
-       "title": "Vérification et acceptation",
+       "title": "Démarrage d’un cas · Vérification et acceptation",
        "learningObjective": "Consigner lors du lancement les blocages repérés, avec un responsable et une date de revue.",
        "case": "Pendant le lancement, on découvre que la connexion internet de la clinique tombe plusieurs fois par jour. Tout le monde en parle, puis on passe au sujet suivant.",
        "exercise1": {
@@ -2413,7 +2413,7 @@
      "sharedSource": "cs-kickoff",
      "localized": {
       "es": {
-       "title": "Restricción nueva y transferencia",
+       "title": "Inicio de un caso · Restricción nueva y transferencia",
        "learningObjective": "Enviar un acta que permita a quien no asistió saber qué se decidió.",
        "case": "Tras el kickoff, la directora de Trébol te escribe: no pude estar, ¿en qué quedaron? Tus notas están en un chat personal.",
        "exercise1": {
@@ -2439,7 +2439,7 @@
        }
       },
       "en": {
-       "title": "New constraint and transfer",
+       "title": "Starting a case · New constraint and transfer",
        "learningObjective": "Send minutes that let someone who did not attend know what was decided.",
        "case": "After the kickoff, Trébol's director writes to you: I could not make it, what was agreed? Your notes are in a personal chat.",
        "exercise1": {
@@ -2465,7 +2465,7 @@
        }
       },
       "pt": {
-       "title": "Nova restrição e transferência",
+       "title": "Início de um caso · Nova restrição e transferência",
        "learningObjective": "Enviar uma ata que permita a quem não participou saber o que foi decidido.",
        "case": "Depois do kickoff, a diretora da Trébol escreve: não pude estar, o que ficou combinado? Suas anotações estão em um chat pessoal.",
        "exercise1": {
@@ -2491,7 +2491,7 @@
        }
       },
       "fr": {
-       "title": "Nouvelle contrainte et transfert",
+       "title": "Démarrage d’un cas · Nouvelle contrainte et transfert",
        "learningObjective": "Envoyer un compte rendu qui permet à un absent de savoir ce qui a été décidé.",
        "case": "Après le lancement, la directrice de Trébol vous écrit : je n'ai pas pu venir, qu'a-t-il été convenu ? Vos notes sont dans une messagerie personnelle.",
        "exercise1": {
@@ -2768,7 +2768,7 @@
      "sharedSource": "common-communication",
      "localized": {
       "es": {
-       "title": "Contexto y alcance",
+       "title": "Comunicación · Contexto y alcance",
        "learningObjective": "Comunicar un retraso antes de que el cliente lo descubra.",
        "case": "La carga de productos de Panadería Miga lleva tres días de retraso. El cliente se entera al entrar y ver el catálogo vacío, y te escribe molesto.",
        "exercise1": {
@@ -2794,7 +2794,7 @@
        }
       },
       "en": {
-       "title": "Context and scope",
+       "title": "Communication · Context and scope",
        "learningObjective": "Communicate a delay before the customer discovers it.",
        "case": "Miga Bakery's product upload is three days late. The customer finds out on logging in and seeing an empty catalogue, and writes to you annoyed.",
        "exercise1": {
@@ -2820,7 +2820,7 @@
        }
       },
       "pt": {
-       "title": "Contexto e escopo",
+       "title": "Comunicação · Contexto e escopo",
        "learningObjective": "Comunicar um atraso antes que o cliente o descubra.",
        "case": "A carga de produtos da Padaria Miga está três dias atrasada. O cliente descobre ao entrar e ver o catálogo vazio, e escreve irritado.",
        "exercise1": {
@@ -2846,7 +2846,7 @@
        }
       },
       "fr": {
-       "title": "Contexte et périmètre",
+       "title": "Communication · Contexte et périmètre",
        "learningObjective": "Annoncer un retard avant que le client ne le découvre.",
        "case": "Le chargement des produits de la Boulangerie Miga a trois jours de retard. Le client l'apprend en se connectant devant un catalogue vide et vous écrit, agacé.",
        "exercise1": {
@@ -2878,7 +2878,7 @@
      "sharedSource": "common-communication",
      "localized": {
       "es": {
-       "title": "Datos y fuentes",
+       "title": "Comunicación · Datos y fuentes",
        "learningObjective": "Reportar un riesgo con datos aunque alguien prefiera esperar.",
        "case": "Tu gerente te pide no mencionar al cliente que el proveedor de terminales va tarde, para mantener el proyecto en verde hasta la próxima reunión.",
        "exercise1": {
@@ -2904,7 +2904,7 @@
        }
       },
       "en": {
-       "title": "Data and sources",
+       "title": "Communication · Data and sources",
        "learningObjective": "Report a risk with data even when someone would rather wait.",
        "case": "Your manager asks you not to tell the customer that the terminal supplier is running late, to keep the project green until the next meeting.",
        "exercise1": {
@@ -2930,7 +2930,7 @@
        }
       },
       "pt": {
-       "title": "Dados e fontes",
+       "title": "Comunicação · Dados e fontes",
        "learningObjective": "Relatar um risco com dados mesmo quando alguém prefere esperar.",
        "case": "Seu gerente pede que você não mencione ao cliente que o fornecedor de terminais está atrasado, para manter o projeto em verde até a próxima reunião.",
        "exercise1": {
@@ -2956,7 +2956,7 @@
        }
       },
       "fr": {
-       "title": "Données et sources",
+       "title": "Communication · Données et sources",
        "learningObjective": "Signaler un risque avec des données même si quelqu'un préfère attendre.",
        "case": "Votre responsable vous demande de ne pas dire au client que le fournisseur de terminaux est en retard, pour garder le projet au vert jusqu'à la prochaine réunion.",
        "exercise1": {
@@ -2988,7 +2988,7 @@
      "sharedSource": "common-communication",
      "localized": {
       "es": {
-       "title": "Alternativas y criterio",
+       "title": "Comunicación · Alternativas y criterio",
        "learningObjective": "Mantener una sola versión vigente del plan.",
        "case": "El dueño de Miga tiene un cronograma que dice lanzamiento el día 10. La encargada de tienda tiene otro que dice el 17. Ambos salieron de tu equipo.",
        "exercise1": {
@@ -3014,7 +3014,7 @@
        }
       },
       "en": {
-       "title": "Alternatives and judgment",
+       "title": "Communication · Alternatives and judgment",
        "learningObjective": "Keep a single current version of the plan.",
        "case": "Miga's owner has a schedule that says launch on the 10th. The shop manager has another that says the 17th. Both came from your team.",
        "exercise1": {
@@ -3040,7 +3040,7 @@
        }
       },
       "pt": {
-       "title": "Alternativas e critério",
+       "title": "Comunicação · Alternativas e critério",
        "learningObjective": "Manter uma única versão vigente do plano.",
        "case": "O dono da Miga tem um cronograma que diz lançamento no dia 10. A gerente da loja tem outro que diz dia 17. Ambos saíram da sua equipe.",
        "exercise1": {
@@ -3066,7 +3066,7 @@
        }
       },
       "fr": {
-       "title": "Options et jugement",
+       "title": "Communication · Options et jugement",
        "learningObjective": "Conserver une seule version en vigueur du plan.",
        "case": "Le gérant de Miga a un calendrier indiquant un lancement le 10. La responsable de boutique en a un autre indiquant le 17. Les deux viennent de votre équipe.",
        "exercise1": {
@@ -3098,7 +3098,7 @@
      "sharedSource": "common-communication",
      "localized": {
       "es": {
-       "title": "Entregable del puesto",
+       "title": "Comunicación · Entregable del puesto",
        "learningObjective": "Escribir fechas distinguiendo las confirmadas de las tentativas y sus condiciones.",
        "case": "Dijiste en una llamada que el lanzamiento podría ser el 10 si llegan las terminales. El cliente ya anunció el 10 a su personal.",
        "exercise1": {
@@ -3124,7 +3124,7 @@
        }
       },
       "en": {
-       "title": "Role deliverable",
+       "title": "Communication · Role deliverable",
        "learningObjective": "Write dates telling confirmed ones apart from tentative ones and their conditions.",
        "case": "On a call you said the launch could be on the 10th if the terminals arrive. The customer has already announced the 10th to their staff.",
        "exercise1": {
@@ -3150,7 +3150,7 @@
        }
       },
       "pt": {
-       "title": "Entrega do cargo",
+       "title": "Comunicação · Entrega do cargo",
        "learningObjective": "Escrever datas distinguindo as confirmadas das provisórias e suas condições.",
        "case": "Você disse em uma ligação que o lançamento poderia ser no dia 10 se as máquinas chegassem. O cliente já anunciou o dia 10 à equipe.",
        "exercise1": {
@@ -3176,7 +3176,7 @@
        }
       },
       "fr": {
-       "title": "Livrable du poste",
+       "title": "Communication · Livrable du poste",
        "learningObjective": "Écrire les dates en distinguant les confirmées des provisoires, avec leurs conditions.",
        "case": "Lors d'un appel, vous avez dit que le lancement pourrait avoir lieu le 10 si les terminaux arrivaient. Le client a déjà annoncé le 10 à son personnel.",
        "exercise1": {
@@ -3208,7 +3208,7 @@
      "sharedSource": "common-communication",
      "localized": {
       "es": {
-       "title": "Verificación y aceptación",
+       "title": "Comunicación · Verificación y aceptación",
        "learningObjective": "Verificar que el mensaje llegó y, si no hay respuesta, escalar por el canal acordado.",
        "case": "Llevas una semana escribiendo a la encargada de Miga para aprobar el catálogo. No responde y el lanzamiento depende de eso.",
        "exercise1": {
@@ -3234,7 +3234,7 @@
        }
       },
       "en": {
-       "title": "Verification and acceptance",
+       "title": "Communication · Verification and acceptance",
        "learningObjective": "Verify that the message arrived and, if there is no reply, escalate through the agreed channel.",
        "case": "For a week you have been writing to Miga's manager to approve the catalogue. She does not reply and the launch depends on it.",
        "exercise1": {
@@ -3260,7 +3260,7 @@
        }
       },
       "pt": {
-       "title": "Verificação e aceitação",
+       "title": "Comunicação · Verificação e aceitação",
        "learningObjective": "Verificar que a mensagem chegou e, se não houver resposta, escalar pelo canal acordado.",
        "case": "Há uma semana você escreve à gerente da Miga para aprovar o catálogo. Ela não responde e o lançamento depende disso.",
        "exercise1": {
@@ -3286,7 +3286,7 @@
        }
       },
       "fr": {
-       "title": "Vérification et acceptation",
+       "title": "Communication · Vérification et acceptation",
        "learningObjective": "Vérifier que le message est arrivé et, sans réponse, escalader par le canal convenu.",
        "case": "Depuis une semaine, vous écrivez à la responsable de Miga pour faire approuver le catalogue. Elle ne répond pas et le lancement en dépend.",
        "exercise1": {
@@ -3318,7 +3318,7 @@
      "sharedSource": "common-communication",
      "localized": {
       "es": {
-       "title": "Restricción nueva y transferencia",
+       "title": "Comunicación · Restricción nueva y transferencia",
        "learningObjective": "Adaptar el mensaje al público y comprobar que se entendió.",
        "case": "Los materiales de capacitación de Miga están en un español técnico. La mitad del personal de tienda habla principalmente portugués.",
        "exercise1": {
@@ -3344,7 +3344,7 @@
        }
       },
       "en": {
-       "title": "New constraint and transfer",
+       "title": "Communication · New constraint and transfer",
        "learningObjective": "Adapt the message to the audience and check that it was understood.",
        "case": "Miga's training materials are in technical Spanish. Half the shop staff mainly speak Portuguese.",
        "exercise1": {
@@ -3370,7 +3370,7 @@
        }
       },
       "pt": {
-       "title": "Nova restrição e transferência",
+       "title": "Comunicação · Nova restrição e transferência",
        "learningObjective": "Adaptar a mensagem ao público e comprovar que foi entendida.",
        "case": "Os materiais de treinamento da Miga estão em um espanhol técnico. Metade do pessoal da loja fala principalmente português.",
        "exercise1": {
@@ -3396,7 +3396,7 @@
        }
       },
       "fr": {
-       "title": "Nouvelle contrainte et transfert",
+       "title": "Communication · Nouvelle contrainte et transfert",
        "learningObjective": "Adapter le message au public et vérifier qu'il a été compris.",
        "case": "Les supports de formation de Miga sont rédigés dans un espagnol technique. La moitié du personnel de boutique parle surtout portugais.",
        "exercise1": {
@@ -3673,7 +3673,7 @@
      "sharedSource": "cs-health",
      "localized": {
       "es": {
-       "title": "Contexto y alcance",
+       "title": "Calidad y resultado · Contexto y alcance",
        "learningObjective": "Probar la configuración con los permisos reales de cada tipo de usuario.",
        "case": "Probaste todo el flujo de Taller Rueda con tu cuenta de administrador y funcionó. El primer día, los mecánicos no pueden cerrar una orden de trabajo.",
        "exercise1": {
@@ -3699,7 +3699,7 @@
        }
       },
       "en": {
-       "title": "Context and scope",
+       "title": "Quality and outcome · Context and scope",
        "learningObjective": "Test the configuration with the real permissions of each type of user.",
        "case": "You tested the whole Rueda Garage flow with your administrator account and it worked. On day one, the mechanics cannot close a work order.",
        "exercise1": {
@@ -3725,7 +3725,7 @@
        }
       },
       "pt": {
-       "title": "Contexto e escopo",
+       "title": "Qualidade e resultado · Contexto e escopo",
        "learningObjective": "Testar a configuração com as permissões reais de cada tipo de usuário.",
        "case": "Você testou todo o fluxo da Oficina Rueda com sua conta de administrador e funcionou. No primeiro dia, os mecânicos não conseguem fechar uma ordem de serviço.",
        "exercise1": {
@@ -3751,7 +3751,7 @@
        }
       },
       "fr": {
-       "title": "Contexte et périmètre",
+       "title": "Qualité et résultat · Contexte et périmètre",
        "learningObjective": "Tester la configuration avec les droits réels de chaque type d'utilisateur.",
        "case": "Vous avez testé tout le flux du Garage Rueda avec votre compte administrateur et cela fonctionnait. Le premier jour, les mécaniciens ne peuvent pas clôturer un ordre de travail.",
        "exercise1": {
@@ -3783,7 +3783,7 @@
      "sharedSource": "cs-health",
      "localized": {
       "es": {
-       "title": "Datos y fuentes",
+       "title": "Calidad y resultado · Datos y fuentes",
        "learningObjective": "Conciliar los datos migrados contra la fuente antes de aceptarlos.",
        "case": "La migración de clientes de Taller Rueda terminó sin errores: el sistema anterior tenía 1,840 clientes y el nuevo muestra 2,015.",
        "exercise1": {
@@ -3809,7 +3809,7 @@
        }
       },
       "en": {
-       "title": "Data and sources",
+       "title": "Quality and outcome · Data and sources",
        "learningObjective": "Reconcile migrated data against the source before accepting it.",
        "case": "Rueda Garage's customer migration finished without errors: the previous system had 1,840 customers and the new one shows 2,015.",
        "exercise1": {
@@ -3835,7 +3835,7 @@
        }
       },
       "pt": {
-       "title": "Dados e fontes",
+       "title": "Qualidade e resultado · Dados e fontes",
        "learningObjective": "Conciliar os dados migrados com a fonte antes de aceitá-los.",
        "case": "A migração de clientes da Oficina Rueda terminou sem erros: o sistema anterior tinha 1.840 clientes e o novo mostra 2.015.",
        "exercise1": {
@@ -3861,7 +3861,7 @@
        }
       },
       "fr": {
-       "title": "Données et sources",
+       "title": "Qualité et résultat · Données et sources",
        "learningObjective": "Rapprocher les données migrées de la source avant de les accepter.",
        "case": "La migration des clients du Garage Rueda s'est terminée sans erreur : l'ancien système comptait 1 840 clients et le nouveau en affiche 2 015.",
        "exercise1": {
@@ -3893,7 +3893,7 @@
      "sharedSource": "cs-health",
      "localized": {
       "es": {
-       "title": "Alternativas y criterio",
+       "title": "Calidad y resultado · Alternativas y criterio",
        "learningObjective": "Medir la capacitación por lo que el usuario logra hacer sin ayuda.",
        "case": "Todos los mecánicos de Taller Rueda asistieron a la capacitación. Una semana después siguen anotando las órdenes en papel.",
        "exercise1": {
@@ -3919,7 +3919,7 @@
        }
       },
       "en": {
-       "title": "Alternatives and judgment",
+       "title": "Quality and outcome · Alternatives and judgment",
        "learningObjective": "Measure training by what the user manages to do unaided.",
        "case": "Every mechanic at Rueda Garage attended the training. A week later they are still writing work orders on paper.",
        "exercise1": {
@@ -3945,7 +3945,7 @@
        }
       },
       "pt": {
-       "title": "Alternativas e critério",
+       "title": "Qualidade e resultado · Alternativas e critério",
        "learningObjective": "Medir o treinamento pelo que o usuário consegue fazer sem ajuda.",
        "case": "Todos os mecânicos da Oficina Rueda participaram do treinamento. Uma semana depois continuam anotando as ordens em papel.",
        "exercise1": {
@@ -3971,7 +3971,7 @@
        }
       },
       "fr": {
-       "title": "Options et jugement",
+       "title": "Qualité et résultat · Options et jugement",
        "learningObjective": "Mesurer la formation à ce que l'utilisateur parvient à faire sans aide.",
        "case": "Tous les mécaniciens du Garage Rueda ont suivi la formation. Une semaine plus tard, ils notent toujours les ordres sur papier.",
        "exercise1": {
@@ -4003,7 +4003,7 @@
      "sharedSource": "cs-health",
      "localized": {
       "es": {
-       "title": "Entregable del puesto",
+       "title": "Calidad y resultado · Entregable del puesto",
        "learningObjective": "Redactar criterios de aceptación con tolerancias verificables.",
        "case": "El criterio acordado con Taller Rueda dice: el inventario debe estar correcto. Al contar, 12 de 600 piezas tienen diferencias.",
        "exercise1": {
@@ -4029,7 +4029,7 @@
        }
       },
       "en": {
-       "title": "Role deliverable",
+       "title": "Quality and outcome · Role deliverable",
        "learningObjective": "Write acceptance criteria with verifiable tolerances.",
        "case": "The criterion agreed with Rueda Garage says: the inventory must be correct. On counting, 12 of 600 parts show differences.",
        "exercise1": {
@@ -4055,7 +4055,7 @@
        }
       },
       "pt": {
-       "title": "Entrega do cargo",
+       "title": "Qualidade e resultado · Entrega do cargo",
        "learningObjective": "Redigir critérios de aceitação com tolerâncias verificáveis.",
        "case": "O critério acordado com a Oficina Rueda diz: o estoque deve estar correto. Na contagem, 12 de 600 peças têm diferenças.",
        "exercise1": {
@@ -4081,7 +4081,7 @@
        }
       },
       "fr": {
-       "title": "Livrable du poste",
+       "title": "Qualité et résultat · Livrable du poste",
        "learningObjective": "Rédiger des critères d'acceptation avec des tolérances vérifiables.",
        "case": "Le critère convenu avec le Garage Rueda stipule : le stock doit être correct. Au comptage, 12 pièces sur 600 présentent des écarts.",
        "exercise1": {
@@ -4113,7 +4113,7 @@
      "sharedSource": "cs-health",
      "localized": {
       "es": {
-       "title": "Verificación y aceptación",
+       "title": "Calidad y resultado · Verificación y aceptación",
        "learningObjective": "Documentar una incidencia de forma que otra persona pueda reproducirla.",
        "case": "El dueño de Taller Rueda reporta: a veces la factura sale con el total en cero. Soporte no logra reproducirlo.",
        "exercise1": {
@@ -4139,7 +4139,7 @@
        }
       },
       "en": {
-       "title": "Verification and acceptance",
+       "title": "Quality and outcome · Verification and acceptance",
        "learningObjective": "Document an issue so that another person can reproduce it.",
        "case": "Rueda Garage's owner reports: sometimes the invoice comes out with a total of zero. Support cannot reproduce it.",
        "exercise1": {
@@ -4165,7 +4165,7 @@
        }
       },
       "pt": {
-       "title": "Verificação e aceitação",
+       "title": "Qualidade e resultado · Verificação e aceitação",
        "learningObjective": "Documentar uma incidência de modo que outra pessoa consiga reproduzi-la.",
        "case": "O dono da Oficina Rueda relata: às vezes a nota sai com o total zerado. O suporte não consegue reproduzir.",
        "exercise1": {
@@ -4191,7 +4191,7 @@
        }
       },
       "fr": {
-       "title": "Vérification et acceptation",
+       "title": "Qualité et résultat · Vérification et acceptation",
        "learningObjective": "Documenter un incident de façon qu'une autre personne puisse le reproduire.",
        "case": "Le gérant du Garage Rueda signale : parfois, la facture sort avec un total à zéro. Le support n'arrive pas à le reproduire.",
        "exercise1": {
@@ -4223,7 +4223,7 @@
      "sharedSource": "cs-health",
      "localized": {
       "es": {
-       "title": "Restricción nueva y transferencia",
+       "title": "Calidad y resultado · Restricción nueva y transferencia",
        "learningObjective": "Recuperar una aceptación rechazada acordando el criterio que faltaba.",
        "case": "Taller Rueda rechaza el reporte de ventas: dice que no es lo que esperaba. Nunca se acordó qué columnas ni qué periodos debía mostrar.",
        "exercise1": {
@@ -4249,7 +4249,7 @@
        }
       },
       "en": {
-       "title": "New constraint and transfer",
+       "title": "Quality and outcome · New constraint and transfer",
        "learningObjective": "Recover a rejected acceptance by agreeing the criterion that was missing.",
        "case": "Rueda Garage rejects the sales report: he says it is not what he expected. Nobody ever agreed which columns or periods it should show.",
        "exercise1": {
@@ -4275,7 +4275,7 @@
        }
       },
       "pt": {
-       "title": "Nova restrição e transferência",
+       "title": "Qualidade e resultado · Nova restrição e transferência",
        "learningObjective": "Recuperar uma aceitação recusada combinando o critério que faltava.",
        "case": "A Oficina Rueda recusa o relatório de vendas: diz que não é o que esperava. Nunca se combinou que colunas nem que períodos ele deveria mostrar.",
        "exercise1": {
@@ -4301,7 +4301,7 @@
        }
       },
       "fr": {
-       "title": "Nouvelle contrainte et transfert",
+       "title": "Qualité et résultat · Nouvelle contrainte et transfert",
        "learningObjective": "Rattraper une acceptation refusée en convenant du critère manquant.",
        "case": "Le Garage Rueda refuse le rapport des ventes : ce n'est pas ce qu'il attendait. Personne n'avait convenu des colonnes ni des périodes à afficher.",
        "exercise1": {
@@ -4578,7 +4578,7 @@
      "sharedSource": "common-documentation",
      "localized": {
       "es": {
-       "title": "Contexto y alcance",
+       "title": "Herramientas · Contexto y alcance",
        "learningObjective": "Delimitar qué sistemas se conectan en la primera fase y quién autoriza cada acceso.",
        "case": "Clínica Brisa quiere conectar su CRM, su ERP y su correo en el kickoff. El contrato solo incluye el CRM.",
        "exercise1": {
@@ -4604,7 +4604,7 @@
        }
       },
       "en": {
-       "title": "Context and scope",
+       "title": "Tools · Context and scope",
        "learningObjective": "Define which systems are connected in the first phase and who authorizes each access.",
        "case": "Brisa Clinic wants to connect its CRM, ERP and email at kickoff. The contract only covers the CRM.",
        "exercise1": {
@@ -4630,7 +4630,7 @@
        }
       },
       "pt": {
-       "title": "Contexto e escopo",
+       "title": "Ferramentas · Contexto e escopo",
        "learningObjective": "Delimitar quais sistemas são conectados na primeira fase e quem autoriza cada acesso.",
        "case": "A Clínica Brisa quer conectar o CRM, o ERP e o e-mail no kickoff. O contrato inclui apenas o CRM.",
        "exercise1": {
@@ -4656,7 +4656,7 @@
        }
       },
       "fr": {
-       "title": "Contexte et périmètre",
+       "title": "Outils · Contexte et périmètre",
        "learningObjective": "Délimiter les systèmes connectés en première phase et qui autorise chaque accès.",
        "case": "La Clinique Brisa veut connecter son CRM, son ERP et sa messagerie dès le lancement. Le contrat ne couvre que le CRM.",
        "exercise1": {
@@ -4688,7 +4688,7 @@
      "sharedSource": "common-documentation",
      "localized": {
       "es": {
-       "title": "Datos y fuentes",
+       "title": "Herramientas · Datos y fuentes",
        "learningObjective": "Identificar qué campos del CRM son fuente de verdad antes de sincronizar.",
        "case": "El CRM de Brisa tiene dos campos de correo por contacto y nadie sabe cuál usa el equipo de ventas.",
        "exercise1": {
@@ -4714,7 +4714,7 @@
        }
       },
       "en": {
-       "title": "Data and sources",
+       "title": "Tools · Data and sources",
        "learningObjective": "Identify which CRM fields are the source of truth before syncing.",
        "case": "Brisa's CRM has two email fields per contact and nobody knows which one the sales team uses.",
        "exercise1": {
@@ -4740,7 +4740,7 @@
        }
       },
       "pt": {
-       "title": "Dados e fontes",
+       "title": "Ferramentas · Dados e fontes",
        "learningObjective": "Identificar quais campos do CRM são a fonte da verdade antes de sincronizar.",
        "case": "O CRM da Brisa tem dois campos de e-mail por contato e ninguém sabe qual a equipe de vendas usa.",
        "exercise1": {
@@ -4766,7 +4766,7 @@
        }
       },
       "fr": {
-       "title": "Données et sources",
+       "title": "Outils · Données et sources",
        "learningObjective": "Identifier les champs du CRM qui font référence avant de synchroniser.",
        "case": "Le CRM de Brisa contient deux champs e-mail par contact et personne ne sait lequel l'équipe commerciale utilise.",
        "exercise1": {
@@ -4798,7 +4798,7 @@
      "sharedSource": "common-documentation",
      "localized": {
       "es": {
-       "title": "Alternativas y criterio",
+       "title": "Herramientas · Alternativas y criterio",
        "learningObjective": "Comparar conector nativo, importación por archivo y desarrollo a medida según plazo y mantenimiento.",
        "case": "El conector nativo no cubre un campo personalizado que Brisa usa en sus reportes semanales.",
        "exercise1": {
@@ -4824,7 +4824,7 @@
        }
       },
       "en": {
-       "title": "Alternatives and judgment",
+       "title": "Tools · Alternatives and judgment",
        "learningObjective": "Compare a native connector, file import and custom development by timeline and upkeep.",
        "case": "The native connector does not cover a custom field that Brisa uses in its weekly reports.",
        "exercise1": {
@@ -4850,7 +4850,7 @@
        }
       },
       "pt": {
-       "title": "Alternativas e critério",
+       "title": "Ferramentas · Alternativas e critério",
        "learningObjective": "Comparar conector nativo, importação por arquivo e desenvolvimento sob medida por prazo e manutenção.",
        "case": "O conector nativo não cobre um campo personalizado que a Brisa usa nos relatórios semanais.",
        "exercise1": {
@@ -4876,7 +4876,7 @@
        }
       },
       "fr": {
-       "title": "Options et jugement",
+       "title": "Outils · Options et jugement",
        "learningObjective": "Comparer connecteur natif, import par fichier et développement sur mesure selon le délai et la maintenance.",
        "case": "Le connecteur natif ne couvre pas un champ personnalisé que Brisa utilise dans ses rapports hebdomadaires.",
        "exercise1": {
@@ -4908,7 +4908,7 @@
      "sharedSource": "common-documentation",
      "localized": {
       "es": {
-       "title": "Entregable del puesto",
+       "title": "Herramientas · Entregable del puesto",
        "learningObjective": "Redactar la ficha de integración con accesos, mapa de campos, frecuencia y contacto de soporte.",
        "case": "La integración funciona, pero solo tú sabes qué cuenta de servicio se usó y cada cuánto sincroniza.",
        "exercise1": {
@@ -4934,7 +4934,7 @@
        }
       },
       "en": {
-       "title": "Role deliverable",
+       "title": "Tools · Role deliverable",
        "learningObjective": "Write the integration sheet with access, field map, frequency and support contact.",
        "case": "The integration works, but only you know which service account was used and how often it syncs.",
        "exercise1": {
@@ -4960,7 +4960,7 @@
        }
       },
       "pt": {
-       "title": "Entrega do cargo",
+       "title": "Ferramentas · Entrega do cargo",
        "learningObjective": "Redigir a ficha de integração com acessos, mapa de campos, frequência e contato de suporte.",
        "case": "A integração funciona, mas só você sabe qual conta de serviço foi usada e com que frequência sincroniza.",
        "exercise1": {
@@ -4986,7 +4986,7 @@
        }
       },
       "fr": {
-       "title": "Livrable du poste",
+       "title": "Outils · Livrable du poste",
        "learningObjective": "Rédiger la fiche d'intégration : accès, correspondance des champs, fréquence et contact de support.",
        "case": "L'intégration fonctionne, mais vous seul savez quel compte de service a été utilisé et à quelle fréquence il synchronise.",
        "exercise1": {
@@ -5018,7 +5018,7 @@
      "sharedSource": "common-documentation",
      "localized": {
       "es": {
-       "title": "Verificación y aceptación",
+       "title": "Herramientas · Verificación y aceptación",
        "learningObjective": "Verificar la integración con registros reales del cliente y criterios acordados.",
        "case": "La prueba con cinco contactos ficticios salió bien. El cliente pregunta si ya puede usarla.",
        "exercise1": {
@@ -5044,7 +5044,7 @@
        }
       },
       "en": {
-       "title": "Verification and acceptance",
+       "title": "Tools · Verification and acceptance",
        "learningObjective": "Verify the integration with the customer's real records and agreed criteria.",
        "case": "The test with five dummy contacts went well. The customer asks whether they can start using it.",
        "exercise1": {
@@ -5070,7 +5070,7 @@
        }
       },
       "pt": {
-       "title": "Verificação e aceitação",
+       "title": "Ferramentas · Verificação e aceitação",
        "learningObjective": "Verificar a integração com registros reais do cliente e critérios acordados.",
        "case": "O teste com cinco contatos fictícios deu certo. O cliente pergunta se já pode usar.",
        "exercise1": {
@@ -5096,7 +5096,7 @@
        }
       },
       "fr": {
-       "title": "Vérification et acceptation",
+       "title": "Outils · Vérification et acceptation",
        "learningObjective": "Vérifier l'intégration avec les enregistrements réels du client et les critères convenus.",
        "case": "Le test avec cinq contacts fictifs s'est bien passé. Le client demande s'il peut l'utiliser.",
        "exercise1": {
@@ -5128,7 +5128,7 @@
      "sharedSource": "common-documentation",
      "localized": {
       "es": {
-       "title": "Restricción nueva y transferencia",
+       "title": "Herramientas · Restricción nueva y transferencia",
        "learningObjective": "Adaptar la integración cuando cambia una política de seguridad del cliente.",
        "case": "A mitad de proyecto, TI de Brisa prohíbe las cuentas de servicio con permisos de escritura.",
        "exercise1": {
@@ -5154,7 +5154,7 @@
        }
       },
       "en": {
-       "title": "New constraint and transfer",
+       "title": "Tools · New constraint and transfer",
        "learningObjective": "Adapt the integration when one of the customer's security policies changes.",
        "case": "Midway through the project, Brisa's IT bans service accounts with write permissions.",
        "exercise1": {
@@ -5180,7 +5180,7 @@
        }
       },
       "pt": {
-       "title": "Nova restrição e transferência",
+       "title": "Ferramentas · Nova restrição e transferência",
        "learningObjective": "Adaptar a integração quando uma política de segurança do cliente muda.",
        "case": "No meio do projeto, a TI da Brisa proíbe contas de serviço com permissão de escrita.",
        "exercise1": {
@@ -5206,7 +5206,7 @@
        }
       },
       "fr": {
-       "title": "Nouvelle contrainte et transfert",
+       "title": "Outils · Nouvelle contrainte et transfert",
        "learningObjective": "Adapter l'intégration lorsqu'une politique de sécurité du client change.",
        "case": "En cours de projet, la DSI de Brisa interdit les comptes de service avec droits d'écriture.",
        "exercise1": {
@@ -5483,7 +5483,7 @@
      "sharedSource": "cs-portfolio",
      "localized": {
       "es": {
-       "title": "Contexto y alcance",
+       "title": "Priorización · Contexto y alcance",
        "learningObjective": "Distinguir qué bloqueos detienen el primer valor y cuáles pueden esperar.",
        "case": "Transportes Ruta 9 tiene tres pendientes: usuarios sin acceso, un reporte con formato distinto y un logo mal cargado. Solo hay una jornada.",
        "exercise1": {
@@ -5509,7 +5509,7 @@
        }
       },
       "en": {
-       "title": "Context and scope",
+       "title": "Prioritization · Context and scope",
        "learningObjective": "Tell apart the blockers that stop first value from those that can wait.",
        "case": "Ruta 9 Transport has three pending items: users without access, a report in a different format and a badly uploaded logo. There is only one working day.",
        "exercise1": {
@@ -5535,7 +5535,7 @@
        }
       },
       "pt": {
-       "title": "Contexto e escopo",
+       "title": "Priorização · Contexto e escopo",
        "learningObjective": "Distinguir quais bloqueios impedem o primeiro valor e quais podem esperar.",
        "case": "A Transportes Ruta 9 tem três pendências: usuários sem acesso, um relatório com formato diferente e um logotipo mal carregado. Há apenas um dia de trabalho.",
        "exercise1": {
@@ -5561,7 +5561,7 @@
        }
       },
       "fr": {
-       "title": "Contexte et périmètre",
+       "title": "Priorités · Contexte et périmètre",
        "learningObjective": "Distinguer les blocages qui empêchent la première valeur de ceux qui peuvent attendre.",
        "case": "Transports Ruta 9 a trois points en attente : des utilisateurs sans accès, un rapport au mauvais format et un logo mal chargé. Vous n'avez qu'une journée.",
        "exercise1": {
@@ -5593,7 +5593,7 @@
      "sharedSource": "cs-portfolio",
      "localized": {
       "es": {
-       "title": "Datos y fuentes",
+       "title": "Priorización · Datos y fuentes",
        "learningObjective": "Usar datos de uso y fechas comprometidas para sustentar una prioridad.",
        "case": "El patrocinador de Ruta 9 dice que el reporte es urgente. El tablero muestra que 18 de 25 usuarios no han iniciado sesión.",
        "exercise1": {
@@ -5619,7 +5619,7 @@
        }
       },
       "en": {
-       "title": "Data and sources",
+       "title": "Prioritization · Data and sources",
        "learningObjective": "Use usage data and committed dates to support a priority.",
        "case": "Ruta 9's sponsor says the report is urgent. The dashboard shows that 18 of 25 users have never signed in.",
        "exercise1": {
@@ -5645,7 +5645,7 @@
        }
       },
       "pt": {
-       "title": "Dados e fontes",
+       "title": "Priorização · Dados e fontes",
        "learningObjective": "Usar dados de uso e datas comprometidas para sustentar uma prioridade.",
        "case": "O patrocinador da Ruta 9 diz que o relatório é urgente. O painel mostra que 18 de 25 usuários nunca iniciaram sessão.",
        "exercise1": {
@@ -5671,7 +5671,7 @@
        }
       },
       "fr": {
-       "title": "Données et sources",
+       "title": "Priorités · Données et sources",
        "learningObjective": "S'appuyer sur les données d'usage et les dates engagées pour justifier une priorité.",
        "case": "Le sponsor de Ruta 9 affirme que le rapport est urgent. Le tableau de bord montre que 18 utilisateurs sur 25 ne se sont jamais connectés.",
        "exercise1": {
@@ -5703,7 +5703,7 @@
      "sharedSource": "cs-portfolio",
      "localized": {
       "es": {
-       "title": "Alternativas y criterio",
+       "title": "Priorización · Alternativas y criterio",
        "learningObjective": "Comparar alternativas de secuencia explicando qué se sacrifica en cada una.",
        "case": "Puedes capacitar a todo el equipo el jueves con datos incompletos, o al grupo piloto el martes con datos correctos.",
        "exercise1": {
@@ -5729,7 +5729,7 @@
        }
       },
       "en": {
-       "title": "Alternatives and judgment",
+       "title": "Prioritization · Alternatives and judgment",
        "learningObjective": "Compare sequencing alternatives and explain what each one gives up.",
        "case": "You can train the whole team on Thursday with incomplete data, or the pilot group on Tuesday with correct data.",
        "exercise1": {
@@ -5755,7 +5755,7 @@
        }
       },
       "pt": {
-       "title": "Alternativas e critério",
+       "title": "Priorização · Alternativas e critério",
        "learningObjective": "Comparar alternativas de sequência explicando o que se sacrifica em cada uma.",
        "case": "Você pode treinar toda a equipe na quinta com dados incompletos, ou o grupo piloto na terça com dados corretos.",
        "exercise1": {
@@ -5781,7 +5781,7 @@
        }
       },
       "fr": {
-       "title": "Options et jugement",
+       "title": "Priorités · Options et jugement",
        "learningObjective": "Comparer des séquences possibles en expliquant ce que chacune sacrifie.",
        "case": "Vous pouvez former toute l'équipe jeudi avec des données incomplètes, ou le groupe pilote mardi avec des données correctes.",
        "exercise1": {
@@ -5813,7 +5813,7 @@
      "sharedSource": "cs-portfolio",
      "localized": {
       "es": {
-       "title": "Entregable del puesto",
+       "title": "Priorización · Entregable del puesto",
        "learningObjective": "Preparar un tablero de prioridades con impacto, dependencia, responsable y fecha.",
        "case": "El cliente pregunta cada mañana por el estado de siete pendientes distintos por correo.",
        "exercise1": {
@@ -5839,7 +5839,7 @@
        }
       },
       "en": {
-       "title": "Role deliverable",
+       "title": "Prioritization · Role deliverable",
        "learningObjective": "Prepare a priority board with impact, dependency, owner and date.",
        "case": "Every morning the customer emails asking about the status of seven different pending items.",
        "exercise1": {
@@ -5865,7 +5865,7 @@
        }
       },
       "pt": {
-       "title": "Entrega do cargo",
+       "title": "Priorização · Entrega do cargo",
        "learningObjective": "Preparar um quadro de prioridades com impacto, dependência, responsável e data.",
        "case": "Toda manhã o cliente pergunta por e-mail sobre o estado de sete pendências diferentes.",
        "exercise1": {
@@ -5891,7 +5891,7 @@
        }
       },
       "fr": {
-       "title": "Livrable du poste",
+       "title": "Priorités · Livrable du poste",
        "learningObjective": "Préparer un tableau des priorités avec impact, dépendance, responsable et date.",
        "case": "Chaque matin, le client demande par e-mail l'état de sept points différents.",
        "exercise1": {
@@ -5923,7 +5923,7 @@
      "sharedSource": "cs-portfolio",
      "localized": {
       "es": {
-       "title": "Verificación y aceptación",
+       "title": "Priorización · Verificación y aceptación",
        "learningObjective": "Confirmar con el cliente que la prioridad atendida resolvió el bloqueo real.",
        "case": "Cerraste los accesos el lunes. El miércoles, solo 9 de 25 usuarios han entrado.",
        "exercise1": {
@@ -5949,7 +5949,7 @@
        }
       },
       "en": {
-       "title": "Verification and acceptance",
+       "title": "Prioritization · Verification and acceptance",
        "learningObjective": "Confirm with the customer that the priority you handled solved the real blocker.",
        "case": "You closed the access issue on Monday. By Wednesday, only 9 of 25 users have signed in.",
        "exercise1": {
@@ -5975,7 +5975,7 @@
        }
       },
       "pt": {
-       "title": "Verificação e aceitação",
+       "title": "Priorização · Verificação e aceitação",
        "learningObjective": "Confirmar com o cliente que a prioridade atendida resolveu o bloqueio real.",
        "case": "Você fechou os acessos na segunda. Na quarta, apenas 9 de 25 usuários entraram.",
        "exercise1": {
@@ -6001,7 +6001,7 @@
        }
       },
       "fr": {
-       "title": "Vérification et acceptation",
+       "title": "Priorités · Vérification et acceptation",
        "learningObjective": "Confirmer avec le client que la priorité traitée a levé le vrai blocage.",
        "case": "Vous avez réglé les accès lundi. Mercredi, seuls 9 utilisateurs sur 25 se sont connectés.",
        "exercise1": {
@@ -6033,7 +6033,7 @@
      "sharedSource": "cs-portfolio",
      "localized": {
       "es": {
-       "title": "Restricción nueva y transferencia",
+       "title": "Priorización · Restricción nueva y transferencia",
        "learningObjective": "Repriorizar cuando aparece una urgencia y comunicar qué se mueve.",
        "case": "A media jornada, Ruta 9 avisa que mañana audita a su flota y necesita el reporte de viajes hoy.",
        "exercise1": {
@@ -6059,7 +6059,7 @@
        }
       },
       "en": {
-       "title": "New constraint and transfer",
+       "title": "Prioritization · New constraint and transfer",
        "learningObjective": "Reprioritize when an urgent need appears and communicate what moves.",
        "case": "Halfway through the day, Ruta 9 says its fleet is audited tomorrow and it needs the trips report today.",
        "exercise1": {
@@ -6085,7 +6085,7 @@
        }
       },
       "pt": {
-       "title": "Nova restrição e transferência",
+       "title": "Priorização · Nova restrição e transferência",
        "learningObjective": "Repriorizar quando surge uma urgência e comunicar o que muda.",
        "case": "No meio do dia, a Ruta 9 avisa que amanhã audita a frota e precisa do relatório de viagens hoje.",
        "exercise1": {
@@ -6111,7 +6111,7 @@
        }
       },
       "fr": {
-       "title": "Nouvelle contrainte et transfert",
+       "title": "Priorités · Nouvelle contrainte et transfert",
        "learningObjective": "Reprioriser lorsqu'une urgence survient et communiquer ce qui est décalé.",
        "case": "En milieu de journée, Ruta 9 annonce un audit de sa flotte demain et a besoin du rapport des trajets aujourd'hui.",
        "exercise1": {
@@ -6388,7 +6388,7 @@
      "sharedSource": "cs-qbr",
      "localized": {
       "es": {
-       "title": "Contexto y alcance",
+       "title": "Plan y revisión · Contexto y alcance",
        "learningObjective": "Acordar qué se revisa cada semana y qué cuenta como terminado.",
        "case": "En la primera revisión semanal con Hotel Marea, el equipo reporta doce tareas terminadas. Nadie puede mostrar el resultado de ninguna.",
        "exercise1": {
@@ -6414,7 +6414,7 @@
        }
       },
       "en": {
-       "title": "Context and scope",
+       "title": "Plan and review · Context and scope",
        "learningObjective": "Agree on what is reviewed each week and what counts as done.",
        "case": "In the first weekly review with Marea Hotel, the team reports twelve tasks done. Nobody can show the result of any of them.",
        "exercise1": {
@@ -6440,7 +6440,7 @@
        }
       },
       "pt": {
-       "title": "Contexto e escopo",
+       "title": "Plano e revisão · Contexto e escopo",
        "learningObjective": "Acordar o que se revisa a cada semana e o que conta como concluído.",
        "case": "Na primeira revisão semanal com o Hotel Marea, a equipe relata doze tarefas concluídas. Ninguém consegue mostrar o resultado de nenhuma.",
        "exercise1": {
@@ -6466,7 +6466,7 @@
        }
       },
       "fr": {
-       "title": "Contexte et périmètre",
+       "title": "Plan et revue · Contexte et périmètre",
        "learningObjective": "Convenir de ce qui est revu chaque semaine et de ce qui compte comme terminé.",
        "case": "Lors de la première revue hebdomadaire avec l'Hôtel Marea, l'équipe annonce douze tâches terminées. Personne ne peut en montrer le résultat.",
        "exercise1": {
@@ -6498,7 +6498,7 @@
      "sharedSource": "cs-qbr",
      "localized": {
       "es": {
-       "title": "Datos y fuentes",
+       "title": "Plan y revisión · Datos y fuentes",
        "learningObjective": "Elegir los indicadores del plan que muestran avance hacia el primer valor.",
        "case": "El plan de Hotel Marea mide horas trabajadas y correos enviados. El director pregunta cuándo podrán registrar reservas.",
        "exercise1": {
@@ -6524,7 +6524,7 @@
        }
       },
       "en": {
-       "title": "Data and sources",
+       "title": "Plan and review · Data and sources",
        "learningObjective": "Choose the plan indicators that show progress towards first value.",
        "case": "Marea Hotel's plan tracks hours worked and emails sent. The director asks when they will be able to record bookings.",
        "exercise1": {
@@ -6550,7 +6550,7 @@
        }
       },
       "pt": {
-       "title": "Dados e fontes",
+       "title": "Plano e revisão · Dados e fontes",
        "learningObjective": "Escolher os indicadores do plano que mostram avanço rumo ao primeiro valor.",
        "case": "O plano do Hotel Marea mede horas trabalhadas e e-mails enviados. O diretor pergunta quando poderão registrar reservas.",
        "exercise1": {
@@ -6576,7 +6576,7 @@
        }
       },
       "fr": {
-       "title": "Données et sources",
+       "title": "Plan et revue · Données et sources",
        "learningObjective": "Choisir les indicateurs du plan qui montrent l'avancée vers la première valeur.",
        "case": "Le plan de l'Hôtel Marea suit les heures travaillées et les e-mails envoyés. Le directeur demande quand ils pourront enregistrer des réservations.",
        "exercise1": {
@@ -6608,7 +6608,7 @@
      "sharedSource": "cs-qbr",
      "localized": {
       "es": {
-       "title": "Alternativas y criterio",
+       "title": "Plan y revisión · Alternativas y criterio",
        "learningObjective": "Decidir entre recortar alcance, mover la fecha o sumar recursos cuando el plan se atrasa.",
        "case": "La migración de tarifas va una semana tarde. La temporada alta del hotel empieza en quince días.",
        "exercise1": {
@@ -6634,7 +6634,7 @@
        }
       },
       "en": {
-       "title": "Alternatives and judgment",
+       "title": "Plan and review · Alternatives and judgment",
        "learningObjective": "Decide between cutting scope, moving the date or adding resources when the plan slips.",
        "case": "The rates migration is a week late. The hotel's high season starts in fifteen days.",
        "exercise1": {
@@ -6660,7 +6660,7 @@
        }
       },
       "pt": {
-       "title": "Alternativas e critério",
+       "title": "Plano e revisão · Alternativas e critério",
        "learningObjective": "Decidir entre cortar escopo, mover a data ou somar recursos quando o plano atrasa.",
        "case": "A migração de tarifas está uma semana atrasada. A alta temporada do hotel começa em quinze dias.",
        "exercise1": {
@@ -6686,7 +6686,7 @@
        }
       },
       "fr": {
-       "title": "Options et jugement",
+       "title": "Plan et revue · Options et jugement",
        "learningObjective": "Décider entre réduire le périmètre, décaler la date ou ajouter des ressources quand le plan dérape.",
        "case": "La migration des tarifs a une semaine de retard. La haute saison de l'hôtel commence dans quinze jours.",
        "exercise1": {
@@ -6718,7 +6718,7 @@
      "sharedSource": "cs-qbr",
      "localized": {
       "es": {
-       "title": "Entregable del puesto",
+       "title": "Plan y revisión · Entregable del puesto",
        "learningObjective": "Escribir el acta de revisión con decisiones, responsables y fechas.",
        "case": "Tras la revisión, cada asistente recuerda acuerdos distintos sobre quién carga las tarifas.",
        "exercise1": {
@@ -6744,7 +6744,7 @@
        }
       },
       "en": {
-       "title": "Role deliverable",
+       "title": "Plan and review · Role deliverable",
        "learningObjective": "Write the review minutes with decisions, owners and dates.",
        "case": "After the review, each attendee remembers different agreements about who loads the rates.",
        "exercise1": {
@@ -6770,7 +6770,7 @@
        }
       },
       "pt": {
-       "title": "Entrega do cargo",
+       "title": "Plano e revisão · Entrega do cargo",
        "learningObjective": "Escrever a ata da revisão com decisões, responsáveis e datas.",
        "case": "Depois da revisão, cada participante lembra de acordos diferentes sobre quem carrega as tarifas.",
        "exercise1": {
@@ -6796,7 +6796,7 @@
        }
       },
       "fr": {
-       "title": "Livrable du poste",
+       "title": "Plan et revue · Livrable du poste",
        "learningObjective": "Rédiger le compte rendu de revue avec décisions, responsables et dates.",
        "case": "Après la revue, chaque participant se souvient d'accords différents sur qui charge les tarifs.",
        "exercise1": {
@@ -6828,7 +6828,7 @@
      "sharedSource": "cs-qbr",
      "localized": {
       "es": {
-       "title": "Verificación y aceptación",
+       "title": "Plan y revisión · Verificación y aceptación",
        "learningObjective": "Comprobar un hito con evidencia observable antes de reportarlo al cliente.",
        "case": "El equipo dice que la capacitación de recepción está hecha. La evidencia es la lista de asistencia.",
        "exercise1": {
@@ -6854,7 +6854,7 @@
        }
       },
       "en": {
-       "title": "Verification and acceptance",
+       "title": "Plan and review · Verification and acceptance",
        "learningObjective": "Check a milestone with observable evidence before reporting it to the customer.",
        "case": "The team says front-desk training is done. The evidence is the attendance list.",
        "exercise1": {
@@ -6880,7 +6880,7 @@
        }
       },
       "pt": {
-       "title": "Verificação e aceitação",
+       "title": "Plano e revisão · Verificação e aceitação",
        "learningObjective": "Comprovar um marco com evidência observável antes de relatá-lo ao cliente.",
        "case": "A equipe diz que o treinamento da recepção está feito. A evidência é a lista de presença.",
        "exercise1": {
@@ -6906,7 +6906,7 @@
        }
       },
       "fr": {
-       "title": "Vérification et acceptation",
+       "title": "Plan et revue · Vérification et acceptation",
        "learningObjective": "Contrôler un jalon par une preuve observable avant de l'annoncer au client.",
        "case": "L'équipe affirme que la formation de la réception est faite. La preuve est la feuille de présence.",
        "exercise1": {
@@ -6938,7 +6938,7 @@
      "sharedSource": "cs-qbr",
      "localized": {
       "es": {
-       "title": "Restricción nueva y transferencia",
+       "title": "Plan y revisión · Restricción nueva y transferencia",
        "learningObjective": "Replanificar cuando cambia el interlocutor del cliente sin perder acuerdos previos.",
        "case": "La gerente que aprobó el plan deja el hotel. Su reemplazo no conoce los acuerdos y quiere cambiar la fecha de lanzamiento.",
        "exercise1": {
@@ -6964,7 +6964,7 @@
        }
       },
       "en": {
-       "title": "New constraint and transfer",
+       "title": "Plan and review · New constraint and transfer",
        "learningObjective": "Replan when the customer's contact changes without losing previous agreements.",
        "case": "The manager who approved the plan leaves the hotel. Her replacement does not know the agreements and wants to change the launch date.",
        "exercise1": {
@@ -6990,7 +6990,7 @@
        }
       },
       "pt": {
-       "title": "Nova restrição e transferência",
+       "title": "Plano e revisão · Nova restrição e transferência",
        "learningObjective": "Replanejar quando muda o interlocutor do cliente sem perder acordos anteriores.",
        "case": "A gerente que aprovou o plano deixa o hotel. A substituta não conhece os acordos e quer mudar a data de lançamento.",
        "exercise1": {
@@ -7016,7 +7016,7 @@
        }
       },
       "fr": {
-       "title": "Nouvelle contrainte et transfert",
+       "title": "Plan et revue · Nouvelle contrainte et transfert",
        "learningObjective": "Replanifier quand l'interlocuteur du client change, sans perdre les accords passés.",
        "case": "La responsable qui a approuvé le plan quitte l'hôtel. Sa remplaçante ne connaît pas les accords et veut changer la date de lancement.",
        "exercise1": {
@@ -7293,7 +7293,7 @@
      "sharedSource": "cs-churn",
      "localized": {
       "es": {
-       "title": "Contexto y alcance",
+       "title": "Riesgos y escalaciones · Contexto y alcance",
        "learningObjective": "Reconocer un riesgo a tiempo y describirlo con causa, efecto y fecha.",
        "case": "El proveedor de pagos de Farmacias Nube avisa que su API no estará lista antes del lanzamiento acordado.",
        "exercise1": {
@@ -7319,7 +7319,7 @@
        }
       },
       "en": {
-       "title": "Context and scope",
+       "title": "Risks and escalations · Context and scope",
        "learningObjective": "Recognize a risk in time and describe it with cause, effect and date.",
        "case": "Nube Pharmacies' payment provider says its API will not be ready before the agreed launch.",
        "exercise1": {
@@ -7345,7 +7345,7 @@
        }
       },
       "pt": {
-       "title": "Contexto e escopo",
+       "title": "Riscos e escalações · Contexto e escopo",
        "learningObjective": "Reconhecer um risco a tempo e descrevê-lo com causa, efeito e data.",
        "case": "O provedor de pagamentos das Farmácias Nube avisa que a API não ficará pronta antes do lançamento acordado.",
        "exercise1": {
@@ -7371,7 +7371,7 @@
        }
       },
       "fr": {
-       "title": "Contexte et périmètre",
+       "title": "Risques et escalades · Contexte et périmètre",
        "learningObjective": "Repérer un risque à temps et le décrire avec sa cause, son effet et une date.",
        "case": "Le prestataire de paiement des Pharmacies Nube annonce que son API ne sera pas prête avant le lancement convenu.",
        "exercise1": {
@@ -7403,7 +7403,7 @@
      "sharedSource": "cs-churn",
      "localized": {
       "es": {
-       "title": "Datos y fuentes",
+       "title": "Riesgos y escalaciones · Datos y fuentes",
        "learningObjective": "Estimar probabilidad e impacto de un riesgo con datos del proyecto.",
        "case": "El proveedor dice que entregará en dos semanas. En sus tres entregas anteriores se retrasó en promedio diez días.",
        "exercise1": {
@@ -7429,7 +7429,7 @@
        }
       },
       "en": {
-       "title": "Data and sources",
+       "title": "Risks and escalations · Data and sources",
        "learningObjective": "Estimate the likelihood and impact of a risk with project data.",
        "case": "The provider says it will deliver in two weeks. Its three previous deliveries were ten days late on average.",
        "exercise1": {
@@ -7455,7 +7455,7 @@
        }
       },
       "pt": {
-       "title": "Dados e fontes",
+       "title": "Riscos e escalações · Dados e fontes",
        "learningObjective": "Estimar probabilidade e impacto de um risco com dados do projeto.",
        "case": "O provedor diz que entregará em duas semanas. Nas três entregas anteriores atrasou em média dez dias.",
        "exercise1": {
@@ -7481,7 +7481,7 @@
        }
       },
       "fr": {
-       "title": "Données et sources",
+       "title": "Risques et escalades · Données et sources",
        "learningObjective": "Estimer la probabilité et l'impact d'un risque à partir des données du projet.",
        "case": "Le prestataire annonce une livraison dans deux semaines. Ses trois livraisons précédentes ont eu dix jours de retard en moyenne.",
        "exercise1": {
@@ -7513,7 +7513,7 @@
      "sharedSource": "cs-churn",
      "localized": {
       "es": {
-       "title": "Alternativas y criterio",
+       "title": "Riesgos y escalaciones · Alternativas y criterio",
        "learningObjective": "Comparar mitigar, aceptar o escalar un riesgo según su impacto.",
        "case": "Sin la API, Farmacias Nube no puede cobrar en línea, pero sí puede vender en mostrador desde el día uno.",
        "exercise1": {
@@ -7539,7 +7539,7 @@
        }
       },
       "en": {
-       "title": "Alternatives and judgment",
+       "title": "Risks and escalations · Alternatives and judgment",
        "learningObjective": "Compare mitigating, accepting or escalating a risk according to its impact.",
        "case": "Without the API, Nube Pharmacies cannot charge online, but it can sell at the counter from day one.",
        "exercise1": {
@@ -7565,7 +7565,7 @@
        }
       },
       "pt": {
-       "title": "Alternativas e critério",
+       "title": "Riscos e escalações · Alternativas e critério",
        "learningObjective": "Comparar mitigar, aceitar ou escalar um risco conforme seu impacto.",
        "case": "Sem a API, as Farmácias Nube não podem cobrar on-line, mas podem vender no balcão desde o primeiro dia.",
        "exercise1": {
@@ -7591,7 +7591,7 @@
        }
       },
       "fr": {
-       "title": "Options et jugement",
+       "title": "Risques et escalades · Options et jugement",
        "learningObjective": "Comparer atténuer, accepter ou escalader un risque selon son impact.",
        "case": "Sans l'API, les Pharmacies Nube ne peuvent pas encaisser en ligne, mais peuvent vendre au comptoir dès le premier jour.",
        "exercise1": {
@@ -7623,7 +7623,7 @@
      "sharedSource": "cs-churn",
      "localized": {
       "es": {
-       "title": "Entregable del puesto",
+       "title": "Riesgos y escalaciones · Entregable del puesto",
        "learningObjective": "Redactar una escalación que permita decidir sin pedir más contexto.",
        "case": "Necesitas que tu gerente intervenga con el proveedor. Tu primer borrador dice: tenemos un problema con la API, ¿puedes ayudar?",
        "exercise1": {
@@ -7649,7 +7649,7 @@
        }
       },
       "en": {
-       "title": "Role deliverable",
+       "title": "Risks and escalations · Role deliverable",
        "learningObjective": "Write an escalation that allows a decision without asking for more context.",
        "case": "You need your manager to step in with the provider. Your first draft says: we have a problem with the API, can you help?",
        "exercise1": {
@@ -7675,7 +7675,7 @@
        }
       },
       "pt": {
-       "title": "Entrega do cargo",
+       "title": "Riscos e escalações · Entrega do cargo",
        "learningObjective": "Redigir uma escalação que permita decidir sem pedir mais contexto.",
        "case": "Você precisa que seu gerente intervenha com o provedor. Seu primeiro rascunho diz: temos um problema com a API, pode ajudar?",
        "exercise1": {
@@ -7701,7 +7701,7 @@
        }
       },
       "fr": {
-       "title": "Livrable du poste",
+       "title": "Risques et escalades · Livrable du poste",
        "learningObjective": "Rédiger une escalade qui permet de décider sans demander plus de contexte.",
        "case": "Vous avez besoin que votre responsable intervienne auprès du prestataire. Votre premier brouillon dit : nous avons un problème avec l'API, peux-tu aider ?",
        "exercise1": {
@@ -7733,7 +7733,7 @@
      "sharedSource": "cs-churn",
      "localized": {
       "es": {
-       "title": "Verificación y aceptación",
+       "title": "Riesgos y escalaciones · Verificación y aceptación",
        "learningObjective": "Verificar que la mitigación acordada se cumplió y cerrar el riesgo con evidencia.",
        "case": "Se acordó vender en mostrador desde el lanzamiento. Dos sucursales reportan que no pudieron cerrar caja.",
        "exercise1": {
@@ -7759,7 +7759,7 @@
        }
       },
       "en": {
-       "title": "Verification and acceptance",
+       "title": "Risks and escalations · Verification and acceptance",
        "learningObjective": "Verify that the agreed mitigation was carried out and close the risk with evidence.",
        "case": "It was agreed to sell at the counter from launch. Two branches report they could not close the till.",
        "exercise1": {
@@ -7785,7 +7785,7 @@
        }
       },
       "pt": {
-       "title": "Verificação e aceitação",
+       "title": "Riscos e escalações · Verificação e aceitação",
        "learningObjective": "Verificar que a mitigação acordada foi cumprida e fechar o risco com evidência.",
        "case": "Foi acordado vender no balcão desde o lançamento. Duas filiais relatam que não conseguiram fechar o caixa.",
        "exercise1": {
@@ -7811,7 +7811,7 @@
        }
       },
       "fr": {
-       "title": "Vérification et acceptation",
+       "title": "Risques et escalades · Vérification et acceptation",
        "learningObjective": "Vérifier que l'atténuation convenue a été appliquée et clore le risque avec une preuve.",
        "case": "Il était convenu de vendre au comptoir dès le lancement. Deux succursales signalent qu'elles n'ont pas pu clôturer la caisse.",
        "exercise1": {
@@ -7843,7 +7843,7 @@
      "sharedSource": "cs-churn",
      "localized": {
       "es": {
-       "title": "Restricción nueva y transferencia",
+       "title": "Riesgos y escalaciones · Restricción nueva y transferencia",
        "learningObjective": "Actuar cuando un riesgo se materializa fuera de horario y sin el responsable disponible.",
        "case": "Sábado por la noche: el cobro en mostrador falla en todas las sucursales y tu gerente no contesta.",
        "exercise1": {
@@ -7869,7 +7869,7 @@
        }
       },
       "en": {
-       "title": "New constraint and transfer",
+       "title": "Risks and escalations · New constraint and transfer",
        "learningObjective": "Act when a risk materializes outside working hours and the owner is unavailable.",
        "case": "Saturday night: counter payment fails in every branch and your manager does not answer.",
        "exercise1": {
@@ -7895,7 +7895,7 @@
        }
       },
       "pt": {
-       "title": "Nova restrição e transferência",
+       "title": "Riscos e escalações · Nova restrição e transferência",
        "learningObjective": "Agir quando um risco se materializa fora do horário e sem o responsável disponível.",
        "case": "Sábado à noite: o pagamento no balcão falha em todas as filiais e seu gerente não responde.",
        "exercise1": {
@@ -7921,7 +7921,7 @@
        }
       },
       "fr": {
-       "title": "Nouvelle contrainte et transfert",
+       "title": "Risques et escalades · Nouvelle contrainte et transfert",
        "learningObjective": "Agir lorsqu'un risque se concrétise hors des heures ouvrées et que le responsable est injoignable.",
        "case": "Samedi soir : l'encaissement au comptoir échoue dans toutes les succursales et votre responsable ne répond pas.",
        "exercise1": {
@@ -8198,7 +8198,7 @@
      "sharedSource": "cs-renewal",
      "localized": {
       "es": {
-       "title": "Contexto y alcance",
+       "title": "Negociación · Contexto y alcance",
        "learningObjective": "Separar lo contratado de lo solicitado antes de negociar un cambio.",
        "case": "Escuela Alba pide agregar el módulo de pagos de colegiaturas. No está en el contrato y no hay presupuesto adicional.",
        "exercise1": {
@@ -8224,7 +8224,7 @@
        }
       },
       "en": {
-       "title": "Context and scope",
+       "title": "Negotiation · Context and scope",
        "learningObjective": "Separate what was contracted from what is being requested before negotiating a change.",
        "case": "Alba School asks to add the tuition payments module. It is not in the contract and there is no extra budget.",
        "exercise1": {
@@ -8250,7 +8250,7 @@
        }
       },
       "pt": {
-       "title": "Contexto e escopo",
+       "title": "Negociação · Contexto e escopo",
        "learningObjective": "Separar o contratado do solicitado antes de negociar uma mudança.",
        "case": "A Escola Alba pede para acrescentar o módulo de pagamento de mensalidades. Não está no contrato e não há orçamento adicional.",
        "exercise1": {
@@ -8276,7 +8276,7 @@
        }
       },
       "fr": {
-       "title": "Contexte et périmètre",
+       "title": "Négociation · Contexte et périmètre",
        "learningObjective": "Distinguer ce qui est contractuel de ce qui est demandé avant de négocier un changement.",
        "case": "L'École Alba demande d'ajouter le module de paiement des frais de scolarité. Il n'est pas au contrat et il n'y a pas de budget supplémentaire.",
        "exercise1": {
@@ -8308,7 +8308,7 @@
      "sharedSource": "cs-renewal",
      "localized": {
       "es": {
-       "title": "Datos y fuentes",
+       "title": "Negociación · Datos y fuentes",
        "learningObjective": "Cuantificar el costo de un cambio de alcance en horas, fecha y riesgo.",
        "case": "El módulo de pagos requiere unas 30 horas y una integración bancaria que tarda tres semanas en aprobarse.",
        "exercise1": {
@@ -8334,7 +8334,7 @@
        }
       },
       "en": {
-       "title": "Data and sources",
+       "title": "Negotiation · Data and sources",
        "learningObjective": "Quantify the cost of a scope change in hours, date and risk.",
        "case": "The payments module needs about 30 hours and a bank integration that takes three weeks to be approved.",
        "exercise1": {
@@ -8360,7 +8360,7 @@
        }
       },
       "pt": {
-       "title": "Dados e fontes",
+       "title": "Negociação · Dados e fontes",
        "learningObjective": "Quantificar o custo de uma mudança de escopo em horas, data e risco.",
        "case": "O módulo de pagamentos exige cerca de 30 horas e uma integração bancária que leva três semanas para ser aprovada.",
        "exercise1": {
@@ -8386,7 +8386,7 @@
        }
       },
       "fr": {
-       "title": "Données et sources",
+       "title": "Négociation · Données et sources",
        "learningObjective": "Chiffrer le coût d'un changement de périmètre en heures, en date et en risque.",
        "case": "Le module de paiement demande environ 30 heures et une intégration bancaire dont l'approbation prend trois semaines.",
        "exercise1": {
@@ -8418,7 +8418,7 @@
      "sharedSource": "cs-renewal",
      "localized": {
       "es": {
-       "title": "Alternativas y criterio",
+       "title": "Negociación · Alternativas y criterio",
        "learningObjective": "Ofrecer alternativas que intercambian alcance, costo y plazo.",
        "case": "Escuela Alba quiere los pagos antes del inicio de clases, dentro de cuatro semanas, sin pagar más.",
        "exercise1": {
@@ -8444,7 +8444,7 @@
        }
       },
       "en": {
-       "title": "Alternatives and judgment",
+       "title": "Negotiation · Alternatives and judgment",
        "learningObjective": "Offer alternatives that trade scope, cost and timeline.",
        "case": "Alba School wants payments before classes start, in four weeks, without paying more.",
        "exercise1": {
@@ -8470,7 +8470,7 @@
        }
       },
       "pt": {
-       "title": "Alternativas e critério",
+       "title": "Negociação · Alternativas e critério",
        "learningObjective": "Oferecer alternativas que trocam escopo, custo e prazo.",
        "case": "A Escola Alba quer os pagamentos antes do início das aulas, em quatro semanas, sem pagar mais.",
        "exercise1": {
@@ -8496,7 +8496,7 @@
        }
       },
       "fr": {
-       "title": "Options et jugement",
+       "title": "Négociation · Options et jugement",
        "learningObjective": "Proposer des options qui arbitrent entre périmètre, coût et délai.",
        "case": "L'École Alba veut les paiements avant la rentrée, dans quatre semaines, sans payer davantage.",
        "exercise1": {
@@ -8528,7 +8528,7 @@
      "sharedSource": "cs-renewal",
      "localized": {
       "es": {
-       "title": "Entregable del puesto",
+       "title": "Negociación · Entregable del puesto",
        "learningObjective": "Documentar un cambio de alcance aprobado en una orden de cambio.",
        "case": "La directora acepta por teléfono mover los pagos a la fase 2 y cambiar un módulo. No hay nada escrito.",
        "exercise1": {
@@ -8554,7 +8554,7 @@
        }
       },
       "en": {
-       "title": "Role deliverable",
+       "title": "Negotiation · Role deliverable",
        "learningObjective": "Document an approved scope change in a change order.",
        "case": "The headmistress agrees by phone to move payments to phase 2 and swap a module. Nothing is in writing.",
        "exercise1": {
@@ -8580,7 +8580,7 @@
        }
       },
       "pt": {
-       "title": "Entrega do cargo",
+       "title": "Negociação · Entrega do cargo",
        "learningObjective": "Documentar uma mudança de escopo aprovada em uma ordem de mudança.",
        "case": "A diretora aceita por telefone mover os pagamentos para a fase 2 e trocar um módulo. Não há nada por escrito.",
        "exercise1": {
@@ -8606,7 +8606,7 @@
        }
       },
       "fr": {
-       "title": "Livrable du poste",
+       "title": "Négociation · Livrable du poste",
        "learningObjective": "Documenter un changement de périmètre approuvé dans un ordre de modification.",
        "case": "La directrice accepte par téléphone de reporter les paiements en phase 2 et d'échanger un module. Rien n'est écrit.",
        "exercise1": {
@@ -8638,7 +8638,7 @@
      "sharedSource": "cs-renewal",
      "localized": {
       "es": {
-       "title": "Verificación y aceptación",
+       "title": "Negociación · Verificación y aceptación",
        "learningObjective": "Confirmar que quien aprueba un cambio tiene autoridad para hacerlo.",
        "case": "La coordinadora académica aprueba por correo la orden de cambio. El contrato lo firmó la directora administrativa.",
        "exercise1": {
@@ -8664,7 +8664,7 @@
        }
       },
       "en": {
-       "title": "Verification and acceptance",
+       "title": "Negotiation · Verification and acceptance",
        "learningObjective": "Confirm that whoever approves a change has the authority to do so.",
        "case": "The academic coordinator approves the change order by email. The contract was signed by the administrative director.",
        "exercise1": {
@@ -8690,7 +8690,7 @@
        }
       },
       "pt": {
-       "title": "Verificação e aceitação",
+       "title": "Negociação · Verificação e aceitação",
        "learningObjective": "Confirmar que quem aprova uma mudança tem autoridade para isso.",
        "case": "A coordenadora acadêmica aprova por e-mail a ordem de mudança. O contrato foi assinado pela diretora administrativa.",
        "exercise1": {
@@ -8716,7 +8716,7 @@
        }
       },
       "fr": {
-       "title": "Vérification et acceptation",
+       "title": "Négociation · Vérification et acceptation",
        "learningObjective": "Vérifier que la personne qui approuve un changement en a l'autorité.",
        "case": "La coordinatrice pédagogique approuve l'ordre de modification par e-mail. Le contrat a été signé par la directrice administrative.",
        "exercise1": {
@@ -8748,7 +8748,7 @@
      "sharedSource": "cs-renewal",
      "localized": {
       "es": {
-       "title": "Restricción nueva y transferencia",
+       "title": "Negociación · Restricción nueva y transferencia",
        "learningObjective": "Sostener un acuerdo cuando el cliente intenta reabrirlo bajo presión.",
        "case": "Una semana antes del lanzamiento, la directora exige los pagos en la fase 1 o amenaza con cancelar.",
        "exercise1": {
@@ -8774,7 +8774,7 @@
        }
       },
       "en": {
-       "title": "New constraint and transfer",
+       "title": "Negotiation · New constraint and transfer",
        "learningObjective": "Hold an agreement when the customer tries to reopen it under pressure.",
        "case": "One week before launch, the headmistress demands payments in phase 1 or threatens to cancel.",
        "exercise1": {
@@ -8800,7 +8800,7 @@
        }
       },
       "pt": {
-       "title": "Nova restrição e transferência",
+       "title": "Negociação · Nova restrição e transferência",
        "learningObjective": "Sustentar um acordo quando o cliente tenta reabri-lo sob pressão.",
        "case": "Uma semana antes do lançamento, a diretora exige os pagamentos na fase 1 ou ameaça cancelar.",
        "exercise1": {
@@ -8826,7 +8826,7 @@
        }
       },
       "fr": {
-       "title": "Nouvelle contrainte et transfert",
+       "title": "Négociation · Nouvelle contrainte et transfert",
        "learningObjective": "Maintenir un accord lorsque le client tente de le rouvrir sous pression.",
        "case": "Une semaine avant le lancement, la directrice exige les paiements en phase 1 sous peine de résilier.",
        "exercise1": {
@@ -9103,7 +9103,7 @@
      "sharedSource": "cs-expansion",
      "localized": {
       "es": {
-       "title": "Contexto y alcance",
+       "title": "Mejora del servicio · Contexto y alcance",
        "learningObjective": "Delimitar un problema recurrente antes de proponer una mejora.",
        "case": "En las últimas seis implementaciones, la importación de clientes falló al primer intento. El equipo lo trata cada vez como un caso aislado.",
        "exercise1": {
@@ -9129,7 +9129,7 @@
        }
       },
       "en": {
-       "title": "Context and scope",
+       "title": "Service improvement · Context and scope",
        "learningObjective": "Frame a recurring problem before proposing an improvement.",
        "case": "In the last six implementations, the customer import failed on the first attempt. The team treats each one as an isolated case.",
        "exercise1": {
@@ -9155,7 +9155,7 @@
        }
       },
       "pt": {
-       "title": "Contexto e escopo",
+       "title": "Melhoria do serviço · Contexto e escopo",
        "learningObjective": "Delimitar um problema recorrente antes de propor uma melhoria.",
        "case": "Nas últimas seis implementações, a importação de clientes falhou na primeira tentativa. A equipe trata cada uma como um caso isolado.",
        "exercise1": {
@@ -9181,7 +9181,7 @@
        }
       },
       "fr": {
-       "title": "Contexte et périmètre",
+       "title": "Amélioration du service · Contexte et périmètre",
        "learningObjective": "Cerner un problème récurrent avant de proposer une amélioration.",
        "case": "Lors des six derniers déploiements, l'import des clients a échoué à la première tentative. L'équipe traite chaque cas comme isolé.",
        "exercise1": {
@@ -9213,7 +9213,7 @@
      "sharedSource": "cs-expansion",
      "localized": {
       "es": {
-       "title": "Datos y fuentes",
+       "title": "Mejora del servicio · Datos y fuentes",
        "learningObjective": "Reunir evidencia de los fallos para identificar la causa más frecuente.",
        "case": "Revisas los seis registros de error: en cinco, el archivo traía fechas en formato día/mes y el sistema esperaba mes/día.",
        "exercise1": {
@@ -9239,7 +9239,7 @@
        }
       },
       "en": {
-       "title": "Data and sources",
+       "title": "Service improvement · Data and sources",
        "learningObjective": "Gather evidence from the failures to identify the most frequent cause.",
        "case": "You review the six error logs: in five, the file had dates in day/month format and the system expected month/day.",
        "exercise1": {
@@ -9265,7 +9265,7 @@
        }
       },
       "pt": {
-       "title": "Dados e fontes",
+       "title": "Melhoria do serviço · Dados e fontes",
        "learningObjective": "Reunir evidência das falhas para identificar a causa mais frequente.",
        "case": "Você revisa os seis registros de erro: em cinco, o arquivo trazia datas no formato dia/mês e o sistema esperava mês/dia.",
        "exercise1": {
@@ -9291,7 +9291,7 @@
        }
       },
       "fr": {
-       "title": "Données et sources",
+       "title": "Amélioration du service · Données et sources",
        "learningObjective": "Rassembler les preuves des échecs pour identifier la cause la plus fréquente.",
        "case": "Vous examinez les six journaux d'erreurs : dans cinq cas, le fichier contenait des dates au format jour/mois alors que le système attendait mois/jour.",
        "exercise1": {
@@ -9323,7 +9323,7 @@
      "sharedSource": "cs-expansion",
      "localized": {
       "es": {
-       "title": "Alternativas y criterio",
+       "title": "Mejora del servicio · Alternativas y criterio",
        "learningObjective": "Elegir la mejora de menor costo que elimina la causa.",
        "case": "Opciones: capacitar a cada cliente en formatos de fecha, validar el archivo antes de importar, o pedir a ingeniería aceptar ambos formatos.",
        "exercise1": {
@@ -9349,7 +9349,7 @@
        }
       },
       "en": {
-       "title": "Alternatives and judgment",
+       "title": "Service improvement · Alternatives and judgment",
        "learningObjective": "Choose the lowest-cost improvement that removes the cause.",
        "case": "Options: train each customer on date formats, validate the file before importing, or ask engineering to accept both formats.",
        "exercise1": {
@@ -9375,7 +9375,7 @@
        }
       },
       "pt": {
-       "title": "Alternativas e critério",
+       "title": "Melhoria do serviço · Alternativas e critério",
        "learningObjective": "Escolher a melhoria de menor custo que elimina a causa.",
        "case": "Opções: treinar cada cliente em formatos de data, validar o arquivo antes de importar ou pedir à engenharia para aceitar os dois formatos.",
        "exercise1": {
@@ -9401,7 +9401,7 @@
        }
       },
       "fr": {
-       "title": "Options et jugement",
+       "title": "Amélioration du service · Options et jugement",
        "learningObjective": "Choisir l'amélioration la moins coûteuse qui supprime la cause.",
        "case": "Options : former chaque client aux formats de date, valider le fichier avant l'import ou demander à l'ingénierie d'accepter les deux formats.",
        "exercise1": {
@@ -9433,7 +9433,7 @@
      "sharedSource": "cs-expansion",
      "localized": {
       "es": {
-       "title": "Entregable del puesto",
+       "title": "Mejora del servicio · Entregable del puesto",
        "learningObjective": "Convertir la mejora en una lista de control medible que use todo el equipo.",
        "case": "Tu validación funciona, pero solo tú la aplicas. Tus compañeros siguen importando sin revisar.",
        "exercise1": {
@@ -9459,7 +9459,7 @@
        }
       },
       "en": {
-       "title": "Role deliverable",
+       "title": "Service improvement · Role deliverable",
        "learningObjective": "Turn the improvement into a measurable checklist the whole team uses.",
        "case": "Your pre-check works, but only you apply it. Your colleagues keep importing without reviewing.",
        "exercise1": {
@@ -9485,7 +9485,7 @@
        }
       },
       "pt": {
-       "title": "Entrega do cargo",
+       "title": "Melhoria do serviço · Entrega do cargo",
        "learningObjective": "Transformar a melhoria em uma lista de verificação mensurável usada por toda a equipe.",
        "case": "Sua validação funciona, mas só você a aplica. Seus colegas continuam importando sem revisar.",
        "exercise1": {
@@ -9511,7 +9511,7 @@
        }
       },
       "fr": {
-       "title": "Livrable du poste",
+       "title": "Amélioration du service · Livrable du poste",
        "learningObjective": "Transformer l'amélioration en liste de contrôle mesurable utilisée par toute l'équipe.",
        "case": "Votre contrôle fonctionne, mais vous êtes seul à l'appliquer. Vos collègues continuent d'importer sans vérifier.",
        "exercise1": {
@@ -9543,7 +9543,7 @@
      "sharedSource": "cs-expansion",
      "localized": {
       "es": {
-       "title": "Verificación y aceptación",
+       "title": "Mejora del servicio · Verificación y aceptación",
        "learningObjective": "Medir si la mejora funcionó comparando antes y después.",
        "case": "Tras un mes con la lista de control, hubo ocho importaciones: siete correctas al primer intento y una fallida por otra causa.",
        "exercise1": {
@@ -9569,7 +9569,7 @@
        }
       },
       "en": {
-       "title": "Verification and acceptance",
+       "title": "Service improvement · Verification and acceptance",
        "learningObjective": "Measure whether the improvement worked by comparing before and after.",
        "case": "After a month with the checklist there were eight imports: seven succeeded on the first attempt and one failed for another reason.",
        "exercise1": {
@@ -9595,7 +9595,7 @@
        }
       },
       "pt": {
-       "title": "Verificação e aceitação",
+       "title": "Melhoria do serviço · Verificação e aceitação",
        "learningObjective": "Medir se a melhoria funcionou comparando antes e depois.",
        "case": "Após um mês com a lista de verificação, houve oito importações: sete corretas na primeira tentativa e uma falha por outra causa.",
        "exercise1": {
@@ -9621,7 +9621,7 @@
        }
       },
       "fr": {
-       "title": "Vérification et acceptation",
+       "title": "Amélioration du service · Vérification et acceptation",
        "learningObjective": "Mesurer si l'amélioration a fonctionné en comparant l'avant et l'après.",
        "case": "Après un mois d'utilisation de la liste, il y a eu huit imports : sept réussis du premier coup et un échec pour une autre raison.",
        "exercise1": {
@@ -9653,7 +9653,7 @@
      "sharedSource": "cs-expansion",
      "localized": {
       "es": {
-       "title": "Restricción nueva y transferencia",
+       "title": "Mejora del servicio · Restricción nueva y transferencia",
        "learningObjective": "Ajustar una mejora cuando el contexto cambia y transferirla a otro equipo.",
        "case": "Tu empresa abre operación en Brasil: allá los archivos usan coma decimal y otro formato de identificación fiscal.",
        "exercise1": {
@@ -9679,7 +9679,7 @@
        }
       },
       "en": {
-       "title": "New constraint and transfer",
+       "title": "Service improvement · New constraint and transfer",
        "learningObjective": "Adjust an improvement when the context changes and hand it over to another team.",
        "case": "Your company opens operations in Brazil: files there use a decimal comma and a different tax ID format.",
        "exercise1": {
@@ -9705,7 +9705,7 @@
        }
       },
       "pt": {
-       "title": "Nova restrição e transferência",
+       "title": "Melhoria do serviço · Nova restrição e transferência",
        "learningObjective": "Ajustar uma melhoria quando o contexto muda e transferi-la a outra equipe.",
        "case": "Sua empresa abre operação no Brasil: lá os arquivos usam vírgula decimal e outro formato de identificação fiscal.",
        "exercise1": {
@@ -9731,7 +9731,7 @@
        }
       },
       "fr": {
-       "title": "Nouvelle contrainte et transfert",
+       "title": "Amélioration du service · Nouvelle contrainte et transfert",
        "learningObjective": "Ajuster une amélioration quand le contexte change et la transmettre à une autre équipe.",
        "case": "Votre entreprise ouvre une activité au Brésil : les fichiers y utilisent la virgule décimale et un autre format d'identifiant fiscal.",
        "exercise1": {
@@ -10008,7 +10008,7 @@
      "sharedSource": "cs-voc",
      "localized": {
       "es": {
-       "title": "Contexto y alcance",
+       "title": "Colaboración · Contexto y alcance",
        "learningObjective": "Definir qué información necesita cada equipo al recibir a un cliente.",
        "case": "Soporte recibe a Gimnasios Pulso tras el lanzamiento. No sabe qué se configuró ni qué quedó pendiente, y el cliente tiene que explicarlo todo otra vez.",
        "exercise1": {
@@ -10034,7 +10034,7 @@
        }
       },
       "en": {
-       "title": "Context and scope",
+       "title": "Collaboration · Context and scope",
        "learningObjective": "Define what information each team needs when it receives a customer.",
        "case": "Support takes over Pulso Gyms after launch. It does not know what was configured or what is pending, and the customer has to explain everything again.",
        "exercise1": {
@@ -10060,7 +10060,7 @@
        }
       },
       "pt": {
-       "title": "Contexto e escopo",
+       "title": "Colaboração · Contexto e escopo",
        "learningObjective": "Definir que informação cada equipe precisa ao receber um cliente.",
        "case": "O suporte recebe a Academias Pulso após o lançamento. Não sabe o que foi configurado nem o que ficou pendente, e o cliente precisa explicar tudo de novo.",
        "exercise1": {
@@ -10086,7 +10086,7 @@
        }
       },
       "fr": {
-       "title": "Contexte et périmètre",
+       "title": "Collaboration · Contexte et périmètre",
        "learningObjective": "Définir les informations dont chaque équipe a besoin lorsqu'elle reçoit un client.",
        "case": "Le support reprend Salles Pulso après le lancement. Il ignore ce qui a été configuré et ce qui reste en attente, et le client doit tout réexpliquer.",
        "exercise1": {
@@ -10118,7 +10118,7 @@
      "sharedSource": "cs-voc",
      "localized": {
       "es": {
-       "title": "Datos y fuentes",
+       "title": "Colaboración · Datos y fuentes",
        "learningObjective": "Reunir la evidencia que respalda cada decisión del traspaso.",
        "case": "En el expediente de Pulso dice: se acordó no migrar las membresías vencidas. No hay fecha ni quién lo aprobó.",
        "exercise1": {
@@ -10144,7 +10144,7 @@
        }
       },
       "en": {
-       "title": "Data and sources",
+       "title": "Collaboration · Data and sources",
        "learningObjective": "Gather the evidence that backs each decision in the handover.",
        "case": "Pulso's file says: it was agreed not to migrate expired memberships. There is no date or approver.",
        "exercise1": {
@@ -10170,7 +10170,7 @@
        }
       },
       "pt": {
-       "title": "Dados e fontes",
+       "title": "Colaboração · Dados e fontes",
        "learningObjective": "Reunir a evidência que sustenta cada decisão da passagem.",
        "case": "No dossiê da Pulso consta: foi acordado não migrar as matrículas vencidas. Não há data nem quem aprovou.",
        "exercise1": {
@@ -10196,7 +10196,7 @@
        }
       },
       "fr": {
-       "title": "Données et sources",
+       "title": "Collaboration · Données et sources",
        "learningObjective": "Rassembler les preuves qui étayent chaque décision de la passation.",
        "case": "Le dossier de Pulso indique : il a été convenu de ne pas migrer les abonnements expirés. Ni date ni approbateur.",
        "exercise1": {
@@ -10228,7 +10228,7 @@
      "sharedSource": "cs-voc",
      "localized": {
       "es": {
-       "title": "Alternativas y criterio",
+       "title": "Colaboración · Alternativas y criterio",
        "learningObjective": "Decidir cuándo transferir a un cliente con pendientes abiertos.",
        "case": "Pulso ya opera, pero queda un reporte por ajustar. Soporte prefiere recibir cuentas sin pendientes.",
        "exercise1": {
@@ -10254,7 +10254,7 @@
        }
       },
       "en": {
-       "title": "Alternatives and judgment",
+       "title": "Collaboration · Alternatives and judgment",
        "learningObjective": "Decide when to hand over a customer with open items.",
        "case": "Pulso is already live, but one report still needs adjusting. Support prefers to receive accounts with nothing pending.",
        "exercise1": {
@@ -10280,7 +10280,7 @@
        }
       },
       "pt": {
-       "title": "Alternativas e critério",
+       "title": "Colaboração · Alternativas e critério",
        "learningObjective": "Decidir quando transferir um cliente com pendências abertas.",
        "case": "A Pulso já opera, mas falta ajustar um relatório. O suporte prefere receber contas sem pendências.",
        "exercise1": {
@@ -10306,7 +10306,7 @@
        }
       },
       "fr": {
-       "title": "Options et jugement",
+       "title": "Collaboration · Options et jugement",
        "learningObjective": "Décider quand transmettre un client ayant des points ouverts.",
        "case": "Pulso est en service, mais un rapport reste à ajuster. Le support préfère recevoir des comptes sans point en attente.",
        "exercise1": {
@@ -10338,7 +10338,7 @@
      "sharedSource": "cs-voc",
      "localized": {
       "es": {
-       "title": "Entregable del puesto",
+       "title": "Colaboración · Entregable del puesto",
        "learningObjective": "Preparar el expediente de traspaso que otro equipo puede usar sin preguntarte.",
        "case": "Mañana sales de vacaciones dos semanas y Pulso pasa a soporte hoy.",
        "exercise1": {
@@ -10364,7 +10364,7 @@
        }
       },
       "en": {
-       "title": "Role deliverable",
+       "title": "Collaboration · Role deliverable",
        "learningObjective": "Prepare the handover file that another team can use without asking you.",
        "case": "Tomorrow you go on holiday for two weeks and Pulso moves to support today.",
        "exercise1": {
@@ -10390,7 +10390,7 @@
        }
       },
       "pt": {
-       "title": "Entrega do cargo",
+       "title": "Colaboração · Entrega do cargo",
        "learningObjective": "Preparar o dossiê de passagem que outra equipe possa usar sem perguntar a você.",
        "case": "Amanhã você sai de férias por duas semanas e a Pulso passa para o suporte hoje.",
        "exercise1": {
@@ -10416,7 +10416,7 @@
        }
       },
       "fr": {
-       "title": "Livrable du poste",
+       "title": "Collaboration · Livrable du poste",
        "learningObjective": "Préparer le dossier de passation qu'une autre équipe peut utiliser sans vous solliciter.",
        "case": "Demain vous partez en congé pour deux semaines et Pulso passe au support aujourd'hui.",
        "exercise1": {
@@ -10448,7 +10448,7 @@
      "sharedSource": "cs-voc",
      "localized": {
       "es": {
-       "title": "Verificación y aceptación",
+       "title": "Colaboración · Verificación y aceptación",
        "learningObjective": "Confirmar que el equipo receptor entendió y aceptó el traspaso.",
        "case": "Enviaste el expediente por correo. Nadie respondió y el cliente escribe a soporte al día siguiente.",
        "exercise1": {
@@ -10474,7 +10474,7 @@
        }
       },
       "en": {
-       "title": "Verification and acceptance",
+       "title": "Collaboration · Verification and acceptance",
        "learningObjective": "Confirm that the receiving team understood and accepted the handover.",
        "case": "You sent the file by email. Nobody replied and the customer writes to support the next day.",
        "exercise1": {
@@ -10500,7 +10500,7 @@
        }
       },
       "pt": {
-       "title": "Verificação e aceitação",
+       "title": "Colaboração · Verificação e aceitação",
        "learningObjective": "Confirmar que a equipe receptora entendeu e aceitou a passagem.",
        "case": "Você enviou o dossiê por e-mail. Ninguém respondeu e o cliente escreve ao suporte no dia seguinte.",
        "exercise1": {
@@ -10526,7 +10526,7 @@
        }
       },
       "fr": {
-       "title": "Vérification et acceptation",
+       "title": "Collaboration · Vérification et acceptation",
        "learningObjective": "Confirmer que l'équipe destinataire a compris et accepté la passation.",
        "case": "Vous avez envoyé le dossier par e-mail. Personne n'a répondu et le client écrit au support le lendemain.",
        "exercise1": {
@@ -10558,7 +10558,7 @@
      "sharedSource": "cs-voc",
      "localized": {
       "es": {
-       "title": "Restricción nueva y transferencia",
+       "title": "Colaboración · Restricción nueva y transferencia",
        "learningObjective": "Coordinar con ventas y producto cuando un traspaso revela una promesa no cumplida.",
        "case": "Al revisar el traspaso, soporte nota que ventas prometió a Pulso una app móvil que no existe.",
        "exercise1": {
@@ -10584,7 +10584,7 @@
        }
       },
       "en": {
-       "title": "New constraint and transfer",
+       "title": "Collaboration · New constraint and transfer",
        "learningObjective": "Coordinate with sales and product when a handover reveals an unkept promise.",
        "case": "While reviewing the handover, support notices that sales promised Pulso a mobile app that does not exist.",
        "exercise1": {
@@ -10610,7 +10610,7 @@
        }
       },
       "pt": {
-       "title": "Nova restrição e transferência",
+       "title": "Colaboração · Nova restrição e transferência",
        "learningObjective": "Coordenar com vendas e produto quando uma passagem revela uma promessa não cumprida.",
        "case": "Ao revisar a passagem, o suporte nota que vendas prometeu à Pulso um aplicativo móvel que não existe.",
        "exercise1": {
@@ -10636,7 +10636,7 @@
        }
       },
       "fr": {
-       "title": "Nouvelle contrainte et transfert",
+       "title": "Collaboration · Nouvelle contrainte et transfert",
        "learningObjective": "Coordonner avec les ventes et le produit quand une passation révèle une promesse non tenue.",
        "case": "En examinant la passation, le support constate que les ventes ont promis à Pulso une application mobile qui n'existe pas.",
        "exercise1": {
@@ -10913,7 +10913,7 @@
      "sharedSource": "cs-training",
      "localized": {
       "es": {
-       "title": "Contexto y alcance",
+       "title": "Supervisión · Contexto y alcance",
        "learningObjective": "Evaluar la carga del equipo antes de asignar una implementación crítica.",
        "case": "Entra Banco Cima, una cuenta crítica. Dos de tus cuatro especialistas ya llevan seis implementaciones cada uno; los otros dos, tres.",
        "exercise1": {
@@ -10939,7 +10939,7 @@
        }
       },
       "en": {
-       "title": "Context and scope",
+       "title": "Supervision · Context and scope",
        "learningObjective": "Assess the team's workload before assigning a critical implementation.",
        "case": "Cima Bank, a critical account, comes in. Two of your four specialists already carry six implementations each; the other two, three.",
        "exercise1": {
@@ -10965,7 +10965,7 @@
        }
       },
       "pt": {
-       "title": "Contexto e escopo",
+       "title": "Supervisão · Contexto e escopo",
        "learningObjective": "Avaliar a carga da equipe antes de atribuir uma implementação crítica.",
        "case": "Entra o Banco Cima, uma conta crítica. Dois dos seus quatro especialistas já têm seis implementações cada; os outros dois, três.",
        "exercise1": {
@@ -10991,7 +10991,7 @@
        }
       },
       "fr": {
-       "title": "Contexte et périmètre",
+       "title": "Supervision · Contexte et périmètre",
        "learningObjective": "Évaluer la charge de l'équipe avant d'attribuer un déploiement critique.",
        "case": "La Banque Cima, un compte critique, arrive. Deux de vos quatre spécialistes gèrent déjà six déploiements chacun ; les deux autres, trois.",
        "exercise1": {
@@ -11023,7 +11023,7 @@
      "sharedSource": "cs-training",
      "localized": {
       "es": {
-       "title": "Datos y fuentes",
+       "title": "Supervisión · Datos y fuentes",
        "learningObjective": "Usar datos de carga y resultados para decidir, no impresiones.",
        "case": "Crees que Daniela es más rápida que Iván. El tablero muestra que sus tiempos a primer valor son iguales, pero Iván tiene menos reaperturas.",
        "exercise1": {
@@ -11049,7 +11049,7 @@
        }
       },
       "en": {
-       "title": "Data and sources",
+       "title": "Supervision · Data and sources",
        "learningObjective": "Use workload and outcome data to decide, not impressions.",
        "case": "You think Daniela is faster than Iván. The dashboard shows their time to first value is the same, but Iván has fewer reopened items.",
        "exercise1": {
@@ -11075,7 +11075,7 @@
        }
       },
       "pt": {
-       "title": "Dados e fontes",
+       "title": "Supervisão · Dados e fontes",
        "learningObjective": "Usar dados de carga e resultados para decidir, não impressões.",
        "case": "Você acha que Daniela é mais rápida que Iván. O painel mostra que os tempos até o primeiro valor são iguais, mas Iván tem menos reaberturas.",
        "exercise1": {
@@ -11101,7 +11101,7 @@
        }
       },
       "fr": {
-       "title": "Données et sources",
+       "title": "Supervision · Données et sources",
        "learningObjective": "S'appuyer sur les données de charge et de résultats pour décider, pas sur des impressions.",
        "case": "Vous pensez que Daniela est plus rapide qu'Iván. Le tableau de bord montre des délais de première valeur identiques, mais Iván a moins de réouvertures.",
        "exercise1": {
@@ -11133,7 +11133,7 @@
      "sharedSource": "cs-training",
      "localized": {
       "es": {
-       "title": "Alternativas y criterio",
+       "title": "Supervisión · Alternativas y criterio",
        "learningObjective": "Comparar redistribuir, posponer o pedir apoyo cuando la capacidad no alcanza.",
        "case": "Iván es el indicado para Banco Cima, pero ya lleva seis cuentas.",
        "exercise1": {
@@ -11159,7 +11159,7 @@
        }
       },
       "en": {
-       "title": "Alternatives and judgment",
+       "title": "Supervision · Alternatives and judgment",
        "learningObjective": "Compare redistributing, postponing or asking for support when capacity falls short.",
        "case": "Iván is the right person for Cima Bank, but he already has six accounts.",
        "exercise1": {
@@ -11185,7 +11185,7 @@
        }
       },
       "pt": {
-       "title": "Alternativas e critério",
+       "title": "Supervisão · Alternativas e critério",
        "learningObjective": "Comparar redistribuir, adiar ou pedir apoio quando a capacidade não é suficiente.",
        "case": "Iván é o indicado para o Banco Cima, mas já tem seis contas.",
        "exercise1": {
@@ -11211,7 +11211,7 @@
        }
       },
       "fr": {
-       "title": "Options et jugement",
+       "title": "Supervision · Options et jugement",
        "learningObjective": "Comparer redistribuer, reporter ou demander du renfort quand la capacité ne suffit pas.",
        "case": "Iván est la bonne personne pour la Banque Cima, mais il gère déjà six comptes.",
        "exercise1": {
@@ -11243,7 +11243,7 @@
      "sharedSource": "cs-training",
      "localized": {
       "es": {
-       "title": "Entregable del puesto",
+       "title": "Supervisión · Entregable del puesto",
        "learningObjective": "Documentar una sesión de coaching con acuerdos observables.",
        "case": "Daniela reabre muchas tareas por omitir la validación con el cliente. Hablas con ella veinte minutos.",
        "exercise1": {
@@ -11269,7 +11269,7 @@
        }
       },
       "en": {
-       "title": "Role deliverable",
+       "title": "Supervision · Role deliverable",
        "learningObjective": "Document a coaching session with observable agreements.",
        "case": "Daniela reopens many tasks because she skips validation with the customer. You talk with her for twenty minutes.",
        "exercise1": {
@@ -11295,7 +11295,7 @@
        }
       },
       "pt": {
-       "title": "Entrega do cargo",
+       "title": "Supervisão · Entrega do cargo",
        "learningObjective": "Documentar uma sessão de coaching com acordos observáveis.",
        "case": "Daniela reabre muitas tarefas por pular a validação com o cliente. Você conversa com ela por vinte minutos.",
        "exercise1": {
@@ -11321,7 +11321,7 @@
        }
       },
       "fr": {
-       "title": "Livrable du poste",
+       "title": "Supervision · Livrable du poste",
        "learningObjective": "Documenter une séance de coaching avec des accords observables.",
        "case": "Daniela rouvre beaucoup de tâches parce qu'elle saute la validation avec le client. Vous échangez vingt minutes avec elle.",
        "exercise1": {
@@ -11353,7 +11353,7 @@
      "sharedSource": "cs-training",
      "localized": {
       "es": {
-       "title": "Verificación y aceptación",
+       "title": "Supervisión · Verificación y aceptación",
        "learningObjective": "Verificar que la redistribución y el coaching dieron resultado.",
        "case": "Un mes después: Banco Cima va en fecha, pero una de las cuentas que moviste lleva diez días sin avance.",
        "exercise1": {
@@ -11379,7 +11379,7 @@
        }
       },
       "en": {
-       "title": "Verification and acceptance",
+       "title": "Supervision · Verification and acceptance",
        "learningObjective": "Verify that the redistribution and the coaching paid off.",
        "case": "A month later: Cima Bank is on schedule, but one of the accounts you moved has made no progress for ten days.",
        "exercise1": {
@@ -11405,7 +11405,7 @@
        }
       },
       "pt": {
-       "title": "Verificação e aceitação",
+       "title": "Supervisão · Verificação e aceitação",
        "learningObjective": "Verificar que a redistribuição e o coaching deram resultado.",
        "case": "Um mês depois: o Banco Cima está no prazo, mas uma das contas que você moveu está há dez dias sem avanço.",
        "exercise1": {
@@ -11431,7 +11431,7 @@
        }
       },
       "fr": {
-       "title": "Vérification et acceptation",
+       "title": "Supervision · Vérification et acceptation",
        "learningObjective": "Vérifier que la redistribution et le coaching ont porté leurs fruits.",
        "case": "Un mois plus tard : la Banque Cima est dans les temps, mais l'un des comptes transférés n'avance plus depuis dix jours.",
        "exercise1": {
@@ -11463,7 +11463,7 @@
      "sharedSource": "cs-training",
      "localized": {
       "es": {
-       "title": "Restricción nueva y transferencia",
+       "title": "Supervisión · Restricción nueva y transferencia",
        "learningObjective": "Reorganizar al equipo ante una ausencia inesperada y decidir qué escalar.",
        "case": "Iván se enferma dos semanas en plena etapa de configuración de Banco Cima.",
        "exercise1": {
@@ -11489,7 +11489,7 @@
        }
       },
       "en": {
-       "title": "New constraint and transfer",
+       "title": "Supervision · New constraint and transfer",
        "learningObjective": "Reorganize the team after an unexpected absence and decide what to escalate.",
        "case": "Iván falls ill for two weeks in the middle of Cima Bank's configuration stage.",
        "exercise1": {
@@ -11515,7 +11515,7 @@
        }
       },
       "pt": {
-       "title": "Nova restrição e transferência",
+       "title": "Supervisão · Nova restrição e transferência",
        "learningObjective": "Reorganizar a equipe diante de uma ausência inesperada e decidir o que escalar.",
        "case": "Iván adoece por duas semanas em plena etapa de configuração do Banco Cima.",
        "exercise1": {
@@ -11541,7 +11541,7 @@
        }
       },
       "fr": {
-       "title": "Nouvelle contrainte et transfert",
+       "title": "Supervision · Nouvelle contrainte et transfert",
        "learningObjective": "Réorganiser l'équipe face à une absence imprévue et décider de ce qu'il faut escalader.",
        "case": "Iván tombe malade pour deux semaines en pleine phase de configuration de la Banque Cima.",
        "exercise1": {
@@ -11818,7 +11818,7 @@
      "sharedSource": "cs-segmentation",
      "localized": {
       "es": {
-       "title": "Contexto y alcance",
+       "title": "Gerencia · Contexto y alcance",
        "learningObjective": "Distinguir un problema de cartera de un problema de proyecto.",
        "case": "Cuatro implementaciones distintas llevan entre dos y tres semanas de retraso. Cada supervisor lo explica con una causa propia de su cliente.",
        "exercise1": {
@@ -11844,7 +11844,7 @@
        }
       },
       "en": {
-       "title": "Context and scope",
+       "title": "Management · Context and scope",
        "learningObjective": "Tell a portfolio problem apart from a project problem.",
        "case": "Four different implementations are two to three weeks late. Each supervisor explains it with a cause specific to their customer.",
        "exercise1": {
@@ -11870,7 +11870,7 @@
        }
       },
       "pt": {
-       "title": "Contexto e escopo",
+       "title": "Gestão · Contexto e escopo",
        "learningObjective": "Distinguir um problema de carteira de um problema de projeto.",
        "case": "Quatro implementações diferentes têm entre duas e três semanas de atraso. Cada supervisor explica com uma causa própria do seu cliente.",
        "exercise1": {
@@ -11896,7 +11896,7 @@
        }
       },
       "fr": {
-       "title": "Contexte et périmètre",
+       "title": "Gestion · Contexte et périmètre",
        "learningObjective": "Distinguer un problème de portefeuille d'un problème de projet.",
        "case": "Quatre déploiements différents ont deux à trois semaines de retard. Chaque superviseur l'explique par une cause propre à son client.",
        "exercise1": {
@@ -11928,7 +11928,7 @@
      "sharedSource": "cs-segmentation",
      "localized": {
       "es": {
-       "title": "Datos y fuentes",
+       "title": "Gerencia · Datos y fuentes",
        "learningObjective": "Leer indicadores de cartera para localizar la etapa donde se pierde el tiempo.",
        "case": "El tablero muestra que las cuatro cuentas pasaron en promedio 14 días en la etapa de datos; las cuentas a tiempo pasaron 5.",
        "exercise1": {
@@ -11954,7 +11954,7 @@
        }
       },
       "en": {
-       "title": "Data and sources",
+       "title": "Management · Data and sources",
        "learningObjective": "Read portfolio indicators to locate the stage where time is lost.",
        "case": "The dashboard shows the four accounts spent 14 days on average in the data stage; accounts on schedule spent 5.",
        "exercise1": {
@@ -11980,7 +11980,7 @@
        }
       },
       "pt": {
-       "title": "Dados e fontes",
+       "title": "Gestão · Dados e fontes",
        "learningObjective": "Ler indicadores de carteira para localizar a etapa em que se perde tempo.",
        "case": "O painel mostra que as quatro contas passaram em média 14 dias na etapa de dados; as contas no prazo passaram 5.",
        "exercise1": {
@@ -12006,7 +12006,7 @@
        }
       },
       "fr": {
-       "title": "Données et sources",
+       "title": "Gestion · Données et sources",
        "learningObjective": "Lire les indicateurs de portefeuille pour localiser l'étape où le temps se perd.",
        "case": "Le tableau de bord montre que les quatre comptes ont passé en moyenne 14 jours à l'étape des données ; les comptes à l'heure, 5.",
        "exercise1": {
@@ -12038,7 +12038,7 @@
      "sharedSource": "cs-segmentation",
      "localized": {
       "es": {
-       "title": "Alternativas y criterio",
+       "title": "Gerencia · Alternativas y criterio",
        "learningObjective": "Comparar inversiones de mejora por costo, plazo y efecto esperado.",
        "case": "La causa: desde hace dos meses los clientes entregan datos de tres sistemas en lugar de uno. Opciones: una herramienta de consolidación, un especialista de datos compartido, o cobrar la consolidación como servicio.",
        "exercise1": {
@@ -12064,7 +12064,7 @@
        }
       },
       "en": {
-       "title": "Alternatives and judgment",
+       "title": "Management · Alternatives and judgment",
        "learningObjective": "Compare improvement investments by cost, timeline and expected effect.",
        "case": "The cause: for two months customers have been delivering data from three systems instead of one. Options: a consolidation tool, a shared data specialist, or charging for consolidation as a service.",
        "exercise1": {
@@ -12090,7 +12090,7 @@
        }
       },
       "pt": {
-       "title": "Alternativas e critério",
+       "title": "Gestão · Alternativas e critério",
        "learningObjective": "Comparar investimentos de melhoria por custo, prazo e efeito esperado.",
        "case": "A causa: há dois meses os clientes entregam dados de três sistemas em vez de um. Opções: uma ferramenta de consolidação, um especialista de dados compartilhado ou cobrar a consolidação como serviço.",
        "exercise1": {
@@ -12116,7 +12116,7 @@
        }
       },
       "fr": {
-       "title": "Options et jugement",
+       "title": "Gestion · Options et jugement",
        "learningObjective": "Comparer des investissements d'amélioration selon le coût, le délai et l'effet attendu.",
        "case": "La cause : depuis deux mois, les clients fournissent des données issues de trois systèmes au lieu d'un. Options : un outil de consolidation, un spécialiste des données partagé ou facturer la consolidation comme service.",
        "exercise1": {
@@ -12148,7 +12148,7 @@
      "sharedSource": "cs-segmentation",
      "localized": {
       "es": {
-       "title": "Entregable del puesto",
+       "title": "Gerencia · Entregable del puesto",
        "learningObjective": "Presentar una propuesta de mejora con problema, evidencia, opción, costo e indicador.",
        "case": "Tienes diez minutos con dirección para pedir el especialista de datos.",
        "exercise1": {
@@ -12174,7 +12174,7 @@
        }
       },
       "en": {
-       "title": "Role deliverable",
+       "title": "Management · Role deliverable",
        "learningObjective": "Present an improvement proposal with problem, evidence, option, cost and indicator.",
        "case": "You have ten minutes with senior leadership to ask for the data specialist.",
        "exercise1": {
@@ -12200,7 +12200,7 @@
        }
       },
       "pt": {
-       "title": "Entrega do cargo",
+       "title": "Gestão · Entrega do cargo",
        "learningObjective": "Apresentar uma proposta de melhoria com problema, evidência, opção, custo e indicador.",
        "case": "Você tem dez minutos com a diretoria para pedir o especialista de dados.",
        "exercise1": {
@@ -12226,7 +12226,7 @@
        }
       },
       "fr": {
-       "title": "Livrable du poste",
+       "title": "Gestion · Livrable du poste",
        "learningObjective": "Présenter une proposition d'amélioration : problème, preuves, option, coût et indicateur.",
        "case": "Vous disposez de dix minutes avec la direction pour demander le spécialiste des données.",
        "exercise1": {
@@ -12258,7 +12258,7 @@
      "sharedSource": "cs-segmentation",
      "localized": {
       "es": {
-       "title": "Verificación y aceptación",
+       "title": "Gerencia · Verificación y aceptación",
        "learningObjective": "Evaluar una mejora aprobada contra el indicador comprometido.",
        "case": "Tras el trimestre, la etapa de datos bajó de 14 a 8 días. La meta era 6. El especialista está al 100 % de ocupación.",
        "exercise1": {
@@ -12284,7 +12284,7 @@
        }
       },
       "en": {
-       "title": "Verification and acceptance",
+       "title": "Management · Verification and acceptance",
        "learningObjective": "Assess an approved improvement against the committed indicator.",
        "case": "After the quarter, the data stage fell from 14 to 8 days. The target was 6. The specialist is at 100% utilization.",
        "exercise1": {
@@ -12310,7 +12310,7 @@
        }
       },
       "pt": {
-       "title": "Verificação e aceitação",
+       "title": "Gestão · Verificação e aceitação",
        "learningObjective": "Avaliar uma melhoria aprovada em relação ao indicador comprometido.",
        "case": "Após o trimestre, a etapa de dados caiu de 14 para 8 dias. A meta era 6. O especialista está com 100% de ocupação.",
        "exercise1": {
@@ -12336,7 +12336,7 @@
        }
       },
       "fr": {
-       "title": "Vérification et acceptation",
+       "title": "Gestion · Vérification et acceptation",
        "learningObjective": "Évaluer une amélioration approuvée au regard de l'indicateur engagé.",
        "case": "Après le trimestre, l'étape des données est passée de 14 à 8 jours. L'objectif était 6. Le spécialiste est occupé à 100 %.",
        "exercise1": {
@@ -12368,7 +12368,7 @@
      "sharedSource": "cs-segmentation",
      "localized": {
       "es": {
-       "title": "Restricción nueva y transferencia",
+       "title": "Gerencia · Restricción nueva y transferencia",
        "learningObjective": "Sostener la calidad cuando se reduce el presupuesto del área.",
        "case": "Dirección recorta 15 % el presupuesto del trimestre. El especialista de datos es el gasto más reciente.",
        "exercise1": {
@@ -12394,7 +12394,7 @@
        }
       },
       "en": {
-       "title": "New constraint and transfer",
+       "title": "Management · New constraint and transfer",
        "learningObjective": "Sustain quality when the area's budget is reduced.",
        "case": "Leadership cuts the quarter's budget by 15%. The data specialist is the most recent expense.",
        "exercise1": {
@@ -12420,7 +12420,7 @@
        }
       },
       "pt": {
-       "title": "Nova restrição e transferência",
+       "title": "Gestão · Nova restrição e transferência",
        "learningObjective": "Sustentar a qualidade quando o orçamento da área é reduzido.",
        "case": "A diretoria corta 15% do orçamento do trimestre. O especialista de dados é a despesa mais recente.",
        "exercise1": {
@@ -12446,7 +12446,7 @@
        }
       },
       "fr": {
-       "title": "Nouvelle contrainte et transfert",
+       "title": "Gestion · Nouvelle contrainte et transfert",
        "learningObjective": "Maintenir la qualité quand le budget du service est réduit.",
        "case": "La direction réduit de 15 % le budget du trimestre. Le spécialiste des données est la dépense la plus récente.",
        "exercise1": {
@@ -12478,7 +12478,7 @@
      "sharedSource": "cs-segmentation",
      "localized": {
       "es": {
-       "title": "Decisión de capacidad",
+       "title": "Gerencia · Decisión de capacidad",
        "learningObjective": "Decidir cuántas implementaciones acepta el área en un periodo y qué se difiere.",
        "case": "El próximo mes entran doce cuentas nuevas. Con el equipo actual, la etapa de datos soporta ocho sin volver a retrasarse.",
        "exercise1": {
@@ -12504,7 +12504,7 @@
        }
       },
       "en": {
-       "title": "Capacity decision",
+       "title": "Management · Capacity decision",
        "learningObjective": "Decide how many implementations the area takes on in a period and what is deferred.",
        "case": "Twelve new accounts come in next month. With the current team, the data stage supports eight without slipping again.",
        "exercise1": {
@@ -12530,7 +12530,7 @@
        }
       },
       "pt": {
-       "title": "Decisão de capacidade",
+       "title": "Gestão · Decisão de capacidade",
        "learningObjective": "Decidir quantas implementações a área aceita em um período e o que é adiado.",
        "case": "No próximo mês entram doze contas novas. Com a equipe atual, a etapa de dados suporta oito sem voltar a atrasar.",
        "exercise1": {
@@ -12556,7 +12556,7 @@
        }
       },
       "fr": {
-       "title": "Décision de capacité",
+       "title": "Gestion · Décision de capacité",
        "learningObjective": "Décider combien de déploiements le service accepte sur une période et ce qui est différé.",
        "case": "Douze nouveaux comptes arrivent le mois prochain. Avec l'équipe actuelle, l'étape des données en supporte huit sans nouveau retard.",
        "exercise1": {
@@ -12833,7 +12833,7 @@
      "sharedSource": "cs-ebr",
      "localized": {
       "es": {
-       "title": "Contexto y alcance",
+       "title": "Dirección · Contexto y alcance",
        "learningObjective": "Traducir una meta de crecimiento en una pregunta de capacidad operativa.",
        "case": "Dirección quiere pasar de 40 a 80 clientes nuevos por trimestre sin contratar en onboarding.",
        "exercise1": {
@@ -12859,7 +12859,7 @@
        }
       },
       "en": {
-       "title": "Context and scope",
+       "title": "Leadership · Context and scope",
        "learningObjective": "Turn a growth goal into an operating capacity question.",
        "case": "Leadership wants to go from 40 to 80 new customers per quarter without hiring in onboarding.",
        "exercise1": {
@@ -12885,7 +12885,7 @@
        }
       },
       "pt": {
-       "title": "Contexto e escopo",
+       "title": "Direção · Contexto e escopo",
        "learningObjective": "Traduzir uma meta de crescimento em uma pergunta de capacidade operacional.",
        "case": "A diretoria quer passar de 40 para 80 novos clientes por trimestre sem contratar em onboarding.",
        "exercise1": {
@@ -12911,7 +12911,7 @@
        }
       },
       "fr": {
-       "title": "Contexte et périmètre",
+       "title": "Direction · Contexte et périmètre",
        "learningObjective": "Traduire un objectif de croissance en question de capacité opérationnelle.",
        "case": "La direction veut passer de 40 à 80 nouveaux clients par trimestre sans recruter à l'onboarding.",
        "exercise1": {
@@ -12943,7 +12943,7 @@
      "sharedSource": "cs-ebr",
      "localized": {
       "es": {
-       "title": "Datos y fuentes",
+       "title": "Dirección · Datos y fuentes",
        "learningObjective": "Construir un modelo simple de capacidad con datos históricos.",
        "case": "Datos del último año: cada especialista lleva 5 cuentas a la vez y cada implementación dura 6 semanas. Hay 8 especialistas.",
        "exercise1": {
@@ -12969,7 +12969,7 @@
        }
       },
       "en": {
-       "title": "Data and sources",
+       "title": "Leadership · Data and sources",
        "learningObjective": "Build a simple capacity model from historical data.",
        "case": "Last year's data: each specialist runs 5 accounts at a time and each implementation lasts 6 weeks. There are 8 specialists.",
        "exercise1": {
@@ -12995,7 +12995,7 @@
        }
       },
       "pt": {
-       "title": "Dados e fontes",
+       "title": "Direção · Dados e fontes",
        "learningObjective": "Construir um modelo simples de capacidade com dados históricos.",
        "case": "Dados do último ano: cada especialista conduz 5 contas ao mesmo tempo e cada implementação dura 6 semanas. Há 8 especialistas.",
        "exercise1": {
@@ -13021,7 +13021,7 @@
        }
       },
       "fr": {
-       "title": "Données et sources",
+       "title": "Direction · Données et sources",
        "learningObjective": "Construire un modèle simple de capacité à partir des données historiques.",
        "case": "Données de l'année écoulée : chaque spécialiste gère 5 comptes à la fois et chaque déploiement dure 6 semaines. Il y a 8 spécialistes.",
        "exercise1": {
@@ -13053,7 +13053,7 @@
      "sharedSource": "cs-ebr",
      "localized": {
       "es": {
-       "title": "Alternativas y criterio",
+       "title": "Dirección · Alternativas y criterio",
        "learningObjective": "Comparar caminos para crecer: contratar, segmentar el servicio o automatizar.",
        "case": "El modelo muestra que 80 por trimestre deja al equipo sin margen. Opciones: contratar tres personas, crear un onboarding autoguiado para cuentas pequeñas, o automatizar la carga de datos.",
        "exercise1": {
@@ -13079,7 +13079,7 @@
        }
       },
       "en": {
-       "title": "Alternatives and judgment",
+       "title": "Leadership · Alternatives and judgment",
        "learningObjective": "Compare paths to growth: hire, segment the service or automate.",
        "case": "The model shows that 80 per quarter leaves the team with no margin. Options: hire three people, create self-guided onboarding for small accounts, or automate data loading.",
        "exercise1": {
@@ -13105,7 +13105,7 @@
        }
       },
       "pt": {
-       "title": "Alternativas e critério",
+       "title": "Direção · Alternativas e critério",
        "learningObjective": "Comparar caminhos para crescer: contratar, segmentar o serviço ou automatizar.",
        "case": "O modelo mostra que 80 por trimestre deixa a equipe sem margem. Opções: contratar três pessoas, criar um onboarding autoguiado para contas pequenas ou automatizar a carga de dados.",
        "exercise1": {
@@ -13131,7 +13131,7 @@
        }
       },
       "fr": {
-       "title": "Options et jugement",
+       "title": "Direction · Options et jugement",
        "learningObjective": "Comparer les voies de croissance : recruter, segmenter le service ou automatiser.",
        "case": "Le modèle montre que 80 par trimestre laisse l'équipe sans marge. Options : recruter trois personnes, créer un onboarding en autonomie pour les petits comptes ou automatiser le chargement des données.",
        "exercise1": {
@@ -13163,7 +13163,7 @@
      "sharedSource": "cs-ebr",
      "localized": {
       "es": {
-       "title": "Entregable del puesto",
+       "title": "Dirección · Entregable del puesto",
        "learningObjective": "Preparar un caso de inversión por fases con supuestos, riesgos y puntos de decisión.",
        "case": "El comité pide tu propuesta de segmentación para la próxima sesión.",
        "exercise1": {
@@ -13189,7 +13189,7 @@
        }
       },
       "en": {
-       "title": "Role deliverable",
+       "title": "Leadership · Role deliverable",
        "learningObjective": "Prepare a phased investment case with assumptions, risks and decision points.",
        "case": "The committee asks for your segmentation proposal for the next session.",
        "exercise1": {
@@ -13215,7 +13215,7 @@
        }
       },
       "pt": {
-       "title": "Entrega do cargo",
+       "title": "Direção · Entrega do cargo",
        "learningObjective": "Preparar um caso de investimento por fases com premissas, riscos e pontos de decisão.",
        "case": "O comitê pede sua proposta de segmentação para a próxima sessão.",
        "exercise1": {
@@ -13241,7 +13241,7 @@
        }
       },
       "fr": {
-       "title": "Livrable du poste",
+       "title": "Direction · Livrable du poste",
        "learningObjective": "Préparer un dossier d'investissement par phases avec hypothèses, risques et points de décision.",
        "case": "Le comité demande votre proposition de segmentation pour la prochaine séance.",
        "exercise1": {
@@ -13273,7 +13273,7 @@
      "sharedSource": "cs-ebr",
      "localized": {
       "es": {
-       "title": "Verificación y aceptación",
+       "title": "Dirección · Verificación y aceptación",
        "learningObjective": "Evaluar una fase contra sus supuestos antes de autorizar la siguiente.",
        "case": "Fase 1 del autoguiado: 20 cuentas pequeñas. 15 llegaron a primer valor solas en tres semanas; 5 pidieron ayuda de un especialista.",
        "exercise1": {
@@ -13299,7 +13299,7 @@
        }
       },
       "en": {
-       "title": "Verification and acceptance",
+       "title": "Leadership · Verification and acceptance",
        "learningObjective": "Assess a phase against its assumptions before authorizing the next one.",
        "case": "Phase 1 of self-guided onboarding: 20 small accounts. 15 reached first value on their own in three weeks; 5 asked a specialist for help.",
        "exercise1": {
@@ -13325,7 +13325,7 @@
        }
       },
       "pt": {
-       "title": "Verificação e aceitação",
+       "title": "Direção · Verificação e aceitação",
        "learningObjective": "Avaliar uma fase em relação às suas premissas antes de autorizar a seguinte.",
        "case": "Fase 1 do autoguiado: 20 contas pequenas. 15 chegaram ao primeiro valor sozinhas em três semanas; 5 pediram ajuda de um especialista.",
        "exercise1": {
@@ -13351,7 +13351,7 @@
        }
       },
       "fr": {
-       "title": "Vérification et acceptation",
+       "title": "Direction · Vérification et acceptation",
        "learningObjective": "Évaluer une phase au regard de ses hypothèses avant d'autoriser la suivante.",
        "case": "Phase 1 du parcours en autonomie : 20 petits comptes. 15 ont atteint seuls la première valeur en trois semaines ; 5 ont demandé l'aide d'un spécialiste.",
        "exercise1": {
@@ -13383,7 +13383,7 @@
      "sharedSource": "cs-ebr",
      "localized": {
       "es": {
-       "title": "Restricción nueva y transferencia",
+       "title": "Dirección · Restricción nueva y transferencia",
        "learningObjective": "Responder a un cambio de estrategia de la empresa y transferir el modelo a otra región.",
        "case": "La empresa decide entrar a un mercado donde los clientes exigen implementación presencial. Tu modelo autoguiado no aplica igual.",
        "exercise1": {
@@ -13409,7 +13409,7 @@
        }
       },
       "en": {
-       "title": "New constraint and transfer",
+       "title": "Leadership · New constraint and transfer",
        "learningObjective": "Respond to a change in company strategy and transfer the model to another region.",
        "case": "The company decides to enter a market where customers demand on-site implementation. Your self-guided model does not apply in the same way.",
        "exercise1": {
@@ -13435,7 +13435,7 @@
        }
       },
       "pt": {
-       "title": "Nova restrição e transferência",
+       "title": "Direção · Nova restrição e transferência",
        "learningObjective": "Responder a uma mudança de estratégia da empresa e transferir o modelo a outra região.",
        "case": "A empresa decide entrar em um mercado em que os clientes exigem implementação presencial. Seu modelo autoguiado não se aplica da mesma forma.",
        "exercise1": {
@@ -13461,7 +13461,7 @@
        }
       },
       "fr": {
-       "title": "Nouvelle contrainte et transfert",
+       "title": "Direction · Nouvelle contrainte et transfert",
        "learningObjective": "Réagir à un changement de stratégie de l'entreprise et transposer le modèle à une autre région.",
        "case": "L'entreprise décide d'entrer sur un marché où les clients exigent un déploiement sur site. Votre modèle en autonomie ne s'applique pas de la même manière.",
        "exercise1": {
@@ -13493,7 +13493,7 @@
      "sharedSource": "cs-ebr",
      "localized": {
       "es": {
-       "title": "Decisión de capacidad",
+       "title": "Dirección · Decisión de capacidad",
        "learningObjective": "Fijar el límite de crecimiento que la operación puede sostener y defenderlo ante dirección.",
        "case": "Con la segmentación en marcha, tu modelo indica 70 clientes nuevos por trimestre sin deteriorar el primer valor. Dirección insiste en 80.",
        "exercise1": {
@@ -13519,7 +13519,7 @@
        }
       },
       "en": {
-       "title": "Capacity decision",
+       "title": "Leadership · Capacity decision",
        "learningObjective": "Set the growth limit the operation can sustain and defend it before leadership.",
        "case": "With segmentation under way, your model indicates 70 new customers per quarter without degrading first value. Leadership insists on 80.",
        "exercise1": {
@@ -13545,7 +13545,7 @@
        }
       },
       "pt": {
-       "title": "Decisão de capacidade",
+       "title": "Direção · Decisão de capacidade",
        "learningObjective": "Fixar o limite de crescimento que a operação consegue sustentar e defendê-lo diante da diretoria.",
        "case": "Com a segmentação em andamento, seu modelo indica 70 novos clientes por trimestre sem deteriorar o primeiro valor. A diretoria insiste em 80.",
        "exercise1": {
@@ -13571,7 +13571,7 @@
        }
       },
       "fr": {
-       "title": "Décision de capacité",
+       "title": "Direction · Décision de capacité",
        "learningObjective": "Fixer la limite de croissance que l'exploitation peut soutenir et la défendre devant la direction.",
        "case": "Avec la segmentation en cours, votre modèle indique 70 nouveaux clients par trimestre sans dégrader la première valeur. La direction insiste sur 80.",
        "exercise1": {

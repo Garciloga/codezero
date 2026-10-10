@@ -13,6 +13,9 @@ for (const {key} of published.filter(p=>p.key!=='customer_success')) {
  }
  if(findings.length){console.error('FAIL editorial gate',key,findings.slice(0,4));failures+=findings.length;}
  for(const lang of ['es','en','pt','fr']){
+  const titles=role.levels.flatMap(l=>l.lessons.map(x=>x.localized?.[lang]?.title?.trim().toLowerCase()??''));
+  if(titles.length!==92||titles.some(x=>!x)||new Set(titles).size!==92){console.error('FAIL repeated titles',key,lang);failures++;}
+
   const prompts=role.levels.flatMap(l=>l.lessons.map(x=>x.localized?.[lang]?.exercise2?.prompt??''));
   if(prompts.length!==92||prompts.some(p=>p.length<120)||new Set(prompts).size!==92||prompts.some(p=>p==='Prepara evidencia, responsable, fecha y criterio de aceptación.')) {
     console.error('FAIL repeated or missing written work',key,lang);failures++;

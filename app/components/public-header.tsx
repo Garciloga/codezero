@@ -10,6 +10,7 @@ import { useEffect, useRef } from "react";
 const links = [
   { label: "Sobre Garciloga", href: "/about" },
   { label: "Cómo funciona", href: "/#como-funciona" },
+  { label: "Programas", href: "/programas" },
   { label: "La ruta", href: "/#ruta" },
   { label: "Para empresas", href: "/companies" },
   { label: "Precios", href: "/pricing" },

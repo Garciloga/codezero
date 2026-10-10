@@ -25,7 +25,7 @@ export const EXPECTED_LEVELS = 15;
 /** Findings that must be fixed before a level can be published. */
 export const BLOCKING = new Set([
   'missing-locale', 'empty-text', 'placeholder-case', 'duplicate-lesson-key',
-  'no-exam', 'short-exam', 'option-count-mismatch', 'invalid-correct-index',
+  'no-exam', 'short-exam', 'option-count-mismatch', 'invalid-correct-index', 'duplicate-lesson-title',
 ]);
 
 const normalize = text => String(text ?? '').trim().replace(/\s+/g, ' ').toLowerCase();
@@ -45,6 +45,7 @@ export function auditCurriculum(document, source = 'input') {
   const findings = [];
   const add = (rule, where, detail) => findings.push({rule, source, where, detail, blocking: BLOCKING.has(rule)});
   const lessonKeys = new Map();
+  const lessonTitles = new Map();
   const caseUses = new Map();
   const correctPositions = [];
 
@@ -64,6 +65,11 @@ export function auditCurriculum(document, source = 'input') {
         if (!text) { add('missing-locale', here, locale); continue; }
         for (const field of ['title', 'learningObjective', 'case']) {
           if (!normalize(text[field])) add('empty-text', here, `${locale}.${field}`);
+        }
+        const titleKey = locale + ':' + normalize(text.title);
+        if (normalize(text.title)) {
+          if (lessonTitles.has(titleKey)) add('duplicate-lesson-title', here, locale + ': repeated title also in ' + lessonTitles.get(titleKey));
+          else lessonTitles.set(titleKey, here);
         }
         // A case that only repeats the lesson or level title is a slot, not a scenario.
         const scenario = normalize(text.case), title = normalize(text.title);

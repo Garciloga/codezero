@@ -1,0 +1,32 @@
+/* Garciloga visual system: responsive 3D depth, no canvas/WebGL, minimal paints. */
+html[data-design="vivo"] .public-home .public-hero {isolation:isolate;position:relative;padding-block:clamp(48px,7vw,100px);}
+html[data-design="vivo"] .public-home .public-hero::before {content:"";position:absolute;pointer-events:none;z-index:-1;inset:-15px -25px;border-radius:40px;background:radial-gradient(ellipse at 82% 38%,color-mix(in srgb,var(--vivo-accent) 13%,transparent),transparent 57%),radial-gradient(ellipse at 24% 74%,color-mix(in srgb,var(--vivo-primary) 12%,transparent),transparent 54%);}
+html[data-design="vivo"] .public-home .public-hero h1 {font-size:clamp(2.6rem,5vw,5.1rem);letter-spacing:-.052em;line-height:1.04;text-wrap:balance;}
+html[data-design="vivo"] .public-home .garciloga-3d-card {position:relative;isolation:isolate;transform:perspective(1200px) rotateY(-5deg) rotateX(3deg);transform-style:preserve-3d;background:linear-gradient(150deg,color-mix(in srgb,var(--vivo-surface) 97%,var(--vivo-accent)),var(--vivo-surface));box-shadow:8px 20px 45px -27px color-mix(in srgb,var(--vivo-text) 32%,transparent);transition:transform .38s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease;}
+html[data-design="vivo"] .public-home .garciloga-3d-card::before {content:"";position:absolute;inset:14px -13px -13px 14px;transform:translateZ(-18px);border-radius:inherit;border:1px solid color-mix(in srgb,var(--vivo-accent) 28%,transparent);z-index:-1;}
+html[data-design="vivo"] .public-value-section>.grid {gap:clamp(18px,2vw,28px);margin-top:25px;}
+html[data-design="vivo"] .public-value-section .card {padding:clamp(24px,3vw,36px);border-radius:24px;background:linear-gradient(150deg,var(--vivo-surface),color-mix(in srgb,var(--vivo-surface) 92%,var(--vivo-primary)));}
+html[data-design="vivo"] .public-site .btn {box-shadow:inset 0 1px color-mix(in srgb,white 20%,transparent),0 10px 22px -17px color-mix(in srgb,var(--vivo-text) 30%,transparent);transition:transform .24s ease,box-shadow .24s ease,background-color .24s ease;}
+.program-catalog-header{padding:clamp(45px,6vw,86px) 0 28px;max-width:840px;}
+.program-catalog-header h1{font-size:clamp(2.5rem,5vw,4.6rem);letter-spacing:-.035em;line-height:1.08;}
+.program-catalog-header p{font-size:1.1rem;line-height:1.66;}
+.program-catalog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;}
+.program-catalog-grid .card{display:flex;flex-direction:column;gap:12px;min-width:0;background:linear-gradient(135deg,var(--vivo-surface),color-mix(in srgb,var(--vivo-surface) 95%,var(--vivo-accent)));border-radius:24px;}
+.program-catalog-grid .card :is(h2,p){margin:0;}.program-catalog-grid .card .btn{margin-top:auto;align-self:start;}
+.program-quick-facts{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0;}
+.program-quick-facts span{padding:10px 14px;border:1px solid var(--vivo-border);border-radius:30px;font-weight:600;}
+.program-syllabus{margin-block:30px 55px;}.program-syllabus>.grid{margin-top:22px;gap:20px;}
+.program-syllabus .card{border-radius:22px;margin:0!important;}
+.program-syllabus .card h3{margin:12px 0 18px;}.program-syllabus .card li{line-height:1.6;margin-top:6px;}
+.program-level{font-weight:700;color:var(--vivo-primary);}
+.program-project-label{padding-top:14px;border-top:1px solid var(--vivo-border);font-weight:600;}
+.program-catalog-cta{padding:clamp(25px,3vw,44px)!important;margin-top:42px;}
+@media(hover:hover) and (prefers-reduced-motion:no-preference) {
+html[data-design="vivo"] .public-home .garciloga-3d-card:hover{transform:perspective(1200px) rotateY(0deg) rotateX(0deg) translateY(-5px);}
+html[data-design="vivo"] .public-site .btn:hover{transform:translateY(-2px);box-shadow:0 14px 25px -15px color-mix(in srgb,var(--vivo-text) 34%,transparent);}
+html[data-design="vivo"] :is(.public-value-section,.program-catalog-grid,.program-syllabus) .card{transition:transform .24s ease,box-shadow .24s ease;}
+html[data-design="vivo"] :is(.public-value-section,.program-catalog-grid,.program-syllabus) .card:hover{transform:translateY(-4px);box-shadow:0 18px 35px -25px color-mix(in srgb,var(--vivo-text) 38%,transparent);}
+}
+@media(max-width:970px){.program-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:767px){.program-catalog-grid{grid-template-columns:1fr;}html[data-design="vivo"] .public-home .garciloga-3d-card{transform:none;}html[data-design="vivo"] .public-home .garciloga-3d-card::before{display:none;}.program-catalog-header{padding-top:36px;}}
+@media(prefers-reduced-motion:reduce){html[data-design="vivo"] .public-home .garciloga-3d-card{transform:none;transition:none;}html[data-design="vivo"] .public-site .btn{transition:none;}}

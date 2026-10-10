@@ -30,7 +30,9 @@ function LoginForm() {
   const [confirmationEmail, setConfirmationEmail] = useState<string | null>(null);
   const [eligibilityConfirmed, setEligibilityConfirmed] = useState(false);
   const [legalAccepted, setLegalAccepted] = useState(false);
-  const [position, setPosition] = useState(publishedPositions[0].key);
+  const requestedPosition=searchParams.get("position");
+  const [position, setPosition] = useState(()=>publishedPositions.some(p=>p.key===requestedPosition)?requestedPosition!:publishedPositions[0].key);
+  useEffect(()=>{if(publishedPositions.some(p=>p.key===requestedPosition))setPosition(requestedPosition!);},[requestedPosition]);
 
   function changeMode(next: "login" | "signup") {
     setMode(next); setMsg(""); setErrors({}); setShowPassword(false); setConfirmationEmail(null);

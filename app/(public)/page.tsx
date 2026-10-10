@@ -17,10 +17,10 @@ export default async function Home() {
         <h1>Aprende para el trabajo real. Crece hacia lo que sigue.</h1>
         <p>Empieza por tu puesto y su diagnóstico. Practica procesos, herramientas y decisiones para crecer hacia supervisión, gerencia y dirección. Programación e integraciones son una ruta técnica opcional.</p>
         <p className="muted">Practica Customer Success, Onboarding, Soporte y gestión de cuentas con datos ficticios, decisiones y revisión humana según tu plan.</p>
-        <div className="public-actions"><Link className="btn accent" href="/login?modo=registro">Empezar gratis</Link><Link className="btn secondary" href="/positions">Ver la formación por puesto</Link></div>
+        <div className="public-actions"><Link className="btn accent" href="/login?modo=registro">Empezar gratis</Link><Link className="btn secondary" href="/programas">Ver programas por puesto</Link></div>
         <p className="muted">Diagnóstico inicial disponible sin completar programación.</p>
       </div>
-      <aside className="card public-example" aria-label="Ejemplo de un ejercicio respondido">
+      <aside className="card public-example garciloga-3d-card" aria-label="Ejemplo de un ejercicio respondido">
         <p className="public-eyebrow">Decisión de Customer Success</p>
         <span className="pill">Ejemplo respondido</span>
         <h2>El reporte bajó de cinco a tres días. ¿Qué comunicas?</h2>
@@ -30,13 +30,14 @@ export default async function Home() {
         <p className="example-feedback"><b>Correcto.</b> Una observación con su fórmula permite decidir sin prometer resultados no demostrados.</p>
       </aside>
     </section>
-    <section className="public-section"><h2>Elige tu camino</h2><div className="public-paths">{[["Quiero crecer en mi puesto","Casos de Customer Success, Soporte, Onboarding y liderazgo.","/role-training"],["Quiero aprender a programar","Python, SQL e integraciones con práctica ejecutable.","/practice"],["Quiero formar a mi equipo","Competencias, refuerzos y seguimiento dentro de cada compañía.","/companies"]].map(([title,text,href])=><article key={title}><h3>{title}</h3><p>{text}</p><Link className="btn secondary" href={href}>Explorar</Link></article>)}</div></section>
+    <section className="public-section public-value-section"><h2>Qué es Garciloga y para qué sirve</h2><p className="muted">Una plataforma de aprendizaje laboral para personas y equipos que transforma situaciones del puesto en decisiones, evidencias y competencias.</p><div className="grid grid3"><article className="card"><span className="public-step-number">01</span><h3>Aprende según tu puesto</h3><p>Explora nueve programas y diagnostica qué necesitas reforzar. No es necesario estudiar programación.</p></article><article className="card"><span className="public-step-number">02</span><h3>Demuestra cómo decides</h3><p>Practica casos, explica tu razonamiento y entrega evidencias. La dificultad aumenta con cada nivel.</p></article><article className="card"><span className="public-step-number">03</span><h3>Crece con evidencia</h3><p>Recibe retroalimentación y seguimiento de competencias. Los líderes ven el desarrollo dentro de sus permisos.</p></article></div></section>
+    <section className="public-section"><h2>Elige tu camino</h2><div className="public-paths">{[["Quiero crecer en mi puesto","Nueve programas con niveles, proyectos y decisiones por puesto.","/programas"],["Quiero aprender a programar","Ruta técnica opcional: Python, SQL e integraciones.","/technical-addon"],["Quiero formar a mi equipo","Competencias, refuerzos y seguimiento dentro de cada compañía.","/companies"]].map(([title,text,href])=><article key={title}><h3>{title}</h3><p>{text}</p><Link className="btn secondary" href={href}>Explorar</Link></article>)}</div></section>
     <section className="public-section"><h2>Practica tu trabajo</h2><ul className="job-cases">{PUBLIC_JOB_CASES.map(unit=><li key={unit.key}><h3>{unit.title}</h3><p>{unit.caseTitle}</p><Link href={'/role-training/mixed?unit='+unit.key}>Explorar el caso</Link></li>)}</ul><aside className="job-answer"><span className="pill">Decisión respondida · Cuenta Faro</span><h3>Dos usuarios no pueden exportar. ¿Qué confirmas primero?</h3><p>Respuesta: compara permisos, pasos y alcance con una cuenta que sí funciona. Un error aislado no demuestra una caída general.</p></aside></section>
     {counts&&<section className="public-stats" aria-label="Catálogo publicado">{[[counts.levels,"niveles técnicos"],[counts.lessons,"lecciones publicadas"],[counts.technicalProjects,"proyectos técnicos"],[counts.roleProjects,"integradores por ruta"]].map(([n,label])=><div key={String(label)}><strong>{n}</strong><span>{label}</span></div>)}</section>}
     <section id="como-funciona" className="public-section">
       <h2>Así se avanza en Garciloga</h2><p className="muted">Lección, práctica, decisiones, proyecto revisado y evidencia. Cada recorrido conserva sus requisitos.</p>
       <div className="public-steps">
-        {[["Lee la lección", "Texto claro, un ejemplo guiado y una lista para comprobar que entendiste."], ["Practica", "Dos ejercicios por lección. Al responder ves la explicación, aciertes o no."], ["Presenta el examen", "Cinco preguntas al cierre del nivel. Con 70 % o más pasas al siguiente."], ["Construye un proyecto", "En los niveles 10 y 15 entregas un proyecto final y recibes retroalimentación."]].map(([title, text], i) => <article className="card" key={title}><span className="public-step-number">{i + 1}</span><h3>{title}</h3><p>{text}</p></article>)}
+        {[["Lee la lección", "Texto claro, un ejemplo guiado y una lista para comprobar que entendiste."], ["Practica", "Dos ejercicios por lección. Al responder ves la explicación, aciertes o no."], ["Presenta el examen", "Decisiones, casos y evidencias que aumentan su complejidad según el programa."], ["Construye un proyecto", "Entrega proyectos integradores y recibe validación de evidencias según la ruta."]].map(([title, text], i) => <article className="card" key={title}><span className="public-step-number">{i + 1}</span><h3>{title}</h3><p>{text}</p></article>)}
       </div>
     </section>
     <section className="public-section"><h2>Para líderes de equipo</h2><p>Detecta fortalezas y necesidades de refuerzo usando evidencia de práctica revisada.</p><CompanyDemo compact/><Link className="btn secondary" href="/companies">Para empresas</Link></section>
@@ -60,7 +61,7 @@ export default async function Home() {
       <details><summary>¿Puedo cancelar cuando quiera?</summary><p>Sí. Conservas tu plan hasta el final del periodo pagado. Los detalles están en <Link href="/refunds">Cancelaciones y reembolsos</Link>.</p></details>
       <details><summary>¿Dónde puedo pedir ayuda?</summary><p>Visita el <Link href="/help">Centro de ayuda</Link> o consulta nuestras opciones de <Link href="/contact">Contacto</Link>.</p></details>
     </section>
-    <section className="public-close"><h2>Empieza hoy con el Nivel 1, sin costo.</h2><Link className="btn accent" href="/login?modo=registro">Empezar gratis</Link></section>
+    <section className="public-close"><h2>Empieza hoy tu camino profesional, sin costo de registro.</h2><Link className="btn accent" href="/login?modo=registro">Empezar gratis</Link></section>
   </main></LocalizedContent>;
 }
 
