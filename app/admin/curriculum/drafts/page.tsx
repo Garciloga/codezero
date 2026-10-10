@@ -2,7 +2,8 @@ import Link from "next/link";
 import {redirect,notFound} from "next/navigation";
 import {getServerUser} from "../../../../lib/supabase-server";
 import {requireOwner} from "../../../../lib/admin";
-import {DRAFT_CURRICULA,draftCourse} from "../../../../lib/draft-curricula";
+import {DRAFT_CURRICULA,draftCourse,ADJACENT_DRAFTS,adjacentDraft} from "../../../../lib/draft-curricula";
+import AdjacentDraftInspector from "./adjacent-draft-inspector";
 import LocalizedContent from "../../../components/localization/server";
 export const dynamic="force-dynamic";
 export const metadata={title:"Borradores editoriales · Garciloga",robots:{index:false,follow:false}};
@@ -10,7 +11,10 @@ type Props={searchParams:Promise<{course?:string;level?:string}>};
 export default async function DraftAcademicInspector({searchParams}:Props){
  const {data:{user}}=await getServerUser();if(!user)redirect("/login");
  try{await requireOwner(user.id);}catch{notFound();}
- const params=await searchParams,course=draftCourse(params.course);
+ const params=await searchParams;
+ const adjacent=adjacentDraft(params.course);
+ if(adjacent)return <LocalizedContent><AdjacentDraftInspector draft={adjacent} selected={Number(params.level)}/></LocalizedContent>;
+ const course=draftCourse(params.course);
  const id=Number(params.level),level=course.levels.find(x=>x.number===id)??course.levels[0];
  const isGrc=course.key==="grc_advanced";
  const units=isGrc?"learningUnits" in level?level.learningUnits:[]:"lessons" in level?level.lessons:[];
@@ -20,7 +24,7 @@ export default async function DraftAcademicInspector({searchParams}:Props){
  const href=(key:string,n:number)=>"/admin/curriculum/drafts?course="+encodeURIComponent(key)+"&level="+n;
  return <LocalizedContent><main className="wrap academic-draft-inspector">
  <div className="nav"><div><span className="pill">Borrador privado · Solo propietario</span><h1>Laboratorio editorial de cursos</h1><p>Contenido no publicado. Los nombres y respuestas de las decisiones son visibles aquí solamente para revisión; no forman parte de una API pública.</p></div><Link className="btn secondary" href="/admin/curriculum">Volver al inspector</Link></div>
- <section className="card"><h2>Cursos en borrador</h2><div className="public-actions">{Object.values(DRAFT_CURRICULA).map(c=><Link className={"btn "+(c.key===course.key?"":"secondary")} key={c.key} href={href(c.key,1)}>{c.title}</Link>)}</div>
+ <section className="card"><h2>Cursos en borrador</h2><div className="public-actions">{Object.values(DRAFT_CURRICULA).map(c=><Link className={"btn "+(c.key===course.key?"":"secondary")} key={c.key} href={href(c.key,1)}>{c.title}</Link>)}{Object.values(ADJACENT_DRAFTS).map(c=><Link className="btn secondary" key={c.key} href={href(c.key,1)}>{c.title}</Link>)}</div>
  <p className="muted">Idioma base: español. EN/PT/FR pendientes de traducción y verificación nativa. No permite acreditar competencias, emitir diplomas ni activar el checkout.</p></section>
  <section className="card"><h2>{course.title}</h2><p>{course.levels.length} niveles · {course.levels.reduce((n,l)=>n+("learningUnits" in l?l.learningUnits.length:"lessons" in l?l.lessons.length:0),0)} unidades · revisión humana requerida.</p><div className="academic-draft-levels" aria-label="Seleccionar nivel">{course.levels.map(l=><Link key={l.id} href={href(course.key,l.number)} aria-current={level.number===l.number?"page":undefined} className={"btn "+(level.number===l.number?"":"secondary")}>{l.number}. {l.title}</Link>)}</div></section>
  <article className="card academic-draft-case"><span className="pill">Nivel {level.number} · {level.difficulty}</span><h2>{level.title}</h2><h3>Hechos del caso</h3><p>{level.case.facts}</p><h3>Conflicto que debe resolverse</h3><p>{level.case.conflict}</p><h3>Indicador de resultado</h3><p>{level.case.metric}</p><p>{level.case.continuity}</p></article>

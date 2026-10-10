@@ -77,3 +77,20 @@ test("seven newly found Coming soon modules are drafts with human checks and ori
  const manager=collection.modules.manager_toolkit;
  assert.ok(manager.guardrails.some(x=>x.includes("visibilidad por organización")));
 });
+
+test("owner-only inspector enumerates and reviews all 12 drafts without public imports",()=>{
+ const page=fs.readFileSync("app/admin/curriculum/drafts/page.tsx","utf8");
+ const adjacent=fs.readFileSync("app/admin/curriculum/drafts/adjacent-draft-inspector.tsx","utf8");
+ const data=fs.readFileSync("lib/draft-curricula.ts","utf8");
+ assert.match(page,/requireOwner\(user.id\)/);
+ assert.match(page,/adjacentDraft\(params.course\)/);
+ assert.match(page,/ADJACENT_DRAFTS/);
+ assert.match(adjacent,/draft.stages.map/);
+ assert.match(adjacent,/stage.assessment.tasks.map/);
+ assert.match(data,/seven-adjacent-modules.json/);
+ assert.match(data,/import "server-only"/);
+ for(const candidate of ["app/(public)/programas/page.tsx","app/(public)/roadmap/page.tsx"]){
+  const src=fs.readFileSync(candidate,"utf8");
+  assert.equal(src.includes("lib/draft-curricula"),false);
+ }
+});
