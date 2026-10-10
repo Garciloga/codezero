@@ -117,6 +117,7 @@ export default async function Admin({ searchParams }: PageProps) {
       </div>
       <nav className="admin-links" aria-label="Secciones de administración">
         {operatorRole==='owner'&&<a className="btn" href="/admin/usage">Uso por persona</a>}
+        {operatorRole==='owner'&&<a className="btn" href="/admin/curriculum">Inspeccionar todos los cursos</a>}
         {workspaceEnabled()&&<a className="btn" href="/admin/companies">Compañías, contratos e invitaciones</a>}
         <a className="btn secondary" href="/admin/social">Comunidad y mentorías</a>
         <a className="btn secondary" href="/admin/activation">Activación por cohortes</a>
