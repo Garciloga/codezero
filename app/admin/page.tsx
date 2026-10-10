@@ -90,6 +90,21 @@ export default async function Admin({ searchParams }: PageProps) {
       .limit(20),
   ]);
 
+  // Completed lessons per listed user, split into server-verified and earlier (historical) ones.
+  const lessonCounts: Record<string, { verified: number; historical: number }> = {};
+  const listedIds = (users ?? []).map((u: any) => u.id);
+  if (listedIds.length > 0) {
+    const { data: lessonRows } = await admin
+      .from("lesson_progress")
+      .select("user_id, verified_at")
+      .eq("status", "completed")
+      .in("user_id", listedIds);
+    for (const row of lessonRows ?? []) {
+      const entry = (lessonCounts[row.user_id] ??= { verified: 0, historical: 0 });
+      if (row.verified_at) entry.verified += 1; else entry.historical += 1;
+    }
+  }
+
   return (
     <LocalizedContent><main className="wrap admin-workspace">
       <div className="nav">
@@ -168,7 +183,7 @@ export default async function Admin({ searchParams }: PageProps) {
         </div>
       )}
 
-      <AdminUserList users={users??[]} plans={plans??[]} owner={operatorRole==='owner'}/>
+      <AdminUserList users={users??[]} plans={plans??[]} owner={operatorRole==='owner'} lessons={lessonCounts}/>
 
       <div className="card" style={{ marginTop: 18 }}>
         <span className="pill">GARCILOGA SUPPORT</span>

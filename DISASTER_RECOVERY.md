@@ -14,6 +14,12 @@ El respaldo completo cloud y su restauración siguen **sin confirmarse**. La con
 
 Referencia: https://supabase.com/docs/guides/platform/backups . El plan Free requiere respaldos manuales fuera del proyecto; conservar historial de migraciones no asegura recuperación de progreso, certificados o evidencias.
 
+## Respaldo gratuito opcional (10 de octubre de 2026)
+
+`.github/workflows/database-backup.yml` genera cada lunes un `pg_dump` de los esquemas de la aplicación, comprueba que restaura en un PostgreSQL temporal, lo cifra con AES-256 y lo guarda 30 días como artefacto. **No hace nada hasta que el propietario agregue dos secretos del repositorio**: `SUPABASE_DB_URL` (cadena de conexión del pooler de sesión) y `BACKUP_PASSPHRASE` (aleatoria, 24 caracteres o más, guardada fuera de GitHub).
+
+Límites: el repositorio es público, así que el artefacto cifrado puede descargarlo cualquier usuario de GitHub con sesión; su protección depende por completo de la frase. No incluye `auth.users` ni los archivos de Storage. Mientras los secretos no existan, el respaldo cloud sigue sin confirmarse. Para restaurar: descargar el artefacto, `gpg --decrypt` y `pg_restore` sobre un proyecto vacío con las migraciones aplicadas.
+
 ## Objetivos
 
 - Mantener el esquema reproducible desde las migraciones versionadas en Git.

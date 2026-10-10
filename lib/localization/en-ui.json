@@ -1886,5 +1886,22 @@
   "Elegir pago anual": "Choose annual billing",
   "Pago anual.": "Annual billing.",
   "Se cobra una vez al año y se renueva cada año hasta que canceles. Verás el importe exacto en Stripe antes de pagar.": "You are charged once a year and it renews every year until you cancel. You will see the exact amount in Stripe before you pay.",
-  "El pago anual no está disponible por ahora. Puedes elegir el pago mensual.": "Annual billing is not available right now. You can choose monthly billing."
+  "El pago anual no está disponible por ahora. Puedes elegir el pago mensual.": "Annual billing is not available right now. You can choose monthly billing.",
+  "Reiniciar avance": "Reset progress",
+  "El correo no coincide con el de la cuenta.": "The email does not match the account's.",
+  "Confirma el registro del cobro para continuar.": "Confirm the charge record to continue.",
+  "No se pudo reiniciar el avance. Inténtalo de nuevo.": "The progress could not be reset. Try again.",
+  "No pudimos confirmar el reinicio. Actualiza la tabla antes de repetirlo.": "We could not confirm the reset. Refresh the table before repeating it.",
+  "El reinicio borra el avance del alumno y no se puede deshacer. Se conservan certificados, diplomas, plan y límites de uso.": "The reset deletes the learner's progress and cannot be undone. Certificates, diplomas, plan and usage limits are kept.",
+  "Qué se reinicia": "What is reset",
+  "Programa principal": "Main programme",
+  "Programas por puesto": "Role programmes",
+  "Programa principal y programas por puesto": "Main programme and role programmes",
+  "Costo del reinicio:": "Reset fee:",
+  ". La plataforma no realiza el cobro; solo queda registrado.": ". The platform does not collect the fee; it is only recorded.",
+  "Referencia del cobro (opcional)": "Charge reference (optional)",
+  "Confirmo que el cobro quedó acordado con el alumno": "I confirm the fee was agreed with the learner",
+  "Reiniciando…": "Resetting…",
+  "Confirmar reinicio": "Confirm reset",
+  "Avance reiniciado. Los certificados y diplomas emitidos se conservan.": "Progress reset. Certificates and diplomas already issued are kept."
 }

@@ -9,6 +9,7 @@ import { consumeRateLimit } from "../../../../lib/rate-limit";
 import { lessonGate } from "../../../../lib/lesson-gate";
 import { attemptCategory } from "../../../../lib/lesson-rules";
 import { boundedForm, FORM_LIMIT_BYTES } from "../../../../lib/bounded-form";
+import { readAnswer } from "../../../../lib/lesson-rules";
 export async function POST(req: Request) {
   if (!isTrustedBrowserRequest(req)) {
     return new Response("Invalid request origin", { status: 403 });
@@ -30,9 +31,7 @@ export async function POST(req: Request) {
 
   if (!formData) return new Response(null, { status: 413 });
   const exerciseId = Number(formData.get("exercise_id"));
-  const answer = String(formData.get("answer") ?? "");
-
-  if (!Number.isInteger(exerciseId) || !["A", "B", "C", "D"].includes(answer)) {
+  if (!Number.isInteger(exerciseId)) {
     return NextResponse.json({ error: "INVALID_ATTEMPT" }, { status: 400 });
   }
 
@@ -47,15 +46,26 @@ export async function POST(req: Request) {
   }
 
   const admin = createAdminSupabase();
+  const { data: exercise } = await admin.from("exercises").select("kind").eq("id", exerciseId).single();
   const { data: solution, error: solutionError } = await admin
     .from("exercise_solutions")
-    .select("correct_answer")
+    .select("correct_answer, correct_sequence")
     .eq("exercise_id", exerciseId)
     .single();
 
   if (solutionError || !solution) {
     return NextResponse.json({ error: "SOLUTION_NOT_FOUND" }, { status: 500 });
   }
+
+  // Each kind is graded here against a key the browser never receives.
+  const answer = readAnswer(exercise?.kind, formData);
+  if (!answer) {
+    return exercise?.kind === "order_steps"
+      ? NextResponse.redirect(new URL(`/learn/${levelNumber}/${lesson.slug}?exercise=invalid#exercise-${exerciseId}`, req.url), 303)
+      : NextResponse.json({ error: "INVALID_ATTEMPT" }, { status: 400 });
+  }
+  const expected = exercise?.kind === "order_steps" ? solution.correct_sequence : solution.correct_answer;
+  if (!expected) return NextResponse.json({ error: "SOLUTION_NOT_FOUND" }, { status: 500 });
 
   const back = (result: string) => NextResponse.redirect(
     new URL(`/learn/${levelNumber}/${lesson.slug}?exercise=${result}#exercise-${exerciseId}`, req.url),
@@ -66,7 +76,7 @@ export async function POST(req: Request) {
   const gate = await lessonGate(user.id, Number(lesson.id), Number(lesson.level_id));
   if (!gate.unlocked) return NextResponse.redirect(new URL(`/learn/${levelNumber}?locked=1`, req.url), 303);
 
-  const isCorrect = answer === solution.correct_answer;
+  const isCorrect = answer === expected;
   const { data: previous } = await admin
     .from("exercise_attempts")
     .select("answer, is_correct, created_at")

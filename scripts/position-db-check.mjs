@@ -119,4 +119,41 @@ assert.equal((await db.query("select * from learning_practice_submissions where 
 await reject(()=>db.query('select * from codezero_private.position_assessments'));
 await reject(()=>db.query("select submit_position_practice($1,$2,$3,null,'','[]','guided')",[id(3),'position-cs-project-15',id(3000)]));
 console.log('PASS position progression: 92 lessons, 184 exercises, 75 keys; human project gates, no self-review, scope, plans, idempotency and quota exhaustion');
+
+// Owner reset of a learner: position progress is removed, certificates stay, other learners are untouched.
+await db.exec('reset role');
+await db.exec(`alter table public.profiles add column if not exists email text;update public.profiles set email='user'||right(id::text,2)||'@example.test';
+ create table if not exists public.exercise_solutions(exercise_id bigint primary key,correct_answer text);
+ create table if not exists public.lesson_progress(id bigserial primary key,user_id uuid,lesson_id bigint,status text);
+ create table if not exists public.exercise_attempts(id bigserial primary key,user_id uuid,exercise_id bigint);
+ create table if not exists public.exam_attempts(id bigserial primary key,user_id uuid);
+ create table if not exists public.exam_sittings(id bigserial primary key,user_id uuid,attempt_id bigint references public.exam_attempts(id));
+ create table if not exists public.project_submissions(id bigserial primary key,user_id uuid);
+ create table if not exists public.admin_audit_log(id bigserial primary key,actor_user_id uuid,action text,target_type text,target_id text,metadata jsonb,created_at timestamptz default now());`);
+await db.exec(readFileSync('supabase/migrations/20261010110000_owner_learning_reset_and_sequences.sql','utf8'));
+await db.exec(readFileSync('supabase/migrations/20261010110000_owner_learning_reset_and_sequences.sql','utf8'));
+for(const u of [3,4])await db.exec(`insert into public.lesson_progress(user_id,lesson_id,status) values('${id(u)}',1,'completed');insert into public.exercise_attempts(user_id,exercise_id) values('${id(u)}',1);with a as(insert into public.exam_attempts(user_id) values('${id(u)}') returning id) insert into public.exam_sittings(user_id,attempt_id) select '${id(u)}',id from a;insert into public.project_submissions(user_id) values('${id(u)}');`);
+const count=async(table,u)=>Number((await db.query(`select count(*) n from ${table} where user_id=$1`,[id(u)])).rows[0].n);
+const resetCall=(actor,target,email,scope,req)=>db.query('select public.owner_reset_learning($1,$2,$3,$4,$5,$6) r',[id(actor),id(target),email,scope,id(req),'efectivo']);
+const certsBefore=await count('certificates',3),subsBefore=await count('learning_practice_submissions',3);assert.ok(certsBefore>=2&&subsBefore>=184);
+await reject(()=>resetCall(2,3,'user03@example.test','all',9001));
+await reject(()=>resetCall(1,3,'wrong@example.test','all',9001));
+await reject(()=>resetCall(1,1,'user01@example.test','all',9001));
+await reject(()=>resetCall(1,3,'user03@example.test','everything',9001));
+assert.equal(await count('learning_practice_submissions',3),subsBefore);
+const main=(await resetCall(1,3,'USER03@example.test','main',9001)).rows[0].r;
+assert.deepEqual([main.lesson_progress,main.exercise_attempts,main.exam_attempts,main.exam_sittings,main.project_submissions],[1,1,1,1,1]);
+assert.equal(await count('learning_practice_submissions',3),subsBefore);
+const replay=(await resetCall(1,3,'user03@example.test','main',9001)).rows[0].r;assert.equal(replay.replay,true);
+const all=(await resetCall(1,3,'user03@example.test','all',9002)).rows[0].r;assert.equal(all.position_submissions,subsBefore);assert.equal(all.lesson_progress,0);
+for(const table of ['learning_practice_submissions','learning_evidence_history','lesson_progress','exercise_attempts','exam_attempts','exam_sittings','project_submissions'])assert.equal(await count(table,3),0,table);
+assert.equal(Number((await db.query(`select count(*) n from learning_evidence where user_id=$1 and activity_key like 'position-%'`,[id(3)])).rows[0].n),0);
+assert.equal(await count('certificates',3),certsBefore);
+for(const table of ['lesson_progress','exercise_attempts','exam_attempts','exam_sittings','project_submissions'])assert.equal(await count(table,4),1,table);
+assert.deepEqual((await db.query('select scope,fee_cents,currency,payment_reference from codezero_private.learning_resets order by id')).rows,[{scope:'main',fee_cents:1500,currency:'MXN',payment_reference:'efectivo'},{scope:'all',fee_cents:1500,currency:'MXN',payment_reference:'efectivo'}]);
+assert.equal(Number((await db.query(`select count(*) n from admin_audit_log where action='learning_reset'`)).rows[0].n),2);
+await db.exec(`set role authenticated;select set_config('request.jwt.claim.sub','${id(1)}',false)`);
+await reject(()=>resetCall(1,4,'user04@example.test','all',9003));await reject(()=>db.query('select * from codezero_private.learning_resets'));await db.exec('reset role');
+assert.equal((await submit(id(3),CS_CURRICULUM_LESSONS.find(a=>a.level===1).key)).rows.length,1);assert.equal(await count('learning_practice_submissions',3),1);
+console.log('PASS owner learning reset: owner only, email confirmation, scope, idempotent replay, certificates kept, other learners untouched, fee logged, learner can start again');
 }finally{await db.close();}

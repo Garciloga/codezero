@@ -1886,5 +1886,22 @@
   "Elegir pago anual": "Choisir le paiement annuel",
   "Pago anual.": "Paiement annuel.",
   "Se cobra una vez al año y se renueva cada año hasta que canceles. Verás el importe exacto en Stripe antes de pagar.": "Vous êtes débité une fois par an et l’abonnement se renouvelle chaque année jusqu’à votre résiliation. Le montant exact s’affiche dans Stripe avant le paiement.",
-  "El pago anual no está disponible por ahora. Puedes elegir el pago mensual.": "Le paiement annuel n’est pas disponible pour le moment. Vous pouvez choisir le paiement mensuel."
+  "El pago anual no está disponible por ahora. Puedes elegir el pago mensual.": "Le paiement annuel n’est pas disponible pour le moment. Vous pouvez choisir le paiement mensuel.",
+  "Reiniciar avance": "Réinitialiser la progression",
+  "El correo no coincide con el de la cuenta.": "L'e-mail ne correspond pas à celui du compte.",
+  "Confirma el registro del cobro para continuar.": "Confirmez l'enregistrement du paiement pour continuer.",
+  "No se pudo reiniciar el avance. Inténtalo de nuevo.": "La progression n'a pas pu être réinitialisée. Réessayez.",
+  "No pudimos confirmar el reinicio. Actualiza la tabla antes de repetirlo.": "Nous n'avons pas pu confirmer la réinitialisation. Actualisez le tableau avant de recommencer.",
+  "El reinicio borra el avance del alumno y no se puede deshacer. Se conservan certificados, diplomas, plan y límites de uso.": "La réinitialisation supprime la progression de l'apprenant et ne peut pas être annulée. Certificats, diplômes, formule et limites d'usage sont conservés.",
+  "Qué se reinicia": "Ce qui est réinitialisé",
+  "Programa principal": "Programme principal",
+  "Programas por puesto": "Programmes par poste",
+  "Programa principal y programas por puesto": "Programme principal et programmes par poste",
+  "Costo del reinicio:": "Coût de la réinitialisation :",
+  ". La plataforma no realiza el cobro; solo queda registrado.": ". La plateforme n'encaisse pas le montant ; il est seulement enregistré.",
+  "Referencia del cobro (opcional)": "Référence du paiement (facultatif)",
+  "Confirmo que el cobro quedó acordado con el alumno": "Je confirme que le montant a été convenu avec l'apprenant",
+  "Reiniciando…": "Réinitialisation…",
+  "Confirmar reinicio": "Confirmer la réinitialisation",
+  "Avance reiniciado. Los certificados y diplomas emitidos se conservan.": "Progression réinitialisée. Les certificats et diplômes délivrés sont conservés."
 }
