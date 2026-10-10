@@ -40,14 +40,14 @@ jobs:
       - name: Dump application data
         if: steps.gate.outputs.configured == 'true'
         run: |
-          docker run --rm --network host -e DB_URL="$SUPABASE_DB_URL" -v "$PWD:/out" postgres:17 \
+          docker run --rm --user "$(id -u):$(id -g)" --network host -e DB_URL="$SUPABASE_DB_URL" -v "$PWD:/out" postgres:17 \
             sh -c 'pg_dump "$DB_URL" --format=custom --no-owner --no-privileges --schema=public --schema=codezero_private --schema=account_security --file=/out/backup.dump'
           test -s backup.dump
-          docker run --rm --network host -v "$PWD:/out" postgres:17 pg_restore --list /out/backup.dump > backup-contents.txt
+          docker run --rm --user "$(id -u):$(id -g)" --network host -v "$PWD:/out" postgres:17 pg_restore --list /out/backup.dump > backup-contents.txt
           grep -q 'TABLE DATA' backup-contents.txt
           # Restore validation needs only UUIDs from Supabase Auth, not passwords or emails.
           # This temporary file is NOT included in the encrypted application archive.
-          docker run --rm --network host -e DB_URL="$SUPABASE_DB_URL" -v "$PWD:/out" postgres:17 \
+          docker run --rm --user "$(id -u):$(id -g)" --network host -e DB_URL="$SUPABASE_DB_URL" -v "$PWD:/out" postgres:17 \
             sh -ec 'umask 077; psql "$DB_URL" -X -v ON_ERROR_STOP=1 -At -c "select id from auth.users order by id" > /out/restore-auth-ids.txt'
       - name: Verify the dump restores
         if: steps.gate.outputs.configured == 'true'
@@ -84,7 +84,7 @@ jobs:
           pg_restore -h 127.0.0.1 -U postgres -d postgres --exit-on-error --single-transaction --no-owner --no-privileges /out/backup.dump
           psql -h 127.0.0.1 -U postgres -At -v ON_ERROR_STOP=1 -c "select count(*) from information_schema.tables where table_schema in ('public','codezero_private','account_security')"
           SH
-          docker run --rm --network host -v "$PWD:/out" postgres:17 sh /out/restore-check.sh > restored-tables.txt
+          docker run --rm --user "$(id -u):$(id -g)" --network host -v "$PWD:/out" postgres:17 sh /out/restore-check.sh > restored-tables.txt
           test "$(tail -1 restored-tables.txt)" -gt 20
           # A passing local restore is NOT a complete Auth/Storage recovery test.
       - name: Remove temporary Auth UUIDs
