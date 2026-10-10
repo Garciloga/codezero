@@ -36,7 +36,7 @@ const twists=[
 ];
 export function draftExpandedCurriculum(courseId:string){
  const topics=FIFTEEN_LEVEL_TOPICS[courseId as keyof typeof FIFTEEN_LEVEL_TOPICS]?.split(";");
- const original=ownerDraftPractice(courseId);
+ const original=ownerDraftPractice(courseId.replaceAll("-","_"));
  if(!topics||!original)return null;
  return {key:courseId,title:original.title,status:"draft" as const,levels:topics.map((topic,i)=>{
   const seed=original.levels[Math.floor(i*original.levels.length/topics.length)];
