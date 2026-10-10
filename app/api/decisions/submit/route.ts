@@ -10,6 +10,7 @@ export async function POST(req:Request){
  let raw:unknown;try{raw=JSON.parse(rawText);}catch{return Response.json({error:"INVALID_JSON"},{status:400});}
  const request=decodeAdvancedInputs(raw,false);
  if(!request?.request)return Response.json({error:"INVALID_INPUT"},{status:400});
+ if(request.org&&(raw as Record<string,unknown>).share_with_team!==true)return Response.json({error:"CONSENT_REQUIRED"},{status:403});
  const session=await advancedLearner(request.org);
  if(!session)return Response.json({error:"FORBIDDEN"},{status:403});
  const rate=await consumeRateLimit("decision-save:"+session.user.id,5,600);
