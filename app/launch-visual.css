@@ -28,5 +28,5 @@ html[data-design="vivo"] :is(.public-value-section,.program-catalog-grid,.progra
 html[data-design="vivo"] :is(.public-value-section,.program-catalog-grid,.program-syllabus) .card:hover{transform:translateY(-4px);box-shadow:0 18px 35px -25px color-mix(in srgb,var(--vivo-text) 38%,transparent);}
 }
 @media(max-width:970px){.program-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
-@media(max-width:767px){.program-catalog-grid{grid-template-columns:1fr;}html[data-design="vivo"] .public-home .garciloga-3d-card{transform:none;}html[data-design="vivo"] .public-home .garciloga-3d-card::before{display:none;}.program-catalog-header{padding-top:36px;}}
+@media(max-width:767px){.program-catalog-grid{grid-template-columns:1fr;}html[data-design="vivo"] .public-home .garciloga-3d-card{transform:none;}html[data-design="vivo"] .public-home .garciloga-3d-card::before{display:none;}html[data-design="vivo"] .public-home .public-hero::before{inset:0;border-radius:24px;}.program-catalog-header{padding-top:36px;}}
 @media(prefers-reduced-motion:reduce){html[data-design="vivo"] .public-home .garciloga-3d-card{transform:none;transition:none;}html[data-design="vivo"] .public-site .btn{transition:none;}}
