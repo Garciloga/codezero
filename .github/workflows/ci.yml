@@ -59,6 +59,9 @@ jobs:
       - name: Position progression and project gate checks
         run: node scripts/position-db-check.mjs
 
+      - name: Verify graded learning SQL RPCs on isolated PostgreSQL
+        run: node scripts/verified-learning-rpc-db-check.mjs
+
       - name: Section catalog budgets
         run: node scripts/localization-sections.mjs
 
@@ -67,6 +70,9 @@ jobs:
 
       - name: Suggestions permissions and workflows
         run: node scripts/suggestions-db-check.mjs
+
+      - name: Published position curriculum audit
+        run: npm run audit:curriculum
 
       - name: Translation coverage
         run: node scripts/localization-audit.mjs

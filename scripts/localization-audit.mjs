@@ -4,6 +4,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const attrs=new Set(['aria-label','aria-description','aria-valuetext','title','alt','placeholder','label']);
+// Use repository-relative POSIX paths for exceptions and release gates on every OS.
+export const normalizedAuditPath=file=>file.replaceAll('\\','/');
+export const isLocalizationSource=file=>normalizedAuditPath(file).split('/').includes('localization');
 export const normalized=s=>s.replace(/\s+/g,' ').trim();
 export function authoredStrings(file,source){
  const found=new Set(),tree=ts.createSourceFile(file,source,ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX);
@@ -23,7 +26,7 @@ export function audit(root='.'){
  const locales=['en','pt','fr'];const catalogs=Object.fromEntries(locales.map(lang=>[lang,Object.assign({},...['ui','server','curriculum','extension','social','mixed','suggestions'].map(kind=>JSON.parse(fs.readFileSync(path.join(root,`lib/localization/${lang}-${kind}.json`)))))]));
  const ignored=JSON.parse(fs.readFileSync(path.join(root,'scripts/localization-audit-exceptions.json')));
  const problems=[];let checked=0;
- function walk(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,entry.name);if(file.includes('/localization/'))continue;if(entry.isDirectory())walk(file);else if(/\.(tsx|ts)$/.test(file)){for(const s of authoredStrings(file,fs.readFileSync(file,'utf8'))){checked++;const relative=path.relative(root,file);if(ignored[relative]?.includes(s))continue;for(const lang of locales)if(!Object.hasOwn(catalogs[lang],s)||!catalogs[lang][s]?.trim())problems.push({file:relative,locale:lang,source:s});}}}}
+ function walk(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,entry.name);if(isLocalizationSource(file))continue;if(entry.isDirectory())walk(file);else if(/\.(tsx|ts)$/.test(file)){for(const s of authoredStrings(file,fs.readFileSync(file,'utf8'))){checked++;const relative=normalizedAuditPath(path.relative(root,file));if(ignored[relative]?.includes(s))continue;for(const lang of locales)if(!Object.hasOwn(catalogs[lang],s)||!catalogs[lang][s]?.trim())problems.push({file:relative,locale:lang,source:s});}}}}
  for(const item of JSON.parse(fs.readFileSync(path.join(root,'lib/learning-companions.json')))) for(const field of ['title','steps','failure','challenge']) { checked++; for(const lang of locales) if(!catalogs[lang][item[field]]) problems.push({file:'lib/learning-companions.json',locale:lang,source:item[field]}); }
  // Snapshots of published authored content are audited too; live DB edits must refresh these.
  for (const file of ['localization-curriculum-source.json','localization-faq-source.json']) {

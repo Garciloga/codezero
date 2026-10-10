@@ -43,18 +43,22 @@ jobs:
           docker run --rm --network host -e DB_URL="$SUPABASE_DB_URL" -v "$PWD:/out" postgres:17 \
             sh -c 'pg_dump "$DB_URL" --format=custom --no-owner --no-privileges --schema=public --schema=codezero_private --schema=account_security --file=/out/backup.dump'
           test -s backup.dump
+          docker run --rm --network host -v "$PWD:/out" postgres:17 pg_restore --list /out/backup.dump > backup-contents.txt
+          grep -q 'TABLE DATA' backup-contents.txt
       - name: Verify the dump restores
         if: steps.gate.outputs.configured == 'true'
         run: |
           docker run --rm --network host -v "$PWD:/out" postgres:17 \
             sh -c 'psql -h 127.0.0.1 -U postgres -v ON_ERROR_STOP=1 -c "create schema if not exists auth; create schema if not exists extensions;" \
-              && (pg_restore -h 127.0.0.1 -U postgres -d postgres --no-owner --no-privileges /out/backup.dump || true) \
+              && pg_restore -h 127.0.0.1 -U postgres -d postgres --exit-on-error --single-transaction --no-owner --no-privileges /out/backup.dump \
               && psql -h 127.0.0.1 -U postgres -At -c "select count(*) from information_schema.tables where table_schema in (\$\$public\$\$,\$\$codezero_private\$\$)"' | tee restored-tables.txt
           test "$(tail -1 restored-tables.txt)" -gt 20
+          # A failed pg_restore must never produce a backup labeled verified.
+          # This isolated test does not include Supabase Auth, Storage or external services.
       - name: Encrypt
         if: steps.gate.outputs.configured == 'true'
         run: |
-          gpg --batch --yes --symmetric --cipher-algo AES256 --passphrase "$BACKUP_PASSPHRASE" --output "garciloga-$(date -u +%Y%m%d).dump.gpg" backup.dump
+          printf '%s' "$BACKUP_PASSPHRASE" | gpg --batch --yes --pinentry-mode loopback --symmetric --cipher-algo AES256 --passphrase-fd 0 --output "garciloga-$(date -u +%Y%m%d).dump.gpg" backup.dump
           shred -u backup.dump
       - name: Upload encrypted backup
         if: steps.gate.outputs.configured == 'true'

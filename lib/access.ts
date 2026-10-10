@@ -25,21 +25,30 @@ export async function canAccessLevel(userId: string, levelNumber: number) {
   return isLevelUnlocked(levelNumber, passedLevels);
 }
 
+/** A published child of a draft level or course must stay inaccessible. */
+async function getPublishedLevel(levelId: number) {
+  const admin = createAdminSupabase();
+  const { data: level } = await admin.from("levels")
+    .select("id, level_number, course_id")
+    .eq("id", levelId).eq("status", "published").maybeSingle();
+  if (!level) return null;
+  const { data: course } = await admin.from("courses")
+    .select("id").eq("id", level.course_id).eq("status", "published").maybeSingle();
+  return course ? level : null;
+}
+
 export async function getLessonLevel(lessonId: number) {
   const admin = createAdminSupabase();
   const { data: lesson } = await admin
     .from("lessons")
     .select("id, slug, level_id")
     .eq("id", lessonId)
+    .eq("status", "published")
     .single();
 
   if (!lesson) return null;
 
-  const { data: level } = await admin
-    .from("levels")
-    .select("id, level_number")
-    .eq("id", lesson.level_id)
-    .single();
+  const level = await getPublishedLevel(Number(lesson.level_id));
 
   if (!level) return null;
   return { lesson, levelNumber: Number(level.level_number) };
@@ -51,6 +60,7 @@ export async function getExerciseLevel(exerciseId: number) {
     .from("exercises")
     .select("id, lesson_id")
     .eq("id", exerciseId)
+    .eq("status", "published")
     .single();
 
   if (!exercise) return null;
@@ -63,15 +73,12 @@ export async function getExamLevel(examId: number) {
     .from("level_exams")
     .select("id, level_id, passing_score")
     .eq("id", examId)
+    .eq("status", "published")
     .single();
 
   if (!exam) return null;
 
-  const { data: level } = await admin
-    .from("levels")
-    .select("level_number")
-    .eq("id", exam.level_id)
-    .single();
+  const level = await getPublishedLevel(Number(exam.level_id));
 
   if (!level) return null;
   return { exam, levelNumber: Number(level.level_number) };
@@ -83,15 +90,12 @@ export async function getProjectLevel(projectId: number) {
     .from("level_projects")
     .select("id, level_id")
     .eq("id", projectId)
+    .eq("status", "published")
     .single();
 
   if (!project) return null;
 
-  const { data: level } = await admin
-    .from("levels")
-    .select("level_number")
-    .eq("id", project.level_id)
-    .single();
+  const level = await getPublishedLevel(Number(project.level_id));
 
   if (!level) return null;
   return { project, levelNumber: Number(level.level_number) };

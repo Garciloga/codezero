@@ -3,6 +3,7 @@
 // "Q<level>.<n> <lang>|prompt|correct|wrong|wrong|feedback" and "P<level> <lang>|title|brief".
 // The correct option is always written first; its published position is a fixed shuffle per question, equal in every language.
 import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';
+import {writtenPrompt} from './position-written-practice.mjs';
 const [role,title]=process.argv.slice(2);if(!role||!title)throw Error('Uso: node scripts/position-role-build.mjs <role> "<Título>"');
 const LANGS=['es','en','pt','fr'],dir=`docs/position-curricula/sources/${role}`;
 const base=JSON.parse(fs.readFileSync('lib/position-curricula/roles/onboarding.json','utf8'));
@@ -22,7 +23,7 @@ const levels=base.levels.map(level=>{
  return {number:level.number,source:level.source,title:level.title,
   lessons:level.lessons.map((shape,i)=>{const key=`position-${role}-l${level.number}-${i+1}`,src=all(lessons,`${level.number}.${i+1}`);
    return {key,sharedSource:shape.sharedSource,localized:Object.fromEntries(LANGS.map(l=>{const [t,objective,situation,prompt,correct,w1,w2,feedback]=src[l];
-    return [l,{title:t,learningObjective:objective,case:situation,exercise1:{type:'decision',prompt,...shuffled(key,[correct,w1,w2]),feedback},exercise2:shape.localized[l].exercise2}];}))};}),
+    return [l,{title:t,learningObjective:objective,case:situation,exercise1:{type:'decision',prompt,...shuffled(key,[correct,w1,w2]),feedback},exercise2:{...shape.localized[l].exercise2,prompt:writtenPrompt(role,l,t,situation,objective)}}];}))};}),
   assessment:{...Object.fromEntries(Object.entries(level.assessment).filter(([k])=>k!=='questions')),questions:level.assessment.questions.map((_,i)=>{const key=`position-${role}-exam-${level.number}-q${i+1}`,src=all(questions,`${level.number}.${i+1}`);
    return {key,localized:Object.fromEntries(LANGS.map(l=>{const [prompt,correct,w1,w2,feedback]=src[l];return [l,{prompt,...shuffled(key,[correct,w1,w2]),feedback}];}))};})},
   _count:count};
