@@ -4,10 +4,10 @@ import { useRouter } from 'next/navigation';
 import { LANGUAGE_NAMES, LOCALES } from '../../../lib/localization/shared';
 import { useLanguage } from './provider';
 const copy = {
-  es: { label: 'Idioma', saving: 'Guardando idioma…', error: 'No pudimos guardar el idioma. Inténtalo de nuevo.' },
-  en: { label: 'Language', saving: 'Saving language…', error: 'We could not save your language. Please try again.' },
-  pt: { label: 'Idioma', saving: 'Salvando idioma…', error: 'Não foi possível salvar o idioma. Tente novamente.' },
-  fr: { label: 'Langue', saving: 'Enregistrement de la langue…', error: 'Impossible d’enregistrer la langue. Réessayez.' },
+  es: { label: 'Idioma', saving: 'Guardando idioma…', error: 'No pudimos guardar el idioma. Inténtalo de nuevo.', beta: 'Idioma principal' },
+  en: { label: 'Language', saving: 'Saving language…', error: 'We could not save your language. Please try again.', beta: 'Translation beta' },
+  pt: { label: 'Idioma', saving: 'Salvando idioma…', error: 'Não foi possível salvar o idioma. Tente novamente.', beta: 'Tradução beta' },
+  fr: { label: 'Langue', saving: 'Enregistrement de la langue…', error: 'Impossible d’enregistrer la langue. Réessayez.', beta: 'Traduction bêta' },
 };
 export default function LanguageSelector() {
   const { locale } = useLanguage();
@@ -25,7 +25,8 @@ export default function LanguageSelector() {
         if (!response.ok) throw new Error('locale-save-failed');
         startTransition(() => router.refresh());
       } catch { setError(true); } finally { setBusy(false); }
-    }}>{LOCALES.map(value => <option key={value} value={value} lang={value}>{LANGUAGE_NAMES[value]}</option>)}</select>
+    }}>{LOCALES.map(value => <option key={value} value={value} lang={value}>{LANGUAGE_NAMES[value]}{value==='es'?'':' (beta)'}</option>)}</select>
+    {locale!=='es'&&<small className="language-review-state">{copy[locale].beta}</small>}
     <span role="status" aria-live="polite">{error ? copy[locale].error : busy || pending ? copy[locale].saving : ''}</span>
   </div>;
 }

@@ -1,0 +1,6 @@
+/* Progressive disclosure of editorial beta status and explicit human-reviewed capstone rules. */
+.program-beta-notice{display:block;max-width:85ch;margin-block:16px 28px;padding:14px 18px;border-inline-start:4px solid var(--vivo-primary);border-radius:12px;background:var(--vivo-soft);color:var(--vivo-text);line-height:1.55;}
+.language-selector .language-review-state{display:block;max-width:140px;font-size:.72rem;line-height:1.4;color:var(--vivo-muted);}
+.portfolio-final-evidence{margin-block:20px;}
+.portfolio-final-evidence ul{columns:2;gap:24px;padding-inline-start:24px;line-height:1.7;}
+@media(max-width:700px){.portfolio-final-evidence ul{columns:1;}.language-selector .language-review-state{max-width:95px;}}

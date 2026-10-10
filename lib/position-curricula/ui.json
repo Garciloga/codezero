@@ -47,7 +47,21 @@
     "exercises": "Ejercicios formativos",
     "questions": "Preguntas de examen",
     "projects": "Proyectos con revisión humana",
-    "certificate": "Constancia de Customer Success disponible en tus certificados."
+    "certificate": "Constancia de Customer Success disponible en tus certificados.",
+    "languageBeta": "Español: idioma principal del lanzamiento. Inglés, portugués y francés están en beta, pendientes de revisión académica nativa. Puedes reportar traducciones en Soporte.",
+    "finalRequired": "Proyecto integrador final obligatorio",
+    "finalCriteria": [
+      "Define el problema, los datos ficticios y las restricciones del puesto.",
+      "Compara al menos dos alternativas; explica riesgos, costes y consecuencias.",
+      "Justifica la decisión elegida con indicadores verificables.",
+      "Entrega un plan ejecutable: responsables, fechas, comprobaciones y seguimiento.",
+      "Documenta limitaciones, cambios de criterio y cómo corregirías errores."
+    ],
+    "finalApproval": "Debe aprobarlo una persona autorizada. Cada competencia evaluada requiere al menos 3/4, sin errores críticos. Enviarlo no desbloquea el examen final.",
+    "finalPending": "Proyecto final pendiente de aprobación humana",
+    "finalPassed": "Proyecto final aprobado por revisión humana",
+    "finalPortfolio": "Tu evidencia final aprobada puede incluirse voluntariamente en el portafolio personal; las evidencias de una compañía no se publican fuera de ella.",
+    "finalReviewHeading": "Criterios adicionales del proyecto final"
   },
   "en": {
     "title": "Learning by role",
@@ -97,7 +111,21 @@
     "exercises": "Practice exercises",
     "questions": "Exam questions",
     "projects": "Projects with human review",
-    "certificate": "Customer Success completion record is available in your certificates."
+    "certificate": "Customer Success completion record is available in your certificates.",
+    "languageBeta": "Spanish is the primary launch language. English, Portuguese and French are in beta pending native academic review. You can report translation issues through Support.",
+    "finalRequired": "Mandatory final integrative project",
+    "finalCriteria": [
+      "Define the job-related problem, fictional data and constraints.",
+      "Compare at least two options, with risks, costs and consequences.",
+      "Justify the chosen decision using verifiable indicators.",
+      "Submit an actionable plan with owners, dates, checks and follow-up.",
+      "Document limitations, changed assumptions and error corrections."
+    ],
+    "finalApproval": "An authorized person must approve it. Each evaluated competency needs at least 3/4 and no critical errors. Submission alone does not unlock the final exam.",
+    "finalPending": "Final project awaiting human approval",
+    "finalPassed": "Final project approved after human review",
+    "finalPortfolio": "You may voluntarily include approved personal final evidence in your portfolio; company evidence remains private to that company.",
+    "finalReviewHeading": "Additional final project criteria"
   },
   "pt": {
     "title": "Formação por cargo",
@@ -147,7 +175,21 @@
     "exercises": "Exercícios formativos",
     "questions": "Perguntas de exame",
     "projects": "Projetos com revisão humana",
-    "certificate": "Comprovante de conclusão de Customer Success disponível nos certificados."
+    "certificate": "Comprovante de conclusão de Customer Success disponível nos certificados.",
+    "languageBeta": "O espanhol é o idioma principal do lançamento. Inglês, português e francês estão em beta até a revisão acadêmica nativa. Erros de tradução podem ser relatados no Suporte.",
+    "finalRequired": "Projeto integrador final obrigatório",
+    "finalCriteria": [
+      "Defina o problema da função, dados fictícios e restrições.",
+      "Compare ao menos duas alternativas, incluindo riscos, custos e consequências.",
+      "Justifique a decisão com indicadores verificáveis.",
+      "Apresente um plano executável: responsáveis, datas, verificações e acompanhamento.",
+      "Documente limitações, mudanças de premissas e correção de erros."
+    ],
+    "finalApproval": "A aprovação depende de uma pessoa autorizada. Cada competência avaliada exige no mínimo 3/4 e nenhum erro crítico. O envio não libera o exame final.",
+    "finalPending": "Projeto final aguardando revisão humana",
+    "finalPassed": "Projeto final aprovado por revisão humana",
+    "finalPortfolio": "Você pode incluir voluntariamente evidências finais pessoais aprovadas no portfólio; evidências empresariais permanecem privadas.",
+    "finalReviewHeading": "Critérios adicionais do projeto final"
   },
   "fr": {
     "title": "Formation par poste",
@@ -197,6 +239,20 @@
     "exercises": "Exercices formatifs",
     "questions": "Questions d’épreuve",
     "projects": "Projets avec révision humaine",
-    "certificate": "Votre attestation Customer Success est disponible dans vos certificats."
+    "certificate": "Votre attestation Customer Success est disponible dans vos certificats.",
+    "languageBeta": "L’espagnol est la langue principale du lancement. L’anglais, le portugais et le français sont en bêta, en attente d’une révision académique native. Signalez les traductions via l’assistance.",
+    "finalRequired": "Projet intégrateur final obligatoire",
+    "finalCriteria": [
+      "Définissez le problème du métier, les données fictives et les contraintes.",
+      "Comparez au moins deux solutions en évaluant risques, coûts et conséquences.",
+      "Justifiez la décision avec des indicateurs vérifiables.",
+      "Fournissez un plan d’action avec responsables, dates, contrôles et suivi.",
+      "Documentez les limites, les changements d’hypothèses et les corrections d’erreurs."
+    ],
+    "finalApproval": "Une personne autorisée doit approuver le projet. Chaque compétence évaluée exige au moins 3/4 sans erreur critique. La remise seule ne débloque pas l’examen final.",
+    "finalPending": "Projet final en attente de validation humaine",
+    "finalPassed": "Projet final validé après évaluation humaine",
+    "finalPortfolio": "Vous pouvez inclure volontairement des preuves personnelles finales approuvées dans le portfolio ; les preuves d’entreprise restent privées.",
+    "finalReviewHeading": "Critères supplémentaires du projet final"
   }
 }
