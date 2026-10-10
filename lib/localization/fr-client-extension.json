@@ -190,5 +190,8 @@
   "Explica el cambio necesario; no incluyas datos personales de estudiantes.": "Décrivez la modification nécessaire, sans données personnelles d’élèves.",
   "Marcar revisada": "Marquer comme révisée",
   "Guardar observación": "Enregistrer l’observation",
-  "No hay lecciones para este filtro.": "Aucune leçon ne correspond à ce filtre."
+  "No hay lecciones para este filtro.": "Aucune leçon ne correspond à ce filtre.",
+  "Avance por nivel": "Progression par niveau",
+  "Exportar observaciones (CSV)": "Exporter les observations (CSV)",
+  "con observación": "avec observation"
 }

@@ -190,5 +190,8 @@
   "Explica el cambio necesario; no incluyas datos personales de estudiantes.": "Describe the required change; do not include student personal information.",
   "Marcar revisada": "Mark reviewed",
   "Guardar observación": "Save observation",
-  "No hay lecciones para este filtro.": "No lessons match this filter."
+  "No hay lecciones para este filtro.": "No lessons match this filter.",
+  "Avance por nivel": "Progress by level",
+  "Exportar observaciones (CSV)": "Export observations (CSV)",
+  "con observación": "with observations"
 }

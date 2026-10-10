@@ -10,3 +10,6 @@
 .owner-editorial-form textarea{width:100%;min-height:74px;padding:12px;resize:vertical;background:var(--vivo-surface);color:var(--vivo-text);border:1px solid var(--vivo-border);border-radius:12px;}
 .owner-editorial-form .public-actions{display:flex;flex-wrap:wrap;gap:10px;}
 @media(max-width:700px){.owner-editorial-item-head>.btn{width:100%;}.owner-editorial-form .btn{width:100%;}}
+
+.owner-editorial-levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:9px;margin:20px 0;}
+.owner-editorial-levels p{margin:0;padding:11px 14px;border:1px solid var(--vivo-border);border-radius:12px;line-height:1.4;}

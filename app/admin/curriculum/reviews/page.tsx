@@ -20,6 +20,7 @@ export default async function OwnerEditorialReviews({searchParams}:Props){
  });
  const reviewed=overview.filter(x=>x.state==="reviewed").length,observations=overview.filter(x=>x.state==="observation").length;
  const pending=overview.length-reviewed-observations;
+ const perLevel=program.levels.map(x=>({number:x.number,total:overview.filter(i=>i.item.level===x.number).length,reviewed:overview.filter(i=>i.item.level===x.number&&i.state==="reviewed").length,observations:overview.filter(i=>i.item.level===x.number&&i.state==="observation").length}));
  const filter=params.filter==="pending"||params.filter==="observation"?params.filter:"all";
  const shown=filter==="all"?overview:overview.filter(x=>filter==="pending"?x.state==="pending":x.state==="observation");
  const next=overview.find(x=>x.state==="pending"||x.state==="observation");
@@ -30,7 +31,8 @@ export default async function OwnerEditorialReviews({searchParams}:Props){
   <section className="card owner-editorial-overview" aria-label="Estado editorial"><h2>{program.title}</h2><p><strong>{reviewed} de {overview.length}</strong> lecciones revisadas; {observations} con observación; {pending} sin revisar.</p>
    <progress value={reviewed} max={overview.length} aria-label="Lecciones revisadas" />
    <p className="muted">{reviewed===overview.length&&observations===0?"Revisión de lecciones completa. La aprobación pedagógica final y traducciones siguen requiriendo validación humana.":"El programa permanece pendiente mientras haya lecciones sin revisar u observaciones abiertas."}</p>
-   <div className="public-actions"><Link className="btn secondary" href={href(program.key,"all")}>Todas</Link><Link className="btn secondary" href={href(program.key,"pending")}>Sin revisar</Link><Link className="btn secondary" href={href(program.key,"observation")}>Con observación</Link>{next&&<Link className="btn" href={href(program.key,"all")+"#"+encodeURIComponent(next.item.key)}>Siguiente pendiente</Link>}</div>
+   <div className="owner-editorial-levels" aria-label="Avance por nivel">{perLevel.map(x=><p key={x.number}>Nivel {x.number}: <strong>{x.reviewed}/{x.total}</strong>{x.observations>0?" · "+x.observations+" con observación":""}</p>)}</div>
+   <div className="public-actions"><Link className="btn secondary" href={href(program.key,"all")}>Todas</Link><Link className="btn secondary" href={href(program.key,"pending")}>Sin revisar</Link><Link className="btn secondary" href={href(program.key,"observation")}>Con observación</Link><Link className="btn secondary" prefetch={false} href={"/admin/curriculum/reviews/export?program="+encodeURIComponent(program.key)}>Exportar observaciones (CSV)</Link>{next&&<Link className="btn" href={href(program.key,"all")+"#"+encodeURIComponent(next.item.key)}>Siguiente pendiente</Link>}</div>
   </section>
   <section className="owner-editorial-list" aria-label="Lecciones para revisar">
   {shown.map(({item,hash,state,note})=><article className="card owner-editorial-item" key={item.key} id={item.key}>
