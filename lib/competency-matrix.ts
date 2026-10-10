@@ -41,6 +41,10 @@ export function validScores(value: unknown): value is CompetencyEvidence['compet
 function latestIndependent(evidence: CompetencyEvidence[], key: CompetencyKey, now: number) {
  const latest=new Map<string,CompetencyEvidence>();
  for(const e of evidence){
+  // Complex written assessment submissions receive a provisional zero from the
+  // submission pipeline. Ignore it entirely until manager/supervisor review;
+  // pending work must never lower or inflate an established competency profile.
+  if(e.activity_key==='cs-decision-evidence-v2'&&e.review_source==='self')continue;
   const t=Date.parse(e.observed_at);const score=e.competency_scores[key];
   if(!Number.isFinite(t)||t>now||!Number.isInteger(score)||Number(score)<0||Number(score)>4||!(e.kind in ACTIVITY_WEIGHTS))continue;
   const old=latest.get(e.independent_key);
