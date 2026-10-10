@@ -2,11 +2,12 @@ import 'server-only';
 import {createAdminSupabase} from './admin';
 import {readWorkspacePages} from './workspace-pages';
 import {competencyProfile,type CompetencyEvidence} from './competency-matrix';
+import {eligiblePersonalProject} from './portfolio-evidence-policy';
 export async function personalPortfolioData(userId:string){const admin=createAdminSupabase();const [history,certificates,account]=await Promise.all([
  readWorkspacePages<CompetencyEvidence>((a,b)=>admin.from('learning_evidence_history').select('*').eq('user_id',userId).is('organization_id',null).in('review_source',['admin','manager']).order('observed_at').order('id').range(a,b)),
  admin.from('certificates').select('id,title,certificate_type,metadata,issued_at').eq('user_id',userId),admin.from('profiles').select('status').eq('id',userId).maybeSingle()]);
  if(history.error||certificates.error||account.error)throw Error('PORTFOLIO_DATA_UNAVAILABLE');if(account.data?.status!=='active')return null;
- const eligible=(history.data??[]).filter(e=>!e.critical_errors.length&&['project','capstone'].includes(e.kind));
+ const eligible=(history.data??[]).filter(e=>eligiblePersonalProject(e,userId));
  // Certificates from role routes are shareable only when their capstone is personal.
  const certs=(certificates.data??[]).filter(c=>c.certificate_type==='codezero-complete'||eligible.some(e=>e.id===c.metadata?.capstone_evidence_id));
  return {evidence:eligible,certificates:certs,summary:competencyProfile(history.data??[],null)};
