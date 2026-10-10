@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="offline_title">Unable to connect</string>
+    <string name="offline_message">Check your connection and try again. Courses and assessments require internet access.</string>
+    <string name="retry">Try again</string>
+    <string name="opening_external">Opening in your browser</string>
+    <string name="cannot_open_link">No app can open this link</string>
+    <string name="download_started">Your download has started</string>
+    <string name="download_unavailable">This download is not available in the app</string>
+    <string name="file_not_supported">Cannot open the selected file</string>
+    <string name="blocked_insecure">For security, this link cannot be opened</string>
+    <string name="blocked_http">Only secure HTTPS connections are allowed</string>
+</resources>

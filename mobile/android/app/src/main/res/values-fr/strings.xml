@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="offline_title">Connexion impossible</string>
+    <string name="offline_message">Vérifiez votre connexion et réessayez. Les cours et évaluations nécessitent Internet.</string>
+    <string name="retry">Réessayer</string>
+    <string name="opening_external">Ouverture dans votre navigateur</string>
+    <string name="cannot_open_link">Aucune application ne peut ouvrir ce lien</string>
+    <string name="download_started">Téléchargement démarré</string>
+    <string name="download_unavailable">Téléchargement indisponible dans l’application</string>
+    <string name="file_not_supported">Impossible d’ouvrir le fichier sélectionné</string>
+    <string name="blocked_insecure">Ce lien est bloqué pour des raisons de sécurité</string>
+    <string name="blocked_http">Seules les connexions HTTPS sont autorisées</string>
+</resources>
