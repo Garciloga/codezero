@@ -60,6 +60,8 @@ export default async function HelpPage({ searchParams }: PageProps) {
         </div>
       </div>
 
+      <section className="card"><h2>Guía para responsables de equipos</h2><p>Asignación desde el perfil, competencias, proyectos y preguntas frecuentes con procedimiento ilustrado.</p><Link className="btn secondary" href="/guides/companies">Abrir guía para empresas</Link></section>
+
       <section className="card">
         <form action="/help" method="get" style={{display:"flex",gap:10,flexWrap:"wrap"}}>
           <label htmlFor="help-search" style={{position:"absolute",left:"-9999px"}}>Buscar en ayuda</label>
