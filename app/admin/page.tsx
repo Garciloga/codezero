@@ -1,6 +1,7 @@
 import LocalizedContent from "../components/localization/server";
 import {localeContext} from "../../lib/localization/server";
 import {ownerCopy} from "../../lib/localization/owner-inspector";
+import {ownerDemoCopy} from "../../lib/localization/owner-demo";
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../lib/supabase-server";
 import {workspaceEnabled} from "../../lib/workspace-sandbox";
@@ -121,6 +122,7 @@ export default async function Admin({ searchParams }: PageProps) {
       <nav className="admin-links" aria-label="Secciones de administración">
         {operatorRole==='owner'&&<a className="btn" href="/admin/usage">Uso por persona</a>}
         {operatorRole==='owner'&&<a className="btn" href="/admin/curriculum">{ownerCopy(locale).adminLink}</a>}
+        {operatorRole==='owner'&&<a className="btn" href="/admin/demo">{ownerDemoCopy(locale).title}</a>}
         {workspaceEnabled()&&<a className="btn" href="/admin/companies">Compañías, contratos e invitaciones</a>}
         <a className="btn secondary" href="/admin/social">Comunidad y mentorías</a>
         <a className="btn secondary" href="/admin/activation">Activación por cohortes</a>
