@@ -19,7 +19,7 @@ export const RELEASED_PRACTICE_ROUTES: Record<string,string> = {
  route_product:'product', route_management:'leadership',
  route_solutions_integrations:'solutions', route_enablement:'enablement',
 };
-export function pendingProductRoadmap({companyMessaging,codePractice,roleTraining,community=false}:{companyMessaging:boolean;codePractice:boolean;roleTraining:boolean;community?:boolean;annualPlans?:boolean}){
+export function pendingProductRoadmap({companyMessaging,codePractice,roleTraining,community=false,annualPlans=false}:{companyMessaging:boolean;codePractice:boolean;roleTraining:boolean;community?:boolean;annualPlans?:boolean}){
  return PRODUCT_ROADMAP.filter(item=>!(annualPlans&&item.key==='annual_plans')&&!(community&&['learner_community','mentoring'].includes(item.key))&&!(companyMessaging&&item.key==='enterprise_communicator')&&!(codePractice&&item.key==='executable_code')&&!(roleTraining&&(item.key==='leadership_courses'||Object.hasOwn(RELEASED_PRACTICE_ROUTES,item.key))));
 }
 
