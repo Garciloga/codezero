@@ -1,0 +1,1334 @@
+{
+  "key": "red_flags",
+  "title": "Detector de red flags · Riesgo temprano y salud de cuentas",
+  "status": "draft",
+  "version": "2026-10-10.v1",
+  "locale": "es",
+  "localeStates": {
+    "es": "es",
+    "en": "beta-pending",
+    "pt": "beta-pending",
+    "fr": "beta-pending"
+  },
+  "audience": "Customer Success, soporte y managers",
+  "intro": "Curso, NO detector automático en producción. Las alertas no sustituyen decisiones humanas ni clasifican empleados.",
+  "requiredHumanReview": true,
+  "levels": [
+    {
+      "id": "red_flags-l01",
+      "number": 1,
+      "title": "Definición operacional de señales de riesgo",
+      "difficulty": "fundamentos aplicados",
+      "case": {
+        "organization": "Cartera de clientes simulados",
+        "facts": "Cuenta Álamo tiene 140 usuarios, 17 activos semanales y un CSM dice que la adopción 'se ve normal'. El sponsor cambió hace 12 días, los tickets subieron de 3 a 19 y la renovación es en 110 días. Los datos de usuarios activos no distinguen licencias vacantes de abandono.",
+        "conflict": "Dirección quiere etiquetar roja a toda cuenta que no alcance el 30 % de uso.",
+        "metric": "cobertura de señales confirmadas y falsos positivos",
+        "continuity": "Arrastra al siguiente nivel las hipótesis, la calidad de evidencia y las decisiones; registrar cambio de criterio es obligatorio."
+      },
+      "lessons": [
+        {
+          "id": "red_flags-l01-1",
+          "title": "Síntoma, causa y señal adelantada",
+          "teaching": "Síntoma, causa y señal adelantada. El caso presenta hechos medibles (Cuenta Álamo tiene 140 usuarios, 17 activos semanales y un CSM dice que la adopción 'se ve normal'. El sponsor cambió hace 12 días, los tickets subieron de 3 a 19 y la renovación es en 110 días. Los datos de usuarios activos no distinguen licencias vacantes de abandono.) y una tensión de autoridad (Dirección quiere etiquetar roja a toda cuenta que no alcance el 30 % de uso.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «cobertura de señales confirmadas y falsos positivos».",
+          "task": "Examina síntoma, causa y señal adelantada en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "red_flags-l01-2",
+          "title": "Catálogo de evidencias y fiabilidad",
+          "teaching": "Catálogo de evidencias y fiabilidad. El caso presenta hechos medibles (Cuenta Álamo tiene 140 usuarios, 17 activos semanales y un CSM dice que la adopción 'se ve normal'. El sponsor cambió hace 12 días, los tickets subieron de 3 a 19 y la renovación es en 110 días. Los datos de usuarios activos no distinguen licencias vacantes de abandono.) y una tensión de autoridad (Dirección quiere etiquetar roja a toda cuenta que no alcance el 30 % de uso.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «cobertura de señales confirmadas y falsos positivos».",
+          "task": "Examina catálogo de evidencias y fiabilidad en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "red_flags-l01-3",
+          "title": "Falsos positivos y umbrales",
+          "teaching": "Falsos positivos y umbrales. El caso presenta hechos medibles (Cuenta Álamo tiene 140 usuarios, 17 activos semanales y un CSM dice que la adopción 'se ve normal'. El sponsor cambió hace 12 días, los tickets subieron de 3 a 19 y la renovación es en 110 días. Los datos de usuarios activos no distinguen licencias vacantes de abandono.) y una tensión de autoridad (Dirección quiere etiquetar roja a toda cuenta que no alcance el 30 % de uso.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «cobertura de señales confirmadas y falsos positivos».",
+          "task": "Examina falsos positivos y umbrales en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        }
+      ],
+      "decisions": [
+        {
+          "prompt": "Frente a «Definición operacional de señales de riesgo», el responsable reclama: Dirección quiere etiquetar roja a toda cuenta que no alcance el 30 % de uso.. ¿Qué enfoque queda defendido por los hechos del caso?",
+          "options": [
+            "Ignorar señales hasta que el cliente comunique una intención formal de cancelar.",
+            "Revisar métricas segmentadas, distinguir incertidumbre y crear hipótesis verificables con dueño antes de clasificar el riesgo.",
+            "Asignar automáticamente rojo y restringir soporte para reducir coste."
+          ],
+          "correctIndex": 1,
+          "feedback": "La propuesta debe relacionar cobertura de señales confirmadas y falsos positivos con alternativas, autorización y límites de evidencia; elegir una casilla no basta para aprobar el módulo."
+        },
+        {
+          "prompt": "El responsable descubre que la señal «cobertura de señales confirmadas y falsos positivos» no ha sido calibrada y puede inducir errores. ¿Cuál es la respuesta más sólida?",
+          "options": [
+            "Presentar el indicador como resultado garantizado porque ya aparece en el dashboard.",
+            "Suspender afirmaciones concluyentes, auditar la calidad del dato, establecer línea base y verificar el cambio después de actuar.",
+            "Modificar retrospectivamente la cohorte para obtener una mejora favorable."
+          ],
+          "correctIndex": 1,
+          "feedback": "Sin línea base, método y datos fiables no puede darse por probada una mejora comercial."
+        }
+      ],
+      "exam": {
+        "format": "defensa escrita con evaluación humana",
+        "requiredWords": 850,
+        "passingPoints": 80,
+        "maxPoints": 100,
+        "tasks": [
+          {
+            "title": "Datos y discrepancias",
+            "points": 12,
+            "prompt": "Construye un diagnóstico con cinco evidencias del caso, dos hipótesis alternativas y un registro de datos faltantes. Explica qué indicador podría estar sesgado.",
+            "minWords": 160
+          },
+          {
+            "title": "Causalidad y segmentación",
+            "points": 12,
+            "prompt": "Segmenta actores y causas, separando correlaciones de consecuencias probadas y reconociendo información que no puedes inferir.",
+            "minWords": 160
+          },
+          {
+            "title": "Modelo cuantitativo",
+            "points": 14,
+            "prompt": "Calcula las métricas disponibles y su denominador o rango. Muestra fórmula, unidades, supuestos y al menos un análisis de sensibilidad.",
+            "minWords": 160
+          },
+          {
+            "title": "Decisiones comparables",
+            "points": 14,
+            "prompt": "Presenta tres cursos de acción (uno de ellos mantener estado actual), prioriza la alternativa elegida y justifica una rechazada con coste y riesgo residual.",
+            "minWords": 160
+          },
+          {
+            "title": "Diligencia contractual y ética",
+            "points": 12,
+            "prompt": "Distingue lo que puedes ofrecer de los compromisos que requieren autorización. No prometas ahorros, seguridad, precios ni fechas sin evidencia.",
+            "minWords": 160
+          },
+          {
+            "title": "Diseño de experimentación",
+            "points": 12,
+            "prompt": "Prepara un piloto con alcance, muestra, duración, criterios de éxito, criterio de interrupción y plan de protección de datos ficticios.",
+            "minWords": 160
+          },
+          {
+            "title": "Objeción adversarial",
+            "points": 12,
+            "prompt": "Escribe la objeción más fuerte de Finanzas, Usuario y Compras, e incorpora una respuesta con evidencia, responsabilidad y concesión autorizable.",
+            "minWords": 160
+          },
+          {
+            "title": "Seguimiento y aprendizaje",
+            "points": 12,
+            "prompt": "Crea un tablero con dueño, indicador adelantado, métrica retrospectiva, fecha, acción de reversión y condición verificable de cierre.",
+            "minWords": 160
+          }
+        ],
+        "criticalFailures": [
+          "datos o cifras inventados como reales",
+          "promesas o descuentos sin autorización",
+          "datos personales en expedientes de simulación",
+          "confundir ingresos nuevos con retención o expansión de la cohorte",
+          "aprobar por texto de relleno sin evidencia"
+        ]
+      },
+      "project": null,
+      "references": [
+        "https://www.nist.gov/cyberframework",
+        "https://stripe.com/es/resources/more/net-revenue-retention"
+      ]
+    },
+    {
+      "id": "red_flags-l02",
+      "number": 2,
+      "title": "Modelos de salud y sesgos de agregación",
+      "difficulty": "fundamentos aplicados",
+      "case": {
+        "organization": "Cartera de clientes simulados",
+        "facts": "Cartera de 60 cuentas: 12 pequeñas activaron 20/25 licencias y 8 corporativas activaron 200/2.000. Un score global basado en sesiones etiqueta la segunda cohorte como sana por volumen absoluto; dos cuentas perdieron al decisor.",
+        "conflict": "Ventas propone comparar todas las cuentas con el mismo percentil de eventos sin distinguir tamaño ni caso de uso.",
+        "metric": "recall de churn, precisión y cobertura por cohorte",
+        "continuity": "Arrastra al siguiente nivel las hipótesis, la calidad de evidencia y las decisiones; registrar cambio de criterio es obligatorio."
+      },
+      "lessons": [
+        {
+          "id": "red_flags-l02-1",
+          "title": "Segmentación por cohortes y rol",
+          "teaching": "Segmentación por cohortes y rol. El caso presenta hechos medibles (Cartera de 60 cuentas: 12 pequeñas activaron 20/25 licencias y 8 corporativas activaron 200/2.000. Un score global basado en sesiones etiqueta la segunda cohorte como sana por volumen absoluto; dos cuentas perdieron al decisor.) y una tensión de autoridad (Ventas propone comparar todas las cuentas con el mismo percentil de eventos sin distinguir tamaño ni caso de uso.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «recall de churn, precisión y cobertura por cohorte».",
+          "task": "Examina segmentación por cohortes y rol en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "red_flags-l02-2",
+          "title": "Normalización de señales de adopción",
+          "teaching": "Normalización de señales de adopción. El caso presenta hechos medibles (Cartera de 60 cuentas: 12 pequeñas activaron 20/25 licencias y 8 corporativas activaron 200/2.000. Un score global basado en sesiones etiqueta la segunda cohorte como sana por volumen absoluto; dos cuentas perdieron al decisor.) y una tensión de autoridad (Ventas propone comparar todas las cuentas con el mismo percentil de eventos sin distinguir tamaño ni caso de uso.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «recall de churn, precisión y cobertura por cohorte».",
+          "task": "Examina normalización de señales de adopción en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "red_flags-l02-3",
+          "title": "Calibración y trazabilidad de score",
+          "teaching": "Calibración y trazabilidad de score. El caso presenta hechos medibles (Cartera de 60 cuentas: 12 pequeñas activaron 20/25 licencias y 8 corporativas activaron 200/2.000. Un score global basado en sesiones etiqueta la segunda cohorte como sana por volumen absoluto; dos cuentas perdieron al decisor.) y una tensión de autoridad (Ventas propone comparar todas las cuentas con el mismo percentil de eventos sin distinguir tamaño ni caso de uso.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «recall de churn, precisión y cobertura por cohorte».",
+          "task": "Examina calibración y trazabilidad de score en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        }
+      ],
+      "decisions": [
+        {
+          "prompt": "Frente a «Modelos de salud y sesgos de agregación», el responsable reclama: Ventas propone comparar todas las cuentas con el mismo percentil de eventos sin distinguir tamaño ni caso de uso.. ¿Qué enfoque queda defendido por los hechos del caso?",
+          "options": [
+            "Construir segmentos comparables y reglas explicables, revisando sponsors, contratos y calidad de las mediciones.",
+            "Cambiar artificialmente las ponderaciones para mostrar que todo el segmento Enterprise está verde.",
+            "Excluir a las cuentas pequeñas para que la tendencia de salud parezca mejorar."
+          ],
+          "correctIndex": 0,
+          "feedback": "La propuesta debe relacionar recall de churn, precisión y cobertura por cohorte con alternativas, autorización y límites de evidencia; elegir una casilla no basta para aprobar el módulo."
+        },
+        {
+          "prompt": "El responsable descubre que la señal «recall de churn, precisión y cobertura por cohorte» no ha sido calibrada y puede inducir errores. ¿Cuál es la respuesta más sólida?",
+          "options": [
+            "Presentar el indicador como resultado garantizado porque ya aparece en el dashboard.",
+            "Suspender afirmaciones concluyentes, auditar la calidad del dato, establecer línea base y verificar el cambio después de actuar.",
+            "Modificar retrospectivamente la cohorte para obtener una mejora favorable."
+          ],
+          "correctIndex": 1,
+          "feedback": "Sin línea base, método y datos fiables no puede darse por probada una mejora comercial."
+        }
+      ],
+      "exam": {
+        "format": "defensa escrita con evaluación humana",
+        "requiredWords": 850,
+        "passingPoints": 80,
+        "maxPoints": 100,
+        "tasks": [
+          {
+            "title": "Datos y discrepancias",
+            "points": 12,
+            "prompt": "Construye un diagnóstico con cinco evidencias del caso, dos hipótesis alternativas y un registro de datos faltantes. Explica qué indicador podría estar sesgado.",
+            "minWords": 160
+          },
+          {
+            "title": "Causalidad y segmentación",
+            "points": 12,
+            "prompt": "Segmenta actores y causas, separando correlaciones de consecuencias probadas y reconociendo información que no puedes inferir.",
+            "minWords": 160
+          },
+          {
+            "title": "Modelo cuantitativo",
+            "points": 14,
+            "prompt": "Calcula las métricas disponibles y su denominador o rango. Muestra fórmula, unidades, supuestos y al menos un análisis de sensibilidad.",
+            "minWords": 160
+          },
+          {
+            "title": "Decisiones comparables",
+            "points": 14,
+            "prompt": "Presenta tres cursos de acción (uno de ellos mantener estado actual), prioriza la alternativa elegida y justifica una rechazada con coste y riesgo residual.",
+            "minWords": 160
+          },
+          {
+            "title": "Diligencia contractual y ética",
+            "points": 12,
+            "prompt": "Distingue lo que puedes ofrecer de los compromisos que requieren autorización. No prometas ahorros, seguridad, precios ni fechas sin evidencia.",
+            "minWords": 160
+          },
+          {
+            "title": "Diseño de experimentación",
+            "points": 12,
+            "prompt": "Prepara un piloto con alcance, muestra, duración, criterios de éxito, criterio de interrupción y plan de protección de datos ficticios.",
+            "minWords": 160
+          },
+          {
+            "title": "Objeción adversarial",
+            "points": 12,
+            "prompt": "Escribe la objeción más fuerte de Finanzas, Usuario y Compras, e incorpora una respuesta con evidencia, responsabilidad y concesión autorizable.",
+            "minWords": 160
+          },
+          {
+            "title": "Seguimiento y aprendizaje",
+            "points": 12,
+            "prompt": "Crea un tablero con dueño, indicador adelantado, métrica retrospectiva, fecha, acción de reversión y condición verificable de cierre.",
+            "minWords": 160
+          }
+        ],
+        "criticalFailures": [
+          "datos o cifras inventados como reales",
+          "promesas o descuentos sin autorización",
+          "datos personales en expedientes de simulación",
+          "confundir ingresos nuevos con retención o expansión de la cohorte",
+          "aprobar por texto de relleno sin evidencia"
+        ]
+      },
+      "project": null,
+      "references": [
+        "https://www.nist.gov/cyberframework",
+        "https://stripe.com/es/resources/more/net-revenue-retention"
+      ]
+    },
+    {
+      "id": "red_flags-l03",
+      "number": 3,
+      "title": "Señales de sponsor y política de la cuenta",
+      "difficulty": "análisis operacional",
+      "case": {
+        "organization": "Cartera de clientes simulados",
+        "facts": "En Beta Servicios, el único champion deja la empresa 45 días antes de la revisión presupuestal. El uso técnico no cae, pero la licencia representa el 9 % del presupuesto del área y el nuevo CFO pregunta por el ROI.",
+        "conflict": "El equipo propone enviar un descuento del 20 % sin hablar con nuevos decisores.",
+        "metric": "cobertura de decisores y renovación confirmada",
+        "continuity": "Arrastra al siguiente nivel las hipótesis, la calidad de evidencia y las decisiones; registrar cambio de criterio es obligatorio."
+      },
+      "lessons": [
+        {
+          "id": "red_flags-l03-1",
+          "title": "Mapa de relaciones multihilo",
+          "teaching": "Mapa de relaciones multihilo. El caso presenta hechos medibles (En Beta Servicios, el único champion deja la empresa 45 días antes de la revisión presupuestal. El uso técnico no cae, pero la licencia representa el 9 % del presupuesto del área y el nuevo CFO pregunta por el ROI.) y una tensión de autoridad (El equipo propone enviar un descuento del 20 % sin hablar con nuevos decisores.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «cobertura de decisores y renovación confirmada».",
+          "task": "Examina mapa de relaciones multihilo en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "red_flags-l03-2",
+          "title": "Riesgo de champion único",
+          "teaching": "Riesgo de champion único. El caso presenta hechos medibles (En Beta Servicios, el único champion deja la empresa 45 días antes de la revisión presupuestal. El uso técnico no cae, pero la licencia representa el 9 % del presupuesto del área y el nuevo CFO pregunta por el ROI.) y una tensión de autoridad (El equipo propone enviar un descuento del 20 % sin hablar con nuevos decisores.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «cobertura de decisores y renovación confirmada».",
+          "task": "Examina riesgo de champion único en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "red_flags-l03-3",
+          "title": "Handoff documentado tras rotación",
+          "teaching": "Handoff documentado tras rotación. El caso presenta hechos medibles (En Beta Servicios, el único champion deja la empresa 45 días antes de la revisión presupuestal. El uso técnico no cae, pero la licencia representa el 9 % del presupuesto del área y el nuevo CFO pregunta por el ROI.) y una tensión de autoridad (El equipo propone enviar un descuento del 20 % sin hablar con nuevos decisores.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «cobertura de decisores y renovación confirmada».",
+          "task": "Examina handoff documentado tras rotación en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        }
+      ],
+      "decisions": [
+        {
+          "prompt": "Frente a «Señales de sponsor y política de la cuenta», el responsable reclama: El equipo propone enviar un descuento del 20 % sin hablar con nuevos decisores.. ¿Qué enfoque queda defendido por los hechos del caso?",
+          "options": [
+            "Activar un descuento secreto sin registrar condiciones y confiar en el uso del producto.",
+            "Calificar salud verde porque la cuenta sigue haciendo llamadas API.",
+            "Mapear roles y poder de compra, solicitar reunión de objetivos y acordar evidencia de valor antes de discutir precio."
+          ],
+          "correctIndex": 2,
+          "feedback": "La propuesta debe relacionar cobertura de decisores y renovación confirmada con alternativas, autorización y límites de evidencia; elegir una casilla no basta para aprobar el módulo."
+        },
+        {
+          "prompt": "El responsable descubre que la señal «cobertura de decisores y renovación confirmada» no ha sido calibrada y puede inducir errores. ¿Cuál es la respuesta más sólida?",
+          "options": [
+            "Presentar el indicador como resultado garantizado porque ya aparece en el dashboard.",
+            "Suspender afirmaciones concluyentes, auditar la calidad del dato, establecer línea base y verificar el cambio después de actuar.",
+            "Modificar retrospectivamente la cohorte para obtener una mejora favorable."
+          ],
+          "correctIndex": 1,
+          "feedback": "Sin línea base, método y datos fiables no puede darse por probada una mejora comercial."
+        }
+      ],
+      "exam": {
+        "format": "defensa escrita con evaluación humana",
+        "requiredWords": 850,
+        "passingPoints": 80,
+        "maxPoints": 100,
+        "tasks": [
+          {
+            "title": "Datos y discrepancias",
+            "points": 12,
+            "prompt": "Construye un diagnóstico con cinco evidencias del caso, dos hipótesis alternativas y un registro de datos faltantes. Explica qué indicador podría estar sesgado.",
+            "minWords": 160
+          },
+          {
+            "title": "Causalidad y segmentación",
+            "points": 12,
+            "prompt": "Segmenta actores y causas, separando correlaciones de consecuencias probadas y reconociendo información que no puedes inferir.",
+            "minWords": 160
+          },
+          {
+            "title": "Modelo cuantitativo",
+            "points": 14,
+            "prompt": "Calcula las métricas disponibles y su denominador o rango. Muestra fórmula, unidades, supuestos y al menos un análisis de sensibilidad.",
+            "minWords": 160
+          },
+          {
+            "title": "Decisiones comparables",
+            "points": 14,
+            "prompt": "Presenta tres cursos de acción (uno de ellos mantener estado actual), prioriza la alternativa elegida y justifica una rechazada con coste y riesgo residual.",
+            "minWords": 160
+          },
+          {
+            "title": "Diligencia contractual y ética",
+            "points": 12,
+            "prompt": "Distingue lo que puedes ofrecer de los compromisos que requieren autorización. No prometas ahorros, seguridad, precios ni fechas sin evidencia.",
+            "minWords": 160
+          },
+          {
+            "title": "Diseño de experimentación",
+            "points": 12,
+            "prompt": "Prepara un piloto con alcance, muestra, duración, criterios de éxito, criterio de interrupción y plan de protección de datos ficticios.",
+            "minWords": 160
+          },
+          {
+            "title": "Objeción adversarial",
+            "points": 12,
+            "prompt": "Escribe la objeción más fuerte de Finanzas, Usuario y Compras, e incorpora una respuesta con evidencia, responsabilidad y concesión autorizable.",
+            "minWords": 160
+          },
+          {
+            "title": "Seguimiento y aprendizaje",
+            "points": 12,
+            "prompt": "Crea un tablero con dueño, indicador adelantado, métrica retrospectiva, fecha, acción de reversión y condición verificable de cierre.",
+            "minWords": 160
+          }
+        ],
+        "criticalFailures": [
+          "datos o cifras inventados como reales",
+          "promesas o descuentos sin autorización",
+          "datos personales en expedientes de simulación",
+          "confundir ingresos nuevos con retención o expansión de la cohorte",
+          "aprobar por texto de relleno sin evidencia"
+        ]
+      },
+      "project": null,
+      "references": [
+        "https://www.nist.gov/cyberframework",
+        "https://stripe.com/es/resources/more/net-revenue-retention"
+      ]
+    },
+    {
+      "id": "red_flags-l04",
+      "number": 4,
+      "title": "Incidentes y señales técnicas",
+      "difficulty": "análisis operacional",
+      "case": {
+        "organization": "Cartera de clientes simulados",
+        "facts": "Un cliente reporta cinco fallas de exportación, pero una afecta el cierre contable de 430 facturas. La causa no está confirmada, y el equipo comercial quiere decir que fue 'un error menor' porque hay pocos tickets.",
+        "conflict": "Se pide bajar severidad en CRM para no activar alertas del manager.",
+        "metric": "incidentes críticos con impacto y verificación de cierre",
+        "continuity": "Arrastra al siguiente nivel las hipótesis, la calidad de evidencia y las decisiones; registrar cambio de criterio es obligatorio."
+      },
+      "lessons": [
+        {
+          "id": "red_flags-l04-1",
+          "title": "Impacto real vs volumen de tickets",
+          "teaching": "Impacto real vs volumen de tickets. El caso presenta hechos medibles (Un cliente reporta cinco fallas de exportación, pero una afecta el cierre contable de 430 facturas. La causa no está confirmada, y el equipo comercial quiere decir que fue 'un error menor' porque hay pocos tickets.) y una tensión de autoridad (Se pide bajar severidad en CRM para no activar alertas del manager.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «incidentes críticos con impacto y verificación de cierre».",
+          "task": "Examina impacto real vs volumen de tickets en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "red_flags-l04-2",
+          "title": "Riesgo de seguridad y privacidad",
+          "teaching": "Riesgo de seguridad y privacidad. El caso presenta hechos medibles (Un cliente reporta cinco fallas de exportación, pero una afecta el cierre contable de 430 facturas. La causa no está confirmada, y el equipo comercial quiere decir que fue 'un error menor' porque hay pocos tickets.) y una tensión de autoridad (Se pide bajar severidad en CRM para no activar alertas del manager.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «incidentes críticos con impacto y verificación de cierre».",
+          "task": "Examina riesgo de seguridad y privacidad en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "red_flags-l04-3",
+          "title": "Planes de contingencia y comunicación",
+          "teaching": "Planes de contingencia y comunicación. El caso presenta hechos medibles (Un cliente reporta cinco fallas de exportación, pero una afecta el cierre contable de 430 facturas. La causa no está confirmada, y el equipo comercial quiere decir que fue 'un error menor' porque hay pocos tickets.) y una tensión de autoridad (Se pide bajar severidad en CRM para no activar alertas del manager.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «incidentes críticos con impacto y verificación de cierre».",
+          "task": "Examina planes de contingencia y comunicación en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        }
+      ],
+      "decisions": [
+        {
+          "prompt": "Frente a «Incidentes y señales técnicas», el responsable reclama: Se pide bajar severidad en CRM para no activar alertas del manager.. ¿Qué enfoque queda defendido por los hechos del caso?",
+          "options": [
+            "Omitir el caso del reporte de salud hasta el siguiente trimestre.",
+            "Clasificar por impacto de negocio, conservar línea temporal y escalar con soporte y seguridad sin inventar causa.",
+            "Contestar que se resolvió solo porque el endpoint volvió a dar 200."
+          ],
+          "correctIndex": 1,
+          "feedback": "La propuesta debe relacionar incidentes críticos con impacto y verificación de cierre con alternativas, autorización y límites de evidencia; elegir una casilla no basta para aprobar el módulo."
+        },
+        {
+          "prompt": "El responsable descubre que la señal «incidentes críticos con impacto y verificación de cierre» no ha sido calibrada y puede inducir errores. ¿Cuál es la respuesta más sólida?",
+          "options": [
+            "Presentar el indicador como resultado garantizado porque ya aparece en el dashboard.",
+            "Suspender afirmaciones concluyentes, auditar la calidad del dato, establecer línea base y verificar el cambio después de actuar.",
+            "Modificar retrospectivamente la cohorte para obtener una mejora favorable."
+          ],
+          "correctIndex": 1,
+          "feedback": "Sin línea base, método y datos fiables no puede darse por probada una mejora comercial."
+        }
+      ],
+      "exam": {
+        "format": "defensa escrita con evaluación humana",
+        "requiredWords": 1200,
+        "passingPoints": 80,
+        "maxPoints": 100,
+        "tasks": [
+          {
+            "title": "Datos y discrepancias",
+            "points": 12,
+            "prompt": "Construye un diagnóstico con cinco evidencias del caso, dos hipótesis alternativas y un registro de datos faltantes. Explica qué indicador podría estar sesgado.",
+            "minWords": 160
+          },
+          {
+            "title": "Causalidad y segmentación",
+            "points": 12,
+            "prompt": "Segmenta actores y causas, separando correlaciones de consecuencias probadas y reconociendo información que no puedes inferir.",
+            "minWords": 160
+          },
+          {
+            "title": "Modelo cuantitativo",
+            "points": 14,
+            "prompt": "Calcula las métricas disponibles y su denominador o rango. Muestra fórmula, unidades, supuestos y al menos un análisis de sensibilidad.",
+            "minWords": 160
+          },
+          {
+            "title": "Decisiones comparables",
+            "points": 14,
+            "prompt": "Presenta tres cursos de acción (uno de ellos mantener estado actual), prioriza la alternativa elegida y justifica una rechazada con coste y riesgo residual.",
+            "minWords": 160
+          },
+          {
+            "title": "Diligencia contractual y ética",
+            "points": 12,
+            "prompt": "Distingue lo que puedes ofrecer de los compromisos que requieren autorización. No prometas ahorros, seguridad, precios ni fechas sin evidencia.",
+            "minWords": 160
+          },
+          {
+            "title": "Diseño de experimentación",
+            "points": 12,
+            "prompt": "Prepara un piloto con alcance, muestra, duración, criterios de éxito, criterio de interrupción y plan de protección de datos ficticios.",
+            "minWords": 160
+          },
+          {
+            "title": "Objeción adversarial",
+            "points": 12,
+            "prompt": "Escribe la objeción más fuerte de Finanzas, Usuario y Compras, e incorpora una respuesta con evidencia, responsabilidad y concesión autorizable.",
+            "minWords": 160
+          },
+          {
+            "title": "Seguimiento y aprendizaje",
+            "points": 12,
+            "prompt": "Crea un tablero con dueño, indicador adelantado, métrica retrospectiva, fecha, acción de reversión y condición verificable de cierre.",
+            "minWords": 160
+          }
+        ],
+        "criticalFailures": [
+          "datos o cifras inventados como reales",
+          "promesas o descuentos sin autorización",
+          "datos personales en expedientes de simulación",
+          "confundir ingresos nuevos con retención o expansión de la cohorte",
+          "aprobar por texto de relleno sin evidencia"
+        ]
+      },
+      "project": {
+        "mandatory": true,
+        "title": "Proyecto integrador intermedio: Incidentes y señales técnicas",
+        "minWords": 1400,
+        "deliverable": "Construye el expediente de «Incidentes y señales técnicas» a partir de todos los datos acumulados, con indicadores (incidentes críticos con impacto y verificación de cierre), decisión razonada, alternativas, controles, responsables, plazos, acta de revisión y evidencia simulada de seguimiento.",
+        "rubric": [
+          {
+            "name": "diagnóstico y causalidad",
+            "weight": 20
+          },
+          {
+            "name": "métricas y calidad del dato",
+            "weight": 20
+          },
+          {
+            "name": "decisiones y alternativas",
+            "weight": 20
+          },
+          {
+            "name": "seguridad, contrato y ética",
+            "weight": 20
+          },
+          {
+            "name": "seguimiento y defensa",
+            "weight": 20
+          }
+        ],
+        "humanReview": true
+      },
+      "references": [
+        "https://www.nist.gov/cyberframework",
+        "https://stripe.com/es/resources/more/net-revenue-retention"
+      ]
+    },
+    {
+      "id": "red_flags-l05",
+      "number": 5,
+      "title": "Riesgo comercial y deterioro contractual",
+      "difficulty": "análisis operacional",
+      "case": {
+        "organization": "Cartera de clientes simulados",
+        "facts": "Cuenta Mirador paga 95.000 MXN de MRR, renueva en 62 días, exige evidencia de cumplimiento de SLA y tiene tres facturas retrasadas. Adicionalmente solicita incluir un módulo no contratado sin orden de compra.",
+        "conflict": "El AM considera prometer el módulo gratis si retiran sus quejas.",
+        "metric": "riesgo contractual con dueño, fecha y respuesta escrita",
+        "continuity": "Arrastra al siguiente nivel las hipótesis, la calidad de evidencia y las decisiones; registrar cambio de criterio es obligatorio."
+      },
+      "lessons": [
+        {
+          "id": "red_flags-l05-1",
+          "title": "Presión de procurement",
+          "teaching": "Presión de procurement. El caso presenta hechos medibles (Cuenta Mirador paga 95.000 MXN de MRR, renueva en 62 días, exige evidencia de cumplimiento de SLA y tiene tres facturas retrasadas. Adicionalmente solicita incluir un módulo no contratado sin orden de compra.) y una tensión de autoridad (El AM considera prometer el módulo gratis si retiran sus quejas.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «riesgo contractual con dueño, fecha y respuesta escrita».",
+          "task": "Examina presión de procurement en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "red_flags-l05-2",
+          "title": "Riesgos de pago, SLA y precio",
+          "teaching": "Riesgos de pago, SLA y precio. El caso presenta hechos medibles (Cuenta Mirador paga 95.000 MXN de MRR, renueva en 62 días, exige evidencia de cumplimiento de SLA y tiene tres facturas retrasadas. Adicionalmente solicita incluir un módulo no contratado sin orden de compra.) y una tensión de autoridad (El AM considera prometer el módulo gratis si retiran sus quejas.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «riesgo contractual con dueño, fecha y respuesta escrita».",
+          "task": "Examina riesgos de pago, sla y precio en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "red_flags-l05-3",
+          "title": "Mapa de obligaciones y fechas",
+          "teaching": "Mapa de obligaciones y fechas. El caso presenta hechos medibles (Cuenta Mirador paga 95.000 MXN de MRR, renueva en 62 días, exige evidencia de cumplimiento de SLA y tiene tres facturas retrasadas. Adicionalmente solicita incluir un módulo no contratado sin orden de compra.) y una tensión de autoridad (El AM considera prometer el módulo gratis si retiran sus quejas.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «riesgo contractual con dueño, fecha y respuesta escrita».",
+          "task": "Examina mapa de obligaciones y fechas en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        }
+      ],
+      "decisions": [
+        {
+          "prompt": "Frente a «Riesgo comercial y deterioro contractual», el responsable reclama: El AM considera prometer el módulo gratis si retiran sus quejas.. ¿Qué enfoque queda defendido por los hechos del caso?",
+          "options": [
+            "Separar disputas de facturación, SLA y alcance; validar obligaciones, condiciones de compra y plan de regularización.",
+            "Ofrecer capacidad no contratada por correo sin aprobación financiera.",
+            "Suprimir la alerta de facturas porque el ARR es elevado."
+          ],
+          "correctIndex": 0,
+          "feedback": "La propuesta debe relacionar riesgo contractual con dueño, fecha y respuesta escrita con alternativas, autorización y límites de evidencia; elegir una casilla no basta para aprobar el módulo."
+        },
+        {
+          "prompt": "El responsable descubre que la señal «riesgo contractual con dueño, fecha y respuesta escrita» no ha sido calibrada y puede inducir errores. ¿Cuál es la respuesta más sólida?",
+          "options": [
+            "Presentar el indicador como resultado garantizado porque ya aparece en el dashboard.",
+            "Suspender afirmaciones concluyentes, auditar la calidad del dato, establecer línea base y verificar el cambio después de actuar.",
+            "Modificar retrospectivamente la cohorte para obtener una mejora favorable."
+          ],
+          "correctIndex": 1,
+          "feedback": "Sin línea base, método y datos fiables no puede darse por probada una mejora comercial."
+        }
+      ],
+      "exam": {
+        "format": "defensa escrita con evaluación humana",
+        "requiredWords": 1200,
+        "passingPoints": 80,
+        "maxPoints": 100,
+        "tasks": [
+          {
+            "title": "Datos y discrepancias",
+            "points": 12,
+            "prompt": "Construye un diagnóstico con cinco evidencias del caso, dos hipótesis alternativas y un registro de datos faltantes. Explica qué indicador podría estar sesgado.",
+            "minWords": 160
+          },
+          {
+            "title": "Causalidad y segmentación",
+            "points": 12,
+            "prompt": "Segmenta actores y causas, separando correlaciones de consecuencias probadas y reconociendo información que no puedes inferir.",
+            "minWords": 160
+          },
+          {
+            "title": "Modelo cuantitativo",
+            "points": 14,
+            "prompt": "Calcula las métricas disponibles y su denominador o rango. Muestra fórmula, unidades, supuestos y al menos un análisis de sensibilidad.",
+            "minWords": 160
+          },
+          {
+            "title": "Decisiones comparables",
+            "points": 14,
+            "prompt": "Presenta tres cursos de acción (uno de ellos mantener estado actual), prioriza la alternativa elegida y justifica una rechazada con coste y riesgo residual.",
+            "minWords": 160
+          },
+          {
+            "title": "Diligencia contractual y ética",
+            "points": 12,
+            "prompt": "Distingue lo que puedes ofrecer de los compromisos que requieren autorización. No prometas ahorros, seguridad, precios ni fechas sin evidencia.",
+            "minWords": 160
+          },
+          {
+            "title": "Diseño de experimentación",
+            "points": 12,
+            "prompt": "Prepara un piloto con alcance, muestra, duración, criterios de éxito, criterio de interrupción y plan de protección de datos ficticios.",
+            "minWords": 160
+          },
+          {
+            "title": "Objeción adversarial",
+            "points": 12,
+            "prompt": "Escribe la objeción más fuerte de Finanzas, Usuario y Compras, e incorpora una respuesta con evidencia, responsabilidad y concesión autorizable.",
+            "minWords": 160
+          },
+          {
+            "title": "Seguimiento y aprendizaje",
+            "points": 12,
+            "prompt": "Crea un tablero con dueño, indicador adelantado, métrica retrospectiva, fecha, acción de reversión y condición verificable de cierre.",
+            "minWords": 160
+          }
+        ],
+        "criticalFailures": [
+          "datos o cifras inventados como reales",
+          "promesas o descuentos sin autorización",
+          "datos personales en expedientes de simulación",
+          "confundir ingresos nuevos con retención o expansión de la cohorte",
+          "aprobar por texto de relleno sin evidencia"
+        ]
+      },
+      "project": null,
+      "references": [
+        "https://www.nist.gov/cyberframework",
+        "https://stripe.com/es/resources/more/net-revenue-retention"
+      ]
+    },
+    {
+      "id": "red_flags-l06",
+      "number": 6,
+      "title": "Señales combinadas y cambios temporales",
+      "difficulty": "supervisión",
+      "case": {
+        "organization": "Cartera de clientes simulados",
+        "facts": "En 28 cuentas, 9 reducen sesiones un 40 %, pero siete están en cierre estacional. Dos combinan reducción de uso, sponsor ausente y rechazo de QBR a 70 días de renovar. El equipo solo puede intervenir tres cuentas esta semana.",
+        "conflict": "Operaciones quiere ordenar por caída porcentual de sesiones ignorando calendario y dependencia entre señales.",
+        "metric": "reducción de falsos positivos y tiempo de intervención",
+        "continuity": "Arrastra al siguiente nivel las hipótesis, la calidad de evidencia y las decisiones; registrar cambio de criterio es obligatorio."
+      },
+      "lessons": [
+        {
+          "id": "red_flags-l06-1",
+          "title": "Series históricas y detección de ruptura",
+          "teaching": "Series históricas y detección de ruptura. El caso presenta hechos medibles (En 28 cuentas, 9 reducen sesiones un 40 %, pero siete están en cierre estacional. Dos combinan reducción de uso, sponsor ausente y rechazo de QBR a 70 días de renovar. El equipo solo puede intervenir tres cuentas esta semana.) y una tensión de autoridad (Operaciones quiere ordenar por caída porcentual de sesiones ignorando calendario y dependencia entre señales.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «reducción de falsos positivos y tiempo de intervención».",
+          "task": "Examina series históricas y detección de ruptura en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "red_flags-l06-2",
+          "title": "Coocurrencia sin doble conteo",
+          "teaching": "Coocurrencia sin doble conteo. El caso presenta hechos medibles (En 28 cuentas, 9 reducen sesiones un 40 %, pero siete están en cierre estacional. Dos combinan reducción de uso, sponsor ausente y rechazo de QBR a 70 días de renovar. El equipo solo puede intervenir tres cuentas esta semana.) y una tensión de autoridad (Operaciones quiere ordenar por caída porcentual de sesiones ignorando calendario y dependencia entre señales.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «reducción de falsos positivos y tiempo de intervención».",
+          "task": "Examina coocurrencia sin doble conteo en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "red_flags-l06-3",
+          "title": "Priorización bajo capacidad limitada",
+          "teaching": "Priorización bajo capacidad limitada. El caso presenta hechos medibles (En 28 cuentas, 9 reducen sesiones un 40 %, pero siete están en cierre estacional. Dos combinan reducción de uso, sponsor ausente y rechazo de QBR a 70 días de renovar. El equipo solo puede intervenir tres cuentas esta semana.) y una tensión de autoridad (Operaciones quiere ordenar por caída porcentual de sesiones ignorando calendario y dependencia entre señales.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «reducción de falsos positivos y tiempo de intervención».",
+          "task": "Examina priorización bajo capacidad limitada en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        }
+      ],
+      "decisions": [
+        {
+          "prompt": "Frente a «Señales combinadas y cambios temporales», el responsable reclama: Operaciones quiere ordenar por caída porcentual de sesiones ignorando calendario y dependencia entre señales.. ¿Qué enfoque queda defendido por los hechos del caso?",
+          "options": [
+            "Enviar un correo de rescate idéntico a las 28 cuentas, sin diferenciar caso o sensibilidad.",
+            "Solo llamar a las cuentas con ARR más alto, aunque no haya riesgo ni urgencia.",
+            "Priorizar por riesgo con vencimiento, evidencias independientes y costo de intervención, validar estacionalidad y documentar excepciones."
+          ],
+          "correctIndex": 2,
+          "feedback": "La propuesta debe relacionar reducción de falsos positivos y tiempo de intervención con alternativas, autorización y límites de evidencia; elegir una casilla no basta para aprobar el módulo."
+        },
+        {
+          "prompt": "El responsable descubre que la señal «reducción de falsos positivos y tiempo de intervención» no ha sido calibrada y puede inducir errores. ¿Cuál es la respuesta más sólida?",
+          "options": [
+            "Presentar el indicador como resultado garantizado porque ya aparece en el dashboard.",
+            "Suspender afirmaciones concluyentes, auditar la calidad del dato, establecer línea base y verificar el cambio después de actuar.",
+            "Modificar retrospectivamente la cohorte para obtener una mejora favorable."
+          ],
+          "correctIndex": 1,
+          "feedback": "Sin línea base, método y datos fiables no puede darse por probada una mejora comercial."
+        }
+      ],
+      "exam": {
+        "format": "defensa escrita con evaluación humana",
+        "requiredWords": 1200,
+        "passingPoints": 80,
+        "maxPoints": 100,
+        "tasks": [
+          {
+            "title": "Datos y discrepancias",
+            "points": 12,
+            "prompt": "Construye un diagnóstico con cinco evidencias del caso, dos hipótesis alternativas y un registro de datos faltantes. Explica qué indicador podría estar sesgado.",
+            "minWords": 160
+          },
+          {
+            "title": "Causalidad y segmentación",
+            "points": 12,
+            "prompt": "Segmenta actores y causas, separando correlaciones de consecuencias probadas y reconociendo información que no puedes inferir.",
+            "minWords": 160
+          },
+          {
+            "title": "Modelo cuantitativo",
+            "points": 14,
+            "prompt": "Calcula las métricas disponibles y su denominador o rango. Muestra fórmula, unidades, supuestos y al menos un análisis de sensibilidad.",
+            "minWords": 160
+          },
+          {
+            "title": "Decisiones comparables",
+            "points": 14,
+            "prompt": "Presenta tres cursos de acción (uno de ellos mantener estado actual), prioriza la alternativa elegida y justifica una rechazada con coste y riesgo residual.",
+            "minWords": 160
+          },
+          {
+            "title": "Diligencia contractual y ética",
+            "points": 12,
+            "prompt": "Distingue lo que puedes ofrecer de los compromisos que requieren autorización. No prometas ahorros, seguridad, precios ni fechas sin evidencia.",
+            "minWords": 160
+          },
+          {
+            "title": "Diseño de experimentación",
+            "points": 12,
+            "prompt": "Prepara un piloto con alcance, muestra, duración, criterios de éxito, criterio de interrupción y plan de protección de datos ficticios.",
+            "minWords": 160
+          },
+          {
+            "title": "Objeción adversarial",
+            "points": 12,
+            "prompt": "Escribe la objeción más fuerte de Finanzas, Usuario y Compras, e incorpora una respuesta con evidencia, responsabilidad y concesión autorizable.",
+            "minWords": 160
+          },
+          {
+            "title": "Seguimiento y aprendizaje",
+            "points": 12,
+            "prompt": "Crea un tablero con dueño, indicador adelantado, métrica retrospectiva, fecha, acción de reversión y condición verificable de cierre.",
+            "minWords": 160
+          }
+        ],
+        "criticalFailures": [
+          "datos o cifras inventados como reales",
+          "promesas o descuentos sin autorización",
+          "datos personales en expedientes de simulación",
+          "confundir ingresos nuevos con retención o expansión de la cohorte",
+          "aprobar por texto de relleno sin evidencia"
+        ]
+      },
+      "project": null,
+      "references": [
+        "https://www.nist.gov/cyberframework",
+        "https://stripe.com/es/resources/more/net-revenue-retention"
+      ]
+    },
+    {
+      "id": "red_flags-l07",
+      "number": 7,
+      "title": "Detector explicable y revisión humana",
+      "difficulty": "supervisión",
+      "case": {
+        "organization": "Cartera de clientes simulados",
+        "facts": "El sistema marca 74 de 180 cuentas como riesgo alto. Una inspección de 20 alertas muestra nueve falsos positivos; cinco cuentas en riesgo real nunca fueron alertadas y los managers quieren automatizar ofertas de descuento.",
+        "conflict": "Producto propone bloquear renovaciones en automático cuando aparezca una alerta roja.",
+        "metric": "calibración, falsos negativos y auditoría de overrides",
+        "continuity": "Arrastra al siguiente nivel las hipótesis, la calidad de evidencia y las decisiones; registrar cambio de criterio es obligatorio."
+      },
+      "lessons": [
+        {
+          "id": "red_flags-l07-1",
+          "title": "Reglas de detección y caducidad",
+          "teaching": "Reglas de detección y caducidad. El caso presenta hechos medibles (El sistema marca 74 de 180 cuentas como riesgo alto. Una inspección de 20 alertas muestra nueve falsos positivos; cinco cuentas en riesgo real nunca fueron alertadas y los managers quieren automatizar ofertas de descuento.) y una tensión de autoridad (Producto propone bloquear renovaciones en automático cuando aparezca una alerta roja.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «calibración, falsos negativos y auditoría de overrides».",
+          "task": "Examina reglas de detección y caducidad en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 420,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "red_flags-l07-2",
+          "title": "Alertas, ownership y decisión verificable",
+          "teaching": "Alertas, ownership y decisión verificable. El caso presenta hechos medibles (El sistema marca 74 de 180 cuentas como riesgo alto. Una inspección de 20 alertas muestra nueve falsos positivos; cinco cuentas en riesgo real nunca fueron alertadas y los managers quieren automatizar ofertas de descuento.) y una tensión de autoridad (Producto propone bloquear renovaciones en automático cuando aparezca una alerta roja.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «calibración, falsos negativos y auditoría de overrides».",
+          "task": "Examina alertas, ownership y decisión verificable en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 420,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "red_flags-l07-3",
+          "title": "Registro de cambios y supervisión",
+          "teaching": "Registro de cambios y supervisión. El caso presenta hechos medibles (El sistema marca 74 de 180 cuentas como riesgo alto. Una inspección de 20 alertas muestra nueve falsos positivos; cinco cuentas en riesgo real nunca fueron alertadas y los managers quieren automatizar ofertas de descuento.) y una tensión de autoridad (Producto propone bloquear renovaciones en automático cuando aparezca una alerta roja.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «calibración, falsos negativos y auditoría de overrides».",
+          "task": "Examina registro de cambios y supervisión en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 420,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        }
+      ],
+      "decisions": [
+        {
+          "prompt": "Frente a «Detector explicable y revisión humana», el responsable reclama: Producto propone bloquear renovaciones en automático cuando aparezca una alerta roja.. ¿Qué enfoque queda defendido por los hechos del caso?",
+          "options": [
+            "Ocultar los falsos negativos al director para no retrasar el piloto.",
+            "Proponer reglas versionadas y revisables, canal de impugnación, métricas de precisión/recall y aprobación humana de decisiones comerciales.",
+            "Activar descuentos automáticos basados solo en un puntaje opaco."
+          ],
+          "correctIndex": 1,
+          "feedback": "La propuesta debe relacionar calibración, falsos negativos y auditoría de overrides con alternativas, autorización y límites de evidencia; elegir una casilla no basta para aprobar el módulo."
+        },
+        {
+          "prompt": "El responsable descubre que la señal «calibración, falsos negativos y auditoría de overrides» no ha sido calibrada y puede inducir errores. ¿Cuál es la respuesta más sólida?",
+          "options": [
+            "Presentar el indicador como resultado garantizado porque ya aparece en el dashboard.",
+            "Suspender afirmaciones concluyentes, auditar la calidad del dato, establecer línea base y verificar el cambio después de actuar.",
+            "Modificar retrospectivamente la cohorte para obtener una mejora favorable."
+          ],
+          "correctIndex": 1,
+          "feedback": "Sin línea base, método y datos fiables no puede darse por probada una mejora comercial."
+        }
+      ],
+      "exam": {
+        "format": "defensa escrita con evaluación humana",
+        "requiredWords": 1700,
+        "passingPoints": 80,
+        "maxPoints": 100,
+        "tasks": [
+          {
+            "title": "Datos y discrepancias",
+            "points": 12,
+            "prompt": "Construye un diagnóstico con cinco evidencias del caso, dos hipótesis alternativas y un registro de datos faltantes. Explica qué indicador podría estar sesgado.",
+            "minWords": 160
+          },
+          {
+            "title": "Causalidad y segmentación",
+            "points": 12,
+            "prompt": "Segmenta actores y causas, separando correlaciones de consecuencias probadas y reconociendo información que no puedes inferir.",
+            "minWords": 160
+          },
+          {
+            "title": "Modelo cuantitativo",
+            "points": 14,
+            "prompt": "Calcula las métricas disponibles y su denominador o rango. Muestra fórmula, unidades, supuestos y al menos un análisis de sensibilidad.",
+            "minWords": 160
+          },
+          {
+            "title": "Decisiones comparables",
+            "points": 14,
+            "prompt": "Presenta tres cursos de acción (uno de ellos mantener estado actual), prioriza la alternativa elegida y justifica una rechazada con coste y riesgo residual.",
+            "minWords": 160
+          },
+          {
+            "title": "Diligencia contractual y ética",
+            "points": 12,
+            "prompt": "Distingue lo que puedes ofrecer de los compromisos que requieren autorización. No prometas ahorros, seguridad, precios ni fechas sin evidencia.",
+            "minWords": 160
+          },
+          {
+            "title": "Diseño de experimentación",
+            "points": 12,
+            "prompt": "Prepara un piloto con alcance, muestra, duración, criterios de éxito, criterio de interrupción y plan de protección de datos ficticios.",
+            "minWords": 160
+          },
+          {
+            "title": "Objeción adversarial",
+            "points": 12,
+            "prompt": "Escribe la objeción más fuerte de Finanzas, Usuario y Compras, e incorpora una respuesta con evidencia, responsabilidad y concesión autorizable.",
+            "minWords": 160
+          },
+          {
+            "title": "Seguimiento y aprendizaje",
+            "points": 12,
+            "prompt": "Crea un tablero con dueño, indicador adelantado, métrica retrospectiva, fecha, acción de reversión y condición verificable de cierre.",
+            "minWords": 160
+          }
+        ],
+        "criticalFailures": [
+          "datos o cifras inventados como reales",
+          "promesas o descuentos sin autorización",
+          "datos personales en expedientes de simulación",
+          "confundir ingresos nuevos con retención o expansión de la cohorte",
+          "aprobar por texto de relleno sin evidencia"
+        ]
+      },
+      "project": null,
+      "references": [
+        "https://www.nist.gov/cyberframework",
+        "https://stripe.com/es/resources/more/net-revenue-retention"
+      ]
+    },
+    {
+      "id": "red_flags-l08",
+      "number": 8,
+      "title": "Capstone: comité de alertas y rescate",
+      "difficulty": "dirección/capstone",
+      "case": {
+        "organization": "Cartera de clientes simulados",
+        "facts": "Portafolio ficticio de 40 cuentas, 4,2 M MXN de ARR: cinco sponsors nuevos, seis incidentes abiertos, cuatro caídas estacionales y tres retrasos de procurement. Solo hay 16 horas de especialista para una semana, con vencimientos de renovación distintos.",
+        "conflict": "El comité pide declarar 100 % de cobertura de riesgos, aunque los datos de tickets están incompletos.",
+        "metric": "intervenciones aceptadas y reducción de pérdidas confirmadas",
+        "continuity": "Arrastra al siguiente nivel las hipótesis, la calidad de evidencia y las decisiones; registrar cambio de criterio es obligatorio."
+      },
+      "lessons": [
+        {
+          "id": "red_flags-l08-1",
+          "title": "Diagnóstico multi-cuenta",
+          "teaching": "Diagnóstico multi-cuenta. El caso presenta hechos medibles (Portafolio ficticio de 40 cuentas, 4,2 M MXN de ARR: cinco sponsors nuevos, seis incidentes abiertos, cuatro caídas estacionales y tres retrasos de procurement. Solo hay 16 horas de especialista para una semana, con vencimientos de renovación distintos.) y una tensión de autoridad (El comité pide declarar 100 % de cobertura de riesgos, aunque los datos de tickets están incompletos.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «intervenciones aceptadas y reducción de pérdidas confirmadas».",
+          "task": "Examina diagnóstico multi-cuenta en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 420,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "red_flags-l08-2",
+          "title": "Defensa de prioridades y tradeoffs",
+          "teaching": "Defensa de prioridades y tradeoffs. El caso presenta hechos medibles (Portafolio ficticio de 40 cuentas, 4,2 M MXN de ARR: cinco sponsors nuevos, seis incidentes abiertos, cuatro caídas estacionales y tres retrasos de procurement. Solo hay 16 horas de especialista para una semana, con vencimientos de renovación distintos.) y una tensión de autoridad (El comité pide declarar 100 % de cobertura de riesgos, aunque los datos de tickets están incompletos.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «intervenciones aceptadas y reducción de pérdidas confirmadas».",
+          "task": "Examina defensa de prioridades y tradeoffs en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 420,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "red_flags-l08-3",
+          "title": "Implementación del catálogo de señales",
+          "teaching": "Implementación del catálogo de señales. El caso presenta hechos medibles (Portafolio ficticio de 40 cuentas, 4,2 M MXN de ARR: cinco sponsors nuevos, seis incidentes abiertos, cuatro caídas estacionales y tres retrasos de procurement. Solo hay 16 horas de especialista para una semana, con vencimientos de renovación distintos.) y una tensión de autoridad (El comité pide declarar 100 % de cobertura de riesgos, aunque los datos de tickets están incompletos.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «intervenciones aceptadas y reducción de pérdidas confirmadas».",
+          "task": "Examina implementación del catálogo de señales en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 420,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        }
+      ],
+      "decisions": [
+        {
+          "prompt": "Frente a «Capstone: comité de alertas y rescate», el responsable reclama: El comité pide declarar 100 % de cobertura de riesgos, aunque los datos de tickets están incompletos.. ¿Qué enfoque queda defendido por los hechos del caso?",
+          "options": [
+            "Entregar un detector trazable, cartera priorizada, alertas con evidencia, revisión humana y una propuesta verificable de impacto.",
+            "Eliminar las cuentas difíciles para presentar buenas métricas de éxito.",
+            "Definir una única tasa de actividad como evidencia concluyente de salud."
+          ],
+          "correctIndex": 0,
+          "feedback": "La propuesta debe relacionar intervenciones aceptadas y reducción de pérdidas confirmadas con alternativas, autorización y límites de evidencia; elegir una casilla no basta para aprobar el módulo."
+        },
+        {
+          "prompt": "El responsable descubre que la señal «intervenciones aceptadas y reducción de pérdidas confirmadas» no ha sido calibrada y puede inducir errores. ¿Cuál es la respuesta más sólida?",
+          "options": [
+            "Presentar el indicador como resultado garantizado porque ya aparece en el dashboard.",
+            "Suspender afirmaciones concluyentes, auditar la calidad del dato, establecer línea base y verificar el cambio después de actuar.",
+            "Modificar retrospectivamente la cohorte para obtener una mejora favorable."
+          ],
+          "correctIndex": 1,
+          "feedback": "Sin línea base, método y datos fiables no puede darse por probada una mejora comercial."
+        }
+      ],
+      "exam": {
+        "format": "defensa escrita con evaluación humana",
+        "requiredWords": 1700,
+        "passingPoints": 80,
+        "maxPoints": 100,
+        "tasks": [
+          {
+            "title": "Datos y discrepancias",
+            "points": 12,
+            "prompt": "Construye un diagnóstico con cinco evidencias del caso, dos hipótesis alternativas y un registro de datos faltantes. Explica qué indicador podría estar sesgado.",
+            "minWords": 160
+          },
+          {
+            "title": "Causalidad y segmentación",
+            "points": 12,
+            "prompt": "Segmenta actores y causas, separando correlaciones de consecuencias probadas y reconociendo información que no puedes inferir.",
+            "minWords": 160
+          },
+          {
+            "title": "Modelo cuantitativo",
+            "points": 14,
+            "prompt": "Calcula las métricas disponibles y su denominador o rango. Muestra fórmula, unidades, supuestos y al menos un análisis de sensibilidad.",
+            "minWords": 160
+          },
+          {
+            "title": "Decisiones comparables",
+            "points": 14,
+            "prompt": "Presenta tres cursos de acción (uno de ellos mantener estado actual), prioriza la alternativa elegida y justifica una rechazada con coste y riesgo residual.",
+            "minWords": 160
+          },
+          {
+            "title": "Diligencia contractual y ética",
+            "points": 12,
+            "prompt": "Distingue lo que puedes ofrecer de los compromisos que requieren autorización. No prometas ahorros, seguridad, precios ni fechas sin evidencia.",
+            "minWords": 160
+          },
+          {
+            "title": "Diseño de experimentación",
+            "points": 12,
+            "prompt": "Prepara un piloto con alcance, muestra, duración, criterios de éxito, criterio de interrupción y plan de protección de datos ficticios.",
+            "minWords": 160
+          },
+          {
+            "title": "Objeción adversarial",
+            "points": 12,
+            "prompt": "Escribe la objeción más fuerte de Finanzas, Usuario y Compras, e incorpora una respuesta con evidencia, responsabilidad y concesión autorizable.",
+            "minWords": 160
+          },
+          {
+            "title": "Seguimiento y aprendizaje",
+            "points": 12,
+            "prompt": "Crea un tablero con dueño, indicador adelantado, métrica retrospectiva, fecha, acción de reversión y condición verificable de cierre.",
+            "minWords": 160
+          }
+        ],
+        "criticalFailures": [
+          "datos o cifras inventados como reales",
+          "promesas o descuentos sin autorización",
+          "datos personales en expedientes de simulación",
+          "confundir ingresos nuevos con retención o expansión de la cohorte",
+          "aprobar por texto de relleno sin evidencia"
+        ]
+      },
+      "project": {
+        "mandatory": true,
+        "title": "Proyecto final: Detector de red flags · Riesgo temprano y salud de cuentas",
+        "minWords": 2800,
+        "deliverable": "Construye el expediente de «Capstone: comité de alertas y rescate» a partir de todos los datos acumulados, con indicadores (intervenciones aceptadas y reducción de pérdidas confirmadas), decisión razonada, alternativas, controles, responsables, plazos, acta de revisión y evidencia simulada de seguimiento.",
+        "rubric": [
+          {
+            "name": "diagnóstico y causalidad",
+            "weight": 20
+          },
+          {
+            "name": "métricas y calidad del dato",
+            "weight": 20
+          },
+          {
+            "name": "decisiones y alternativas",
+            "weight": 20
+          },
+          {
+            "name": "seguridad, contrato y ética",
+            "weight": 20
+          },
+          {
+            "name": "seguimiento y defensa",
+            "weight": 20
+          }
+        ],
+        "humanReview": true
+      },
+      "references": [
+        "https://www.nist.gov/cyberframework",
+        "https://stripe.com/es/resources/more/net-revenue-retention"
+      ]
+    }
+  ],
+  "sources": [
+    "https://www.nist.gov/cyberframework",
+    "https://stripe.com/es/resources/more/net-revenue-retention"
+  ],
+  "publicationGate": {
+    "editorial": "pending",
+    "nativeLocalization": "EN/PT/FR beta pendientes",
+    "serverSideAssessment": "pendiente de integrar keys/progresión con RPC seguro",
+    "humanRubric": "por validar contra revisores",
+    "enabled": false,
+    "pricingChanges": false
+  }
+}
