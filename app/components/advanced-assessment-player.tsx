@@ -22,6 +22,7 @@ export default function AdvancedAssessmentPlayer({locale,org,canSave}:{locale:st
  const [busy,setBusy]=useState(false);
  const [error,setError]=useState("");
  const [saved,setSaved]=useState(false);
+ const [consent,setConsent]=useState(false);
  const [attemptId,setAttemptId]=useState<string|null>(null);
  const scene=progress.scene as AdvancedSceneKey;
  const text=progress.complete?null:advancedScenarioText(locale,scene);
@@ -41,20 +42,20 @@ export default function AdvancedAssessmentPlayer({locale,org,canSave}:{locale:st
   }catch{setError(t.error);}finally{setBusy(false);}
  };
  const save=async()=>{
-  if(!canSave||!progress.complete||busy||saved)return;
+  if(!canSave||!progress.complete||busy||saved||(org!==null&&!consent))return;
   setBusy(true);setError("");
   const id=attemptId??crypto.randomUUID();
   setAttemptId(id);
   try{
    const res=await fetch("/api/decisions/submit",{method:"POST",cache:"no-store",
     headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({organization_id:org,request_id:id,inputs:history})});
+    body:JSON.stringify({organization_id:org,request_id:id,inputs:history,share_with_team:org===null?false:consent})});
    const payload=await res.json();
    if(!res.ok||!payload.saved)throw Error("SAVE_FAILED");
    setSaved(true);
   }catch{setError(t.error);}finally{setBusy(false);}
  };
- const reset=()=>{setHistory([]);setProgress(start);setChoice("");setFacts("");setTradeoff("");setVerification("");setFeedback(false);setSaved(false);setAttemptId(null);setError("");};
+ const reset=()=>{setHistory([]);setProgress(start);setChoice("");setFacts("");setTradeoff("");setVerification("");setFeedback(false);setSaved(false);setConsent(false);setAttemptId(null);setError("");};
  return <main className="wrap" style={{maxWidth:1050}}>
   <div className="nav"><div><span className="pill">{t.heading}</span><h1>{t.intro}</h1></div>
    <a className="btn secondary" href={canSave?"/role-training":"/admin/curriculum"}>{t.back}</a></div>
@@ -98,7 +99,7 @@ export default function AdvancedAssessmentPlayer({locale,org,canSave}:{locale:st
    <p className="muted">{t.notice}</p>
    <h3>{t.focus}</h3>
    {(progress.recommendations??[]).length>0?<ul>{(progress.recommendations??[]).map(k=><li key={k}>{t.skills[k as keyof typeof t.skills]}</li>)}</ul>:<p>{t.review}</p>}
-   {canSave?<><button className="btn" onClick={()=>void save()} disabled={busy||saved}>{saved?t.saved:t.submit}</button>
+   {canSave?<>{org&&<label style={{display:"flex",alignItems:"flex-start",gap:10}}><input type="checkbox" checked={consent} onChange={e=>setConsent(e.target.checked)}/><span>{t.consent}</span></label>}<button className="btn" type="button" onClick={()=>void save()} disabled={busy||saved||(org!==null&&!consent)}>{saved?t.saved:t.submit}</button>
     {saved&&<p role="status">{t.saved} · {t.review}</p>}</>:<p className="muted">{t.optional} · {t.more}</p>}
    <button className="btn secondary" onClick={reset} type="button" style={{marginLeft:10}}>{t.restart}</button>
   </section>}
