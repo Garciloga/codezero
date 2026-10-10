@@ -1,4 +1,4 @@
-import {workspaceSandboxEnabled} from "./workspace-sandbox";
+import {workspaceSandboxEnabled} from "./workspace-sandbox.ts";
 export const DRAFT_COURSES=["grc_advanced","red_flags","cross_sell","upsell","retention","onboarding_30_60_90","ai_at_work","professional_languages","candidate_assessment","metrics_lab","employability","manager_toolkit"] as const;
 export type DraftCourseKey=typeof DRAFT_COURSES[number];
 export const ASSIGNABLE_COMPETENCIES=["communication","diagnosis","data","prioritization","documentation","deescalation","negotiation","planning","technical","collaboration"] as const;
