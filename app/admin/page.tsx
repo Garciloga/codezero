@@ -1,4 +1,6 @@
 import LocalizedContent from "../components/localization/server";
+import {localeContext} from "../../lib/localization/server";
+import {ownerCopy} from "../../lib/localization/owner-inspector";
 import { redirect } from "next/navigation";
 import { createServerSupabase } from "../../lib/supabase-server";
 import {workspaceEnabled} from "../../lib/workspace-sandbox";
@@ -13,6 +15,7 @@ type PageProps = {
 
 export default async function Admin({ searchParams }: PageProps) {
   const { updated, reviewed, ticket, support } = await searchParams;
+  const {locale}=await localeContext();
 
   const supabase = await createServerSupabase();
   const { data: { user } } = await supabase.auth.getUser();
@@ -117,6 +120,7 @@ export default async function Admin({ searchParams }: PageProps) {
       </div>
       <nav className="admin-links" aria-label="Secciones de administración">
         {operatorRole==='owner'&&<a className="btn" href="/admin/usage">Uso por persona</a>}
+        {operatorRole==='owner'&&<a className="btn" href="/admin/curriculum">{ownerCopy(locale).adminLink}</a>}
         {workspaceEnabled()&&<a className="btn" href="/admin/companies">Compañías, contratos e invitaciones</a>}
         <a className="btn secondary" href="/admin/social">Comunidad y mentorías</a>
         <a className="btn secondary" href="/admin/activation">Activación por cohortes</a>
