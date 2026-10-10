@@ -21,3 +21,12 @@ test("draft assignment endpoint is sandbox-only and never touches existing learn
  assert.match(route,/assign_draft_learning_route/);
  assert.ok(!route.includes("assign_workspace_activity"));
 });
+
+test("team viewing alone never confers course assignment permissions",async()=>{
+ const fs=await import("node:fs");const sql=fs.readFileSync("supabase/sandbox/migrations/20261011110000_course_assignment_drafts.sql","utf8");
+ assert.match(sql,/can_assign_courses boolean not null default false/);
+ assert.match(sql,/g.can_assign_courses/);
+ assert.ok(!sql.includes("g.can_view"));
+ assert.match(sql,/grant select on public.organization_course_assignment_drafts to authenticated/);
+ assert.match(sql,/to service_role/);
+});

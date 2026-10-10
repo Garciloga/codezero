@@ -1,5 +1,7 @@
 -- DRAFT ONLY: do not run on production until academic entitlements, team permissions and QA approved.
 -- When tested: apply only to isolated Supabase sandbox, never use live billing.
+alter table public.organization_team_grants add column if not exists can_assign_courses boolean not null default false;
+-- Viewing a team does not grant the distinct permission to assign a learning course.
 create table if not exists public.organization_course_assignment_drafts(
  id uuid primary key default gen_random_uuid(),
  organization_id uuid not null,
@@ -20,6 +22,7 @@ create table if not exists public.organization_course_assignment_drafts(
 create index if not exists assignment_drafts_person_idx on public.organization_course_assignment_drafts(organization_id,user_id,due_at);
 alter table public.organization_course_assignment_drafts enable row level security;
 revoke all on public.organization_course_assignment_drafts from anon,authenticated,public;
+grant select on public.organization_course_assignment_drafts to authenticated;
 create policy assignment_drafts_self_read on public.organization_course_assignment_drafts for select to authenticated
  using(user_id=(select auth.uid()) and exists(select 1 from public.organization_memberships m where m.organization_id=organization_course_assignment_drafts.organization_id and m.user_id=(select auth.uid()) and m.active));
 create or replace function public.assign_draft_learning_route(
@@ -51,7 +54,7 @@ begin
     or exists(
      select 1 from public.organization_team_members tm
      join public.organization_team_grants g on g.organization_id=tm.organization_id and g.team_id=tm.team_id
-     where tm.organization_id=p_org and tm.user_id=m.user_id and g.user_id=p_actor and g.can_view
+     where tm.organization_id=p_org and tm.user_id=m.user_id and g.user_id=p_actor and g.can_assign_courses
       and (p_team is null or tm.team_id=p_team)
     )
    )
