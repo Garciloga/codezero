@@ -58,7 +58,7 @@ begin
  select x.kind,x.status,s.correct_answer,s.correct_sequence into e
  from public.exercises x join public.lessons l on l.id=x.lesson_id
  join public.exercise_solutions s on s.exercise_id=x.id
- where x.id=p_exercise and x.status='published' and l.status='published';
+ where x.id=p_exercise and x.status='published' and l.status='published' and exists (select 1 from public.levels v join public.courses c on c.id=v.course_id where v.id=l.level_id and v.status='published' and c.status='published');
  if not found then raise exception 'EXERCISE_NOT_PUBLISHED';end if;
  if (e.kind='order_steps' and (p_answer !~ '^[ABCD]{4}$' or length(p_answer)<>4))
     or (e.kind<>'order_steps' and p_answer !~ '^[ABCD]$') then raise exception 'INVALID_ANSWER';end if;
@@ -96,7 +96,7 @@ begin
   raise exception 'FORBIDDEN';
  end if;
  perform pg_advisory_xact_lock(hashtextextended(p_user::text||':complete:'||p_lesson::text,19));
- select id,level_id,sort_order into target from public.lessons where id=p_lesson and status='published';
+ select l.id,l.level_id,l.sort_order into target from public.lessons l where l.id=p_lesson and l.status='published' and exists (select 1 from public.levels v join public.courses c on c.id=v.course_id where v.id=l.level_id and v.status='published' and c.status='published');
  if not found then return 'not_published';end if;
  if exists(select 1 from public.lesson_progress p where p.user_id=p_user and p.lesson_id=p_lesson and p.status='completed') then return 'completed';end if;
  if exists(select 1 from public.lessons l where l.level_id=target.level_id and l.status='published'

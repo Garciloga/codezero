@@ -11,6 +11,8 @@ try {
  await db.exec(`
  create role anon;create role authenticated;create role service_role bypassrls;
  create table public.profiles(id uuid primary key,status text);
+ create table public.courses(id bigint primary key,status text);
+ create table public.levels(id bigint primary key,course_id bigint,status text);
  create table public.lessons(id bigint primary key,level_id bigint,sort_order integer,status text,slug text);
  create table public.exercises(id bigint primary key,lesson_id bigint references public.lessons(id),kind text,status text);
  create table public.exercise_solutions(exercise_id bigint primary key references public.exercises(id),correct_answer text not null,correct_sequence text);
@@ -28,9 +30,11 @@ try {
  grant execute on function public.consume_quota(uuid,text,integer) to service_role;
  insert into public.profiles values ('${user}','active'),('${suspended}','suspended');
  insert into public.test_quota(user_id) values ('${user}');
- insert into public.lessons values(1,1,1,'published','first'),(2,1,2,'published','second'),(3,1,3,'draft','draft');
- insert into public.exercises values (10,1,'multiple_choice','published'),(11,1,'multiple_choice','draft'),(20,2,'order_steps','published'),(30,3,'multiple_choice','published');
- insert into public.exercise_solutions values(10,'A',null),(11,'A',null),(20,'B','BDCA'),(30,'A',null);
+ insert into public.courses values(1,'published'),(2,'draft');
+ insert into public.levels values(1,1,'published'),(2,1,'draft'),(3,2,'published');
+ insert into public.lessons values(1,1,1,'published','first'),(2,1,2,'published','second'),(3,1,3,'draft','draft'),(4,2,1,'published','draft-level'),(5,3,1,'published','draft-course');
+ insert into public.exercises values (10,1,'multiple_choice','published'),(11,1,'multiple_choice','draft'),(20,2,'order_steps','published'),(30,3,'multiple_choice','published'),(40,4,'multiple_choice','published'),(50,5,'multiple_choice','published');
+ insert into public.exercise_solutions values(10,'A',null),(11,'A',null),(20,'B','BDCA'),(30,'A',null),(40,'A',null),(50,'A',null);
  `);
  const full=readFileSync('supabase/migrations/20261010160000_professional_lesson_integrity.sql','utf8');
  const start=full.indexOf('-- Atomic attempt persistence and quota accounting.');
@@ -55,6 +59,10 @@ try {
  await check('draft and suspended content refused before any changes',async()=>{
   await deny(()=>attempt(user,11,'A'));
   await deny(()=>attempt(user,30,'A'));
+  await deny(()=>attempt(user,40,'A'));
+  await deny(()=>attempt(user,50,'A'));
+  assert.equal(await complete(user,4),'not_published');
+  assert.equal(await complete(user,5),'not_published');
   await deny(()=>attempt(suspended,10,'A'));
   assert.equal(await complete(user,3),'not_published');
   assert.equal(await saved(),0);
