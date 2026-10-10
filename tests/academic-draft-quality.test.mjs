@@ -49,3 +49,31 @@ test("draft content cannot leak via public curriculum module references",()=>{
  const s=fs.readFileSync("lib/position-curriculum.ts","utf8");
  for(const key of paths)assert.equal(s.includes(base+key+".json"),false);
 });
+
+test("seven newly found Coming soon modules are drafts with human checks and original cases",()=>{
+ const collection=JSON.parse(fs.readFileSync("docs/curriculum-drafts/2026-10/seven-adjacent-modules.json","utf8"));
+ const names=Object.keys(collection.modules);assert.equal(names.length,7);
+ for(const [id,m] of Object.entries(collection.modules)){
+  assert.equal(m.status,"draft",id);assert.equal(m.publicationGate.enabled,false);
+  assert.equal(m.publicationGate.noBillingChanges,true);
+  for(const l of ["en","pt","fr"])assert.equal(m.localeStates[l],"beta-pending");
+  assert.ok(m.guardrails.length>=4,id);assert.equal(m.stages.length,5);
+  assert.equal(new Set(m.stages.map(s=>s.case.facts)).size,5,id);
+  for(const stage of m.stages){
+   assert.equal(stage.units.length,3);
+   for(const unit of stage.units){assert.ok(unit.teaching.length>220,id);assert.ok(unit.evidence.minWords>=230);}
+   assert.equal(stage.decisions.length,2);
+   for(const q of stage.decisions){assert.equal(q.options.length,3);assert.ok(q.options[q.correctIndex]);}
+   assert.equal(stage.assessment.tasks.length,8);
+   assert.equal(stage.assessment.tasks.reduce((n,t)=>n+t.points,0),100);
+   assert.equal(stage.assessment.passingPoints,80);
+  }
+  assert.equal(m.stages[4].project.humanReview,true);
+  assert.equal(m.stages[4].project.rubric.reduce((n,r)=>n+r.weight,0),100);
+ }
+ const candidates=collection.modules.candidate_assessment;
+ assert.ok(candidates.guardrails.some(x=>x.includes("rechazo automático")));
+ assert.ok(candidates.guardrails.some(x=>x.includes("equidad")));
+ const manager=collection.modules.manager_toolkit;
+ assert.ok(manager.guardrails.some(x=>x.includes("visibilidad por organización")));
+});

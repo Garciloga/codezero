@@ -1,5 +1,18 @@
 # Garciloga · Próximamente: borradores académicos (no liberados)
 
+## Nuevos módulos que aparecieron después de la primera consulta de Notion
+Al repetir la auditoría del roadmap aparecieron **siete entradas adicionales**. La primera estructura académica y funcional está en [seven-adjacent-modules.json](./seven-adjacent-modules.json):
+- Onboarding 30-60-90 por empresa (workflow con aprobación, acceso por organización y evidencias).
+- IA aplicada a los puestos (curso sin Tutor IA, datos sintéticos y revisión de respuestas).
+- Idioma profesional EN/PT por puesto (curso beta sujeto a docentes nativos).
+- Evaluación de candidatos (workflow de piloto, consentimiento, equidad, accesibilidad, **sin contratación o rechazo automáticos**).
+- Laboratorio de métricas (curso con GRR, NRR, CSAT y forecast, operaciones verificables y cohortes).
+- Empleabilidad, CV y entrevistas (curso/workflow opt-in sin inventar experiencia).
+- Kit del manager y refuerzos (workflow sobre evidencia y matriz autorizada, sin decisiones laborales automáticas).
+
+**Borrador estructural adicional:** siete módulos × cinco etapas = **35 etapas**, 105 unidades didácticas o de diseño de procesos, 70 decisiones y 280 retos de razonamiento, con siete capstones. No confundir con software funcional ni con una implementación de IA, motor de contratación o carga de playbooks. Antes de publicar se requiere diseño de datos, permisos, validación editorial, investigación de marcos laborales, protección de datos, traducciones y QA. El inspector académico actual solo muestra cinco cursos; ampliar su ámbito después de revisar cómo presentar correctamente los tres workflows empresariales.
+
+
 Se crearon **cinco rutas originales en español**, que no se agregaron a rutas públicas, datos de alumnos ni cobros. La vista futura de revisión exclusiva de propietario está en `/admin/curriculum/drafts`. El código vive solamente en la rama candidata de la PR #42, pendiente de merge.
 
 | Ruta | Niveles | Unidades | Decisiones ramificadas | Retos escritos de nivel | Proyectos |
