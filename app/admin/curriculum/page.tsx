@@ -4,7 +4,8 @@ import { requireOwner, createAdminSupabase } from "../../../lib/admin";
 import { getServerUser } from "../../../lib/supabase-server";
 import { POSITION_PROGRAMS, DEFAULT_POSITION } from "../../../lib/position-curriculum";
 import { COMPETENCIES } from "../../../lib/competency-matrix";
-import { localeContext } from "../../../lib/localization/server";
+import { localeContext, serverTranslator } from "../../../lib/localization/server";
+import { ownerCopy } from "../../../lib/localization/owner-inspector";
 import LocalizedContent from "../../components/localization/server";
 
 export const dynamic = "force-dynamic";
@@ -20,6 +21,8 @@ export default async function OwnerCurriculumInspector({ searchParams }: Props) 
   // No writes, no student impersonation, no fake progress or unlocked certificates.
   const query = await searchParams;
   const { locale } = await localeContext();
+  const copy = ownerCopy(locale);
+  const t = await serverTranslator();
   const chosenLevel = Number(query.level);
   const level = Number.isInteger(chosenLevel) && chosenLevel >= 1 && chosenLevel <= 15 ? chosenLevel : 1;
   const technical = query.track === "technical";
@@ -43,55 +46,55 @@ export default async function OwnerCurriculumInspector({ searchParams }: Props) 
 
     return <LocalizedContent><main className="wrap">
       <div className="nav">
-        <div><span className="pill">SOLO PROPIETARIO · VISTA DE INSPECCIÓN</span><h1>Revisión de los cursos</h1>
-          <p className="muted">Acceso de lectura a los 15 niveles, lecciones, exámenes, rúbricas y respuestas. No altera el progreso de ningún alumno ni consume intentos.</p></div>
-        <Link className="btn secondary" href="/admin">Volver a administración</Link>
+        <div><span className="pill">{copy.owner}</span><h1>{copy.title}</h1>
+          <p className="muted">{copy.intro}</p></div>
+        <Link className="btn secondary" href="/admin">{copy.back}</Link>
       </div>
       <nav className="card" aria-label="Programas">
-        <h2>Elige un programa</h2>
+        <h2>{copy.choose}</h2>
         <div className="public-actions">
           {Object.values(POSITION_PROGRAMS).map(p =>
             <Link key={p.key} className={"btn " + (p.key === program.key ? "" : "secondary")} href={link(p.key, 1)}>{p.title}</Link>)}
-          <Link className="btn secondary" href="/admin/curriculum?track=technical&level=1">Programación e integraciones</Link>
+          <Link className="btn secondary" href="/admin/curriculum?track=technical&level=1">{copy.technical}</Link>
         </div>
       </nav>
       <section className="card">
-        <span className="pill">{program.editorialReview === "approved" ? "REVISADO" : "REVISIÓN EDITORIAL PENDIENTE"}</span>
-        <h2>{program.title} · 15 niveles</h2>
+        <span className="pill">{program.editorialReview === "approved" ? "{copy.editorialApproved}" : "{copy.editorialPending}"}</span>
+        <h2>{program.title} {copy.levels15}</h2>
         <div className="public-actions">
-          {program.levels.map(n => <Link key={n.number} className={"btn " + (n.number === level ? "" : "secondary")} href={link(program.key, n.number)}>Nivel {n.number}</Link>)}
+          {program.levels.map(n => <Link key={n.number} className={"btn " + (n.number === level ? "" : "secondary")} href={link(program.key, n.number)}>{copy.level} {n.number}</Link>)}
         </div>
-        <h3>Nivel {level}: {localized(levelInfo?.title)}</h3>
-        <p className="muted">{items.length} elementos: lecciones, evaluación y proyectos. No se exige haber aprobado niveles previos en esta vista.</p>
+        <h3>{copy.level} {level}: {localized(levelInfo?.title)}</h3>
+        <p className="muted">{items.length} {copy.elements}</p>
         <div className="public-actions">
           {items.map(x => <Link key={x.key} className={"btn " + (x.key === item?.key ? "" : "secondary")} href={link(program.key, level, x.key)}>
-            {x.type === "lesson" ? "Lección " + x.lesson : x.type === "exam" ? "Examen" : "Proyecto"}
+            {x.type === "lesson" ? copy.lesson + " " + x.lesson : x.type === "exam" ? copy.exam : copy.project}
           </Link>)}
         </div>
       </section>
       {item && <section className="card">
-        <span className="pill">{item.type.toUpperCase()} · NIVEL {item.level}</span>
+        <span className="pill">{item.type.toUpperCase()} {copy.levelTag} {item.level}</span>
         <h2>{localized(item.title)}</h2>
-        <p><b>Clave interna:</b> <code>{item.key}</code></p>
-        <h3>Objetivo, contexto y contenido</h3>
+        <p><b>{copy.key}</b> <code>{item.key}</code></p>
+        <h3>{copy.context}</h3>
         {application?.case && <p style={{ whiteSpace: "pre-wrap" }}>{application.case}</p>}
         <p style={{ whiteSpace: "pre-wrap" }}>{item.source.lesson}</p>
-        {application?.task && <><h3>Trabajo solicitado</h3><p style={{ whiteSpace: "pre-wrap" }}>{application.task}</p></>}
+        {application?.task && <><h3>{copy.work}</h3><p style={{ whiteSpace: "pre-wrap" }}>{application.task}</p></>}
         {localized(item.brief) && <p style={{ whiteSpace: "pre-wrap" }}>{localized(item.brief)}</p>}
-        {application?.rule && <p><b>Rúbrica:</b> {application.rule}</p>}
-        {application?.evidence && <p><b>Evidencia solicitada:</b> {application.evidence}</p>}
-        {application?.template && <details><summary>Plantilla del alumno</summary><p style={{ whiteSpace: "pre-wrap" }}>{application.template}</p></details>}
-        {application?.example && <details><summary>Ejemplo de solución</summary><p style={{ whiteSpace: "pre-wrap" }}>{application.example}</p></details>}
-        {item.source.rubric?.length > 0 && <><h3>Criterios del proyecto</h3><ul>{item.source.rubric.map((r, i) => <li key={i}>{r}</li>)}</ul></>}
-        {decisions.length > 0 && <><h3>Decisiones y clave de revisión (solo propietario)</h3>
+        {application?.rule && <p><b>{copy.rubric}</b> {application.rule}</p>}
+        {application?.evidence && <p><b>{copy.evidence}</b> {application.evidence}</p>}
+        {application?.template && <details><summary>{copy.template}</summary><p style={{ whiteSpace: "pre-wrap" }}>{application.template}</p></details>}
+        {application?.example && <details><summary>{copy.example}</summary><p style={{ whiteSpace: "pre-wrap" }}>{application.example}</p></details>}
+        {item.source.rubric?.length > 0 && <><h3>{copy.projectCriteria}</h3><ul>{item.source.rubric.map((r, i) => <li key={i}>{r}</li>)}</ul></>}
+        {decisions.length > 0 && <><h3>{copy.decisions}</h3>
           {decisions.map((d, i) => <div key={i} className="card">
             <h4>{i + 1}. {d.prompt}</h4>
-            <ol>{d.options.map((option, j) => <li key={j}>{option} {j === d.correct && <strong> · Respuesta esperada</strong>}</li>)}</ol>
+            <ol>{d.options.map((option, j) => <li key={j}>{option} {j === d.correct && <strong> {copy.expected}</strong>}</li>)}</ol>
             <p className="muted">{d.feedback}</p>
           </div>)}</>}
-        <h3>Competencias trabajadas</h3>
+        <h3>{copy.competencies}</h3>
         <ul>{item.source.competencies.map(key => <li key={key}>{COMPETENCIES[key]}</li>)}</ul>
-        <p className="muted">Inspección segura: no hay formularios de envío ni cambios en aprobaciones, cuotas, certificados o historial.</p>
+        <p className="muted">{copy.readOnly}</p>
       </section>}
     </main></LocalizedContent>;
   }
@@ -128,39 +131,39 @@ export default async function OwnerCurriculumInspector({ searchParams }: Props) 
   const solutionsById = new Map((solutions.data ?? []).map(x => [x.question_id, x.correct_answer]));
 
   return <LocalizedContent><main className="wrap">
-    <div className="nav"><div><span className="pill">SOLO PROPIETARIO · VISTA DE INSPECCIÓN</span>
-      <h1>Programación e integraciones</h1>
-      <p className="muted">Contenido completo de los niveles, incluidas lecciones no desbloqueadas; consulta sin escrituras.</p></div>
-      <Link className="btn secondary" href="/admin">Volver a administración</Link></div>
+    <div className="nav"><div><span className="pill">{copy.owner}</span>
+      <h1>{copy.technical}</h1>
+      <p className="muted">{copy.techIntro}</p></div>
+      <Link className="btn secondary" href="/admin">{copy.back}</Link></div>
     <section className="card">
-      <Link className="btn secondary" href="/admin/curriculum">Ver nueve programas por puesto</Link>
-      <h2>Selecciona un nivel</h2>
+      <Link className="btn secondary" href="/admin/curriculum">{copy.backPrograms}</Link>
+      <h2>{copy.chooseLevel}</h2>
       <div className="public-actions">{(levels ?? []).map(x =>
         <Link key={x.id} className={"btn " + (Number(x.level_number) === level ? "" : "secondary")}
-          href={"/admin/curriculum?track=technical&level=" + x.level_number}>Nivel {x.level_number}</Link>)}</div>
-      <h3>Nivel {selected.level_number}: {selected.title}</h3>
-      <p>{selected.description}</p><p className="muted">Estado editorial: {selected.status}</p>
+          href={"/admin/curriculum?track=technical&level=" + x.level_number}>{copy.level} {x.level_number}</Link>)}</div>
+      <h3>{copy.level} {selected.level_number}: {selected.title}</h3>
+      <p>{selected.description}</p><p className="muted">{copy.editorialState} {selected.status}</p>
     </section>
     {lessons.map((lesson, i) => <details key={lesson.id} className="card">
       <summary><b>Lección {i + 1}: {lesson.title}</b> · {lesson.status}</summary>
       <p>{lesson.description}</p><p style={{ whiteSpace: "pre-wrap" }}>{lesson.content}</p>
-      <h3>Ejercicios</h3>
+      <h3>{copy.exercise}</h3>
       {(exerciseQuery.data ?? []).filter(e => e.lesson_id === lesson.id).map(e =>
         <div key={e.id}><p><b>{e.kind}:</b> {e.prompt}</p>
           {Array.isArray(e.options) ? <ol>{e.options.map((o: unknown, i: number) => <li key={i}>{String(o)}</li>)}</ol> : null}
         </div>)}
     </details>)}
-    {exams.map(exam => <details key={exam.id} className="card"><summary><b>Examen: {exam.title}</b> · {exam.status}</summary>
-      <p>{exam.description}</p><p>Puntuación mínima: {exam.passing_score}</p>
+    {exams.map(exam => <details key={exam.id} className="card"><summary><b>{copy.examPrefix} {exam.title}</b> · {exam.status}</summary>
+      <p>{exam.description}</p><p>{copy.passScore} {exam.passing_score}</p>
       {(questionQuery.data ?? []).filter(q => q.exam_id === exam.id).map((q, i) =>
         <div key={q.id}><h4>{i + 1}. {q.prompt}</h4>
           {Array.isArray(q.options) && <ol>{q.options.map((o: unknown, j: number) => <li key={j}>{String(o)}</li>)}</ol>}
-          <p><b>Clave de revisión:</b> {String(solutionsById.get(q.id) ?? "No registrada")}</p>
+          <p><b>{copy.answerKey}</b> {String(solutionsById.get(q.id) ?? copy.notRegistered)}</p>
         </div>)}
     </details>)}
-    {projects.map(project => <details key={project.id} className="card"><summary><b>Proyecto: {project.title}</b> · {project.status}</summary>
+    {projects.map(project => <details key={project.id} className="card"><summary><b>{copy.projectPrefix} {project.title}</b> · {project.status}</summary>
       <p>{project.brief}</p><ul>{(project.requirements ?? []).map((req: string, i: number) => <li key={i}>{req}</li>)}</ul>
     </details>)}
-    <p className="muted">Esta vista no crea intentos de examen ni aprueba proyectos. Solo la cuenta propietaria activa puede utilizarla.</p>
+    <p className="muted">{copy.technicalFoot}</p>
   </main></LocalizedContent>;
 }
