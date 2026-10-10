@@ -1,0 +1,59 @@
+name: Garciloga Android APK (test)
+
+on:
+  push:
+    branches:
+      - release/garciloga-lote-20261011
+    paths:
+      - .github/workflows/android-apk.yml
+      - mobile/android/**
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: garciloga-android-apk-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  android-debug-apk:
+    name: Assemble debug APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: mobile/android
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK 36
+        run: sdkmanager --install "platforms;android-36" "build-tools;36.0.0"
+
+      # Source package deliberately has no gradle-wrapper.jar; use an
+      # independently managed Gradle 8.13 installation in the runner.
+      - name: Set up Gradle 8.13
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.13'
+
+      - name: Assemble Android debug APK
+        run: gradle --no-daemon --stacktrace :app:assembleDebug
+
+      - name: Upload installable debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Garciloga-Android-debug-apk
+          path: mobile/android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 7
