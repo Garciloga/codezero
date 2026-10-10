@@ -208,7 +208,17 @@
         "ISO/IEC 27001:2022",
         "ISO 31000:2018",
         "NIST CSF 2.0"
-      ]
+      ],
+      "deepDive": {
+        "concept": "La gobernanza no consiste en dibujar un organigrama. Establece quién posee el riesgo, quién implementa controles, quién verifica su operación y quién puede aceptar excepciones residuales. En el caso de Nébula, una RACI que atribuya aprobación y ejecución de la misma excepción a una sola persona impide demostrar independencia. Distingue la función operativa de primera línea, supervisión especializada y aseguramiento independiente sin asumir que el organigrama siempre exige tres departamentos formales. La política de apetito define límites y condiciones de escalamiento, pero no equivale a una decisión particular sobre un riesgo.",
+        "workedExample": "Ejemplo trabajado: seis de los 18 contratos requieren revisión mensual de acceso; un plan trimestral deja al menos dos ciclos de control sin evidencia suficiente. Crear un registro que asigne al responsable de exportación el diseño de medidas, al comité la autoridad de aceptación y a revisión independiente la prueba de ejecución. Para un lanzamiento en cinco días, comparar: aplazar únicamente la integración, limitar permisos con control compensatorio y ventana de caducidad, o excluir temporalmente la integración del alcance con justificación, aprobación y riesgos documentados. Elegir una opción según exposición y obligación, no por comodidad.",
+        "challengeQuestions": [
+          "¿Qué evidencia prueba que quien aprobó una excepción no era su ejecutor?",
+          "¿Qué cambio de dependencia invalidaría el alcance del SGSI?",
+          "¿Qué decisión no puede delegarse al auditor aunque éste recomiende controles?"
+        ],
+        "editorialNote": "El alumno debe reproducir las relaciones y los cálculos con datos ficticios. El docente validará aplicabilidad, incertidumbre y cualquier cita normativa antes de acreditar conocimientos."
+      }
     },
     {
       "id": "grc-a-l02",
@@ -395,7 +405,17 @@
       "sources": [
         "ISO 31000:2018",
         "ISO/IEC 27001:2022"
-      ]
+      ],
+      "deepDive": {
+        "concept": "Un registro de riesgos útil conserva causa, evento incierto, efecto sobre objetivo, dueño y fecha. Una escala de impacto de 1 a 5 multiplicada por probabilidad ordinal 1 a 5 produce un índice de priorización, no una probabilidad porcentual ni una pérdida esperada estadísticamente estimada. Para estimar pérdidas monetarias se necesitan supuestos de frecuencia, severidad y correlación, además de rangos y confianza. El residual es el riesgo después de valorar controles efectivamente implementados, no lo que promete una política. Reglas de aceptación y monitoreo deben tener autoridad y vencimiento.",
+        "workedExample": "Ejemplo trabajado: 17 exportaciones sin aprobador sobre 1.200 equivalen aproximadamente al 1,42 % de eventos observados sin evidencia de aprobación, no al 1,42 % de filtraciones. Cuatro eventos de cuenta de servicio requieren población y controles separados; no se pueden tratar automáticamente como usuarios humanos. Si la pérdida plausible oscila entre 100.000 y 450.000 MXN según alcance, documenta escenarios y sensibilidad antes de recomendar una inversión. Propón matriz de exposición inherente, control existente, calidad de evidencia, residual y responsable del tratamiento; añade qué observación bajaría o subiría la prioridad.",
+        "challengeQuestions": [
+          "¿Por qué 4×5 no significa 80 % de probabilidad?",
+          "¿Cómo cambia el residual si la prueba de control falla?",
+          "¿Qué información hace inválida una comparación entre dos riesgos de naturaleza distinta?"
+        ],
+        "editorialNote": "El alumno debe reproducir las relaciones y los cálculos con datos ficticios. El docente validará aplicabilidad, incertidumbre y cualquier cita normativa antes de acreditar conocimientos."
+      }
     },
     {
       "id": "grc-a-l03",
@@ -586,7 +606,17 @@
         "ISO/IEC 27701:2025",
         "ISO/IEC 27002:2022",
         "ISO/IEC 27001:2022"
-      ]
+      ],
+      "deepDive": {
+        "concept": "La clasificación de activos cubre información, procesos, credenciales, código, infraestructura y dependencias de proveedores, no sólo discos o bases de datos. Un mapa de flujo debe identificar origen, destinos, transferencias, transformaciones, acceso, retención y destrucción. La minimización exige justificar cada dato por finalidad, no por utilidad hipotética futura. Cifrado en tránsito y reposo reduce ciertos riesgos, pero no soluciona automáticamente autorización indebida, acceso excesivo o retención sin base. Las actividades con datos personales requieren revisión de roles de responsable/encargado y jurisdicción aplicable por expertos competentes.",
+        "workedExample": "Ejemplo trabajado: 320 notas sensibles sobre 6.400 registros representan 5 % del flujo. Antes de optimizar costos, dibuja dónde aparecen las notas, quién las necesita y cuándo se destruyen. Si un proveedor mantiene ficheros temporales 90 días, especifica causa, contrato, política y prueba de eliminación. En una prueba de entorno ficticio, impedir la exportación de campos no autorizados y verificar que el sistema registra el rechazo. Comparar tokenización, minimización y separación de bases según posibilidad de reidentificación y operaciones legítimas.",
+        "challengeQuestions": [
+          "¿Por qué datos cifrados aún pueden estar fuera de finalidad?",
+          "¿Qué evidencia haría verificable el borrado por un proveedor?",
+          "¿Qué diferencia existe entre seudonimización y anonimización irreversible?"
+        ],
+        "editorialNote": "El alumno debe reproducir las relaciones y los cálculos con datos ficticios. El docente validará aplicabilidad, incertidumbre y cualquier cita normativa antes de acreditar conocimientos."
+      }
     },
     {
       "id": "grc-a-l04",
@@ -777,7 +807,17 @@
         "ISO/IEC 27001:2022",
         "ISO/IEC 27002:2022",
         "NIST CSF 2.0"
-      ]
+      ],
+      "deepDive": {
+        "concept": "El diseño de controles exige un objetivo medible y un mecanismo trazable: condiciones de autorización, dueño, frecuencia, parámetros de excepción y evidencia. La protección efectiva contra un acceso indebido no puede basarse sólo en ocultar botones del frontend. Debes comprobar acceso horizontal y vertical en backend con usuarios de organizaciones distintas, tokens expirados y repetición de solicitudes. ISO/IEC 27001 establece el sistema de gestión y la justificación de tratamientos; ISO/IEC 27002 ayuda a seleccionar controles pertinentes. La declaración de aplicabilidad no debe convertirse en una lista de controles marcados sin relación con riesgos.",
+        "workedExample": "Ejemplo trabajado: a una API de 6.000 transacciones al día le añades verificación de pertenencia a organización en servidor, controles de rol y registros de decisiones. Tres casos: propietario autorizado obtiene el expediente de su empresa; usuario de otra empresa recibe denegación sin datos; usuario de la misma empresa pero rol sin permiso recibe denegación. A cada prueba asocia identidad ficticia, objetivo, resultado esperado, resultado observado y log con datos minimizados. Una política redactada correctamente no sustituye esos resultados.",
+        "challengeQuestions": [
+          "¿Qué falla demuestra un test negativo entre organizaciones?",
+          "¿Cómo justificas que un control de catálogo no sea aplicable?",
+          "¿Qué dato separa eficacia del control frente a existencia del diseño?"
+        ],
+        "editorialNote": "El alumno debe reproducir las relaciones y los cálculos con datos ficticios. El docente validará aplicabilidad, incertidumbre y cualquier cita normativa antes de acreditar conocimientos."
+      }
     },
     {
       "id": "grc-a-l05",
@@ -968,7 +1008,17 @@
         "ISO 37301:2021",
         "ISO/IEC 27701:2025",
         "ISO/IEC 27001:2022"
-      ]
+      ],
+      "deepDive": {
+        "concept": "Las obligaciones de compliance provienen de fuentes distintas: legislación local aplicable, contrato, compromisos voluntarios y políticas internas. ISO 37301 apoya el proceso de identificar, asignar, evaluar y mejorar obligaciones, pero no convierte en requisito legal universal cada práctica. Mantén versiones, jurisdicción, responsable, condición de disparo y evidencia de cumplimiento. Un plazo contractualmente pactado puede ser más estricto que una obligación legal; no se puede elegir uno arbitrariamente. La interpretación jurídica final es responsabilidad de profesionales habilitados cuando corresponda.",
+        "workedExample": "Ejemplo trabajado: un incidente definido en Contrato A requiere aviso en 24 h desde cierto disparador y en Contrato B en 72 h; registra ambas condiciones y qué hechos permiten iniciar el reloj. Diseña una matriz separada por cliente, evento, fuente, versiones contractuales y responsable de comunicación. Si faltan datos para determinar que hubo incidente notificable, comunica incertidumbre a los responsables sin inventar confirmaciones; prepara borradores de notificación sujetos a revisión por seguridad y legal.",
+        "challengeQuestions": [
+          "¿Por qué no existe una regla ISO universal de 72 horas?",
+          "¿Qué haces cuando las definiciones contractuales de incidente difieren?",
+          "¿Qué desencadena una actualización del registro de obligaciones?"
+        ],
+        "editorialNote": "El alumno debe reproducir las relaciones y los cálculos con datos ficticios. El docente validará aplicabilidad, incertidumbre y cualquier cita normativa antes de acreditar conocimientos."
+      }
     },
     {
       "id": "grc-a-l06",
@@ -1163,7 +1213,17 @@
         "ISO 31000:2018",
         "ISO 22301:2019",
         "NIST CSF 2.0"
-      ]
+      ],
+      "deepDive": {
+        "concept": "Los riesgos de terceros dependen de la función delegada, dependencia operacional, subprocesadores, concentración y reversibilidad. Diligencia debida no significa aceptar un PDF con casillas marcadas: contrasta vigencia, alcance, controles, independientes y remediaciones. La evidencia contractual de continuidad debe incluir capacidad de restauración y plan de salida que pueda probarse. Un proveedor puede estar certificado sin que la certificación cubra el servicio contratado; verifica alcance, entidad legal y periodo. Una reducción de precio no compensa por sí sola un riesgo crítico sin tratamiento.",
+        "workedExample": "Ejemplo trabajado: sustituir Delta tarda 45 días y el respaldo disponible tiene nueve días. La opción 'cancelar hoy' puede multiplicar el daño aunque reduzca el riesgo de dependencia a largo plazo. Construye un tablero con criticidad, evidencia caducada, ubicación de datos, subprocesadores, RTO/RPO contratados y control de salida. Ofrece renovación condicionada de corto plazo con hitos, sustitución progresiva con restauración testada o una excepción formal de plazo definido. Cuantifica costo, ventanas de corte y autoridad de aceptación.",
+        "challengeQuestions": [
+          "¿Por qué un certificado del proveedor no prueba el servicio subcontratado?",
+          "¿Qué información falta para decidir sustitución inmediata?",
+          "¿Qué prueba evita depender de un plan de continuidad no ensayado?"
+        ],
+        "editorialNote": "El alumno debe reproducir las relaciones y los cálculos con datos ficticios. El docente validará aplicabilidad, incertidumbre y cualquier cita normativa antes de acreditar conocimientos."
+      }
     },
     {
       "id": "grc-a-l07",
@@ -1354,7 +1414,17 @@
         "ISO 19011:2026",
         "ISO/IEC 27001:2022",
         "ISO 31000:2018"
-      ]
+      ],
+      "deepDive": {
+        "concept": "ISO 19011:2026 guía principios, programa y ejecución de auditorías de sistemas de gestión; su aplicación no constituye acreditación ni certificación. Define objetivos, criterios verificables, alcance, competencia, independencia y muestreo basado en riesgos. Una muestra aleatoria sin errores no demuestra ausencia de errores en la población, y un resultado no conforme requiere condición, criterio, evidencia suficiente, causa probable y consecuencia. Un hallazgo no se debe elevar o degradar por presión del auditado; se discute con integridad y oportunidad de respuesta.",
+        "workedExample": "Ejemplo trabajado: de 24.000 aprobaciones se toman 60 y no hay desviaciones. Esta observación sólo demuestra que la muestra examinada cumplió el criterio revisado. Los cuatro registros sin dueño de cuenta de servicio deben tratarse como estrato adicional de alto riesgo; explica por qué la muestra original podría excluirlos y amplía el programa. Redacta un hallazgo sin nombres personales: criterio interno de dueño asignado, condición de cuatro cuentas, evidencia con fechas y verificaciones, exposición potencial, acción propuesta y responsable. El informe declara alcance y límites.",
+        "challengeQuestions": [
+          "¿Cuál es el error lógico de extrapolar cero fallas a todo el universo?",
+          "¿Cuándo sería razonable emplear muestreo dirigido además de aleatorio?",
+          "¿Qué separa hallazgo y conclusión de auditoría?"
+        ],
+        "editorialNote": "El alumno debe reproducir las relaciones y los cálculos con datos ficticios. El docente validará aplicabilidad, incertidumbre y cualquier cita normativa antes de acreditar conocimientos."
+      }
     },
     {
       "id": "grc-a-l08",
@@ -1583,7 +1653,17 @@
         "ISO/IEC 27002:2022",
         "ISO 37301:2021",
         "NIST CSF 2.0"
-      ]
+      ],
+      "deepDive": {
+        "concept": "En respuesta a incidentes, 'detectar', 'contener', 'investigar', 'recuperar' y 'notificar' son decisiones distintas con responsables y datos diferentes. Preservar registros requiere controles de integridad, hora, custodia y minimización de acceso. La severidad se define por impacto, alcance y vulnerabilidad, no por cantidad de tickets. Comunica hechos confirmados y límites de análisis, nunca resultados que aún no existen. NIST CSF 2.0 organiza Govern, Identify, Protect, Detect, Respond y Recover; las seis funciones operan de manera concurrente.",
+        "workedExample": "Ejemplo trabajado: 420 descargas inusuales a las 09:20 deben contrastarse con volumen base, identidades, destinatarios y permisos antes de afirmar exfiltración. Dado que las evidencias caducan en seis horas, prioriza preservación proporcional y bloqueo de credenciales sospechosas según capacidad autorizada. Evita interrumpir indiscriminadamente a 300 usuarios si existe mecanismo de contención más acotado, pero no minimices riesgos críticos para mantener métricas de uptime. Registra cronología, decisiones de contención, falsos positivos y comunicaciones revisadas.",
+        "challengeQuestions": [
+          "¿Cómo distingues descarga inusual de filtración confirmada?",
+          "¿Qué acción conserva prueba sin amplificar exposición?",
+          "¿Qué dato decidiría contención selectiva frente a suspensión general?"
+        ],
+        "editorialNote": "El alumno debe reproducir las relaciones y los cálculos con datos ficticios. El docente validará aplicabilidad, incertidumbre y cualquier cita normativa antes de acreditar conocimientos."
+      }
     },
     {
       "id": "grc-a-l09",
@@ -1774,7 +1854,17 @@
         "ISO 22301:2019",
         "ISO 31000:2018",
         "ISO/IEC 27001:2022"
-      ]
+      ],
+      "deepDive": {
+        "concept": "Un sistema de continuidad según ISO 22301 organiza el análisis de impacto, dependencias, prioridades, estrategias de recuperación, pruebas y mejora. El RTO describe el tiempo objetivo de recuperación del servicio; el RPO, cuánto dato se acepta perder según punto de recuperación. Estos objetivos no son equivalentes a SLA genérico y deben comprobarse con ejercicios y evidencia. La enmienda de 2024 introduce consideraciones relacionadas con acción climática; verifica aplicabilidad y contexto sin asumir obligaciones universales. El informe de una prueba debe documentar desviaciones y su causalidad.",
+        "workedExample": "Ejemplo trabajado: el servicio tardó 5,5 horas frente a RTO de 4 (brecha 1,5 h) y recuperó datos con tres horas de antigüedad frente a RPO de 1 (brecha 2 h). Se incumplieron ambos objetivos en ese ensayo aunque el sitio volviera a funcionar. Diseña estrategia con copias fuera de la zona de falla, inmutabilidad donde aplique, pruebas por componente crítico y validación de integridad funcional después del restore. Prioriza cambios por impacto de negocio y documenta presupuesto y responsables.",
+        "challengeQuestions": [
+          "¿Por qué un reinicio exitoso no prueba un RPO cumplido?",
+          "¿Qué dependencia puede extender el RTO real aunque la infraestructura esté operativa?",
+          "¿Qué métrica verificarías 24 horas después del ejercicio?"
+        ],
+        "editorialNote": "El alumno debe reproducir las relaciones y los cálculos con datos ficticios. El docente validará aplicabilidad, incertidumbre y cualquier cita normativa antes de acreditar conocimientos."
+      }
     },
     {
       "id": "grc-a-l10",
@@ -1965,7 +2055,17 @@
         "ISO/IEC 27701:2025",
         "ISO 37301:2021",
         "ISO/IEC 27001:2022"
-      ]
+      ],
+      "deepDive": {
+        "concept": "ISO/IEC 27701:2025 define un sistema de gestión de información de privacidad con requisitos y orientación para responsables y encargados. Su alcance no sustituye obligaciones legales de protección de datos, y el contenido de datos personales varía por finalidad y jurisdicción. Una evaluación de impacto es un proceso de identificación de consecuencias y medidas, no un formulario genérico. Para autorizar una nueva finalidad debes verificar rol, base aplicable, compatibilidad, comunicación, derechos, ciclo de vida y proveedores. Evita tratar seudonimización como prueba de anonimización.",
+        "workedExample": "Ejemplo trabajado: un archivo de soporte con 200 direcciones de personas menores ficticias no puede ser reutilizado automáticamente para marketing porque esté en el CRM. Diseña flujo de aprobación por finalidad, campos mínimos, revisión de riesgos y alternativa de información agregada; asigna responsables de respuestas a solicitudes de derechos y plazos solo tras verificar la jurisdicción. Si no puede demostrarse base válida, el flujo promocional se suspende mientras se resuelve el requisito, sin borrar evidencias necesarias por contrato u obligación.",
+        "challengeQuestions": [
+          "¿Qué diferencia existe entre tener un dato y tener finalidad para usarlo?",
+          "¿Qué proceso exige revisión antes de sumar un subprocesador?",
+          "¿Qué cambia si el proveedor actúa como encargado y no como responsable?"
+        ],
+        "editorialNote": "El alumno debe reproducir las relaciones y los cálculos con datos ficticios. El docente validará aplicabilidad, incertidumbre y cualquier cita normativa antes de acreditar conocimientos."
+      }
     },
     {
       "id": "grc-a-l11",
@@ -2160,7 +2260,17 @@
         "ISO/IEC 27701:2025",
         "ISO 31000:2018",
         "NIST CSF 2.0"
-      ]
+      ],
+      "deepDive": {
+        "concept": "ISO/IEC 42001:2023 enfoca la gobernanza de sistemas de IA, su contexto, responsabilidades, impactos y mejora. Registrar una tasa media de error no demuestra trato adecuado a subgrupos, especialmente cuando una decisión puede afectar derechos o acceso a servicios. Evalúa calidad y representatividad de datos, criterios de uso, intervención humana, explicabilidad útil, monitoreo por segmento, cambios de versión y límites del proveedor. No prometas que un sistema de gestión elimina sesgos o que reemplaza análisis legal sectorial.",
+        "workedExample": "Ejemplo trabajado: el copiloto tiene 3 % de falsos negativos globales y 16 % en un segmento, una brecha de 13 puntos porcentuales. Sin información sobre tamaños muestrales y base real, no puedes afirmar significancia estadística; sí debes tratar la señal como prioridad de validación. Prohíbe decisiones adversas automáticas mientras se revisan falsos negativos, define muestra, umbrales de pausa, trazas sin datos sensibles, plan de auditoría y responsable de validación. Negocia obligaciones de transparencia con el proveedor.",
+        "challengeQuestions": [
+          "¿Por qué promedio global no equivale a ausencia de daño diferencial?",
+          "¿Qué registro necesita un modelo tras una actualización importante?",
+          "¿Qué umbral operativo activaría supervisión humana obligatoria?"
+        ],
+        "editorialNote": "El alumno debe reproducir las relaciones y los cálculos con datos ficticios. El docente validará aplicabilidad, incertidumbre y cualquier cita normativa antes de acreditar conocimientos."
+      }
     },
     {
       "id": "grc-a-l12",
@@ -2351,7 +2461,17 @@
         "ISO 37001:2025",
         "ISO 37301:2021",
         "ISO 31000:2018"
-      ]
+      ],
+      "deepDive": {
+        "concept": "ISO 37001:2025 describe requisitos y orientación para sistemas antisoborno. El programa debe analizar riesgos de operaciones, intermediarios, beneficiarios, incentivos y conflictos de interés. No basta prohibir pagos: se requieren reglas de aprobación, diligencia debida, evidencia, canal de denuncia protegido y tratamiento proporcional. Señalar una bandera roja no equivale a demostrar un delito; respeta confidencialidad, no represalia, integridad de la investigación y responsabilidades legales. Diferencia regalos razonables documentados, comisiones por servicios demostrables y pagos sin contraprestación que podrían ser soborno.",
+        "workedExample": "Ejemplo trabajado: comisión de 9 % vinculada a sociedad relacionada con funcionario y sin entregables definidos exige suspender aprobación, identificar beneficiarios reales mediante procesos autorizados y preservar contrato, facturas y comunicaciones. Reporta riesgos a compliance y legal, evalúa alternativas comerciales legítimas y no difundas acusaciones públicas sin investigación. Deja evidencia de quién autorizó la revisión y qué haría falta para aceptar una relación comercial sin riesgo prohibido.",
+        "challengeQuestions": [
+          "¿Por qué una factura no valida una comisión sospechosa?",
+          "¿Qué harías con un denunciante cuya identidad debe protegerse?",
+          "¿En qué momento corresponde escalar a autoridad legal competente?"
+        ],
+        "editorialNote": "El alumno debe reproducir las relaciones y los cálculos con datos ficticios. El docente validará aplicabilidad, incertidumbre y cualquier cita normativa antes de acreditar conocimientos."
+      }
     },
     {
       "id": "grc-a-l13",
@@ -2542,7 +2662,17 @@
         "ISO 31000:2018",
         "ISO/IEC 27001:2022",
         "ISO 37301:2021"
-      ]
+      ],
+      "deepDive": {
+        "concept": "Un tablero ejecutivo de riesgos exige diferenciar hechos, modelos y decisiones. La selección de controles con presupuesto fijo se parece a un problema de cartera: no basta ordenar por 'beneficio/importe' cuando hay dependencias, cobertura superpuesta y límites de capacidad. Muestra rangos, escenarios coherentes, calidad de estimaciones y apetito de riesgo. Un índice de riesgo no es una pérdida esperada monetaria, y sumar reducciones estimadas sobre el mismo evento produce doble contabilización. Los KRIs alertan exposición; los KPIs miden desempeño de procesos y controles, y ambos requieren dueños y frecuencia.",
+        "workedExample": "Ejemplo trabajado: con 1,5 M MXN, los tratamientos de 0,9 + 0,6 suman justo el presupuesto, 0,9 + 0,8 cuestan 1,7 (exceden) y 0,6 + 0,8 cuestan 1,4. Evalúa las dos combinaciones asequibles por impactos comunes, pérdidas residual estimadas y dependencias; explica por qué no aprobar los tres (2,3 M). Si una medida de 0,8 es imprescindible por obligación contractual, el comité debe decidir aplazar, reasignar presupuesto o aceptar otros riesgos con autoridad y documentación. Presenta al menos dos escenarios de sensibilidad.",
+        "challengeQuestions": [
+          "¿Qué combinación es factible sin reducir objetivos implícitamente?",
+          "¿Qué supuesto hace inválido sumar beneficios de dos controles?",
+          "¿Qué diferencia hay entre aprobar presupuesto y aceptar riesgo residual?"
+        ],
+        "editorialNote": "El alumno debe reproducir las relaciones y los cálculos con datos ficticios. El docente validará aplicabilidad, incertidumbre y cualquier cita normativa antes de acreditar conocimientos."
+      }
     },
     {
       "id": "grc-a-l14",
@@ -2737,7 +2867,17 @@
         "ISO 37301:2021",
         "ISO/IEC 27001:2022",
         "ISO 31000:2018"
-      ]
+      ],
+      "deepDive": {
+        "concept": "La acción correctiva no se demuestra con una fecha de cierre: debe registrar causa sistémica, contención, corrección, prevención, propietario, prueba de ejecución y seguimiento. Un CAPA eficaz identifica qué originó la desviación y qué evidencia permitirá impedir recurrencia. Las auditorías posteriores deben ser proporcionales al riesgo y conservar independencia y trazabilidad. Separar cierre administrativo de cierre verificado es esencial para no fabricar seguridad; los procesos de gobierno deben informar al comité sin maquillar métricas.",
+        "workedExample": "Ejemplo trabajado: de 27 hallazgos, 19 cerrados solo por declaración equivalen al 70,4 % de la cartera, no a 70,4 % de remediación efectiva; seis reincidieron y cuatro no tienen prueba suficiente. Construye plan que priorice impacto y recurrencia, seleccione muestra de controles reparados, reconozca las limitaciones de 12 días de auditoría y defina objetivos de eficacia por grupo. Una tasa de cierre rápido podría empeorar si encubre fallas; acompáñala de indicador de reincidencia y pruebas ejecutadas.",
+        "challengeQuestions": [
+          "¿Por qué un CAPA registrado no constituye evidencia de eficacia?",
+          "¿Cómo decides el muestreo ante sólo 12 días de capacidad?",
+          "¿Qué indicador evita premiar cierres meramente declarativos?"
+        ],
+        "editorialNote": "El alumno debe reproducir las relaciones y los cálculos con datos ficticios. El docente validará aplicabilidad, incertidumbre y cualquier cita normativa antes de acreditar conocimientos."
+      }
     },
     {
       "id": "grc-a-l15",
@@ -2986,7 +3126,17 @@
         "ISO 19011:2026",
         "ISO 37001:2025",
         "NIST CSF 2.0"
-      ]
+      ],
+      "deepDive": {
+        "concept": "La defensa final reúne gobierno, seguridad, riesgo, compliance, continuidad, privacidad, IA y auditoría sin tratar una certificación como trámite de mercadotecnia. El programa debe demostrar trazabilidad vertical: objetivo y contexto → riesgo y requisito aplicable → control → prueba → hallazgo → tratamiento → residual → autoridad y monitoreo. Una autoevaluación puede informar preparación, pero nunca emitir certificación ISO de tercera parte ni garantizar una conclusión de acreditación. El comité necesita límites explícitos, prioridades, datos falsables y reglas para suspender decisiones peligrosas.",
+        "workedExample": "Ejemplo trabajado: Nébula tiene 18 aplicaciones, 11 proveedores, dos modelos de IA y 1,5 M MXN. Crea mapa de dependencias y obligaciones; muestra cuál servicio afecta los RTO/RPO incumplidos, qué datos requieren minimización, dónde queda un proveedor crítico sin respaldo probado y qué decisión adversa de IA carece de supervisión. Presenta cartera de controles con restricción presupuestaria, riesgo residual y fuentes de prueba. Tu defensa debe contestar al CEO por qué no se puede declarar certificación sin proceso acreditado; ofrece en cambio una declaración honesta de preparación, brechas y acciones.",
+        "challengeQuestions": [
+          "¿Qué conexión entre evidencia de cumplimiento y presupuesto debe defender el comité?",
+          "¿Cuándo se debe suspender una actividad pese a presión comercial?",
+          "¿Qué conjunto de registros hace verificable una remediación ante un auditor independiente?"
+        ],
+        "editorialNote": "El alumno debe reproducir las relaciones y los cálculos con datos ficticios. El docente validará aplicabilidad, incertidumbre y cualquier cita normativa antes de acreditar conocimientos."
+      }
     }
   ],
   "sources": [

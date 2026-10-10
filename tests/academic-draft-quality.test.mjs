@@ -43,6 +43,7 @@ test("ISO metadata tracks 2026 edition and protects certification boundaries",()
  assert.ok(d.sources.some(s=>s.id==="ISO/IEC 27701:2025"));
  assert.ok(d.disclaimer.toLowerCase().includes("no es certificado"));
  for(const l of d.levels)for(const u of l.learningUnits)assert.ok(u.references.length>0);
+ for(const l of d.levels){assert.ok(l.deepDive.concept.length>500);assert.ok(l.deepDive.workedExample.length>500);assert.equal(l.deepDive.challengeQuestions.length,3);}
 });
 test("draft content cannot leak via public curriculum module references",()=>{
  const s=fs.readFileSync("lib/position-curriculum.ts","utf8");
