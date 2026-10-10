@@ -81,9 +81,13 @@ export function applyAdvancedDecision(s:AdvancedState,input:AdvancedInput):Advan
  const event:AdvancedEvent={...input,facts:input.facts.trim(),tradeoff:input.tradeoff.trim(),verification:input.verification.trim(),scene:sceneFor(s),stage:ADVANCED_STAGES[s.step],rating:quality,critical:!!opt.critical,tradeoffCategory:opt.skill,metrics};
  return {step:s.step+1,metrics,events:[...s.events,event]};
 }
+export function replayAdvancedPartial(inputs:AdvancedInput[]):AdvancedState{
+ if(!Array.isArray(inputs)||inputs.length>ADVANCED_STAGES.length)throw Error("INVALID_SEQUENCE");
+ return inputs.reduce(applyAdvancedDecision,startAdvanced());
+}
 export function replayAdvanced(inputs:AdvancedInput[]):AdvancedState{
  if(!Array.isArray(inputs)||inputs.length!==ADVANCED_STAGES.length)throw Error("UNFINISHED");
- return inputs.reduce(applyAdvancedDecision,startAdvanced());
+ return replayAdvancedPartial(inputs);
 }
 export function advancedSummary(s:AdvancedState){
  if(s.step!==ADVANCED_STAGES.length)throw Error("UNFINISHED");
