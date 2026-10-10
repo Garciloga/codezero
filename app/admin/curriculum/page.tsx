@@ -6,6 +6,7 @@ import { POSITION_PROGRAMS, DEFAULT_POSITION } from "../../../lib/position-curri
 import { COMPETENCIES } from "../../../lib/competency-matrix";
 import { localeContext, serverTranslator } from "../../../lib/localization/server";
 import { ownerCopy } from "../../../lib/localization/owner-inspector";
+import { copyForPilot } from "../../../lib/localization/assessment-pilot";
 import LocalizedContent from "../../components/localization/server";
 
 export const dynamic = "force-dynamic";
@@ -22,6 +23,7 @@ export default async function OwnerCurriculumInspector({ searchParams }: Props) 
   const query = await searchParams;
   const { locale } = await localeContext();
   const copy = ownerCopy(locale);
+  const pilotTitle=copyForPilot(locale).heading;
   const t = await serverTranslator();
   const chosenLevel = Number(query.level);
   const level = Number.isInteger(chosenLevel) && chosenLevel >= 1 && chosenLevel <= 15 ? chosenLevel : 1;
@@ -56,6 +58,7 @@ export default async function OwnerCurriculumInspector({ searchParams }: Props) 
           {Object.values(POSITION_PROGRAMS).map(p =>
             <Link key={p.key} className={"btn " + (p.key === program.key ? "" : "secondary")} href={link(p.key, 1)}>{p.title}</Link>)}
           <Link className="btn secondary" href="/admin/curriculum?track=technical&level=1">{copy.technical}</Link>
+          <Link className="btn secondary" href="/admin/assessments-pilot">{pilotTitle}</Link>
         </div>
       </nav>
       <section className="card">
@@ -137,6 +140,7 @@ export default async function OwnerCurriculumInspector({ searchParams }: Props) 
       <Link className="btn secondary" href="/admin">{copy.back}</Link></div>
     <section className="card">
       <Link className="btn secondary" href="/admin/curriculum">{copy.backPrograms}</Link>
+      <Link className="btn secondary" href="/admin/assessments-pilot">{pilotTitle}</Link>
       <h2>{copy.chooseLevel}</h2>
       <div className="public-actions">{(levels ?? []).map(x =>
         <Link key={x.id} className={"btn " + (Number(x.level_number) === level ? "" : "secondary")}
