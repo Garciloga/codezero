@@ -1,4 +1,4 @@
-import {test} from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {authoredStrings,audit} from '../scripts/localization-audit.mjs';
+import {test} from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {authoredStrings,audit,normalizedAuditPath,isLocalizationSource} from '../scripts/localization-audit.mjs';
 test('new visible labels and placeholders are detected, while form values and opaque code stay literal',()=>{
 const found=authoredStrings('fixture.tsx','const x=<form><label>Una etiqueta nueva</label><input name="field" value="valor interno" placeholder="Describe tu caso"/><code>Texto de código</code><span translate="no">Nombre de persona</span></form>');assert.ok(found.includes('Una etiqueta nueva'));assert.ok(found.includes('Describe tu caso'));assert.ok(!found.includes('Texto de código'));assert.ok(!found.includes('Nombre de persona'));});
 test('all detected authored strings have three translations',()=>assert.deepEqual(audit().problems,[]));
@@ -12,4 +12,10 @@ test('technical glossary preserves meaning and literal identifiers after catalog
 });
 test('UI catalog stays within its transfer budget and supplemental lessons remain server-only',()=>{
  for(const locale of ['en','pt','fr']){const bytes=fs.readFileSync(`lib/localization/${locale}-ui.json`);assert.ok(bytes.length<230000,'UI catalog unexpectedly expanded');const ui=JSON.parse(bytes);for(const example of JSON.parse(fs.readFileSync('lib/learning-companions.json')))assert.ok(!Object.hasOwn(ui,example.steps),'lesson content should not be serialized globally to visitors');}
+});
+
+test('localization audit handles Windows and POSIX separators consistently',()=>{
+ for(const file of ['app/components/localization/language-selector.tsx','app\\\\components\\\\localization\\\\language-selector.tsx','lib/localization/shared.ts','lib\\\\localization\\\\shared.ts'])assert.equal(isLocalizationSource(file),true,file);
+ for(const file of ['app/admin/page.tsx','app\\\\admin\\\\page.tsx'])assert.equal(isLocalizationSource(file),false,file);
+ assert.equal(normalizedAuditPath('app\\\\admin\\\\page.tsx'),'app/admin/page.tsx');
 });
