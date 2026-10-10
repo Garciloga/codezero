@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {startAdvanced,sceneFor,advancedOptions,applyAdvancedDecision,replayAdvanced,replayAdvancedPartial,advancedSummary,recommendAdvanced} from "../lib/advanced-assessment.ts";
 import {ADVANCED_OPTION_IDS} from "../lib/advanced-assessment-public.ts";
+import {summarizeCompetency} from "../lib/competency-matrix.ts";
 import {advancedWords,advancedScenarioText} from "../lib/localization/advanced-assessment.ts";
 const reason="I would compare measured outcomes against a reliable baseline and record unresolved assumptions before selecting commitments.";
 const fields={facts:reason,tradeoff:reason,verification:reason};
@@ -79,4 +80,26 @@ test("students never receive scoring weights and manager review is authoritative
  assert.match(scope,/organization_memberships/);
  assert.match(scope,/eq\("active",true\)/);
  assert.match(migration,/on conflict \(content_key\) do nothing/);
+});
+
+test("awaiting human review cannot reduce or increase previously validated competency levels",()=>{
+ const now=new Date("2026-10-10T12:00:00Z");
+ const base=[0,1,2].map(i=>({
+  id:"human-"+i,user_id:"learner",organization_id:"team",
+  activity_key:"previous-"+i,independent_key:"previous-"+i,
+  kind:"deliverable",competency_scores:{diagnosis:3},assistance:"independent",
+  review_source:"manager",observed_at:new Date(now.getTime()-(i+1)*86400000).toISOString(),
+  critical_errors:[]
+ }));
+ const before=summarizeCompetency(base,"diagnosis",now);
+ const pending={...base[0],id:"pending",activity_key:"cs-decision-evidence-v2",independent_key:"cs-decision-evidence-v2",
+  competency_scores:{diagnosis:0},review_source:"self",assistance:"guided"};
+ const during=summarizeCompetency([...base,pending],"diagnosis",now);
+ assert.equal(during.level,before.level);
+ assert.equal(during.count,before.count);
+ assert.equal(during.weightedScore,before.weightedScore);
+ const reviewed={...pending,id:"validated",review_source:"manager",competency_scores:{diagnosis:4},assistance:"independent"};
+ const after=summarizeCompetency([...base,pending,reviewed],"diagnosis",now);
+ assert.equal(after.count,before.count+1);
+ assert.ok(after.weightedScore>=before.weightedScore);
 });
