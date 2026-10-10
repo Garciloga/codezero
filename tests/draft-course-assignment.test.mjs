@@ -14,7 +14,7 @@ test("assignments require valid approved draft course, competency, intensity, fu
  for(const x of [{course:"secret"},{competency:"personality"},{emphasis:"coercive"},{dueAt:"2020-01-01"}])
   assert.equal(validDraftAssignment({...sample,...x}),false);
 });
-test("draft assignment endpoint is sandbox-only and never touches existing learning assignments",()=>{
+test("draft assignment endpoint is sandbox-only and never touches existing learning assignments",async()=>{
  const s=await import("node:fs");const route=s.readFileSync("app/api/teams/course-assign/route.ts","utf8");
  assert.match(route,/workspaceSandboxEnabled\(\)/);
  assert.match(route,/trustedWorkspaceMutation/);

@@ -52,6 +52,6 @@ export function draftExpandedCurriculum(courseId:string){
      assessor:{minScore:i>=11?90:i>=7?88:i>=3?84:80,rubric:[20,20,20,20,20],independentHumanReviewer:true,criticalErrorsAllowed:0,personalityInferenceForbidden:true}
     })),
     project:i===7||i===14?{mandatory:true,review:"human",artifact:"Expediente integrador de "+topic+" con simulaciones encadenadas, evaluación de riesgos, rúbrica y defensa del historial"}:null
-   }};});
+   };})};
 }
 export const DRAFT_EXPANSION_COUNTS={courses:DRAFT_PRACTICE_NAMES.length,levels:DRAFT_PRACTICE_NAMES.length*15,lessons:DRAFT_PRACTICE_NAMES.length*15*focus.length} as const;
