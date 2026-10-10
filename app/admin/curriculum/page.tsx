@@ -50,7 +50,7 @@ export default async function OwnerCurriculumInspector({ searchParams }: Props) 
           <p className="muted">{copy.intro}</p></div>
         <Link className="btn secondary" href="/admin">{copy.back}</Link>
       </div>
-      <nav className="card" aria-label="Programas">
+      <nav className="card" aria-label={copy.programs}>
         <h2>{copy.choose}</h2>
         <div className="public-actions">
           {Object.values(POSITION_PROGRAMS).map(p =>
@@ -78,14 +78,14 @@ export default async function OwnerCurriculumInspector({ searchParams }: Props) 
         <p><b>{copy.key}</b> <code>{item.key}</code></p>
         <h3>{copy.context}</h3>
         {application?.case && <p style={{ whiteSpace: "pre-wrap" }}>{application.case}</p>}
-        <p style={{ whiteSpace: "pre-wrap" }}>{item.source.lesson}</p>
+        <p style={{ whiteSpace: "pre-wrap" }}>{t(item.source.lesson)}</p>
         {application?.task && <><h3>{copy.work}</h3><p style={{ whiteSpace: "pre-wrap" }}>{application.task}</p></>}
         {localized(item.brief) && <p style={{ whiteSpace: "pre-wrap" }}>{localized(item.brief)}</p>}
         {application?.rule && <p><b>{copy.rubric}</b> {application.rule}</p>}
         {application?.evidence && <p><b>{copy.evidence}</b> {application.evidence}</p>}
         {application?.template && <details><summary>{copy.template}</summary><p style={{ whiteSpace: "pre-wrap" }}>{application.template}</p></details>}
         {application?.example && <details><summary>{copy.example}</summary><p style={{ whiteSpace: "pre-wrap" }}>{application.example}</p></details>}
-        {item.source.rubric?.length > 0 && <><h3>{copy.projectCriteria}</h3><ul>{item.source.rubric.map((r, i) => <li key={i}>{r}</li>)}</ul></>}
+        {item.source.rubric?.length > 0 && <><h3>{copy.projectCriteria}</h3><ul>{item.source.rubric.map((r, i) => <li key={i}>{t(r)}</li>)}</ul></>}
         {decisions.length > 0 && <><h3>{copy.decisions}</h3>
           {decisions.map((d, i) => <div key={i} className="card">
             <h4>{i + 1}. {d.prompt}</h4>
@@ -93,7 +93,7 @@ export default async function OwnerCurriculumInspector({ searchParams }: Props) 
             <p className="muted">{d.feedback}</p>
           </div>)}</>}
         <h3>{copy.competencies}</h3>
-        <ul>{item.source.competencies.map(key => <li key={key}>{COMPETENCIES[key]}</li>)}</ul>
+        <ul>{item.source.competencies.map(key => <li key={key}>{t(COMPETENCIES[key])}</li>)}</ul>
         <p className="muted">{copy.readOnly}</p>
       </section>}
     </main></LocalizedContent>;
@@ -145,7 +145,7 @@ export default async function OwnerCurriculumInspector({ searchParams }: Props) 
       <p>{selected.description}</p><p className="muted">{copy.editorialState} {selected.status}</p>
     </section>
     {lessons.map((lesson, i) => <details key={lesson.id} className="card">
-      <summary><b>Lección {i + 1}: {lesson.title}</b> · {lesson.status}</summary>
+      <summary><b>{copy.lesson} {i + 1}: {lesson.title}</b> · {lesson.status}</summary>
       <p>{lesson.description}</p><p style={{ whiteSpace: "pre-wrap" }}>{lesson.content}</p>
       <h3>{copy.exercise}</h3>
       {(exerciseQuery.data ?? []).filter(e => e.lesson_id === lesson.id).map(e =>
