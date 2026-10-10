@@ -3,7 +3,7 @@ import { getServerUser } from "../../../lib/supabase-server";
 import { requireOwner } from "../../../lib/admin";
 import { localeContext } from "../../../lib/localization/server";
 import { translatedMetadata } from "../../../lib/localization/metadata";
-import AssessmentDecisionPilot from "./assessment-pilot";
+import AdvancedAssessmentPlayer from "../../components/advanced-assessment-player";
 
 export const dynamic = "force-dynamic";
 export async function generateMetadata(){
@@ -14,5 +14,5 @@ export default async function OwnerAssessmentPilot(){
   if(!user)redirect("/login");
   try{await requireOwner(user.id);}catch{notFound();}
   const {locale}=await localeContext();
-  return <AssessmentDecisionPilot locale={locale}/>;
+  return <AdvancedAssessmentPlayer locale={locale} org={null} canSave={false}/>;
 }
