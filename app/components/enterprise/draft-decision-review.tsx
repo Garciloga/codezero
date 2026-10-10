@@ -1,4 +1,6 @@
+import {draftExpandedCurriculum} from "../../../lib/draft-expanded-curriculum";
 type Decision={
+ course_key:string;
  id:string;level_number:number;unit_number:number;phase_number:number;
  option_key:string;reasoning:string;evidence_reference:string;revision:number
 };
@@ -8,8 +10,12 @@ export default function DraftDecisionReview({decisions}:{decisions:Decision[]}){
  <span className="pill">Sandbox · sin progreso productivo</span>
  <h2>Revisión de decisiones pendientes</h2>
  <p>Estas simulaciones no certifican habilidades ni modifican el progreso publicado. Solo responsables autorizados pueden revisar una entrega y registrar evidencia.</p>
- {decisions.map(d=><article key={d.id} className="card">
+ {decisions.map(d=>{const pack=draftExpandedCurriculum(d.course_key.replaceAll("_","-"));
+  const lesson=pack?.levels[d.level_number-1]?.lessons[d.unit_number-1];
+  const phase=lesson?.decision.phases[d.phase_number-1];
+  return <article key={d.id} className="card">
    <h3>Nivel {d.level_number} · Unidad {d.unit_number} · Fase {d.phase_number}</h3>
+   {lesson&&phase&&<section><p>{lesson.teaching}</p><p>{phase.pressure}</p><ul>{phase.alternatives.map(alt=><li key={alt.id}>{alt.id.toUpperCase()}. {alt.action} — {alt.benefit} / {alt.risk}</li>)}</ul></section>}
    <p>Opción razonada: {d.option_key.toUpperCase()} · Revisión {d.revision}</p>
    <p>{d.reasoning}</p><p>Referencia aportada: <span translate="no">{d.evidence_reference}</span></p>
    <form action="/api/teams/course-decision-review" method="post">
@@ -22,6 +28,6 @@ export default function DraftDecisionReview({decisions}:{decisions:Decision[]}){
     <button className="btn">Registrar revisión humana</button>
     <p>La aprobación depende de cinco puntuaciones, cero errores críticos y un umbral progresivo. No es un acto automático de evaluación laboral.</p>
    </form>
- </article>)}
+ </article>})}
  </section>;
 }

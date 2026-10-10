@@ -4,6 +4,7 @@ import LocalizedContent from "../../components/localization/server";
 import {workspaceUser} from "../../../lib/workspace-server";
 import {workspaceSandboxEnabled} from "../../../lib/workspace-sandbox";
 import {draftCourseAssignmentsEnabled} from "../../../lib/draft-course-assignment-policy";
+import {draftExpandedCurriculum} from "../../../lib/draft-expanded-curriculum";
 export const dynamic="force-dynamic";
 export const metadata={title:"Progreso de decisiones en borrador · Garciloga",robots:{index:false,follow:false}};
 type Assignment={id:string;course_key:string;competency:string;emphasis:string;organization_id:string};
@@ -25,6 +26,9 @@ export default async function DraftProgress(){
    const steps=decisions.filter(x=>x.assignment_id===assignment.id),byPos=new Map(steps.map(x=>[indexOfDecision(x),x]));
    let next=0;while(next<270&&byPos.get(next)?.status==="approved")next++;
    const current=byPos.get(next),level=Math.floor(next/18)+1,unit=Math.floor((next%18)/3)+1,phase=next%3+1;
+   const teaching=draftExpandedCurriculum(assignment.course_key.replaceAll("_","-"));
+   const unitPlan=teaching?.levels[level-1]?.lessons[unit-1];
+   const phaseCase=unitPlan?.decision.phases[phase-1];
    return <section className="card" key={assignment.id}>
     <h2>{assignment.course_key.replaceAll("_"," ")}</h2><p>Competencia principal: {assignment.competency} · Intensidad: {assignment.emphasis}</p>
     <p>Decisiones aprobadas en esta simulación: {steps.filter(x=>x.status==="approved").length}/270. Esto no equivale al progreso académico publicado.</p>
@@ -33,6 +37,7 @@ export default async function DraftProgress(){
     <form action="/api/learn/draft-decision" method="post">
      <h3>{current?.status==="needs_changes"?"Corrección requerida":"Siguiente decisión"}: Nivel {level}, Unidad {unit}, Fase {phase}</h3>
      <p>Usa el caso académico correspondiente a tu ruta, contrasta hechos y alternativas, y explica las consecuencias de la opción elegida.</p>
+     {unitPlan&&phaseCase&&<section className="card" aria-label="Caso de decisión en borrador"><h4>{unitPlan.title}</h4><p>{unitPlan.teaching}</p><p>{phaseCase.pressure}</p><ul>{phaseCase.alternatives.map(alt=><li key={alt.id}><strong>{alt.id.toUpperCase()}. {alt.action}</strong><p>Beneficio: {alt.benefit} · Costo: {alt.cost} · Riesgo: {alt.risk} · Autorización: {alt.authorization}</p></li>)}</ul><p>Las tres alternativas requieren justificación; ninguna demuestra por sí sola una competencia.</p></section>}
      <input type="hidden" name="assignment_id" value={assignment.id}/>
      <input type="hidden" name="level" value={level}/><input type="hidden" name="unit" value={unit}/><input type="hidden" name="phase" value={phase}/>
      <label>Alternativa seleccionada<select name="option_key" required defaultValue=""><option value="" disabled>Elegir opción</option><option value="a">A</option><option value="b">B</option><option value="c">C</option></select></label>
