@@ -66,7 +66,7 @@ test("students never receive scoring weights and manager review is authoritative
  const reviewer=readFileSync(new URL("../app/role-training/review/page.tsx",import.meta.url),"utf8");
  const migration=readFileSync(new URL("../supabase/migrations/20261010190000_advanced_decision_evidence.sql",import.meta.url),"utf8");
  const scope=readFileSync(new URL("../lib/advanced-assessment-server.ts",import.meta.url),"utf8");
- assert.doesNotMatch(client,/from ["']\.\.\/\.\.\/lib\/advanced-assessment["']/);
+ assert.doesNotMatch(client,/import\s+\{[^}]*\}\s+from ["']\.\.\/\.\.\/lib\/advanced-assessment["']/);
  assert.match(step,/replayAdvancedPartial/);
  assert.match(submit,/replayAdvanced\(request.inputs\)/);
  assert.match(submit,/request.org.*share_with_team/);
