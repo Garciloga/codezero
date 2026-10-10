@@ -74,3 +74,14 @@ for(const [role,label] of [['account_manager','Account Manager'],['customer_supp
  assert.ok(!JSON.stringify(am).includes('Factorial'));
  for(const other of Object.values(POSITION_PROGRAMS).filter(p=>p!==am&&p.key!=='customer_success')){const cases=new Set(other.lessons.map(l=>l.application.es.case));assert.ok(am.lessons.every(l=>!cases.has(l.application.es.case)),'no case is shared with '+other.key);}
 });
+
+test('written deliverables are distinct, case-specific and localized across every professional role',()=>{
+ for(const program of Object.values(POSITION_PROGRAMS).filter(p=>p.key!=='customer_success')){
+  for(const locale of ['es','en','pt','fr']){
+   const prompts=program.lessons.map(l=>l.application[locale].evidence);
+   assert.equal(prompts.length,92,program.key);
+   assert.equal(new Set(prompts).size,92,program.key+' '+locale);
+   assert.ok(prompts.every(p=>p.length>120&&!p.includes('Prepara evidencia, responsable, fecha y criterio de aceptación.')),program.key+' '+locale);
+  }
+ }
+});

@@ -68,6 +68,9 @@ jobs:
       - name: Suggestions permissions and workflows
         run: node scripts/suggestions-db-check.mjs
 
+      - name: Published position curriculum audit
+        run: npm run audit:curriculum
+
       - name: Translation coverage
         run: node scripts/localization-audit.mjs
 

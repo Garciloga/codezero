@@ -53,23 +53,15 @@ export async function POST(req: Request) {
   if (!gate.unlocked) return NextResponse.redirect(new URL(`/learn/${levelNumber}?locked=1`, req.url), 303);
   if (!canCompleteLesson(gate)) return NextResponse.redirect(lessonUrl("completed=blocked"), 303);
 
-  const now = new Date().toISOString();
+  // Atomic final check; concurrent requests cannot bypass published-activity requirements.
   const admin = createAdminSupabase();
-  const { error } = await admin.from("lesson_progress").upsert(
-    {
-      user_id: user.id,
-      lesson_id: lessonId,
-      status: "completed",
-      progress_percent: 100,
-      started_at: now,
-      completed_at: now,
-      verified_at: now,
-      updated_at: now,
-    },
-    { onConflict: "user_id,lesson_id" }
-  );
-
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  const {data: result,error} = await admin.rpc("complete_verified_lesson", {
+    p_user: user.id, p_lesson: lessonId,
+  });
+  if (error) return NextResponse.json({ error: "LESSON_NOT_SAVED" }, { status: 500 });
+  if (result === "blocked") return NextResponse.redirect(lessonUrl("completed=blocked"), 303);
+  if (result === "locked") return NextResponse.redirect(new URL(`/learn/${levelNumber}?locked=1`, req.url), 303);
+  if (result !== "completed") return NextResponse.json({ error: "LESSON_NOT_PUBLISHED" }, { status: 404 });
   await maybeIssueWorkspaceDiploma(user.id,levelNumber);
 
   return NextResponse.redirect(lessonUrl("completed=1"), 303);

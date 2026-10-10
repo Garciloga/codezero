@@ -31,6 +31,7 @@ export async function getLessonLevel(lessonId: number) {
     .from("lessons")
     .select("id, slug, level_id")
     .eq("id", lessonId)
+    .eq("status", "published")
     .single();
 
   if (!lesson) return null;
@@ -51,6 +52,7 @@ export async function getExerciseLevel(exerciseId: number) {
     .from("exercises")
     .select("id, lesson_id")
     .eq("id", exerciseId)
+    .eq("status", "published")
     .single();
 
   if (!exercise) return null;
@@ -63,6 +65,7 @@ export async function getExamLevel(examId: number) {
     .from("level_exams")
     .select("id, level_id, passing_score")
     .eq("id", examId)
+    .eq("status", "published")
     .single();
 
   if (!exam) return null;
@@ -83,6 +86,7 @@ export async function getProjectLevel(projectId: number) {
     .from("level_projects")
     .select("id, level_id")
     .eq("id", projectId)
+    .eq("status", "published")
     .single();
 
   if (!project) return null;

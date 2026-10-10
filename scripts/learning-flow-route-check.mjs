@@ -5,7 +5,35 @@ const require=createRequire(import.meta.url),learner='00000000-0000-4000-8000-00
 const quota={exercises:0,projects:0,exams:0};
 const state={lesson_progress:[],exercise_attempts:[],project_submissions:[],certificates:[],admin_audit_log:[],levels:[{id:15,level_number:15}],lessons:[{id:1,level_id:15,slug:'fixture-lesson',status:'published',sort_order:1},{id:2,level_id:15,slug:'fixture-lesson-two',status:'published',sort_order:2}],exercises:[{id:1,lesson_id:1,status:'published',kind:'multiple_choice'},{id:2,lesson_id:2,status:'published',kind:'find_error'},{id:3,lesson_id:2,status:'draft',kind:'order_steps'}],level_projects:[{id:1,level_id:15,status:'published'}],exam_questions:Array.from({length:5},(_,i)=>({id:i+1,exam_id:1})),exam_solutions:Array.from({length:5},(_,i)=>({question_id:i+1,correct_answer:'A'})),exercise_solutions:[{exercise_id:1,correct_answer:'A'},{exercise_id:2,correct_answer:'C'},{exercise_id:3,correct_answer:'B',correct_sequence:'BDCA'}],exam_attempts:[],exam_sittings:[{id:'20000000-0000-4000-8000-000000000001',user_id:learner,exam_id:1,variant:{mapping:Object.fromEntries(Array.from({length:5},(_,i)=>[String(i+1),['B','A','C','D']]))},expires_at:new Date(Date.now()+60000).toISOString(),attempt_id:null}]};
 function from(table){let op='read',payload,filters=[],singular=false,cap=Infinity,options={};const api={select(){return api},eq(k,v){filters.push(r=>r[k]===v);return api},in(k,v){filters.push(r=>v.includes(r[k]));return api},order(){return api},limit(n){cap=n;return api},single(){singular=true;return api},maybeSingle(){singular=true;return api},insert(v){op='insert';payload=v;return api},upsert(v,o){op='upsert';payload=v;options=o;return api},update(v){op='update';payload=v;return api},then(resolve,reject){return Promise.resolve().then(()=>{const rows=state[table]??=[];let selected=rows.filter(r=>filters.every(f=>f(r))).slice(0,cap);if(failInsert&&op==='insert'){failInsert=false;return {data:null,error:{message:'synthetic storage failure'}};}if(op==='insert'){const values=Array.isArray(payload)?payload:[payload];selected=values.map((v,i)=>({id:rows.length+1+i,created_at:new Date().toISOString(),...v}));rows.push(...selected);}if(op==='update')selected.forEach(r=>Object.assign(r,payload));if(op==='upsert'){const keys=(options.onConflict??'id').split(',');const existing=rows.find(r=>keys.every(k=>r[k]===payload[k]));if(existing){if(!options.ignoreDuplicates)Object.assign(existing,payload);selected=[existing];}else{const r={id:rows.length+1,issued_at:new Date().toISOString(),...payload};rows.push(r);selected=[r];}}return{data:singular?(selected[0]??null):selected,error:null};}).then(resolve,reject)}};return api;}
-const client={from,auth:{getUser:async()=>({data:{user:actor?{id:actor}:null},error:null})},rpc:async(name,p)=>{if(name!=='finish_exam_sitting')return{data:null,error:null};const sitting=state.exam_sittings.find(s=>s.id===p.p_sitting&&s.user_id===p.p_user);if(!sitting)return{data:null,error:{message:'denied'}};if(sitting.attempt_id)return{data:{status:'replay',attempt_id:sitting.attempt_id},error:null};quota.exams++;const attempt={id:state.exam_attempts.length+1,user_id:p.p_user,exam_id:1,score:p.p_score,passed:p.p_passed};state.exam_attempts.push(attempt);sitting.attempt_id=attempt.id;return{data:{status:'submitted',attempt_id:attempt.id},error:null};}};
+function lessonRpc(name,p){
+ if(name==='submit_graded_lesson_attempt'){
+  const x=state.exercises.find(x=>x.id===p.p_exercise&&x.status==='published');
+  const sol=state.exercise_solutions.find(x=>x.exercise_id===p.p_exercise);
+  if(!x||!sol)return {data:null,error:{message:'unavailable'}};
+  const own=state.exercise_attempts.filter(a=>a.user_id===p.p_user&&a.exercise_id===p.p_exercise);
+  const recent=own.find(a=>a.answer===p.p_answer&&Date.now()-Date.parse(a.created_at)<3000);
+  if(recent)return{data:{result:recent.is_correct?'correct':'incorrect',replay:true},error:null};
+  const passed=own.some(a=>a.is_correct);
+  if(passed&&quotaExhausted)return{data:{result:'limit'},error:null};
+  if(failInsert){failInsert=false;return{data:null,error:{message:'simulated insert failure'}};}
+  const correct=p.p_answer===(x.kind==='order_steps'?sol.correct_sequence:sol.correct_answer);
+  if(passed)quota.exercises++;
+  state.exercise_attempts.push({id:state.exercise_attempts.length+1,user_id:p.p_user,exercise_id:p.p_exercise,answer:p.p_answer,is_correct:correct,category:passed?'practice':'lesson_check',created_at:new Date().toISOString()});
+  return{data:{result:correct?'correct':'incorrect'},error:null};
+ }
+ const lesson=state.lessons.find(l=>l.id===p.p_lesson&&l.status==='published');
+ if(!lesson)return{data:'not_published',error:null};
+ const old=state.lesson_progress.find(x=>x.user_id===p.p_user&&x.lesson_id===p.p_lesson);
+ if(old?.status==='completed')return{data:'completed',error:null};
+ const earlier=state.lessons.filter(l=>l.level_id===lesson.level_id&&l.sort_order<lesson.sort_order);
+ if(earlier.some(l=>!state.lesson_progress.some(x=>x.user_id===p.p_user&&x.lesson_id===l.id&&x.status==='completed')))return{data:'locked',error:null};
+ const xs=state.exercises.filter(x=>x.lesson_id===p.p_lesson&&x.status==='published');
+ if(!xs.length||xs.some(x=>!state.exercise_attempts.some(a=>a.user_id===p.p_user&&a.exercise_id===x.id&&a.is_correct)))return{data:'blocked',error:null};
+ const now=new Date().toISOString(),row={user_id:p.p_user,lesson_id:p.p_lesson,status:'completed',progress_percent:100,started_at:now,completed_at:now,verified_at:now,updated_at:now};
+ if(old)Object.assign(old,row);else state.lesson_progress.push({id:state.lesson_progress.length+1,...row});
+ return{data:'completed',error:null};
+}
+const client={from,auth:{getUser:async()=>({data:{user:actor?{id:actor}:null},error:null})},rpc:async(name,p)=>{if(['submit_graded_lesson_attempt','complete_verified_lesson'].includes(name))return lessonRpc(name,p);if(name!=='finish_exam_sitting')return{data:null,error:null};const sitting=state.exam_sittings.find(s=>s.id===p.p_sitting&&s.user_id===p.p_user);if(!sitting)return{data:null,error:{message:'denied'}};if(sitting.attempt_id)return{data:{status:'replay',attempt_id:sitting.attempt_id},error:null};quota.exams++;const attempt={id:state.exam_attempts.length+1,user_id:p.p_user,exam_id:1,score:p.p_score,passed:p.p_passed};state.exam_attempts.push(attempt);sitting.attempt_id=attempt.id;return{data:{status:'submitted',attempt_id:attempt.id},error:null};}};
 const mocks={
 'supabase-server':{createServerSupabase:async()=>client},'admin':{createAdminSupabase:()=>client,requireAdmin:async(id)=>{if(id!==owner)throw Error('FORBIDDEN')}},
 'security':{isTrustedBrowserRequest:r=>r.headers.get('origin')==='http://localhost:3256'},'rate-limit':{consumeRateLimit:async()=>({allowed:true})},

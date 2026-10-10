@@ -46,6 +46,7 @@ await db.exec(readFileSync('supabase/migrations/20261010010000_key_account_manag
 await db.exec(readFileSync('supabase/migrations/20261010030000_product_specialist_program.sql','utf8'));
 await db.exec(readFileSync('supabase/migrations/20261010050000_project_manager_program.sql','utf8'));
 await db.exec(readFileSync('supabase/migrations/20261010070000_manager_team_lead_program.sql','utf8'));
+await db.exec(readFileSync('supabase/migrations/20261010160000_professional_lesson_integrity.sql','utf8'));
 let request=500;const submit=(user,key,org=id(10),answers=null,draft=null,req=null)=>{
  const item=POSITION_ITEMS.find(a=>a.key===key);return db.query('select submit_position_practice($1,$2,$3,$4,$5,$6,$7) result',[user,key,req??id(request++),org,draft??(['exam','diagnostic'].includes(item.type)?'':'Evidence, explicit constraints, owned decisions and next review with verifiable acceptance. '.repeat(4)),JSON.stringify(answers??item.decisions.map(d=>d.correct)),'guided']);
 };
@@ -60,7 +61,17 @@ await db.exec('reset role');await db.exec(`update profiles set plan_name='free' 
 await submit(id(3),'position-diagnostic-data');await reject(()=>submit(id(3),'position-cs-l1-1'));
 await db.exec('reset role');await db.exec(`update profiles set plan_name='pro' where id='${id(3)}'`);await db.exec('set role service_role');
 for(let n=1;n<=15;n++){
- for(const lesson of CS_CURRICULUM_LESSONS.filter(a=>a.level===n))await submit(id(3),lesson.key);
+ for(const lesson of CS_CURRICULUM_LESSONS.filter(a=>a.level===n)){
+  if(n===1&&lesson.lesson===1){
+   const wrong=lesson.decisions.map(d=>(d.correct+1)%d.options.length);
+   await submit(id(3),lesson.key,id(10),wrong);
+  } else await submit(id(3),lesson.key);
+ }
+ if(n===1){
+   // A submitted but incorrect professional lesson must NOT unlock the exam.
+   await reject(()=>submit(id(3),'position-cs-exam-1'));
+   await submit(id(3),CS_CURRICULUM_LESSONS.find(a=>a.level===1&&a.lesson===1).key);
+ }
  if([8,15].includes(n)){
   await reject(()=>submit(id(3),'position-cs-exam-'+n));
   const submission=id(request++);await submit(id(3),'position-cs-project-'+n,id(10),[],'Project rationale with source, scope, numeric formulas, alternatives and verification. '.repeat(5),submission);
@@ -74,7 +85,7 @@ for(let n=1;n<=15;n++){
  assert.equal((await submit(id(3),exam,id(10),null,'',req)).rows[0].result,'passed');
 }
 assert.equal((await db.query(`select used from test_quota where user_id='${id(3)}'`)).rows[0].used,15);
-assert.equal((await db.query(`select count(*) n from learning_practice_submissions s join learning_activity_catalog a on a.id=s.activity_id where a.content_key like 'position-cs-l%'`)).rows[0].n,92);
+assert.equal((await db.query(`select count(distinct a.content_key) n from learning_practice_submissions s join learning_activity_catalog a on a.id=s.activity_id where a.content_key like 'position-cs-l%'`)).rows[0].n,92);
 await db.exec('reset role');await db.exec(`update public.test_quota set quota=15 where user_id='${id(3)}'`);await db.exec('set role service_role');assert.equal((await submit(id(3),'position-cs-exam-15')).rows[0].result,'limit');
 await reject(()=>submit(id(3),'position-cs-l2-1',id(20)));
 // A second position: its own level gates, project gates, answer keys and certificate; Customer Success progress does not unlock it.

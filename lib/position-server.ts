@@ -19,7 +19,16 @@ export const positionState=cache(async (org:string|null)=>{
  if(records.error||error)throw Error('POSITION_UNAVAILABLE');
  const keyById=new Map(catalog.map(a=>[a.id,a.content_key]));
  const submissions=(records.data??[]).map(a=>({...a,key:keyById.get(a.activity_id)}));
- const completed=new Set(submissions.map(s=>s.key));
+ // A submission alone never means a professional lesson was approved.
+ // Only a fully correct server-graded decision set qualifies as completed.
+ const byKey=new Map(POSITION_ITEMS.map(item=>[item.key,item]));
+ const completed=new Set(submissions.filter(s=>{
+  const item=byKey.get(s.key??'');
+  if(!item)return false;
+  if(item.type!=='lesson')return true;
+  return Array.isArray(s.answers)&&s.answers.length===item.decisions.length&&
+   item.decisions.every((decision,i)=>s.answers[i]===decision.correct);
+ }).map(s=>s.key));
  // Progress is computed per position; no client-supplied answer keys decide unlocks.
  const progress=Object.fromEntries(Object.values(POSITION_PROGRAMS).map(program=>{
   const passed=new Set<number>();
