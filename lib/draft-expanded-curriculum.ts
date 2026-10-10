@@ -47,7 +47,28 @@ export function draftExpandedCurriculum(courseId:string){
      objective:f.objective,competencies:f.competencies,type:f.kind,
      teaching:"En "+topic.toLowerCase()+", "+f.objective.toLowerCase()+". Caso: "+seed.caseFacts+" Conflicto: "+seed.caseConflict+" El nuevo requisito es: "+twist+" El alumno debe discriminar fuentes, proponer soluciones con restricciones y explicar cómo su decisión afecta al siguiente nivel. Se revisa evidencia observable, no una personalidad inferida.",
      task:"Analiza «"+topic+"». "+seed.caseFacts+" "+twist+" Redacta tres opciones, costo y consecuencias de cada una, un dato que invalida la hipótesis, una prueba positiva y otra negativa y el nombre funcional del responsable. Entrega evidencia reproducible y explica qué corregirías al recibir nueva información.",
-     decision:{context:"Aparece nueva evidencia que cuestiona el plan previo de «"+topic+"».",alternatives:["Revalidar evidencia, revisar autoridad y comunicar impactos", "Conservar cifras y conclusiones pese a datos contrarios", "Suspender todos los procesos sin valorar opciones ni efectos"],reviewerOnlyPreferred:0,requireDefense:true,propagation:["hipótesis revisada","costo y riesgo residual","responsable y plazo","seguimiento"]},
+     decision:{context:"Aparece nueva evidencia que cuestiona el plan previo de «"+topic+"».",
+     grading:"human-rubric-no-single-correct-option" as const,
+     phases:[
+      {phase:"diagnóstico",pressure:seed.caseConflict,alternatives:[
+       {id:"a",action:"Solicitar una comprobación independiente de las fuentes críticas antes de renovar el compromiso",benefit:"Mayor certeza y menor exposición a una afirmación falsa",cost:"Retrasa la entrega y consume capacidad técnica",risk:"El cliente podría perder confianza si no recibe actualizaciones",authorization:"validación de responsable de proceso y fuente"},
+       {id:"b",action:"Continuar con un piloto de alcance limitado, dejando incertidumbre y condiciones de interrupción por escrito",benefit:"Obtiene evidencia operativa en el plazo previsto",cost:"Requiere seguimiento cercano y controles compensatorios",risk:"Puede exponer un subconjunto de usuarios si se definió mal el alcance",authorization:"aprobación de líder y de seguridad para el alcance del piloto"},
+       {id:"c",action:"Escalar al comité para renegociar fechas y obligaciones con el cliente antes de ejecutar el cambio",benefit:"Alinea las obligaciones comerciales, legales y técnicas",cost:"Mayor coordinación y riesgo de dilación",risk:"Puede congelar trabajo útil si la escalación no tiene plazo",authorization:"decisor contractual y dueño del riesgo"}
+      ]},
+      {phase:"ejecución",pressure:twist,alternatives:[
+       {id:"a",action:"Reasignar horas al control con mayor impacto y diferir tareas de menor criticidad",benefit:"Protege riesgos materiales y capacidad limitada",cost:"Se retrasa una entrega secundaria",risk:"La priorización puede ignorar dependencia de otro equipo",authorization:"responsable operativo y afectado"},
+       {id:"b",action:"Mantener hitos mediante una prueba paralela de alcance reducido",benefit:"Produce evidencia de uso sin perder totalmente el calendario",cost:"Duplica temporalmente control y validación",risk:"Puede crear dos versiones de la misma fuente",authorization:"responsable de calidad y de acceso a datos"},
+       {id:"c",action:"Renegociar el hito externo y reservar la capacidad para remediar la causa raíz",benefit:"Reduce el riesgo de reincidencia",cost:"Afecta expectativas comerciales",risk:"La nueva fecha puede ser impracticable si no hay recursos",authorization:"titular del compromiso y sponsor"}
+      ]},
+      {phase:"revisión",pressure:"La nueva medición difiere de tu escenario inicial y requiere explicar la variación sin ocultar decisiones previas.",alternatives:[
+       {id:"a",action:"Mantener la decisión solo si una muestra independiente confirma su efecto, con fecha de reevaluación",benefit:"Continuidad si los datos son sólidos",cost:"Nueva verificación y demora para cerrar",risk:"Muestras pequeñas pueden ocultar fallos",authorization:"revisor independiente"},
+       {id:"b",action:"Volver a la alternativa reversible y ensayar otra hipótesis con registro de versiones",benefit:"Limita consecuencias negativas tempranas",cost:"Retrabajo y menor avance aparente",risk:"La reversión puede afectar dependencias",authorization:"dueño del proceso y del impacto"},
+       {id:"c",action:"Escalar una excepción temporal con condición de expiración y análisis de residual",benefit:"Permite continuidad controlada bajo circunstancias excepcionales",cost:"Aumenta las tareas de monitoreo",risk:"Normalizar excepciones sin cierre",authorization:"autoridad formal de aceptación del riesgo"}
+      ]}
+     ],
+     writtenJustificationRequired:["evidencia y fuente por fase","comparación de tres alternativas con costo y riesgo","criterio que cambiaría la opción elegida","responsables y límites de autoridad","razones de la rectificación","seguimiento verificable"],
+     transferToNextLevel:["hipótesis nueva o rechazada","historial de las tres decisiones","costo y riesgo residual","responsable y plazo","evidencia de resultados"],
+     neverInferTraits:true,requiresIndependentHumanReview:true},
      observableIndicators:["verifica fuentes antes de concluir","documenta corrección sin borrar histórico","escucha objeciones y responde con evidencias","separa decisión autorizada de recomendación","colabora con límites de datos y permisos"],
      assessor:{minScore:i>=11?90:i>=7?88:i>=3?84:80,rubric:[20,20,20,20,20],independentHumanReviewer:true,criticalErrorsAllowed:0,personalityInferenceForbidden:true}
     })),

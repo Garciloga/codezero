@@ -14,3 +14,11 @@ test("expansion stays editor only and never registers draft as a released route"
  const pub=fs.readFileSync("lib/product-roadmap.ts","utf8");
  assert.ok(!pub.includes("draftExpandedCurriculum"));
 });
+\ntest("expanded cases offer defensible alternatives with three stages, never a trivial single answer",()=>{
+ assert.ok(file.includes('grading:"human-rubric-no-single-correct-option"'));
+ assert.ok(file.includes('phase:"diagnóstico"'));
+ assert.ok(file.includes('phase:"ejecución"'));
+ assert.ok(file.includes('phase:"revisión"'));
+ assert.ok(file.includes('neverInferTraits:true'));
+ assert.ok(!file.includes('reviewerOnlyPreferred:0'));
+});\n
