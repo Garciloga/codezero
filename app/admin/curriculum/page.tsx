@@ -50,7 +50,7 @@ export default async function OwnerCurriculumInspector({ searchParams }: Props) 
       <div className="nav">
         <div><span className="pill">{copy.owner}</span><h1>{copy.title}</h1>
           <p className="muted">{copy.intro}</p></div>
-        <div className="public-actions"><Link className="btn" href={"/admin/curriculum/reviews?program="+program.key}>Revisión editorial por lección</Link><Link className="btn secondary" href="/admin">{copy.back}</Link></div>
+        <div className="public-actions"><Link className="btn" href="/admin/curriculum/drafts">Borradores académicos · GRC y Coming soon</Link><Link className="btn secondary" href={"/admin/curriculum/reviews?program="+program.key}>Revisión editorial por lección</Link><Link className="btn secondary" href="/admin">{copy.back}</Link></div>
       </div>
       <nav className="card" aria-label={copy.programs}>
         <h2>{copy.choose}</h2>

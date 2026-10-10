@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eu
+APP_HOME=$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)
+JAR="$APP_HOME/gradle/wrapper/gradle-wrapper.jar"
+if [ ! -f "$JAR" ]; then
+  echo 'Missing official Gradle Wrapper JAR. Download https://services.gradle.org/distributions/gradle-8.13-wrapper.jar to gradle/wrapper/gradle-wrapper.jar and verify its SHA-256: 81a82aaea5abcc8ff68b3dfcb58b3c3c429378efd98e7433460610fecd7ae45f' >&2
+  exit 1
+fi
+if [ -n "${JAVA_HOME:-}" ]; then JAVA="$JAVA_HOME/bin/java"; else JAVA=java; fi
+exec "$JAVA" -Dorg.gradle.appname=gradlew -classpath "$JAR" org.gradle.wrapper.GradleWrapperMain "$@"

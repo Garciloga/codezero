@@ -14,6 +14,7 @@ import ProfileAvatar from "./profile-avatar";
 import NotificationBell from './notification-bell';
 import PageMotion from './page-motion';
 import LanguageSelector from "./localization/language-selector";
+import MobileTabs from "./mobile-tabs";
 const publicHeaderPaths = ["/", "/about", "/pricing", "/roadmap", "/login", "/terms", "/privacy", "/refunds", "/contact", "/experience-preview", "/practice-preview", "/modular-preview", "/companies", "/help", "/news"];
 type Organization = {
   organization_id: string;
@@ -242,6 +243,7 @@ export default function VivoShell({
         <div className="vivo-toolbar"><NotificationBell/><LanguageSelector /></div>
         <PageMotion>{children}</PageMotion>
       </div>
+      <MobileTabs orgId={org?.organization_id??null} roleTrainingActive={roleTrainingActive} />
     </div>
   );
 }

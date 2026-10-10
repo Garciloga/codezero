@@ -58,6 +58,8 @@ export default function FAQPage() {
         <Link className="btn secondary" href="/">Inicio</Link>
       </div>
 
+      <section className="card"><h2>¿Administras un equipo?</h2><p>Consulta el tutorial ilustrado de asignación, las competencias y los cambios previstos.</p><Link className="btn" href="/guides/companies">Guía para empresas</Link></section>
+
       <div style={{display:"grid",gap:14}}>
         {faqs.map((item) => (
           <section className="card" key={item.q}>

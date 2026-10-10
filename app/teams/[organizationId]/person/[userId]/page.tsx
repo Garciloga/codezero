@@ -9,6 +9,11 @@ import {roleTrainingEnabled,trainingPerson} from '../../../../../lib/role-traini
 import CompetencyPanel from '../../../../components/enterprise/competency-panel';
 import {ROLE_WORKFLOWS} from '../../../../../lib/career-role-workflows';
 import ReinforcementPanel from '../../../../components/enterprise/reinforcement-panel';
+import DraftCourseAssignment from '../../../../components/enterprise/draft-course-assignment';
+import DraftDecisionReview from '../../../../components/enterprise/draft-decision-review';
+import {createAdminSupabase} from '../../../../../lib/admin';
+import {draftCourseAssignmentsEnabled} from '../../../../../lib/draft-course-assignment-policy';
+import {workspaceSandboxEnabled} from '../../../../../lib/workspace-sandbox';
 export default async function PersonPage({
   params,
 }: {
@@ -23,6 +28,24 @@ export default async function PersonPage({
   ]);
   const person = d.people.find((p) => p.user_id === userId);
   if (!person) redirect("/dashboard");
+  // A person profile is restricted to the organization owner, admins, direct reports,
+  // or a leader who has explicit visibility permission for the target's team.
+  const isAdmin=['owner','admin'].includes(d.own.role);
+  const teamAccess=!isAdmin&&person.reports_to!==d.user.id?await d.supabase.from('organization_team_members').select('team_id').eq('organization_id',organizationId).eq('user_id',userId):null;
+  const grants=teamAccess?.data?.length?await d.supabase.from('organization_team_grants').select('team_id').eq('organization_id',organizationId).eq('user_id',d.user.id).eq('can_view',true):null;
+  const permitted=isAdmin||userId===d.user.id||person.reports_to===d.user.id||Boolean(teamAccess?.data?.some(m=>grants?.data?.some(g=>g.team_id===m.team_id)));
+  if(!permitted)redirect('/dashboard');
+  const preview=draftCourseAssignmentsEnabled()&&workspaceSandboxEnabled();
+  const availableTeams=preview?await d.supabase.from('organization_teams').select('id,name').eq('organization_id',organizationId):null;
+  const pendingDraftDecisions=preview&&(isAdmin||person.reports_to===d.user.id)
+    ?await createAdminSupabase().from('organization_course_decision_drafts')
+      .select('id,assignment_id,level_number,unit_number,phase_number,option_key,reasoning,evidence_reference,revision')
+      .eq('organization_id',organizationId).eq('user_id',userId).eq('status','submitted')
+      .order('submitted_at',{ascending:true}).limit(20):null;
+  const draftAssignmentsForReview=preview&&(isAdmin||person.reports_to===d.user.id)&&pendingDraftDecisions?.data?.length
+    ?await createAdminSupabase().from('organization_course_assignment_drafts').select('id,course_key').eq('organization_id',organizationId).eq('user_id',userId):null;
+  const draftAssignmentNames=new Map((draftAssignmentsForReview?.data??[]).map(c=>[c.id,c.course_key]));
+  const draftReviewRows=(pendingDraftDecisions?.data??[]).map(entry=>({...entry,course_key:draftAssignmentNames.get(entry.assignment_id)??''}));
   const training=roleTrainingEnabled()?await trainingPerson(userId,organizationId):null;
   const reinforcement=training?await d.supabase.from('learning_assignments').select('activity_key,title,due_at,reinforcement_before,reinforcement_after').eq('organization_id',organizationId).eq('user_id',userId).eq('activity_type','route_unit'):null;
   return (
@@ -30,6 +53,8 @@ export default async function PersonPage({
       <main className="wrap">
         <h1>Ficha de aprendizaje</h1>
         <PersonCard org={organizationId} person={person} />
+        {preview&&<DraftCourseAssignment org={organizationId} target={userId} teams={availableTeams?.data??[]}/>}
+        {preview&&Boolean(pendingDraftDecisions?.data?.length)&&<DraftDecisionReview decisions={draftReviewRows}/>} 
         {training&&<><section className="card"><h2>Perfil del puesto para aprendizaje</h2><form action="/api/role-training" method="post"><input type="hidden" name="action" value="position"/><input type="hidden" name="organization_id" value={organizationId}/><input type="hidden" name="user_id" value={userId}/><label>Puesto<select name="position" defaultValue={training.profile?.position_key??''} required><option value="" disabled>Elige un puesto</option>{Object.entries(ROLE_WORKFLOWS).map(([key,r])=><option key={key} value={key}>{r.title}</option>)}{training.profiles.some(p=>p.position_key==='product_specialist')&&<option value="product_specialist">Product Specialist</option>}</select></label><button className="btn">Guardar perfil de aprendizaje</button></form></section><DevelopmentPlans org={organizationId} userId={userId} summary={training.summary} canPropose/><CompetencyPanel evidence={training.evidence} profile={training.profile} org={organizationId} userId={userId} canAssign={true}/>
          {reinforcement?.error?<p>No pudimos cargar los refuerzos.</p>:<ReinforcementPanel records={reinforcement?.data??[]}/>}</>}
         <section className="card">

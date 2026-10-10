@@ -1,0 +1,2482 @@
+{
+  "key": "employability",
+  "title": "Empleabilidad · portafolio, CV e entrevistas",
+  "kind": "product-workflow-and-learning",
+  "status": "draft",
+  "language": "es",
+  "localeStates": {
+    "es": "es",
+    "en": "beta-pending",
+    "pt": "beta-pending",
+    "fr": "beta-pending"
+  },
+  "edition": "2026-10-10 practical v2",
+  "nonnegotiable": "El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+  "reviewerOnly": true,
+  "levels": [
+    {
+      "id": "employability-p1",
+      "number": 1,
+      "title": "Selección de evidencia y consentimiento",
+      "difficulty": "introductoria",
+      "caseFacts": "Un alumno completó 12 simulaciones, pero sólo dos tienen revisión humana, una de ellas realizada en una organización donde firma NDA. Quiere publicar las doce en LinkedIn con capturas de datos de clientes.",
+      "caseConflict": "Orientación laboral propone hacer público el progreso completo por defecto.",
+      "metric": "piezas válidas publicadas y revocabilidad",
+      "units": [
+        {
+          "id": "employability-p1-u1",
+          "title": "Mapa de competencias comprobadas",
+          "objective": "Aplicar mapa de competencias comprobadas al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para alumnos individuales, dominar «Mapa de competencias comprobadas» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Sólo evidencia personal revisada y publicada voluntariamente puede incorporarse al portafolio público. En el capítulo «Selección de evidencia y consentimiento», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Un alumno completó 12 simulaciones, pero sólo dos tienen revisión humana, una de ellas realizada en una organización donde firma NDA. Quiere publicar las doce en LinkedIn con capturas de datos de clientes. La presión es: Orientación laboral propone hacer público el progreso completo por defecto. El alumno debe transformar «Mapa de competencias comprobadas» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «piezas válidas publicadas y revocabilidad».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"entregables_de_simulacion\":15,\"entregables_personales_aprobados_para_portafolio\":4}. Calcula «% de cobertura de evidencia» con 100 × entregables personales aprobados / entregables de simulación. Valor para revisión: 26.67. Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Mapa de competencias comprobadas»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara inventario de evidencia con permisos para el aspecto «mapa de competencias comprobadas». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: transformar un ejercicio sintético en años de experiencia profesional inventados. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+            "prerequisites": [
+              "Unidad 1: Mapa de competencias comprobadas",
+              "Objetivo: Aplicar mapa de competencias comprobadas al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: piezas válidas publicadas y revocabilidad"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "entregables_de_simulacion": 15,
+              "entregables_personales_aprobados_para_portafolio": 4
+            },
+            "formula": "100 × entregables personales aprobados / entregables de simulación",
+            "expected": 26.67,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "employability-p1-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Empleabilidad y portafolio. Un alumno completó 12 simulaciones, pero sólo dos tienen revisión humana, una de ellas realizada en una organización donde firma NDA. Quiere publicar las doce en LinkedIn con capturas de datos de clientes. Conflicto: Orientación laboral propone hacer público el progreso completo por defecto. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Mapa de competencias comprobadas». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p1-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"entregables_de_simulacion\":15,\"entregables_personales_aprobados_para_portafolio\":4}, calcula % de cobertura de evidencia mediante 100 × entregables personales aprobados / entregables de simulación; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p1-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Empleabilidad y portafolio. Un alumno completó 12 simulaciones, pero sólo dos tienen revisión humana, una de ellas realizada en una organización donde firma NDA. Quiere publicar las doce en LinkedIn con capturas de datos de clientes. Conflicto: Orientación laboral propone hacer público el progreso completo por defecto. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «piezas válidas publicadas y revocabilidad». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p1-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara inventario de evidencia con permisos para el aspecto «Mapa de competencias comprobadas». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Mapa de competencias comprobadas» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p1-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Selección de evidencia y consentimiento», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 26.67,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "commonFailure": "transformar un ejercicio sintético en años de experiencia profesional inventados",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "employability-p1-u2",
+          "title": "Ámbito personal versus corporativo",
+          "objective": "Aplicar ámbito personal versus corporativo al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para alumnos individuales, dominar «Ámbito personal versus corporativo» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Los resultados de simulación no equivalen a experiencia laboral ni autorizan prometer títulos de certificación externa. En el capítulo «Selección de evidencia y consentimiento», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Un alumno completó 12 simulaciones, pero sólo dos tienen revisión humana, una de ellas realizada en una organización donde firma NDA. Quiere publicar las doce en LinkedIn con capturas de datos de clientes. La presión es: Orientación laboral propone hacer público el progreso completo por defecto. El alumno debe transformar «Ámbito personal versus corporativo» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «piezas válidas publicadas y revocabilidad».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"entregables_de_simulacion\":15,\"entregables_personales_aprobados_para_portafolio\":4}. Calcula «% de cobertura de evidencia» con 100 × entregables personales aprobados / entregables de simulación. Valor para revisión: 26.67. Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Ámbito personal versus corporativo»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara inventario de evidencia con permisos para el aspecto «ámbito personal versus corporativo». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: transformar un ejercicio sintético en años de experiencia profesional inventados. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+            "prerequisites": [
+              "Unidad 1: Ámbito personal versus corporativo",
+              "Objetivo: Aplicar ámbito personal versus corporativo al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: piezas válidas publicadas y revocabilidad"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "entregables_de_simulacion": 15,
+              "entregables_personales_aprobados_para_portafolio": 4
+            },
+            "formula": "100 × entregables personales aprobados / entregables de simulación",
+            "expected": 26.67,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "employability-p1-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Empleabilidad y portafolio. Un alumno completó 12 simulaciones, pero sólo dos tienen revisión humana, una de ellas realizada en una organización donde firma NDA. Quiere publicar las doce en LinkedIn con capturas de datos de clientes. Conflicto: Orientación laboral propone hacer público el progreso completo por defecto. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Ámbito personal versus corporativo». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p1-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"entregables_de_simulacion\":15,\"entregables_personales_aprobados_para_portafolio\":4}, calcula % de cobertura de evidencia mediante 100 × entregables personales aprobados / entregables de simulación; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p1-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Empleabilidad y portafolio. Un alumno completó 12 simulaciones, pero sólo dos tienen revisión humana, una de ellas realizada en una organización donde firma NDA. Quiere publicar las doce en LinkedIn con capturas de datos de clientes. Conflicto: Orientación laboral propone hacer público el progreso completo por defecto. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «piezas válidas publicadas y revocabilidad». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p1-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara inventario de evidencia con permisos para el aspecto «Ámbito personal versus corporativo». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Ámbito personal versus corporativo» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p1-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Selección de evidencia y consentimiento», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 26.67,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "commonFailure": "transformar un ejercicio sintético en años de experiencia profesional inventados",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "employability-p1-u3",
+          "title": "Publicación selectiva y revocación",
+          "objective": "Aplicar publicación selectiva y revocación al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para alumnos individuales, dominar «Publicación selectiva y revocación» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una candidatura efectiva reconoce competencias y brechas, y da derecho a revocar materiales y corregir información. En el capítulo «Selección de evidencia y consentimiento», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Un alumno completó 12 simulaciones, pero sólo dos tienen revisión humana, una de ellas realizada en una organización donde firma NDA. Quiere publicar las doce en LinkedIn con capturas de datos de clientes. La presión es: Orientación laboral propone hacer público el progreso completo por defecto. El alumno debe transformar «Publicación selectiva y revocación» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «piezas válidas publicadas y revocabilidad».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"entregables_de_simulacion\":15,\"entregables_personales_aprobados_para_portafolio\":4}. Calcula «% de cobertura de evidencia» con 100 × entregables personales aprobados / entregables de simulación. Valor para revisión: 26.67. Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Publicación selectiva y revocación»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara inventario de evidencia con permisos para el aspecto «publicación selectiva y revocación». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: transformar un ejercicio sintético en años de experiencia profesional inventados. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+            "prerequisites": [
+              "Unidad 1: Publicación selectiva y revocación",
+              "Objetivo: Aplicar publicación selectiva y revocación al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: piezas válidas publicadas y revocabilidad"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "entregables_de_simulacion": 15,
+              "entregables_personales_aprobados_para_portafolio": 4
+            },
+            "formula": "100 × entregables personales aprobados / entregables de simulación",
+            "expected": 26.67,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "employability-p1-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Empleabilidad y portafolio. Un alumno completó 12 simulaciones, pero sólo dos tienen revisión humana, una de ellas realizada en una organización donde firma NDA. Quiere publicar las doce en LinkedIn con capturas de datos de clientes. Conflicto: Orientación laboral propone hacer público el progreso completo por defecto. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Publicación selectiva y revocación». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p1-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"entregables_de_simulacion\":15,\"entregables_personales_aprobados_para_portafolio\":4}, calcula % de cobertura de evidencia mediante 100 × entregables personales aprobados / entregables de simulación; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p1-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Empleabilidad y portafolio. Un alumno completó 12 simulaciones, pero sólo dos tienen revisión humana, una de ellas realizada en una organización donde firma NDA. Quiere publicar las doce en LinkedIn con capturas de datos de clientes. Conflicto: Orientación laboral propone hacer público el progreso completo por defecto. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «piezas válidas publicadas y revocabilidad». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p1-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara inventario de evidencia con permisos para el aspecto «Publicación selectiva y revocación». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Publicación selectiva y revocación» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p1-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Selección de evidencia y consentimiento», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 26.67,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "commonFailure": "transformar un ejercicio sintético en años de experiencia profesional inventados",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «piezas válidas publicadas y revocabilidad».",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 1 y 2.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "employability-p2",
+      "number": 2,
+      "title": "CV por puesto y resultados medibles",
+      "difficulty": "operativa",
+      "caseFacts": "Candidato ficticio sabe analizar NRR con datos simulados y lo presenta como 'gerencié cartera ARR de 20 M MXN' aunque nunca tuvo esa responsabilidad laboral.",
+      "caseConflict": "El coach propone aumentar cifras para conseguir entrevistas.",
+      "metric": "precisión del CV y trazabilidad de cada afirmación",
+      "units": [
+        {
+          "id": "employability-p2-u1",
+          "title": "Estructura ATS comprensible",
+          "objective": "Aplicar estructura ats comprensible al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para alumnos individuales, dominar «Estructura ATS comprensible» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Sólo evidencia personal revisada y publicada voluntariamente puede incorporarse al portafolio público. En el capítulo «CV por puesto y resultados medibles», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Candidato ficticio sabe analizar NRR con datos simulados y lo presenta como 'gerencié cartera ARR de 20 M MXN' aunque nunca tuvo esa responsabilidad laboral. La presión es: El coach propone aumentar cifras para conseguir entrevistas. El alumno debe transformar «Estructura ATS comprensible» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"entregables_de_simulacion\":18,\"entregables_personales_aprobados_para_portafolio\":5}. Calcula «% de cobertura de evidencia» con 100 × entregables personales aprobados / entregables de simulación. Valor para revisión: 27.78. Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Estructura ATS comprensible»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara cv dirigido con evidencias verificables para el aspecto «estructura ats comprensible». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: transformar un ejercicio sintético en años de experiencia profesional inventados. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+            "prerequisites": [
+              "Unidad 2: Estructura ATS comprensible",
+              "Objetivo: Aplicar estructura ats comprensible al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: precisión del CV y trazabilidad de cada afirmación"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "entregables_de_simulacion": 18,
+              "entregables_personales_aprobados_para_portafolio": 5
+            },
+            "formula": "100 × entregables personales aprobados / entregables de simulación",
+            "expected": 27.78,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "employability-p2-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Empleabilidad y portafolio. Candidato ficticio sabe analizar NRR con datos simulados y lo presenta como 'gerencié cartera ARR de 20 M MXN' aunque nunca tuvo esa responsabilidad laboral. Conflicto: El coach propone aumentar cifras para conseguir entrevistas. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Estructura ATS comprensible». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p2-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"entregables_de_simulacion\":18,\"entregables_personales_aprobados_para_portafolio\":5}, calcula % de cobertura de evidencia mediante 100 × entregables personales aprobados / entregables de simulación; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p2-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Empleabilidad y portafolio. Candidato ficticio sabe analizar NRR con datos simulados y lo presenta como 'gerencié cartera ARR de 20 M MXN' aunque nunca tuvo esa responsabilidad laboral. Conflicto: El coach propone aumentar cifras para conseguir entrevistas. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p2-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara CV dirigido con evidencias verificables para el aspecto «Estructura ATS comprensible». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Estructura ATS comprensible» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p2-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «CV por puesto y resultados medibles», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 27.78,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "commonFailure": "transformar un ejercicio sintético en años de experiencia profesional inventados",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "employability-p2-u2",
+          "title": "Resultados sin invención",
+          "objective": "Aplicar resultados sin invención al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para alumnos individuales, dominar «Resultados sin invención» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Los resultados de simulación no equivalen a experiencia laboral ni autorizan prometer títulos de certificación externa. En el capítulo «CV por puesto y resultados medibles», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Candidato ficticio sabe analizar NRR con datos simulados y lo presenta como 'gerencié cartera ARR de 20 M MXN' aunque nunca tuvo esa responsabilidad laboral. La presión es: El coach propone aumentar cifras para conseguir entrevistas. El alumno debe transformar «Resultados sin invención» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"entregables_de_simulacion\":18,\"entregables_personales_aprobados_para_portafolio\":5}. Calcula «% de cobertura de evidencia» con 100 × entregables personales aprobados / entregables de simulación. Valor para revisión: 27.78. Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Resultados sin invención»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara cv dirigido con evidencias verificables para el aspecto «resultados sin invención». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: transformar un ejercicio sintético en años de experiencia profesional inventados. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+            "prerequisites": [
+              "Unidad 2: Resultados sin invención",
+              "Objetivo: Aplicar resultados sin invención al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: precisión del CV y trazabilidad de cada afirmación"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "entregables_de_simulacion": 18,
+              "entregables_personales_aprobados_para_portafolio": 5
+            },
+            "formula": "100 × entregables personales aprobados / entregables de simulación",
+            "expected": 27.78,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "employability-p2-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Empleabilidad y portafolio. Candidato ficticio sabe analizar NRR con datos simulados y lo presenta como 'gerencié cartera ARR de 20 M MXN' aunque nunca tuvo esa responsabilidad laboral. Conflicto: El coach propone aumentar cifras para conseguir entrevistas. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Resultados sin invención». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p2-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"entregables_de_simulacion\":18,\"entregables_personales_aprobados_para_portafolio\":5}, calcula % de cobertura de evidencia mediante 100 × entregables personales aprobados / entregables de simulación; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p2-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Empleabilidad y portafolio. Candidato ficticio sabe analizar NRR con datos simulados y lo presenta como 'gerencié cartera ARR de 20 M MXN' aunque nunca tuvo esa responsabilidad laboral. Conflicto: El coach propone aumentar cifras para conseguir entrevistas. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p2-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara CV dirigido con evidencias verificables para el aspecto «Resultados sin invención». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Resultados sin invención» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p2-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «CV por puesto y resultados medibles», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 27.78,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "commonFailure": "transformar un ejercicio sintético en años de experiencia profesional inventados",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "employability-p2-u3",
+          "title": "Competencias demostrables versus declaradas",
+          "objective": "Aplicar competencias demostrables versus declaradas al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para alumnos individuales, dominar «Competencias demostrables versus declaradas» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una candidatura efectiva reconoce competencias y brechas, y da derecho a revocar materiales y corregir información. En el capítulo «CV por puesto y resultados medibles», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Candidato ficticio sabe analizar NRR con datos simulados y lo presenta como 'gerencié cartera ARR de 20 M MXN' aunque nunca tuvo esa responsabilidad laboral. La presión es: El coach propone aumentar cifras para conseguir entrevistas. El alumno debe transformar «Competencias demostrables versus declaradas» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"entregables_de_simulacion\":18,\"entregables_personales_aprobados_para_portafolio\":5}. Calcula «% de cobertura de evidencia» con 100 × entregables personales aprobados / entregables de simulación. Valor para revisión: 27.78. Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Competencias demostrables versus declaradas»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara cv dirigido con evidencias verificables para el aspecto «competencias demostrables versus declaradas». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: transformar un ejercicio sintético en años de experiencia profesional inventados. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+            "prerequisites": [
+              "Unidad 2: Competencias demostrables versus declaradas",
+              "Objetivo: Aplicar competencias demostrables versus declaradas al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: precisión del CV y trazabilidad de cada afirmación"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "entregables_de_simulacion": 18,
+              "entregables_personales_aprobados_para_portafolio": 5
+            },
+            "formula": "100 × entregables personales aprobados / entregables de simulación",
+            "expected": 27.78,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "employability-p2-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Empleabilidad y portafolio. Candidato ficticio sabe analizar NRR con datos simulados y lo presenta como 'gerencié cartera ARR de 20 M MXN' aunque nunca tuvo esa responsabilidad laboral. Conflicto: El coach propone aumentar cifras para conseguir entrevistas. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Competencias demostrables versus declaradas». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p2-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"entregables_de_simulacion\":18,\"entregables_personales_aprobados_para_portafolio\":5}, calcula % de cobertura de evidencia mediante 100 × entregables personales aprobados / entregables de simulación; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p2-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Empleabilidad y portafolio. Candidato ficticio sabe analizar NRR con datos simulados y lo presenta como 'gerencié cartera ARR de 20 M MXN' aunque nunca tuvo esa responsabilidad laboral. Conflicto: El coach propone aumentar cifras para conseguir entrevistas. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p2-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara CV dirigido con evidencias verificables para el aspecto «Competencias demostrables versus declaradas». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Competencias demostrables versus declaradas» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p2-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «CV por puesto y resultados medibles», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 27.78,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "commonFailure": "transformar un ejercicio sintético en años de experiencia profesional inventados",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 2 y 3.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "employability-p3",
+      "number": 3,
+      "title": "Entrevistas conductuales y casos de trabajo",
+      "difficulty": "intermedia",
+      "caseFacts": "En entrevista de soporte, la persona recibe un caso con datos faltantes y responde que nunca comete errores. El entrevistador pide una situación real o simulada en que cambió una decisión.",
+      "caseConflict": "Se propone memorizar respuestas perfectas sin reconocer incertidumbre.",
+      "metric": "claridad y autenticidad en respuestas",
+      "units": [
+        {
+          "id": "employability-p3-u1",
+          "title": "Método STAR sin exageración",
+          "objective": "Aplicar método star sin exageración al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para alumnos individuales, dominar «Método STAR sin exageración» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Sólo evidencia personal revisada y publicada voluntariamente puede incorporarse al portafolio público. En el capítulo «Entrevistas conductuales y casos de trabajo», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: En entrevista de soporte, la persona recibe un caso con datos faltantes y responde que nunca comete errores. El entrevistador pide una situación real o simulada en que cambió una decisión. La presión es: Se propone memorizar respuestas perfectas sin reconocer incertidumbre. El alumno debe transformar «Método STAR sin exageración» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"entregables_de_simulacion\":21,\"entregables_personales_aprobados_para_portafolio\":6}. Calcula «% de cobertura de evidencia» con 100 × entregables personales aprobados / entregables de simulación. Valor para revisión: 28.57. Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Método STAR sin exageración»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara guion de entrevista con feedback humano para el aspecto «método star sin exageración». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: transformar un ejercicio sintético en años de experiencia profesional inventados. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+            "prerequisites": [
+              "Unidad 3: Método STAR sin exageración",
+              "Objetivo: Aplicar método star sin exageración al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: claridad y autenticidad en respuestas"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "entregables_de_simulacion": 21,
+              "entregables_personales_aprobados_para_portafolio": 6
+            },
+            "formula": "100 × entregables personales aprobados / entregables de simulación",
+            "expected": 28.57,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "employability-p3-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Empleabilidad y portafolio. En entrevista de soporte, la persona recibe un caso con datos faltantes y responde que nunca comete errores. El entrevistador pide una situación real o simulada en que cambió una decisión. Conflicto: Se propone memorizar respuestas perfectas sin reconocer incertidumbre. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Método STAR sin exageración». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p3-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"entregables_de_simulacion\":21,\"entregables_personales_aprobados_para_portafolio\":6}, calcula % de cobertura de evidencia mediante 100 × entregables personales aprobados / entregables de simulación; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p3-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Empleabilidad y portafolio. En entrevista de soporte, la persona recibe un caso con datos faltantes y responde que nunca comete errores. El entrevistador pide una situación real o simulada en que cambió una decisión. Conflicto: Se propone memorizar respuestas perfectas sin reconocer incertidumbre. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p3-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara guion de entrevista con feedback humano para el aspecto «Método STAR sin exageración». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Método STAR sin exageración» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p3-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Entrevistas conductuales y casos de trabajo», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 28.57,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "commonFailure": "transformar un ejercicio sintético en años de experiencia profesional inventados",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "employability-p3-u2",
+          "title": "Defensa de decisiones difíciles",
+          "objective": "Aplicar defensa de decisiones difíciles al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para alumnos individuales, dominar «Defensa de decisiones difíciles» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Los resultados de simulación no equivalen a experiencia laboral ni autorizan prometer títulos de certificación externa. En el capítulo «Entrevistas conductuales y casos de trabajo», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: En entrevista de soporte, la persona recibe un caso con datos faltantes y responde que nunca comete errores. El entrevistador pide una situación real o simulada en que cambió una decisión. La presión es: Se propone memorizar respuestas perfectas sin reconocer incertidumbre. El alumno debe transformar «Defensa de decisiones difíciles» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"entregables_de_simulacion\":21,\"entregables_personales_aprobados_para_portafolio\":6}. Calcula «% de cobertura de evidencia» con 100 × entregables personales aprobados / entregables de simulación. Valor para revisión: 28.57. Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Defensa de decisiones difíciles»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara guion de entrevista con feedback humano para el aspecto «defensa de decisiones difíciles». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: transformar un ejercicio sintético en años de experiencia profesional inventados. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+            "prerequisites": [
+              "Unidad 3: Defensa de decisiones difíciles",
+              "Objetivo: Aplicar defensa de decisiones difíciles al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: claridad y autenticidad en respuestas"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "entregables_de_simulacion": 21,
+              "entregables_personales_aprobados_para_portafolio": 6
+            },
+            "formula": "100 × entregables personales aprobados / entregables de simulación",
+            "expected": 28.57,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "employability-p3-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Empleabilidad y portafolio. En entrevista de soporte, la persona recibe un caso con datos faltantes y responde que nunca comete errores. El entrevistador pide una situación real o simulada en que cambió una decisión. Conflicto: Se propone memorizar respuestas perfectas sin reconocer incertidumbre. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Defensa de decisiones difíciles». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p3-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"entregables_de_simulacion\":21,\"entregables_personales_aprobados_para_portafolio\":6}, calcula % de cobertura de evidencia mediante 100 × entregables personales aprobados / entregables de simulación; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p3-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Empleabilidad y portafolio. En entrevista de soporte, la persona recibe un caso con datos faltantes y responde que nunca comete errores. El entrevistador pide una situación real o simulada en que cambió una decisión. Conflicto: Se propone memorizar respuestas perfectas sin reconocer incertidumbre. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p3-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara guion de entrevista con feedback humano para el aspecto «Defensa de decisiones difíciles». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Defensa de decisiones difíciles» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p3-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Entrevistas conductuales y casos de trabajo», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 28.57,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "commonFailure": "transformar un ejercicio sintético en años de experiencia profesional inventados",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "employability-p3-u3",
+          "title": "Preguntas éticas y de incidentes",
+          "objective": "Aplicar preguntas éticas y de incidentes al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para alumnos individuales, dominar «Preguntas éticas y de incidentes» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una candidatura efectiva reconoce competencias y brechas, y da derecho a revocar materiales y corregir información. En el capítulo «Entrevistas conductuales y casos de trabajo», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: En entrevista de soporte, la persona recibe un caso con datos faltantes y responde que nunca comete errores. El entrevistador pide una situación real o simulada en que cambió una decisión. La presión es: Se propone memorizar respuestas perfectas sin reconocer incertidumbre. El alumno debe transformar «Preguntas éticas y de incidentes» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"entregables_de_simulacion\":21,\"entregables_personales_aprobados_para_portafolio\":6}. Calcula «% de cobertura de evidencia» con 100 × entregables personales aprobados / entregables de simulación. Valor para revisión: 28.57. Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Preguntas éticas y de incidentes»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara guion de entrevista con feedback humano para el aspecto «preguntas éticas y de incidentes». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: transformar un ejercicio sintético en años de experiencia profesional inventados. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+            "prerequisites": [
+              "Unidad 3: Preguntas éticas y de incidentes",
+              "Objetivo: Aplicar preguntas éticas y de incidentes al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: claridad y autenticidad en respuestas"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "entregables_de_simulacion": 21,
+              "entregables_personales_aprobados_para_portafolio": 6
+            },
+            "formula": "100 × entregables personales aprobados / entregables de simulación",
+            "expected": 28.57,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "employability-p3-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Empleabilidad y portafolio. En entrevista de soporte, la persona recibe un caso con datos faltantes y responde que nunca comete errores. El entrevistador pide una situación real o simulada en que cambió una decisión. Conflicto: Se propone memorizar respuestas perfectas sin reconocer incertidumbre. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Preguntas éticas y de incidentes». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p3-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"entregables_de_simulacion\":21,\"entregables_personales_aprobados_para_portafolio\":6}, calcula % de cobertura de evidencia mediante 100 × entregables personales aprobados / entregables de simulación; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p3-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Empleabilidad y portafolio. En entrevista de soporte, la persona recibe un caso con datos faltantes y responde que nunca comete errores. El entrevistador pide una situación real o simulada en que cambió una decisión. Conflicto: Se propone memorizar respuestas perfectas sin reconocer incertidumbre. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p3-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara guion de entrevista con feedback humano para el aspecto «Preguntas éticas y de incidentes». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Preguntas éticas y de incidentes» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p3-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Entrevistas conductuales y casos de trabajo», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 28.57,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "commonFailure": "transformar un ejercicio sintético en años de experiencia profesional inventados",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 3 y 4.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "employability-p4",
+      "number": 4,
+      "title": "Estrategia de aplicación y empleabilidad",
+      "difficulty": "especialista",
+      "caseFacts": "Seis vacantes piden SQL, soporte y comunicación. El candidato tiene comunicación 3/4 revisada, SQL todavía sin prueba y declara SQL experto en todas las solicitudes.",
+      "caseConflict": "Se solicita ocultar brechas para no perder oportunidades.",
+      "metric": "ajuste declarado vs requerido y progreso real",
+      "units": [
+        {
+          "id": "employability-p4-u1",
+          "title": "Segmentación de vacantes",
+          "objective": "Aplicar segmentación de vacantes al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para alumnos individuales, dominar «Segmentación de vacantes» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Sólo evidencia personal revisada y publicada voluntariamente puede incorporarse al portafolio público. En el capítulo «Estrategia de aplicación y empleabilidad», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Seis vacantes piden SQL, soporte y comunicación. El candidato tiene comunicación 3/4 revisada, SQL todavía sin prueba y declara SQL experto en todas las solicitudes. La presión es: Se solicita ocultar brechas para no perder oportunidades. El alumno debe transformar «Segmentación de vacantes» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"entregables_de_simulacion\":24,\"entregables_personales_aprobados_para_portafolio\":7}. Calcula «% de cobertura de evidencia» con 100 × entregables personales aprobados / entregables de simulación. Valor para revisión: 29.17. Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Segmentación de vacantes»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara tablero personal de búsqueda y plan de práctica para el aspecto «segmentación de vacantes». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: transformar un ejercicio sintético en años de experiencia profesional inventados. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+            "prerequisites": [
+              "Unidad 4: Segmentación de vacantes",
+              "Objetivo: Aplicar segmentación de vacantes al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: ajuste declarado vs requerido y progreso real"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "entregables_de_simulacion": 24,
+              "entregables_personales_aprobados_para_portafolio": 7
+            },
+            "formula": "100 × entregables personales aprobados / entregables de simulación",
+            "expected": 29.17,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "employability-p4-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Empleabilidad y portafolio. Seis vacantes piden SQL, soporte y comunicación. El candidato tiene comunicación 3/4 revisada, SQL todavía sin prueba y declara SQL experto en todas las solicitudes. Conflicto: Se solicita ocultar brechas para no perder oportunidades. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Segmentación de vacantes». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p4-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"entregables_de_simulacion\":24,\"entregables_personales_aprobados_para_portafolio\":7}, calcula % de cobertura de evidencia mediante 100 × entregables personales aprobados / entregables de simulación; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p4-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Empleabilidad y portafolio. Seis vacantes piden SQL, soporte y comunicación. El candidato tiene comunicación 3/4 revisada, SQL todavía sin prueba y declara SQL experto en todas las solicitudes. Conflicto: Se solicita ocultar brechas para no perder oportunidades. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p4-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara tablero personal de búsqueda y plan de práctica para el aspecto «Segmentación de vacantes». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Segmentación de vacantes» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p4-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Estrategia de aplicación y empleabilidad», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 29.17,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "commonFailure": "transformar un ejercicio sintético en años de experiencia profesional inventados",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "employability-p4-u2",
+          "title": "Huecos de competencias por rol",
+          "objective": "Aplicar huecos de competencias por rol al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para alumnos individuales, dominar «Huecos de competencias por rol» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Los resultados de simulación no equivalen a experiencia laboral ni autorizan prometer títulos de certificación externa. En el capítulo «Estrategia de aplicación y empleabilidad», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Seis vacantes piden SQL, soporte y comunicación. El candidato tiene comunicación 3/4 revisada, SQL todavía sin prueba y declara SQL experto en todas las solicitudes. La presión es: Se solicita ocultar brechas para no perder oportunidades. El alumno debe transformar «Huecos de competencias por rol» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"entregables_de_simulacion\":24,\"entregables_personales_aprobados_para_portafolio\":7}. Calcula «% de cobertura de evidencia» con 100 × entregables personales aprobados / entregables de simulación. Valor para revisión: 29.17. Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Huecos de competencias por rol»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara tablero personal de búsqueda y plan de práctica para el aspecto «huecos de competencias por rol». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: transformar un ejercicio sintético en años de experiencia profesional inventados. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+            "prerequisites": [
+              "Unidad 4: Huecos de competencias por rol",
+              "Objetivo: Aplicar huecos de competencias por rol al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: ajuste declarado vs requerido y progreso real"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "entregables_de_simulacion": 24,
+              "entregables_personales_aprobados_para_portafolio": 7
+            },
+            "formula": "100 × entregables personales aprobados / entregables de simulación",
+            "expected": 29.17,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "employability-p4-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Empleabilidad y portafolio. Seis vacantes piden SQL, soporte y comunicación. El candidato tiene comunicación 3/4 revisada, SQL todavía sin prueba y declara SQL experto en todas las solicitudes. Conflicto: Se solicita ocultar brechas para no perder oportunidades. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Huecos de competencias por rol». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p4-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"entregables_de_simulacion\":24,\"entregables_personales_aprobados_para_portafolio\":7}, calcula % de cobertura de evidencia mediante 100 × entregables personales aprobados / entregables de simulación; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p4-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Empleabilidad y portafolio. Seis vacantes piden SQL, soporte y comunicación. El candidato tiene comunicación 3/4 revisada, SQL todavía sin prueba y declara SQL experto en todas las solicitudes. Conflicto: Se solicita ocultar brechas para no perder oportunidades. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p4-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara tablero personal de búsqueda y plan de práctica para el aspecto «Huecos de competencias por rol». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Huecos de competencias por rol» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p4-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Estrategia de aplicación y empleabilidad», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 29.17,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "commonFailure": "transformar un ejercicio sintético en años de experiencia profesional inventados",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "employability-p4-u3",
+          "title": "Seguimiento de procesos sin automatización invasiva",
+          "objective": "Aplicar seguimiento de procesos sin automatización invasiva al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para alumnos individuales, dominar «Seguimiento de procesos sin automatización invasiva» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una candidatura efectiva reconoce competencias y brechas, y da derecho a revocar materiales y corregir información. En el capítulo «Estrategia de aplicación y empleabilidad», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Seis vacantes piden SQL, soporte y comunicación. El candidato tiene comunicación 3/4 revisada, SQL todavía sin prueba y declara SQL experto en todas las solicitudes. La presión es: Se solicita ocultar brechas para no perder oportunidades. El alumno debe transformar «Seguimiento de procesos sin automatización invasiva» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"entregables_de_simulacion\":24,\"entregables_personales_aprobados_para_portafolio\":7}. Calcula «% de cobertura de evidencia» con 100 × entregables personales aprobados / entregables de simulación. Valor para revisión: 29.17. Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Seguimiento de procesos sin automatización invasiva»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara tablero personal de búsqueda y plan de práctica para el aspecto «seguimiento de procesos sin automatización invasiva». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: transformar un ejercicio sintético en años de experiencia profesional inventados. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+            "prerequisites": [
+              "Unidad 4: Seguimiento de procesos sin automatización invasiva",
+              "Objetivo: Aplicar seguimiento de procesos sin automatización invasiva al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: ajuste declarado vs requerido y progreso real"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "entregables_de_simulacion": 24,
+              "entregables_personales_aprobados_para_portafolio": 7
+            },
+            "formula": "100 × entregables personales aprobados / entregables de simulación",
+            "expected": 29.17,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "employability-p4-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Empleabilidad y portafolio. Seis vacantes piden SQL, soporte y comunicación. El candidato tiene comunicación 3/4 revisada, SQL todavía sin prueba y declara SQL experto en todas las solicitudes. Conflicto: Se solicita ocultar brechas para no perder oportunidades. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Seguimiento de procesos sin automatización invasiva». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p4-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"entregables_de_simulacion\":24,\"entregables_personales_aprobados_para_portafolio\":7}, calcula % de cobertura de evidencia mediante 100 × entregables personales aprobados / entregables de simulación; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p4-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Empleabilidad y portafolio. Seis vacantes piden SQL, soporte y comunicación. El candidato tiene comunicación 3/4 revisada, SQL todavía sin prueba y declara SQL experto en todas las solicitudes. Conflicto: Se solicita ocultar brechas para no perder oportunidades. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p4-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara tablero personal de búsqueda y plan de práctica para el aspecto «Seguimiento de procesos sin automatización invasiva». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Seguimiento de procesos sin automatización invasiva» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p4-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Estrategia de aplicación y empleabilidad», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 29.17,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "commonFailure": "transformar un ejercicio sintético en años de experiencia profesional inventados",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 4 y 5.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "employability-p5",
+      "number": 5,
+      "title": "Capstone de empleabilidad ética",
+      "difficulty": "directiva y proyecto",
+      "caseFacts": "Candidato ficticio tiene dos proyectos validados y uno en revisión, busca Customer Success. Una vacante requiere 3 años de experiencia y conocimiento de contratos que no ha demostrado.",
+      "caseConflict": "El coach promete que los certificados garantizarán empleo y recomienda falsificar experiencia.",
+      "metric": "coherencia CV-portafolio y revisión humana",
+      "units": [
+        {
+          "id": "employability-p5-u1",
+          "title": "Portafolio seguro",
+          "objective": "Aplicar portafolio seguro al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para alumnos individuales, dominar «Portafolio seguro» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Sólo evidencia personal revisada y publicada voluntariamente puede incorporarse al portafolio público. En el capítulo «Capstone de empleabilidad ética», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Candidato ficticio tiene dos proyectos validados y uno en revisión, busca Customer Success. Una vacante requiere 3 años de experiencia y conocimiento de contratos que no ha demostrado. La presión es: El coach promete que los certificados garantizarán empleo y recomienda falsificar experiencia. El alumno debe transformar «Portafolio seguro» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"entregables_de_simulacion\":27,\"entregables_personales_aprobados_para_portafolio\":8}. Calcula «% de cobertura de evidencia» con 100 × entregables personales aprobados / entregables de simulación. Valor para revisión: 29.63. Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Portafolio seguro»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara paquete de candidatura sin promesa de contratación para el aspecto «portafolio seguro». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: transformar un ejercicio sintético en años de experiencia profesional inventados. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+            "prerequisites": [
+              "Unidad 5: Portafolio seguro",
+              "Objetivo: Aplicar portafolio seguro al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: coherencia CV-portafolio y revisión humana"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "entregables_de_simulacion": 27,
+              "entregables_personales_aprobados_para_portafolio": 8
+            },
+            "formula": "100 × entregables personales aprobados / entregables de simulación",
+            "expected": 29.63,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "employability-p5-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Empleabilidad y portafolio. Candidato ficticio tiene dos proyectos validados y uno en revisión, busca Customer Success. Una vacante requiere 3 años de experiencia y conocimiento de contratos que no ha demostrado. Conflicto: El coach promete que los certificados garantizarán empleo y recomienda falsificar experiencia. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Portafolio seguro». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p5-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"entregables_de_simulacion\":27,\"entregables_personales_aprobados_para_portafolio\":8}, calcula % de cobertura de evidencia mediante 100 × entregables personales aprobados / entregables de simulación; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p5-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Empleabilidad y portafolio. Candidato ficticio tiene dos proyectos validados y uno en revisión, busca Customer Success. Una vacante requiere 3 años de experiencia y conocimiento de contratos que no ha demostrado. Conflicto: El coach promete que los certificados garantizarán empleo y recomienda falsificar experiencia. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p5-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara paquete de candidatura sin promesa de contratación para el aspecto «Portafolio seguro». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Portafolio seguro» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p5-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone de empleabilidad ética», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 29.63,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "commonFailure": "transformar un ejercicio sintético en años de experiencia profesional inventados",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "employability-p5-u2",
+          "title": "CV y carta coherentes",
+          "objective": "Aplicar cv y carta coherentes al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para alumnos individuales, dominar «CV y carta coherentes» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Los resultados de simulación no equivalen a experiencia laboral ni autorizan prometer títulos de certificación externa. En el capítulo «Capstone de empleabilidad ética», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Candidato ficticio tiene dos proyectos validados y uno en revisión, busca Customer Success. Una vacante requiere 3 años de experiencia y conocimiento de contratos que no ha demostrado. La presión es: El coach promete que los certificados garantizarán empleo y recomienda falsificar experiencia. El alumno debe transformar «CV y carta coherentes» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"entregables_de_simulacion\":27,\"entregables_personales_aprobados_para_portafolio\":8}. Calcula «% de cobertura de evidencia» con 100 × entregables personales aprobados / entregables de simulación. Valor para revisión: 29.63. Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «CV y carta coherentes»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara paquete de candidatura sin promesa de contratación para el aspecto «cv y carta coherentes». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: transformar un ejercicio sintético en años de experiencia profesional inventados. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+            "prerequisites": [
+              "Unidad 5: CV y carta coherentes",
+              "Objetivo: Aplicar cv y carta coherentes al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: coherencia CV-portafolio y revisión humana"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "entregables_de_simulacion": 27,
+              "entregables_personales_aprobados_para_portafolio": 8
+            },
+            "formula": "100 × entregables personales aprobados / entregables de simulación",
+            "expected": 29.63,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "employability-p5-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Empleabilidad y portafolio. Candidato ficticio tiene dos proyectos validados y uno en revisión, busca Customer Success. Una vacante requiere 3 años de experiencia y conocimiento de contratos que no ha demostrado. Conflicto: El coach promete que los certificados garantizarán empleo y recomienda falsificar experiencia. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «CV y carta coherentes». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p5-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"entregables_de_simulacion\":27,\"entregables_personales_aprobados_para_portafolio\":8}, calcula % de cobertura de evidencia mediante 100 × entregables personales aprobados / entregables de simulación; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p5-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Empleabilidad y portafolio. Candidato ficticio tiene dos proyectos validados y uno en revisión, busca Customer Success. Una vacante requiere 3 años de experiencia y conocimiento de contratos que no ha demostrado. Conflicto: El coach promete que los certificados garantizarán empleo y recomienda falsificar experiencia. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p5-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara paquete de candidatura sin promesa de contratación para el aspecto «CV y carta coherentes». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «CV y carta coherentes» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p5-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone de empleabilidad ética», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 29.63,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "commonFailure": "transformar un ejercicio sintético en años de experiencia profesional inventados",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "employability-p5-u3",
+          "title": "Entrevista con caso y revisión",
+          "objective": "Aplicar entrevista con caso y revisión al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para alumnos individuales, dominar «Entrevista con caso y revisión» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una candidatura efectiva reconoce competencias y brechas, y da derecho a revocar materiales y corregir información. En el capítulo «Capstone de empleabilidad ética», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Candidato ficticio tiene dos proyectos validados y uno en revisión, busca Customer Success. Una vacante requiere 3 años de experiencia y conocimiento de contratos que no ha demostrado. La presión es: El coach promete que los certificados garantizarán empleo y recomienda falsificar experiencia. El alumno debe transformar «Entrevista con caso y revisión» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"entregables_de_simulacion\":27,\"entregables_personales_aprobados_para_portafolio\":8}. Calcula «% de cobertura de evidencia» con 100 × entregables personales aprobados / entregables de simulación. Valor para revisión: 29.63. Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Entrevista con caso y revisión»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara paquete de candidatura sin promesa de contratación para el aspecto «entrevista con caso y revisión». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: transformar un ejercicio sintético en años de experiencia profesional inventados. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+            "prerequisites": [
+              "Unidad 5: Entrevista con caso y revisión",
+              "Objetivo: Aplicar entrevista con caso y revisión al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: coherencia CV-portafolio y revisión humana"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "entregables_de_simulacion": 27,
+              "entregables_personales_aprobados_para_portafolio": 8
+            },
+            "formula": "100 × entregables personales aprobados / entregables de simulación",
+            "expected": 29.63,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "employability-p5-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Empleabilidad y portafolio. Candidato ficticio tiene dos proyectos validados y uno en revisión, busca Customer Success. Una vacante requiere 3 años de experiencia y conocimiento de contratos que no ha demostrado. Conflicto: El coach promete que los certificados garantizarán empleo y recomienda falsificar experiencia. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Entrevista con caso y revisión». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p5-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"entregables_de_simulacion\":27,\"entregables_personales_aprobados_para_portafolio\":8}, calcula % de cobertura de evidencia mediante 100 × entregables personales aprobados / entregables de simulación; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p5-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Empleabilidad y portafolio. Candidato ficticio tiene dos proyectos validados y uno en revisión, busca Customer Success. Una vacante requiere 3 años de experiencia y conocimiento de contratos que no ha demostrado. Conflicto: El coach promete que los certificados garantizarán empleo y recomienda falsificar experiencia. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p5-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara paquete de candidatura sin promesa de contratación para el aspecto «Entrevista con caso y revisión». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Entrevista con caso y revisión» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "employability-p5-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone de empleabilidad ética», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 29.63,
+            "unit": "% de cobertura de evidencia",
+            "limitations": "Esto no equivale a probabilidad de contratación ni habilita divulgar datos de una empresa",
+            "commonFailure": "transformar un ejercicio sintético en años de experiencia profesional inventados",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "El portafolio debe ser opt-in y revocable; prohibido copiar datos o entregables reservados de una empresa.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 5 y 6.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": true
+      }
+    }
+  ],
+  "unitsCount": 15,
+  "practicesCount": 75,
+  "gradingPolicy": {
+    "minScore100": 80,
+    "eachDimensionAtLeast4Scale": 3,
+    "criticalErrorsAllowed": 0,
+    "manualApproval": true,
+    "submissionAloneNeverUnlocks": true
+  },
+  "publicationGate": {
+    "enabled": false,
+    "requiresBackendAssessment": true,
+    "requiresEditorialAndPrivacyReview": true
+  }
+}

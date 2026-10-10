@@ -1,0 +1,2497 @@
+{
+  "key": "onboarding_30_60_90",
+  "title": "Onboarding 30–60–90 de empresas",
+  "kind": "product-workflow-and-learning",
+  "status": "draft",
+  "language": "es",
+  "localeStates": {
+    "es": "es",
+    "en": "beta-pending",
+    "pt": "beta-pending",
+    "fr": "beta-pending"
+  },
+  "edition": "2026-10-10 practical v2",
+  "nonnegotiable": "Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+  "reviewerOnly": true,
+  "levels": [
+    {
+      "id": "onboarding_30_60_90-p1",
+      "number": 1,
+      "title": "Gobierno de contenidos por compañía",
+      "difficulty": "introductoria",
+      "caseFacts": "Empresa ficticia Nube tiene 46 empleados y tres equipos. Un jefe adjunta un manual de 160 páginas con contraseñas de prueba y dos protocolos exclusivos de un cliente ajeno; no cuenta con revisión legal ni responsable del contenido.",
+      "caseConflict": "Dirección quiere publicar automáticamente todos los documentos al personal nuevo.",
+      "metric": "manual versionado aprobado y restringido a lectores autorizados",
+      "units": [
+        {
+          "id": "onboarding_30_60_90-p1-u1",
+          "title": "Permisos de carga y publicación",
+          "objective": "Aplicar permisos de carga y publicación al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para managers y nuevos colaboradores, dominar «Permisos de carga y publicación» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La productividad se valida mediante prácticas observables, no asistencia a videos ni clics. En el capítulo «Gobierno de contenidos por compañía», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Empresa ficticia Nube tiene 46 empleados y tres equipos. Un jefe adjunta un manual de 160 páginas con contraseñas de prueba y dos protocolos exclusivos de un cliente ajeno; no cuenta con revisión legal ni responsable del contenido. La presión es: Dirección quiere publicar automáticamente todos los documentos al personal nuevo. El alumno debe transformar «Permisos de carga y publicación» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «manual versionado aprobado y restringido a lectores autorizados».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"tareas_clave\":20,\"evidencias_verificadas\":12,\"errores_criticos_abiertos\":3}. Calcula «% con evidencia» con 100 × evidencias verificadas / tareas clave. Valor para revisión: 60. El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Permisos de carga y publicación»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara documento saneado, matriz de acceso y flujo de aprobación para el aspecto «permisos de carga y publicación». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar productividad plena con fallos críticos abiertos. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+            "prerequisites": [
+              "Unidad 1: Permisos de carga y publicación",
+              "Objetivo: Aplicar permisos de carga y publicación al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: manual versionado aprobado y restringido a lectores autorizados"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "tareas_clave": 20,
+              "evidencias_verificadas": 12,
+              "errores_criticos_abiertos": 3
+            },
+            "formula": "100 × evidencias verificadas / tareas clave",
+            "expected": 60,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "onboarding_30_60_90-p1-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Onboarding corporativo 30-60-90. Empresa ficticia Nube tiene 46 empleados y tres equipos. Un jefe adjunta un manual de 160 páginas con contraseñas de prueba y dos protocolos exclusivos de un cliente ajeno; no cuenta con revisión legal ni responsable del contenido. Conflicto: Dirección quiere publicar automáticamente todos los documentos al personal nuevo. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Permisos de carga y publicación». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p1-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"tareas_clave\":20,\"evidencias_verificadas\":12,\"errores_criticos_abiertos\":3}, calcula % con evidencia mediante 100 × evidencias verificadas / tareas clave; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p1-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Onboarding corporativo 30-60-90. Empresa ficticia Nube tiene 46 empleados y tres equipos. Un jefe adjunta un manual de 160 páginas con contraseñas de prueba y dos protocolos exclusivos de un cliente ajeno; no cuenta con revisión legal ni responsable del contenido. Conflicto: Dirección quiere publicar automáticamente todos los documentos al personal nuevo. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «manual versionado aprobado y restringido a lectores autorizados». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p1-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara documento saneado, matriz de acceso y flujo de aprobación para el aspecto «Permisos de carga y publicación». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Permisos de carga y publicación» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p1-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Gobierno de contenidos por compañía», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 60,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "commonFailure": "declarar productividad plena con fallos críticos abiertos",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "onboarding_30_60_90-p1-u2",
+          "title": "Versiones, propietario y derechos de autor",
+          "objective": "Aplicar versiones, propietario y derechos de autor al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para managers y nuevos colaboradores, dominar «Versiones, propietario y derechos de autor» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Las empresas conservan control de sus procesos, documentos y roles de acceso: un empleado no debe ver materiales de otra organización. En el capítulo «Gobierno de contenidos por compañía», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Empresa ficticia Nube tiene 46 empleados y tres equipos. Un jefe adjunta un manual de 160 páginas con contraseñas de prueba y dos protocolos exclusivos de un cliente ajeno; no cuenta con revisión legal ni responsable del contenido. La presión es: Dirección quiere publicar automáticamente todos los documentos al personal nuevo. El alumno debe transformar «Versiones, propietario y derechos de autor» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «manual versionado aprobado y restringido a lectores autorizados».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"tareas_clave\":20,\"evidencias_verificadas\":12,\"errores_criticos_abiertos\":3}. Calcula «% con evidencia» con 100 × evidencias verificadas / tareas clave. Valor para revisión: 60. El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Versiones, propietario y derechos de autor»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara documento saneado, matriz de acceso y flujo de aprobación para el aspecto «versiones, propietario y derechos de autor». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar productividad plena con fallos críticos abiertos. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+            "prerequisites": [
+              "Unidad 1: Versiones, propietario y derechos de autor",
+              "Objetivo: Aplicar versiones, propietario y derechos de autor al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: manual versionado aprobado y restringido a lectores autorizados"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "tareas_clave": 20,
+              "evidencias_verificadas": 12,
+              "errores_criticos_abiertos": 3
+            },
+            "formula": "100 × evidencias verificadas / tareas clave",
+            "expected": 60,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "onboarding_30_60_90-p1-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Onboarding corporativo 30-60-90. Empresa ficticia Nube tiene 46 empleados y tres equipos. Un jefe adjunta un manual de 160 páginas con contraseñas de prueba y dos protocolos exclusivos de un cliente ajeno; no cuenta con revisión legal ni responsable del contenido. Conflicto: Dirección quiere publicar automáticamente todos los documentos al personal nuevo. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Versiones, propietario y derechos de autor». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p1-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"tareas_clave\":20,\"evidencias_verificadas\":12,\"errores_criticos_abiertos\":3}, calcula % con evidencia mediante 100 × evidencias verificadas / tareas clave; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p1-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Onboarding corporativo 30-60-90. Empresa ficticia Nube tiene 46 empleados y tres equipos. Un jefe adjunta un manual de 160 páginas con contraseñas de prueba y dos protocolos exclusivos de un cliente ajeno; no cuenta con revisión legal ni responsable del contenido. Conflicto: Dirección quiere publicar automáticamente todos los documentos al personal nuevo. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «manual versionado aprobado y restringido a lectores autorizados». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p1-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara documento saneado, matriz de acceso y flujo de aprobación para el aspecto «Versiones, propietario y derechos de autor». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Versiones, propietario y derechos de autor» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p1-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Gobierno de contenidos por compañía», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 60,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "commonFailure": "declarar productividad plena con fallos críticos abiertos",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "onboarding_30_60_90-p1-u3",
+          "title": "Mapeo de contenidos al puesto y matriz 0–4",
+          "objective": "Aplicar mapeo de contenidos al puesto y matriz 0–4 al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para managers y nuevos colaboradores, dominar «Mapeo de contenidos al puesto y matriz 0–4» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La autonomía aumenta por etapas y exige revisar errores críticos, no solo promedios de evaluación. En el capítulo «Gobierno de contenidos por compañía», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Empresa ficticia Nube tiene 46 empleados y tres equipos. Un jefe adjunta un manual de 160 páginas con contraseñas de prueba y dos protocolos exclusivos de un cliente ajeno; no cuenta con revisión legal ni responsable del contenido. La presión es: Dirección quiere publicar automáticamente todos los documentos al personal nuevo. El alumno debe transformar «Mapeo de contenidos al puesto y matriz 0–4» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «manual versionado aprobado y restringido a lectores autorizados».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"tareas_clave\":20,\"evidencias_verificadas\":12,\"errores_criticos_abiertos\":3}. Calcula «% con evidencia» con 100 × evidencias verificadas / tareas clave. Valor para revisión: 60. El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Mapeo de contenidos al puesto y matriz 0–4»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara documento saneado, matriz de acceso y flujo de aprobación para el aspecto «mapeo de contenidos al puesto y matriz 0–4». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar productividad plena con fallos críticos abiertos. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+            "prerequisites": [
+              "Unidad 1: Mapeo de contenidos al puesto y matriz 0–4",
+              "Objetivo: Aplicar mapeo de contenidos al puesto y matriz 0–4 al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: manual versionado aprobado y restringido a lectores autorizados"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "tareas_clave": 20,
+              "evidencias_verificadas": 12,
+              "errores_criticos_abiertos": 3
+            },
+            "formula": "100 × evidencias verificadas / tareas clave",
+            "expected": 60,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "onboarding_30_60_90-p1-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Onboarding corporativo 30-60-90. Empresa ficticia Nube tiene 46 empleados y tres equipos. Un jefe adjunta un manual de 160 páginas con contraseñas de prueba y dos protocolos exclusivos de un cliente ajeno; no cuenta con revisión legal ni responsable del contenido. Conflicto: Dirección quiere publicar automáticamente todos los documentos al personal nuevo. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Mapeo de contenidos al puesto y matriz 0–4». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p1-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"tareas_clave\":20,\"evidencias_verificadas\":12,\"errores_criticos_abiertos\":3}, calcula % con evidencia mediante 100 × evidencias verificadas / tareas clave; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p1-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Onboarding corporativo 30-60-90. Empresa ficticia Nube tiene 46 empleados y tres equipos. Un jefe adjunta un manual de 160 páginas con contraseñas de prueba y dos protocolos exclusivos de un cliente ajeno; no cuenta con revisión legal ni responsable del contenido. Conflicto: Dirección quiere publicar automáticamente todos los documentos al personal nuevo. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «manual versionado aprobado y restringido a lectores autorizados». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p1-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara documento saneado, matriz de acceso y flujo de aprobación para el aspecto «Mapeo de contenidos al puesto y matriz 0–4». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Mapeo de contenidos al puesto y matriz 0–4» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p1-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Gobierno de contenidos por compañía», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 60,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "commonFailure": "declarar productividad plena con fallos críticos abiertos",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «manual versionado aprobado y restringido a lectores autorizados».",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 1 y 2.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "onboarding_30_60_90-p2",
+      "number": 2,
+      "title": "Días 1–30: fundamentos observables",
+      "difficulty": "operativa",
+      "caseFacts": "Nueva persona entra a soporte con 26 tipos de incidencia; cinco son críticos y cuatro requieren aprobación de seguridad. El manager solo puede dedicar tres sesiones de 40 minutos por semana.",
+      "caseConflict": "Recursos Humanos exige certificar autonomía al día 30 aunque todavía no hubo prácticas reales.",
+      "metric": "prácticas críticas con evidencia y revisión",
+      "units": [
+        {
+          "id": "onboarding_30_60_90-p2-u1",
+          "title": "Mapa de tareas esenciales",
+          "objective": "Aplicar mapa de tareas esenciales al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para managers y nuevos colaboradores, dominar «Mapa de tareas esenciales» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La productividad se valida mediante prácticas observables, no asistencia a videos ni clics. En el capítulo «Días 1–30: fundamentos observables», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Nueva persona entra a soporte con 26 tipos de incidencia; cinco son críticos y cuatro requieren aprobación de seguridad. El manager solo puede dedicar tres sesiones de 40 minutos por semana. La presión es: Recursos Humanos exige certificar autonomía al día 30 aunque todavía no hubo prácticas reales. El alumno debe transformar «Mapa de tareas esenciales» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"tareas_clave\":22,\"evidencias_verificadas\":13,\"errores_criticos_abiertos\":2}. Calcula «% con evidencia» con 100 × evidencias verificadas / tareas clave. Valor para revisión: 59.09. El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Mapa de tareas esenciales»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara plan 30 días con calendario, riesgos y responsables para el aspecto «mapa de tareas esenciales». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar productividad plena con fallos críticos abiertos. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+            "prerequisites": [
+              "Unidad 2: Mapa de tareas esenciales",
+              "Objetivo: Aplicar mapa de tareas esenciales al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: prácticas críticas con evidencia y revisión"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "tareas_clave": 22,
+              "evidencias_verificadas": 13,
+              "errores_criticos_abiertos": 2
+            },
+            "formula": "100 × evidencias verificadas / tareas clave",
+            "expected": 59.09,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "onboarding_30_60_90-p2-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Onboarding corporativo 30-60-90. Nueva persona entra a soporte con 26 tipos de incidencia; cinco son críticos y cuatro requieren aprobación de seguridad. El manager solo puede dedicar tres sesiones de 40 minutos por semana. Conflicto: Recursos Humanos exige certificar autonomía al día 30 aunque todavía no hubo prácticas reales. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Mapa de tareas esenciales». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p2-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"tareas_clave\":22,\"evidencias_verificadas\":13,\"errores_criticos_abiertos\":2}, calcula % con evidencia mediante 100 × evidencias verificadas / tareas clave; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p2-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Onboarding corporativo 30-60-90. Nueva persona entra a soporte con 26 tipos de incidencia; cinco son críticos y cuatro requieren aprobación de seguridad. El manager solo puede dedicar tres sesiones de 40 minutos por semana. Conflicto: Recursos Humanos exige certificar autonomía al día 30 aunque todavía no hubo prácticas reales. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p2-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara plan 30 días con calendario, riesgos y responsables para el aspecto «Mapa de tareas esenciales». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Mapa de tareas esenciales» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p2-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Días 1–30: fundamentos observables», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 59.09,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "commonFailure": "declarar productividad plena con fallos críticos abiertos",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "onboarding_30_60_90-p2-u2",
+          "title": "Práctica guiada y shadowing",
+          "objective": "Aplicar práctica guiada y shadowing al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para managers y nuevos colaboradores, dominar «Práctica guiada y shadowing» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Las empresas conservan control de sus procesos, documentos y roles de acceso: un empleado no debe ver materiales de otra organización. En el capítulo «Días 1–30: fundamentos observables», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Nueva persona entra a soporte con 26 tipos de incidencia; cinco son críticos y cuatro requieren aprobación de seguridad. El manager solo puede dedicar tres sesiones de 40 minutos por semana. La presión es: Recursos Humanos exige certificar autonomía al día 30 aunque todavía no hubo prácticas reales. El alumno debe transformar «Práctica guiada y shadowing» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"tareas_clave\":22,\"evidencias_verificadas\":13,\"errores_criticos_abiertos\":2}. Calcula «% con evidencia» con 100 × evidencias verificadas / tareas clave. Valor para revisión: 59.09. El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Práctica guiada y shadowing»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara plan 30 días con calendario, riesgos y responsables para el aspecto «práctica guiada y shadowing». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar productividad plena con fallos críticos abiertos. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+            "prerequisites": [
+              "Unidad 2: Práctica guiada y shadowing",
+              "Objetivo: Aplicar práctica guiada y shadowing al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: prácticas críticas con evidencia y revisión"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "tareas_clave": 22,
+              "evidencias_verificadas": 13,
+              "errores_criticos_abiertos": 2
+            },
+            "formula": "100 × evidencias verificadas / tareas clave",
+            "expected": 59.09,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "onboarding_30_60_90-p2-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Onboarding corporativo 30-60-90. Nueva persona entra a soporte con 26 tipos de incidencia; cinco son críticos y cuatro requieren aprobación de seguridad. El manager solo puede dedicar tres sesiones de 40 minutos por semana. Conflicto: Recursos Humanos exige certificar autonomía al día 30 aunque todavía no hubo prácticas reales. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Práctica guiada y shadowing». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p2-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"tareas_clave\":22,\"evidencias_verificadas\":13,\"errores_criticos_abiertos\":2}, calcula % con evidencia mediante 100 × evidencias verificadas / tareas clave; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p2-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Onboarding corporativo 30-60-90. Nueva persona entra a soporte con 26 tipos de incidencia; cinco son críticos y cuatro requieren aprobación de seguridad. El manager solo puede dedicar tres sesiones de 40 minutos por semana. Conflicto: Recursos Humanos exige certificar autonomía al día 30 aunque todavía no hubo prácticas reales. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p2-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara plan 30 días con calendario, riesgos y responsables para el aspecto «Práctica guiada y shadowing». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Práctica guiada y shadowing» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p2-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Días 1–30: fundamentos observables», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 59.09,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "commonFailure": "declarar productividad plena con fallos críticos abiertos",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "onboarding_30_60_90-p2-u3",
+          "title": "Evidencias mínimas sin datos personales",
+          "objective": "Aplicar evidencias mínimas sin datos personales al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para managers y nuevos colaboradores, dominar «Evidencias mínimas sin datos personales» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La autonomía aumenta por etapas y exige revisar errores críticos, no solo promedios de evaluación. En el capítulo «Días 1–30: fundamentos observables», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Nueva persona entra a soporte con 26 tipos de incidencia; cinco son críticos y cuatro requieren aprobación de seguridad. El manager solo puede dedicar tres sesiones de 40 minutos por semana. La presión es: Recursos Humanos exige certificar autonomía al día 30 aunque todavía no hubo prácticas reales. El alumno debe transformar «Evidencias mínimas sin datos personales» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"tareas_clave\":22,\"evidencias_verificadas\":13,\"errores_criticos_abiertos\":2}. Calcula «% con evidencia» con 100 × evidencias verificadas / tareas clave. Valor para revisión: 59.09. El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Evidencias mínimas sin datos personales»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara plan 30 días con calendario, riesgos y responsables para el aspecto «evidencias mínimas sin datos personales». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar productividad plena con fallos críticos abiertos. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+            "prerequisites": [
+              "Unidad 2: Evidencias mínimas sin datos personales",
+              "Objetivo: Aplicar evidencias mínimas sin datos personales al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: prácticas críticas con evidencia y revisión"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "tareas_clave": 22,
+              "evidencias_verificadas": 13,
+              "errores_criticos_abiertos": 2
+            },
+            "formula": "100 × evidencias verificadas / tareas clave",
+            "expected": 59.09,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "onboarding_30_60_90-p2-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Onboarding corporativo 30-60-90. Nueva persona entra a soporte con 26 tipos de incidencia; cinco son críticos y cuatro requieren aprobación de seguridad. El manager solo puede dedicar tres sesiones de 40 minutos por semana. Conflicto: Recursos Humanos exige certificar autonomía al día 30 aunque todavía no hubo prácticas reales. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Evidencias mínimas sin datos personales». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p2-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"tareas_clave\":22,\"evidencias_verificadas\":13,\"errores_criticos_abiertos\":2}, calcula % con evidencia mediante 100 × evidencias verificadas / tareas clave; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p2-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Onboarding corporativo 30-60-90. Nueva persona entra a soporte con 26 tipos de incidencia; cinco son críticos y cuatro requieren aprobación de seguridad. El manager solo puede dedicar tres sesiones de 40 minutos por semana. Conflicto: Recursos Humanos exige certificar autonomía al día 30 aunque todavía no hubo prácticas reales. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p2-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara plan 30 días con calendario, riesgos y responsables para el aspecto «Evidencias mínimas sin datos personales». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Evidencias mínimas sin datos personales» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p2-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Días 1–30: fundamentos observables», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 59.09,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "commonFailure": "declarar productividad plena con fallos críticos abiertos",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 2 y 3.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "onboarding_30_60_90-p3",
+      "number": 3,
+      "title": "Días 31–60: independencia controlada",
+      "difficulty": "intermedia",
+      "caseFacts": "El colaborador resuelve 18 simulaciones; 15 correctas, tres con respuesta tardía. En una simulación comparte un identificador sensible en una nota visible a otro equipo.",
+      "caseConflict": "El manager quiere elevarlo a autónomo por 83 % de aciertos y omitir la fuga simulada.",
+      "metric": "competencias sostenidas y cero errores críticos abiertos",
+      "units": [
+        {
+          "id": "onboarding_30_60_90-p3-u1",
+          "title": "Criterios para operar sin guía",
+          "objective": "Aplicar criterios para operar sin guía al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para managers y nuevos colaboradores, dominar «Criterios para operar sin guía» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La productividad se valida mediante prácticas observables, no asistencia a videos ni clics. En el capítulo «Días 31–60: independencia controlada», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: El colaborador resuelve 18 simulaciones; 15 correctas, tres con respuesta tardía. En una simulación comparte un identificador sensible en una nota visible a otro equipo. La presión es: El manager quiere elevarlo a autónomo por 83 % de aciertos y omitir la fuga simulada. El alumno debe transformar «Criterios para operar sin guía» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"tareas_clave\":24,\"evidencias_verificadas\":14,\"errores_criticos_abiertos\":3}. Calcula «% con evidencia» con 100 × evidencias verificadas / tareas clave. Valor para revisión: 58.33. El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Criterios para operar sin guía»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara dictamen por competencia y plan de refuerzo para el aspecto «criterios para operar sin guía». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar productividad plena con fallos críticos abiertos. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+            "prerequisites": [
+              "Unidad 3: Criterios para operar sin guía",
+              "Objetivo: Aplicar criterios para operar sin guía al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: competencias sostenidas y cero errores críticos abiertos"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "tareas_clave": 24,
+              "evidencias_verificadas": 14,
+              "errores_criticos_abiertos": 3
+            },
+            "formula": "100 × evidencias verificadas / tareas clave",
+            "expected": 58.33,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "onboarding_30_60_90-p3-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Onboarding corporativo 30-60-90. El colaborador resuelve 18 simulaciones; 15 correctas, tres con respuesta tardía. En una simulación comparte un identificador sensible en una nota visible a otro equipo. Conflicto: El manager quiere elevarlo a autónomo por 83 % de aciertos y omitir la fuga simulada. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Criterios para operar sin guía». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p3-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"tareas_clave\":24,\"evidencias_verificadas\":14,\"errores_criticos_abiertos\":3}, calcula % con evidencia mediante 100 × evidencias verificadas / tareas clave; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p3-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Onboarding corporativo 30-60-90. El colaborador resuelve 18 simulaciones; 15 correctas, tres con respuesta tardía. En una simulación comparte un identificador sensible en una nota visible a otro equipo. Conflicto: El manager quiere elevarlo a autónomo por 83 % de aciertos y omitir la fuga simulada. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p3-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara dictamen por competencia y plan de refuerzo para el aspecto «Criterios para operar sin guía». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Criterios para operar sin guía» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p3-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Días 31–60: independencia controlada», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 58.33,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "commonFailure": "declarar productividad plena con fallos críticos abiertos",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "onboarding_30_60_90-p3-u2",
+          "title": "Transferencia de procesos y excepciones",
+          "objective": "Aplicar transferencia de procesos y excepciones al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para managers y nuevos colaboradores, dominar «Transferencia de procesos y excepciones» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Las empresas conservan control de sus procesos, documentos y roles de acceso: un empleado no debe ver materiales de otra organización. En el capítulo «Días 31–60: independencia controlada», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: El colaborador resuelve 18 simulaciones; 15 correctas, tres con respuesta tardía. En una simulación comparte un identificador sensible en una nota visible a otro equipo. La presión es: El manager quiere elevarlo a autónomo por 83 % de aciertos y omitir la fuga simulada. El alumno debe transformar «Transferencia de procesos y excepciones» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"tareas_clave\":24,\"evidencias_verificadas\":14,\"errores_criticos_abiertos\":3}. Calcula «% con evidencia» con 100 × evidencias verificadas / tareas clave. Valor para revisión: 58.33. El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Transferencia de procesos y excepciones»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara dictamen por competencia y plan de refuerzo para el aspecto «transferencia de procesos y excepciones». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar productividad plena con fallos críticos abiertos. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+            "prerequisites": [
+              "Unidad 3: Transferencia de procesos y excepciones",
+              "Objetivo: Aplicar transferencia de procesos y excepciones al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: competencias sostenidas y cero errores críticos abiertos"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "tareas_clave": 24,
+              "evidencias_verificadas": 14,
+              "errores_criticos_abiertos": 3
+            },
+            "formula": "100 × evidencias verificadas / tareas clave",
+            "expected": 58.33,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "onboarding_30_60_90-p3-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Onboarding corporativo 30-60-90. El colaborador resuelve 18 simulaciones; 15 correctas, tres con respuesta tardía. En una simulación comparte un identificador sensible en una nota visible a otro equipo. Conflicto: El manager quiere elevarlo a autónomo por 83 % de aciertos y omitir la fuga simulada. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Transferencia de procesos y excepciones». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p3-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"tareas_clave\":24,\"evidencias_verificadas\":14,\"errores_criticos_abiertos\":3}, calcula % con evidencia mediante 100 × evidencias verificadas / tareas clave; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p3-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Onboarding corporativo 30-60-90. El colaborador resuelve 18 simulaciones; 15 correctas, tres con respuesta tardía. En una simulación comparte un identificador sensible en una nota visible a otro equipo. Conflicto: El manager quiere elevarlo a autónomo por 83 % de aciertos y omitir la fuga simulada. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p3-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara dictamen por competencia y plan de refuerzo para el aspecto «Transferencia de procesos y excepciones». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Transferencia de procesos y excepciones» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p3-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Días 31–60: independencia controlada», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 58.33,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "commonFailure": "declarar productividad plena con fallos críticos abiertos",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "onboarding_30_60_90-p3-u3",
+          "title": "Revisión manager y retroalimentación",
+          "objective": "Aplicar revisión manager y retroalimentación al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para managers y nuevos colaboradores, dominar «Revisión manager y retroalimentación» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La autonomía aumenta por etapas y exige revisar errores críticos, no solo promedios de evaluación. En el capítulo «Días 31–60: independencia controlada», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: El colaborador resuelve 18 simulaciones; 15 correctas, tres con respuesta tardía. En una simulación comparte un identificador sensible en una nota visible a otro equipo. La presión es: El manager quiere elevarlo a autónomo por 83 % de aciertos y omitir la fuga simulada. El alumno debe transformar «Revisión manager y retroalimentación» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"tareas_clave\":24,\"evidencias_verificadas\":14,\"errores_criticos_abiertos\":3}. Calcula «% con evidencia» con 100 × evidencias verificadas / tareas clave. Valor para revisión: 58.33. El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Revisión manager y retroalimentación»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara dictamen por competencia y plan de refuerzo para el aspecto «revisión manager y retroalimentación». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar productividad plena con fallos críticos abiertos. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+            "prerequisites": [
+              "Unidad 3: Revisión manager y retroalimentación",
+              "Objetivo: Aplicar revisión manager y retroalimentación al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: competencias sostenidas y cero errores críticos abiertos"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "tareas_clave": 24,
+              "evidencias_verificadas": 14,
+              "errores_criticos_abiertos": 3
+            },
+            "formula": "100 × evidencias verificadas / tareas clave",
+            "expected": 58.33,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "onboarding_30_60_90-p3-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Onboarding corporativo 30-60-90. El colaborador resuelve 18 simulaciones; 15 correctas, tres con respuesta tardía. En una simulación comparte un identificador sensible en una nota visible a otro equipo. Conflicto: El manager quiere elevarlo a autónomo por 83 % de aciertos y omitir la fuga simulada. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Revisión manager y retroalimentación». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p3-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"tareas_clave\":24,\"evidencias_verificadas\":14,\"errores_criticos_abiertos\":3}, calcula % con evidencia mediante 100 × evidencias verificadas / tareas clave; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p3-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Onboarding corporativo 30-60-90. El colaborador resuelve 18 simulaciones; 15 correctas, tres con respuesta tardía. En una simulación comparte un identificador sensible en una nota visible a otro equipo. Conflicto: El manager quiere elevarlo a autónomo por 83 % de aciertos y omitir la fuga simulada. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p3-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara dictamen por competencia y plan de refuerzo para el aspecto «Revisión manager y retroalimentación». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Revisión manager y retroalimentación» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p3-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Días 31–60: independencia controlada», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 58.33,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "commonFailure": "declarar productividad plena con fallos críticos abiertos",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 3 y 4.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "onboarding_30_60_90-p4",
+      "number": 4,
+      "title": "Días 61–90: operación y colaboración",
+      "difficulty": "especialista",
+      "caseFacts": "Se evalúa al nuevo analista en 12 casos encadenados con cuentas ficticias. Disminuye tiempo medio de 45 a 28 minutos, pero sube el retrabajo de 8 % a 16 %.",
+      "caseConflict": "Dirección declara listo al empleado con base exclusiva en velocidad.",
+      "metric": "tiempo hasta productividad con defectos controlados",
+      "units": [
+        {
+          "id": "onboarding_30_60_90-p4-u1",
+          "title": "Casos interequipos con permisos",
+          "objective": "Aplicar casos interequipos con permisos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para managers y nuevos colaboradores, dominar «Casos interequipos con permisos» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La productividad se valida mediante prácticas observables, no asistencia a videos ni clics. En el capítulo «Días 61–90: operación y colaboración», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Se evalúa al nuevo analista en 12 casos encadenados con cuentas ficticias. Disminuye tiempo medio de 45 a 28 minutos, pero sube el retrabajo de 8 % a 16 %. La presión es: Dirección declara listo al empleado con base exclusiva en velocidad. El alumno debe transformar «Casos interequipos con permisos» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"tareas_clave\":26,\"evidencias_verificadas\":15,\"errores_criticos_abiertos\":2}. Calcula «% con evidencia» con 100 × evidencias verificadas / tareas clave. Valor para revisión: 57.69. El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Casos interequipos con permisos»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara tablero 30-60-90 y acta de evaluación para el aspecto «casos interequipos con permisos». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar productividad plena con fallos críticos abiertos. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+            "prerequisites": [
+              "Unidad 4: Casos interequipos con permisos",
+              "Objetivo: Aplicar casos interequipos con permisos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: tiempo hasta productividad con defectos controlados"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "tareas_clave": 26,
+              "evidencias_verificadas": 15,
+              "errores_criticos_abiertos": 2
+            },
+            "formula": "100 × evidencias verificadas / tareas clave",
+            "expected": 57.69,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "onboarding_30_60_90-p4-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Onboarding corporativo 30-60-90. Se evalúa al nuevo analista en 12 casos encadenados con cuentas ficticias. Disminuye tiempo medio de 45 a 28 minutos, pero sube el retrabajo de 8 % a 16 %. Conflicto: Dirección declara listo al empleado con base exclusiva en velocidad. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Casos interequipos con permisos». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p4-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"tareas_clave\":26,\"evidencias_verificadas\":15,\"errores_criticos_abiertos\":2}, calcula % con evidencia mediante 100 × evidencias verificadas / tareas clave; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p4-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Onboarding corporativo 30-60-90. Se evalúa al nuevo analista en 12 casos encadenados con cuentas ficticias. Disminuye tiempo medio de 45 a 28 minutos, pero sube el retrabajo de 8 % a 16 %. Conflicto: Dirección declara listo al empleado con base exclusiva en velocidad. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p4-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara tablero 30-60-90 y acta de evaluación para el aspecto «Casos interequipos con permisos». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Casos interequipos con permisos» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p4-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Días 61–90: operación y colaboración», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 57.69,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "commonFailure": "declarar productividad plena con fallos críticos abiertos",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "onboarding_30_60_90-p4-u2",
+          "title": "Métricas antes/después",
+          "objective": "Aplicar métricas antes/después al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para managers y nuevos colaboradores, dominar «Métricas antes/después» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Las empresas conservan control de sus procesos, documentos y roles de acceso: un empleado no debe ver materiales de otra organización. En el capítulo «Días 61–90: operación y colaboración», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Se evalúa al nuevo analista en 12 casos encadenados con cuentas ficticias. Disminuye tiempo medio de 45 a 28 minutos, pero sube el retrabajo de 8 % a 16 %. La presión es: Dirección declara listo al empleado con base exclusiva en velocidad. El alumno debe transformar «Métricas antes/después» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"tareas_clave\":26,\"evidencias_verificadas\":15,\"errores_criticos_abiertos\":2}. Calcula «% con evidencia» con 100 × evidencias verificadas / tareas clave. Valor para revisión: 57.69. El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Métricas antes/después»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara tablero 30-60-90 y acta de evaluación para el aspecto «métricas antes/después». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar productividad plena con fallos críticos abiertos. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+            "prerequisites": [
+              "Unidad 4: Métricas antes/después",
+              "Objetivo: Aplicar métricas antes/después al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: tiempo hasta productividad con defectos controlados"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "tareas_clave": 26,
+              "evidencias_verificadas": 15,
+              "errores_criticos_abiertos": 2
+            },
+            "formula": "100 × evidencias verificadas / tareas clave",
+            "expected": 57.69,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "onboarding_30_60_90-p4-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Onboarding corporativo 30-60-90. Se evalúa al nuevo analista en 12 casos encadenados con cuentas ficticias. Disminuye tiempo medio de 45 a 28 minutos, pero sube el retrabajo de 8 % a 16 %. Conflicto: Dirección declara listo al empleado con base exclusiva en velocidad. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Métricas antes/después». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p4-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"tareas_clave\":26,\"evidencias_verificadas\":15,\"errores_criticos_abiertos\":2}, calcula % con evidencia mediante 100 × evidencias verificadas / tareas clave; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p4-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Onboarding corporativo 30-60-90. Se evalúa al nuevo analista en 12 casos encadenados con cuentas ficticias. Disminuye tiempo medio de 45 a 28 minutos, pero sube el retrabajo de 8 % a 16 %. Conflicto: Dirección declara listo al empleado con base exclusiva en velocidad. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p4-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara tablero 30-60-90 y acta de evaluación para el aspecto «Métricas antes/después». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Métricas antes/después» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p4-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Días 61–90: operación y colaboración», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 57.69,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "commonFailure": "declarar productividad plena con fallos críticos abiertos",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "onboarding_30_60_90-p4-u3",
+          "title": "Handoff, documentación y calidad",
+          "objective": "Aplicar handoff, documentación y calidad al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para managers y nuevos colaboradores, dominar «Handoff, documentación y calidad» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La autonomía aumenta por etapas y exige revisar errores críticos, no solo promedios de evaluación. En el capítulo «Días 61–90: operación y colaboración», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Se evalúa al nuevo analista en 12 casos encadenados con cuentas ficticias. Disminuye tiempo medio de 45 a 28 minutos, pero sube el retrabajo de 8 % a 16 %. La presión es: Dirección declara listo al empleado con base exclusiva en velocidad. El alumno debe transformar «Handoff, documentación y calidad» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"tareas_clave\":26,\"evidencias_verificadas\":15,\"errores_criticos_abiertos\":2}. Calcula «% con evidencia» con 100 × evidencias verificadas / tareas clave. Valor para revisión: 57.69. El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Handoff, documentación y calidad»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara tablero 30-60-90 y acta de evaluación para el aspecto «handoff, documentación y calidad». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar productividad plena con fallos críticos abiertos. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+            "prerequisites": [
+              "Unidad 4: Handoff, documentación y calidad",
+              "Objetivo: Aplicar handoff, documentación y calidad al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: tiempo hasta productividad con defectos controlados"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "tareas_clave": 26,
+              "evidencias_verificadas": 15,
+              "errores_criticos_abiertos": 2
+            },
+            "formula": "100 × evidencias verificadas / tareas clave",
+            "expected": 57.69,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "onboarding_30_60_90-p4-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Onboarding corporativo 30-60-90. Se evalúa al nuevo analista en 12 casos encadenados con cuentas ficticias. Disminuye tiempo medio de 45 a 28 minutos, pero sube el retrabajo de 8 % a 16 %. Conflicto: Dirección declara listo al empleado con base exclusiva en velocidad. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Handoff, documentación y calidad». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p4-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"tareas_clave\":26,\"evidencias_verificadas\":15,\"errores_criticos_abiertos\":2}, calcula % con evidencia mediante 100 × evidencias verificadas / tareas clave; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p4-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Onboarding corporativo 30-60-90. Se evalúa al nuevo analista en 12 casos encadenados con cuentas ficticias. Disminuye tiempo medio de 45 a 28 minutos, pero sube el retrabajo de 8 % a 16 %. Conflicto: Dirección declara listo al empleado con base exclusiva en velocidad. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p4-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara tablero 30-60-90 y acta de evaluación para el aspecto «Handoff, documentación y calidad». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Handoff, documentación y calidad» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p4-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Días 61–90: operación y colaboración», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 57.69,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "commonFailure": "declarar productividad plena con fallos críticos abiertos",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 4 y 5.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "onboarding_30_60_90-p5",
+      "number": 5,
+      "title": "Capstone y mejora del programa empresarial",
+      "difficulty": "directiva y proyecto",
+      "caseFacts": "Una compañía evalúa 14 nuevos ingresos en dos cohortes con supervisores distintos. El grupo A recibe más sesiones guiadas y logra 80 % de hitos; grupo B, 58 %. Los tamaños reducidos impiden inferir causalidad segura.",
+      "caseConflict": "El CEO quiere usar los resultados para despedir automáticamente al grupo B.",
+      "metric": "convergencia de competencias y satisfacción sin decisiones automáticas",
+      "units": [
+        {
+          "id": "onboarding_30_60_90-p5-u1",
+          "title": "Comparación cohortes y sesgos",
+          "objective": "Aplicar comparación cohortes y sesgos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para managers y nuevos colaboradores, dominar «Comparación cohortes y sesgos» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La productividad se valida mediante prácticas observables, no asistencia a videos ni clics. En el capítulo «Capstone y mejora del programa empresarial», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una compañía evalúa 14 nuevos ingresos en dos cohortes con supervisores distintos. El grupo A recibe más sesiones guiadas y logra 80 % de hitos; grupo B, 58 %. Los tamaños reducidos impiden inferir causalidad segura. La presión es: El CEO quiere usar los resultados para despedir automáticamente al grupo B. El alumno debe transformar «Comparación cohortes y sesgos» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"tareas_clave\":28,\"evidencias_verificadas\":16,\"errores_criticos_abiertos\":3}. Calcula «% con evidencia» con 100 × evidencias verificadas / tareas clave. Valor para revisión: 57.14. El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Comparación cohortes y sesgos»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara expediente 30-60-90 final con revisión humana para el aspecto «comparación cohortes y sesgos». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar productividad plena con fallos críticos abiertos. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+            "prerequisites": [
+              "Unidad 5: Comparación cohortes y sesgos",
+              "Objetivo: Aplicar comparación cohortes y sesgos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: convergencia de competencias y satisfacción sin decisiones automáticas"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "tareas_clave": 28,
+              "evidencias_verificadas": 16,
+              "errores_criticos_abiertos": 3
+            },
+            "formula": "100 × evidencias verificadas / tareas clave",
+            "expected": 57.14,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "onboarding_30_60_90-p5-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Onboarding corporativo 30-60-90. Una compañía evalúa 14 nuevos ingresos en dos cohortes con supervisores distintos. El grupo A recibe más sesiones guiadas y logra 80 % de hitos; grupo B, 58 %. Los tamaños reducidos impiden inferir causalidad segura. Conflicto: El CEO quiere usar los resultados para despedir automáticamente al grupo B. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Comparación cohortes y sesgos». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p5-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"tareas_clave\":28,\"evidencias_verificadas\":16,\"errores_criticos_abiertos\":3}, calcula % con evidencia mediante 100 × evidencias verificadas / tareas clave; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p5-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Onboarding corporativo 30-60-90. Una compañía evalúa 14 nuevos ingresos en dos cohortes con supervisores distintos. El grupo A recibe más sesiones guiadas y logra 80 % de hitos; grupo B, 58 %. Los tamaños reducidos impiden inferir causalidad segura. Conflicto: El CEO quiere usar los resultados para despedir automáticamente al grupo B. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p5-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara expediente 30-60-90 final con revisión humana para el aspecto «Comparación cohortes y sesgos». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Comparación cohortes y sesgos» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p5-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone y mejora del programa empresarial», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 57.14,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "commonFailure": "declarar productividad plena con fallos críticos abiertos",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "onboarding_30_60_90-p5-u2",
+          "title": "Programa editable por función",
+          "objective": "Aplicar programa editable por función al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para managers y nuevos colaboradores, dominar «Programa editable por función» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Las empresas conservan control de sus procesos, documentos y roles de acceso: un empleado no debe ver materiales de otra organización. En el capítulo «Capstone y mejora del programa empresarial», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una compañía evalúa 14 nuevos ingresos en dos cohortes con supervisores distintos. El grupo A recibe más sesiones guiadas y logra 80 % de hitos; grupo B, 58 %. Los tamaños reducidos impiden inferir causalidad segura. La presión es: El CEO quiere usar los resultados para despedir automáticamente al grupo B. El alumno debe transformar «Programa editable por función» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"tareas_clave\":28,\"evidencias_verificadas\":16,\"errores_criticos_abiertos\":3}. Calcula «% con evidencia» con 100 × evidencias verificadas / tareas clave. Valor para revisión: 57.14. El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Programa editable por función»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara expediente 30-60-90 final con revisión humana para el aspecto «programa editable por función». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar productividad plena con fallos críticos abiertos. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+            "prerequisites": [
+              "Unidad 5: Programa editable por función",
+              "Objetivo: Aplicar programa editable por función al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: convergencia de competencias y satisfacción sin decisiones automáticas"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "tareas_clave": 28,
+              "evidencias_verificadas": 16,
+              "errores_criticos_abiertos": 3
+            },
+            "formula": "100 × evidencias verificadas / tareas clave",
+            "expected": 57.14,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "onboarding_30_60_90-p5-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Onboarding corporativo 30-60-90. Una compañía evalúa 14 nuevos ingresos en dos cohortes con supervisores distintos. El grupo A recibe más sesiones guiadas y logra 80 % de hitos; grupo B, 58 %. Los tamaños reducidos impiden inferir causalidad segura. Conflicto: El CEO quiere usar los resultados para despedir automáticamente al grupo B. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Programa editable por función». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p5-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"tareas_clave\":28,\"evidencias_verificadas\":16,\"errores_criticos_abiertos\":3}, calcula % con evidencia mediante 100 × evidencias verificadas / tareas clave; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p5-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Onboarding corporativo 30-60-90. Una compañía evalúa 14 nuevos ingresos en dos cohortes con supervisores distintos. El grupo A recibe más sesiones guiadas y logra 80 % de hitos; grupo B, 58 %. Los tamaños reducidos impiden inferir causalidad segura. Conflicto: El CEO quiere usar los resultados para despedir automáticamente al grupo B. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p5-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara expediente 30-60-90 final con revisión humana para el aspecto «Programa editable por función». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Programa editable por función» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p5-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone y mejora del programa empresarial», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 57.14,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "commonFailure": "declarar productividad plena con fallos críticos abiertos",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "onboarding_30_60_90-p5-u3",
+          "title": "Defensa ante manager y RR. HH.",
+          "objective": "Aplicar defensa ante manager y rr. hh. al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para managers y nuevos colaboradores, dominar «Defensa ante manager y RR. HH.» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La autonomía aumenta por etapas y exige revisar errores críticos, no solo promedios de evaluación. En el capítulo «Capstone y mejora del programa empresarial», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una compañía evalúa 14 nuevos ingresos en dos cohortes con supervisores distintos. El grupo A recibe más sesiones guiadas y logra 80 % de hitos; grupo B, 58 %. Los tamaños reducidos impiden inferir causalidad segura. La presión es: El CEO quiere usar los resultados para despedir automáticamente al grupo B. El alumno debe transformar «Defensa ante manager y RR. HH.» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"tareas_clave\":28,\"evidencias_verificadas\":16,\"errores_criticos_abiertos\":3}. Calcula «% con evidencia» con 100 × evidencias verificadas / tareas clave. Valor para revisión: 57.14. El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Defensa ante manager y RR. HH.»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara expediente 30-60-90 final con revisión humana para el aspecto «defensa ante manager y rr. hh.». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar productividad plena con fallos críticos abiertos. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+            "prerequisites": [
+              "Unidad 5: Defensa ante manager y RR. HH.",
+              "Objetivo: Aplicar defensa ante manager y rr. hh. al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: convergencia de competencias y satisfacción sin decisiones automáticas"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "tareas_clave": 28,
+              "evidencias_verificadas": 16,
+              "errores_criticos_abiertos": 3
+            },
+            "formula": "100 × evidencias verificadas / tareas clave",
+            "expected": 57.14,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "onboarding_30_60_90-p5-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Onboarding corporativo 30-60-90. Una compañía evalúa 14 nuevos ingresos en dos cohortes con supervisores distintos. El grupo A recibe más sesiones guiadas y logra 80 % de hitos; grupo B, 58 %. Los tamaños reducidos impiden inferir causalidad segura. Conflicto: El CEO quiere usar los resultados para despedir automáticamente al grupo B. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Defensa ante manager y RR. HH.». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p5-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"tareas_clave\":28,\"evidencias_verificadas\":16,\"errores_criticos_abiertos\":3}, calcula % con evidencia mediante 100 × evidencias verificadas / tareas clave; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p5-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Onboarding corporativo 30-60-90. Una compañía evalúa 14 nuevos ingresos en dos cohortes con supervisores distintos. El grupo A recibe más sesiones guiadas y logra 80 % de hitos; grupo B, 58 %. Los tamaños reducidos impiden inferir causalidad segura. Conflicto: El CEO quiere usar los resultados para despedir automáticamente al grupo B. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p5-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara expediente 30-60-90 final con revisión humana para el aspecto «Defensa ante manager y RR. HH.». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Defensa ante manager y RR. HH.» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "onboarding_30_60_90-p5-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone y mejora del programa empresarial», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 57.14,
+            "unit": "% con evidencia",
+            "limitations": "El porcentaje no acredita autonomía mientras existan errores críticos abiertos o la revisión humana esté pendiente",
+            "commonFailure": "declarar productividad plena con fallos críticos abiertos",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "Nunca publicar secretos corporativos, prometer un plazo fijo de autonomía ni tomar decisiones laborales automáticas.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 5 y 6.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": true
+      }
+    }
+  ],
+  "unitsCount": 15,
+  "practicesCount": 75,
+  "gradingPolicy": {
+    "minScore100": 80,
+    "eachDimensionAtLeast4Scale": 3,
+    "criticalErrorsAllowed": 0,
+    "manualApproval": true,
+    "submissionAloneNeverUnlocks": true
+  },
+  "publicationGate": {
+    "enabled": false,
+    "requiresBackendAssessment": true,
+    "requiresEditorialAndPrivacyReview": true
+  }
+}

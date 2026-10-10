@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="offline_title">Não foi possível conectar</string>
+    <string name="offline_message">Verifique sua conexão e tente novamente. Cursos e avaliações exigem internet.</string>
+    <string name="retry">Tentar novamente</string>
+    <string name="opening_external">Abrindo no navegador</string>
+    <string name="cannot_open_link">Nenhum aplicativo pode abrir este link</string>
+    <string name="download_started">O download começou</string>
+    <string name="download_unavailable">Este download não está disponível no aplicativo</string>
+    <string name="file_not_supported">Não foi possível abrir o arquivo selecionado</string>
+    <string name="blocked_insecure">Este link foi bloqueado por segurança</string>
+    <string name="blocked_http">Apenas conexões HTTPS seguras são permitidas</string>
+    <string name="share_app_title">Compartilhar Garciloga</string>
+    <string name="share_app_message">Conheça o Garciloga: %1$s</string>
+</resources>

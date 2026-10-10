@@ -1,0 +1,1325 @@
+{
+  "key": "cross_sell",
+  "title": "Cross-sell B2B · Venta cruzada con evidencia de valor",
+  "status": "draft",
+  "version": "2026-10-10.v1",
+  "locale": "es",
+  "localeStates": {
+    "es": "es",
+    "en": "beta-pending",
+    "pt": "beta-pending",
+    "fr": "beta-pending"
+  },
+  "audience": "Account Managers, Customer Success, preventa y líderes",
+  "intro": "Expansión por necesidades complementarias y cumplimiento contractual; ninguna venta se impone al cliente.",
+  "requiredHumanReview": true,
+  "levels": [
+    {
+      "id": "cross_sell-l01",
+      "number": 1,
+      "title": "Mapa de valor y adyacencias del cliente",
+      "difficulty": "fundamentos aplicados",
+      "case": {
+        "organization": "Cartera de clientes simulados",
+        "facts": "Distribuidora Olmo usa facturación y soporte, paga 35.000 MXN al mes y quiere que sus 12 sucursales concilien pedidos. La compañía también dispone de un módulo de inventario, pero hay integraciones a medida pendientes.",
+        "conflict": "Comercial ordena ofrecer inventario a toda la base, incluyendo clientes con incidentes críticos no resueltos.",
+        "metric": "oportunidades validadas por necesidad",
+        "continuity": "Arrastra al siguiente nivel las hipótesis, la calidad de evidencia y las decisiones; registrar cambio de criterio es obligatorio."
+      },
+      "lessons": [
+        {
+          "id": "cross_sell-l01-1",
+          "title": "Trabajo que desea resolver el cliente",
+          "teaching": "Trabajo que desea resolver el cliente. El caso presenta hechos medibles (Distribuidora Olmo usa facturación y soporte, paga 35.000 MXN al mes y quiere que sus 12 sucursales concilien pedidos. La compañía también dispone de un módulo de inventario, pero hay integraciones a medida pendientes.) y una tensión de autoridad (Comercial ordena ofrecer inventario a toda la base, incluyendo clientes con incidentes críticos no resueltos.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «oportunidades validadas por necesidad».",
+          "task": "Examina trabajo que desea resolver el cliente en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "cross_sell-l01-2",
+          "title": "Complementariedad vs sustitución",
+          "teaching": "Complementariedad vs sustitución. El caso presenta hechos medibles (Distribuidora Olmo usa facturación y soporte, paga 35.000 MXN al mes y quiere que sus 12 sucursales concilien pedidos. La compañía también dispone de un módulo de inventario, pero hay integraciones a medida pendientes.) y una tensión de autoridad (Comercial ordena ofrecer inventario a toda la base, incluyendo clientes con incidentes críticos no resueltos.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «oportunidades validadas por necesidad».",
+          "task": "Examina complementariedad vs sustitución en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "cross_sell-l01-3",
+          "title": "Límites de consentimiento comercial",
+          "teaching": "Límites de consentimiento comercial. El caso presenta hechos medibles (Distribuidora Olmo usa facturación y soporte, paga 35.000 MXN al mes y quiere que sus 12 sucursales concilien pedidos. La compañía también dispone de un módulo de inventario, pero hay integraciones a medida pendientes.) y una tensión de autoridad (Comercial ordena ofrecer inventario a toda la base, incluyendo clientes con incidentes críticos no resueltos.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «oportunidades validadas por necesidad».",
+          "task": "Examina límites de consentimiento comercial en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        }
+      ],
+      "decisions": [
+        {
+          "prompt": "Frente a «Mapa de valor y adyacencias del cliente», el responsable reclama: Comercial ordena ofrecer inventario a toda la base, incluyendo clientes con incidentes críticos no resueltos.. ¿Qué enfoque queda defendido por los hechos del caso?",
+          "options": [
+            "Incluir inventario sin contrato y esperar que lo adopten después.",
+            "Validar necesidad de conciliación, madurez y dependencias, y separar beneficio demostrado de propuesta de hipótesis.",
+            "Enviar ofertas masivas basadas en ingresos de cada cliente, sin hablar de problemas operativos."
+          ],
+          "correctIndex": 1,
+          "feedback": "La propuesta debe relacionar oportunidades validadas por necesidad con alternativas, autorización y límites de evidencia; elegir una casilla no basta para aprobar el módulo."
+        },
+        {
+          "prompt": "El responsable descubre que la señal «oportunidades validadas por necesidad» no ha sido calibrada y puede inducir errores. ¿Cuál es la respuesta más sólida?",
+          "options": [
+            "Presentar el indicador como resultado garantizado porque ya aparece en el dashboard.",
+            "Suspender afirmaciones concluyentes, auditar la calidad del dato, establecer línea base y verificar el cambio después de actuar.",
+            "Modificar retrospectivamente la cohorte para obtener una mejora favorable."
+          ],
+          "correctIndex": 1,
+          "feedback": "Sin línea base, método y datos fiables no puede darse por probada una mejora comercial."
+        }
+      ],
+      "exam": {
+        "format": "defensa escrita con evaluación humana",
+        "requiredWords": 850,
+        "passingPoints": 80,
+        "maxPoints": 100,
+        "tasks": [
+          {
+            "title": "Datos y discrepancias",
+            "points": 12,
+            "prompt": "Construye un diagnóstico con cinco evidencias del caso, dos hipótesis alternativas y un registro de datos faltantes. Explica qué indicador podría estar sesgado.",
+            "minWords": 160
+          },
+          {
+            "title": "Causalidad y segmentación",
+            "points": 12,
+            "prompt": "Segmenta actores y causas, separando correlaciones de consecuencias probadas y reconociendo información que no puedes inferir.",
+            "minWords": 160
+          },
+          {
+            "title": "Modelo cuantitativo",
+            "points": 14,
+            "prompt": "Calcula las métricas disponibles y su denominador o rango. Muestra fórmula, unidades, supuestos y al menos un análisis de sensibilidad.",
+            "minWords": 160
+          },
+          {
+            "title": "Decisiones comparables",
+            "points": 14,
+            "prompt": "Presenta tres cursos de acción (uno de ellos mantener estado actual), prioriza la alternativa elegida y justifica una rechazada con coste y riesgo residual.",
+            "minWords": 160
+          },
+          {
+            "title": "Diligencia contractual y ética",
+            "points": 12,
+            "prompt": "Distingue lo que puedes ofrecer de los compromisos que requieren autorización. No prometas ahorros, seguridad, precios ni fechas sin evidencia.",
+            "minWords": 160
+          },
+          {
+            "title": "Diseño de experimentación",
+            "points": 12,
+            "prompt": "Prepara un piloto con alcance, muestra, duración, criterios de éxito, criterio de interrupción y plan de protección de datos ficticios.",
+            "minWords": 160
+          },
+          {
+            "title": "Objeción adversarial",
+            "points": 12,
+            "prompt": "Escribe la objeción más fuerte de Finanzas, Usuario y Compras, e incorpora una respuesta con evidencia, responsabilidad y concesión autorizable.",
+            "minWords": 160
+          },
+          {
+            "title": "Seguimiento y aprendizaje",
+            "points": 12,
+            "prompt": "Crea un tablero con dueño, indicador adelantado, métrica retrospectiva, fecha, acción de reversión y condición verificable de cierre.",
+            "minWords": 160
+          }
+        ],
+        "criticalFailures": [
+          "datos o cifras inventados como reales",
+          "promesas o descuentos sin autorización",
+          "datos personales en expedientes de simulación",
+          "confundir ingresos nuevos con retención o expansión de la cohorte",
+          "aprobar por texto de relleno sin evidencia"
+        ]
+      },
+      "project": null,
+      "references": [
+        "https://stripe.com/es/resources/more/net-revenue-retention"
+      ]
+    },
+    {
+      "id": "cross_sell-l02",
+      "number": 2,
+      "title": "Discovery multiactor sin venta prematura",
+      "difficulty": "fundamentos aplicados",
+      "case": {
+        "organization": "Cartera de clientes simulados",
+        "facts": "Cooperativa Delta paga 28.000 MXN de MRR. Finanzas desea reducir 18 horas mensuales de conciliación; operaciones teme afectar procesos de almacén y TI tiene una ventana de cambio cada dos meses.",
+        "conflict": "El ejecutivo propone demo completa sin confirmar quién aprueba el cambio.",
+        "metric": "horas documentadas y criterios de compra validados",
+        "continuity": "Arrastra al siguiente nivel las hipótesis, la calidad de evidencia y las decisiones; registrar cambio de criterio es obligatorio."
+      },
+      "lessons": [
+        {
+          "id": "cross_sell-l02-1",
+          "title": "Preguntas sobre proceso y fricción",
+          "teaching": "Preguntas sobre proceso y fricción. El caso presenta hechos medibles (Cooperativa Delta paga 28.000 MXN de MRR. Finanzas desea reducir 18 horas mensuales de conciliación; operaciones teme afectar procesos de almacén y TI tiene una ventana de cambio cada dos meses.) y una tensión de autoridad (El ejecutivo propone demo completa sin confirmar quién aprueba el cambio.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «horas documentadas y criterios de compra validados».",
+          "task": "Examina preguntas sobre proceso y fricción en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "cross_sell-l02-2",
+          "title": "Mapa de influenciadores y decisores",
+          "teaching": "Mapa de influenciadores y decisores. El caso presenta hechos medibles (Cooperativa Delta paga 28.000 MXN de MRR. Finanzas desea reducir 18 horas mensuales de conciliación; operaciones teme afectar procesos de almacén y TI tiene una ventana de cambio cada dos meses.) y una tensión de autoridad (El ejecutivo propone demo completa sin confirmar quién aprueba el cambio.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «horas documentadas y criterios de compra validados».",
+          "task": "Examina mapa de influenciadores y decisores en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "cross_sell-l02-3",
+          "title": "Hipótesis confirmables con datos",
+          "teaching": "Hipótesis confirmables con datos. El caso presenta hechos medibles (Cooperativa Delta paga 28.000 MXN de MRR. Finanzas desea reducir 18 horas mensuales de conciliación; operaciones teme afectar procesos de almacén y TI tiene una ventana de cambio cada dos meses.) y una tensión de autoridad (El ejecutivo propone demo completa sin confirmar quién aprueba el cambio.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «horas documentadas y criterios de compra validados».",
+          "task": "Examina hipótesis confirmables con datos en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        }
+      ],
+      "decisions": [
+        {
+          "prompt": "Frente a «Discovery multiactor sin venta prematura», el responsable reclama: El ejecutivo propone demo completa sin confirmar quién aprueba el cambio.. ¿Qué enfoque queda defendido por los hechos del caso?",
+          "options": [
+            "Hacer discovery por rol, cuantificar hipótesis y comprobar disponibilidad técnica y económica antes de demo.",
+            "Tratar la preferencia del usuario operativo como autorización contractual.",
+            "Prometer implementación inmediata sin revisar ventanas ni riesgos."
+          ],
+          "correctIndex": 0,
+          "feedback": "La propuesta debe relacionar horas documentadas y criterios de compra validados con alternativas, autorización y límites de evidencia; elegir una casilla no basta para aprobar el módulo."
+        },
+        {
+          "prompt": "El responsable descubre que la señal «horas documentadas y criterios de compra validados» no ha sido calibrada y puede inducir errores. ¿Cuál es la respuesta más sólida?",
+          "options": [
+            "Presentar el indicador como resultado garantizado porque ya aparece en el dashboard.",
+            "Suspender afirmaciones concluyentes, auditar la calidad del dato, establecer línea base y verificar el cambio después de actuar.",
+            "Modificar retrospectivamente la cohorte para obtener una mejora favorable."
+          ],
+          "correctIndex": 1,
+          "feedback": "Sin línea base, método y datos fiables no puede darse por probada una mejora comercial."
+        }
+      ],
+      "exam": {
+        "format": "defensa escrita con evaluación humana",
+        "requiredWords": 850,
+        "passingPoints": 80,
+        "maxPoints": 100,
+        "tasks": [
+          {
+            "title": "Datos y discrepancias",
+            "points": 12,
+            "prompt": "Construye un diagnóstico con cinco evidencias del caso, dos hipótesis alternativas y un registro de datos faltantes. Explica qué indicador podría estar sesgado.",
+            "minWords": 160
+          },
+          {
+            "title": "Causalidad y segmentación",
+            "points": 12,
+            "prompt": "Segmenta actores y causas, separando correlaciones de consecuencias probadas y reconociendo información que no puedes inferir.",
+            "minWords": 160
+          },
+          {
+            "title": "Modelo cuantitativo",
+            "points": 14,
+            "prompt": "Calcula las métricas disponibles y su denominador o rango. Muestra fórmula, unidades, supuestos y al menos un análisis de sensibilidad.",
+            "minWords": 160
+          },
+          {
+            "title": "Decisiones comparables",
+            "points": 14,
+            "prompt": "Presenta tres cursos de acción (uno de ellos mantener estado actual), prioriza la alternativa elegida y justifica una rechazada con coste y riesgo residual.",
+            "minWords": 160
+          },
+          {
+            "title": "Diligencia contractual y ética",
+            "points": 12,
+            "prompt": "Distingue lo que puedes ofrecer de los compromisos que requieren autorización. No prometas ahorros, seguridad, precios ni fechas sin evidencia.",
+            "minWords": 160
+          },
+          {
+            "title": "Diseño de experimentación",
+            "points": 12,
+            "prompt": "Prepara un piloto con alcance, muestra, duración, criterios de éxito, criterio de interrupción y plan de protección de datos ficticios.",
+            "minWords": 160
+          },
+          {
+            "title": "Objeción adversarial",
+            "points": 12,
+            "prompt": "Escribe la objeción más fuerte de Finanzas, Usuario y Compras, e incorpora una respuesta con evidencia, responsabilidad y concesión autorizable.",
+            "minWords": 160
+          },
+          {
+            "title": "Seguimiento y aprendizaje",
+            "points": 12,
+            "prompt": "Crea un tablero con dueño, indicador adelantado, métrica retrospectiva, fecha, acción de reversión y condición verificable de cierre.",
+            "minWords": 160
+          }
+        ],
+        "criticalFailures": [
+          "datos o cifras inventados como reales",
+          "promesas o descuentos sin autorización",
+          "datos personales en expedientes de simulación",
+          "confundir ingresos nuevos con retención o expansión de la cohorte",
+          "aprobar por texto de relleno sin evidencia"
+        ]
+      },
+      "project": null,
+      "references": [
+        "https://stripe.com/es/resources/more/net-revenue-retention"
+      ]
+    },
+    {
+      "id": "cross_sell-l03",
+      "number": 3,
+      "title": "Priorización comercial y capacidad de entrega",
+      "difficulty": "análisis operacional",
+      "case": {
+        "organization": "Cartera de clientes simulados",
+        "facts": "Hay seis oportunidades: dos suman 180.000 MXN/año pero requieren equipo de integraciones por 60 días; otras cuatro suman 120.000 MXN/año y podrían activarse en 10 días. El equipo técnico solo tiene 100 horas libres.",
+        "conflict": "Dirección ordena cerrar primero el ARR más alto sin revisar capacidad.",
+        "metric": "ARR incremental viable y activación real",
+        "continuity": "Arrastra al siguiente nivel las hipótesis, la calidad de evidencia y las decisiones; registrar cambio de criterio es obligatorio."
+      },
+      "lessons": [
+        {
+          "id": "cross_sell-l03-1",
+          "title": "Valor incremental y propensión",
+          "teaching": "Valor incremental y propensión. El caso presenta hechos medibles (Hay seis oportunidades: dos suman 180.000 MXN/año pero requieren equipo de integraciones por 60 días; otras cuatro suman 120.000 MXN/año y podrían activarse en 10 días. El equipo técnico solo tiene 100 horas libres.) y una tensión de autoridad (Dirección ordena cerrar primero el ARR más alto sin revisar capacidad.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «ARR incremental viable y activación real».",
+          "task": "Examina valor incremental y propensión en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "cross_sell-l03-2",
+          "title": "Capacidad de onboarding y dependencia",
+          "teaching": "Capacidad de onboarding y dependencia. El caso presenta hechos medibles (Hay seis oportunidades: dos suman 180.000 MXN/año pero requieren equipo de integraciones por 60 días; otras cuatro suman 120.000 MXN/año y podrían activarse en 10 días. El equipo técnico solo tiene 100 horas libres.) y una tensión de autoridad (Dirección ordena cerrar primero el ARR más alto sin revisar capacidad.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «ARR incremental viable y activación real».",
+          "task": "Examina capacidad de onboarding y dependencia en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "cross_sell-l03-3",
+          "title": "Priorización por fit y confianza",
+          "teaching": "Priorización por fit y confianza. El caso presenta hechos medibles (Hay seis oportunidades: dos suman 180.000 MXN/año pero requieren equipo de integraciones por 60 días; otras cuatro suman 120.000 MXN/año y podrían activarse en 10 días. El equipo técnico solo tiene 100 horas libres.) y una tensión de autoridad (Dirección ordena cerrar primero el ARR más alto sin revisar capacidad.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «ARR incremental viable y activación real».",
+          "task": "Examina priorización por fit y confianza en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 220,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        }
+      ],
+      "decisions": [
+        {
+          "prompt": "Frente a «Priorización comercial y capacidad de entrega», el responsable reclama: Dirección ordena cerrar primero el ARR más alto sin revisar capacidad.. ¿Qué enfoque queda defendido por los hechos del caso?",
+          "options": [
+            "Vender a los seis clientes para asegurar cuota y decidir la entrega después.",
+            "Cancelar las cuatro oportunidades pequeñas por ser menos vistosas.",
+            "Comparar valor incremental neto, esfuerzo, urgencia, probabilidad y riesgos de promesa incumplida."
+          ],
+          "correctIndex": 2,
+          "feedback": "La propuesta debe relacionar ARR incremental viable y activación real con alternativas, autorización y límites de evidencia; elegir una casilla no basta para aprobar el módulo."
+        },
+        {
+          "prompt": "El responsable descubre que la señal «ARR incremental viable y activación real» no ha sido calibrada y puede inducir errores. ¿Cuál es la respuesta más sólida?",
+          "options": [
+            "Presentar el indicador como resultado garantizado porque ya aparece en el dashboard.",
+            "Suspender afirmaciones concluyentes, auditar la calidad del dato, establecer línea base y verificar el cambio después de actuar.",
+            "Modificar retrospectivamente la cohorte para obtener una mejora favorable."
+          ],
+          "correctIndex": 1,
+          "feedback": "Sin línea base, método y datos fiables no puede darse por probada una mejora comercial."
+        }
+      ],
+      "exam": {
+        "format": "defensa escrita con evaluación humana",
+        "requiredWords": 850,
+        "passingPoints": 80,
+        "maxPoints": 100,
+        "tasks": [
+          {
+            "title": "Datos y discrepancias",
+            "points": 12,
+            "prompt": "Construye un diagnóstico con cinco evidencias del caso, dos hipótesis alternativas y un registro de datos faltantes. Explica qué indicador podría estar sesgado.",
+            "minWords": 160
+          },
+          {
+            "title": "Causalidad y segmentación",
+            "points": 12,
+            "prompt": "Segmenta actores y causas, separando correlaciones de consecuencias probadas y reconociendo información que no puedes inferir.",
+            "minWords": 160
+          },
+          {
+            "title": "Modelo cuantitativo",
+            "points": 14,
+            "prompt": "Calcula las métricas disponibles y su denominador o rango. Muestra fórmula, unidades, supuestos y al menos un análisis de sensibilidad.",
+            "minWords": 160
+          },
+          {
+            "title": "Decisiones comparables",
+            "points": 14,
+            "prompt": "Presenta tres cursos de acción (uno de ellos mantener estado actual), prioriza la alternativa elegida y justifica una rechazada con coste y riesgo residual.",
+            "minWords": 160
+          },
+          {
+            "title": "Diligencia contractual y ética",
+            "points": 12,
+            "prompt": "Distingue lo que puedes ofrecer de los compromisos que requieren autorización. No prometas ahorros, seguridad, precios ni fechas sin evidencia.",
+            "minWords": 160
+          },
+          {
+            "title": "Diseño de experimentación",
+            "points": 12,
+            "prompt": "Prepara un piloto con alcance, muestra, duración, criterios de éxito, criterio de interrupción y plan de protección de datos ficticios.",
+            "minWords": 160
+          },
+          {
+            "title": "Objeción adversarial",
+            "points": 12,
+            "prompt": "Escribe la objeción más fuerte de Finanzas, Usuario y Compras, e incorpora una respuesta con evidencia, responsabilidad y concesión autorizable.",
+            "minWords": 160
+          },
+          {
+            "title": "Seguimiento y aprendizaje",
+            "points": 12,
+            "prompt": "Crea un tablero con dueño, indicador adelantado, métrica retrospectiva, fecha, acción de reversión y condición verificable de cierre.",
+            "minWords": 160
+          }
+        ],
+        "criticalFailures": [
+          "datos o cifras inventados como reales",
+          "promesas o descuentos sin autorización",
+          "datos personales en expedientes de simulación",
+          "confundir ingresos nuevos con retención o expansión de la cohorte",
+          "aprobar por texto de relleno sin evidencia"
+        ]
+      },
+      "project": null,
+      "references": [
+        "https://stripe.com/es/resources/more/net-revenue-retention"
+      ]
+    },
+    {
+      "id": "cross_sell-l04",
+      "number": 4,
+      "title": "Prueba de valor conjunta",
+      "difficulty": "análisis operacional",
+      "case": {
+        "organization": "Cartera de clientes simulados",
+        "facts": "Olmo acepta un piloto de 14 días con una sucursal. Su base tiene 2.000 SKUs, 350 sin código consistente, y TI no autoriza exportaciones sin anonimizarlas. Comercial ya quiere contar 12 sucursales como venta ganada.",
+        "conflict": "Se solicita convertir el piloto en contrato de 12 sedes sin resolver calidad del catálogo.",
+        "metric": "pilotos con criterios acordados y datos autorizados",
+        "continuity": "Arrastra al siguiente nivel las hipótesis, la calidad de evidencia y las decisiones; registrar cambio de criterio es obligatorio."
+      },
+      "lessons": [
+        {
+          "id": "cross_sell-l04-1",
+          "title": "Diseño de piloto con hipótesis",
+          "teaching": "Diseño de piloto con hipótesis. El caso presenta hechos medibles (Olmo acepta un piloto de 14 días con una sucursal. Su base tiene 2.000 SKUs, 350 sin código consistente, y TI no autoriza exportaciones sin anonimizarlas. Comercial ya quiere contar 12 sucursales como venta ganada.) y una tensión de autoridad (Se solicita convertir el piloto en contrato de 12 sedes sin resolver calidad del catálogo.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «pilotos con criterios acordados y datos autorizados».",
+          "task": "Examina diseño de piloto con hipótesis en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "cross_sell-l04-2",
+          "title": "Criterios de aceptación del comprador",
+          "teaching": "Criterios de aceptación del comprador. El caso presenta hechos medibles (Olmo acepta un piloto de 14 días con una sucursal. Su base tiene 2.000 SKUs, 350 sin código consistente, y TI no autoriza exportaciones sin anonimizarlas. Comercial ya quiere contar 12 sucursales como venta ganada.) y una tensión de autoridad (Se solicita convertir el piloto en contrato de 12 sedes sin resolver calidad del catálogo.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «pilotos con criterios acordados y datos autorizados».",
+          "task": "Examina criterios de aceptación del comprador en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "cross_sell-l04-3",
+          "title": "Riesgos de seguridad y transferencia",
+          "teaching": "Riesgos de seguridad y transferencia. El caso presenta hechos medibles (Olmo acepta un piloto de 14 días con una sucursal. Su base tiene 2.000 SKUs, 350 sin código consistente, y TI no autoriza exportaciones sin anonimizarlas. Comercial ya quiere contar 12 sucursales como venta ganada.) y una tensión de autoridad (Se solicita convertir el piloto en contrato de 12 sedes sin resolver calidad del catálogo.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «pilotos con criterios acordados y datos autorizados».",
+          "task": "Examina riesgos de seguridad y transferencia en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        }
+      ],
+      "decisions": [
+        {
+          "prompt": "Frente a «Prueba de valor conjunta», el responsable reclama: Se solicita convertir el piloto en contrato de 12 sedes sin resolver calidad del catálogo.. ¿Qué enfoque queda defendido por los hechos del caso?",
+          "options": [
+            "Comunicar 'ROI garantizado' sin tener métricas base.",
+            "Acordar alcance, datos mínimos, medición de errores y criterios de expansión después de la validación.",
+            "Subir datos identificables de todas las sedes a un entorno de pruebas no aprobado."
+          ],
+          "correctIndex": 1,
+          "feedback": "La propuesta debe relacionar pilotos con criterios acordados y datos autorizados con alternativas, autorización y límites de evidencia; elegir una casilla no basta para aprobar el módulo."
+        },
+        {
+          "prompt": "El responsable descubre que la señal «pilotos con criterios acordados y datos autorizados» no ha sido calibrada y puede inducir errores. ¿Cuál es la respuesta más sólida?",
+          "options": [
+            "Presentar el indicador como resultado garantizado porque ya aparece en el dashboard.",
+            "Suspender afirmaciones concluyentes, auditar la calidad del dato, establecer línea base y verificar el cambio después de actuar.",
+            "Modificar retrospectivamente la cohorte para obtener una mejora favorable."
+          ],
+          "correctIndex": 1,
+          "feedback": "Sin línea base, método y datos fiables no puede darse por probada una mejora comercial."
+        }
+      ],
+      "exam": {
+        "format": "defensa escrita con evaluación humana",
+        "requiredWords": 1200,
+        "passingPoints": 80,
+        "maxPoints": 100,
+        "tasks": [
+          {
+            "title": "Datos y discrepancias",
+            "points": 12,
+            "prompt": "Construye un diagnóstico con cinco evidencias del caso, dos hipótesis alternativas y un registro de datos faltantes. Explica qué indicador podría estar sesgado.",
+            "minWords": 160
+          },
+          {
+            "title": "Causalidad y segmentación",
+            "points": 12,
+            "prompt": "Segmenta actores y causas, separando correlaciones de consecuencias probadas y reconociendo información que no puedes inferir.",
+            "minWords": 160
+          },
+          {
+            "title": "Modelo cuantitativo",
+            "points": 14,
+            "prompt": "Calcula las métricas disponibles y su denominador o rango. Muestra fórmula, unidades, supuestos y al menos un análisis de sensibilidad.",
+            "minWords": 160
+          },
+          {
+            "title": "Decisiones comparables",
+            "points": 14,
+            "prompt": "Presenta tres cursos de acción (uno de ellos mantener estado actual), prioriza la alternativa elegida y justifica una rechazada con coste y riesgo residual.",
+            "minWords": 160
+          },
+          {
+            "title": "Diligencia contractual y ética",
+            "points": 12,
+            "prompt": "Distingue lo que puedes ofrecer de los compromisos que requieren autorización. No prometas ahorros, seguridad, precios ni fechas sin evidencia.",
+            "minWords": 160
+          },
+          {
+            "title": "Diseño de experimentación",
+            "points": 12,
+            "prompt": "Prepara un piloto con alcance, muestra, duración, criterios de éxito, criterio de interrupción y plan de protección de datos ficticios.",
+            "minWords": 160
+          },
+          {
+            "title": "Objeción adversarial",
+            "points": 12,
+            "prompt": "Escribe la objeción más fuerte de Finanzas, Usuario y Compras, e incorpora una respuesta con evidencia, responsabilidad y concesión autorizable.",
+            "minWords": 160
+          },
+          {
+            "title": "Seguimiento y aprendizaje",
+            "points": 12,
+            "prompt": "Crea un tablero con dueño, indicador adelantado, métrica retrospectiva, fecha, acción de reversión y condición verificable de cierre.",
+            "minWords": 160
+          }
+        ],
+        "criticalFailures": [
+          "datos o cifras inventados como reales",
+          "promesas o descuentos sin autorización",
+          "datos personales en expedientes de simulación",
+          "confundir ingresos nuevos con retención o expansión de la cohorte",
+          "aprobar por texto de relleno sin evidencia"
+        ]
+      },
+      "project": {
+        "mandatory": true,
+        "title": "Proyecto integrador intermedio: Prueba de valor conjunta",
+        "minWords": 1400,
+        "deliverable": "Construye el expediente de «Prueba de valor conjunta» a partir de todos los datos acumulados, con indicadores (pilotos con criterios acordados y datos autorizados), decisión razonada, alternativas, controles, responsables, plazos, acta de revisión y evidencia simulada de seguimiento.",
+        "rubric": [
+          {
+            "name": "diagnóstico y causalidad",
+            "weight": 20
+          },
+          {
+            "name": "métricas y calidad del dato",
+            "weight": 20
+          },
+          {
+            "name": "decisiones y alternativas",
+            "weight": 20
+          },
+          {
+            "name": "seguridad, contrato y ética",
+            "weight": 20
+          },
+          {
+            "name": "seguimiento y defensa",
+            "weight": 20
+          }
+        ],
+        "humanReview": true
+      },
+      "references": [
+        "https://stripe.com/es/resources/more/net-revenue-retention"
+      ]
+    },
+    {
+      "id": "cross_sell-l05",
+      "number": 5,
+      "title": "Propuesta comercial basada en evidencia",
+      "difficulty": "análisis operacional",
+      "case": {
+        "organization": "Cartera de clientes simulados",
+        "facts": "Un piloto redujo conciliaciones de 18 a 12 horas, pero se gastaron 30 horas iniciales en limpieza de datos y la automatización genera 2 % de discrepancias que requieren revisión.",
+        "conflict": "El comprador propone firmar si se le garantiza ahorro de 80 % sin cambios en procesos.",
+        "metric": "valor demostrado y brecha de promesas",
+        "continuity": "Arrastra al siguiente nivel las hipótesis, la calidad de evidencia y las decisiones; registrar cambio de criterio es obligatorio."
+      },
+      "lessons": [
+        {
+          "id": "cross_sell-l05-1",
+          "title": "Opciones escalonadas",
+          "teaching": "Opciones escalonadas. El caso presenta hechos medibles (Un piloto redujo conciliaciones de 18 a 12 horas, pero se gastaron 30 horas iniciales en limpieza de datos y la automatización genera 2 % de discrepancias que requieren revisión.) y una tensión de autoridad (El comprador propone firmar si se le garantiza ahorro de 80 % sin cambios en procesos.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «valor demostrado y brecha de promesas».",
+          "task": "Examina opciones escalonadas en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "cross_sell-l05-2",
+          "title": "ROI con supuestos y sensibilidad",
+          "teaching": "ROI con supuestos y sensibilidad. El caso presenta hechos medibles (Un piloto redujo conciliaciones de 18 a 12 horas, pero se gastaron 30 horas iniciales en limpieza de datos y la automatización genera 2 % de discrepancias que requieren revisión.) y una tensión de autoridad (El comprador propone firmar si se le garantiza ahorro de 80 % sin cambios en procesos.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «valor demostrado y brecha de promesas».",
+          "task": "Examina roi con supuestos y sensibilidad en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "cross_sell-l05-3",
+          "title": "Responsabilidades y restricciones contractuales",
+          "teaching": "Responsabilidades y restricciones contractuales. El caso presenta hechos medibles (Un piloto redujo conciliaciones de 18 a 12 horas, pero se gastaron 30 horas iniciales en limpieza de datos y la automatización genera 2 % de discrepancias que requieren revisión.) y una tensión de autoridad (El comprador propone firmar si se le garantiza ahorro de 80 % sin cambios en procesos.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «valor demostrado y brecha de promesas».",
+          "task": "Examina responsabilidades y restricciones contractuales en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        }
+      ],
+      "decisions": [
+        {
+          "prompt": "Frente a «Propuesta comercial basada en evidencia», el responsable reclama: El comprador propone firmar si se le garantiza ahorro de 80 % sin cambios en procesos.. ¿Qué enfoque queda defendido por los hechos del caso?",
+          "options": [
+            "Construir escenarios de ahorro e inversión con rangos, plan de calidad de datos y acuerdos verificables.",
+            "Modificar los datos de la prueba para que cumplan el 80 % anunciado.",
+            "Omitir las 30 horas iniciales porque son un coste hundido."
+          ],
+          "correctIndex": 0,
+          "feedback": "La propuesta debe relacionar valor demostrado y brecha de promesas con alternativas, autorización y límites de evidencia; elegir una casilla no basta para aprobar el módulo."
+        },
+        {
+          "prompt": "El responsable descubre que la señal «valor demostrado y brecha de promesas» no ha sido calibrada y puede inducir errores. ¿Cuál es la respuesta más sólida?",
+          "options": [
+            "Presentar el indicador como resultado garantizado porque ya aparece en el dashboard.",
+            "Suspender afirmaciones concluyentes, auditar la calidad del dato, establecer línea base y verificar el cambio después de actuar.",
+            "Modificar retrospectivamente la cohorte para obtener una mejora favorable."
+          ],
+          "correctIndex": 1,
+          "feedback": "Sin línea base, método y datos fiables no puede darse por probada una mejora comercial."
+        }
+      ],
+      "exam": {
+        "format": "defensa escrita con evaluación humana",
+        "requiredWords": 1200,
+        "passingPoints": 80,
+        "maxPoints": 100,
+        "tasks": [
+          {
+            "title": "Datos y discrepancias",
+            "points": 12,
+            "prompt": "Construye un diagnóstico con cinco evidencias del caso, dos hipótesis alternativas y un registro de datos faltantes. Explica qué indicador podría estar sesgado.",
+            "minWords": 160
+          },
+          {
+            "title": "Causalidad y segmentación",
+            "points": 12,
+            "prompt": "Segmenta actores y causas, separando correlaciones de consecuencias probadas y reconociendo información que no puedes inferir.",
+            "minWords": 160
+          },
+          {
+            "title": "Modelo cuantitativo",
+            "points": 14,
+            "prompt": "Calcula las métricas disponibles y su denominador o rango. Muestra fórmula, unidades, supuestos y al menos un análisis de sensibilidad.",
+            "minWords": 160
+          },
+          {
+            "title": "Decisiones comparables",
+            "points": 14,
+            "prompt": "Presenta tres cursos de acción (uno de ellos mantener estado actual), prioriza la alternativa elegida y justifica una rechazada con coste y riesgo residual.",
+            "minWords": 160
+          },
+          {
+            "title": "Diligencia contractual y ética",
+            "points": 12,
+            "prompt": "Distingue lo que puedes ofrecer de los compromisos que requieren autorización. No prometas ahorros, seguridad, precios ni fechas sin evidencia.",
+            "minWords": 160
+          },
+          {
+            "title": "Diseño de experimentación",
+            "points": 12,
+            "prompt": "Prepara un piloto con alcance, muestra, duración, criterios de éxito, criterio de interrupción y plan de protección de datos ficticios.",
+            "minWords": 160
+          },
+          {
+            "title": "Objeción adversarial",
+            "points": 12,
+            "prompt": "Escribe la objeción más fuerte de Finanzas, Usuario y Compras, e incorpora una respuesta con evidencia, responsabilidad y concesión autorizable.",
+            "minWords": 160
+          },
+          {
+            "title": "Seguimiento y aprendizaje",
+            "points": 12,
+            "prompt": "Crea un tablero con dueño, indicador adelantado, métrica retrospectiva, fecha, acción de reversión y condición verificable de cierre.",
+            "minWords": 160
+          }
+        ],
+        "criticalFailures": [
+          "datos o cifras inventados como reales",
+          "promesas o descuentos sin autorización",
+          "datos personales en expedientes de simulación",
+          "confundir ingresos nuevos con retención o expansión de la cohorte",
+          "aprobar por texto de relleno sin evidencia"
+        ]
+      },
+      "project": null,
+      "references": [
+        "https://stripe.com/es/resources/more/net-revenue-retention"
+      ]
+    },
+    {
+      "id": "cross_sell-l06",
+      "number": 6,
+      "title": "Objeciones, negociación y ética",
+      "difficulty": "supervisión",
+      "case": {
+        "organization": "Cartera de clientes simulados",
+        "facts": "Finanzas pide 25 % de descuento y cláusula de salida sin penalización; operaciones solicita horas de soporte adicionales. El margen estimado antes de concesiones es 19 % y el sponsor principal está de vacaciones.",
+        "conflict": "El representante puede cerrar hoy si concede todas las solicitudes sin aprobación.",
+        "metric": "concesiones autorizadas y margen observado",
+        "continuity": "Arrastra al siguiente nivel las hipótesis, la calidad de evidencia y las decisiones; registrar cambio de criterio es obligatorio."
+      },
+      "lessons": [
+        {
+          "id": "cross_sell-l06-1",
+          "title": "Tensiones precio/valor",
+          "teaching": "Tensiones precio/valor. El caso presenta hechos medibles (Finanzas pide 25 % de descuento y cláusula de salida sin penalización; operaciones solicita horas de soporte adicionales. El margen estimado antes de concesiones es 19 % y el sponsor principal está de vacaciones.) y una tensión de autoridad (El representante puede cerrar hoy si concede todas las solicitudes sin aprobación.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «concesiones autorizadas y margen observado».",
+          "task": "Examina tensiones precio/valor en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "cross_sell-l06-2",
+          "title": "Obligaciones y concesiones",
+          "teaching": "Obligaciones y concesiones. El caso presenta hechos medibles (Finanzas pide 25 % de descuento y cláusula de salida sin penalización; operaciones solicita horas de soporte adicionales. El margen estimado antes de concesiones es 19 % y el sponsor principal está de vacaciones.) y una tensión de autoridad (El representante puede cerrar hoy si concede todas las solicitudes sin aprobación.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «concesiones autorizadas y margen observado».",
+          "task": "Examina obligaciones y concesiones en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "cross_sell-l06-3",
+          "title": "Escucha y manejo de objeciones",
+          "teaching": "Escucha y manejo de objeciones. El caso presenta hechos medibles (Finanzas pide 25 % de descuento y cláusula de salida sin penalización; operaciones solicita horas de soporte adicionales. El margen estimado antes de concesiones es 19 % y el sponsor principal está de vacaciones.) y una tensión de autoridad (El representante puede cerrar hoy si concede todas las solicitudes sin aprobación.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «concesiones autorizadas y margen observado».",
+          "task": "Examina escucha y manejo de objeciones en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 300,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        }
+      ],
+      "decisions": [
+        {
+          "prompt": "Frente a «Objeciones, negociación y ética», el responsable reclama: El representante puede cerrar hoy si concede todas las solicitudes sin aprobación.. ¿Qué enfoque queda defendido por los hechos del caso?",
+          "options": [
+            "Aceptar todas las cláusulas verbalmente para cerrar el trimestre.",
+            "Ocultar las peticiones de soporte del documento final para proteger margen.",
+            "Negociar criterios de valor y contraprestaciones, consultar márgenes y autoridad y pactar piloto condicionado."
+          ],
+          "correctIndex": 2,
+          "feedback": "La propuesta debe relacionar concesiones autorizadas y margen observado con alternativas, autorización y límites de evidencia; elegir una casilla no basta para aprobar el módulo."
+        },
+        {
+          "prompt": "El responsable descubre que la señal «concesiones autorizadas y margen observado» no ha sido calibrada y puede inducir errores. ¿Cuál es la respuesta más sólida?",
+          "options": [
+            "Presentar el indicador como resultado garantizado porque ya aparece en el dashboard.",
+            "Suspender afirmaciones concluyentes, auditar la calidad del dato, establecer línea base y verificar el cambio después de actuar.",
+            "Modificar retrospectivamente la cohorte para obtener una mejora favorable."
+          ],
+          "correctIndex": 1,
+          "feedback": "Sin línea base, método y datos fiables no puede darse por probada una mejora comercial."
+        }
+      ],
+      "exam": {
+        "format": "defensa escrita con evaluación humana",
+        "requiredWords": 1200,
+        "passingPoints": 80,
+        "maxPoints": 100,
+        "tasks": [
+          {
+            "title": "Datos y discrepancias",
+            "points": 12,
+            "prompt": "Construye un diagnóstico con cinco evidencias del caso, dos hipótesis alternativas y un registro de datos faltantes. Explica qué indicador podría estar sesgado.",
+            "minWords": 160
+          },
+          {
+            "title": "Causalidad y segmentación",
+            "points": 12,
+            "prompt": "Segmenta actores y causas, separando correlaciones de consecuencias probadas y reconociendo información que no puedes inferir.",
+            "minWords": 160
+          },
+          {
+            "title": "Modelo cuantitativo",
+            "points": 14,
+            "prompt": "Calcula las métricas disponibles y su denominador o rango. Muestra fórmula, unidades, supuestos y al menos un análisis de sensibilidad.",
+            "minWords": 160
+          },
+          {
+            "title": "Decisiones comparables",
+            "points": 14,
+            "prompt": "Presenta tres cursos de acción (uno de ellos mantener estado actual), prioriza la alternativa elegida y justifica una rechazada con coste y riesgo residual.",
+            "minWords": 160
+          },
+          {
+            "title": "Diligencia contractual y ética",
+            "points": 12,
+            "prompt": "Distingue lo que puedes ofrecer de los compromisos que requieren autorización. No prometas ahorros, seguridad, precios ni fechas sin evidencia.",
+            "minWords": 160
+          },
+          {
+            "title": "Diseño de experimentación",
+            "points": 12,
+            "prompt": "Prepara un piloto con alcance, muestra, duración, criterios de éxito, criterio de interrupción y plan de protección de datos ficticios.",
+            "minWords": 160
+          },
+          {
+            "title": "Objeción adversarial",
+            "points": 12,
+            "prompt": "Escribe la objeción más fuerte de Finanzas, Usuario y Compras, e incorpora una respuesta con evidencia, responsabilidad y concesión autorizable.",
+            "minWords": 160
+          },
+          {
+            "title": "Seguimiento y aprendizaje",
+            "points": 12,
+            "prompt": "Crea un tablero con dueño, indicador adelantado, métrica retrospectiva, fecha, acción de reversión y condición verificable de cierre.",
+            "minWords": 160
+          }
+        ],
+        "criticalFailures": [
+          "datos o cifras inventados como reales",
+          "promesas o descuentos sin autorización",
+          "datos personales en expedientes de simulación",
+          "confundir ingresos nuevos con retención o expansión de la cohorte",
+          "aprobar por texto de relleno sin evidencia"
+        ]
+      },
+      "project": null,
+      "references": [
+        "https://stripe.com/es/resources/more/net-revenue-retention"
+      ]
+    },
+    {
+      "id": "cross_sell-l07",
+      "number": 7,
+      "title": "Handoff y seguimiento de expansión cruzada",
+      "difficulty": "supervisión",
+      "case": {
+        "organization": "Cartera de clientes simulados",
+        "facts": "Olmo firma por tres sedes, pero solo una ha completado el inventario. El CSM nuevo recibe una orden por 12 sedes sin hitos, y el cliente cuestiona tres facturas.",
+        "conflict": "Ventas solicita reconocer las doce sedes como activas en el QBR.",
+        "metric": "activación real y expansión retenida",
+        "continuity": "Arrastra al siguiente nivel las hipótesis, la calidad de evidencia y las decisiones; registrar cambio de criterio es obligatorio."
+      },
+      "lessons": [
+        {
+          "id": "cross_sell-l07-1",
+          "title": "Definición de 'ganado' vs 'activado'",
+          "teaching": "Definición de 'ganado' vs 'activado'. El caso presenta hechos medibles (Olmo firma por tres sedes, pero solo una ha completado el inventario. El CSM nuevo recibe una orden por 12 sedes sin hitos, y el cliente cuestiona tres facturas.) y una tensión de autoridad (Ventas solicita reconocer las doce sedes como activas en el QBR.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «activación real y expansión retenida».",
+          "task": "Examina definición de 'ganado' vs 'activado' en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 420,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "cross_sell-l07-2",
+          "title": "Plan de adopción y soporte",
+          "teaching": "Plan de adopción y soporte. El caso presenta hechos medibles (Olmo firma por tres sedes, pero solo una ha completado el inventario. El CSM nuevo recibe una orden por 12 sedes sin hitos, y el cliente cuestiona tres facturas.) y una tensión de autoridad (Ventas solicita reconocer las doce sedes como activas en el QBR.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «activación real y expansión retenida».",
+          "task": "Examina plan de adopción y soporte en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 420,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "cross_sell-l07-3",
+          "title": "Seguimiento de valor y reversión",
+          "teaching": "Seguimiento de valor y reversión. El caso presenta hechos medibles (Olmo firma por tres sedes, pero solo una ha completado el inventario. El CSM nuevo recibe una orden por 12 sedes sin hitos, y el cliente cuestiona tres facturas.) y una tensión de autoridad (Ventas solicita reconocer las doce sedes como activas en el QBR.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «activación real y expansión retenida».",
+          "task": "Examina seguimiento de valor y reversión en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 420,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        }
+      ],
+      "decisions": [
+        {
+          "prompt": "Frente a «Handoff y seguimiento de expansión cruzada», el responsable reclama: Ventas solicita reconocer las doce sedes como activas en el QBR.. ¿Qué enfoque queda defendido por los hechos del caso?",
+          "options": [
+            "Presionar para facturar sedes no activadas sin revisar contrato.",
+            "Hacer handoff con alcance contratado, etapas, dueños y métricas de valor comprobadas.",
+            "Asumir que ventas cerró y retirar seguimiento."
+          ],
+          "correctIndex": 1,
+          "feedback": "La propuesta debe relacionar activación real y expansión retenida con alternativas, autorización y límites de evidencia; elegir una casilla no basta para aprobar el módulo."
+        },
+        {
+          "prompt": "El responsable descubre que la señal «activación real y expansión retenida» no ha sido calibrada y puede inducir errores. ¿Cuál es la respuesta más sólida?",
+          "options": [
+            "Presentar el indicador como resultado garantizado porque ya aparece en el dashboard.",
+            "Suspender afirmaciones concluyentes, auditar la calidad del dato, establecer línea base y verificar el cambio después de actuar.",
+            "Modificar retrospectivamente la cohorte para obtener una mejora favorable."
+          ],
+          "correctIndex": 1,
+          "feedback": "Sin línea base, método y datos fiables no puede darse por probada una mejora comercial."
+        }
+      ],
+      "exam": {
+        "format": "defensa escrita con evaluación humana",
+        "requiredWords": 1700,
+        "passingPoints": 80,
+        "maxPoints": 100,
+        "tasks": [
+          {
+            "title": "Datos y discrepancias",
+            "points": 12,
+            "prompt": "Construye un diagnóstico con cinco evidencias del caso, dos hipótesis alternativas y un registro de datos faltantes. Explica qué indicador podría estar sesgado.",
+            "minWords": 160
+          },
+          {
+            "title": "Causalidad y segmentación",
+            "points": 12,
+            "prompt": "Segmenta actores y causas, separando correlaciones de consecuencias probadas y reconociendo información que no puedes inferir.",
+            "minWords": 160
+          },
+          {
+            "title": "Modelo cuantitativo",
+            "points": 14,
+            "prompt": "Calcula las métricas disponibles y su denominador o rango. Muestra fórmula, unidades, supuestos y al menos un análisis de sensibilidad.",
+            "minWords": 160
+          },
+          {
+            "title": "Decisiones comparables",
+            "points": 14,
+            "prompt": "Presenta tres cursos de acción (uno de ellos mantener estado actual), prioriza la alternativa elegida y justifica una rechazada con coste y riesgo residual.",
+            "minWords": 160
+          },
+          {
+            "title": "Diligencia contractual y ética",
+            "points": 12,
+            "prompt": "Distingue lo que puedes ofrecer de los compromisos que requieren autorización. No prometas ahorros, seguridad, precios ni fechas sin evidencia.",
+            "minWords": 160
+          },
+          {
+            "title": "Diseño de experimentación",
+            "points": 12,
+            "prompt": "Prepara un piloto con alcance, muestra, duración, criterios de éxito, criterio de interrupción y plan de protección de datos ficticios.",
+            "minWords": 160
+          },
+          {
+            "title": "Objeción adversarial",
+            "points": 12,
+            "prompt": "Escribe la objeción más fuerte de Finanzas, Usuario y Compras, e incorpora una respuesta con evidencia, responsabilidad y concesión autorizable.",
+            "minWords": 160
+          },
+          {
+            "title": "Seguimiento y aprendizaje",
+            "points": 12,
+            "prompt": "Crea un tablero con dueño, indicador adelantado, métrica retrospectiva, fecha, acción de reversión y condición verificable de cierre.",
+            "minWords": 160
+          }
+        ],
+        "criticalFailures": [
+          "datos o cifras inventados como reales",
+          "promesas o descuentos sin autorización",
+          "datos personales en expedientes de simulación",
+          "confundir ingresos nuevos con retención o expansión de la cohorte",
+          "aprobar por texto de relleno sin evidencia"
+        ]
+      },
+      "project": null,
+      "references": [
+        "https://stripe.com/es/resources/more/net-revenue-retention"
+      ]
+    },
+    {
+      "id": "cross_sell-l08",
+      "number": 8,
+      "title": "Capstone de cross-sell responsable",
+      "difficulty": "dirección/capstone",
+      "case": {
+        "organization": "Cartera de clientes simulados",
+        "facts": "Ocho clientes ficticios suman 5,5 M MXN ARR. Dos tienen seguridad pendiente, tres usan módulos básicos y los demás tienen onboarding atrasado. El equipo solo puede incorporar cuatro cuentas en los próximos 45 días.",
+        "conflict": "Dirección quiere proponer todos los complementos a los ocho clientes y presentar probabilidad de cierre del 100 %.",
+        "metric": "ingreso cruzado activado y valor posterior",
+        "continuity": "Arrastra al siguiente nivel las hipótesis, la calidad de evidencia y las decisiones; registrar cambio de criterio es obligatorio."
+      },
+      "lessons": [
+        {
+          "id": "cross_sell-l08-1",
+          "title": "Cartera segmentada",
+          "teaching": "Cartera segmentada. El caso presenta hechos medibles (Ocho clientes ficticios suman 5,5 M MXN ARR. Dos tienen seguridad pendiente, tres usan módulos básicos y los demás tienen onboarding atrasado. El equipo solo puede incorporar cuatro cuentas en los próximos 45 días.) y una tensión de autoridad (Dirección quiere proponer todos los complementos a los ocho clientes y presentar probabilidad de cierre del 100 %.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «ingreso cruzado activado y valor posterior».",
+          "task": "Examina cartera segmentada en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 420,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "cross_sell-l08-2",
+          "title": "Plan de expansión y proceso",
+          "teaching": "Plan de expansión y proceso. El caso presenta hechos medibles (Ocho clientes ficticios suman 5,5 M MXN ARR. Dos tienen seguridad pendiente, tres usan módulos básicos y los demás tienen onboarding atrasado. El equipo solo puede incorporar cuatro cuentas en los próximos 45 días.) y una tensión de autoridad (Dirección quiere proponer todos los complementos a los ocho clientes y presentar probabilidad de cierre del 100 %.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «ingreso cruzado activado y valor posterior».",
+          "task": "Examina plan de expansión y proceso en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 420,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        },
+        {
+          "id": "cross_sell-l08-3",
+          "title": "Defensa ante comité comercial",
+          "teaching": "Defensa ante comité comercial. El caso presenta hechos medibles (Ocho clientes ficticios suman 5,5 M MXN ARR. Dos tienen seguridad pendiente, tres usan módulos básicos y los demás tienen onboarding atrasado. El equipo solo puede incorporar cuatro cuentas en los próximos 45 días.) y una tensión de autoridad (Dirección quiere proponer todos los complementos a los ocho clientes y presentar probabilidad de cierre del 100 %.). Diferencia necesidad real, señales indirectas y decisión comercial autorizada; no confundas propuesta con derecho adquirido, hipótesis con logro ni plan aprobado con valor observado. Vincula el razonamiento al indicador «ingreso cruzado activado y valor posterior».",
+          "task": "Examina defensa ante comité comercial en el expediente; produce un análisis que permita a un revisor reproducir cifras, confirmar fuentes, comparar decisiones con sus costes, detectar un compromiso indebido y obtener aceptación escrita del cliente cuando corresponda.",
+          "evidence": {
+            "minWords": 420,
+            "required": [
+              "tabla de hipótesis y pruebas",
+              "dato y denominador",
+              "dueño y plazo",
+              "tres opciones comparadas",
+              "riesgos de ejecución y reputación",
+              "señal de aceptación y retorno"
+            ]
+          }
+        }
+      ],
+      "decisions": [
+        {
+          "prompt": "Frente a «Capstone de cross-sell responsable», el responsable reclama: Dirección quiere proponer todos los complementos a los ocho clientes y presentar probabilidad de cierre del 100 %.. ¿Qué enfoque queda defendido por los hechos del caso?",
+          "options": [
+            "Defender cuatro oportunidades con valor probado, dependencias, capacidad, seguridad y un plan de no venta donde no haya fit.",
+            "Incluir datos identificables de clientes como prueba de adopción en una campaña pública.",
+            "Ajustar forecasts sin registrar supuestos."
+          ],
+          "correctIndex": 0,
+          "feedback": "La propuesta debe relacionar ingreso cruzado activado y valor posterior con alternativas, autorización y límites de evidencia; elegir una casilla no basta para aprobar el módulo."
+        },
+        {
+          "prompt": "El responsable descubre que la señal «ingreso cruzado activado y valor posterior» no ha sido calibrada y puede inducir errores. ¿Cuál es la respuesta más sólida?",
+          "options": [
+            "Presentar el indicador como resultado garantizado porque ya aparece en el dashboard.",
+            "Suspender afirmaciones concluyentes, auditar la calidad del dato, establecer línea base y verificar el cambio después de actuar.",
+            "Modificar retrospectivamente la cohorte para obtener una mejora favorable."
+          ],
+          "correctIndex": 1,
+          "feedback": "Sin línea base, método y datos fiables no puede darse por probada una mejora comercial."
+        }
+      ],
+      "exam": {
+        "format": "defensa escrita con evaluación humana",
+        "requiredWords": 1700,
+        "passingPoints": 80,
+        "maxPoints": 100,
+        "tasks": [
+          {
+            "title": "Datos y discrepancias",
+            "points": 12,
+            "prompt": "Construye un diagnóstico con cinco evidencias del caso, dos hipótesis alternativas y un registro de datos faltantes. Explica qué indicador podría estar sesgado.",
+            "minWords": 160
+          },
+          {
+            "title": "Causalidad y segmentación",
+            "points": 12,
+            "prompt": "Segmenta actores y causas, separando correlaciones de consecuencias probadas y reconociendo información que no puedes inferir.",
+            "minWords": 160
+          },
+          {
+            "title": "Modelo cuantitativo",
+            "points": 14,
+            "prompt": "Calcula las métricas disponibles y su denominador o rango. Muestra fórmula, unidades, supuestos y al menos un análisis de sensibilidad.",
+            "minWords": 160
+          },
+          {
+            "title": "Decisiones comparables",
+            "points": 14,
+            "prompt": "Presenta tres cursos de acción (uno de ellos mantener estado actual), prioriza la alternativa elegida y justifica una rechazada con coste y riesgo residual.",
+            "minWords": 160
+          },
+          {
+            "title": "Diligencia contractual y ética",
+            "points": 12,
+            "prompt": "Distingue lo que puedes ofrecer de los compromisos que requieren autorización. No prometas ahorros, seguridad, precios ni fechas sin evidencia.",
+            "minWords": 160
+          },
+          {
+            "title": "Diseño de experimentación",
+            "points": 12,
+            "prompt": "Prepara un piloto con alcance, muestra, duración, criterios de éxito, criterio de interrupción y plan de protección de datos ficticios.",
+            "minWords": 160
+          },
+          {
+            "title": "Objeción adversarial",
+            "points": 12,
+            "prompt": "Escribe la objeción más fuerte de Finanzas, Usuario y Compras, e incorpora una respuesta con evidencia, responsabilidad y concesión autorizable.",
+            "minWords": 160
+          },
+          {
+            "title": "Seguimiento y aprendizaje",
+            "points": 12,
+            "prompt": "Crea un tablero con dueño, indicador adelantado, métrica retrospectiva, fecha, acción de reversión y condición verificable de cierre.",
+            "minWords": 160
+          }
+        ],
+        "criticalFailures": [
+          "datos o cifras inventados como reales",
+          "promesas o descuentos sin autorización",
+          "datos personales en expedientes de simulación",
+          "confundir ingresos nuevos con retención o expansión de la cohorte",
+          "aprobar por texto de relleno sin evidencia"
+        ]
+      },
+      "project": {
+        "mandatory": true,
+        "title": "Proyecto final: Cross-sell B2B · Venta cruzada con evidencia de valor",
+        "minWords": 2800,
+        "deliverable": "Construye el expediente de «Capstone de cross-sell responsable» a partir de todos los datos acumulados, con indicadores (ingreso cruzado activado y valor posterior), decisión razonada, alternativas, controles, responsables, plazos, acta de revisión y evidencia simulada de seguimiento.",
+        "rubric": [
+          {
+            "name": "diagnóstico y causalidad",
+            "weight": 20
+          },
+          {
+            "name": "métricas y calidad del dato",
+            "weight": 20
+          },
+          {
+            "name": "decisiones y alternativas",
+            "weight": 20
+          },
+          {
+            "name": "seguridad, contrato y ética",
+            "weight": 20
+          },
+          {
+            "name": "seguimiento y defensa",
+            "weight": 20
+          }
+        ],
+        "humanReview": true
+      },
+      "references": [
+        "https://stripe.com/es/resources/more/net-revenue-retention"
+      ]
+    }
+  ],
+  "sources": [
+    "https://stripe.com/es/resources/more/net-revenue-retention"
+  ],
+  "publicationGate": {
+    "editorial": "pending",
+    "nativeLocalization": "EN/PT/FR beta pendientes",
+    "serverSideAssessment": "pendiente de integrar keys/progresión con RPC seguro",
+    "humanRubric": "por validar contra revisores",
+    "enabled": false,
+    "pricingChanges": false
+  }
+}

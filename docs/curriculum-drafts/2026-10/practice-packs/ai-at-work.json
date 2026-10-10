@@ -1,0 +1,2482 @@
+{
+  "key": "ai_at_work",
+  "title": "IA aplicada al puesto",
+  "kind": "curriculum",
+  "status": "draft",
+  "language": "es",
+  "localeStates": {
+    "es": "es",
+    "en": "beta-pending",
+    "pt": "beta-pending",
+    "fr": "beta-pending"
+  },
+  "edition": "2026-10-10 practical v2",
+  "nonnegotiable": "No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+  "reviewerOnly": true,
+  "levels": [
+    {
+      "id": "ai_at_work-p1",
+      "number": 1,
+      "title": "Fundamentos: intención, contexto y verificación",
+      "difficulty": "introductoria",
+      "caseFacts": "Un resumen generado de una cuenta con cinco tickets añade una renovación inexistente de 180.000 MXN y atribuye al cliente una frase jamás registrada. El material original contiene nombres de contactos que no pueden subirse a herramientas abiertas.",
+      "caseConflict": "El ejecutivo propone reenviar el resumen sin leerlo.",
+      "metric": "afirmaciones comprobadas y exposición cero",
+      "units": [
+        {
+          "id": "ai_at_work-p1-u1",
+          "title": "Formulación de solicitudes y límite de datos",
+          "objective": "Aplicar formulación de solicitudes y límite de datos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para CS, Soporte y Account Managers, dominar «Formulación de solicitudes y límite de datos» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Un resultado de IA es una propuesta cuyo origen, fecha, permisos y precisión se comprueban por separado. En el capítulo «Fundamentos: intención, contexto y verificación», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Un resumen generado de una cuenta con cinco tickets añade una renovación inexistente de 180.000 MXN y atribuye al cliente una frase jamás registrada. El material original contiene nombres de contactos que no pueden subirse a herramientas abiertas. La presión es: El ejecutivo propone reenviar el resumen sin leerlo. El alumno debe transformar «Formulación de solicitudes y límite de datos» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «afirmaciones comprobadas y exposición cero».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"afirmaciones_analizadas\":190,\"afirmaciones_sin_fuente\":15}. Calcula «% de afirmaciones con fuente» con 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas. Valor para revisión: 92.11. Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Formulación de solicitudes y límite de datos»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara prompt seguro, tabla de verificación y reporte de errores para el aspecto «formulación de solicitudes y límite de datos». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar hechos inventados por la IA como información confirmada del cliente. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+            "prerequisites": [
+              "Unidad 1: Formulación de solicitudes y límite de datos",
+              "Objetivo: Aplicar formulación de solicitudes y límite de datos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: afirmaciones comprobadas y exposición cero"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "afirmaciones_analizadas": 190,
+              "afirmaciones_sin_fuente": 15
+            },
+            "formula": "100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas",
+            "expected": 92.11,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "ai_at_work-p1-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de IA aplicada al puesto. Un resumen generado de una cuenta con cinco tickets añade una renovación inexistente de 180.000 MXN y atribuye al cliente una frase jamás registrada. El material original contiene nombres de contactos que no pueden subirse a herramientas abiertas. Conflicto: El ejecutivo propone reenviar el resumen sin leerlo. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Formulación de solicitudes y límite de datos». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p1-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"afirmaciones_analizadas\":190,\"afirmaciones_sin_fuente\":15}, calcula % de afirmaciones con fuente mediante 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p1-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de IA aplicada al puesto. Un resumen generado de una cuenta con cinco tickets añade una renovación inexistente de 180.000 MXN y atribuye al cliente una frase jamás registrada. El material original contiene nombres de contactos que no pueden subirse a herramientas abiertas. Conflicto: El ejecutivo propone reenviar el resumen sin leerlo. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «afirmaciones comprobadas y exposición cero». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p1-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara prompt seguro, tabla de verificación y reporte de errores para el aspecto «Formulación de solicitudes y límite de datos». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Formulación de solicitudes y límite de datos» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p1-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Fundamentos: intención, contexto y verificación», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 92.11,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "commonFailure": "declarar hechos inventados por la IA como información confirmada del cliente",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "ai_at_work-p1-u2",
+          "title": "Hechos, inferencias y alucinaciones",
+          "objective": "Aplicar hechos, inferencias y alucinaciones al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para CS, Soporte y Account Managers, dominar «Hechos, inferencias y alucinaciones» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La calidad de un modelo debe evaluarse con errores, alucinaciones y daño por segmento, no solo satisfacción o fluidez. En el capítulo «Fundamentos: intención, contexto y verificación», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Un resumen generado de una cuenta con cinco tickets añade una renovación inexistente de 180.000 MXN y atribuye al cliente una frase jamás registrada. El material original contiene nombres de contactos que no pueden subirse a herramientas abiertas. La presión es: El ejecutivo propone reenviar el resumen sin leerlo. El alumno debe transformar «Hechos, inferencias y alucinaciones» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «afirmaciones comprobadas y exposición cero».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"afirmaciones_analizadas\":190,\"afirmaciones_sin_fuente\":15}. Calcula «% de afirmaciones con fuente» con 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas. Valor para revisión: 92.11. Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Hechos, inferencias y alucinaciones»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara prompt seguro, tabla de verificación y reporte de errores para el aspecto «hechos, inferencias y alucinaciones». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar hechos inventados por la IA como información confirmada del cliente. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+            "prerequisites": [
+              "Unidad 1: Hechos, inferencias y alucinaciones",
+              "Objetivo: Aplicar hechos, inferencias y alucinaciones al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: afirmaciones comprobadas y exposición cero"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "afirmaciones_analizadas": 190,
+              "afirmaciones_sin_fuente": 15
+            },
+            "formula": "100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas",
+            "expected": 92.11,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "ai_at_work-p1-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de IA aplicada al puesto. Un resumen generado de una cuenta con cinco tickets añade una renovación inexistente de 180.000 MXN y atribuye al cliente una frase jamás registrada. El material original contiene nombres de contactos que no pueden subirse a herramientas abiertas. Conflicto: El ejecutivo propone reenviar el resumen sin leerlo. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Hechos, inferencias y alucinaciones». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p1-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"afirmaciones_analizadas\":190,\"afirmaciones_sin_fuente\":15}, calcula % de afirmaciones con fuente mediante 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p1-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de IA aplicada al puesto. Un resumen generado de una cuenta con cinco tickets añade una renovación inexistente de 180.000 MXN y atribuye al cliente una frase jamás registrada. El material original contiene nombres de contactos que no pueden subirse a herramientas abiertas. Conflicto: El ejecutivo propone reenviar el resumen sin leerlo. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «afirmaciones comprobadas y exposición cero». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p1-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara prompt seguro, tabla de verificación y reporte de errores para el aspecto «Hechos, inferencias y alucinaciones». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Hechos, inferencias y alucinaciones» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p1-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Fundamentos: intención, contexto y verificación», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 92.11,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "commonFailure": "declarar hechos inventados por la IA como información confirmada del cliente",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "ai_at_work-p1-u3",
+          "title": "Pruebas de calidad y fuentes",
+          "objective": "Aplicar pruebas de calidad y fuentes al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para CS, Soporte y Account Managers, dominar «Pruebas de calidad y fuentes» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Un prompt no concede acceso a los datos: la minimización, el consentimiento y las barreras de seguridad van antes del modelo. En el capítulo «Fundamentos: intención, contexto y verificación», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Un resumen generado de una cuenta con cinco tickets añade una renovación inexistente de 180.000 MXN y atribuye al cliente una frase jamás registrada. El material original contiene nombres de contactos que no pueden subirse a herramientas abiertas. La presión es: El ejecutivo propone reenviar el resumen sin leerlo. El alumno debe transformar «Pruebas de calidad y fuentes» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «afirmaciones comprobadas y exposición cero».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"afirmaciones_analizadas\":190,\"afirmaciones_sin_fuente\":15}. Calcula «% de afirmaciones con fuente» con 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas. Valor para revisión: 92.11. Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Pruebas de calidad y fuentes»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara prompt seguro, tabla de verificación y reporte de errores para el aspecto «pruebas de calidad y fuentes». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar hechos inventados por la IA como información confirmada del cliente. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+            "prerequisites": [
+              "Unidad 1: Pruebas de calidad y fuentes",
+              "Objetivo: Aplicar pruebas de calidad y fuentes al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: afirmaciones comprobadas y exposición cero"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "afirmaciones_analizadas": 190,
+              "afirmaciones_sin_fuente": 15
+            },
+            "formula": "100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas",
+            "expected": 92.11,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "ai_at_work-p1-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de IA aplicada al puesto. Un resumen generado de una cuenta con cinco tickets añade una renovación inexistente de 180.000 MXN y atribuye al cliente una frase jamás registrada. El material original contiene nombres de contactos que no pueden subirse a herramientas abiertas. Conflicto: El ejecutivo propone reenviar el resumen sin leerlo. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Pruebas de calidad y fuentes». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p1-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"afirmaciones_analizadas\":190,\"afirmaciones_sin_fuente\":15}, calcula % de afirmaciones con fuente mediante 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p1-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de IA aplicada al puesto. Un resumen generado de una cuenta con cinco tickets añade una renovación inexistente de 180.000 MXN y atribuye al cliente una frase jamás registrada. El material original contiene nombres de contactos que no pueden subirse a herramientas abiertas. Conflicto: El ejecutivo propone reenviar el resumen sin leerlo. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «afirmaciones comprobadas y exposición cero». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p1-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara prompt seguro, tabla de verificación y reporte de errores para el aspecto «Pruebas de calidad y fuentes». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Pruebas de calidad y fuentes» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p1-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Fundamentos: intención, contexto y verificación», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 92.11,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "commonFailure": "declarar hechos inventados por la IA como información confirmada del cliente",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «afirmaciones comprobadas y exposición cero».",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 1 y 2.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "ai_at_work-p2",
+      "number": 2,
+      "title": "Customer Success: QBR y riesgos",
+      "difficulty": "operativa",
+      "caseFacts": "Cartera ficticia aumenta NRR de 97 % a 103 %, pero su GRR baja de 94 % a 87 %. Una IA propone presentar esto como retención perfecta y recomendar al cliente una expansión sin evaluación de adopción.",
+      "caseConflict": "Marketing quiere publicar un caso de éxito sin informar churn.",
+      "metric": "veracidad de narrativas y decisiones defendibles",
+      "units": [
+        {
+          "id": "ai_at_work-p2-u1",
+          "title": "Lectura asistida de métricas",
+          "objective": "Aplicar lectura asistida de métricas al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para CS, Soporte y Account Managers, dominar «Lectura asistida de métricas» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Un resultado de IA es una propuesta cuyo origen, fecha, permisos y precisión se comprueban por separado. En el capítulo «Customer Success: QBR y riesgos», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Cartera ficticia aumenta NRR de 97 % a 103 %, pero su GRR baja de 94 % a 87 %. Una IA propone presentar esto como retención perfecta y recomendar al cliente una expansión sin evaluación de adopción. La presión es: Marketing quiere publicar un caso de éxito sin informar churn. El alumno debe transformar «Lectura asistida de métricas» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"afirmaciones_analizadas\":220,\"afirmaciones_sin_fuente\":17}. Calcula «% de afirmaciones con fuente» con 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas. Valor para revisión: 92.27. Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Lectura asistida de métricas»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara qbr auditado y contrafactual con revisión del manager para el aspecto «lectura asistida de métricas». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar hechos inventados por la IA como información confirmada del cliente. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+            "prerequisites": [
+              "Unidad 2: Lectura asistida de métricas",
+              "Objetivo: Aplicar lectura asistida de métricas al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: veracidad de narrativas y decisiones defendibles"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "afirmaciones_analizadas": 220,
+              "afirmaciones_sin_fuente": 17
+            },
+            "formula": "100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas",
+            "expected": 92.27,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "ai_at_work-p2-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de IA aplicada al puesto. Cartera ficticia aumenta NRR de 97 % a 103 %, pero su GRR baja de 94 % a 87 %. Una IA propone presentar esto como retención perfecta y recomendar al cliente una expansión sin evaluación de adopción. Conflicto: Marketing quiere publicar un caso de éxito sin informar churn. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Lectura asistida de métricas». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p2-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"afirmaciones_analizadas\":220,\"afirmaciones_sin_fuente\":17}, calcula % de afirmaciones con fuente mediante 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p2-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de IA aplicada al puesto. Cartera ficticia aumenta NRR de 97 % a 103 %, pero su GRR baja de 94 % a 87 %. Una IA propone presentar esto como retención perfecta y recomendar al cliente una expansión sin evaluación de adopción. Conflicto: Marketing quiere publicar un caso de éxito sin informar churn. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p2-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara QBR auditado y contrafactual con revisión del manager para el aspecto «Lectura asistida de métricas». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Lectura asistida de métricas» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p2-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Customer Success: QBR y riesgos», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 92.27,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "commonFailure": "declarar hechos inventados por la IA como información confirmada del cliente",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "ai_at_work-p2-u2",
+          "title": "Narrativa de valor con evidencia",
+          "objective": "Aplicar narrativa de valor con evidencia al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para CS, Soporte y Account Managers, dominar «Narrativa de valor con evidencia» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La calidad de un modelo debe evaluarse con errores, alucinaciones y daño por segmento, no solo satisfacción o fluidez. En el capítulo «Customer Success: QBR y riesgos», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Cartera ficticia aumenta NRR de 97 % a 103 %, pero su GRR baja de 94 % a 87 %. Una IA propone presentar esto como retención perfecta y recomendar al cliente una expansión sin evaluación de adopción. La presión es: Marketing quiere publicar un caso de éxito sin informar churn. El alumno debe transformar «Narrativa de valor con evidencia» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"afirmaciones_analizadas\":220,\"afirmaciones_sin_fuente\":17}. Calcula «% de afirmaciones con fuente» con 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas. Valor para revisión: 92.27. Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Narrativa de valor con evidencia»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara qbr auditado y contrafactual con revisión del manager para el aspecto «narrativa de valor con evidencia». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar hechos inventados por la IA como información confirmada del cliente. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+            "prerequisites": [
+              "Unidad 2: Narrativa de valor con evidencia",
+              "Objetivo: Aplicar narrativa de valor con evidencia al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: veracidad de narrativas y decisiones defendibles"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "afirmaciones_analizadas": 220,
+              "afirmaciones_sin_fuente": 17
+            },
+            "formula": "100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas",
+            "expected": 92.27,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "ai_at_work-p2-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de IA aplicada al puesto. Cartera ficticia aumenta NRR de 97 % a 103 %, pero su GRR baja de 94 % a 87 %. Una IA propone presentar esto como retención perfecta y recomendar al cliente una expansión sin evaluación de adopción. Conflicto: Marketing quiere publicar un caso de éxito sin informar churn. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Narrativa de valor con evidencia». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p2-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"afirmaciones_analizadas\":220,\"afirmaciones_sin_fuente\":17}, calcula % de afirmaciones con fuente mediante 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p2-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de IA aplicada al puesto. Cartera ficticia aumenta NRR de 97 % a 103 %, pero su GRR baja de 94 % a 87 %. Una IA propone presentar esto como retención perfecta y recomendar al cliente una expansión sin evaluación de adopción. Conflicto: Marketing quiere publicar un caso de éxito sin informar churn. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p2-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara QBR auditado y contrafactual con revisión del manager para el aspecto «Narrativa de valor con evidencia». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Narrativa de valor con evidencia» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p2-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Customer Success: QBR y riesgos», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 92.27,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "commonFailure": "declarar hechos inventados por la IA como información confirmada del cliente",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "ai_at_work-p2-u3",
+          "title": "Simulación de QBR y objeciones",
+          "objective": "Aplicar simulación de qbr y objeciones al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para CS, Soporte y Account Managers, dominar «Simulación de QBR y objeciones» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Un prompt no concede acceso a los datos: la minimización, el consentimiento y las barreras de seguridad van antes del modelo. En el capítulo «Customer Success: QBR y riesgos», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Cartera ficticia aumenta NRR de 97 % a 103 %, pero su GRR baja de 94 % a 87 %. Una IA propone presentar esto como retención perfecta y recomendar al cliente una expansión sin evaluación de adopción. La presión es: Marketing quiere publicar un caso de éxito sin informar churn. El alumno debe transformar «Simulación de QBR y objeciones» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"afirmaciones_analizadas\":220,\"afirmaciones_sin_fuente\":17}. Calcula «% de afirmaciones con fuente» con 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas. Valor para revisión: 92.27. Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Simulación de QBR y objeciones»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara qbr auditado y contrafactual con revisión del manager para el aspecto «simulación de qbr y objeciones». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar hechos inventados por la IA como información confirmada del cliente. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+            "prerequisites": [
+              "Unidad 2: Simulación de QBR y objeciones",
+              "Objetivo: Aplicar simulación de qbr y objeciones al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: veracidad de narrativas y decisiones defendibles"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "afirmaciones_analizadas": 220,
+              "afirmaciones_sin_fuente": 17
+            },
+            "formula": "100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas",
+            "expected": 92.27,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "ai_at_work-p2-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de IA aplicada al puesto. Cartera ficticia aumenta NRR de 97 % a 103 %, pero su GRR baja de 94 % a 87 %. Una IA propone presentar esto como retención perfecta y recomendar al cliente una expansión sin evaluación de adopción. Conflicto: Marketing quiere publicar un caso de éxito sin informar churn. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Simulación de QBR y objeciones». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p2-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"afirmaciones_analizadas\":220,\"afirmaciones_sin_fuente\":17}, calcula % de afirmaciones con fuente mediante 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p2-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de IA aplicada al puesto. Cartera ficticia aumenta NRR de 97 % a 103 %, pero su GRR baja de 94 % a 87 %. Una IA propone presentar esto como retención perfecta y recomendar al cliente una expansión sin evaluación de adopción. Conflicto: Marketing quiere publicar un caso de éxito sin informar churn. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p2-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara QBR auditado y contrafactual con revisión del manager para el aspecto «Simulación de QBR y objeciones». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Simulación de QBR y objeciones» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p2-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Customer Success: QBR y riesgos», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 92.27,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "commonFailure": "declarar hechos inventados por la IA como información confirmada del cliente",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 2 y 3.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "ai_at_work-p3",
+      "number": 3,
+      "title": "Soporte: clasificación y respuesta a tickets",
+      "difficulty": "intermedia",
+      "caseFacts": "Un copiloto sugiere desactivar logs para resolver lentitud, pese a que existe investigación de incidente. El cliente reclama restablecimiento en una hora y presiona para omitir autorización.",
+      "caseConflict": "Soporte quiere enviar la solución sin consultar seguridad.",
+      "metric": "exactitud, escalación y cero recomendaciones peligrosas",
+      "units": [
+        {
+          "id": "ai_at_work-p3-u1",
+          "title": "Límites de respuestas sugeridas",
+          "objective": "Aplicar límites de respuestas sugeridas al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para CS, Soporte y Account Managers, dominar «Límites de respuestas sugeridas» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Un resultado de IA es una propuesta cuyo origen, fecha, permisos y precisión se comprueban por separado. En el capítulo «Soporte: clasificación y respuesta a tickets», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Un copiloto sugiere desactivar logs para resolver lentitud, pese a que existe investigación de incidente. El cliente reclama restablecimiento en una hora y presiona para omitir autorización. La presión es: Soporte quiere enviar la solución sin consultar seguridad. El alumno debe transformar «Límites de respuestas sugeridas» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"afirmaciones_analizadas\":250,\"afirmaciones_sin_fuente\":19}. Calcula «% de afirmaciones con fuente» con 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas. Valor para revisión: 92.4. Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Límites de respuestas sugeridas»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara respuesta revisada con registro de riesgos para el aspecto «límites de respuestas sugeridas». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar hechos inventados por la IA como información confirmada del cliente. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+            "prerequisites": [
+              "Unidad 3: Límites de respuestas sugeridas",
+              "Objetivo: Aplicar límites de respuestas sugeridas al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: exactitud, escalación y cero recomendaciones peligrosas"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "afirmaciones_analizadas": 250,
+              "afirmaciones_sin_fuente": 19
+            },
+            "formula": "100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas",
+            "expected": 92.4,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "ai_at_work-p3-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de IA aplicada al puesto. Un copiloto sugiere desactivar logs para resolver lentitud, pese a que existe investigación de incidente. El cliente reclama restablecimiento en una hora y presiona para omitir autorización. Conflicto: Soporte quiere enviar la solución sin consultar seguridad. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Límites de respuestas sugeridas». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p3-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"afirmaciones_analizadas\":250,\"afirmaciones_sin_fuente\":19}, calcula % de afirmaciones con fuente mediante 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p3-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de IA aplicada al puesto. Un copiloto sugiere desactivar logs para resolver lentitud, pese a que existe investigación de incidente. El cliente reclama restablecimiento en una hora y presiona para omitir autorización. Conflicto: Soporte quiere enviar la solución sin consultar seguridad. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p3-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara respuesta revisada con registro de riesgos para el aspecto «Límites de respuestas sugeridas». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Límites de respuestas sugeridas» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p3-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Soporte: clasificación y respuesta a tickets», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 92.4,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "commonFailure": "declarar hechos inventados por la IA como información confirmada del cliente",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "ai_at_work-p3-u2",
+          "title": "Consulta segura de conocimiento",
+          "objective": "Aplicar consulta segura de conocimiento al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para CS, Soporte y Account Managers, dominar «Consulta segura de conocimiento» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La calidad de un modelo debe evaluarse con errores, alucinaciones y daño por segmento, no solo satisfacción o fluidez. En el capítulo «Soporte: clasificación y respuesta a tickets», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Un copiloto sugiere desactivar logs para resolver lentitud, pese a que existe investigación de incidente. El cliente reclama restablecimiento en una hora y presiona para omitir autorización. La presión es: Soporte quiere enviar la solución sin consultar seguridad. El alumno debe transformar «Consulta segura de conocimiento» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"afirmaciones_analizadas\":250,\"afirmaciones_sin_fuente\":19}. Calcula «% de afirmaciones con fuente» con 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas. Valor para revisión: 92.4. Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Consulta segura de conocimiento»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara respuesta revisada con registro de riesgos para el aspecto «consulta segura de conocimiento». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar hechos inventados por la IA como información confirmada del cliente. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+            "prerequisites": [
+              "Unidad 3: Consulta segura de conocimiento",
+              "Objetivo: Aplicar consulta segura de conocimiento al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: exactitud, escalación y cero recomendaciones peligrosas"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "afirmaciones_analizadas": 250,
+              "afirmaciones_sin_fuente": 19
+            },
+            "formula": "100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas",
+            "expected": 92.4,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "ai_at_work-p3-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de IA aplicada al puesto. Un copiloto sugiere desactivar logs para resolver lentitud, pese a que existe investigación de incidente. El cliente reclama restablecimiento en una hora y presiona para omitir autorización. Conflicto: Soporte quiere enviar la solución sin consultar seguridad. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Consulta segura de conocimiento». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p3-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"afirmaciones_analizadas\":250,\"afirmaciones_sin_fuente\":19}, calcula % de afirmaciones con fuente mediante 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p3-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de IA aplicada al puesto. Un copiloto sugiere desactivar logs para resolver lentitud, pese a que existe investigación de incidente. El cliente reclama restablecimiento en una hora y presiona para omitir autorización. Conflicto: Soporte quiere enviar la solución sin consultar seguridad. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p3-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara respuesta revisada con registro de riesgos para el aspecto «Consulta segura de conocimiento». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Consulta segura de conocimiento» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p3-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Soporte: clasificación y respuesta a tickets», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 92.4,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "commonFailure": "declarar hechos inventados por la IA como información confirmada del cliente",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "ai_at_work-p3-u3",
+          "title": "Escalamiento e incidentes críticos",
+          "objective": "Aplicar escalamiento e incidentes críticos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para CS, Soporte y Account Managers, dominar «Escalamiento e incidentes críticos» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Un prompt no concede acceso a los datos: la minimización, el consentimiento y las barreras de seguridad van antes del modelo. En el capítulo «Soporte: clasificación y respuesta a tickets», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Un copiloto sugiere desactivar logs para resolver lentitud, pese a que existe investigación de incidente. El cliente reclama restablecimiento en una hora y presiona para omitir autorización. La presión es: Soporte quiere enviar la solución sin consultar seguridad. El alumno debe transformar «Escalamiento e incidentes críticos» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"afirmaciones_analizadas\":250,\"afirmaciones_sin_fuente\":19}. Calcula «% de afirmaciones con fuente» con 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas. Valor para revisión: 92.4. Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Escalamiento e incidentes críticos»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara respuesta revisada con registro de riesgos para el aspecto «escalamiento e incidentes críticos». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar hechos inventados por la IA como información confirmada del cliente. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+            "prerequisites": [
+              "Unidad 3: Escalamiento e incidentes críticos",
+              "Objetivo: Aplicar escalamiento e incidentes críticos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: exactitud, escalación y cero recomendaciones peligrosas"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "afirmaciones_analizadas": 250,
+              "afirmaciones_sin_fuente": 19
+            },
+            "formula": "100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas",
+            "expected": 92.4,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "ai_at_work-p3-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de IA aplicada al puesto. Un copiloto sugiere desactivar logs para resolver lentitud, pese a que existe investigación de incidente. El cliente reclama restablecimiento en una hora y presiona para omitir autorización. Conflicto: Soporte quiere enviar la solución sin consultar seguridad. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Escalamiento e incidentes críticos». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p3-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"afirmaciones_analizadas\":250,\"afirmaciones_sin_fuente\":19}, calcula % de afirmaciones con fuente mediante 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p3-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de IA aplicada al puesto. Un copiloto sugiere desactivar logs para resolver lentitud, pese a que existe investigación de incidente. El cliente reclama restablecimiento en una hora y presiona para omitir autorización. Conflicto: Soporte quiere enviar la solución sin consultar seguridad. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p3-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara respuesta revisada con registro de riesgos para el aspecto «Escalamiento e incidentes críticos». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Escalamiento e incidentes críticos» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p3-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Soporte: clasificación y respuesta a tickets», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 92.4,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "commonFailure": "declarar hechos inventados por la IA como información confirmada del cliente",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 3 y 4.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "ai_at_work-p4",
+      "number": 4,
+      "title": "Account Management: investigación y negociación",
+      "difficulty": "especialista",
+      "caseFacts": "Una IA extrae una cláusula de un documento ajeno y recomienda 30 % de descuento a Cuenta Lira, cuyo margen actual es 18 %. No se ha autorizado ninguno de los términos propuestos.",
+      "caseConflict": "Ventas insiste en automatizar la propuesta de contrato.",
+      "metric": "promesas correctas y cero cláusulas sin autoridad",
+      "units": [
+        {
+          "id": "ai_at_work-p4-u1",
+          "title": "Preparación de propuestas sin inventar precios",
+          "objective": "Aplicar preparación de propuestas sin inventar precios al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para CS, Soporte y Account Managers, dominar «Preparación de propuestas sin inventar precios» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Un resultado de IA es una propuesta cuyo origen, fecha, permisos y precisión se comprueban por separado. En el capítulo «Account Management: investigación y negociación», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una IA extrae una cláusula de un documento ajeno y recomienda 30 % de descuento a Cuenta Lira, cuyo margen actual es 18 %. No se ha autorizado ninguno de los términos propuestos. La presión es: Ventas insiste en automatizar la propuesta de contrato. El alumno debe transformar «Preparación de propuestas sin inventar precios» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"afirmaciones_analizadas\":280,\"afirmaciones_sin_fuente\":21}. Calcula «% de afirmaciones con fuente» con 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas. Valor para revisión: 92.5. Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Preparación de propuestas sin inventar precios»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara propuesta revisada, base de hechos y registro de aprobaciones para el aspecto «preparación de propuestas sin inventar precios». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar hechos inventados por la IA como información confirmada del cliente. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+            "prerequisites": [
+              "Unidad 4: Preparación de propuestas sin inventar precios",
+              "Objetivo: Aplicar preparación de propuestas sin inventar precios al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: promesas correctas y cero cláusulas sin autoridad"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "afirmaciones_analizadas": 280,
+              "afirmaciones_sin_fuente": 21
+            },
+            "formula": "100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas",
+            "expected": 92.5,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "ai_at_work-p4-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de IA aplicada al puesto. Una IA extrae una cláusula de un documento ajeno y recomienda 30 % de descuento a Cuenta Lira, cuyo margen actual es 18 %. No se ha autorizado ninguno de los términos propuestos. Conflicto: Ventas insiste en automatizar la propuesta de contrato. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Preparación de propuestas sin inventar precios». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p4-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"afirmaciones_analizadas\":280,\"afirmaciones_sin_fuente\":21}, calcula % de afirmaciones con fuente mediante 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p4-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de IA aplicada al puesto. Una IA extrae una cláusula de un documento ajeno y recomienda 30 % de descuento a Cuenta Lira, cuyo margen actual es 18 %. No se ha autorizado ninguno de los términos propuestos. Conflicto: Ventas insiste en automatizar la propuesta de contrato. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p4-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara propuesta revisada, base de hechos y registro de aprobaciones para el aspecto «Preparación de propuestas sin inventar precios». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Preparación de propuestas sin inventar precios» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p4-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Account Management: investigación y negociación», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 92.5,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "commonFailure": "declarar hechos inventados por la IA como información confirmada del cliente",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "ai_at_work-p4-u2",
+          "title": "Comparación de escenarios",
+          "objective": "Aplicar comparación de escenarios al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para CS, Soporte y Account Managers, dominar «Comparación de escenarios» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La calidad de un modelo debe evaluarse con errores, alucinaciones y daño por segmento, no solo satisfacción o fluidez. En el capítulo «Account Management: investigación y negociación», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una IA extrae una cláusula de un documento ajeno y recomienda 30 % de descuento a Cuenta Lira, cuyo margen actual es 18 %. No se ha autorizado ninguno de los términos propuestos. La presión es: Ventas insiste en automatizar la propuesta de contrato. El alumno debe transformar «Comparación de escenarios» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"afirmaciones_analizadas\":280,\"afirmaciones_sin_fuente\":21}. Calcula «% de afirmaciones con fuente» con 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas. Valor para revisión: 92.5. Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Comparación de escenarios»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara propuesta revisada, base de hechos y registro de aprobaciones para el aspecto «comparación de escenarios». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar hechos inventados por la IA como información confirmada del cliente. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+            "prerequisites": [
+              "Unidad 4: Comparación de escenarios",
+              "Objetivo: Aplicar comparación de escenarios al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: promesas correctas y cero cláusulas sin autoridad"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "afirmaciones_analizadas": 280,
+              "afirmaciones_sin_fuente": 21
+            },
+            "formula": "100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas",
+            "expected": 92.5,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "ai_at_work-p4-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de IA aplicada al puesto. Una IA extrae una cláusula de un documento ajeno y recomienda 30 % de descuento a Cuenta Lira, cuyo margen actual es 18 %. No se ha autorizado ninguno de los términos propuestos. Conflicto: Ventas insiste en automatizar la propuesta de contrato. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Comparación de escenarios». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p4-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"afirmaciones_analizadas\":280,\"afirmaciones_sin_fuente\":21}, calcula % de afirmaciones con fuente mediante 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p4-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de IA aplicada al puesto. Una IA extrae una cláusula de un documento ajeno y recomienda 30 % de descuento a Cuenta Lira, cuyo margen actual es 18 %. No se ha autorizado ninguno de los términos propuestos. Conflicto: Ventas insiste en automatizar la propuesta de contrato. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p4-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara propuesta revisada, base de hechos y registro de aprobaciones para el aspecto «Comparación de escenarios». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Comparación de escenarios» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p4-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Account Management: investigación y negociación», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 92.5,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "commonFailure": "declarar hechos inventados por la IA como información confirmada del cliente",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "ai_at_work-p4-u3",
+          "title": "Control de documentos y aprobación",
+          "objective": "Aplicar control de documentos y aprobación al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para CS, Soporte y Account Managers, dominar «Control de documentos y aprobación» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Un prompt no concede acceso a los datos: la minimización, el consentimiento y las barreras de seguridad van antes del modelo. En el capítulo «Account Management: investigación y negociación», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Una IA extrae una cláusula de un documento ajeno y recomienda 30 % de descuento a Cuenta Lira, cuyo margen actual es 18 %. No se ha autorizado ninguno de los términos propuestos. La presión es: Ventas insiste en automatizar la propuesta de contrato. El alumno debe transformar «Control de documentos y aprobación» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"afirmaciones_analizadas\":280,\"afirmaciones_sin_fuente\":21}. Calcula «% de afirmaciones con fuente» con 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas. Valor para revisión: 92.5. Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Control de documentos y aprobación»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara propuesta revisada, base de hechos y registro de aprobaciones para el aspecto «control de documentos y aprobación». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar hechos inventados por la IA como información confirmada del cliente. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+            "prerequisites": [
+              "Unidad 4: Control de documentos y aprobación",
+              "Objetivo: Aplicar control de documentos y aprobación al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: promesas correctas y cero cláusulas sin autoridad"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "afirmaciones_analizadas": 280,
+              "afirmaciones_sin_fuente": 21
+            },
+            "formula": "100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas",
+            "expected": 92.5,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "ai_at_work-p4-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de IA aplicada al puesto. Una IA extrae una cláusula de un documento ajeno y recomienda 30 % de descuento a Cuenta Lira, cuyo margen actual es 18 %. No se ha autorizado ninguno de los términos propuestos. Conflicto: Ventas insiste en automatizar la propuesta de contrato. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Control de documentos y aprobación». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p4-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"afirmaciones_analizadas\":280,\"afirmaciones_sin_fuente\":21}, calcula % de afirmaciones con fuente mediante 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p4-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de IA aplicada al puesto. Una IA extrae una cláusula de un documento ajeno y recomienda 30 % de descuento a Cuenta Lira, cuyo margen actual es 18 %. No se ha autorizado ninguno de los términos propuestos. Conflicto: Ventas insiste en automatizar la propuesta de contrato. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p4-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara propuesta revisada, base de hechos y registro de aprobaciones para el aspecto «Control de documentos y aprobación». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Control de documentos y aprobación» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p4-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Account Management: investigación y negociación», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 92.5,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "commonFailure": "declarar hechos inventados por la IA como información confirmada del cliente",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 4 y 5.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "ai_at_work-p5",
+      "number": 5,
+      "title": "Capstone: flujos responsables de IA",
+      "difficulty": "directiva y proyecto",
+      "caseFacts": "Un equipo automatizará resúmenes, tickets y reportes sobre 300 casos ficticios. Las pruebas muestran 7 % de inventos de hechos y 4 % de datos expuestos a rol equivocado; el CTO quiere abrir mañana.",
+      "caseConflict": "Se propone aceptar tasas por debajo de 10 % sin considerar gravedad.",
+      "metric": "reducción de alucinación crítica y aislamiento",
+      "units": [
+        {
+          "id": "ai_at_work-p5-u1",
+          "title": "Gobernanza y registro de usos",
+          "objective": "Aplicar gobernanza y registro de usos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para CS, Soporte y Account Managers, dominar «Gobernanza y registro de usos» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Un resultado de IA es una propuesta cuyo origen, fecha, permisos y precisión se comprueban por separado. En el capítulo «Capstone: flujos responsables de IA», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Un equipo automatizará resúmenes, tickets y reportes sobre 300 casos ficticios. Las pruebas muestran 7 % de inventos de hechos y 4 % de datos expuestos a rol equivocado; el CTO quiere abrir mañana. La presión es: Se propone aceptar tasas por debajo de 10 % sin considerar gravedad. El alumno debe transformar «Gobernanza y registro de usos» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"afirmaciones_analizadas\":310,\"afirmaciones_sin_fuente\":23}. Calcula «% de afirmaciones con fuente» con 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas. Valor para revisión: 92.58. Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Gobernanza y registro de usos»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara diseño de asistente responsable sin conexión real a modelos para el aspecto «gobernanza y registro de usos». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar hechos inventados por la IA como información confirmada del cliente. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+            "prerequisites": [
+              "Unidad 5: Gobernanza y registro de usos",
+              "Objetivo: Aplicar gobernanza y registro de usos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: reducción de alucinación crítica y aislamiento"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "afirmaciones_analizadas": 310,
+              "afirmaciones_sin_fuente": 23
+            },
+            "formula": "100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas",
+            "expected": 92.58,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "ai_at_work-p5-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de IA aplicada al puesto. Un equipo automatizará resúmenes, tickets y reportes sobre 300 casos ficticios. Las pruebas muestran 7 % de inventos de hechos y 4 % de datos expuestos a rol equivocado; el CTO quiere abrir mañana. Conflicto: Se propone aceptar tasas por debajo de 10 % sin considerar gravedad. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Gobernanza y registro de usos». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p5-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"afirmaciones_analizadas\":310,\"afirmaciones_sin_fuente\":23}, calcula % de afirmaciones con fuente mediante 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p5-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de IA aplicada al puesto. Un equipo automatizará resúmenes, tickets y reportes sobre 300 casos ficticios. Las pruebas muestran 7 % de inventos de hechos y 4 % de datos expuestos a rol equivocado; el CTO quiere abrir mañana. Conflicto: Se propone aceptar tasas por debajo de 10 % sin considerar gravedad. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p5-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara diseño de asistente responsable sin conexión real a modelos para el aspecto «Gobernanza y registro de usos». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Gobernanza y registro de usos» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p5-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone: flujos responsables de IA», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 92.58,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "commonFailure": "declarar hechos inventados por la IA como información confirmada del cliente",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "ai_at_work-p5-u2",
+          "title": "Detección de errores y sesgos",
+          "objective": "Aplicar detección de errores y sesgos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para CS, Soporte y Account Managers, dominar «Detección de errores y sesgos» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. La calidad de un modelo debe evaluarse con errores, alucinaciones y daño por segmento, no solo satisfacción o fluidez. En el capítulo «Capstone: flujos responsables de IA», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Un equipo automatizará resúmenes, tickets y reportes sobre 300 casos ficticios. Las pruebas muestran 7 % de inventos de hechos y 4 % de datos expuestos a rol equivocado; el CTO quiere abrir mañana. La presión es: Se propone aceptar tasas por debajo de 10 % sin considerar gravedad. El alumno debe transformar «Detección de errores y sesgos» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"afirmaciones_analizadas\":310,\"afirmaciones_sin_fuente\":23}. Calcula «% de afirmaciones con fuente» con 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas. Valor para revisión: 92.58. Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Detección de errores y sesgos»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara diseño de asistente responsable sin conexión real a modelos para el aspecto «detección de errores y sesgos». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar hechos inventados por la IA como información confirmada del cliente. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+            "prerequisites": [
+              "Unidad 5: Detección de errores y sesgos",
+              "Objetivo: Aplicar detección de errores y sesgos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: reducción de alucinación crítica y aislamiento"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "afirmaciones_analizadas": 310,
+              "afirmaciones_sin_fuente": 23
+            },
+            "formula": "100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas",
+            "expected": 92.58,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "ai_at_work-p5-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de IA aplicada al puesto. Un equipo automatizará resúmenes, tickets y reportes sobre 300 casos ficticios. Las pruebas muestran 7 % de inventos de hechos y 4 % de datos expuestos a rol equivocado; el CTO quiere abrir mañana. Conflicto: Se propone aceptar tasas por debajo de 10 % sin considerar gravedad. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Detección de errores y sesgos». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p5-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"afirmaciones_analizadas\":310,\"afirmaciones_sin_fuente\":23}, calcula % de afirmaciones con fuente mediante 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p5-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de IA aplicada al puesto. Un equipo automatizará resúmenes, tickets y reportes sobre 300 casos ficticios. Las pruebas muestran 7 % de inventos de hechos y 4 % de datos expuestos a rol equivocado; el CTO quiere abrir mañana. Conflicto: Se propone aceptar tasas por debajo de 10 % sin considerar gravedad. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p5-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara diseño de asistente responsable sin conexión real a modelos para el aspecto «Detección de errores y sesgos». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Detección de errores y sesgos» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p5-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone: flujos responsables de IA», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 92.58,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "commonFailure": "declarar hechos inventados por la IA como información confirmada del cliente",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "ai_at_work-p5-u3",
+          "title": "Pruebas adversariales y supervisión humana",
+          "objective": "Aplicar pruebas adversariales y supervisión humana al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para CS, Soporte y Account Managers, dominar «Pruebas adversariales y supervisión humana» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Un prompt no concede acceso a los datos: la minimización, el consentimiento y las barreras de seguridad van antes del modelo. En el capítulo «Capstone: flujos responsables de IA», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Un equipo automatizará resúmenes, tickets y reportes sobre 300 casos ficticios. Las pruebas muestran 7 % de inventos de hechos y 4 % de datos expuestos a rol equivocado; el CTO quiere abrir mañana. La presión es: Se propone aceptar tasas por debajo de 10 % sin considerar gravedad. El alumno debe transformar «Pruebas adversariales y supervisión humana» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"afirmaciones_analizadas\":310,\"afirmaciones_sin_fuente\":23}. Calcula «% de afirmaciones con fuente» con 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas. Valor para revisión: 92.58. Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Pruebas adversariales y supervisión humana»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara diseño de asistente responsable sin conexión real a modelos para el aspecto «pruebas adversariales y supervisión humana». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: declarar hechos inventados por la IA como información confirmada del cliente. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+            "prerequisites": [
+              "Unidad 5: Pruebas adversariales y supervisión humana",
+              "Objetivo: Aplicar pruebas adversariales y supervisión humana al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: reducción de alucinación crítica y aislamiento"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "afirmaciones_analizadas": 310,
+              "afirmaciones_sin_fuente": 23
+            },
+            "formula": "100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas",
+            "expected": 92.58,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "ai_at_work-p5-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de IA aplicada al puesto. Un equipo automatizará resúmenes, tickets y reportes sobre 300 casos ficticios. Las pruebas muestran 7 % de inventos de hechos y 4 % de datos expuestos a rol equivocado; el CTO quiere abrir mañana. Conflicto: Se propone aceptar tasas por debajo de 10 % sin considerar gravedad. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Pruebas adversariales y supervisión humana». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p5-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"afirmaciones_analizadas\":310,\"afirmaciones_sin_fuente\":23}, calcula % de afirmaciones con fuente mediante 100 × (afirmaciones analizadas − afirmaciones sin fuente) / afirmaciones analizadas; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p5-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de IA aplicada al puesto. Un equipo automatizará resúmenes, tickets y reportes sobre 300 casos ficticios. Las pruebas muestran 7 % de inventos de hechos y 4 % de datos expuestos a rol equivocado; el CTO quiere abrir mañana. Conflicto: Se propone aceptar tasas por debajo de 10 % sin considerar gravedad. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p5-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara diseño de asistente responsable sin conexión real a modelos para el aspecto «Pruebas adversariales y supervisión humana». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Pruebas adversariales y supervisión humana» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "ai_at_work-p5-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone: flujos responsables de IA», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 92.58,
+            "unit": "% de afirmaciones con fuente",
+            "limitations": "Una referencia existente no demuestra que la afirmación sea verdadera ni autoriza uso de datos personales",
+            "commonFailure": "declarar hechos inventados por la IA como información confirmada del cliente",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No utilizar clientes reales, datos reservados ni decisiones laborales/financieras automatizadas para prácticas de IA.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 5 y 6.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": true
+      }
+    }
+  ],
+  "unitsCount": 15,
+  "practicesCount": 75,
+  "gradingPolicy": {
+    "minScore100": 80,
+    "eachDimensionAtLeast4Scale": 3,
+    "criticalErrorsAllowed": 0,
+    "manualApproval": true,
+    "submissionAloneNeverUnlocks": true
+  },
+  "publicationGate": {
+    "enabled": false,
+    "requiresBackendAssessment": true,
+    "requiresEditorialAndPrivacyReview": true
+  }
+}

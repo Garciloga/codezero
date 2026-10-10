@@ -11,6 +11,9 @@ import PermissionsTable from "../../../components/enterprise/permissions-table";
 import { readWorkspacePages } from "../../../../lib/workspace-pages";
 import {roleTrainingEnabled} from '../../../../lib/role-training-server';
 import TrainingTeam from '../../../components/enterprise/training-team';
+import DraftCourseAssignment from '../../../components/enterprise/draft-course-assignment';
+import {draftCourseAssignmentsEnabled} from '../../../../lib/draft-course-assignment-policy';
+import {workspaceSandboxEnabled} from '../../../../lib/workspace-sandbox';
 const actions: Record<string, string> = {
   organization_created: "Organización creada",
   membership_updated: "Puesto y jerarquía actualizados",
@@ -429,6 +432,7 @@ export default async function TeamSection({
             </p>
           </section>
         )}
+        {section==='assign'&&draftCourseAssignmentsEnabled()&&workspaceSandboxEnabled()&&<DraftCourseAssignment org={org} target={null} teams={(await d.supabase.from('organization_teams').select('id,name').eq('organization_id',org)).data??[]}/>}
         {section === "invite" && (
           <section className="card">
             <p>

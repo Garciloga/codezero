@@ -87,7 +87,7 @@ try{
   const pdf=await get(1,`/api/teams/${org}/monthly?month=2026-10&format=pdf`);assert.equal(pdf.status,200);assert.match(pdf.headers.get('content-type'),/pdf/);assert.match(await pdf.text(),/^%PDF-/);
   assert.equal((await get(2,`/api/teams/${org}/monthly?month=2026-10&format=csv`)).status,403);
   assert.equal((await get(4,`/api/teams/${org}/monthly?month=2026-10&format=csv`)).status,403);
-  const personal=id(9900);tables.learning_evidence_history.push({id:personal,user_id:id(2),organization_id:null,activity_key:'cs-project-adoption',independent_key:'personal-approved',kind:'project',competency_scores:{communication:3},assistance:'independent',review_source:'admin',observed_at:new Date().toISOString(),critical_errors:[],feedback:'PRIVATE FEEDBACK MUST NOT LEAK'});
+  const personal=id(9900);tables.learning_evidence_history.push({id:personal,user_id:id(2),organization_id:null,activity_key:'cs-project-adoption',independent_key:'personal-approved',kind:'project',competency_scores:{communication:3},assistance:'independent',review_source:'manager',reviewed_by:id(1),observed_at:new Date().toISOString(),critical_errors:[],feedback:'PRIVATE FEEDBACK MUST NOT LEAK'});
   const portfolio={action:'publish',display_name:'Portfolio ficticio',consent:'yes',evidence:personal};
   assert.equal((await post(2,'/api/portfolio',{...portfolio,evidence:id(9999)})).status,400);
   assert.equal((await post(2,'/api/portfolio',portfolio,'https://invalid.example')).status,403);

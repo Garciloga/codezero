@@ -62,6 +62,12 @@ jobs:
       - name: Verify graded learning SQL RPCs on isolated PostgreSQL
         run: node scripts/verified-learning-rpc-db-check.mjs
 
+      - name: Validate course assignment SQL and cross-organization permissions in disposable PostgreSQL
+        run: node scripts/draft-course-assignment-db-check.mjs
+
+      - name: Validate roadmap draft content and release isolation
+        run: node scripts/roadmap-draft-gate.mjs
+
       - name: Section catalog budgets
         run: node scripts/localization-sections.mjs
 

@@ -1,0 +1,2482 @@
+{
+  "key": "manager_toolkit",
+  "title": "Kit del manager · 1:1 y refuerzos",
+  "kind": "product-workflow-and-learning",
+  "status": "draft",
+  "language": "es",
+  "localeStates": {
+    "es": "es",
+    "en": "beta-pending",
+    "pt": "beta-pending",
+    "fr": "beta-pending"
+  },
+  "edition": "2026-10-10 practical v2",
+  "nonnegotiable": "No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+  "reviewerOnly": true,
+  "levels": [
+    {
+      "id": "manager_toolkit-p1",
+      "number": 1,
+      "title": "Lectura responsable de matrices",
+      "difficulty": "introductoria",
+      "caseFacts": "Equipo de seis personas: una tiene diagnóstico 0/4 sin tareas realizadas; otra sostiene 3/4 en casos revisados. El jefe interpreta 0 como incompetencia definitiva y quiere mostrarlo a otro departamento.",
+      "caseConflict": "Dirección solicita ranking global de personas sin revisar evidencia.",
+      "metric": "cobertura real de evaluación y privacidad",
+      "units": [
+        {
+          "id": "manager_toolkit-p1-u1",
+          "title": "Evidencia revisada 0–4",
+          "objective": "Aplicar evidencia revisada 0–4 al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para supervisores y managers, dominar «Evidencia revisada 0–4» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una puntuación sin evidencia no expresa incapacidad; primero se analiza la cobertura y calidad de evaluación. En el capítulo «Lectura responsable de matrices», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Equipo de seis personas: una tiene diagnóstico 0/4 sin tareas realizadas; otra sostiene 3/4 en casos revisados. El jefe interpreta 0 como incompetencia definitiva y quiere mostrarlo a otro departamento. La presión es: Dirección solicita ranking global de personas sin revisar evidencia. El alumno debe transformar «Evidencia revisada 0–4» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «cobertura real de evaluación y privacidad».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"planes_de_refuerzo_programados\":21,\"reevaluaciones_humanas_con_evidencia\":11}. Calcula «% de seguimiento verificable» con 100 × reevaluaciones con evidencia / planes programados. Valor para revisión: 52.38. No puede emplearse para inferir rendimiento individual ni para imponer sanciones Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Evidencia revisada 0–4»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara mapa de evidencia y acciones permitidas para el aspecto «evidencia revisada 0–4». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+            "prerequisites": [
+              "Unidad 1: Evidencia revisada 0–4",
+              "Objetivo: Aplicar evidencia revisada 0–4 al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: cobertura real de evaluación y privacidad"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "planes_de_refuerzo_programados": 21,
+              "reevaluaciones_humanas_con_evidencia": 11
+            },
+            "formula": "100 × reevaluaciones con evidencia / planes programados",
+            "expected": 52.38,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "manager_toolkit-p1-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Kit del manager y planes de refuerzo. Equipo de seis personas: una tiene diagnóstico 0/4 sin tareas realizadas; otra sostiene 3/4 en casos revisados. El jefe interpreta 0 como incompetencia definitiva y quiere mostrarlo a otro departamento. Conflicto: Dirección solicita ranking global de personas sin revisar evidencia. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Evidencia revisada 0–4». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p1-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"planes_de_refuerzo_programados\":21,\"reevaluaciones_humanas_con_evidencia\":11}, calcula % de seguimiento verificable mediante 100 × reevaluaciones con evidencia / planes programados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p1-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Kit del manager y planes de refuerzo. Equipo de seis personas: una tiene diagnóstico 0/4 sin tareas realizadas; otra sostiene 3/4 en casos revisados. El jefe interpreta 0 como incompetencia definitiva y quiere mostrarlo a otro departamento. Conflicto: Dirección solicita ranking global de personas sin revisar evidencia. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «cobertura real de evaluación y privacidad». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p1-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara mapa de evidencia y acciones permitidas para el aspecto «Evidencia revisada 0–4». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Evidencia revisada 0–4» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p1-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Lectura responsable de matrices», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 52.38,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "commonFailure": "sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "manager_toolkit-p1-u2",
+          "title": "Distinguir falta de datos de falta de habilidad",
+          "objective": "Aplicar distinguir falta de datos de falta de habilidad al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para supervisores y managers, dominar «Distinguir falta de datos de falta de habilidad» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. El 1:1 debe basarse en observaciones verificables y acuerdos, no atribuir personalidad, actitud ni rasgos sensibles. En el capítulo «Lectura responsable de matrices», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Equipo de seis personas: una tiene diagnóstico 0/4 sin tareas realizadas; otra sostiene 3/4 en casos revisados. El jefe interpreta 0 como incompetencia definitiva y quiere mostrarlo a otro departamento. La presión es: Dirección solicita ranking global de personas sin revisar evidencia. El alumno debe transformar «Distinguir falta de datos de falta de habilidad» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «cobertura real de evaluación y privacidad».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"planes_de_refuerzo_programados\":21,\"reevaluaciones_humanas_con_evidencia\":11}. Calcula «% de seguimiento verificable» con 100 × reevaluaciones con evidencia / planes programados. Valor para revisión: 52.38. No puede emplearse para inferir rendimiento individual ni para imponer sanciones Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Distinguir falta de datos de falta de habilidad»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara mapa de evidencia y acciones permitidas para el aspecto «distinguir falta de datos de falta de habilidad». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+            "prerequisites": [
+              "Unidad 1: Distinguir falta de datos de falta de habilidad",
+              "Objetivo: Aplicar distinguir falta de datos de falta de habilidad al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: cobertura real de evaluación y privacidad"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "planes_de_refuerzo_programados": 21,
+              "reevaluaciones_humanas_con_evidencia": 11
+            },
+            "formula": "100 × reevaluaciones con evidencia / planes programados",
+            "expected": 52.38,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "manager_toolkit-p1-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Kit del manager y planes de refuerzo. Equipo de seis personas: una tiene diagnóstico 0/4 sin tareas realizadas; otra sostiene 3/4 en casos revisados. El jefe interpreta 0 como incompetencia definitiva y quiere mostrarlo a otro departamento. Conflicto: Dirección solicita ranking global de personas sin revisar evidencia. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Distinguir falta de datos de falta de habilidad». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p1-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"planes_de_refuerzo_programados\":21,\"reevaluaciones_humanas_con_evidencia\":11}, calcula % de seguimiento verificable mediante 100 × reevaluaciones con evidencia / planes programados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p1-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Kit del manager y planes de refuerzo. Equipo de seis personas: una tiene diagnóstico 0/4 sin tareas realizadas; otra sostiene 3/4 en casos revisados. El jefe interpreta 0 como incompetencia definitiva y quiere mostrarlo a otro departamento. Conflicto: Dirección solicita ranking global de personas sin revisar evidencia. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «cobertura real de evaluación y privacidad». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p1-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara mapa de evidencia y acciones permitidas para el aspecto «Distinguir falta de datos de falta de habilidad». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Distinguir falta de datos de falta de habilidad» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p1-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Lectura responsable de matrices», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 52.38,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "commonFailure": "sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "manager_toolkit-p1-u3",
+          "title": "Ámbito de acceso a empleados",
+          "objective": "Aplicar ámbito de acceso a empleados al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para supervisores y managers, dominar «Ámbito de acceso a empleados» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Los refuerzos se diseñan por competencia con revisión humana y acceso limitado al equipo autorizado. En el capítulo «Lectura responsable de matrices», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Equipo de seis personas: una tiene diagnóstico 0/4 sin tareas realizadas; otra sostiene 3/4 en casos revisados. El jefe interpreta 0 como incompetencia definitiva y quiere mostrarlo a otro departamento. La presión es: Dirección solicita ranking global de personas sin revisar evidencia. El alumno debe transformar «Ámbito de acceso a empleados» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «cobertura real de evaluación y privacidad».», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"planes_de_refuerzo_programados\":21,\"reevaluaciones_humanas_con_evidencia\":11}. Calcula «% de seguimiento verificable» con 100 × reevaluaciones con evidencia / planes programados. Valor para revisión: 52.38. No puede emplearse para inferir rendimiento individual ni para imponer sanciones Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Ámbito de acceso a empleados»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara mapa de evidencia y acciones permitidas para el aspecto «ámbito de acceso a empleados». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+            "prerequisites": [
+              "Unidad 1: Ámbito de acceso a empleados",
+              "Objetivo: Aplicar ámbito de acceso a empleados al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: cobertura real de evaluación y privacidad"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "planes_de_refuerzo_programados": 21,
+              "reevaluaciones_humanas_con_evidencia": 11
+            },
+            "formula": "100 × reevaluaciones con evidencia / planes programados",
+            "expected": 52.38,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "manager_toolkit-p1-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 1 de Kit del manager y planes de refuerzo. Equipo de seis personas: una tiene diagnóstico 0/4 sin tareas realizadas; otra sostiene 3/4 en casos revisados. El jefe interpreta 0 como incompetencia definitiva y quiere mostrarlo a otro departamento. Conflicto: Dirección solicita ranking global de personas sin revisar evidencia. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Ámbito de acceso a empleados». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 180,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p1-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"planes_de_refuerzo_programados\":21,\"reevaluaciones_humanas_con_evidencia\":11}, calcula % de seguimiento verificable mediante 100 × reevaluaciones con evidencia / planes programados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 180,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p1-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 1 de Kit del manager y planes de refuerzo. Equipo de seis personas: una tiene diagnóstico 0/4 sin tareas realizadas; otra sostiene 3/4 en casos revisados. El jefe interpreta 0 como incompetencia definitiva y quiere mostrarlo a otro departamento. Conflicto: Dirección solicita ranking global de personas sin revisar evidencia. La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «cobertura real de evaluación y privacidad». Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 250,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p1-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara mapa de evidencia y acciones permitidas para el aspecto «Ámbito de acceso a empleados». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Ámbito de acceso a empleados» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 280,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p1-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Lectura responsable de matrices», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 300,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 52.38,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "commonFailure": "sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "La revisión de privacidad impide usar una fuente central que sustentaba tu recomendación sobre «cobertura real de evaluación y privacidad».",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 1 y 2.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "manager_toolkit-p2",
+      "number": 2,
+      "title": "Conversaciones 1:1 seguras y eficaces",
+      "difficulty": "operativa",
+      "caseFacts": "El colaborador disminuyó su calidad de registro en dos simulaciones, pero mejoró escalación crítica. El manager propone decir que su 'actitud empeoró' por los resultados.",
+      "caseConflict": "El empleado pregunta qué evidencia concreta sustenta la valoración.",
+      "metric": "acuerdos 1:1 con evidencia y revisión",
+      "units": [
+        {
+          "id": "manager_toolkit-p2-u1",
+          "title": "Preguntas abiertas y escucha",
+          "objective": "Aplicar preguntas abiertas y escucha al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para supervisores y managers, dominar «Preguntas abiertas y escucha» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una puntuación sin evidencia no expresa incapacidad; primero se analiza la cobertura y calidad de evaluación. En el capítulo «Conversaciones 1:1 seguras y eficaces», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: El colaborador disminuyó su calidad de registro en dos simulaciones, pero mejoró escalación crítica. El manager propone decir que su 'actitud empeoró' por los resultados. La presión es: El empleado pregunta qué evidencia concreta sustenta la valoración. El alumno debe transformar «Preguntas abiertas y escucha» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"planes_de_refuerzo_programados\":24,\"reevaluaciones_humanas_con_evidencia\":13}. Calcula «% de seguimiento verificable» con 100 × reevaluaciones con evidencia / planes programados. Valor para revisión: 54.17. No puede emplearse para inferir rendimiento individual ni para imponer sanciones Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Preguntas abiertas y escucha»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara guion de 1:1 con compromisos para el aspecto «preguntas abiertas y escucha». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+            "prerequisites": [
+              "Unidad 2: Preguntas abiertas y escucha",
+              "Objetivo: Aplicar preguntas abiertas y escucha al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: acuerdos 1:1 con evidencia y revisión"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "planes_de_refuerzo_programados": 24,
+              "reevaluaciones_humanas_con_evidencia": 13
+            },
+            "formula": "100 × reevaluaciones con evidencia / planes programados",
+            "expected": 54.17,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "manager_toolkit-p2-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Kit del manager y planes de refuerzo. El colaborador disminuyó su calidad de registro en dos simulaciones, pero mejoró escalación crítica. El manager propone decir que su 'actitud empeoró' por los resultados. Conflicto: El empleado pregunta qué evidencia concreta sustenta la valoración. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Preguntas abiertas y escucha». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p2-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"planes_de_refuerzo_programados\":24,\"reevaluaciones_humanas_con_evidencia\":13}, calcula % de seguimiento verificable mediante 100 × reevaluaciones con evidencia / planes programados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p2-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Kit del manager y planes de refuerzo. El colaborador disminuyó su calidad de registro en dos simulaciones, pero mejoró escalación crítica. El manager propone decir que su 'actitud empeoró' por los resultados. Conflicto: El empleado pregunta qué evidencia concreta sustenta la valoración. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p2-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara guion de 1:1 con compromisos para el aspecto «Preguntas abiertas y escucha». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Preguntas abiertas y escucha» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p2-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Conversaciones 1:1 seguras y eficaces», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 54.17,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "commonFailure": "sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "manager_toolkit-p2-u2",
+          "title": "Feedback observacional",
+          "objective": "Aplicar feedback observacional al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para supervisores y managers, dominar «Feedback observacional» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. El 1:1 debe basarse en observaciones verificables y acuerdos, no atribuir personalidad, actitud ni rasgos sensibles. En el capítulo «Conversaciones 1:1 seguras y eficaces», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: El colaborador disminuyó su calidad de registro en dos simulaciones, pero mejoró escalación crítica. El manager propone decir que su 'actitud empeoró' por los resultados. La presión es: El empleado pregunta qué evidencia concreta sustenta la valoración. El alumno debe transformar «Feedback observacional» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"planes_de_refuerzo_programados\":24,\"reevaluaciones_humanas_con_evidencia\":13}. Calcula «% de seguimiento verificable» con 100 × reevaluaciones con evidencia / planes programados. Valor para revisión: 54.17. No puede emplearse para inferir rendimiento individual ni para imponer sanciones Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Feedback observacional»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara guion de 1:1 con compromisos para el aspecto «feedback observacional». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+            "prerequisites": [
+              "Unidad 2: Feedback observacional",
+              "Objetivo: Aplicar feedback observacional al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: acuerdos 1:1 con evidencia y revisión"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "planes_de_refuerzo_programados": 24,
+              "reevaluaciones_humanas_con_evidencia": 13
+            },
+            "formula": "100 × reevaluaciones con evidencia / planes programados",
+            "expected": 54.17,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "manager_toolkit-p2-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Kit del manager y planes de refuerzo. El colaborador disminuyó su calidad de registro en dos simulaciones, pero mejoró escalación crítica. El manager propone decir que su 'actitud empeoró' por los resultados. Conflicto: El empleado pregunta qué evidencia concreta sustenta la valoración. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Feedback observacional». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p2-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"planes_de_refuerzo_programados\":24,\"reevaluaciones_humanas_con_evidencia\":13}, calcula % de seguimiento verificable mediante 100 × reevaluaciones con evidencia / planes programados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p2-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Kit del manager y planes de refuerzo. El colaborador disminuyó su calidad de registro en dos simulaciones, pero mejoró escalación crítica. El manager propone decir que su 'actitud empeoró' por los resultados. Conflicto: El empleado pregunta qué evidencia concreta sustenta la valoración. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p2-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara guion de 1:1 con compromisos para el aspecto «Feedback observacional». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Feedback observacional» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p2-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Conversaciones 1:1 seguras y eficaces», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 54.17,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "commonFailure": "sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "manager_toolkit-p2-u3",
+          "title": "Acuerdos de desarrollo no punitivos",
+          "objective": "Aplicar acuerdos de desarrollo no punitivos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para supervisores y managers, dominar «Acuerdos de desarrollo no punitivos» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Los refuerzos se diseñan por competencia con revisión humana y acceso limitado al equipo autorizado. En el capítulo «Conversaciones 1:1 seguras y eficaces», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: El colaborador disminuyó su calidad de registro en dos simulaciones, pero mejoró escalación crítica. El manager propone decir que su 'actitud empeoró' por los resultados. La presión es: El empleado pregunta qué evidencia concreta sustenta la valoración. El alumno debe transformar «Acuerdos de desarrollo no punitivos» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"planes_de_refuerzo_programados\":24,\"reevaluaciones_humanas_con_evidencia\":13}. Calcula «% de seguimiento verificable» con 100 × reevaluaciones con evidencia / planes programados. Valor para revisión: 54.17. No puede emplearse para inferir rendimiento individual ni para imponer sanciones Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Acuerdos de desarrollo no punitivos»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara guion de 1:1 con compromisos para el aspecto «acuerdos de desarrollo no punitivos». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+            "prerequisites": [
+              "Unidad 2: Acuerdos de desarrollo no punitivos",
+              "Objetivo: Aplicar acuerdos de desarrollo no punitivos al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: acuerdos 1:1 con evidencia y revisión"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "planes_de_refuerzo_programados": 24,
+              "reevaluaciones_humanas_con_evidencia": 13
+            },
+            "formula": "100 × reevaluaciones con evidencia / planes programados",
+            "expected": 54.17,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "manager_toolkit-p2-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 2 de Kit del manager y planes de refuerzo. El colaborador disminuyó su calidad de registro en dos simulaciones, pero mejoró escalación crítica. El manager propone decir que su 'actitud empeoró' por los resultados. Conflicto: El empleado pregunta qué evidencia concreta sustenta la valoración. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Acuerdos de desarrollo no punitivos». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 220,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p2-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"planes_de_refuerzo_programados\":24,\"reevaluaciones_humanas_con_evidencia\":13}, calcula % de seguimiento verificable mediante 100 × reevaluaciones con evidencia / planes programados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 220,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p2-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 2 de Kit del manager y planes de refuerzo. El colaborador disminuyó su calidad de registro en dos simulaciones, pero mejoró escalación crítica. El manager propone decir que su 'actitud empeoró' por los resultados. Conflicto: El empleado pregunta qué evidencia concreta sustenta la valoración. Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 290,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p2-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara guion de 1:1 con compromisos para el aspecto «Acuerdos de desarrollo no punitivos». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Acuerdos de desarrollo no punitivos» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 320,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p2-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Conversaciones 1:1 seguras y eficaces», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 340,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 54.17,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "commonFailure": "sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Un auditor descubre que un resultado fue aprobado por la misma persona que ejecutó el trabajo; ahora debe revisarlo una persona independiente.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 2 y 3.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "manager_toolkit-p3",
+      "number": 3,
+      "title": "Asignación de refuerzos calibrados",
+      "difficulty": "intermedia",
+      "caseFacts": "El equipo tiene 12 horas semanales disponibles, tres colaboradores requieren mejora de documentación y dos de diagnóstico. El manager quiere dar un curso idéntico a todos para ahorrar tiempo.",
+      "caseConflict": "RR. HH. propone medir avance por minutos conectado en lugar de calidad.",
+      "metric": "competencias demostradas y horas invertidas",
+      "units": [
+        {
+          "id": "manager_toolkit-p3-u1",
+          "title": "Refuerzo según causa",
+          "objective": "Aplicar refuerzo según causa al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para supervisores y managers, dominar «Refuerzo según causa» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una puntuación sin evidencia no expresa incapacidad; primero se analiza la cobertura y calidad de evaluación. En el capítulo «Asignación de refuerzos calibrados», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: El equipo tiene 12 horas semanales disponibles, tres colaboradores requieren mejora de documentación y dos de diagnóstico. El manager quiere dar un curso idéntico a todos para ahorrar tiempo. La presión es: RR. HH. propone medir avance por minutos conectado en lugar de calidad. El alumno debe transformar «Refuerzo según causa» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"planes_de_refuerzo_programados\":27,\"reevaluaciones_humanas_con_evidencia\":15}. Calcula «% de seguimiento verificable» con 100 × reevaluaciones con evidencia / planes programados. Valor para revisión: 55.56. No puede emplearse para inferir rendimiento individual ni para imponer sanciones Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Refuerzo según causa»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara calendario de refuerzos por rol para el aspecto «refuerzo según causa». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+            "prerequisites": [
+              "Unidad 3: Refuerzo según causa",
+              "Objetivo: Aplicar refuerzo según causa al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: competencias demostradas y horas invertidas"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "planes_de_refuerzo_programados": 27,
+              "reevaluaciones_humanas_con_evidencia": 15
+            },
+            "formula": "100 × reevaluaciones con evidencia / planes programados",
+            "expected": 55.56,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "manager_toolkit-p3-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Kit del manager y planes de refuerzo. El equipo tiene 12 horas semanales disponibles, tres colaboradores requieren mejora de documentación y dos de diagnóstico. El manager quiere dar un curso idéntico a todos para ahorrar tiempo. Conflicto: RR. HH. propone medir avance por minutos conectado en lugar de calidad. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Refuerzo según causa». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p3-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"planes_de_refuerzo_programados\":27,\"reevaluaciones_humanas_con_evidencia\":15}, calcula % de seguimiento verificable mediante 100 × reevaluaciones con evidencia / planes programados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p3-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Kit del manager y planes de refuerzo. El equipo tiene 12 horas semanales disponibles, tres colaboradores requieren mejora de documentación y dos de diagnóstico. El manager quiere dar un curso idéntico a todos para ahorrar tiempo. Conflicto: RR. HH. propone medir avance por minutos conectado en lugar de calidad. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p3-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara calendario de refuerzos por rol para el aspecto «Refuerzo según causa». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Refuerzo según causa» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p3-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Asignación de refuerzos calibrados», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 55.56,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "commonFailure": "sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "manager_toolkit-p3-u2",
+          "title": "Costo y tiempo de aprendizaje",
+          "objective": "Aplicar costo y tiempo de aprendizaje al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para supervisores y managers, dominar «Costo y tiempo de aprendizaje» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. El 1:1 debe basarse en observaciones verificables y acuerdos, no atribuir personalidad, actitud ni rasgos sensibles. En el capítulo «Asignación de refuerzos calibrados», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: El equipo tiene 12 horas semanales disponibles, tres colaboradores requieren mejora de documentación y dos de diagnóstico. El manager quiere dar un curso idéntico a todos para ahorrar tiempo. La presión es: RR. HH. propone medir avance por minutos conectado en lugar de calidad. El alumno debe transformar «Costo y tiempo de aprendizaje» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"planes_de_refuerzo_programados\":27,\"reevaluaciones_humanas_con_evidencia\":15}. Calcula «% de seguimiento verificable» con 100 × reevaluaciones con evidencia / planes programados. Valor para revisión: 55.56. No puede emplearse para inferir rendimiento individual ni para imponer sanciones Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Costo y tiempo de aprendizaje»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara calendario de refuerzos por rol para el aspecto «costo y tiempo de aprendizaje». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+            "prerequisites": [
+              "Unidad 3: Costo y tiempo de aprendizaje",
+              "Objetivo: Aplicar costo y tiempo de aprendizaje al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: competencias demostradas y horas invertidas"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "planes_de_refuerzo_programados": 27,
+              "reevaluaciones_humanas_con_evidencia": 15
+            },
+            "formula": "100 × reevaluaciones con evidencia / planes programados",
+            "expected": 55.56,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "manager_toolkit-p3-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Kit del manager y planes de refuerzo. El equipo tiene 12 horas semanales disponibles, tres colaboradores requieren mejora de documentación y dos de diagnóstico. El manager quiere dar un curso idéntico a todos para ahorrar tiempo. Conflicto: RR. HH. propone medir avance por minutos conectado en lugar de calidad. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Costo y tiempo de aprendizaje». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p3-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"planes_de_refuerzo_programados\":27,\"reevaluaciones_humanas_con_evidencia\":15}, calcula % de seguimiento verificable mediante 100 × reevaluaciones con evidencia / planes programados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p3-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Kit del manager y planes de refuerzo. El equipo tiene 12 horas semanales disponibles, tres colaboradores requieren mejora de documentación y dos de diagnóstico. El manager quiere dar un curso idéntico a todos para ahorrar tiempo. Conflicto: RR. HH. propone medir avance por minutos conectado en lugar de calidad. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p3-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara calendario de refuerzos por rol para el aspecto «Costo y tiempo de aprendizaje». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Costo y tiempo de aprendizaje» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p3-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Asignación de refuerzos calibrados», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 55.56,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "commonFailure": "sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "manager_toolkit-p3-u3",
+          "title": "Comparación antes/después",
+          "objective": "Aplicar comparación antes/después al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para supervisores y managers, dominar «Comparación antes/después» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Los refuerzos se diseñan por competencia con revisión humana y acceso limitado al equipo autorizado. En el capítulo «Asignación de refuerzos calibrados», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: El equipo tiene 12 horas semanales disponibles, tres colaboradores requieren mejora de documentación y dos de diagnóstico. El manager quiere dar un curso idéntico a todos para ahorrar tiempo. La presión es: RR. HH. propone medir avance por minutos conectado en lugar de calidad. El alumno debe transformar «Comparación antes/después» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"planes_de_refuerzo_programados\":27,\"reevaluaciones_humanas_con_evidencia\":15}. Calcula «% de seguimiento verificable» con 100 × reevaluaciones con evidencia / planes programados. Valor para revisión: 55.56. No puede emplearse para inferir rendimiento individual ni para imponer sanciones Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Comparación antes/después»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara calendario de refuerzos por rol para el aspecto «comparación antes/después». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+            "prerequisites": [
+              "Unidad 3: Comparación antes/después",
+              "Objetivo: Aplicar comparación antes/después al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: competencias demostradas y horas invertidas"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "planes_de_refuerzo_programados": 27,
+              "reevaluaciones_humanas_con_evidencia": 15
+            },
+            "formula": "100 × reevaluaciones con evidencia / planes programados",
+            "expected": 55.56,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "manager_toolkit-p3-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 3 de Kit del manager y planes de refuerzo. El equipo tiene 12 horas semanales disponibles, tres colaboradores requieren mejora de documentación y dos de diagnóstico. El manager quiere dar un curso idéntico a todos para ahorrar tiempo. Conflicto: RR. HH. propone medir avance por minutos conectado en lugar de calidad. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Comparación antes/después». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 260,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p3-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"planes_de_refuerzo_programados\":27,\"reevaluaciones_humanas_con_evidencia\":15}, calcula % de seguimiento verificable mediante 100 × reevaluaciones con evidencia / planes programados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 260,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p3-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 3 de Kit del manager y planes de refuerzo. El equipo tiene 12 horas semanales disponibles, tres colaboradores requieren mejora de documentación y dos de diagnóstico. El manager quiere dar un curso idéntico a todos para ahorrar tiempo. Conflicto: RR. HH. propone medir avance por minutos conectado en lugar de calidad. Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 330,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p3-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara calendario de refuerzos por rol para el aspecto «Comparación antes/después». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Comparación antes/después» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 360,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p3-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Asignación de refuerzos calibrados», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 380,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 55.56,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "commonFailure": "sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Un cambio de alcance obliga a reducir 25 % el tiempo de intervención sin eliminar controles críticos ni criterios de aceptación.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 3 y 4.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "manager_toolkit-p4",
+      "number": 4,
+      "title": "Seguimiento y calibración entre líderes",
+      "difficulty": "especialista",
+      "caseFacts": "Dos managers evalúan el mismo caso 2/4 y 4/4. Uno suele dar 4/4 a todo el equipo, mientras el otro niega puntuaciones superiores por costumbre.",
+      "caseConflict": "Operaciones quiere promediar sin revisar evidencias.",
+      "metric": "concordancia entre evaluadores y calidad de feedback",
+      "units": [
+        {
+          "id": "manager_toolkit-p4-u1",
+          "title": "Acuerdo entre revisores",
+          "objective": "Aplicar acuerdo entre revisores al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para supervisores y managers, dominar «Acuerdo entre revisores» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una puntuación sin evidencia no expresa incapacidad; primero se analiza la cobertura y calidad de evaluación. En el capítulo «Seguimiento y calibración entre líderes», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Dos managers evalúan el mismo caso 2/4 y 4/4. Uno suele dar 4/4 a todo el equipo, mientras el otro niega puntuaciones superiores por costumbre. La presión es: Operaciones quiere promediar sin revisar evidencias. El alumno debe transformar «Acuerdo entre revisores» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"planes_de_refuerzo_programados\":30,\"reevaluaciones_humanas_con_evidencia\":17}. Calcula «% de seguimiento verificable» con 100 × reevaluaciones con evidencia / planes programados. Valor para revisión: 56.67. No puede emplearse para inferir rendimiento individual ni para imponer sanciones Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Acuerdo entre revisores»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara acta de calibración y plan de auditoría para el aspecto «acuerdo entre revisores». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+            "prerequisites": [
+              "Unidad 4: Acuerdo entre revisores",
+              "Objetivo: Aplicar acuerdo entre revisores al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: concordancia entre evaluadores y calidad de feedback"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "planes_de_refuerzo_programados": 30,
+              "reevaluaciones_humanas_con_evidencia": 17
+            },
+            "formula": "100 × reevaluaciones con evidencia / planes programados",
+            "expected": 56.67,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "manager_toolkit-p4-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Kit del manager y planes de refuerzo. Dos managers evalúan el mismo caso 2/4 y 4/4. Uno suele dar 4/4 a todo el equipo, mientras el otro niega puntuaciones superiores por costumbre. Conflicto: Operaciones quiere promediar sin revisar evidencias. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Acuerdo entre revisores». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p4-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"planes_de_refuerzo_programados\":30,\"reevaluaciones_humanas_con_evidencia\":17}, calcula % de seguimiento verificable mediante 100 × reevaluaciones con evidencia / planes programados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p4-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Kit del manager y planes de refuerzo. Dos managers evalúan el mismo caso 2/4 y 4/4. Uno suele dar 4/4 a todo el equipo, mientras el otro niega puntuaciones superiores por costumbre. Conflicto: Operaciones quiere promediar sin revisar evidencias. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p4-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara acta de calibración y plan de auditoría para el aspecto «Acuerdo entre revisores». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Acuerdo entre revisores» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p4-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Seguimiento y calibración entre líderes», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 56.67,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "commonFailure": "sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "manager_toolkit-p4-u2",
+          "title": "Riesgos de sesgo de severidad",
+          "objective": "Aplicar riesgos de sesgo de severidad al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para supervisores y managers, dominar «Riesgos de sesgo de severidad» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. El 1:1 debe basarse en observaciones verificables y acuerdos, no atribuir personalidad, actitud ni rasgos sensibles. En el capítulo «Seguimiento y calibración entre líderes», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Dos managers evalúan el mismo caso 2/4 y 4/4. Uno suele dar 4/4 a todo el equipo, mientras el otro niega puntuaciones superiores por costumbre. La presión es: Operaciones quiere promediar sin revisar evidencias. El alumno debe transformar «Riesgos de sesgo de severidad» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"planes_de_refuerzo_programados\":30,\"reevaluaciones_humanas_con_evidencia\":17}. Calcula «% de seguimiento verificable» con 100 × reevaluaciones con evidencia / planes programados. Valor para revisión: 56.67. No puede emplearse para inferir rendimiento individual ni para imponer sanciones Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Riesgos de sesgo de severidad»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara acta de calibración y plan de auditoría para el aspecto «riesgos de sesgo de severidad». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+            "prerequisites": [
+              "Unidad 4: Riesgos de sesgo de severidad",
+              "Objetivo: Aplicar riesgos de sesgo de severidad al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: concordancia entre evaluadores y calidad de feedback"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "planes_de_refuerzo_programados": 30,
+              "reevaluaciones_humanas_con_evidencia": 17
+            },
+            "formula": "100 × reevaluaciones con evidencia / planes programados",
+            "expected": 56.67,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "manager_toolkit-p4-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Kit del manager y planes de refuerzo. Dos managers evalúan el mismo caso 2/4 y 4/4. Uno suele dar 4/4 a todo el equipo, mientras el otro niega puntuaciones superiores por costumbre. Conflicto: Operaciones quiere promediar sin revisar evidencias. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Riesgos de sesgo de severidad». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p4-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"planes_de_refuerzo_programados\":30,\"reevaluaciones_humanas_con_evidencia\":17}, calcula % de seguimiento verificable mediante 100 × reevaluaciones con evidencia / planes programados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p4-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Kit del manager y planes de refuerzo. Dos managers evalúan el mismo caso 2/4 y 4/4. Uno suele dar 4/4 a todo el equipo, mientras el otro niega puntuaciones superiores por costumbre. Conflicto: Operaciones quiere promediar sin revisar evidencias. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p4-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara acta de calibración y plan de auditoría para el aspecto «Riesgos de sesgo de severidad». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Riesgos de sesgo de severidad» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p4-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Seguimiento y calibración entre líderes», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 56.67,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "commonFailure": "sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "manager_toolkit-p4-u3",
+          "title": "Criterios de escalamiento",
+          "objective": "Aplicar criterios de escalamiento al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para supervisores y managers, dominar «Criterios de escalamiento» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Los refuerzos se diseñan por competencia con revisión humana y acceso limitado al equipo autorizado. En el capítulo «Seguimiento y calibración entre líderes», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Dos managers evalúan el mismo caso 2/4 y 4/4. Uno suele dar 4/4 a todo el equipo, mientras el otro niega puntuaciones superiores por costumbre. La presión es: Operaciones quiere promediar sin revisar evidencias. El alumno debe transformar «Criterios de escalamiento» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"planes_de_refuerzo_programados\":30,\"reevaluaciones_humanas_con_evidencia\":17}. Calcula «% de seguimiento verificable» con 100 × reevaluaciones con evidencia / planes programados. Valor para revisión: 56.67. No puede emplearse para inferir rendimiento individual ni para imponer sanciones Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Criterios de escalamiento»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara acta de calibración y plan de auditoría para el aspecto «criterios de escalamiento». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+            "prerequisites": [
+              "Unidad 4: Criterios de escalamiento",
+              "Objetivo: Aplicar criterios de escalamiento al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: concordancia entre evaluadores y calidad de feedback"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "planes_de_refuerzo_programados": 30,
+              "reevaluaciones_humanas_con_evidencia": 17
+            },
+            "formula": "100 × reevaluaciones con evidencia / planes programados",
+            "expected": 56.67,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "manager_toolkit-p4-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 4 de Kit del manager y planes de refuerzo. Dos managers evalúan el mismo caso 2/4 y 4/4. Uno suele dar 4/4 a todo el equipo, mientras el otro niega puntuaciones superiores por costumbre. Conflicto: Operaciones quiere promediar sin revisar evidencias. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Criterios de escalamiento». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 300,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p4-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"planes_de_refuerzo_programados\":30,\"reevaluaciones_humanas_con_evidencia\":17}, calcula % de seguimiento verificable mediante 100 × reevaluaciones con evidencia / planes programados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 300,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p4-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 4 de Kit del manager y planes de refuerzo. Dos managers evalúan el mismo caso 2/4 y 4/4. Uno suele dar 4/4 a todo el equipo, mientras el otro niega puntuaciones superiores por costumbre. Conflicto: Operaciones quiere promediar sin revisar evidencias. Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 370,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p4-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara acta de calibración y plan de auditoría para el aspecto «Criterios de escalamiento». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Criterios de escalamiento» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 400,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p4-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Seguimiento y calibración entre líderes», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 420,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 56.67,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "commonFailure": "sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Una objeción de accesibilidad muestra que una persona autorizada no pudo acceder al material con lector de pantalla.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 4 y 5.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": false
+      }
+    },
+    {
+      "id": "manager_toolkit-p5",
+      "number": 5,
+      "title": "Capstone: gestión de equipo sin automatismos punitivos",
+      "difficulty": "directiva y proyecto",
+      "caseFacts": "Empresa ficticia tiene 20 colaboradores y cuatro áreas. El manager ve 7 personas sin evidencia reciente, tres con planes de mejora y dos que no desean compartir portafolio público. La dirección pide decisiones automáticas de promoción según puntaje.",
+      "caseConflict": "Se pretende ligar el sistema a nómina para descontar pagos por resultados.",
+      "metric": "plan validado y acciones de mejora observables",
+      "units": [
+        {
+          "id": "manager_toolkit-p5-u1",
+          "title": "Capacidad de intervención",
+          "objective": "Aplicar capacidad de intervención al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para supervisores y managers, dominar «Capacidad de intervención» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Una puntuación sin evidencia no expresa incapacidad; primero se analiza la cobertura y calidad de evaluación. En el capítulo «Capstone: gestión de equipo sin automatismos punitivos», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Empresa ficticia tiene 20 colaboradores y cuatro áreas. El manager ve 7 personas sin evidencia reciente, tres con planes de mejora y dos que no desean compartir portafolio público. La dirección pide decisiones automáticas de promoción según puntaje. La presión es: Se pretende ligar el sistema a nómina para descontar pagos por resultados. El alumno debe transformar «Capacidad de intervención» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"planes_de_refuerzo_programados\":33,\"reevaluaciones_humanas_con_evidencia\":19}. Calcula «% de seguimiento verificable» con 100 × reevaluaciones con evidencia / planes programados. Valor para revisión: 57.58. No puede emplearse para inferir rendimiento individual ni para imponer sanciones Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Capacidad de intervención»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara portafolio de planes 1:1 y matriz de permisos para el aspecto «capacidad de intervención». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+            "prerequisites": [
+              "Unidad 5: Capacidad de intervención",
+              "Objetivo: Aplicar capacidad de intervención al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: plan validado y acciones de mejora observables"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "planes_de_refuerzo_programados": 33,
+              "reevaluaciones_humanas_con_evidencia": 19
+            },
+            "formula": "100 × reevaluaciones con evidencia / planes programados",
+            "expected": 57.58,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "manager_toolkit-p5-u1-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Kit del manager y planes de refuerzo. Empresa ficticia tiene 20 colaboradores y cuatro áreas. El manager ve 7 personas sin evidencia reciente, tres con planes de mejora y dos que no desean compartir portafolio público. La dirección pide decisiones automáticas de promoción según puntaje. Conflicto: Se pretende ligar el sistema a nómina para descontar pagos por resultados. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Capacidad de intervención». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p5-u1-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"planes_de_refuerzo_programados\":33,\"reevaluaciones_humanas_con_evidencia\":19}, calcula % de seguimiento verificable mediante 100 × reevaluaciones con evidencia / planes programados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p5-u1-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Kit del manager y planes de refuerzo. Empresa ficticia tiene 20 colaboradores y cuatro áreas. El manager ve 7 personas sin evidencia reciente, tres con planes de mejora y dos que no desean compartir portafolio público. La dirección pide decisiones automáticas de promoción según puntaje. Conflicto: Se pretende ligar el sistema a nómina para descontar pagos por resultados. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p5-u1-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara portafolio de planes 1:1 y matriz de permisos para el aspecto «Capacidad de intervención». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Capacidad de intervención» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p5-u1-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone: gestión de equipo sin automatismos punitivos», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 57.58,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "commonFailure": "sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "manager_toolkit-p5-u2",
+          "title": "Planes 30-60-90 y KPIs",
+          "objective": "Aplicar planes 30-60-90 y kpis al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para supervisores y managers, dominar «Planes 30-60-90 y KPIs» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. El 1:1 debe basarse en observaciones verificables y acuerdos, no atribuir personalidad, actitud ni rasgos sensibles. En el capítulo «Capstone: gestión de equipo sin automatismos punitivos», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Empresa ficticia tiene 20 colaboradores y cuatro áreas. El manager ve 7 personas sin evidencia reciente, tres con planes de mejora y dos que no desean compartir portafolio público. La dirección pide decisiones automáticas de promoción según puntaje. La presión es: Se pretende ligar el sistema a nómina para descontar pagos por resultados. El alumno debe transformar «Planes 30-60-90 y KPIs» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"planes_de_refuerzo_programados\":33,\"reevaluaciones_humanas_con_evidencia\":19}. Calcula «% de seguimiento verificable» con 100 × reevaluaciones con evidencia / planes programados. Valor para revisión: 57.58. No puede emplearse para inferir rendimiento individual ni para imponer sanciones Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Planes 30-60-90 y KPIs»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara portafolio de planes 1:1 y matriz de permisos para el aspecto «planes 30-60-90 y kpis». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+            "prerequisites": [
+              "Unidad 5: Planes 30-60-90 y KPIs",
+              "Objetivo: Aplicar planes 30-60-90 y kpis al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: plan validado y acciones de mejora observables"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "planes_de_refuerzo_programados": 33,
+              "reevaluaciones_humanas_con_evidencia": 19
+            },
+            "formula": "100 × reevaluaciones con evidencia / planes programados",
+            "expected": 57.58,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "manager_toolkit-p5-u2-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Kit del manager y planes de refuerzo. Empresa ficticia tiene 20 colaboradores y cuatro áreas. El manager ve 7 personas sin evidencia reciente, tres con planes de mejora y dos que no desean compartir portafolio público. La dirección pide decisiones automáticas de promoción según puntaje. Conflicto: Se pretende ligar el sistema a nómina para descontar pagos por resultados. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Planes 30-60-90 y KPIs». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p5-u2-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"planes_de_refuerzo_programados\":33,\"reevaluaciones_humanas_con_evidencia\":19}, calcula % de seguimiento verificable mediante 100 × reevaluaciones con evidencia / planes programados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p5-u2-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Kit del manager y planes de refuerzo. Empresa ficticia tiene 20 colaboradores y cuatro áreas. El manager ve 7 personas sin evidencia reciente, tres con planes de mejora y dos que no desean compartir portafolio público. La dirección pide decisiones automáticas de promoción según puntaje. Conflicto: Se pretende ligar el sistema a nómina para descontar pagos por resultados. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p5-u2-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara portafolio de planes 1:1 y matriz de permisos para el aspecto «Planes 30-60-90 y KPIs». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Planes 30-60-90 y KPIs» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p5-u2-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone: gestión de equipo sin automatismos punitivos», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 57.58,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "commonFailure": "sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        },
+        {
+          "id": "manager_toolkit-p5-u3",
+          "title": "Comité de talento con privacidad",
+          "objective": "Aplicar comité de talento con privacidad al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+          "reading": {
+            "principle": "Para supervisores y managers, dominar «Comité de talento con privacidad» significa poder justificar una decisión observando proceso, fuentes, permisos y efecto real. Los refuerzos se diseñan por competencia con revisión humana y acceso limitado al equipo autorizado. En el capítulo «Capstone: gestión de equipo sin automatismos punitivos», el resultado correcto no es el más rápido, sino el que preserve objetivos, consentimiento cuando corresponde, coste de oportunidad y posibilidad de auditoría. Una afirmación será válida si otra persona autorizada puede reconstruir la lógica usando el mismo expediente.",
+            "workedCase": "Situación de referencia: Empresa ficticia tiene 20 colaboradores y cuatro áreas. El manager ve 7 personas sin evidencia reciente, tres con planes de mejora y dos que no desean compartir portafolio público. La dirección pide decisiones automáticas de promoción según puntaje. La presión es: Se pretende ligar el sistema a nómina para descontar pagos por resultados. El alumno debe transformar «Comité de talento con privacidad» en una decisión verificable: establecer una línea base, diferenciar evidencia de hipótesis, proponer tres alternativas, comprobar los permisos de cada fuente y registrar un criterio de pausa. La propuesta defendible es la que puede ajustarse ante la objeción «Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.», no la que esconde sus limitaciones.",
+            "quantitativeReasoning": "Ejercicio numérico independiente del caso de negocio: {\"planes_de_refuerzo_programados\":33,\"reevaluaciones_humanas_con_evidencia\":19}. Calcula «% de seguimiento verificable» con 100 × reevaluaciones con evidencia / planes programados. Valor para revisión: 57.58. No puede emplearse para inferir rendimiento individual ni para imponer sanciones Indica siempre periodo, unidad, denominador, qué población quedó excluida y por qué el número no equivale automáticamente a una decisión humana.",
+            "procedure": "Método de trabajo para «Comité de talento con privacidad»: (1) describe el proceso original y sus permisos; (2) identifica hechos que podrían falsar tu hipótesis; (3) revisa relaciones entre interesados sin divulgar nombres reales; (4) reproduce la métrica y sus limitaciones; (5) diseña una intervención con responsable y tiempo máximo; (6) define prueba positiva y negativa, incluida una objeción de equidad o accesibilidad; (7) presenta el artefacto de prepara portafolio de planes 1:1 y matriz de permisos para el aspecto «comité de talento con privacidad». incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada. y registra qué cambiaría la decisión después del seguimiento.",
+            "misconception": "Error profesional a evitar: sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia. También es incorrecto presentar un dato simulado como un hecho de la empresa, decidir con un único promedio, confundir aprobación administrativa con evidencia de eficacia o asumir que el uso de una plataforma equivale a una característica personal del alumno. No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+            "prerequisites": [
+              "Unidad 5: Comité de talento con privacidad",
+              "Objetivo: Aplicar comité de talento con privacidad al escenario, documentar evidencia y comprobar el impacto de la decisión sin vulnerar permisos ni inventar hechos.",
+              "Resultado evaluado: plan validado y acciones de mejora observables"
+            ]
+          },
+          "practiceDataset": {
+            "values": {
+              "planes_de_refuerzo_programados": 33,
+              "reevaluaciones_humanas_con_evidencia": 19
+            },
+            "formula": "100 × reevaluaciones con evidencia / planes programados",
+            "expected": 57.58,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "independentSyntheticDataset": true
+          },
+          "practices": [
+            {
+              "id": "manager_toolkit-p5-u3-e1",
+              "type": "evidence-audit",
+              "title": "Investigación y prueba de hipótesis",
+              "task": "Caso 5 de Kit del manager y planes de refuerzo. Empresa ficticia tiene 20 colaboradores y cuatro áreas. El manager ve 7 personas sin evidencia reciente, tres con planes de mejora y dos que no desean compartir portafolio público. La dirección pide decisiones automáticas de promoción según puntaje. Conflicto: Se pretende ligar el sistema a nómina para descontar pagos por resultados. Extrae cuatro hechos, dos hipótesis que compitan entre sí, dos fuentes faltantes y un resultado que refutaría tu elección para «Comité de talento con privacidad». Deja constancia de qué datos NO tienes permiso de utilizar.",
+              "required": [
+                "cuatro observaciones",
+                "dos hipótesis",
+                "fuentes por adquirir",
+                "contradicción falsable",
+                "permisos y finalidad"
+              ],
+              "minWords": 340,
+              "mode": "investigación",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p5-u3-e2",
+              "type": "quantitative-reasoning",
+              "title": "Calcula un indicador sin falsear evidencia",
+              "task": "Con datos sintéticos {\"planes_de_refuerzo_programados\":33,\"reevaluaciones_humanas_con_evidencia\":19}, calcula % de seguimiento verificable mediante 100 × reevaluaciones con evidencia / planes programados; escribe fórmula, unidades, periodo y redondeo a dos decimales. Después enumera tres conclusiones de trabajo que la cifra NO demuestra y verifica por qué: No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+              "required": [
+                "fórmula",
+                "denominador",
+                "resultado numérico",
+                "tres inferencias inválidas",
+                "plan para verificar"
+              ],
+              "minWords": 340,
+              "mode": "cálculo",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p5-u3-e3",
+              "type": "decision-simulation",
+              "title": "Simulación con cambio de condiciones",
+              "task": "Caso 5 de Kit del manager y planes de refuerzo. Empresa ficticia tiene 20 colaboradores y cuatro áreas. El manager ve 7 personas sin evidencia reciente, tres con planes de mejora y dos que no desean compartir portafolio público. La dirección pide decisiones automáticas de promoción según puntaje. Conflicto: Se pretende ligar el sistema a nómina para descontar pagos por resultados. Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación. Diseña tres respuestas operativas incompatibles, compara sus efectos a siete y treinta días, autoridad de aceptación y condición de pausa. Conserva una decisión anterior y explícita qué debes reabrir al pasar al próximo nivel.",
+              "required": [
+                "tres alternativas",
+                "dos horizontes",
+                "autoridad y permisos",
+                "control de daño",
+                "historial de decisión"
+              ],
+              "minWords": 410,
+              "mode": "decisiones encadenadas",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p5-u3-e4",
+              "type": "professional-deliverable",
+              "title": "Entregable verificable",
+              "task": "Desarrolla Prepara portafolio de planes 1:1 y matriz de permisos para el aspecto «Comité de talento con privacidad». Incluye pruebas, dos alternativas, una excepción y una justificación de la acción recomendada., para «Comité de talento con privacidad» con hechos del expediente. Incluye una tabla con seis columnas (hecho, evidencia, hipótesis, persona autorizada, decisión, prueba), dos filas diligenciadas y una prueba negativa que haga visible un fallo.",
+              "required": [
+                "tabla de seis columnas",
+                "dos registros sintéticos",
+                "prueba negativa",
+                "métrica y fecha",
+                "evidencia para manager"
+              ],
+              "minWords": 440,
+              "mode": "artefacto",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            },
+            {
+              "id": "manager_toolkit-p5-u3-e5",
+              "type": "adversarial-defense",
+              "title": "Defensa ante tres perspectivas",
+              "task": "En el caso «Capstone: gestión de equipo sin automatismos punitivos», prepara una respuesta documentada frente a tres objeciones: (a) responsable del proceso sobre costo, (b) auditor sobre calidad del dato, (c) persona afectada sobre privacidad o accesibilidad. Para cada una, explica qué aceptarías corregir, qué no puedes prometer y cómo demostrarás eficacia.",
+              "required": [
+                "tres objeciones contestadas",
+                "tres criterios de prueba",
+                "límites de autoridad",
+                "reversión y seguimiento",
+                "revisión humana"
+              ],
+              "minWords": 460,
+              "mode": "defensa",
+              "requiresHumanReview": true,
+              "allowCompletionByAcknowledgement": false
+            }
+          ],
+          "instructor": {
+            "expectedValue": 57.58,
+            "unit": "% de seguimiento verificable",
+            "limitations": "No puede emplearse para inferir rendimiento individual ni para imponer sanciones",
+            "commonFailure": "sancionar automáticamente por clics, por no completar una lección o por estar sin evidencia",
+            "rubric": [
+              {
+                "name": "precisión y fuentes",
+                "weight": 20
+              },
+              {
+                "name": "alternativas y causalidad",
+                "weight": 20
+              },
+              {
+                "name": "cálculos y límites de inferencia",
+                "weight": 20
+              },
+              {
+                "name": "privacidad, autorización y equidad",
+                "weight": 20
+              },
+              {
+                "name": "entregable y defensa",
+                "weight": 20
+              }
+            ],
+            "criticalErrors": [
+              "No inferir aptitud personal ni tomar medidas de empleo basadas únicamente en una simulación de aprendizaje.",
+              "no hay evidencia auténtica de razonamiento",
+              "respuesta copiada o texto de relleno",
+              "fabricación de resultados"
+            ],
+            "humanReview": true
+          },
+          "publication": {
+            "enabled": false,
+            "passingScore100": 80,
+            "eachDimensionMin4Scale": 3,
+            "criticalErrorsAllowed": 0
+          }
+        }
+      ],
+      "scenarioShock": "Al comparar la cohorte siguiente, el resultado observado contradice tu predicción inicial; un manager exige explicar la desviación.",
+      "continuity": {
+        "carry": "Conservar versión, hipótesis, indicador, objeción recibida y nueva decisión entre las etapas 5 y 6.",
+        "mustShowVersionHistory": true
+      },
+      "assessment": {
+        "tasks": 8,
+        "passing": 80,
+        "manualApproval": true,
+        "capstone": true
+      }
+    }
+  ],
+  "unitsCount": 15,
+  "practicesCount": 75,
+  "gradingPolicy": {
+    "minScore100": 80,
+    "eachDimensionAtLeast4Scale": 3,
+    "criticalErrorsAllowed": 0,
+    "manualApproval": true,
+    "submissionAloneNeverUnlocks": true
+  },
+  "publicationGate": {
+    "enabled": false,
+    "requiresBackendAssessment": true,
+    "requiresEditorialAndPrivacyReview": true
+  }
+}
