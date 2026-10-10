@@ -15,7 +15,8 @@ test('UI catalog stays within its transfer budget and supplemental lessons remai
 });
 
 test('localization audit handles Windows and POSIX separators consistently',()=>{
- for(const file of ['app/components/localization/language-selector.tsx','app\\\\components\\\\localization\\\\language-selector.tsx','lib/localization/shared.ts','lib\\\\localization\\\\shared.ts'])assert.equal(isLocalizationSource(file),true,file);
- for(const file of ['app/admin/page.tsx','app\\\\admin\\\\page.tsx'])assert.equal(isLocalizationSource(file),false,file);
- assert.equal(normalizedAuditPath('app\\\\admin\\\\page.tsx'),'app/admin/page.tsx');
+ const windows=(...parts)=>parts.join(String.fromCharCode(92));
+ for(const file of ['app/components/localization/language-selector.tsx',windows('app','components','localization','language-selector.tsx'),'lib/localization/shared.ts',windows('lib','localization','shared.ts')])assert.equal(isLocalizationSource(file),true,file);
+ for(const file of ['app/admin/page.tsx',windows('app','admin','page.tsx')])assert.equal(isLocalizationSource(file),false,file);
+ assert.equal(normalizedAuditPath(windows('app','admin','page.tsx')),'app/admin/page.tsx');
 });
