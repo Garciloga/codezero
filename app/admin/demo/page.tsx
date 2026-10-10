@@ -15,7 +15,7 @@ export default async function OwnerDemoCenter(){
  try{await requireOwner(user.id);}catch{notFound();}
  const {locale}=await localeContext(),t=ownerDemoCopy(locale);
  return <LocalizedContent><main className="wrap" style={{maxWidth:1100}}>
-  <div className="nav"><div><span className="pill">GARCILOGA</span>
+  <div className="nav"><div><span className="pill">{t.title}</span>
    <h1>{t.title}</h1><p className="muted">{t.subtitle}</p></div>
    <Link className="btn secondary" href="/admin">{t.back}</Link>
   </div>
